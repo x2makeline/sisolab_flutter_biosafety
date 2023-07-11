@@ -26,6 +26,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "autoscale_tabbarview",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/autoscale_tabbarview-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -608,7 +614,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-07-10T13:50:09.371211Z",
+  "generated": "2023-07-11T14:54:39.449915Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }

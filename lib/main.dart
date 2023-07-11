@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('ko'),
         debugShowCheckedModeBanner: false,
         enableLog: true,
-        initialRoute: AppRoutes.home.name,
+        initialRoute: AppRoutes.fclNewDetail.name,
         theme: ThemeData(
             inputDecorationTheme: const InputDecorationTheme(
                 enabledBorder: OutlineInputBorder(

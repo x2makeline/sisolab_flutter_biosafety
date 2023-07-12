@@ -36,6 +36,5 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
-  Size get preferredSize => const Size(double.infinity, 100);
+  Size get preferredSize => const Size(double.infinity, 80);
 }

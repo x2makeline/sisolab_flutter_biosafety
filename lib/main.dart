@@ -9,6 +9,8 @@ void main() {
   runApp(const MyApp());
 }
 
+const defaultTextStyle = TextStyle(color: Colors.black);
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -22,11 +24,20 @@ class MyApp extends StatelessWidget {
         supportedLocales: const [
           Locale('ko'),
         ],
-      locale: const Locale('ko'),
+        locale: const Locale('ko'),
         debugShowCheckedModeBanner: false,
         enableLog: true,
-        initialRoute: AppRoutes.fclNewDetail.name,
+        initialRoute: AppRoutes.fclNewDetailSelect.name
+            .replaceFirst(":docNo", "HR4-2306-315"),
         theme: ThemeData(
+            textTheme: TextTheme(
+              headlineLarge: defaultTextStyle.copyWith(
+                  fontSize: 38, fontWeight: FontWeight.w700),
+              headlineMedium: defaultTextStyle.copyWith(
+                  fontSize: 31, fontWeight: FontWeight.w500),
+              headlineSmall: defaultTextStyle.copyWith(
+                  fontSize: 20, fontWeight: FontWeight.w300),
+            ),
             inputDecorationTheme: const InputDecorationTheme(
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(3)),

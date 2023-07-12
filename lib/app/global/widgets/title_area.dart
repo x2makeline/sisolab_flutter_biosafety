@@ -9,13 +9,13 @@ class TitleArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Column(
       children: [
-        const SizedBox(height: 70),
+        const SizedBox(height: 50),
         Text(
           title,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+          style: Theme.of(context).textTheme.headlineLarge,
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
       ],
     );
   }

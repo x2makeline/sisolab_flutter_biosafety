@@ -1,9 +1,11 @@
 import 'package:autoscale_tabbarview/autoscale_tabbarview.dart';
 import 'package:flutter/material.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 
 class DetailCategoryTab extends StatefulWidget {
-  const DetailCategoryTab({Key? key, required this.tabMap}) : super(key: key);
-  final Map<String, Widget> tabMap;
+  const DetailCategoryTab({Key? key, required this.tabMapList})
+      : super(key: key);
+  final List<FclTab> tabMapList;
 
   @override
   State<DetailCategoryTab> createState() => _DetailCategoryTabState();
@@ -16,28 +18,72 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: widget.tabMap.length, vsync: this);
+    _tabController =
+        TabController(length: widget.tabMapList.length, vsync: this);
+    _tabController.addListener(() {
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        GridView(
+        GridView.extent(
           shrinkWrap: true,
-
-          gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3
-            
-          ),
-          children: widget.tabMap.keys.map((e) => Container(
-            height : 10,
-              width:  100,
-              child: Center(child: Text(e)))).toList(),
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 10 / 3,
+          addAutomaticKeepAlives: false,
+          children: widget.tabMapList
+              .asMap()
+              .entries
+              .map((entry) => entry.key == _tabController.index
+                  ? Container(
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          border: Border.all(
+                              color: const Color(0xffcccccc), width: 1)),
+                      child: Center(
+                          child: Text(
+                        entry.value.title,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.white,
+                        ),
+                      )),
+                    )
+                  : GestureDetector(
+                      onTap: () {
+                        _tabController.index = entry.key;
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: const Color(0xffcccccc), width: 1)),
+                        child: Center(
+                            child: Text(
+                          entry.value.title,
+                          textAlign: TextAlign.center,
+                        )),
+                      ),
+                    ))
+              .toList(),
         ),
+        SizedBox(height: 40,),
         AutoScaleTabBarView(
           controller: _tabController,
-          children: widget.tabMap.values.toList(),
+          children: widget.tabMapList
+              .map((e) => Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [Text(e.title, style: Theme.of(context).textTheme.headlineSmall,), const Divider(), e.body],
+                  ))
+              .toList(),
         )
         // SizedBox(height : 300, child: TabBarView( children: tabMap.values.toList()))
       ],

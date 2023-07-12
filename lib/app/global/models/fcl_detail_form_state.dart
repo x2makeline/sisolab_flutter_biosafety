@@ -1,0 +1,4 @@
+enum FclDetailFormState {
+  update,
+  insert
+}

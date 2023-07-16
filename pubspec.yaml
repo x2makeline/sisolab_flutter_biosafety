@@ -47,6 +47,7 @@ dependencies:
   syncfusion_flutter_datepicker: ^22.1.37
   intl: ^0.18.0
   autoscale_tabbarview: ^1.0.2
+  expandable_page_view: ^1.0.17
 
 dev_dependencies:
   flutter_test:

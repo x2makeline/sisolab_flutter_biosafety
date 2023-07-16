@@ -1,11 +1,18 @@
-import 'package:autoscale_tabbarview/autoscale_tabbarview.dart';
 import 'package:flutter/material.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 
 class DetailCategoryTab extends StatefulWidget {
-  const DetailCategoryTab({Key? key, required this.tabMapList})
+  const DetailCategoryTab(
+      {Key? key,
+      required this.tabMapList,
+      required this.activeTabIndex,
+      required this.onChange})
       : super(key: key);
   final List<FclTab> tabMapList;
+
+  final int activeTabIndex;
+
+  final void Function(int index) onChange;
 
   @override
   State<DetailCategoryTab> createState() => _DetailCategoryTabState();
@@ -13,23 +20,17 @@ class DetailCategoryTab extends StatefulWidget {
 
 class _DetailCategoryTabState extends State<DetailCategoryTab>
     with SingleTickerProviderStateMixin {
-  late final TabController _tabController;
-
   @override
   void initState() {
     super.initState();
-    _tabController =
-        TabController(length: widget.tabMapList.length, vsync: this);
-    _tabController.addListener(() {
-      setState(() {});
-    });
   }
 
   @override
   void dispose() {
     super.dispose();
-    _tabController.dispose();
   }
+
+  FclTab get activeTab => widget.tabMapList.elementAt(widget.activeTabIndex);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
           children: widget.tabMapList
               .asMap()
               .entries
-              .map((entry) => entry.key == _tabController.index
+              .map((entry) => entry.key == widget.activeTabIndex
                   ? Container(
                       decoration: BoxDecoration(
                           color: Colors.green,
@@ -59,9 +60,7 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                       )),
                     )
                   : GestureDetector(
-                      onTap: () {
-                        _tabController.index = entry.key;
-                      },
+                      onTap: () => widget.onChange(entry.key),
                       child: Container(
                         decoration: BoxDecoration(
                             border: Border.all(
@@ -75,17 +74,21 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                     ))
               .toList(),
         ),
-        SizedBox(height: 40,),
-        AutoScaleTabBarView(
-          controller: _tabController,
-          children: widget.tabMapList
-              .map((e) => Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [Text(e.title, style: Theme.of(context).textTheme.headlineSmall,), const Divider(), e.body],
-                  ))
-              .toList(),
+        const SizedBox(
+          height: 40,
+        ),
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              activeTab.title,
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            const Divider(),
+            activeTab.body
+          ],
         )
-        // SizedBox(height : 300, child: TabBarView( children: tabMap.values.toList()))
       ],
     );
   }

@@ -15,16 +15,15 @@ class Layout extends StatelessWidget {
       appBar: const TopBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              TitleArea(
-                title: title,
-              ),
-              const Divider(),
-              child,
-            ],
-          ),
+        child: ListView(
+          children: [
+            TitleArea(
+              title: title,
+            ),
+            const Divider(),
+            child,
+            const SizedBox(height : 100)
+          ],
         ),
       ),
     );

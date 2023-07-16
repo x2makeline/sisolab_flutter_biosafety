@@ -176,6 +176,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "expandable_page_view",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/expandable_page_view-1.0.17",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/fake_async-1.3.1",
       "packageUri": "lib/",
@@ -614,7 +620,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-07-11T14:54:39.449915Z",
+  "generated": "2023-07-16T15:30:26.889190Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }

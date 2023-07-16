@@ -9,6 +9,11 @@ class Constant {
   static const String regularTitle = '(정기)';
   static const String listTitle = '목록';
   static const String detailTitle = '상세';
+
+  static const String emptyText = '선택';
+
+  static const int firstDateYear = 1990;
+  static const int lastDateYear = 2100;
 }
 
 

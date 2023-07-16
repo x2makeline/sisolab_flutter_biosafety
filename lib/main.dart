@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
             .replaceFirst(":docNo", "HR4-2306-315"),
         theme: ThemeData(
             textTheme: TextTheme(
+
               headlineLarge: defaultTextStyle.copyWith(
                   fontSize: 38, fontWeight: FontWeight.w700),
               headlineMedium: defaultTextStyle.copyWith(

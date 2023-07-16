@@ -5,8 +5,10 @@ import 'package:sisolab_flutter_biosafety/app/global/models/fcl_related_person_c
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_related_person_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_date_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_selecte_field.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_sign_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 import '../../../global/widgets/field_with_label.dart';
 import '../../../global/widgets/fields/fcl_check_field.dart';
@@ -175,35 +177,46 @@ class InspectionOverview extends GetView<FclNewDetailController> {
         ),
         FieldWithLabel(
           label: "점검자 (소속기관 / 성명 / 서명)",
-          child: Obx(() {
-            return Column(
-              children: [
-                ...controller.checkers.asMap().entries.map((entry) => Row(
-                      children: [
-                        Flexible(
-                            child: FclTextField.primary(
-                                value: entry.value.organ,
-                                onChange: (v) {
-                                  // controller.checkers.
-                                  controller.checkers.replaceRange(
-                                      entry.key, entry.key, [
-                                    controller.checkers
-                                        .elementAt(entry.key)
-                                        .merge(organ: v)
-                                  ]);
+          child: Obx(() => Column(
+                children: [
+                  ...controller.checkers.asMap().entries.map((entry) => Row(
+                        children: [
+                          Flexible(
+                              child: FclTextField.primary(
+                                  value: entry.value.organ,
+                                  onChange: (v) {
+                                    // controller.checkers.
+                                    controller.checkers.replaceRange(
+                                        entry.key, entry.key, [
+                                      controller.checkers
+                                          .elementAt(entry.key)
+                                          .merge(organ: v)
+                                    ]);
 
-                                  // controller.checkers.refresh();
-                                }))
-                      ],
-                    )),
-                OutlinedButton(
-                    onPressed: () {
-                      controller.addChecker();
-                    },
-                    child: Text("점검자 추가"))
-              ].toList(),
-            );
-          }),
+                                    // controller.checkers.refresh();
+                                  })),
+
+                          Flexible(
+                              child: FclSignField(
+                                // rx: controller.checkers.elementAt(index),
+                                nameHintText: "점검자성명",
+                                signatureHintText: "[서명]",
+                              ))
+                        ].withSpaceBetween(width: 20),
+                      )),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton(
+                        onPressed: () {
+                          controller.addChecker();
+                        },
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [Icon(Icons.plus_one), Text("점검자 추가")],
+                        )),
+                  )
+                ].toList(),
+              )),
         )
       ],
     );

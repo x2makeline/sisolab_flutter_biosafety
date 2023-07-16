@@ -2,6 +2,7 @@ import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_sign.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 class FclSignField extends StatefulWidget {
   FclSignField(
@@ -47,6 +48,7 @@ class _FclSignFieldState extends State<FclSignField> {
               decoration: InputDecoration(hintText: widget.nameHintText),
             ),
           ),
+
           SizedBox(
             width: 80,
             child: TextField(
@@ -56,6 +58,6 @@ class _FclSignFieldState extends State<FclSignField> {
               decoration: InputDecoration(hintText: widget.signatureHintText),
             ),
           )
-        ],
+        ].withSpaceBetween(width: 10),
       );
 }

@@ -9,6 +9,7 @@ class FclNewDetailController extends FclDetailController {
   static FclNewDetailController get to => Get.find(); // add this line
   FclNewDetailController() : super(bigCategory: FclBigCategory.novel);
 
+  /// 활성화 탭 index
   final tabIndex = 0.obs;
 
   /// 운영기관

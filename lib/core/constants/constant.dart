@@ -19,7 +19,7 @@ class Constant {
 
 /// 신규허가 ∙ 재확인 텝 목록
 final List<FclTab> newTabList = [
-  FclTab(title: "점검개요", body: const InspectionOverview()),
+  FclTab(title: "점검개요", body:  InspectionOverview()),
   FclTab(title: "취급생물체정보", body: Text("취급생물체정보")),
   FclTab(title: "기본 자료 확인", body: Text("기본 자료 확인")),
   FclTab(title: "실험구역 설치 적절성 확인", body: Text("실험구역 설치 적절성 확인")),

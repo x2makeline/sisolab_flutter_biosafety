@@ -1,4 +1,5 @@
 # Gradle files
+.dart_tool/
 .gradle/
 build/
 

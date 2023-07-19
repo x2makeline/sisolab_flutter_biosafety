@@ -17,6 +17,7 @@ class TightGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(
+
         children: children
             .chunk(crossAxisCount)
             .map((e) => Row(

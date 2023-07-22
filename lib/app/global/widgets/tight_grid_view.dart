@@ -21,6 +21,7 @@ class TightGridView extends StatelessWidget {
         children: children
             .chunk(crossAxisCount)
             .map((e) => Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
                   children: List.generate(
                           crossAxisCount,
                           (i) => Flexible(

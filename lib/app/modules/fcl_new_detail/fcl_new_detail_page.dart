@@ -29,8 +29,8 @@ class FclNewDetailPage extends GetView<FclNewDetailController> {
           ),
           Obx(() => DetailCategoryTab(
                 tabMapList: newTabList,
-                activeTabIndex: controller.tabIndex.value,
-                onChange: controller.tabIndex,
+                activeTabIndex: controller.tabIndex,
+                onChange: (index) => controller.tabIndex = index
               ))
         ],
       ),

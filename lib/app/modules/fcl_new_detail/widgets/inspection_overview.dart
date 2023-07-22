@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_checkbox_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_date_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_dropdown_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_sign.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
 
 import '../../../global/widgets/field_with_label.dart';
-import '../../../global/widgets/form_builder/form_builder_sign.dart';
 
 class InspectionOverview extends GetView<FclNewDetailController> {
   InspectionOverview({super.key});
@@ -51,7 +52,7 @@ class InspectionOverview extends GetView<FclNewDetailController> {
                     onPressed: () {
                       test();
                     },
-                    child: Text("hi"))
+                    child: const Text("hi"))
               ],
             ),
             const Divider(),
@@ -149,88 +150,126 @@ class InspectionOverview extends GetView<FclNewDetailController> {
               ],
             ),
             const Divider(),
-            FormBuilderSign(name: "test")
+            Builder(builder: (context) {
+              final list = [
+                FclRelatedPersonCol(
+                    title: "생물안전관리책임자", name: "1", hintText: "책임자"),
+                FclRelatedPersonCol(
+                    title: "생물안전관리자", name: "2", hintText: "괸리자"),
+                FclRelatedPersonCol(
+                    title: "고위험병원체의전담관리자", name: "3", hintText: "전담관리자"),
+              ];
 
-            // FclRelatedPersonTable(list: [
-            //   FclRelatedPersonCol(
-            //       title: "생물안전관리책임자",
-            //       personCategory: FclRelatedPersonCategory.personInCharge,
-            //       rx: controller.biosafetyOfficer,
-            //       flexWidth: 4),
-            //   FclRelatedPersonCol(
-            //       title: "생물안전관리자",
-            //       personCategory: FclRelatedPersonCategory.administrator,
-            //       rx: controller.biosafetyManager,
-            //       flexWidth: 4),
-            //   FclRelatedPersonCol(
-            //       title: "고위험병원체의전담관리자",
-            //       personCategory: FclRelatedPersonCategory.dedicatedManager,
-            //       rx: controller.dedicatedManagerForHighRiskPathogens,
-            //       flexWidth: 4)
-            // ], titleColFlexWidth: 2),
-            // const Divider(),
-            // TightGridView(
-            //   crossAxisCount: 2,
-            //   crossAxisSpacing: 20,
-            //   mainAxisSpacing: 20,
-            //   children: [
-            //     FieldWithLabel(
-            //       label: "점검일자",
-            //       child: FclDateField(
-            //         rxDateTime: controller.inspectionDate,
-            //       ),
-            //     ),
-            //     const SizedBox.shrink(),
-            //   ],
-            // ),
-            // FieldWithLabel(
-            //   label: "점검자 (소속기관 / 성명 / 서명)",
-            //   child: Obx(() =>
-            //       Column(
-            //         children: [
-            //           ...controller.checkers
-            //               .asMap()
-            //               .entries
-            //               .map((entry) =>
-            //               Row(
-            //                 children: [
-            //                   Flexible(
-            //                       child: FclTextField.primary(
-            //                           value: entry.value.organ,
-            //                           onChange: (v) {
-            //                             // controller.checkers.
-            //                             controller.checkers.replaceRange(
-            //                                 entry.key, entry.key, [
-            //                               controller.checkers
-            //                                   .elementAt(entry.key)
-            //                                   .merge(organ: v)
-            //                             ]);
-            //
-            //                             // controller.checkers.refresh();
-            //                           })),
-            //
-            //                   // Flexible(
-            //                   //     child: FclSignField(
-            //                   //       // rx: controller.checkers.elementAt(index),
-            //                   //       nameHintText: "점검자성명",
-            //                   //       signatureHintText: "[서명]",
-            //                   //     ))
-            //                 ].withSpaceBetween(width: 20),
-            //               )),
-            //           SizedBox(
-            //             width: double.infinity,
-            //             child: OutlinedButton(
-            //                 onPressed: () {
-            //                   controller.addChecker();
-            //                 },
-            //                 child: const Row(
-            //                   mainAxisAlignment: MainAxisAlignment.center,
-            //                   children: [Icon(Icons.plus_one), Text("점검자 추가")],
-            //                 )),
-            //           )
-            //         ].toList(),
-            //       )),
-            // )
+              Widget _padding(Widget child) => Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: child,
+                  );
+
+              return Table(
+                columnWidths: {
+                  0: const FlexColumnWidth(2),
+                  ...list.asMap().map((key, value) =>
+                      MapEntry(key + 1, const FlexColumnWidth(3)))
+                },
+                // border: TableBorder.all(),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  TableRow(children: [
+                    const Text("구분"),
+                    ...list.map((e) => Container(
+                        alignment: Alignment.center, child: Text(e.title)))
+                  ]),
+                  TableRow(children: [
+                    const Text("성명 / 서명"),
+                    ...list.map((e) => Row(
+                          children: [
+                            Expanded(
+                                child: FormBuilderTextField(
+                              name: "${e.name}_name",
+                              decoration:
+                                  InputDecoration(hintText: "${e.hintText}이름"),
+                            )),
+                            FormBuilderSign(name: "${e.name}_sign")
+                          ],
+                        ))
+                  ]),
+                  TableRow(children: [
+                    const Text("연락처"),
+                    ...list.map((e) => FormBuilderTextField(
+                          name: "${e.name}_contact",
+                          decoration:
+                              InputDecoration(hintText: "${e.hintText}연락처"),
+                        ))
+                  ]),
+                  TableRow(children: [
+                    const Text("이메일"),
+                    ...list.map((e) => FormBuilderTextField(
+                          name: "${e.name}_email",
+                          decoration:
+                              InputDecoration(hintText: "${e.hintText}이메일"),
+                        ))
+                  ]),
+                  TableRow(children: [
+                    const Text("핸드폰"),
+                    ...list.map((e) => FormBuilderTextField(
+                          name: "${e.name}_phone",
+                          decoration:
+                              InputDecoration(hintText: "${e.hintText}핸드폰"),
+                        ))
+                  ])
+                ],
+              );
+            }),
+            const Divider(),
+            Row(
+              children: [
+                Flexible(
+                  child: FclDateField(
+                    name: FclNewDetailFields.dateOfFirstPermit.name,
+                    label: "점검일자",
+                  ),
+                ),
+                const Flexible(child: SizedBox.shrink())
+              ],
+            ),
+            FieldWithLabel(
+              label: "점검자 ( 소속기관 / 성명 / 서명 )",
+              child: Obx(() => Column(
+                  children: List.generate(
+                      controller.checkerCount,
+                      (index) => Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Flexible(
+                                child: FclDateField(
+                                  name:
+                                      "${FclNewDetailFields.inspectionDate.name}_${index.toString()}",
+                                ),
+                              ),
+                              Flexible(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                        child: FormBuilderTextField(
+                                      name:
+                                          "${FclNewDetailFields.inspectorName.name}_${index.toString()}",
+                                      decoration: const InputDecoration(
+                                          hintText: "점검자성명"),
+                                    )),
+                                    FormBuilderSign(
+                                        name:
+                                            "${FclNewDetailFields.inspectorSignature.name}_${index.toString()}"),
+                                  ],
+                                ),
+                              )
+                            ],
+                          )))),
+            ),
+            OutlinedButton(
+                onPressed: () {
+                  controller.addChecker();
+                },
+                child: const Text("점검자 추가"))
           ],
         ));
   }

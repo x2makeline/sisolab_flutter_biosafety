@@ -3,7 +3,7 @@ import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dar
 
 import '../../../global/models/fcl_detail_controller.dart';
 
-enum FieldType { text, checkbox, date, dropdown, relatedPerson }
+enum FieldType { text, checkbox, date, dropdown, relatedPerson, sign }
 
 enum FclNewDetailFields {
   /// 운영기관
@@ -76,7 +76,19 @@ enum FclNewDetailFields {
 
     /// 의료기관
     "medical": "medical"
-  });
+  }),
+
+  /// 점검자 소속 기관
+  inspectorAffiliation(FieldType.text),
+
+  /// 점검 일자
+  inspectionDate(FieldType.text),
+
+  /// 점검자 성명
+  inspectorName(FieldType.text),
+
+  /// 점검자 서명
+  inspectorSignature(FieldType.sign);
 
   const FclNewDetailFields(this.type, {this.map})
       : assert(type != FieldType.dropdown || map != null);
@@ -86,10 +98,30 @@ enum FclNewDetailFields {
   final Map<String, String>? map;
 }
 
-class FclNewDetailController extends FclDetailController {
+class FclNewDetailController extends FclDetailController
+    with CheckerMixin, TabMixin {
   static FclNewDetailController get to => Get.find(); // add this line
   FclNewDetailController() : super(bigCategory: FclBigCategory.novel);
+}
 
+mixin TabMixin {
   /// 활성화 탭 index
-  final tabIndex = 0.obs;
+  final _tabIndex = 0.obs;
+
+  int get tabIndex => _tabIndex.value;
+
+  set tabIndex(int index) => _tabIndex.value = index;
+}
+
+mixin CheckerMixin {
+  /// 점검자 count
+  final _checkerCount = 1.obs;
+
+  int get checkerCount => _checkerCount.value;
+
+  set checkerCount(int count) => _checkerCount.value = count;
+
+  addChecker() {
+    _checkerCount.value++;
+  }
 }

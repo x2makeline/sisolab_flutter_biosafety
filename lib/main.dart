@@ -63,6 +63,7 @@ class MyApp extends StatelessWidget {
                       color: Color.fromRGBO(204, 204, 204, 1), width: 1)),
             )),
         initialBinding: GlobalBinding(),
-        getPages: routes);
+        getPages: routes,
+    );
   }
 }

@@ -81,11 +81,6 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              activeTab.title,
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const Divider(),
             activeTab.body
           ],
         )

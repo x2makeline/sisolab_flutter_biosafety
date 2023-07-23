@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/form_page_bottom.dart';
 import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/bindings/fcl_new_detail_binding.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 

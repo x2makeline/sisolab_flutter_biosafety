@@ -1,0 +1,43 @@
+
+# 회원 로그인
+GET http://125.6.37.38:9090/api/login.do?userid=min4&passwd=1234
+Content-Type: application/json
+
+
+###
+
+# 사용자 토큰 Refresh
+POST {{url}}/refreshToken.do
+Content-Type: application/json
+Access_Token: {{access_token}}
+Refresh_Token: {{refresh_token}}
+
+###
+
+# 현장점검 데이터 가져오기
+GET {{url}}/selectProcList.do?adn=fd2&idx=0&firstIndex=0&lastIndex=100
+Content-Type: application/json
+Access_Token: {{access_token}}
+
+
+
+###
+# 현장점검 리스트 데이터 가져오기
+GET {{url}}/selectProcField.do
+Content-Type: application/json
+Access_Token: {{access_token}}
+
+{
+  "gbn": "fd2",
+  "firstIndex": 0,
+  "lastIndex" : 100
+}
+
+
+###
+POST http://125.6.37.38/api/procList.do
+Content-Type: application/json
+
+{
+  "gbn" : "fd2"
+}

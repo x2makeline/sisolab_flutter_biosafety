@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_note.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 class NoteTemplate extends StatelessWidget {
   const NoteTemplate(
@@ -16,7 +17,7 @@ class NoteTemplate extends StatelessWidget {
     return FieldWithLabel(
         label: label,
         child: Column(
-          children: [...builder(context), FormBuilderNote(name: name, onSaved: onSaved,)],
+          children: [...builder(context), FormBuilderNote(name: name, onSaved: onSaved,)].withSpaceBetween(height: 10),
         ));
   }
 }

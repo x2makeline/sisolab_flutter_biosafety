@@ -25,21 +25,19 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
     super.initState();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
-
   FclTab get activeTab => widget.tabMapList.elementAt(widget.activeTabIndex);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+
         GridView.extent(
           shrinkWrap: true,
+          primary: false,
           maxCrossAxisExtent: 200,
           childAspectRatio: 10 / 3,
+
           addAutomaticKeepAlives: false,
           children: widget.tabMapList
               .asMap()
@@ -59,7 +57,7 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                         ),
                       )),
                     )
-                  : GestureDetector(
+                  : InkWell(
                       onTap: () => widget.onChange(entry.key),
                       child: Container(
                         decoration: BoxDecoration(
@@ -80,9 +78,7 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
         Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            activeTab.body
-          ],
+          children: [activeTab.body],
         )
       ],
     );

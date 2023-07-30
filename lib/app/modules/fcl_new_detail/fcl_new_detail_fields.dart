@@ -111,33 +111,65 @@ enum FclNewDetailFields {
   /// 연구자 및 관리자 생물안전교육 이수 이미지 비고
   cbtframImageNote(FieldType.text),
 
-  /// 관리 책임자 수
-  managerCount(FieldType.text),
+  /// 연구자 및 관리자 생물안전교육 이수 관리 책임자 수
+  cbtframManagerCount(FieldType.text),
 
-  /// 관리 책임자 radio
-  managerRadio(FieldType.select, map: yesOrNoMap),
+  /// 연구자 및 관리자 생물안전교육 이수 관리 책임자 radio
+  cbtframManagerRadio(FieldType.select, map: yesOrNoMap),
 
-  /// 관리 책임자 비고
-  managerNote(FieldType.text),
+  /// 연구자 및 관리자 생물안전교육 이수 관리 책임자 비고
+  cbtframManagerNote(FieldType.text),
 
-  /// 관리자 수
-  administratorCount(FieldType.text),
+  /// 연구자 및 관리자 생물안전교육 이수 관리자 수
+  cbtframAdministratorCount(FieldType.text),
 
-  /// 관리자 radio
-  administratorRadio(FieldType.select, map: yesOrNoMap),
+  /// 연구자 및 관리자 생물안전교육 이수 관리자 radio
+  cbtframAdministratorRadio(FieldType.select, map: yesOrNoMap),
 
-  /// 관리자 비고
-  administratorNote(FieldType.text),
+  /// 연구자 및 관리자 생물안전교육 이수 관리자 비고
+  cbtframAdministratorNote(FieldType.text),
 
-  /// 사용자 수
-  userCount(FieldType.text),
+  /// 연구자 및 관리자 생물안전교육 이수 사용자 수
+  cbtframUserCount(FieldType.text),
 
-  /// 사용자 radio
-  userRadio(FieldType.select, map: yesOrNoMap),
+  /// 연구자 및 관리자 생물안전교육 이수 사용자 radio
+  cbtframUserRadio(FieldType.select, map: yesOrNoMap),
 
-  /// 사용자 비고
-  userNote(FieldType.text)
-  ;
+  /// 연구자 및 관리자 생물안전교육 이수 사용자 비고
+  cbtframUserNote(FieldType.text),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 이미지
+  saepnssImage(FieldType.image),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 이미지 비고
+  saepnssImageNote(FieldType.text),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 관리 책임자 수
+  saepnssManagerCount(FieldType.text),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 관리 책임자 radio
+  saepnssManagerRadio(FieldType.select, map: yesOrNoMap),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 관리 책임자 비고
+  saepnssManagerNote(FieldType.text),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 관리자 수
+  saepnssAdministratorCount(FieldType.text),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 관리자 radio
+  saepnssAdministratorRadio(FieldType.select, map: yesOrNoMap),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 관리자 비고
+  saepnssAdministratorNote(FieldType.text),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 사용자 수
+  saepnssUserCount(FieldType.text),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 사용자 radio
+  saepnssUserRadio(FieldType.select, map: yesOrNoMap),
+
+  /// 밀폐구역 출입자 정상 혈청 보관 사용자 비고
+  saepnssUserNote(FieldType.text);
 
 
   const FclNewDetailFields(this.type, {this.map})

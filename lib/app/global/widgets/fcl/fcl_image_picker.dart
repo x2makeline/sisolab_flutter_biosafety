@@ -8,38 +8,45 @@ import 'package:form_builder_file_picker/form_builder_file_picker.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 class FclImagePicker extends StatefulWidget {
-  const FclImagePicker({Key? key, this.onChange}) : super(key: key);
+  const FclImagePicker({Key? key, this.onChange, this.initialValue})
+      : super(key: key);
   final void Function(List<PlatformFile> files)? onChange;
+  final List<PlatformFile>? initialValue;
 
   @override
   State<FclImagePicker> createState() => _FclImagePickerState();
 }
 
 class _FclImagePickerState extends State<FclImagePicker> {
-  List<PlatformFile> files = [];
+  late List<PlatformFile> files;
 
-  Widget get _fileImageList => Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: List.generate(
-          files.length,
-          (index) {
-            return Container(
-                height: 50,
-                width: 50,
-                margin: const EdgeInsets.only(right: 2),
-                child: Container(
-                    alignment: Alignment.center,
-                    child: kIsWeb
-                        ? Image.memory(files[index].bytes!, fit: BoxFit.cover)
-                        : Image.file(File(files[index].path!),
-                            fit: BoxFit.cover)));
-          },
-        ).withSpaceBetween(width: 10),
-      );
+  List<Widget> get _fileImageList => List.generate(
+    files.length,
+        (index) {
+      return Container(
+          height: 50,
+          width: 50,
+          margin: const EdgeInsets.only(right: 2),
+          child: Container(
+              alignment: Alignment.center,
+              child: kIsWeb
+                  ? Image.memory(files[index].bytes!, fit: BoxFit.cover)
+                  : Image.file(File(files[index].path!),
+                  fit: BoxFit.cover)));
+    },
+  );
+
+  @override
+  void initState() {
+    super.initState();
+    // FormBu
+    files = widget.initialValue ?? [];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           height: 55,
@@ -61,10 +68,11 @@ class _FclImagePickerState extends State<FclImagePicker> {
                         for (var element in fis) {
                           files.add(element);
                         }
-
                       });
-                      widget.onChange?.let((it) => it(result?.files ?? []));
-                      setState(() {});
+
+                      setState(() {
+                        widget.onChange?.let((it) => it(files));
+                      });
                     },
                     child: const Padding(
                         padding: EdgeInsets.all(8), child: Text("파일선택"))),
@@ -84,7 +92,11 @@ class _FclImagePickerState extends State<FclImagePicker> {
             ].withSpaceBetween(width: 10),
           ),
         ),
-        _fileImageList
+        if(_fileImageList.isNotEmpty)
+          SizedBox(
+            height: 50,
+            child: ListView(scrollDirection: Axis.horizontal , children: _fileImageList,),
+          )
       ].withSpaceBetween(height: 10),
     );
   }
@@ -101,6 +113,7 @@ class FormBuilderFclImagePicker extends StatelessWidget {
       name: name,
       builder: (FormFieldState<List<PlatformFile>> field) => FclImagePicker(
         onChange: field.setValue,
+        initialValue: field.value,
       ),
     );
   }

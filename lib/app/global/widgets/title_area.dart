@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 class TitleArea extends StatelessWidget {
   const TitleArea({super.key, required this.title});
@@ -7,15 +8,15 @@ class TitleArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
-        const SizedBox(height: 50),
+        SizedBox(height: 100.sz),
         Text(
           title,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headlineLarge,
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: 60.sz),
       ],
     );
   }

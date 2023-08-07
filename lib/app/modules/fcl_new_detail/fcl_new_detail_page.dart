@@ -5,6 +5,7 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/detail_category_tab
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_page_bottom.dart';
 import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 import '../../global/widgets/layout.dart';
 
@@ -18,16 +19,16 @@ class FclNewDetailPage extends GetView<FclNewDetailController> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 47.sz,
           ),
           Text(
             "문서번호 : ${controller.docNo ?? ""}",
             textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-          const SizedBox(
-            height: 10,
+           SizedBox(
+            height: 46.sz,
           ),
           FormBuilder(
               key: controller.formKey,

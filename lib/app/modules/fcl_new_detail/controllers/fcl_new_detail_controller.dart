@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dart';
 
@@ -19,6 +21,10 @@ mixin TabMixin {
   int get tabIndex => _tabIndex.value;
 
   set tabIndex(int index) => _tabIndex.value = index;
+
+  backTabIndex() {
+    // _tabIndex.value = min(0, index);
+  }
 }
 
 mixin CheckerMixin {

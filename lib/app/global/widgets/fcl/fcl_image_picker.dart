@@ -5,7 +5,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_file_picker/form_builder_file_picker.dart';
+import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class FclImagePicker extends StatefulWidget {
   const FclImagePicker({Key? key, this.onChange, this.initialValue})
@@ -21,20 +24,16 @@ class _FclImagePickerState extends State<FclImagePicker> {
   late List<PlatformFile> files;
 
   List<Widget> get _fileImageList => List.generate(
-    files.length,
-        (index) {
-      return Container(
-          height: 50,
-          width: 50,
-          margin: const EdgeInsets.only(right: 2),
-          child: Container(
-              alignment: Alignment.center,
-              child: kIsWeb
-                  ? Image.memory(files[index].bytes!, fit: BoxFit.cover)
-                  : Image.file(File(files[index].path!),
-                  fit: BoxFit.cover)));
-    },
-  );
+        files.length,
+        (index) => kIsWeb
+            ? Image.memory(files[index].bytes!, fit: BoxFit.fill)
+            : Image.file(File(files[index].path!), fit: BoxFit.fill)
+                .centered()
+                .box
+                .width(100.sz)
+                .height(100.sz)
+                .make(),
+      );
 
   @override
   void initState() {
@@ -44,62 +43,57 @@ class _FclImagePickerState extends State<FclImagePicker> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: 55,
-          child: Row(
-            children: [
-              SizedBox(
-                height: double.infinity,
-                child: ElevatedButton(
-                    style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(Colors.black)),
-                    onPressed: () async {
-                      final result = await FilePicker.platform.pickFiles(
-                        allowMultiple: true,
-                        type: FileType.image,
-                      );
+  Widget build(BuildContext context) => <Widget>[
+        <Widget>[
+          ElevatedButton(
+              style: const ButtonStyle(
+                  backgroundColor:
+                      MaterialStatePropertyAll<Color>(Color(0xff505050))),
+              onPressed: () async {
+                final result = await FilePicker.platform.pickFiles(
+                  allowMultiple: true,
+                  type: FileType.image,
+                );
 
-                      result?.files.let((fis) {
-                        for (var element in fis) {
-                          files.add(element);
-                        }
-                      });
+                result?.files.let((fis) {
+                  for (var element in fis) {
+                    files.add(element);
+                  }
+                });
 
-                      setState(() {
-                        widget.onChange?.let((it) => it(files));
-                      });
-                    },
-                    child: const Padding(
-                        padding: EdgeInsets.all(8), child: Text("파일선택"))),
-              ),
-              Expanded(
-                child: Container(
-                  alignment: Alignment.centerLeft,
-                  height: double.infinity,
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.black)),
-                  child: const Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    child: Text("이미지를 선택해주세요."),
-                  ),
-                ),
-              ),
-            ].withSpaceBetween(width: 10),
-          ),
-        ),
-        if(_fileImageList.isNotEmpty)
-          SizedBox(
-            height: 50,
-            child: ListView(scrollDirection: Axis.horizontal , children: _fileImageList,),
-          )
-      ].withSpaceBetween(height: 10),
-    );
-  }
+                setState(() {
+                  widget.onChange?.let((it) => it(files));
+                });
+              },
+              child:
+              "파일선택".text.size(28.sz).make().paddingAll(30.sz)),
+          "이미지를 선택해주세요."
+              .text
+              .color(const Color(0xff767676))
+              .make()
+              .paddingOnly(left: 20.sz)
+              .box
+              .alignCenterLeft
+              .withDecoration(BoxDecoration(
+                  border: Border.all(color: const Color(0xffe0e0e0))))
+              .make()
+              .paddingOnly(left: 10.sz)
+              .expand(),
+        ].hStack().box.height(90.sz).make(),
+        if (_fileImageList.isNotEmpty)
+          _fileImageList
+              .withSpaceBetween(width: 20.sz)
+              .hStack(
+                alignment: MainAxisAlignment.start,
+              )
+              .scrollHorizontal()
+              .box
+              .width(double.infinity)
+              .padding(EdgeInsets.symmetric(vertical: 20.sz))
+              .make()
+      ]
+          .withSpaceBetween(height: 15.sz)
+          .vStack(alignment: MainAxisAlignment.start);
 }
 
 class FormBuilderFclImagePicker extends StatelessWidget {

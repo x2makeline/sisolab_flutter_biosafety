@@ -15,7 +15,7 @@ Refresh_Token: {{refresh_token}}
 ###
 
 # 현장점검 데이터 가져오기
-GET {{url}}/selectProcList.do?adn=fd2&idx=0&firstIndex=0&lastIndex=100
+GET {{url}}/selectProcList.do?adn=fd2&firstIndex=0&lastIndex=100
 Content-Type: application/json
 Access_Token: {{access_token}}
 
@@ -23,15 +23,10 @@ Access_Token: {{access_token}}
 
 ###
 # 현장점검 리스트 데이터 가져오기
-GET {{url}}/selectProcField.do
+GET {{url}}/selectProcField.do?gdn=fd2
 Content-Type: application/json
 Access_Token: {{access_token}}
 
-{
-  "gbn": "fd2",
-  "firstIndex": 0,
-  "lastIndex" : 100
-}
 
 
 ###

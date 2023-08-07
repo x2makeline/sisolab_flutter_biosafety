@@ -21,7 +21,7 @@ class Constant {
 final List<FclTab> newTabList = [
   FclTab(title: "점검개요", body: const InspectionOverview()),
   FclTab(title: "취급생물체정보", body: const HandlingOrganismInformation()),
-  FclTab(title: "기본 자료 확인", body:  CheckBasicData()),
+  FclTab(title: "기본 자료 확인", body: CheckBasicData()),
   FclTab(title: "실험구역 설치 적절성 확인", body: Text("실험구역 설치 적절성 확인")),
   FclTab(title: "공기조절", body: Text("공기조절")),
   FclTab(title: "건축 특성 확인", body: Text("건축 특성 확인")),

@@ -25,7 +25,7 @@ class Layout extends StatelessWidget {
                   TitleArea(
                     title: title,
                   ),
-                  const FclDivider.form(),
+                  const FclDivider.black(),
                   child,
                 ],
               ),

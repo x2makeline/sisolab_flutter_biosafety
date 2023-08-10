@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 import 'app/global/bindings/global_binding.dart';
@@ -29,16 +30,9 @@ class MyApp extends StatelessWidget {
       ],
       locale: const Locale('ko'),
       debugShowCheckedModeBanner: false,
-      enableLog: true,
-      initialRoute: AppRoutes.fclNewDetailSelect.name
-          .replaceFirst(":docNo", "HR4-2306-315"),
+      initialRoute: AppRoutes.fclNewLIst.name,
       theme: ThemeData(
-
-          buttonTheme: ButtonThemeData(
-            height: 90.sz,
-            buttonColor: const Color(0xffffffff),
-            padding: const EdgeInsets.all(30),
-          ),
+          buttonTheme: buttonMainTheme,
           fontFamily: "NotoSansCJKkr",
           primarySwatch: Colors.red,
           primaryColor: const Color(0xff188657),

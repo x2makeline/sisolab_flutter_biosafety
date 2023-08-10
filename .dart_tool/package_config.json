@@ -182,6 +182,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "dio",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/dio-5.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "envied",
       "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/envied-0.3.0+3",
       "packageUri": "lib/",
@@ -740,7 +746,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-08-05T08:14:17.829726Z",
+  "generated": "2023-08-10T12:19:19.831690Z",
   "generator": "pub",
   "generatorVersion": "3.0.6"
 }

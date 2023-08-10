@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_page_bottom.dart';
 import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/bindings/fcl_new_detail_binding.dart';
+import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_list/fcl_new_list_binding.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 
 import '../app/modules/fcl_new_detail/fcl_new_detail_page.dart';
@@ -38,6 +39,7 @@ abstract class AppRoutes {
   static GetPage fclRegularList = GetPage(
       name: "/fcl/regular/list",
       page: () => const FclRegularListPage(),
+
       title:
           "${Constant.regularTitle} ${Constant.fclTitle} ${Constant.listTitle}");
   static GetPage fclNewDetailForm = GetPage(
@@ -61,5 +63,6 @@ abstract class AppRoutes {
   static GetPage fclNewLIst = GetPage(
       name: "/fcl/new/list",
       page: () => const FclNewListPage(),
+      binding: FclNewListBinding(),
       title: "${Constant.newTitle} ${Constant.fclTitle} ${Constant.listTitle}");
 }

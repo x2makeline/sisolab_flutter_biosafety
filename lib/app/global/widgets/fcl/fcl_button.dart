@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
 
 
@@ -36,7 +37,7 @@ class FclButton extends ButtonStyleButton {
           style: const ButtonStyle(
               foregroundColor: MaterialStatePropertyAll<Color>(Colors.white),
               backgroundColor:
-                  MaterialStatePropertyAll<Color>(Color(0xff188657)),
+                  MaterialStatePropertyAll<Color>(ColorGroup.green),
               elevation: MaterialStatePropertyAll<double>(0),
               side: MaterialStatePropertyAll<BorderSide>(
                   BorderSide(color: Color(0xffe0e0e0)))),

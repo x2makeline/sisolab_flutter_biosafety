@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 final buttonMainTheme = ButtonThemeData(
@@ -11,7 +12,7 @@ final buttonMainTheme = ButtonThemeData(
 final primaryButtonStyle = ButtonStyle(
     padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(buttonMainTheme.padding),
     foregroundColor: const MaterialStatePropertyAll<Color>(Colors.white),
-    backgroundColor: const MaterialStatePropertyAll<Color>(Color(0xff188657)),
+    backgroundColor: const MaterialStatePropertyAll<Color>(ColorGroup.green),
     elevation: const MaterialStatePropertyAll<double>(0),
     side: const MaterialStatePropertyAll<BorderSide>(
         BorderSide(color: Color(0xffe0e0e0))));

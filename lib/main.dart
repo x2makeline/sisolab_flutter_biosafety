@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 import 'app/global/bindings/global_binding.dart';
@@ -30,12 +31,14 @@ class MyApp extends StatelessWidget {
       ],
       locale: const Locale('ko'),
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.fclNewLIst.name,
+      initialRoute: AppRoutes.home.name,
+
       theme: ThemeData(
+
           buttonTheme: buttonMainTheme,
           fontFamily: "NotoSansCJKkr",
           primarySwatch: Colors.red,
-          primaryColor: const Color(0xff188657),
+          primaryColor: ColorGroup.green,
           textTheme: TextTheme(
               bodyMedium: defaultTextStyle.copyWith(fontSize: 28.sz),
               headlineLarge: defaultTextStyle.copyWith(
@@ -68,7 +71,7 @@ class MyApp extends StatelessWidget {
             elevation: 0,
             backgroundColor: Colors.white,
             actionsIconTheme: IconThemeData(size: 40, color: Colors.black),
-            shape: Border(bottom: BorderSide(width: 1)),
+            shape: Border(bottom: BorderSide(width: 1, color: ColorGroup.gray)),
           )),
       initialBinding: GlobalBinding(),
       getPages: routes,

@@ -2,17 +2,15 @@ import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-class NetworkVm extends GetxController {
+class NetworkVm extends GetxService with FclLogger {
   final _connectivity = Connectivity();
 
   static NetworkVm get to => Get.find<NetworkVm>();
   late final StreamSubscription<ConnectivityResult> _listen;
 
-  final _connectivityResult = Rxn<ConnectivityResult>()
-    ..listen((p0) {
-      print(p0);
-    });
+  final _connectivityResult = Rxn<ConnectivityResult>();
 
   /// ---
   bool get isConnect => _connectivityResult.value != null
@@ -22,7 +20,6 @@ class NetworkVm extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    print("onInit");
     _listen =
         _connectivity.onConnectivityChanged.listen((ConnectivityResult result) {
       _connectivityResult.value = result;
@@ -35,8 +32,6 @@ class NetworkVm extends GetxController {
 
   @override
   void dispose() {
-    super.dispose();
-
     _listen.cancel();
   }
 }

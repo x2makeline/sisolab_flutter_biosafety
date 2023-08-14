@@ -17,7 +17,6 @@ class FclNewListPageController extends GetxController {
 
   /// ------------------------------------------------------
   fetch() {
-    print(123);
     _repository.selectProcList(_param.value).then((value) {
       if (value.isSuccess) {
         _list.value = AsyncStatus.success(value);

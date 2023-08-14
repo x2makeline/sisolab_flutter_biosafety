@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
 
 /// 취급생물체정보
 class HandlingOrganismInformation extends StatelessWidget {

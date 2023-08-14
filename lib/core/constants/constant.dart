@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/widgets/check_basic_data.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/widgets/handling_organism_information.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/widgets/inspection_overview.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/check_basic_data.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/handling_organism_information.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/inspection_overview.dart';
 
 class Constant {
   static const String fclTitle = '생물안전 3등급 시설 현장점검표';

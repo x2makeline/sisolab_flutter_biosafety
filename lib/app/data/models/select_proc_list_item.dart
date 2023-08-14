@@ -4,13 +4,17 @@ part 'select_proc_list_item.g.dart';
 
 @JsonSerializable()
 class SelectProcListItem {
+  /// 점검 일자
   String d168;
   String mod_user_name;
 
+  /// 설치 운영 장소
   String d184;
   int simcnt;
+  /// 문서번호
   String docno;
   String title;
+  /// 등록자
   String reg_id;
   String gbn_nm;
   String gbn;

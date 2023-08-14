@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_note_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_person_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 

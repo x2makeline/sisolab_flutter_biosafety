@@ -1,3 +1,5 @@
+import 'package:sisolab_flutter_biosafety/app/global/errors/api_error.dart';
+
 class ApiResponse<D> {
   static const successResult = "1";
 
@@ -13,16 +15,28 @@ class ApiResponse<D> {
         isSuccess = result == successResult;
 
   ApiResponse.fromJson(Map<String, dynamic> json,
-      [D Function(Map<String, dynamic>)? fromJson])
+      {D Function(dynamic)? fromJson, String fieldName = "data"})
       : result = json['result'] as String,
         message = json["message"] as String,
         isError = json['result'] != successResult,
         isSuccess = json['result'] == successResult,
-        data = fromJson != null ? fromJson(json['data']) : null;
+        data = fromJson != null ? fromJson(json[fieldName]) : null;
 
   Map<String, dynamic> toJson(ApiResponse<D> instance) => <String, dynamic>{
         'result': instance.result,
         'message': instance.message,
         'data': instance.data
       };
+
+  @override
+  String toString() =>
+      'ApiResponse{result: $result, data: $data, message: $message, isSuccess: $isSuccess, isError: $isError}';
+
+  filter() {
+    if (isError) {
+      throw ApiError(this);
+    } else {
+      return this;
+    }
+  }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_regular_detail/controllers/fcl_regular_detail_controller.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_regular_detail/controllers/fcl_regular_detail_controller.dart';
 
 import 'fcl_big_category.dart';
 import 'fcl_detail_form_state.dart';

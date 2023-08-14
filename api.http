@@ -7,7 +7,7 @@ Content-Type: application/json
 ###
 
 # 사용자 토큰 Refresh
-POST {{url}}/refreshToken.do
+POST {{url}}/api/refreshToken.do
 Content-Type: application/json
 Access_Token: {{access_token}}
 Refresh_Token: {{refresh_token}}

@@ -9,8 +9,8 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_dropdown
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_sign.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
-import 'package:sisolab_flutter_biosafety/app/modules/fcl_new_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 import '../../../global/widgets/field_with_label.dart';

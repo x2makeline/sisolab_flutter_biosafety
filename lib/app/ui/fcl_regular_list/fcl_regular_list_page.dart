@@ -56,7 +56,6 @@ class FclRegularListPage extends StatelessWidget {
                                         Navigator.of(context).pop();
                                       },
                                       onSubmit: (c) {
-                                        print(c.runtimeType.toString());
                                         Navigator.of(context).pop();
                                       },
                                     ),

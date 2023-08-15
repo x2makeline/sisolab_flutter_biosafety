@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
 class DetailCategoryTab extends StatefulWidget {
   const DetailCategoryTab(
@@ -29,60 +30,58 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
   FclTab get activeTab => widget.tabMapList.elementAt(widget.activeTabIndex);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        GridView.extent(
-          shrinkWrap: true,
-          primary: false,
-          maxCrossAxisExtent: 292.sz,
-          childAspectRatio: 292 / 90,
-          addAutomaticKeepAlives: false,
-          children: widget.tabMapList
-              .asMap()
-              .entries
-              .map((entry) => Container(
-                    height: 90.sz,
-                    width: 292.sz,
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: const Color(0xffe0e0e0), width: 1)),
-                    child: entry.key == widget.activeTabIndex
-                        ? Container(
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).primaryColor,
-                            ),
-                            child: Center(
-                                child: Text(
-                              entry.value.title,
-                              textAlign: TextAlign.center,
-                              style:  TextStyle(
-                                color: Colors.white,
-                                fontSize: 24.sz,
+  Widget build(BuildContext context) => Column(
+        children: [
+          GridView.extent(
+            shrinkWrap: true,
+            primary: false,
+            maxCrossAxisExtent: 292.w,
+            childAspectRatio: 292 / 90,
+            addAutomaticKeepAlives: false,
+            children: widget.tabMapList
+                .asMap()
+                .entries
+                .map((entry) => Container(
+                      height: 90.h,
+                      width: 292.w,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color(0xffe0e0e0), width: 1)),
+                      child: entry.key == widget.activeTabIndex
+                          ? Container(
+                              decoration: const BoxDecoration(
+                                color: ColorGroup.green,
                               ),
-                            )),
-                          )
-                        : InkWell(
-                            onTap: () => widget.onChange(entry.key),
-                            child: Center(
-                                child: Text(
-                              entry.value.title,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: 24.sz),
-                            )),
-                          ),
-                  ))
-              .toList(),
-        ),
-         SizedBox(
-          height: 40.sz,
-        ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [activeTab.body],
-        )
-      ],
-    );
-  }
+                              child: Center(
+                                  child: Text(
+                                    entry.value.title,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24.sp,
+                                    ),
+                                  )),
+                            )
+                          : InkWell(
+                              onTap: () => widget.onChange(entry.key),
+                              child: Center(
+                                  child: Text(
+                                    entry.value.title,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(fontSize: 24.sp),
+                                  )),
+                            ),
+                    ))
+                .toList(),
+          ),
+          SizedBox(
+            height: 40.h,
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [activeTab.body],
+          )
+        ],
+      );
 }

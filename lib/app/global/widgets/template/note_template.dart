@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_note.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
@@ -27,6 +28,6 @@ class NoteTemplate extends StatelessWidget {
               name: name,
               onSaved: onSaved,
             )
-          ].withSpaceBetween(height: 10.sz),
+          ].withSpaceBetween(height: 10.h),
         ));
 }

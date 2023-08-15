@@ -4,47 +4,63 @@ part 'select_proc_list_item.g.dart';
 
 @JsonSerializable()
 class SelectProcListItem {
-  /// 점검 일자
+  /// 최근점검일
   String d168;
-  String mod_user_name;
+  @JsonKey(name: "mod_user_name")
+  String modUserName;
 
-  /// 설치 운영 장소
+  /// 장소(시설명)
   String d184;
   int simcnt;
+
   /// 문서번호
   String docno;
   String title;
+
   /// 등록자
-  String reg_id;
-  String gbn_nm;
+  @JsonKey(name: 'reg_id')
+  String regId;
+  @JsonKey(name: 'gbn_nm')
+  String gbnNm;
   String gbn;
-  int RNUM;
+  @JsonKey(name: 'RNUM')
+  int rnum;
   int totalCnt;
-  String mod_id;
-  String mod_datetime;
-  int reg_datetime;
-  String status_nm;
+  @JsonKey(name: 'mod_id')
+  String modId;
+
+  /// 작성일자
+  @JsonKey(name: 'mod_datetime')
+  String modDatetime;
+  @JsonKey(name: 'reg_datetime')
+  int regDatetime;
+  @JsonKey(name: 'status_nm')
+  String statusNm;
+
+  /// 기관명
   String company;
   int idx;
+
+  /// 최초허가일
   String d158;
   String status;
 
   SelectProcListItem(
       {this.d168 = "",
-      this.mod_user_name = "",
+      this.modUserName = "",
       this.d184 = "",
       this.simcnt = 0,
       this.docno = "",
       this.title = "",
-      this.reg_id = "",
-      this.gbn_nm = "",
+      this.regId = "",
+      this.gbnNm = "",
       this.gbn = "",
-      this.RNUM = 0,
+      this.rnum = 0,
       this.totalCnt = 0,
-      this.mod_id = "",
-      this.mod_datetime = "",
-      this.reg_datetime = 0,
-      this.status_nm = "",
+      this.modId = "",
+      this.modDatetime = "",
+      this.regDatetime = 0,
+      this.statusNm = "",
       this.company = "",
       this.idx = 0,
       this.d158 = "",

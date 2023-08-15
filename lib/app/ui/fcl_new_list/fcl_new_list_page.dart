@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_between_date.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_list/fcl_new_list_page_controller.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_list/fcl_new_list_page_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
@@ -18,92 +18,122 @@ class _Item extends StatelessWidget {
 
   final SelectProcListItem info;
 
-  Widget _titleCol(List<String> strs) {
-    return DefaultTextStyle.merge(
-        style: TextStyle(fontSize: 24.sz, fontWeight: FontWeight.w500),
-        child: Flexible(
-          flex: 1,
-          fit: FlexFit.tight,
-          child: Column(
+  static final TextStyle _titleStyle = TextStyle(
+      fontSize: 24.sp,
+      fontWeight: FontWeight.w500,
+      color: const Color(0xff767676));
 
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: strs
-                .map((e) => Text(e))
-                .toList()
-                .withSpaceBetween(height: 22.sz),
-          ),
-        ));
-  }
-
-  Widget _contentCol(List<String> strs) {
-    return DefaultTextStyle.merge(
-        style: TextStyle(fontSize: 24.sz),
-        child: Flexible(
-          flex: 1,
-          fit: FlexFit.tight,
-          child: Column(
-
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: strs
-                .map((e) => Text(e))
-                .toList()
-                .withSpaceBetween(height: 22.sz),
-          ),
-        ));
-  }
+  static final TextStyle _contentStyle = TextStyle(fontSize: 24.sp);
 
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Flexible(
-            flex: 2,
-            fit: FlexFit.tight,
-            child: Center(
-                child: Text(info.docno,
-                    style: TextStyle(
-                        fontWeight: FontWeight.w500, fontSize: 28.sz)))),
-        _titleCol(['기관명', '최근점검일']),
-        _contentCol([info.company, info.reg_datetime.toString()]),
-        Flexible(
-          flex: 2,
-          fit: FlexFit.tight,
-          child: Column(
-            children: [Text("기관명"), Text("최근점검일")],
+    return InkWell(
+      onTap: () {
+        Get.toNamed("/fcl/new/detail/${info.docno}");
+      },
+      child: Table(
+        columnWidths: const <int, TableColumnWidth>{
+          0: FlexColumnWidth(3),
+          1: FlexColumnWidth(2),
+          2: FlexColumnWidth(3),
+          3: FlexColumnWidth(2),
+          4: FlexColumnWidth(3),
+          5: FlexColumnWidth(2),
+          6: FlexColumnWidth(3),
+        },
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        children: <TableRow>[
+          TableRow(
+            children: <Widget>[
+              TableCell(
+                verticalAlignment: TableCellVerticalAlignment.middle,
+                child: Text(info.docno),
+              ),
+              TableCell(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "기관명",
+                    style: _titleStyle,
+                  ),
+                  Text(
+                    "최근점검일",
+                    style: _titleStyle,
+                  )
+                ].withSpaceBetween(height: 20.h),
+              )),
+              TableCell(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    info.company,
+                    style: _contentStyle,
+                  ),
+                  Text(
+                    info.d168,
+                    style: _contentStyle,
+                  )
+                ].withSpaceBetween(height: 20.h),
+              )),
+              TableCell(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '장소(시설명)',
+                    style: _titleStyle,
+                  ),
+                  Text(
+                    "작성일자",
+                    style: _titleStyle,
+                  )
+                ].withSpaceBetween(height: 20.h),
+              )),
+              TableCell(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    info.d184,
+                    style: _contentStyle,
+                  ),
+                  Text(info.modDatetime, style: _contentStyle)
+                ].withSpaceBetween(height: 20.h),
+              )),
+              TableCell(
+                  verticalAlignment: TableCellVerticalAlignment.top,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "최초허가일",
+                        style: _titleStyle,
+                      )
+                    ],
+                  )),
+              TableCell(
+                  verticalAlignment: TableCellVerticalAlignment.top,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        info.d158,
+                        style: _contentStyle,
+                      )
+                    ],
+                  ))
+            ],
           ),
-        ),
-        _titleCol(['장소(시설명)', '작성일자']),
-        Flexible(
-          flex: 1,
-          fit: FlexFit.tight,
-          child: Column(
-            children: [Text("기관명"), Text("최근점검일")],
-          ),
-        ),
-        Flexible(
-          flex: 2,
-          fit: FlexFit.tight,
-          child: Column(
-            children: [Text("기관명"), Text("최근점검일")],
-          ),
-        ),
-        _titleCol(['최초허가일']),
-        Flexible(
-          flex: 2,
-          fit: FlexFit.tight,
-          child: Column(
-            children: [Text("기관명"), Text("최근점검일")],
-          ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }
 
-class FclNewListPage extends GetView<FclNewListPageController> {
+class FclNewListPage extends GetView<FclNewListPageVm> {
   const FclNewListPage({super.key});
 
   @override
@@ -111,63 +141,75 @@ class FclNewListPage extends GetView<FclNewListPageController> {
     return Layout(
       title: "${Constant.newTitle}\n${Constant.fclTitle}",
       child: Padding(
-        padding: EdgeInsets.only(top: 47.sz),
+        padding: EdgeInsets.only(top: 47.h),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                const Flexible(
+                Flexible(
                   child: FieldWithLabel(
                     label: "제출기관",
                     child: TextField(
-                      decoration: InputDecoration(hintText: "제출기관"),
+                      style: TextStyle(fontSize: 28.sp),
+                      decoration: const InputDecoration(hintText: "제출기관"),
                     ),
                   ),
                 ),
                 Flexible(
                   child: FieldWithLabel(
                     label: "기간선택",
-                    child: FormBuilderDateRangePicker(
-                      name: "t",
-                      firstDate: DateTime.now(),
-                      lastDate: DateTime.now(),
+                    child: FormBuilderBetweenDate(
+                      endName: "test",
+                      startName: "test1",
                     ),
                   ),
                 )
-              ].withSpaceBetween(width: 40.sz),
+              ].withSpaceBetween(width: 40.w),
             ),
             SizedBox(
-              height: 47.sz,
+              height: 47.h,
             ),
             const FclDivider.form(),
             SizedBox(
-              height: 40.sz,
+              height: 40.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
+                    OutlinedButton(onPressed: () {}, child: const Text("엑셀다운")),
                     ElevatedButton(
-                        style: whiteButtonStyle,
+                        style: const ButtonStyle(
+                            backgroundColor:
+                                MaterialStatePropertyAll<Color>(Colors.black)),
                         onPressed: () {},
-                        child: Text("엑셀다운", style: buttonTextStyle)),
-                    ElevatedButton(
-                        style: blackButtonStyle,
-                        onPressed: () {},
-                        child: Text("신규등록", style: buttonTextStyle)),
-                  ].withSpaceBetween(width: 24.sz),
+                        child: const Text("신규등록")),
+                  ].withSpaceBetween(width: 24.w),
                 ),
-                ElevatedButton(
-                    style: primaryButtonStyle,
-                    onPressed: () {},
-                    child: Text("엑셀다운", style: buttonTextStyle)),
+                ElevatedButton(onPressed: () {
+                  controller.fetch();
+                }, child: const Text("조회")),
               ],
             ),
             SizedBox(
-              height: 60.sz,
+              height: 60.h,
             ),
-            const Text("hi"),
+            Obx(() => Text.rich(
+                style: TextStyle(fontSize: 24.sp),
+                TextSpan(children: [
+                  const TextSpan(text: "총 게시글 "),
+                  TextSpan(
+                      text: (controller.list.hasData
+                              ? controller.list.data!.data!.data.length
+                              : 0)
+                          .toString(),
+                      style: robotoTextStyle.copyWith(
+                          color: const Color(0xffff381e),
+                          fontWeight: FontWeight.w500)),
+                  const TextSpan(text: "건")
+                ]))),
             const FclDivider.black(),
             Obx(() => controller.list.hasData
                 ? ListView(

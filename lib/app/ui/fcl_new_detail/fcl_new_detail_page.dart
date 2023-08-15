@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/detail_category_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_page_bottom.dart';
@@ -20,7 +21,7 @@ class FclNewDetailPage extends GetView<FclNewDetailController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
            SizedBox(
-            height: 47.sz,
+            height: 47.h,
           ),
           Text(
             "문서번호 : ${controller.docNo ?? ""}",
@@ -28,7 +29,7 @@ class FclNewDetailPage extends GetView<FclNewDetailController> {
             style: Theme.of(context).textTheme.headlineMedium,
           ),
            SizedBox(
-            height: 46.sz,
+            height: 24.h,
           ),
           FormBuilder(
               key: controller.formKey,

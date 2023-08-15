@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_checkbox_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_date_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_dropdown_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
@@ -26,16 +26,16 @@ class InspectionOverview extends GetView<FclNewDetailController> {
       children: [
         Text("점검개요", style: Theme.of(context).textTheme.headlineSmall),
         SizedBox(
-          height: 22.sz,
+          height: 22.h,
         ),
         const FclDivider.black(),
         SizedBox(
-          height: 47.sz,
+          height: 47.h,
         ),
         TightGridView(
           crossAxisCount: 2,
-          crossAxisSpacing: 40.sz,
-          mainAxisSpacing: 40.sz,
+          crossAxisSpacing: 40.w,
+          mainAxisSpacing: 40.h,
           children: [
             FclTextField(
               hintText: "운영기관명",
@@ -55,69 +55,70 @@ class InspectionOverview extends GetView<FclNewDetailController> {
           ],
         ),
         SizedBox(
-          height: 47.sz,
+          height: 47.h,
         ),
         const FclDivider.form(),
         SizedBox(
-          height: 47.sz,
+          height: 47.h,
         ),
         FieldWithLabel(
           label: "시설내역",
           // labelPadding: 44.sz,
           child: DefaultTextStyle(
-            style: TextStyle(color: const Color(0xff101010), fontSize: 28.sz),
+            style: TextStyle(color: const Color(0xff101010), fontSize: 28.sp),
             child: GridView.extent(
               shrinkWrap: true,
               primary: false,
-              maxCrossAxisExtent: 400.sz,
+              maxCrossAxisExtent: 400.w,
               childAspectRatio: 200 / 56,
-              mainAxisSpacing: 80.sz,
               addAutomaticKeepAlives: false,
               children: [
                 FormBuilderCheckbox(
                   name: FclNewDetailFields.generalOfFacilityDetails.name,
-                  title: const Text("일반"),
+                  title: Text(
+                    "일반",
+                    style: TextStyle(fontSize: 28.sp),
+                  ),
                 ),
                 FormBuilderCheckbox(
                   name: FclNewDetailFields.massCultureOfFacilityDetails.name,
-                  title: const Text("대량배양"),
+                  title: Text("대량배양", style: TextStyle(fontSize: 28.sp)),
                 ),
                 FormBuilderCheckbox(
                   name: FclNewDetailFields.animalOfFacilityDetails.name,
-                  title: const Text("동물"),
+                  title: Text("동물", style: TextStyle(fontSize: 28.sp)),
                 ),
                 FormBuilderCheckbox(
                   name: FclNewDetailFields.plantOfFacilityDetails.name,
-                  title: const Text("식물"),
+                  title: Text("식물", style: TextStyle(fontSize: 28.sp)),
                 ),
                 FormBuilderCheckbox(
                   name: FclNewDetailFields.bugOfFacilityDetails.name,
-                  title: const Text("곤충"),
+                  title: Text("곤충", style: TextStyle(fontSize: 28.sp)),
                 ),
                 FormBuilderCheckbox(
                   name: FclNewDetailFields.newPermissionOfFacilityDetails.name,
-                  title: const Text("신규허가"),
+                  title: Text("신규허가", style: TextStyle(fontSize: 28.sp)),
                 ),
                 FormBuilderCheckbox(
                   name: FclNewDetailFields.reconfirmOfFacilityDetails.name,
-                  title: const Text("재확인"),
+                  title: Text("재확인", style: TextStyle(fontSize: 28.sp)),
                 ),
               ],
             ),
           ),
         ),
-        SizedBox(height: 80.sz),
         TightGridView(
           crossAxisCount: 2,
-          crossAxisSpacing: 40.sz,
-          mainAxisSpacing: 40.sz,
+          crossAxisSpacing: 40.w,
+          mainAxisSpacing: 40.h,
           children: [
             Column(
               children: [
                 FormBuilderCheckbox(
                     name: FclNewDetailFields
                         .geneticallyModifiedOrganismsOfFacilityDetails.name,
-                    title: Text("유전자변형생물체")),
+                    title: Text("유전자변형생물체", style: TextStyle(fontSize: 28.sp))),
                 FclTextField(
                   hintText: "허가번호",
                   name: FclNewDetailFields
@@ -130,10 +131,9 @@ class InspectionOverview extends GetView<FclNewDetailController> {
             Column(
               children: [
                 FormBuilderCheckbox(
-
                     name: FclNewDetailFields
                         .highRiskPathogensOfFacilityDetails.name,
-                    title: Text("고위험병원체")),
+                    title: Text("고위험병원체",style: TextStyle(fontSize: 28.sp))),
                 FclTextField(
                   hintText: "허가번호",
                   name: FclNewDetailFields.highRiskPathogensLicenceNumber.name,
@@ -177,7 +177,8 @@ class InspectionOverview extends GetView<FclNewDetailController> {
                 })
           ],
         ),
-        const Divider(),
+        SizedBox(height: 47.h,),
+        const FclDivider.form(),
         Builder(builder: (context) {
           final list = [
             FclRelatedPersonCol(title: "생물안전관리책임자", name: "1", hintText: "책임자"),

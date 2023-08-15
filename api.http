@@ -9,21 +9,21 @@ Content-Type: application/json
 # 사용자 토큰 Refresh
 POST {{url}}/api/refreshToken.do
 Content-Type: application/json
-Access_Token: {{access_token}}
-Refresh_Token: {{refresh_token}}
+Access_Token: {{Access_Token}}
+Refresh_Token: {{Refresh_Token}}
 
 ###
 
 # 현장점검 데이터 가져오기
-GET {{url}}/api/selectProcField.do?gbn=fd2&idx=309
+GET {{url}}/api/selectProcField.do?gbn=fd2&idx=480
 Content-Type: application/json
-Access_Token: {{access_token}}
+Access_Token: {{Access_Token}}
 
 ###
 
 # 현장점검 리스트 데이터 가져오기
-GET {{url}}/api/selectProcList.do?gbn=fd2&company=test
+GET {{url}}/api/selectProcList.do?gbn=fd2
 Content-Type: application/json
-Access_Token: {{access_token}}
+Access_Token: {{Access_Token}}
 
 

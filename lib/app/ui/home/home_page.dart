@@ -2,6 +2,7 @@ import 'package:dartlin/control_flow.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/storage_repository.dart';
@@ -11,7 +12,6 @@ import 'package:sisolab_flutter_biosafety/app/global/vms/network_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout/home_page_layout.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
@@ -58,13 +58,10 @@ class _UnConnected extends StatelessWidget with FclLogger {
                   name: _userIdName,
                 )),
             SizedBox(
-              height: 28.sz,
+              height: 28.h,
             ),
             Text.rich(
-                style: TextStyle(
-                    height: 24.sz / 12.sz,
-                    fontSize: 24.sz,
-                    fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w500),
                 const TextSpan(children: [
                   TextSpan(text: "\u2022  입력한 ID로 작업을 시작합니다.\n"),
                   TextSpan(text: "\u2022  "),
@@ -73,7 +70,7 @@ class _UnConnected extends StatelessWidget with FclLogger {
                       text: "작업자가 변경되는 경우, 앱을 새로 시작하여 ID를 입력하세요.")
                 ])),
             SizedBox(
-              height: 60.sz,
+              height: 60.h,
             ),
             SizedBox(
               width: double.infinity,
@@ -97,18 +94,14 @@ class _Connected extends StatefulWidget {
 
 class _ConnectedState extends State<_Connected> with FclLogger {
   final _formKey = GlobalKey<FormBuilderState>();
+
   TokenVm get _tokenVm => TokenVm.to;
-
-
 
   static const _userIdName = '_userIdName';
   static const _passwdName = '_passwdName';
 
   static const _devUserId = "test0223";
   static const _devPasswd = "1234";
-
-
-
 
   _submit() {
     _formKey.currentState?.let((curr) => iff(curr.saveAndValidate(), () async {
@@ -135,17 +128,23 @@ class _ConnectedState extends State<_Connected> with FclLogger {
           FieldWithLabel(
               label: "작업 ID",
               child: FormBuilderTextField(
+                style: TextStyle(
+                  fontSize: 28.sp,
+                ),
                 initialValue: iff(kDebugMode, () => _devUserId),
                 onSubmitted: (_) => _submit(),
                 decoration: const InputDecoration(hintText: "작업 ID"),
                 name: _userIdName,
               )),
           SizedBox(
-            height: 42.sz,
+            height: 42.h,
           ),
           FieldWithLabel(
               label: "Password",
               child: FormBuilderTextField(
+                style: TextStyle(
+                  fontSize: 28.sp,
+                ),
                 initialValue: iff(kDebugMode, () => _devPasswd),
                 obscureText: true,
                 onSubmitted: (_) => _submit(),
@@ -153,7 +152,7 @@ class _ConnectedState extends State<_Connected> with FclLogger {
                 name: _passwdName,
               )),
           SizedBox(
-            height: 40.sz,
+            height: 40.h,
           ),
           SizedBox(
             width: double.infinity,
@@ -164,7 +163,7 @@ class _ConnectedState extends State<_Connected> with FclLogger {
                 )),
           ),
           SizedBox(
-            height: 40.sz,
+            height: 40.h,
           ),
           SizedBox(
             width: double.infinity,

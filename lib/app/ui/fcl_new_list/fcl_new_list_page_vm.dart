@@ -8,7 +8,7 @@ import 'package:sisolab_flutter_biosafety/app/global/constants/svc_constant.dart
 import 'package:sisolab_flutter_biosafety/core/models/async_status.dart';
 import 'package:sisolab_flutter_biosafety/core/models/rx_net.dart';
 
-class FclNewListPageController extends GetxController {
+class FclNewListPageVm extends GetxController {
   final _repository = SelectProcListRepository();
   final _list = RxNet<ApiResponse<SelectProcListOut>>(AsyncStatus.loading());
 
@@ -16,7 +16,7 @@ class FclNewListPageController extends GetxController {
       gbn: Gbn.fd2, firstIndex: 0, lastIndex: SvcConstant.apiListSize));
 
   /// ------------------------------------------------------
-  fetch() {
+  void fetch() {
     _repository.selectProcList(_param.value).then((value) {
       if (value.isSuccess) {
         _list.value = AsyncStatus.success(value);

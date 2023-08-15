@@ -36,6 +36,7 @@ abstract class AppRoutes {
       title:
           "${Constant.regularTitle} ${Constant.fclTitle} ${Constant.detailTitle}");
   static GetPage fclRegularList = GetPage(
+
       name: "/fcl/regular/list",
       page: () => const FclRegularListPage(),
       title:

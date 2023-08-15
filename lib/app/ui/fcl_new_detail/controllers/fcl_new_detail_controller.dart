@@ -16,7 +16,7 @@ class FclNewDetailController extends FclDetailController
 
 mixin TabMixin {
   /// 활성화 탭 index
-  final _tabIndex = 2.obs;
+  final _tabIndex = 0.obs;
 
   int get tabIndex => _tabIndex.value;
 

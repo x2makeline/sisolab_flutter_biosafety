@@ -1,5 +1,6 @@
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 class FieldWithLabel extends StatelessWidget {
@@ -22,11 +23,11 @@ class FieldWithLabel extends StatelessWidget {
         if (label != null) ...[
           Text(
             label!,
-            style: TextStyle(fontSize: 24.sz, fontWeight: FontWeight.w500),
+            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w500),
           ),
           SizedBox(
-            height: axis == Axis.horizontal ? labelPadding ?? 15.sz : null,
-            width: axis == Axis.vertical ? labelPadding ?? 15.sz : null,
+            height: axis == Axis.horizontal ? labelPadding ?? 15.h : null,
+            width: axis == Axis.vertical ? labelPadding ?? 15.w : null,
           ),
         ],
         child

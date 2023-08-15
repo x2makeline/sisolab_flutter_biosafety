@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_note_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_person_template.dart';
@@ -27,7 +28,7 @@ class CheckBasicData extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge),
               Row(
                 children: [
-                  Text("과년도 자료", style: TextStyle(fontSize: 28.sz)),
+                  Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
                       value: pastYearYn,
                       onChanged: (v) {
@@ -39,11 +40,11 @@ class CheckBasicData extends StatelessWidget {
           ),
           const FclDivider.black(),
           SizedBox(
-            height: 47.sz,
+            height: 47.h,
           ),
           Text("연구자 및 관리자 생물안전교육 이수",
               style: Theme.of(context).textTheme.bodyLarge),
-          SizedBox(height: 23.sz,),
+          SizedBox(height: 23.h,),
           Column(
             children: <Widget>[
               FclImageNoteTemplate(
@@ -95,7 +96,7 @@ class CheckBasicData extends StatelessWidget {
                   radioName: FclNewDetailFields.saepnssUserRadio.name,
                   countName: FclNewDetailFields.saepnssUserCount.name,
                   radioMap: FclNewDetailFields.saepnssUserRadio.map!)
-            ].withSpaceBetween(height: 39.sz),
+            ].withSpaceBetween(height: 39.h),
           )
         ],
       );

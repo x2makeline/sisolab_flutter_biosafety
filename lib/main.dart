@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 
 import 'app/global/bindings/global_binding.dart';
 import 'routes/app_routes.dart';
@@ -29,59 +28,63 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(1563, 2328),
+      designSize: const Size(1563, 2048),
       builder: (BuildContext context, Widget? child) => GetMaterialApp(
-          localizationsDelegates: const [
-            ...GlobalMaterialLocalizations.delegates,
-            GlobalWidgetsLocalizations.delegate,
-          ],
-          supportedLocales: const [
-            Locale('ko'),
-          ],
-          locale: const Locale('ko'),
-          initialRoute: AppRoutes.home.name,
-          theme: ThemeData(
-              buttonTheme: buttonMainTheme,
-              elevatedButtonTheme: elevatedButtonThemeData,
-              outlinedButtonTheme: outlinedButtonThemeData,
-              fontFamily: "NotoSansCJKkr",
-              textTheme: TextTheme(
-                  bodyMedium: defaultTextStyle.copyWith(fontSize: 28.sz),
-                  headlineLarge: defaultTextStyle.copyWith(
-                      fontSize: 62.sz, fontWeight: FontWeight.w500),
-                  headlineMedium: defaultTextStyle.copyWith(
-                    fontSize: 46.sz,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  headlineSmall: defaultTextStyle.copyWith(
-                      fontSize: 34.sz, fontWeight: FontWeight.w500),
-                  titleLarge: defaultTextStyle.copyWith(
-                      fontSize: 34.sz, fontWeight: FontWeight.normal),
-                  bodyLarge: defaultTextStyle.copyWith(
-                      fontSize: 28.sz, fontWeight: FontWeight.w500)),
-              inputDecorationTheme: const InputDecorationTheme(
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(3)),
-                    borderSide: BorderSide(color: Color(0xffcccccc), width: 1),
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(3)),
-                    borderSide: BorderSide(color: Color(0xffcccccc), width: 1),
-                  )
+        debugShowCheckedModeBanner: false,
+        localizationsDelegates: const [
+          ...GlobalMaterialLocalizations.delegates,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('ko'),
+        ],
+        locale: const Locale('ko'),
+        // initialRoute : AppRoutes.home.name,
+        initialRoute: "/fcl/new/detail/FD2-2307-480",
+        theme: ThemeData(
+            buttonTheme: buttonMainTheme,
+            elevatedButtonTheme: elevatedButtonThemeData,
+            outlinedButtonTheme: outlinedButtonThemeData,
+            fontFamily: "NotoSansCJKkr",
+            primarySwatch: Colors.red,
+            textTheme: TextTheme(
+                bodyMedium: defaultTextStyle.copyWith(fontSize: 28.sp),
+                headlineLarge: defaultTextStyle.copyWith(
+                    fontSize: 62.sp, fontWeight: FontWeight.w500),
+                headlineMedium: defaultTextStyle.copyWith(
+                  fontSize: 46.sp,
+                  fontWeight: FontWeight.w500,
+                ),
+                headlineSmall: defaultTextStyle.copyWith(
+                    fontSize: 34.sp, fontWeight: FontWeight.w500),
+                titleLarge: defaultTextStyle.copyWith(
+                    fontSize: 34.sp, fontWeight: FontWeight.normal),
+                bodyLarge: defaultTextStyle.copyWith(
+                    fontSize: 28.sp, fontWeight: FontWeight.w500)),
+            inputDecorationTheme: const InputDecorationTheme(
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(3)),
+                  borderSide: BorderSide(color: Color(0xffcccccc), width: 1),
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(3)),
+                  borderSide: BorderSide(color: Color(0xffcccccc), width: 1),
+                )
                 // enabledBorder: ,
-              ),
-              dividerTheme: const DividerThemeData(
-                color: Colors.black,
-              ),
-              appBarTheme: const AppBarTheme(
-                elevation: 0,
-                backgroundColor: Colors.white,
-                actionsIconTheme: IconThemeData(size: 40, color: Colors.black),
-                shape: Border(bottom: BorderSide(width: 1, color: ColorGroup.gray)),
-              )),
-          initialBinding: GlobalBinding(),
-          getPages: routes,
-        ),
+                ),
+            dividerTheme: const DividerThemeData(
+              color: Colors.black,
+            ),
+            appBarTheme: const AppBarTheme(
+              elevation: 0,
+              backgroundColor: Colors.white,
+              actionsIconTheme: IconThemeData(size: 40, color: Colors.black),
+              shape:
+                  Border(bottom: BorderSide(width: 1, color: ColorGroup.gray)),
+            )),
+        initialBinding: GlobalBinding(),
+        getPages: routes,
+      ),
     );
   }
 }

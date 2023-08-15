@@ -13,13 +13,21 @@ class ApiProvider {
   TokenVm get _tokenVm => TokenVm.to;
 
   Dio get _dio => Dio(BaseOptions(
-      baseUrl: Env.host,
-      contentType: "application/json",
-      headers: {"access_token": _tokenVm.token?.accessToken}))
-    ..let((dio) {
-      dio.interceptors
-          .add(LogInterceptor(requestBody: true, responseBody: true));
-    });
+        baseUrl: Env.host,
+        contentType: "application/json",
+      ))
+        ..let((dio) {
+          dio.interceptors
+              .add(InterceptorsWrapper(onRequest: (options, handler) async {
+            final token = await _tokenVm.getTokenByPref();
+            if (token != null) {
+              options.headers['access_token'] = token.accessToken;
+            }
+            return handler.next(options);
+          }));
+          // dio.interceptors
+          //     .add(LogInterceptor(requestBody: true, responseBody: true));
+        });
 
   /// 현장점검 리스트 데이터 가져오기
   Future<ApiResponse<SelectProcListOut>> selectProcList(
@@ -28,9 +36,7 @@ class ApiProvider {
               (await _dio.get("/api/selectProcList.do",
                       queryParameters: req.toJson()))
                   .data,
-              fromJson: (list) => SelectProcListOut.fromJson({
-                "data" : list
-              }),
+              fromJson: (list) => SelectProcListOut.fromJson({"data": list}),
               fieldName: "list")
           .filter();
 

@@ -40,7 +40,7 @@ class FclButton extends ButtonStyleButton {
                   MaterialStatePropertyAll<Color>(ColorGroup.green),
               elevation: MaterialStatePropertyAll<double>(0),
               side: MaterialStatePropertyAll<BorderSide>(
-                  BorderSide(color: Color(0xffe0e0e0)))),
+                  BorderSide(color: ColorGroup.gray))),
         );
 
   const FclButton.white({
@@ -59,7 +59,7 @@ class FclButton extends ButtonStyleButton {
               elevation: MaterialStatePropertyAll<double>(0),
               backgroundColor: MaterialStatePropertyAll<Color>(Colors.white),
               side: MaterialStatePropertyAll<BorderSide>(
-                  BorderSide(color: Color(0xffe0e0e0)))),
+                  BorderSide(color: ColorGroup.gray))),
         );
 
   const FclButton.black({
@@ -78,7 +78,7 @@ class FclButton extends ButtonStyleButton {
               elevation: MaterialStatePropertyAll<double>(0),
               backgroundColor: MaterialStatePropertyAll<Color>(Colors.black),
               side: MaterialStatePropertyAll<BorderSide>(
-                  BorderSide(color: Color(0xffe0e0e0)))),
+                  BorderSide(color: ColorGroup.gray))),
         );
 
   @override

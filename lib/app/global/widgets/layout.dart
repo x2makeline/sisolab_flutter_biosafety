@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/top_bar.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
@@ -32,7 +33,7 @@ class Layout extends StatelessWidget {
             ),
             const FclDivider.form(),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 40.w),
+              padding: EdgeInsets.symmetric(horizontal: 40.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -43,8 +44,8 @@ class Layout extends StatelessWidget {
                     children: [
                       Image.asset(
                         "assets/images/bottom_logo.png",
+                        fit: BoxFit.fitHeight,
                         height: 78.h,
-                        width: 270.h,
                       ),
                       Container(
                         height: 90.h,
@@ -53,7 +54,7 @@ class Layout extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4),
                             border: Border.all(
                               width: 1,
-                              color: const Color(0xffe0e0e0),
+                              color: ColorGroup.gray,
                             )),
                         child: DropdownButton(
                           borderRadius: BorderRadius.circular(4),
@@ -82,7 +83,7 @@ class Layout extends StatelessWidget {
                           ),
                           const Text(
                             '|',
-                            style: TextStyle(color: Color(0xffe0e0e0)),
+                            style: TextStyle(color: ColorGroup.gray),
                           ),
                           const Text(
                             "개인정보처리방침",
@@ -90,7 +91,7 @@ class Layout extends StatelessWidget {
                           ),
                           const Text(
                             '|',
-                            style: TextStyle(color: Color(0xffe0e0e0)),
+                            style: TextStyle(color: ColorGroup.gray),
                           ),
                           const Text("저작권정책")
                         ].withSpaceBetween(width: 24.w),

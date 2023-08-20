@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_checker_table.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_related_person_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_date_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_dropdown_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_sign.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 import '../../../global/widgets/field_with_label.dart';
 
@@ -21,10 +22,13 @@ class InspectionOverview extends GetView<FclNewDetailController> {
 
   @override
   Widget build(BuildContext context) {
+    print("------");
+    print("회사 ${controller.io.company}");
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("점검개요", style: Theme.of(context).textTheme.headlineSmall),
+        Text("점검개요",
+            style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w500)),
         SizedBox(
           height: 22.h,
         ),
@@ -39,17 +43,20 @@ class InspectionOverview extends GetView<FclNewDetailController> {
           children: [
             FclTextField(
               hintText: "운영기관명",
-              name: FclNewDetailFields.operatingInstitution.name,
+              name: BioIoName.company.name,
+              initialValue: controller.io.company,
               label: "운영기관명",
             ),
             FclTextField(
-              hintText: "설치운영 장소",
-              name: FclNewDetailFields.placeOfInstallationAndOperation.name,
+              hintText: "설치 ∙ 운영 장소",
+              name: BioIoName.d184.name,
+              initialValue: controller.io.d184,
               label: "설치 ∙ 운영 장소",
             ),
             FclTextField(
               hintText: "안전관리등급",
-              name: FclNewDetailFields.safetyManagementLevel.name,
+              name: BioIoName.d280.name,
+              initialValue: controller.io.d280,
               label: "안전관리등급",
             ),
           ],
@@ -63,46 +70,50 @@ class InspectionOverview extends GetView<FclNewDetailController> {
         ),
         FieldWithLabel(
           label: "시설내역",
-          // labelPadding: 44.sz,
           child: DefaultTextStyle(
-            style: TextStyle(color: const Color(0xff101010), fontSize: 28.sp),
+            style: const TextStyle().merge(context.textTheme.titleMedium),
             child: GridView.extent(
               shrinkWrap: true,
               primary: false,
-              maxCrossAxisExtent: 400.w,
+              maxCrossAxisExtent: 300.w,
               childAspectRatio: 200 / 56,
               addAutomaticKeepAlives: false,
               children: [
                 FormBuilderCheckbox(
-                  name: FclNewDetailFields.generalOfFacilityDetails.name,
-                  title: Text(
-                    "일반",
-                    style: TextStyle(fontSize: 28.sp),
-                  ),
+                  name: BioIoName.d68.name,
+                  initialValue: controller.io.d68,
+                  title: Text("일반", style: context.textTheme.titleMedium),
                 ),
                 FormBuilderCheckbox(
-                  name: FclNewDetailFields.massCultureOfFacilityDetails.name,
-                  title: Text("대량배양", style: TextStyle(fontSize: 28.sp)),
+
+                  name: BioIoName.d69.name,
+                  initialValue: controller.io.d69,
+                  title: Text("대량배양", style: context.textTheme.titleMedium),
                 ),
                 FormBuilderCheckbox(
-                  name: FclNewDetailFields.animalOfFacilityDetails.name,
-                  title: Text("동물", style: TextStyle(fontSize: 28.sp)),
+                  name: BioIoName.d70.name,
+                  initialValue: controller.io.d70,
+                  title: Text("동물", style: context.textTheme.titleMedium),
                 ),
                 FormBuilderCheckbox(
-                  name: FclNewDetailFields.plantOfFacilityDetails.name,
-                  title: Text("식물", style: TextStyle(fontSize: 28.sp)),
+                  name: BioIoName.d71.name,
+                  initialValue: controller.io.d71,
+                  title: Text("식물", style: context.textTheme.titleMedium),
                 ),
                 FormBuilderCheckbox(
-                  name: FclNewDetailFields.bugOfFacilityDetails.name,
-                  title: Text("곤충", style: TextStyle(fontSize: 28.sp)),
+                  name: BioIoName.d72.name,
+                  initialValue: controller.io.d72,
+                  title: Text("곤충", style: context.textTheme.titleMedium),
                 ),
                 FormBuilderCheckbox(
-                  name: FclNewDetailFields.newPermissionOfFacilityDetails.name,
-                  title: Text("신규허가", style: TextStyle(fontSize: 28.sp)),
+                  name: BioIoName.d73.name,
+                  initialValue: controller.io.d73,
+                  title: Text("신규허가", style: context.textTheme.titleMedium),
                 ),
                 FormBuilderCheckbox(
-                  name: FclNewDetailFields.reconfirmOfFacilityDetails.name,
-                  title: Text("재확인", style: TextStyle(fontSize: 28.sp)),
+                  name: BioIoName.d74.name,
+                  initialValue: controller.io.d74,
+                  title: Text("재확인", style: context.textTheme.titleMedium),
                 ),
               ],
             ),
@@ -116,13 +127,14 @@ class InspectionOverview extends GetView<FclNewDetailController> {
             Column(
               children: [
                 FormBuilderCheckbox(
-                    name: FclNewDetailFields
-                        .geneticallyModifiedOrganismsOfFacilityDetails.name,
-                    title: Text("유전자변형생물체", style: TextStyle(fontSize: 28.sp))),
+                    initialValue: controller.io.d75,
+                    name: BioIoName.d75.name,
+                    title:
+                        Text("유전자변형생물체", style: context.textTheme.titleMedium)),
                 FclTextField(
                   hintText: "허가번호",
-                  name: FclNewDetailFields
-                      .geneticallyModifiedOrganismsLicenseNumber.name,
+                  name: BioIoName.d157.name,
+                  initialValue: controller.io.d157,
                   label: "허가번호",
                 )
               ],
@@ -131,177 +143,159 @@ class InspectionOverview extends GetView<FclNewDetailController> {
             Column(
               children: [
                 FormBuilderCheckbox(
-                    name: FclNewDetailFields
-                        .highRiskPathogensOfFacilityDetails.name,
-                    title: Text("고위험병원체",style: TextStyle(fontSize: 28.sp))),
+                    name: BioIoName.d76.name,
+                    initialValue: controller.io.d76,
+                    title:
+                        Text("고위험병원체", style: context.textTheme.titleMedium)),
                 FclTextField(
                   hintText: "허가번호",
-                  name: FclNewDetailFields.highRiskPathogensLicenceNumber.name,
+                  name: BioIoName.d281.name,
+                  initialValue: controller.io.d281,
                   label: "허가번호",
                 ),
               ],
             ),
             const SizedBox.shrink(),
             FclDateField(
-              name: FclNewDetailFields.dateOfFirstPermit.name,
+              name: BioIoName.d158.name,
+              initialDate: controller.io.d158,
               label: "최초허가일",
             ),
             FclTextField(
               hintText: "취급동물",
-              name: FclNewDetailFields.handlingAnimals.name,
+              name: BioIoName.d282.name,
+              initialValue: controller.io.d282,
               label: "취급동물",
             ),
             FclTextField(
               hintText: "취급병원체",
-              name: FclNewDetailFields.handlingPathogens.name,
+              name: BioIoName.d283.name,
+              initialValue: controller.io.d283,
               label: "취급병원체",
             ),
             FclTextField(
               hintText: "실험실 ∙ 전실 면적",
-              name: FclNewDetailFields.laboratoryAndAnteroomArea.name,
+              name: BioIoName.d284.name,
+              initialValue: controller.io.d284,
               label: "실험실 ∙ 전실 면적",
             ),
             FclTextField(
               hintText: "지역",
-              name: FclNewDetailFields.area.name,
+              name: BioIoName.d285.name,
+              initialValue: controller.io.d285,
               label: "지역",
             ),
             FclDropdownField(
-                name: FclNewDetailFields.organClassification.name,
+                name: BioIoName.d286.name,
+                initialValue: controller.io.d286,
                 label: "기관분류",
                 itemMap: const {
-                  "public": "공공기관",
-                  "education": "교육기관",
-                  "private": "민간기관",
-                  "medical": "의료기관"
+                  "공공기관": "공공기관",
+                  "교육기관": "교육기관",
+                  "민간기관": "민간기관",
+                  "의료기관": "의료기관"
                 })
           ],
         ),
-        SizedBox(height: 47.h,),
+        SizedBox(
+          height: 47.h,
+        ),
         const FclDivider.form(),
-        Builder(builder: (context) {
-          final list = [
-            FclRelatedPersonCol(title: "생물안전관리책임자", name: "1", hintText: "책임자"),
-            FclRelatedPersonCol(title: "생물안전관리자", name: "2", hintText: "괸리자"),
+        SizedBox(
+          height: 47.h,
+        ),
+        FclRelatedPersonTable(
+          list: [
             FclRelatedPersonCol(
-                title: "고위험병원체의전담관리자", name: "3", hintText: "전담관리자"),
-          ];
-
-          return Table(
-            columnWidths: {
-              0: const FlexColumnWidth(2),
-              ...list.asMap().map(
-                  (key, value) => MapEntry(key + 1, const FlexColumnWidth(3)))
-            },
-            // border: TableBorder.all(),
-            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            children: [
-              TableRow(children: [
-                const Text("구분"),
-                ...list.map((e) => Container(
-                    alignment: Alignment.center, child: Text(e.title)))
-              ]),
-              TableRow(children: [
-                const Text("성명 / 서명"),
-                ...list.map((e) => Row(
-                      children: [
-                        Expanded(
-                            child: FormBuilderTextField(
-                          name: "${e.name}_name",
-                          decoration:
-                              InputDecoration(hintText: "${e.hintText}이름"),
-                        )),
-                        FormBuilderSign(name: "${e.name}_sign")
-                      ],
-                    ))
-              ]),
-              TableRow(children: [
-                const Text("연락처"),
-                ...list.map((e) => FormBuilderTextField(
-                      name: "${e.name}_contact",
-                      decoration: InputDecoration(hintText: "${e.hintText}연락처"),
-                    ))
-              ]),
-              TableRow(children: [
-                const Text("이메일"),
-                ...list.map((e) => FormBuilderTextField(
-                      name: "${e.name}_email",
-                      decoration: InputDecoration(hintText: "${e.hintText}이메일"),
-                    ))
-              ]),
-              TableRow(children: [
-                const Text("핸드폰"),
-                ...list.map((e) => FormBuilderTextField(
-                      name: "${e.name}_phone",
-                      decoration: InputDecoration(hintText: "${e.hintText}핸드폰"),
-                    ))
-              ])
-            ],
-          );
-        }),
+                title: "생물안전관리책임자",
+                nameNm: BioIoName.d159.name,
+                initialName: controller.io.d159,
+                cellPhoneNm: BioIoName.d274.name,
+                initialCellPhone: controller.io.d274,
+                contactNm: BioIoName.d165.name,
+                initialContact: controller.io.d165,
+                emailNm: BioIoName.d271.name,
+                initialEmail: controller.io.d271,
+                signatureNm: BioIoName.d162.name,
+                initialSignature: controller.io.d162,
+                hintText: "책임자"),
+            FclRelatedPersonCol(
+                title: "생물안전관리자",
+                nameNm: BioIoName.d160.name,
+                initialName: controller.io.d160,
+                cellPhoneNm: BioIoName.d275.name,
+                initialCellPhone: controller.io.d275,
+                contactNm: BioIoName.d166.name,
+                initialContact: controller.io.d166,
+                emailNm: BioIoName.d272.name,
+                initialEmail: controller.io.d272,
+                signatureNm: BioIoName.d163.name,
+                initialSignature: controller.io.d163,
+                hintText: "관리자"),
+            FclRelatedPersonCol(
+                title: "고위험병원체의전담관리자",
+                nameNm: BioIoName.d161.name,
+                initialName: controller.io.d161,
+                cellPhoneNm: BioIoName.d276.name,
+                initialCellPhone: controller.io.d276,
+                contactNm: BioIoName.d167.name,
+                initialContact: controller.io.d167,
+                emailNm: BioIoName.d273.name,
+                initialEmail: controller.io.d273,
+                signatureNm: BioIoName.d164.name,
+                initialSignature: controller.io.d164,
+                hintText: "전담관리자")
+          ],
+        ),
+        SizedBox(
+          height: 47.h,
+        ),
         const Divider(),
+        SizedBox(
+          height: 47.h,
+        ),
         Row(
           children: [
             Flexible(
-              child: FclDateField(
-                name: FclNewDetailFields.inspectionDate.name,
-                label: "점검일자",
-              ),
-            ),
+                child: FclDateField(
+              name: BioIoName.d168.name,
+              label: "점검일자",
+            )),
             const Flexible(child: SizedBox.shrink())
-          ],
+          ].withSpaceBetween(width: 10.w),
         ),
-        FieldWithLabel(
-          label: "점검자 ( 소속기관 / 성명 / 서명 )",
-          child: Obx(() => Column(
-              children: List.generate(
-                  controller.checkerCount,
-                  (index) => Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Flexible(
-                            child: FclDateField(
-                              name:
-                                  "${FclNewDetailFields.inspectionDate.name}_${index.toString()}",
-                            ),
-                          ),
-                          Flexible(
-                            child: Row(
-                              children: [
-                                Expanded(
-                                    child: FormBuilderTextField(
-                                  name:
-                                      "${FclNewDetailFields.inspectorName.name}_${index.toString()}",
-                                  decoration:
-                                      const InputDecoration(hintText: "점검자성명"),
-                                )),
-                                FormBuilderSign(
-                                    name:
-                                        "${FclNewDetailFields.inspectorSignature.name}_${index.toString()}"),
-                              ],
-                            ),
-                          )
-                        ],
-                      )))),
-        ),
-        const SizedBox(height: 20),
+
         SizedBox(
-          height: 50,
-          width: double.infinity,
-          child: OutlinedButton(
-              onPressed: () {
-                controller.addChecker();
-              },
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.plus_one_sharp),
-                  Text(
-                    "점검자 추가",
-                  ),
-                ],
-              )),
-        )
+          height: 40.h,
+        ),
+        const FclCheckerTable(),
+
+        // SizedBox(height: 20.h),
+        // SizedBox(
+        //   height: 90.h,
+        //   width: double.infinity,
+        //   child: OutlinedButton(
+        //       onPressed: () {
+        //         controller.addChecker();
+        //       },
+        //       child: Row(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           Image.asset(
+        //             "assets/images/img_plus.png",
+        //             width: 22.sp,
+        //             height: 22.sp,
+        //           ),
+        //           SizedBox(
+        //             width: 20.w,
+        //           ),
+        //           Text(
+        //             "점검자 추가",
+        //             style: buttonTextStyle,
+        //           ),
+        //         ],
+        //       )),
+        // )
       ],
     );
   }

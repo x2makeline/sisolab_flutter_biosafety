@@ -25,6 +25,7 @@ class SelectProcField {
   String d185;
   String d186;
   String d183;
+  /// 설치 ∙ 운영 장소
   String d184;
   String d181;
   String d182;

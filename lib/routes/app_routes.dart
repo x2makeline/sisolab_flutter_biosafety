@@ -31,7 +31,7 @@ abstract class AppRoutes {
       title:
           "${Constant.regularTitle} ${Constant.fclTitle} ${Constant.detailTitle}");
   static GetPage fclRegularDetailSelect = GetPage(
-      name: "/fcl/regular/detail/:docNo",
+      name: "/fcl/regular/detail/:idx",
       page: () => const FclRegularDetailPage(),
       title:
           "${Constant.regularTitle} ${Constant.fclTitle} ${Constant.detailTitle}");
@@ -48,7 +48,7 @@ abstract class AppRoutes {
       title:
           "${Constant.newTitle} ${Constant.fclTitle} ${Constant.detailTitle}");
   static GetPage fclNewDetailSelect = GetPage(
-      name: "/fcl/new/detail/:docNo",
+      name: "/fcl/new/detail/:idx",
       page: () => const FclNewDetailPage(),
       bindings: [FclNewDetailBinding()],
       title:

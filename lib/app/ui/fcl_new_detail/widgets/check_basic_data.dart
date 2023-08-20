@@ -28,7 +28,7 @@ class CheckBasicData extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge),
               Row(
                 children: [
-                  Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
+                  Text("과년도 자료", style: TextStyle(fontSize: 28)),
                   Obx(() => Checkbox(
                       value: pastYearYn,
                       onChanged: (v) {
@@ -40,11 +40,11 @@ class CheckBasicData extends StatelessWidget {
           ),
           const FclDivider.black(),
           SizedBox(
-            height: 47.h,
+            height: 47,
           ),
           Text("연구자 및 관리자 생물안전교육 이수",
               style: Theme.of(context).textTheme.bodyLarge),
-          SizedBox(height: 23.h,),
+          SizedBox(height: 23,),
           Column(
             children: <Widget>[
               FclImageNoteTemplate(
@@ -96,7 +96,7 @@ class CheckBasicData extends StatelessWidget {
                   radioName: FclNewDetailFields.saepnssUserRadio.name,
                   countName: FclNewDetailFields.saepnssUserCount.name,
                   radioMap: FclNewDetailFields.saepnssUserRadio.map!)
-            ].withSpaceBetween(height: 39.h),
+            ].withSpaceBetween(height: 39),
           )
         ],
       );

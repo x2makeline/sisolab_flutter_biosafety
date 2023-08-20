@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_form_builder_date_time_picker.dart';
 
 class FormBuilderBetweenDate extends StatefulWidget {
   const FormBuilderBetweenDate(
@@ -72,36 +73,24 @@ class _FormBuilderBetweenDateState extends State<FormBuilderBetweenDate> {
 
   @override
   Widget build(BuildContext context) => Row(
-      children: [
-        Flexible(
-          child: FormBuilderDateTimePicker(
+        children: [
+          Flexible(
+              child: FclFormBuilderDateTimePicker(
             key: _key1,
-            format: _format,
             controller: _controller1,
-            inputType: InputType.date,
-            style: TextStyle(fontSize: 28.sp, color: const Color(0xff767676)),
-            decoration: dateInputDecoration,
             name: widget.startName,
-            firstDate: _initialFirstDate,
-            lastDate: _initialLastDate,
-          ),
-        ),
-        const Text(" ~ "),
-        Flexible(
-          child: Obx(() => FormBuilderDateTimePicker(
-                key: _key2,
-                format: _format,
-                controller: _controller2,
-                inputType: InputType.date,
-                style:
-                    TextStyle(fontSize: 28.sp, color: const Color(0xff767676)),
-                decoration: dateInputDecoration,
-                name: widget.startName,
-                initialDate: startV.value ?? DateTime.now(),
-                firstDate: startV.value ?? _initialFirstDate,
-                lastDate: _initialLastDate,
-              )),
-        )
-      ],
-    );
+          )),
+          const Text(" ~ "),
+          Flexible(
+            child: Obx(() => FclFormBuilderDateTimePicker(
+                  key: _key2,
+                  controller: _controller2,
+                  name: widget.startName,
+                  initialDate: startV.value ?? DateTime.now(),
+                  firstDate: startV.value ?? _initialFirstDate,
+                  lastDate: _initialLastDate,
+                )),
+          )
+        ],
+      );
 }

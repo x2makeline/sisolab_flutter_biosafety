@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_controller.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
@@ -10,6 +12,7 @@ class DetailCategoryTab extends StatefulWidget {
       required this.activeTabIndex,
       required this.onChange})
       : super(key: key);
+
   final List<FclTab> tabMapList;
 
   final int activeTabIndex;
@@ -22,10 +25,7 @@ class DetailCategoryTab extends StatefulWidget {
 
 class _DetailCategoryTabState extends State<DetailCategoryTab>
     with SingleTickerProviderStateMixin {
-  @override
-  void initState() {
-    super.initState();
-  }
+  FclDetailController get _controller => FclDetailController.to;
 
   FclTab get activeTab => widget.tabMapList.elementAt(widget.activeTabIndex);
 
@@ -43,10 +43,8 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                 .entries
                 .map((entry) => Container(
                       height: 90.h,
-                      width: 292.w,
                       decoration: BoxDecoration(
-                          border: Border.all(
-                              color: const Color(0xffe0e0e0), width: 1)),
+                          border: Border.all(color: ColorGroup.gray, width: 1)),
                       child: entry.key == widget.activeTabIndex
                           ? Container(
                               decoration: const BoxDecoration(
@@ -54,22 +52,23 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                               ),
                               child: Center(
                                   child: Text(
-                                    entry.value.title,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 24.sp,
-                                    ),
-                                  )),
+                                entry.value.title,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24.sp,
+                                ),
+                              )),
                             )
                           : InkWell(
                               onTap: () => widget.onChange(entry.key),
                               child: Center(
                                   child: Text(
-                                    entry.value.title,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(fontSize: 24.sp),
-                                  )),
+                                entry.value.title,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 24.sp, color: Color(0xff505050)),
+                              )),
                             ),
                     ))
                 .toList(),
@@ -77,11 +76,13 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
           SizedBox(
             height: 40.h,
           ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [activeTab.body],
-          )
+          Obx(() => _controller.isLoading
+              ? const Placeholder()
+              : Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [activeTab.body],
+                ))
         ],
       );
 }

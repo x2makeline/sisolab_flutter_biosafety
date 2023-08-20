@@ -1,18 +1,20 @@
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
+import 'package:get/get.dart';
 
 class FieldWithLabel extends StatelessWidget {
   const FieldWithLabel(
       {super.key,
       this.label,
+      this.style,
       required this.child,
       this.labelPadding,
       this.axis = Axis.horizontal,
       this.reverse = false});
 
   final String? label;
+  final TextStyle? style;
   final Widget child;
   final Axis axis;
   final bool reverse;
@@ -20,16 +22,14 @@ class FieldWithLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => [
-        if (label != null) ...[
-          Text(
-            label!,
-            style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w500),
-          ),
-          SizedBox(
-            height: axis == Axis.horizontal ? labelPadding ?? 15.h : null,
-            width: axis == Axis.vertical ? labelPadding ?? 15.w : null,
-          ),
-        ],
+        Text(
+          label ?? "",
+          style: style ?? context.textTheme.titleMedium,
+        ),
+        SizedBox(
+          height: axis == Axis.horizontal ? labelPadding ?? 15.h : null,
+          width: axis == Axis.vertical ? labelPadding ?? 15.h : null,
+        ),
         child
       ]
           .let((it) => reverse ? it.reversed.toList() : it)

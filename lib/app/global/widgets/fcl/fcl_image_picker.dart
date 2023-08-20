@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_file_picker/form_builder_file_picker.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
@@ -25,7 +26,7 @@ class _FclImagePickerState extends State<FclImagePicker> {
   List<Widget> get _fileImageList => List.generate(
       files.length,
       (index) => SizedBox.square(
-            dimension: 100.h,
+            dimension: 100,
             child: kIsWeb
                 ? Image.memory(files[index].bytes!, fit: BoxFit.fill)
                 : Image.file(File(files[index].path!), fit: BoxFit.fill),
@@ -43,12 +44,12 @@ class _FclImagePickerState extends State<FclImagePicker> {
     crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
-            height: 90.h,
+            height: 90,
             child: Row(
               children: <Widget>[
                 SizedBox(
-                  height: 90.h,
-                  width: 176.w,
+                  height: 90,
+                  width: 176,
                   child: ElevatedButton(
                       style: const ButtonStyle(
                           backgroundColor:
@@ -71,20 +72,20 @@ class _FclImagePickerState extends State<FclImagePicker> {
                       },
                       child: Text(
                         "파일선택",
-                        style: TextStyle(fontSize: 28.sp),
+                        style: TextStyle(fontSize: 28),
                       )),
                 ),
-                SizedBox(width: 10.w,),
+                SizedBox(width: 10,),
                 Expanded(
                   child: SizedBox(
-                    height: 90.h,
+                    height: 90,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                          border: Border.all(color: const Color(0xffe0e0e0))),
+                          border: Border.all(color: ColorGroup.gray)),
                       child:  Align(
                         alignment: Alignment.centerLeft,
                         child: Padding(
-                          padding: EdgeInsets.only(left: 40.w),
+                          padding: EdgeInsets.only(left: 40),
                           child: const Text(
                             "이미지를 선택해주세요.",
                             style: TextStyle(color: Color(0xff767676)),
@@ -102,10 +103,10 @@ class _FclImagePickerState extends State<FclImagePicker> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: _fileImageList.withSpaceBetween(width: 20.w),
+                children: _fileImageList.withSpaceBetween(width: 20),
               ),
             )
-        ].withSpaceBetween(height: 15.h),
+        ].withSpaceBetween(height: 15),
       );
 }
 

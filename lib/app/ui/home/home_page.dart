@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => HomePageLayout(
+      // child: _UnConnected()
       child: Obx(() => _netVm.isConnect ? const _Connected() : _UnConnected()));
 }
 
@@ -60,15 +61,26 @@ class _UnConnected extends StatelessWidget with FclLogger {
             SizedBox(
               height: 28.h,
             ),
-            Text.rich(
-                style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w500),
-                const TextSpan(children: [
-                  TextSpan(text: "\u2022  입력한 ID로 작업을 시작합니다.\n"),
-                  TextSpan(text: "\u2022  "),
-                  TextSpan(
-                      style: TextStyle(color: ColorGroup.red),
-                      text: "작업자가 변경되는 경우, 앱을 새로 시작하여 ID를 입력하세요.")
-                ])),
+            DefaultTextStyle(
+                style: TextStyle(
+                    color: ColorGroup.black,
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w500),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("\u2022 입력한 ID로 작업을 시작합니다.\n"),
+                    Row(
+                      children: [
+                        Text("\u2022 "),
+                        Text(
+                          "작업자가 변경되는 경우, 앱을 새로 시작하여 ID를 입력하세요.",
+                          style: TextStyle(color: Color(0xffff381e)),
+                        )
+                      ],
+                    )
+                  ],
+                )),
             SizedBox(
               height: 60.h,
             ),
@@ -128,9 +140,6 @@ class _ConnectedState extends State<_Connected> with FclLogger {
           FieldWithLabel(
               label: "작업 ID",
               child: FormBuilderTextField(
-                style: TextStyle(
-                  fontSize: 28.sp,
-                ),
                 initialValue: iff(kDebugMode, () => _devUserId),
                 onSubmitted: (_) => _submit(),
                 decoration: const InputDecoration(hintText: "작업 ID"),
@@ -142,9 +151,6 @@ class _ConnectedState extends State<_Connected> with FclLogger {
           FieldWithLabel(
               label: "Password",
               child: FormBuilderTextField(
-                style: TextStyle(
-                  fontSize: 28.sp,
-                ),
                 initialValue: iff(kDebugMode, () => _devPasswd),
                 obscureText: true,
                 onSubmitted: (_) => _submit(),

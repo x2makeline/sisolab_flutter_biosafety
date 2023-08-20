@@ -28,6 +28,6 @@ class NoteTemplate extends StatelessWidget {
               name: name,
               onSaved: onSaved,
             )
-          ].withSpaceBetween(height: 10.h),
+          ].withSpaceBetween(height: 10),
         ));
 }

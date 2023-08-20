@@ -1,7 +1,7 @@
 import 'dart:typed_data';
 
-import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:signature/signature.dart';
 
@@ -21,8 +21,8 @@ class SignatureButton extends StatefulWidget {
 class _SignatureButtonState extends State<SignatureButton> {
   late final SignatureController controller;
   Uint8List? unit8List;
-  static const double _modalSingHeight = 300;
-  static const double _modalSingWidth = 300;
+  static final double _modalSingHeight = 600.h;
+  static final double _modalSingWidth = 600.w;
 
   @override
   void initState() {
@@ -31,11 +31,12 @@ class _SignatureButtonState extends State<SignatureButton> {
         widget.controller ?? SignatureController(penColor: Colors.black);
 
     unit8List = widget.initialValue;
+
+
   }
 
-  Future<Uint8List?> get pngBytes async =>
-      await controller.toPngBytes(
-          width: _modalSingWidth.toInt(), height: _modalSingHeight.toInt());
+  Future<Uint8List?> get pngBytes async => await controller.toPngBytes(
+      width: _modalSingWidth.toInt(), height: _modalSingHeight.toInt());
 
   // Future<Image?> get img async =>
   //     pngBytes.then((value) => value?.let((v) => Image.memory(v)));
@@ -56,10 +57,8 @@ class _SignatureButtonState extends State<SignatureButton> {
                 TextButton(
                     onPressed: () async {
                       if (controller.isNotEmpty) {
-
                         unit8List = await pngBytes;
                         controller.clear();
-
 
                         if (widget.onChange != null) {
                           widget.onChange!(unit8List);
@@ -81,9 +80,21 @@ class _SignatureButtonState extends State<SignatureButton> {
               ]);
         },
         child: Container(
-            decoration: BoxDecoration(border: Border.all(width: 1)),
+            height: 90.h,
+            width: 90.h,
+            decoration: BoxDecoration(
+              border: Border.all(width: 1),
+            ),
             child: unit8List != null
-                ? Image.memory(unit8List!)
-                : const Center(child: Text("[서명]"))));
+                ? Image.memory(
+                    unit8List!,
+                    width: 90.h,
+                    height: 90.h,
+                  )
+                : Center(
+                    child: Text(
+                    "[서명]",
+                    style: TextStyle(fontSize: 28.sp),
+                  ))));
   }
 }

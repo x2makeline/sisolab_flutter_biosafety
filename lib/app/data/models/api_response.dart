@@ -15,12 +15,12 @@ class ApiResponse<D> {
         isSuccess = result == successResult;
 
   ApiResponse.fromJson(Map<String, dynamic> json,
-      {D Function(dynamic)? fromJson, String fieldName = "data"})
+      {D Function(dynamic)? fromJson})
       : result = json['result'] as String,
         message = json["message"] as String,
         isError = json['result'] != successResult,
         isSuccess = json['result'] == successResult,
-        data = fromJson != null ? fromJson(json[fieldName]) : null;
+        data = fromJson != null ? fromJson(json) : null;
 
   Map<String, dynamic> toJson(ApiResponse<D> instance) => <String, dynamic>{
         'result': instance.result,

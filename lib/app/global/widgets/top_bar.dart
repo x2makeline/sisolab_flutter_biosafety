@@ -16,7 +16,8 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Get.back();
           },
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, color: ColorGroup.black),
+          icon: const Icon(Icons.arrow_back_ios_new_rounded,
+              color: ColorGroup.black),
         ),
         title: Padding(
           padding: EdgeInsets.only(left: 20.w),
@@ -51,7 +52,9 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
                       alignment: Alignment.centerLeft,
                       child: Text("생물안전 3등급 시설 설치·운영 현장점검",
                           style: TextStyle(
-                              fontSize: 28.h, fontWeight: FontWeight.w500, color: Colors.white))),
+                              fontSize: 28.h,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white))),
                 ))),
       );
 

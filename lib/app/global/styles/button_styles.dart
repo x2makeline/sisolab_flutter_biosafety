@@ -20,7 +20,7 @@ final elevatedButtonThemeData = ElevatedButtonThemeData(
             const MaterialStatePropertyAll<Color>(ColorGroup.green),
         elevation: const MaterialStatePropertyAll<double>(0),
         side: const MaterialStatePropertyAll<BorderSide>(
-            BorderSide(color: Color(0xffe0e0e0)))));
+            BorderSide(color: ColorGroup.gray))));
 
 final outlinedButtonThemeData = OutlinedButtonThemeData(
     style: ButtonStyle(
@@ -32,4 +32,4 @@ final outlinedButtonThemeData = OutlinedButtonThemeData(
         elevation: const MaterialStatePropertyAll<double>(0),
         backgroundColor: const MaterialStatePropertyAll<Color>(Colors.white),
         side: const MaterialStatePropertyAll<BorderSide>(
-            BorderSide(color: Color(0xffe0e0e0)))));
+            BorderSide(color: ColorGroup.gray))));

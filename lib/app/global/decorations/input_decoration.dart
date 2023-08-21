@@ -14,7 +14,6 @@ final dateInputDecoration = InputDecoration(
 );
 
 final textFieldDecoration = InputDecoration(
-
     constraints: BoxConstraints(minHeight: 90.h),
     border: const OutlineInputBorder(
         borderSide: BorderSide(color: ColorGroup.gray)));

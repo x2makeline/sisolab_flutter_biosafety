@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_note.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
@@ -10,11 +11,14 @@ class NoteTemplate extends StatelessWidget {
       {super.key,
       this.label,
       this.onSaved,
+        this.fclRadio,
       required this.name,
       required this.builder});
 
   final String name;
+
   final String? label;
+  final FclRadio? fclRadio;
   final List<Widget> Function(BuildContext context) builder;
   final void Function(String?)? onSaved;
 
@@ -28,6 +32,6 @@ class NoteTemplate extends StatelessWidget {
               name: name,
               onSaved: onSaved,
             )
-          ].withSpaceBetween(height: 10),
+          ].withSpaceBetween(height: 10.h),
         ));
 }

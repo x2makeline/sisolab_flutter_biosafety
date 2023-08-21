@@ -2,8 +2,8 @@ import 'dart:typed_data';
 
 import 'package:json_annotation/json_annotation.dart';
 
-class Unit8ListConverter implements JsonConverter<Uint8List, String> {
-  const Unit8ListConverter();
+class Uint8ListConverter implements JsonConverter<Uint8List, String> {
+  const Uint8ListConverter();
 
   @override
   Uint8List fromJson(String json) {
@@ -17,10 +17,10 @@ class Unit8ListConverter implements JsonConverter<Uint8List, String> {
   String toJson(Uint8List object) => String.fromCharCodes(object);
 }
 
-class Unit8ListNullableConverter implements JsonConverter<Uint8List?, String?> {
-  const Unit8ListNullableConverter();
+class Uint8ListNullableConverter implements JsonConverter<Uint8List?, String?> {
+  const Uint8ListNullableConverter();
 
-  final _converter = const Unit8ListConverter();
+  final _converter = const Uint8ListConverter();
 
   @override
   Uint8List? fromJson(String? json) =>

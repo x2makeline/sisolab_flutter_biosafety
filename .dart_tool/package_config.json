@@ -170,6 +170,18 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "copy_with_extension",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/copy_with_extension-5.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "copy_with_extension_gen",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/copy_with_extension_gen-5.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "crypto",
       "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/crypto-3.0.3",
       "packageUri": "lib/",
@@ -824,7 +836,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-08-18T10:38:26.427403Z",
+  "generated": "2023-08-21T12:06:29.880456Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

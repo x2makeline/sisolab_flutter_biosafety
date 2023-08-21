@@ -49,6 +49,10 @@ class MyApp extends StatelessWidget {
                 fontFamily: "NotoSansCJKkr",
                 primarySwatch: Colors.red,
                 textTheme: TextTheme(
+                    titleLarge: TextStyle(
+                        fontSize: 28.sp,
+                        color: ColorGroup.black,
+                        fontWeight: FontWeight.w500),
 
                     /// text field
                     titleMedium:

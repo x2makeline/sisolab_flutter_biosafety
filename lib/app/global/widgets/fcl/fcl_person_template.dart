@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/template/note_template.dart';
 
 class FclPersonTemplate extends StatelessWidget {
@@ -31,16 +32,24 @@ class FclPersonTemplate extends StatelessWidget {
                     suffixText: "명",
                   ),
                 )),
+                SizedBox(
+                  width: 20.w,
+                ),
                 Flexible(
                     child: FormBuilderRadioGroup(
                         decoration: const InputDecoration(
                             enabledBorder: InputBorder.none),
                         name: radioName,
-                        wrapAlignment: WrapAlignment.spaceBetween,
+                        wrapAlignment: WrapAlignment.spaceAround,
                         options: radioMap.entries
                             .map((e) => FormBuilderFieldOption(
                                   value: e.key,
-                                  child: Text(e.value),
+                                  child: Text(
+                                    e.value,
+                                    style: TextStyle(
+                                      fontSize: 28.sp,
+                                    ),
+                                  ),
                                 ))
                             .toList()))
               ],

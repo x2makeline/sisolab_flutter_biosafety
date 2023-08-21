@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FormBuilderNote extends StatelessWidget {
   const FormBuilderNote({super.key, required this.name, this.onSaved});
@@ -13,7 +14,13 @@ class FormBuilderNote extends StatelessWidget {
       onSaved: onSaved,
       name: name,
       maxLines: 3,
-      decoration: const InputDecoration(hintText: "관련 내용을 입력해주세요."),
+
+      keyboardType: TextInputType.multiline,
+      style: TextStyle(
+
+          fontSize: 28.sp,
+      ),
+      decoration: const InputDecoration(hintText: "관련 내용을 입력해주세요.", constraints: BoxConstraints()),
     );
   }
 }

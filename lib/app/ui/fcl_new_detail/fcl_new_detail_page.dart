@@ -33,6 +33,7 @@ class FclNewDetailPage extends GetView<FclNewDetailController> {
               height: 24.h,
             ),
             Obx(() => FormBuilder(
+
                   key: controller.formKey,
                   child: DetailCategoryTab(
                       tabMapList: newTabList,

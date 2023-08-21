@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_file_picker/form_builder_file_picker.dart';
+import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/double.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 class FclImagePicker extends StatefulWidget {
@@ -26,7 +26,7 @@ class _FclImagePickerState extends State<FclImagePicker> {
   List<Widget> get _fileImageList => List.generate(
       files.length,
       (index) => SizedBox.square(
-            dimension: 100,
+            dimension: 100.sp,
             child: kIsWeb
                 ? Image.memory(files[index].bytes!, fit: BoxFit.fill)
                 : Image.file(File(files[index].path!), fit: BoxFit.fill),
@@ -41,19 +41,18 @@ class _FclImagePickerState extends State<FclImagePicker> {
 
   @override
   Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
-            height: 90,
+            height: 90.h,
             child: Row(
               children: <Widget>[
                 SizedBox(
-                  height: 90,
-                  width: 176,
+                  height: 90.h,
                   child: ElevatedButton(
                       style: const ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll<Color>(Color(0xff505050))),
+                          backgroundColor: MaterialStatePropertyAll<Color>(
+                              Color(0xff505050))),
                       onPressed: () async {
                         final result = await FilePicker.platform.pickFiles(
                           allowMultiple: true,
@@ -72,24 +71,24 @@ class _FclImagePickerState extends State<FclImagePicker> {
                       },
                       child: Text(
                         "파일선택",
-                        style: TextStyle(fontSize: 28),
+                        style: TextStyle(fontSize: 28.sp),
                       )),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10.w,
+                ),
                 Expanded(
-                  child: SizedBox(
-                    height: 90,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: ColorGroup.gray)),
-                      child:  Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 40),
-                          child: const Text(
-                            "이미지를 선택해주세요.",
-                            style: TextStyle(color: Color(0xff767676)),
-                          ),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                        border: Border.all(color: ColorGroup.gray)),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 30.w),
+                        child: Text(
+                          "이미지를 선택해주세요.",
+                          style: context.textTheme.titleLarge
+                              ?.copyWith(color: const Color(0xff767676)),
                         ),
                       ),
                     ),
@@ -103,10 +102,10 @@ class _FclImagePickerState extends State<FclImagePicker> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: _fileImageList.withSpaceBetween(width: 20),
+                children: _fileImageList.withSpaceBetween(width: 20.w),
               ),
             )
-        ].withSpaceBetween(height: 15),
+        ].withSpaceBetween(height: 15.h),
       );
 }
 

@@ -6,7 +6,8 @@ import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 final buttonMainTheme = ButtonThemeData(
   textTheme: ButtonTextTheme.primary,
   minWidth: 184.w,
-  padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 40.h),
+  height: 90.h,
+  padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 30.h),
 );
 
 final elevatedButtonThemeData = ElevatedButtonThemeData(

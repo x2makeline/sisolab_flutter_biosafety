@@ -14,8 +14,13 @@ import 'fcl_detail_form_state.dart';
 abstract class FclDetailController extends GetxController {
   final _repository = SelectProcFieldRepository();
 
+  final _pastYearYn = RxBool(false);
+
+  bool get pastYearYn => _pastYearYn.value;
+  set pastYearYn(bool v) => _pastYearYn.value = v;
+
   /// 활성화 탭 index
-  final _tabIndex = 2.obs;
+  final _tabIndex = 5.obs;
 
   int get tabIndex => _tabIndex.value;
 

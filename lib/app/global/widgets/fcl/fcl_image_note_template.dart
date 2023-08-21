@@ -11,11 +11,11 @@ class FclImageNoteTemplate extends StatelessWidget {
       required this.label,
       required this.noteName,
       this.fclRadio,
-      required this.imageName});
+      this.imageName});
 
   final String label;
   final String noteName;
-  final String imageName;
+  final String? imageName;
   final FclRadio? fclRadio;
 
   @override
@@ -25,9 +25,10 @@ class FclImageNoteTemplate extends StatelessWidget {
         fclRadio: fclRadio,
         name: noteName,
         builder: (_) => [
-              FormBuilderFclImagePicker(
-                name: imageName,
-              ),
+              if (imageName != null)
+                FormBuilderFclImagePicker(
+                  name: imageName!,
+                ),
               if (fclRadio != null)
                 Row(
                   children: [

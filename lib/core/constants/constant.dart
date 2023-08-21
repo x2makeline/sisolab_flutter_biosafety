@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/air_control.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/building_charac_conf.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/check_basic_data.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/exp_ins_app_con.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/handling_organism_information.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/widgets/inspection_overview.dart';
 
@@ -21,10 +24,10 @@ class Constant {
 final List<FclTab> newTabList = [
   FclTab(title: "점검개요", body: const InspectionOverview()),
   FclTab(title: "취급생물체정보", body: const HandlingOrganismInformation()),
-  FclTab(title: "기본 자료 확인", body: CheckBasicData()),
-  FclTab(title: "실험구역 설치 적절성 확인", body: Text("실험구역 설치 적절성 확인")),
-  FclTab(title: "공기조절", body: Text("공기조절")),
-  FclTab(title: "건축 특성 확인", body: Text("건축 특성 확인")),
+  FclTab(title: "기본 자료 확인", body: const CheckBasicData()),
+  FclTab(title: "실험구역 설치 적절성 확인", body: const ExpInsAppCon()),
+  FclTab(title: "공기조절", body: const AirControl()),
+  FclTab(title: "건축 특성 확인", body: const BuildingCharacConf()),
   FclTab(title: "생물안전장비\n설치 및 검증 확인", body: Text("생물안전장비\n설치 및 검증 확인")),
   FclTab(title: "생물안전 정보 제공 및 이행", body: Text("생물안전 정보 제공 및 이행")),
   FclTab(title: "비상 시 가동성 확인", body: Text("비상 시 가동성 확인")),

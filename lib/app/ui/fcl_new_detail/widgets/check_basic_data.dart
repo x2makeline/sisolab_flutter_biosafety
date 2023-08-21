@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_controller.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_note_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_person_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
 
+/// 기본 자료 확인
 class CheckBasicData extends StatelessWidget {
-  CheckBasicData({super.key});
+  const CheckBasicData({super.key});
 
-  final _pastYearYn = RxBool(false);
+  FclDetailController get controller => FclDetailController.to;
 
-  bool get pastYearYn => _pastYearYn.value;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -30,9 +31,9 @@ class CheckBasicData extends StatelessWidget {
                 children: [
                   Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
-                      value: pastYearYn,
+                      value: controller.pastYearYn,
                       onChanged: (v) {
-                        _pastYearYn.value = v ?? false;
+                        controller.pastYearYn = v ?? false;
                       }))
                 ],
               )
@@ -178,7 +179,10 @@ class CheckBasicData extends StatelessWidget {
                     name: BioIoName.d9.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
                 imageName: BioIoName.file5.name,
-              )
+              ),
+              SizedBox(
+                height: 47.h,
+              ),
             ],
           )
         ],

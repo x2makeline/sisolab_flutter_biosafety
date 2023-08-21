@@ -7,6 +7,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_file_picker/form_builder_file_picker.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
@@ -43,59 +44,52 @@ class _FclImagePickerState extends State<FclImagePicker> {
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          SizedBox(
-            height: 90.h,
-            child: Row(
-              children: <Widget>[
-                SizedBox(
-                  height: 90.h,
-                  child: ElevatedButton(
-                      style: const ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll<Color>(
-                              Color(0xff505050))),
-                      onPressed: () async {
-                        final result = await FilePicker.platform.pickFiles(
-                          allowMultiple: true,
-                          type: FileType.image,
-                        );
+          Row(
+            children: <Widget>[
+              ElevatedButton(
+                  style:  const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Color(0xff505050))),
+                  onPressed: () async {
+                    final result = await FilePicker.platform.pickFiles(
+                      allowMultiple: true,
+                      type: FileType.image,
+                    );
 
-                        result?.files.let((fis) {
-                          for (var element in fis) {
-                            files.add(element);
-                          }
-                        });
+                    result?.files.let((fis) {
+                      for (var element in fis) {
+                        files.add(element);
+                      }
+                    });
 
-                        setState(() {
-                          widget.onChange?.let((it) => it(files));
-                        });
-                      },
-                      child: Text(
-                        "파일선택",
-                        style: TextStyle(fontSize: 28.sp),
-                      )),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                Expanded(
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                        border: Border.all(color: ColorGroup.gray)),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 30.w),
-                        child: Text(
-                          "이미지를 선택해주세요.",
-                          style: context.textTheme.titleLarge
-                              ?.copyWith(color: const Color(0xff767676)),
-                        ),
-                      ),
+                    setState(() {
+                      widget.onChange?.let((it) => it(files));
+                    });
+                  },
+                  child: Text(
+                    "파일선택",
+                    style: context.textTheme.titleMedium
+                        ?.copyWith(color: Colors.white),
+                  )),
+              SizedBox(
+                width: 10.w,
+              ),
+              Expanded(
+                child: Container(
+                  padding: buttonMainTheme.padding,
+                  decoration:
+                      BoxDecoration(border: Border.all(color: ColorGroup.gray)),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "이미지를 선택해주세요.",
+                      style: context.textTheme.titleMedium
+                          ?.copyWith(color: const Color(0xff767676)),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           if (_fileImageList.isNotEmpty)
             SingleChildScrollView(

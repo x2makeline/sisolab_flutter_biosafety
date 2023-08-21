@@ -14,9 +14,7 @@ class NoteTemplate extends StatelessWidget {
         this.fclRadio,
       required this.name,
       required this.builder});
-
   final String name;
-
   final String? label;
   final FclRadio? fclRadio;
   final List<Widget> Function(BuildContext context) builder;
@@ -26,6 +24,7 @@ class NoteTemplate extends StatelessWidget {
   Widget build(BuildContext context) => FieldWithLabel(
         label: label,
         child: Column(
+
           children: [
             ...builder(context),
             FormBuilderNote(

@@ -3,6 +3,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_controller.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_checker_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_related_person_table.dart';
@@ -17,8 +18,10 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_betwe
 import '../../../global/widgets/field_with_label.dart';
 
 /// 점검개요
-class InspectionOverview extends GetView<FclNewDetailController> {
+class InspectionOverview extends StatelessWidget {
   const InspectionOverview({super.key});
+
+  FclDetailController get controller => FclDetailController.to;
 
   @override
   Widget build(BuildContext context) => Column(

@@ -9,9 +9,9 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-/// 2. 실험구역 설치 적절성 확인
-class ExpInsAppCon extends StatelessWidget {
-  const ExpInsAppCon({super.key});
+/// 13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지
+class FacilityAutomaticControl extends StatelessWidget {
+  const FacilityAutomaticControl({super.key});
 
   FclDetailController get controller => FclDetailController.to;
 
@@ -24,7 +24,8 @@ class ExpInsAppCon extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("2. 실험구역 설치 적절성 확인", style: TextStyle(fontSize: 34.sp)),
+              Text("13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
+                  style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
@@ -49,53 +50,13 @@ class ExpInsAppCon extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d99.name,
-                label: "시설 도면과의 일치성",
-                imageName: BioIoName.file6.name,
+                noteName: BioIoName.d154.name,
+                label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
+                imageName: BioIoName.file60.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d10.name,
+                    name: BioIoName.d64.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d100.name,
-                label: "주출입구 잠금장치 및 출입통제",
-                imageName: BioIoName.file7.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d11.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d101.name,
-                label: "장비 반출 가능한 문 설치",
-                imageName: BioIoName.file8.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d12.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d102.name,
-                label: "밀폐구역 내 인터락(수동조작 가능)",
-                imageName: BioIoName.file9.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d13.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d103.name,
-                label: "도어 자동 닫힘",
-                imageName: BioIoName.file10.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d14.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d104.name,
-                label: "비상샤워 설비 가동",
-                imageName: BioIoName.file11.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d15.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
+              )
             ].withWidgetBetween(Column(
               children: [
                 SizedBox(

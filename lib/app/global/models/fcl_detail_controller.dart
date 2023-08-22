@@ -20,7 +20,7 @@ abstract class FclDetailController extends GetxController {
   set pastYearYn(bool v) => _pastYearYn.value = v;
 
   /// 활성화 탭 index
-  final _tabIndex = 5.obs;
+  final _tabIndex = 16.obs;
 
   int get tabIndex => _tabIndex.value;
 

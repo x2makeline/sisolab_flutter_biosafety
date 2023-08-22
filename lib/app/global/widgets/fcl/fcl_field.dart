@@ -26,7 +26,7 @@ class FclField extends StatelessWidget {
       children: [
         Text(label, style: context.textTheme.titleLarge),
         FclImageNoteTemplate(
-          label: "이미지 첨부",
+          label: imageName != null ? "이미지 첨부" : null,
           noteName: noteName,
           fclRadio: fclRadio,
           imageName: imageName,

@@ -8,12 +8,12 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/template/note_templ
 class FclImageNoteTemplate extends StatelessWidget {
   const FclImageNoteTemplate(
       {super.key,
-      required this.label,
+      this.label,
       required this.noteName,
       this.fclRadio,
       this.imageName});
 
-  final String label;
+  final String? label;
   final String noteName;
   final String? imageName;
   final FclRadio? fclRadio;

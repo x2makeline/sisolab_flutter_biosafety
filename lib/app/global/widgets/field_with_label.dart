@@ -22,10 +22,11 @@ class FieldWithLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => [
-        Text(
-          label ?? "",
-          style: style ?? context.textTheme.titleMedium,
-        ),
+        if (label != null)
+          Text(
+            label!,
+            style: style ?? context.textTheme.titleMedium,
+          ),
         SizedBox(
           height: axis == Axis.horizontal ? labelPadding ?? 15.h : null,
           width: axis == Axis.vertical ? labelPadding ?? 15.h : null,

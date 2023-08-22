@@ -9,9 +9,13 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-/// 4. 건축 특성(문과 천정, 등기구, 전기장비등의 마감, 관통, 코킹) 확인
-class BuildingCharacConf extends StatelessWidget {
-  const BuildingCharacConf({super.key});
+
+
+
+
+/// 9. 내부로의 일방향 공기흐름 확인
+class CheckTheOneWayAirflowToTheInside extends StatelessWidget {
+  const CheckTheOneWayAirflowToTheInside({super.key});
 
   FclDetailController get controller => FclDetailController.to;
 
@@ -24,8 +28,7 @@ class BuildingCharacConf extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("4. 건축 특성(문과 천정, 등기구, 전기장비등의 마감, 관통, 코킹) 확인",
-                  style: TextStyle(fontSize: 34.sp)),
+              Text("9. 내부로의 일방향 공기흐름 확인", style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
@@ -50,67 +53,34 @@ class BuildingCharacConf extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d107.name,
-                label: "밀폐구역 내 접함 및 관통 부위의 기밀성",
-                imageName: BioIoName.file14.name,
+                noteName: BioIoName.d143.name,
+                label: "실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상)",
+                imageName: BioIoName.file50.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d18.name,
+                    name: BioIoName.d53.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d108.name,
-                label: "밀폐구역 내 전열 콘센트 기밀성",
-                imageName: BioIoName.file15.name,
+                noteName: BioIoName.d144.name,
+                label: "차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지)",
                 fclRadio: FclRadio(
-                    name: BioIoName.d19.name,
+                    name: BioIoName.d54.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d109.name,
-                label: "밀폐구역 내 조명기구 기밀성",
-                imageName: BioIoName.file16.name,
+                noteName: BioIoName.d145.name,
+                label: "밀폐구역 내 실간차압이 -7.6 Pa 이상 유지",
+                imageName: BioIoName.file51.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d20.name,
+                    name: BioIoName.d55.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d110.name,
-                label: "멸균기-벽체 이음새부위 기밀성",
-                imageName: BioIoName.file17.name,
+                noteName: BioIoName.d146.name,
+                label: "밀폐구역 내 실간 일방향 기류 확인",
+                imageName: BioIoName.file52.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d21.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d111.name,
-                label: "기타 실험실 내부 벽체 연결부, 코너, 이음새 기밀성",
-                imageName: BioIoName.file18.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d22.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d112.name,
-                label: "밀폐구역 내 싱크와 배수 위치 확인 및 기밀성",
-                imageName: BioIoName.file19.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d23.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d113.name,
-                label: "실험실 내 온도, 습도 및 소음도",
-                imageName: BioIoName.file20.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d24.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d114.name,
-                label: "밀폐구역 내 바닥 마감상태",
-                imageName: BioIoName.file21.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d25.name,
+                    name: BioIoName.d56.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

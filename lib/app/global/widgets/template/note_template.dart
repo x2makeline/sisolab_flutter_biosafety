@@ -24,7 +24,6 @@ class NoteTemplate extends StatelessWidget {
   Widget build(BuildContext context) => FieldWithLabel(
         label: label,
         child: Column(
-
           children: [
             ...builder(context),
             FormBuilderNote(

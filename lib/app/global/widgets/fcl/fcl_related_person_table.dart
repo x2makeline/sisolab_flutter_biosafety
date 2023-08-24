@@ -7,9 +7,10 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_b
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 class FclRelatedPersonTable extends StatelessWidget {
-  const FclRelatedPersonTable({super.key, this.list = const []});
+  const FclRelatedPersonTable({super.key, this.list = const [], this.onSubmitted});
 
   final List<FclRelatedPersonCol> list;
+  final void Function(String?)? onSubmitted;
 
   Widget _flex({required Widget child}) => Flexible(
         fit: FlexFit.tight,
@@ -47,6 +48,7 @@ class FclRelatedPersonTable extends StatelessWidget {
                       children: [
                         Expanded(
                             child: FormBuilderTextField(
+                              onSubmitted:onSubmitted,
                           name: e.nameNm,
                           initialValue: e.initialName,
                           decoration:
@@ -68,6 +70,7 @@ class FclRelatedPersonTable extends StatelessWidget {
               const Flexible(flex: 2, fit: FlexFit.tight, child: Text("연락처")),
               ...list.map((e) => _flex(
                   child: FormBuilderTextField(
+                      onSubmitted:onSubmitted,
                       initialValue: e.initialContact,
                       name: e.contactNm,
                       decoration:
@@ -78,6 +81,7 @@ class FclRelatedPersonTable extends StatelessWidget {
                 const Flexible(flex: 2, fit: FlexFit.tight, child: Text("이메일")),
                 ...list.map((e) => _flex(
                     child: FormBuilderTextField(
+                        onSubmitted:onSubmitted,
                         initialValue: e.initialEmail,
                         name: e.emailNm,
                         decoration:
@@ -89,6 +93,7 @@ class FclRelatedPersonTable extends StatelessWidget {
                 const Flexible(flex: 2, fit: FlexFit.tight, child: Text("핸드폰")),
                 ...list.map((e) => _flex(
                     child: FormBuilderTextField(
+                        onSubmitted:onSubmitted,
                         initialValue: e.initialCellPhone,
                         name: e.cellPhoneNm,
                         decoration:

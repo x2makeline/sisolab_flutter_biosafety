@@ -12,13 +12,14 @@ class FclTextField extends FclField {
       {this.initialValue,
       super.key,
       super.label,
+      void Function(String?)? onSubmitted,
       required String hintText,
       required super.name})
       : super(
             type: FclType.text,
             builder: () => FormBuilderTextField(
                   name: name,
-
+                  onSubmitted: onSubmitted,
                   initialValue: initialValue,
                   style: buttonTextStyle,
                   decoration: textFieldDecoration.copyWith(hintText: hintText),

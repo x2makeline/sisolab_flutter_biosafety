@@ -46,6 +46,7 @@ class _FclImagePickerState extends State<FclImagePicker> {
         children: <Widget>[
           Row(
             children: <Widget>[
+
               ElevatedButton(
                   style:  const ButtonStyle(
                       backgroundColor:
@@ -76,7 +77,8 @@ class _FclImagePickerState extends State<FclImagePicker> {
               ),
               Expanded(
                 child: Container(
-                  padding: buttonMainTheme.padding,
+                  height: 90.h,
+                  padding: EdgeInsets.only(left: 30.w),
                   decoration:
                       BoxDecoration(border: Border.all(color: ColorGroup.gray)),
                   child: Align(

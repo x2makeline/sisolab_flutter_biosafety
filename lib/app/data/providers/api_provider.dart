@@ -2,8 +2,10 @@ import 'package:dartlin/control_flow.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/api_response.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/login_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/login_out.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/proc_field_save_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
@@ -37,7 +39,7 @@ class ApiProvider {
                 final accessToken = value.headers.map["access_token"]!.first;
                 final refreshToken = value.headers.map["refresh_token"]!.first;
                 final SharedPreferences prefs =
-                await SharedPreferences.getInstance();
+                    await SharedPreferences.getInstance();
                 prefs.setString("access_token", accessToken);
                 prefs.setString("refresh_token", refreshToken);
               });
@@ -54,10 +56,20 @@ class ApiProvider {
             return handler.next(options);
           }));
 
-
           // dio.interceptors
           //     .add(LogInterceptor(requestBody: true, responseBody: true));
         });
+
+  /// 현장점검 데이터 저장
+  Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
+    print(req.toJson());
+
+    return ApiResponse<ProcFieldSaveOut>.fromJson(
+        (await _dio.get("/api/procFieldS1ave.do", queryParameters: req.toJson()))
+            .data,
+        fromJson: (data) => ProcFieldSaveOut.fromJson(data),
+      ).filter();
+  }
 
   /// 현장점검 데이터 가져오기
   Future<ApiResponse<SelectProcFieldOut>> selectProcField(

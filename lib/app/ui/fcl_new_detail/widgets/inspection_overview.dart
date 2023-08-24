@@ -12,7 +12,6 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_date_fie
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_dropdown_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 import '../../../global/widgets/field_with_label.dart';
@@ -42,18 +41,21 @@ class InspectionOverview extends StatelessWidget {
             mainAxisSpacing: 40.h,
             children: [
               FclTextField(
+                onSubmitted: (_) => controller.submit(),
                 hintText: "운영기관명",
                 name: BioIoName.company.name,
                 initialValue: controller.io.company,
                 label: "운영기관명",
               ),
               FclTextField(
+                onSubmitted: (_) => controller.submit(),
                 hintText: "설치 ∙ 운영 장소",
                 name: BioIoName.d184.name,
                 initialValue: controller.io.d184,
                 label: "설치 ∙ 운영 장소",
               ),
               FclTextField(
+                onSubmitted: (_) => controller.submit(),
                 hintText: "안전관리등급",
                 name: BioIoName.d280.name,
                 initialValue: controller.io.d280,
@@ -131,6 +133,7 @@ class InspectionOverview extends StatelessWidget {
                       title: Text("유전자변형생물체",
                           style: context.textTheme.titleMedium)),
                   FclTextField(
+                    onSubmitted: (_) => controller.submit(),
                     hintText: "허가번호",
                     name: BioIoName.d157.name,
                     initialValue: controller.io.d157,
@@ -147,6 +150,7 @@ class InspectionOverview extends StatelessWidget {
                       title:
                           Text("고위험병원체", style: context.textTheme.titleMedium)),
                   FclTextField(
+                    onSubmitted: (_) => controller.submit(),
                     hintText: "허가번호",
                     name: BioIoName.d281.name,
                     initialValue: controller.io.d281,
@@ -161,24 +165,28 @@ class InspectionOverview extends StatelessWidget {
                 label: "최초허가일",
               ),
               FclTextField(
+                onSubmitted: (_) => controller.submit(),
                 hintText: "취급동물",
                 name: BioIoName.d282.name,
                 initialValue: controller.io.d282,
                 label: "취급동물",
               ),
               FclTextField(
+                onSubmitted: (_) => controller.submit(),
                 hintText: "취급병원체",
                 name: BioIoName.d283.name,
                 initialValue: controller.io.d283,
                 label: "취급병원체",
               ),
               FclTextField(
+                onSubmitted: (_) => controller.submit(),
                 hintText: "실험실 ∙ 전실 면적",
                 name: BioIoName.d284.name,
                 initialValue: controller.io.d284,
                 label: "실험실 ∙ 전실 면적",
               ),
               FclTextField(
+                onSubmitted: (_) => controller.submit(),
                 hintText: "지역",
                 name: BioIoName.d285.name,
                 initialValue: controller.io.d285,
@@ -204,6 +212,7 @@ class InspectionOverview extends StatelessWidget {
             height: 47.h,
           ),
           FclRelatedPersonTable(
+            onSubmitted: (_) => controller.submit(),
             list: [
               FclRelatedPersonCol(
                   title: "생물안전관리책임자",

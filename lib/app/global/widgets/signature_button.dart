@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -20,7 +21,7 @@ class SignatureButton extends StatefulWidget {
 
 class _SignatureButtonState extends State<SignatureButton> {
   late final SignatureController controller;
-  Uint8List? unit8List;
+  Uint8List? uint8List;
   static final double _modalSingHeight = 600.h;
   static final double _modalSingWidth = 600.w;
 
@@ -30,7 +31,12 @@ class _SignatureButtonState extends State<SignatureButton> {
     controller =
         widget.controller ?? SignatureController(penColor: Colors.black);
 
-    unit8List = widget.initialValue;
+    if(widget.initialValue != null) {
+      uint8List = widget.initialValue;
+      iff(widget.onChange != null, () => widget.onChange!(uint8List));
+
+    }
+
 
 
   }
@@ -57,11 +63,13 @@ class _SignatureButtonState extends State<SignatureButton> {
                 TextButton(
                     onPressed: () async {
                       if (controller.isNotEmpty) {
-                        unit8List = await pngBytes;
+                        uint8List = await pngBytes;
                         controller.clear();
 
+                        print(123);
                         if (widget.onChange != null) {
-                          widget.onChange!(unit8List);
+                          print(456);
+                          widget.onChange!(uint8List);
                         }
                       }
                       setState(() {});
@@ -85,9 +93,9 @@ class _SignatureButtonState extends State<SignatureButton> {
             decoration: BoxDecoration(
               border: Border.all(width: 1),
             ),
-            child: unit8List != null
+            child: uint8List != null
                 ? Image.memory(
-                    unit8List!,
+                    uint8List!,
                     width: 90.h,
                     height: 90.h,
                   )

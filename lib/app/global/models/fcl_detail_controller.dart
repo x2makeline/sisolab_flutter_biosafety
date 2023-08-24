@@ -20,7 +20,7 @@ abstract class FclDetailController extends GetxController {
   set pastYearYn(bool v) => _pastYearYn.value = v;
 
   /// 활성화 탭 index
-  final _tabIndex = 16.obs;
+  final _tabIndex = 0.obs;
 
   int get tabIndex => _tabIndex.value;
 
@@ -64,10 +64,14 @@ abstract class FclDetailController extends GetxController {
   submit() {
     if (formKey.currentState != null) {
       formKey.currentState!.save();
-
-      print(formKey.currentState!.value);
-      print(BioIo.fromJson(formKey.currentState!.value));
-      print(BioIo.fromJson(formKey.currentState!.value).toJson());
+      // print(formKey.currentState!.value);
+      final bio = BioIo.fromForm({
+        ...formKey.currentState!.value,
+        "docno" :io.docno
+      });
+      // print(bio);
+      print(bio.toJson());
+      // print(BioIo.fromJson(formKey.currentState!.value).toJson());
     }
   }
 

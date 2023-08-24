@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_controller.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 /// 취급생물체정보
 class HandlingOrganismInformation extends StatelessWidget {
-  const HandlingOrganismInformation({super.key});
+
+
+   HandlingOrganismInformation({super.key});
+  final _controller = FclDetailController.to;
 
   _wg(String label, List<String> list) => FieldWithLabel(
       label: label,
@@ -17,6 +20,7 @@ class HandlingOrganismInformation extends StatelessWidget {
           children: list
               .map((e) => Flexible(
                     child: FormBuilderTextField(
+                      onSubmitted: (_) => _controller.submit(),
                       name: e,
                     ),
                   ))
@@ -28,7 +32,6 @@ class HandlingOrganismInformation extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-
         Text("취급생물체정보",
             style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w500)),
         SizedBox(

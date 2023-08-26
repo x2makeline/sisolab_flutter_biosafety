@@ -8,15 +8,21 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_betwe
 import 'title_area.dart';
 
 class Layout extends StatelessWidget {
-  const Layout({super.key, required this.title, required this.child});
+  const Layout(
+      {super.key,
+      this.scrollController,
+      required this.title,
+      required this.child});
 
   final String title;
   final Widget child;
+  final ScrollController? scrollController;
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: const TopBar(),
         body: ListView(
+          controller: scrollController,
           shrinkWrap: true,
           children: [
             Padding(

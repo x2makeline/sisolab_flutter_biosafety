@@ -48,7 +48,9 @@ class _Item extends StatelessWidget {
             children: <Widget>[
               TableCell(
                 verticalAlignment: TableCellVerticalAlignment.middle,
-                child: Text(info.docno),
+                child: Text(info.docno,
+                    style: TextStyle(
+                        fontSize: 28.sp, fontWeight: FontWeight.w500)),
               ),
               TableCell(
                   child: Column(

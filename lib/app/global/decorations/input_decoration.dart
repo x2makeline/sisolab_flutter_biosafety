@@ -14,12 +14,12 @@ final dateInputDecoration = InputDecoration(
 );
 
 final textFieldDecoration = InputDecoration(
-    constraints: BoxConstraints(minHeight: 90.h),
+    // constraints: BoxConstraints(minHeight: 90.h),
     border: const OutlineInputBorder(
         borderSide: BorderSide(color: ColorGroup.gray)));
 
 final inputDecorationTheme = InputDecorationTheme(
-    constraints: BoxConstraints(maxHeight: 90.h),
+    // constraints: BoxConstraints(maxHeight: 90.h),
     enabledBorder: textFieldDecoration.border,
     border: textFieldDecoration.border // enabledBorder: ,
     );

@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(1563, 2048),
       // minTextAdapt: true,
       builder: (_, __) => GetMaterialApp(
+
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [
               ...GlobalMaterialLocalizations.delegates,
@@ -44,10 +45,11 @@ class MyApp extends StatelessWidget {
               Locale('ko'),
             ],
             locale: const Locale('ko'),
-            initialRoute: AppRoutes.home.name,
+            // initialRoute: AppRoutes.home.name,
         // initialRoute: AppRoutes.fclNewLIst.name,
-            // initialRoute: "/fcl/new/detail/479",
+            initialRoute: "/fcl/new/detail/479",
             theme: ThemeData(
+
                 buttonTheme: buttonMainTheme,
                 elevatedButtonTheme: elevatedButtonThemeData,
                 outlinedButtonTheme: outlinedButtonThemeData,

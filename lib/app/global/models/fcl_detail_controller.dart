@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
@@ -16,8 +18,10 @@ abstract class FclDetailController extends GetxController {
   final _repository = SelectProcFieldRepository();
   final _apiPro = ApiProvider();
   final _pastYearYn = RxBool(false);
+  final ScrollController scrollController = ScrollController();
 
   bool get pastYearYn => _pastYearYn.value;
+
   set pastYearYn(bool v) => _pastYearYn.value = v;
 
   /// 활성화 탭 index
@@ -26,6 +30,8 @@ abstract class FclDetailController extends GetxController {
   int get tabIndex => _tabIndex.value;
 
   set tabIndex(int index) => _tabIndex.value = index;
+
+  final int maxTabindex = 5;
 
   static FclDetailController get to =>
       Get.isRegistered<FclNewDetailController>()
@@ -52,6 +58,13 @@ abstract class FclDetailController extends GetxController {
   final formKey =
       GlobalKey<FormBuilderState>(debugLabel: 'FclDetailController');
 
+
+  prevTab() {
+    _tabIndex.value = max(0, tabIndex-1);
+  }
+  nextTab() {
+    _tabIndex.value = min(maxTabindex, tabIndex+1);
+  }
   _init() {
     _repository
         .selectProcField(SelectProcFieldIn(
@@ -66,10 +79,8 @@ abstract class FclDetailController extends GetxController {
     if (formKey.currentState != null) {
       formKey.currentState!.save();
       // print(formKey.currentState!.value);
-      final bio = BioIo.fromForm({
-        ...formKey.currentState!.value,
-        "docno" :io.docno
-      });
+      final bio =
+          BioIo.fromForm({...formKey.currentState!.value, "docno": io.docno});
 
       _apiPro.procFieldSave(bio).then((value) => print(value));
       // print(bio);
@@ -88,6 +99,7 @@ abstract class FclDetailController extends GetxController {
     } else {
       _isLoading.value = false;
     }
+    ever(_tabIndex, (_) => scrollController.jumpTo(0));
 
     formState =
         idx != null ? FclDetailFormState.update : FclDetailFormState.insert;

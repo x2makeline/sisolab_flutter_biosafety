@@ -57,5 +57,6 @@ abstract class AppRoutes {
       name: "/fcl/new/list",
       page: () => const FclNewListPage(),
       binding: FclNewListBinding(),
+
       title: "${Constant.newTitle} ${Constant.fclTitle} ${Constant.listTitle}");
 }

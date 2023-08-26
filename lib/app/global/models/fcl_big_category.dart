@@ -1,4 +1,4 @@
 enum FclBigCategory {
-  novel,
-  regular
+  NEW,
+  REGULAR
 }

@@ -10,14 +10,14 @@ class DetailCategoryTab extends StatefulWidget {
       {Key? key,
       required this.tabMapList,
       required this.activeTabIndex,
-      required this.onChange})
+      required this.onTab})
       : super(key: key);
 
   final List<FclTab> tabMapList;
 
   final int activeTabIndex;
 
-  final void Function(int index) onChange;
+  final void Function(int index) onTab;
 
   @override
   State<DetailCategoryTab> createState() => _DetailCategoryTabState();
@@ -61,7 +61,7 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                               )),
                             )
                           : InkWell(
-                              onTap: () => widget.onChange(entry.key),
+                              onTap: () => widget.onTab(entry.key),
                               child: Center(
                                   child: Text(
                                 entry.value.title,

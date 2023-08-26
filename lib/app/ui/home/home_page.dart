@@ -16,9 +16,9 @@ import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+   HomePage({super.key});
 
-  NetworkVm get _netVm => NetworkVm.to;
+  final NetworkVm  _netVm =  NetworkVm.to;
 
   @override
   Widget build(BuildContext context) => HomePageLayout(
@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
       child: Obx(() => _netVm.isConnect ? const _Connected() : _UnConnected()));
 }
 
-class _UnConnected extends StatelessWidget with FclLogger {
+class _UnConnected extends StatelessWidget with PLoggerMixin {
   _UnConnected({super.key});
 
   final _formKey = GlobalKey<FormBuilderState>();
@@ -35,7 +35,7 @@ class _UnConnected extends StatelessWidget with FclLogger {
 
   _submit() {
     _formKey.currentState?.let((curr) => iff(curr.saveAndValidate(), () {
-          log('userId ${curr.value[_userIdName]}');
+          log.i('userId ${curr.value[_userIdName]}');
           _storageRepository.setUserId(curr.value[_userIdName]).then((value) {
             iff(value, () {
               Get.offAllNamed(AppRoutes.selectType.name);
@@ -104,10 +104,10 @@ class _Connected extends StatefulWidget {
   State<_Connected> createState() => _ConnectedState();
 }
 
-class _ConnectedState extends State<_Connected> with FclLogger {
+class _ConnectedState extends State<_Connected> with PLoggerMixin {
   final _formKey = GlobalKey<FormBuilderState>();
 
-  TokenVm get _tokenVm => TokenVm.to;
+  final tokenVm = TokenVm.to;
 
   static const _userIdName = '_userIdName';
   static const _passwdName = '_passwdName';
@@ -117,10 +117,10 @@ class _ConnectedState extends State<_Connected> with FclLogger {
 
   _submit() {
     _formKey.currentState?.let((curr) => iff(curr.saveAndValidate(), () async {
-          log('userId ${curr.value[_userIdName]}');
-          log('passwd ${curr.value[_passwdName]}');
+          log.i('userId ${curr.value[_userIdName]}');
+          log.i('passwd ${curr.value[_passwdName]}');
           try {
-            await _tokenVm.login(
+            await tokenVm.login(
                 userId: curr.value[_userIdName],
                 passwd: curr.value[_passwdName]);
             Get.offAllNamed(AppRoutes.selectType.name);

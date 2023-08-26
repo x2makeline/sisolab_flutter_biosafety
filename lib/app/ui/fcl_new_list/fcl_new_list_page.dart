@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/bio_search_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_item.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
@@ -17,18 +19,18 @@ class _Item extends StatelessWidget {
 
   final SelectProcListItem info;
 
-  static const TextStyle _titleStyle = TextStyle(
-      fontSize: 24,
+  static final TextStyle _titleStyle = TextStyle(
+      fontSize: 24.sp,
       fontWeight: FontWeight.w500,
-      color: Color(0xff767676));
+      color: const Color(0xff767676));
 
-  static const TextStyle _contentStyle = TextStyle(fontSize: 24);
+  static final TextStyle _contentStyle = TextStyle(fontSize: 24.sp);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed("/fcl/new/detail/${info.docno}");
+        Get.toNamed("/fcl/new/detail/${info.idx}");
       },
       child: Table(
         columnWidths: const <int, TableColumnWidth>{
@@ -139,7 +141,7 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
     return Layout(
       title: "${Constant.newTitle}\n${Constant.fclTitle}",
       child: Padding(
-        padding: EdgeInsets.only(top: 47),
+        padding: EdgeInsets.only(top: 47.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -148,8 +150,9 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
                 Flexible(
                   child: FieldWithLabel(
                     label: "제출기관",
-                    child: TextField(
-                      style: TextStyle(fontSize: 28),
+                    child: FormBuilderTextField(
+                      name: BioSearchInName.company.name,
+                      style: TextStyle(fontSize: 28.sp),
                       decoration: const InputDecoration(hintText: "제출기관"),
                     ),
                   ),
@@ -158,19 +161,19 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
                   child: FieldWithLabel(
                     label: "기간선택",
                     child: FormBuilderBetweenDate(
-                      endName: "test",
-                      startName: "test1",
+                      endName: BioSearchInName.date1.name,
+                      startName: BioSearchInName.date2.name,
                     ),
                   ),
                 )
-              ].withSpaceBetween(width: 40),
+              ].withSpaceBetween(width: 40.w),
             ),
             SizedBox(
-              height: 47,
+              height: 47.h,
             ),
             const FclDivider.form(),
             SizedBox(
-              height: 40,
+              height: 40.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -184,7 +187,7 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
                                 MaterialStatePropertyAll<Color>(Colors.black)),
                         onPressed: () {},
                         child: const Text("신규등록")),
-                  ].withSpaceBetween(width: 24),
+                  ].withSpaceBetween(width: 24.w),
                 ),
                 ElevatedButton(
                     onPressed: () {
@@ -194,10 +197,10 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
               ],
             ),
             SizedBox(
-              height: 60,
+              height: 60.h,
             ),
             Obx(() => Text.rich(
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 24.sp),
                 TextSpan(children: [
                   const TextSpan(text: "총 게시글 "),
                   TextSpan(

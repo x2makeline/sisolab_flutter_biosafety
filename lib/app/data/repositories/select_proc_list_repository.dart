@@ -5,6 +5,6 @@ import 'package:sisolab_flutter_biosafety/app/data/repositories/repository.dart'
 
 class SelectProcListRepository extends Repository {
   Future<ApiResponse<SelectProcListOut>> selectProcList(SelectProcListIn req) {
-    return apiProvider.selectProcList(req);
+    return api.selectProcList(req);
   }
 }

@@ -4,12 +4,7 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/controllers/fcl_
 class FclNewDetailBinding extends Bindings {
   @override
   void dependencies() {
-    print(Get.parameters);
-
 
     Get.lazyReplace(() => FclNewDetailController());
-
-
-    ;
   }
 }

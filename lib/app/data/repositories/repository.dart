@@ -4,7 +4,7 @@ import 'package:sisolab_flutter_biosafety/app/global/errors/api_error.dart';
 
 abstract class Repository {
 
-  final apiProvider = ApiProvider();
+  final api = ApiProvider();
 
 
 }

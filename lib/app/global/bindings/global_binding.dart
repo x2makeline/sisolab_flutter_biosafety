@@ -4,8 +4,10 @@ import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 
 class GlobalBinding extends Bindings {
   @override
-  void dependencies() {
-    Get.lazyPut(() => NetworkVm());
-    Get.lazyPut(() => TokenVm());
+  Future<void> dependencies() async {
+    Get.put(NetworkVm());
+
+    Get.put(TokenVm());
+
   }
 }

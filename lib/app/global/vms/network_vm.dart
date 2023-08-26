@@ -4,7 +4,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-class NetworkVm extends GetxService with FclLogger {
+class NetworkVm extends GetxService with PLoggerMixin {
   final _connectivity = Connectivity();
 
   static NetworkVm get to => Get.find<NetworkVm>();

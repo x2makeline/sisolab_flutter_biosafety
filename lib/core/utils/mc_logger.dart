@@ -1,74 +1,57 @@
+/// project logger
+
+import 'package:dartlin/control_flow.dart';
 import 'package:logger/logger.dart';
 
-enum FclLogType {
-  action(Level.debug),
-  error(Level.error),
-  change(Level.debug),
-  info(Level.info),
-  custom(Level.info);
+class PLoggerPrinter extends PrettyPrinter {
+  static const _defaultStackMethodCount = 20;
+  static const _lineLength = 30;
 
-  const FclLogType(this.level);
-  final Level level;
+  PLoggerPrinter({
+    bool stackYn = false,
+    int? methodCount,
+    int errorMethodCount = _defaultStackMethodCount,
+  }) : super(
+      printTime: false,
+      colors: true,
+      noBoxingByDefault: false,
+      lineLength: _lineLength,
+      methodCount:
+      methodCount ?? (stackYn ? _defaultStackMethodCount : 0));
 }
 
-class FclLog {
-  FclLogType type;
-  bool stackYn;
+final pLogger = PLogger();
 
-  FclLog({this.type = FclLogType.custom, this.stackYn = false});
-
-  log(String? prefix, dynamic message) {
-    final Logger logger = stackYn
-        ? Logger(
-            printer: PrettyPrinter(
-            methodCount: 20,
-          ))
-        : Logger(
-            printer: PrettyPrinter(
-            methodCount: 0,
-          ));
-
-    logger.log(type.level, "[${type.name}] $prefix\n$message");
-  }
+class PLogger extends Logger {
+  PLogger({LogPrinter? printer, String? prefix})
+      : super(
+      printer: PrefixPrinter(
+          _PrefixPrinter(printer ?? PLoggerPrinter(), prefix: prefix)));
 }
 
-mixin FclLogger {
-  final Logger logger = Logger();
-  final Logger loggerNoStack = Logger(
-      printer: PrettyPrinter(
-    methodCount: 0,
-  ));
-  String get className => runtimeType.toString();
-  log(dynamic message, [FclLog? log]) {
-    log = log ?? FclLog();
-    log.log(className, message);
-  }
+mixin PLoggerMixin {
+  PLogger get log => PLogger(
+    prefix: runtimeType.toString(),
+  );
+}
 
-  actionLog(String action, dynamic message, [bool? stackYn]) {
-    FclLog(
-      type: FclLogType.action,
-      stackYn: stackYn ?? false,
-    ).log("$className - $action", message);
-  }
+class _PrefixPrinter extends LogPrinter {
+  final LogPrinter _realPrinter;
+  final String? prefix;
 
-  errorLog(dynamic message, [bool? stackYn]) {
-    FclLog(
-      type: FclLogType.error,
-      stackYn: stackYn ?? false,
-    ).log(className, message);
-  }
+  _PrefixPrinter(
+      this._realPrinter, {
+        this.prefix,
+      });
 
-  changeLog(dynamic message, [bool? stackYn]) {
-    FclLog(
-      type: FclLogType.change,
-      stackYn: stackYn ?? false,
-    ).log(className, message);
-  }
-
-  infoLog(dynamic message, [bool? stackYn]) {
-    FclLog(
-      type: FclLogType.info,
-      stackYn: stackYn ?? false,
-    ).log(className, message);
-  }
+  @override
+  List<String> log(LogEvent event) => _realPrinter.log(LogEvent(
+      event.level,
+      "${event.time}${iff(prefix != null, () => "\n$prefix") ?? ""}\n${StringBuffer().let((it) {
+        for (var element in List.generate(PLoggerPrinter._lineLength - 4,
+                (index) => PrettyPrinter.doubleDivider)) {
+          it.write(element);
+        }
+        return it;
+      }).toString()}\n${event.message}"));
 }

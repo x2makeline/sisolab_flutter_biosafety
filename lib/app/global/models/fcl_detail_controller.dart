@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
+import 'package:sisolab_flutter_biosafety/app/data/providers/api_provider.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_field_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_regular_detail/controllers/fcl_regular_detail_controller.dart';
@@ -13,7 +14,7 @@ import 'fcl_detail_form_state.dart';
 
 abstract class FclDetailController extends GetxController {
   final _repository = SelectProcFieldRepository();
-
+  final _apiPro = ApiProvider();
   final _pastYearYn = RxBool(false);
 
   bool get pastYearYn => _pastYearYn.value;
@@ -69,8 +70,11 @@ abstract class FclDetailController extends GetxController {
         ...formKey.currentState!.value,
         "docno" :io.docno
       });
+
+      _apiPro.procFieldSave(bio).then((value) => print(value));
       // print(bio);
-      print(bio.toJson());
+      // print(bio.toJson());
+
       // print(BioIo.fromJson(formKey.currentState!.value).toJson());
     }
   }

@@ -6,6 +6,6 @@ import 'package:sisolab_flutter_biosafety/app/data/repositories/repository.dart'
 class SelectProcFieldRepository extends Repository {
   Future<ApiResponse<SelectProcFieldOut>> selectProcField(
       SelectProcFieldIn req) {
-    return apiProvider.selectProcField(req);
+    return api.selectProcField(req);
   }
 }

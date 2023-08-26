@@ -7,15 +7,19 @@ import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
+import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 
 import 'app/global/bindings/global_binding.dart';
 import 'routes/app_routes.dart';
 
-void main() {
+void main() async {
   Intl.defaultLocale = 'ko-KP';
   WidgetsFlutterBinding.ensureInitialized();
   FormBuilderLocalizations.setCurrentInstance(FormBuilderLocalizationsImplKo());
 
+  final tokenVm = TokenVm();
+  await tokenVm.onInit();
+  Get.put(tokenVm);
   runApp(const MyApp());
 }
 
@@ -40,8 +44,9 @@ class MyApp extends StatelessWidget {
               Locale('ko'),
             ],
             locale: const Locale('ko'),
-            // initialRoute: AppRoutes.home.name,
-            initialRoute: "/fcl/new/detail/479",
+            initialRoute: AppRoutes.home.name,
+        // initialRoute: AppRoutes.fclNewLIst.name,
+            // initialRoute: "/fcl/new/detail/479",
             theme: ThemeData(
                 buttonTheme: buttonMainTheme,
                 elevatedButtonTheme: elevatedButtonThemeData,
@@ -69,7 +74,9 @@ class MyApp extends StatelessWidget {
                   shape: Border(
                       bottom: BorderSide(width: 1, color: ColorGroup.gray)),
                 )),
+
             initialBinding: GlobalBinding(),
+
             getPages: routes,
           ));
 }

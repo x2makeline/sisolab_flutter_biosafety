@@ -10,12 +10,20 @@ import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.d
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_out.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/configs/env.dart';
 
 /// 싱글톤
 class ApiProvider {
-  TokenVm get _tokenVm => TokenVm.to;
+
+  Token? get _token => TokenVm.to.token;
+
+  ApiProvider._();
+
+  static final ApiProvider _instance = ApiProvider._();
+
+  factory ApiProvider() => _instance;
 
   Dio get _dio => Dio(BaseOptions(
         baseUrl: Env.host,
@@ -49,10 +57,10 @@ class ApiProvider {
 
           dio.interceptors
               .add(InterceptorsWrapper(onRequest: (options, handler) async {
-            final token = await _tokenVm.getTokenByPref();
-            if (token != null) {
-              options.headers['access_token'] = token.accessToken;
+            if (_token != null) {
+              options.headers['access_token'] = _token!.accessToken;
             }
+
             return handler.next(options);
           }));
 
@@ -62,13 +70,10 @@ class ApiProvider {
 
   /// 현장점검 데이터 저장
   Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
-    print(req.toJson());
-
     return ApiResponse<ProcFieldSaveOut>.fromJson(
-        (await _dio.get("/api/procFieldS1ave.do", queryParameters: req.toJson()))
-            .data,
-        fromJson: (data) => ProcFieldSaveOut.fromJson(data),
-      ).filter();
+      (await _dio.post("/api/procFieldSave.do", data: req.toJson())).data,
+      fromJson: (data) => ProcFieldSaveOut.fromJson(data),
+    ).filter();
   }
 
   /// 현장점검 데이터 가져오기

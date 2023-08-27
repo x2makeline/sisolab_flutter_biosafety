@@ -1,21 +1,26 @@
+import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_search_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_item.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_between_date.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_list/fcl_new_list_page_vm.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_list_page_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-class _Item extends StatelessWidget {
-  const _Item({super.key, required this.info});
+class _Item extends StatelessWidget with PLoggerMixin{
+  const _Item({super.key, required this.info, required this.category});
+
+  final FclBigCategory category;
 
   final SelectProcListItem info;
 
@@ -30,7 +35,7 @@ class _Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.toNamed("/fcl/new/detail/${info.idx}");
+        Get.toNamed("/fcl/${category.path}/detail/${info.idx}");
       },
       child: Table(
         columnWidths: const <int, TableColumnWidth>{
@@ -135,13 +140,20 @@ class _Item extends StatelessWidget {
   }
 }
 
-class FclNewListPage extends GetView<FclNewListPageVm> {
-  const FclNewListPage({super.key});
+
+
+
+class FclListPage extends StatelessWidget {
+  FclListPageVm get vm => FclListPageVm.to;
+
+  const FclListPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Layout(
-      title: "${Constant.newTitle}\n${Constant.fclTitle}",
+  Widget build(BuildContext context) => Layout(
+      title: "${when(vm.bigCategory, {
+            FclBigCategory.NEW: () => Constant.newTitle,
+            FclBigCategory.REGULAR: () => Constant.regularTitle,
+          })!}\n${Constant.fclTitle}",
       child: Padding(
         padding: EdgeInsets.only(top: 47.h),
         child: Column(
@@ -193,7 +205,7 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      controller.fetch();
+                      vm.fetch();
                     },
                     child: const Text("조회")),
               ],
@@ -206,8 +218,8 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
                 TextSpan(children: [
                   const TextSpan(text: "총 게시글 "),
                   TextSpan(
-                      text: (controller.list.hasData
-                              ? controller.list.data!.data!.data.length
+                      text: (vm.list.hasData
+                              ? vm.list.data!.data!.data.length
                               : 0)
                           .toString(),
                       style: robotoTextStyle.copyWith(
@@ -216,13 +228,13 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
                   const TextSpan(text: "건")
                 ]))),
             const FclDivider.black(),
-            Obx(() => controller.list.hasData
+            Obx(() => vm.list.hasData
                 ? ListView(
                     shrinkWrap: true,
                     primary: false,
-                    children: controller.list.data!.data!.data
+                    children: vm.list.data!.data!.data
                         .map((e) => SizedBox(
-                            width: double.infinity, child: _Item(info: e)))
+                            width: double.infinity, child: _Item(info: e, category: vm.bigCategory,)))
                         .toList()
                         .withWidgetBetween(const FclDivider.form()),
                   )
@@ -231,5 +243,4 @@ class FclNewListPage extends GetView<FclNewListPageVm> {
         ),
       ),
     );
-  }
 }

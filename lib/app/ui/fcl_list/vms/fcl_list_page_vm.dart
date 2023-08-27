@@ -5,28 +5,35 @@ import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.da
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_list_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/constants/svc_constant.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_new_list_page_vm.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_regular_list_page_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/models/async_status.dart';
 import 'package:sisolab_flutter_biosafety/core/models/rx_net.dart';
 
-class FclNewListPageVm extends GetxController {
-  final _repository = SelectProcListRepository();
-  final _list = RxNet<ApiResponse<SelectProcListOut>>(AsyncStatus.loading());
+abstract class FclListPageVm extends GetxController {
+  static FclListPageVm get to => Get.isRegistered<FclNewListPageVm>()
+      ? FclNewListPageVm.to
+      : FclRegularListPageVm.to;
+
+
+  final repository = SelectProcListRepository();
+
+  FclBigCategory get bigCategory {
+    throw Error();
+  }
 
   final _param = Rx(SelectProcListIn(
       gbn: Gbn.fd2, firstIndex: 0, lastIndex: SvcConstant.apiListSize));
 
   /// ------------------------------------------------------
   void fetch() {
-    _repository.selectProcList(_param.value).then((value) {
-      if (value.isSuccess) {
-        _list.value = AsyncStatus.success(value);
-      } else {
-        _list.value = AsyncStatus.error(value);
-      }
-    });
+    throw Error();
   }
 
-  AsyncStatus<ApiResponse<SelectProcListOut>> get list => _list.value;
+  AsyncStatus<ApiResponse<SelectProcListOut>> get list {
+    throw Error();
+  }
 
   @override
   void onInit() {

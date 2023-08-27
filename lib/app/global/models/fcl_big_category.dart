@@ -1,4 +1,8 @@
 enum FclBigCategory {
-  NEW,
-  REGULAR
+  NEW("new"),
+  REGULAR("regular");
+
+  final String path;
+
+  const FclBigCategory(this.path);
 }

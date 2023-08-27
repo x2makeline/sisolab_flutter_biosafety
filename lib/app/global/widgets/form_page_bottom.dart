@@ -1,17 +1,19 @@
+import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 import '../models/fcl_detail_controller.dart';
 
-
 class FormPageBottom extends StatelessWidget {
   FormPageBottom({super.key});
 
   final _controller = FclDetailController.to;
+
 
   @override
   Widget build(BuildContext context) => Column(
@@ -23,7 +25,7 @@ class FormPageBottom extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
-                    children: [
+                    children: <Widget>[
                       Obx(() => _controller.tabIndex > 0
                           ? OutlinedButton(
                               onPressed: () {
@@ -40,39 +42,42 @@ class FormPageBottom extends StatelessWidget {
                                   ),
                                 ],
                               ))
-                          : const SizedBox.shrink()),
+                          : const EmptyBox()),
+                      Obx(() => _controller.tabIndex > 0 ? SizedBox(width: 20.w,) : const EmptyBox()),
                       Obx(() {
+                        print(_controller);
+                        print("maxTabindex ${_controller.maxTabindex}");
                         return _controller.tabIndex < _controller.maxTabindex
-                            ? OutlinedButton(
-                                onPressed: () {
-                                  _controller.nextTab();
-                                },
-                                child: Row(
-                                  children: [
-                                    const Text(
-                                      "다음",
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios,
-                                      size: buttonTextStyle.fontSize,
-                                    ),
-                                  ],
-                                ))
-                            : const SizedBox.shrink();
+                          ? OutlinedButton(
+                              onPressed: () {
+                                _controller.nextTab();
+                              },
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    "다음",
+                                  ),
+                                  Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: buttonTextStyle.fontSize,
+                                  ),
+                                ],
+                              ))
+                          : const EmptyBox();
                       })
-                    ].withSpaceBetween(width: 20.w),
+                    ],
                   ),
                   Row(
                     children: [
-                      OutlinedButton(onPressed: () {}, child: Text("취소하기")),
-                      OutlinedButton(onPressed: () {}, child: Text("인쇄하기")),
-                      OutlinedButton(onPressed: () {}, child: Text("미리보기")),
-                      OutlinedButton(onPressed: () {}, child: Text("PDF받기")),
+                      OutlinedButton(onPressed: () {}, child: const Text("취소하기")),
+                      OutlinedButton(onPressed: () {}, child: const Text("인쇄하기")),
+                      OutlinedButton(onPressed: () {}, child: const Text("미리보기")),
+                      OutlinedButton(onPressed: () {}, child: const Text("PDF받기")),
                       ElevatedButton(
                           onPressed: () {
                             _controller.submit();
                           },
-                          child: Text("저장하기")),
+                          child: const Text("저장하기")),
                     ].withSpaceBetween(width: 20.w),
                   )
                 ],

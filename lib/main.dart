@@ -47,7 +47,8 @@ class MyApp extends StatelessWidget {
             locale: const Locale('ko'),
             // initialRoute: AppRoutes.home.name,
         // initialRoute: AppRoutes.fclNewLIst.name,
-            initialRoute: "/fcl/new/detail/479",
+        initialRoute: AppRoutes.fclRegularList.name,
+        //     initialRoute: "/fcl/new/detail/479",
             theme: ThemeData(
 
                 buttonTheme: buttonMainTheme,

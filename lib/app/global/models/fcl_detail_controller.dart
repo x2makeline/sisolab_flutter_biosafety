@@ -8,11 +8,13 @@ import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/providers/api_provider.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_field_repository.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/controllers/fcl_new_detail_controller.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_regular_detail/controllers/fcl_regular_detail_controller.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_new_detail/vms/fcl_new_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_regular_detail/vms/fcl_regular_detail_vm.dart';
 
 import 'fcl_big_category.dart';
 import 'fcl_detail_form_state.dart';
+
+
 
 abstract class FclDetailController extends GetxController {
   final _repository = SelectProcFieldRepository();
@@ -31,12 +33,21 @@ abstract class FclDetailController extends GetxController {
 
   set tabIndex(int index) => _tabIndex.value = index;
 
-  final int maxTabindex = 5;
+  int get maxTabindex {
+    throw Error();
+  }
+
+
+  FclBigCategory get bigCategory {
+    throw Error();
+  }
+
+
 
   static FclDetailController get to =>
       Get.isRegistered<FclNewDetailController>()
-          ? Get.find<FclNewDetailController>()
-          : Get.find<FclRegularDetailController>();
+          ? FclNewDetailController.to
+          : FclRegularDetailVm.to;
 
   final _io = Rx<BioIo>(BioIo());
 
@@ -50,9 +61,8 @@ abstract class FclDetailController extends GetxController {
   /// form state
   late final FclDetailFormState formState;
 
-  FclBigCategory bigCategory;
 
-  FclDetailController({required this.bigCategory});
+
 
   BioIo get io => _io.value;
   final formKey =
@@ -78,22 +88,16 @@ abstract class FclDetailController extends GetxController {
   submit() {
     if (formKey.currentState != null) {
       formKey.currentState!.save();
-      // print(formKey.currentState!.value);
       final bio =
           BioIo.fromForm({...formKey.currentState!.value, "docno": io.docno});
 
       _apiPro.procFieldSave(bio).then((value) => print(value));
-      // print(bio);
-      // print(bio.toJson());
-
-      // print(BioIo.fromJson(formKey.currentState!.value).toJson());
     }
   }
 
   @override
   void onInit() {
     super.onInit();
-
     if (idx != null) {
       _init();
     } else {
@@ -106,4 +110,3 @@ abstract class FclDetailController extends GetxController {
   }
 }
 
-class Test {}

@@ -26,4 +26,25 @@ GET {{url}}/api/selectProcList.do?gbn=fd2
 Content-Type: application/json
 Access_Token: {{Access_Token}}
 
+###
+# 현장점검  데이터 가져오기
+GET {{url}}/api/selectProcField.do?gbn=fd3&idx=592
+Content-Type: application/json
+Access_Token: {{Access_Token}}
+
+###
+# 현장점검 데이터 저장
+POST {{url}}/api/procFieldSave.do
+Content-Type: application/json
+Access_Token: {{Access_Token}}
+
+{
+  ...
+}
+
+/// response
+{
+  "result": '-3',
+  'message' : "권한이 없습니다."
+}
 

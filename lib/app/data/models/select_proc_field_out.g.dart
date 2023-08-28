@@ -9,7 +9,9 @@ part of 'select_proc_field_out.dart';
 SelectProcFieldOut _$SelectProcFieldOutFromJson(Map<String, dynamic> json) =>
     SelectProcFieldOut(
       proc: SelectProc.fromJson(json['proc'] as Map<String, dynamic>),
-      field: SelectProcField.fromJson(json['field'] as Map<String, dynamic>),
+      field: json['field'] == null
+          ? null
+          : SelectProcField.fromJson(json['field'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SelectProcFieldOutToJson(SelectProcFieldOut instance) =>

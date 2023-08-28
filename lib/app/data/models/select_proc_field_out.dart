@@ -8,14 +8,13 @@ part 'select_proc_field_out.g.dart';
 @JsonSerializable()
 class SelectProcFieldOut {
   SelectProc proc;
-  SelectProcField field;
+  SelectProcField? field;
 
-  SelectProcFieldOut({required this.proc, required this.field});
+  SelectProcFieldOut({required this.proc,  this.field});
 
-  @override
-  String toString() => 'SelectProcFieldOut{proc: $proc, field: $field}';
 
-  BioIo get bioIo => BioIo.fromJson({...proc.toJson(), ...field.toJson()});
+
+  BioIo get bioIo => BioIo.fromJson({...proc.toJson(), ...?field?.toJson()});
 
   factory SelectProcFieldOut.fromJson(Map<String, dynamic> json) =>
       _$SelectProcFieldOutFromJson(json);

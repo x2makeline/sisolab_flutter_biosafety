@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_controller.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
@@ -25,7 +25,7 @@ class DetailCategoryTab extends StatefulWidget {
 
 class _DetailCategoryTabState extends State<DetailCategoryTab>
     with SingleTickerProviderStateMixin {
-  FclDetailController get _controller => FclDetailController.to;
+  FclDetailVm get _controller => FclDetailVm.to;
 
   FclTab get activeTab => widget.tabMapList.elementAt(widget.activeTabIndex);
 

@@ -7,12 +7,12 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
-import '../models/fcl_detail_controller.dart';
+import '../../ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 class FormPageBottom extends StatelessWidget {
   FormPageBottom({super.key});
 
-  final _controller = FclDetailController.to;
+  final _controller = FclDetailVm.to;
 
 
   @override

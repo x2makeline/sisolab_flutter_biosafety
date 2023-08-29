@@ -13,7 +13,7 @@ class FclTextField extends FclField {
       super.key,
       super.label,
       void Function(String?)? onSubmitted,
-      required String hintText,
+      String? hintText,
       required super.name})
       : super(
             type: FclType.text,

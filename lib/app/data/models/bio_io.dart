@@ -9,877 +9,350 @@ part 'bio_io.g.dart';
 
 @JsonSerializable()
 class BioIo {
-  /// 운영기관명
   String? company;
-
-  /// 설치 ∙ 운영 장소
   String? d184;
-
-  /// 안전관리등급
   String? d280;
-
-  /// 시설내역 - 일반
   @YnNullableConverter()
   bool? d68;
-
-  /// 시설내역 - 대량배양
   @YnNullableConverter()
   bool? d69;
-
-  /// 시설내역 - 동물
   @YnNullableConverter()
   bool? d70;
-
-  /// 시설내역 - 식물
   @YnNullableConverter()
   bool? d71;
-
-  /// 시설내역 - 곤충
   @YnNullableConverter()
   bool? d72;
-
-  /// 시설내역 - 신규허가
   @YnNullableConverter()
   bool? d73;
-
-  /// 시설내역 - 재확인
   @YnNullableConverter()
   bool? d74;
-
-  /// 시설내역 - 유전자변형생물체
   @YnNullableConverter()
   bool? d75;
-
-  /// 허가번호 - 유전자변형생물체
   String? d157;
-
-  /// 시설내역 - 고위험병원체
   @YnNullableConverter()
   bool? d76;
-
-  /// 허가번호 - 고위험병원체
   String? d281;
-
-  /// 문서번호
   String? docno;
-
-  /// 최초허가일
   @DateTimeNullableConverter()
   DateTime? d158;
-
-  /// 취급동물
   String? d282;
-
-  /// 취급병원체
   String? d283;
-
-  /// 실험실 ∙ 전실 면적
   String? d284;
-
-  /// 지역
   String? d285;
-
-  /// 기관분류
   String? d286;
-
-  /// 생물안전관리책임자 - 성명
   String? d159;
-
-  /// 생물안전관리책임자 - 서명
   @Uint8ListNullableConverter()
   Uint8List? d162;
-
-  /// 생물안전관리책임자 - 연락처
   String? d165;
-
-  /// 생물안전관리책임자 - 이메일
   String? d271;
-
-  /// 생물안전관리책임자 - 핸드폰
   String? d274;
-
-  /// 생물안전관리자 - 성명
   String? d160;
-
-  /// 생물안전관리자 - 서명
   @Uint8ListNullableConverter()
   Uint8List? d163;
-
-  /// 생물안전관리자 - 연락처
   String? d166;
-
-  /// 생물안전관리자 - 이메일
   String? d272;
-
-  /// 생물안전관리자 - 핸드폰
   String? d275;
-
-  /// 고위험병원체의전담관리자 - 성명
   String? d161;
-
-  /// 고위험병원체의전담관리자 - 서명
   @Uint8ListNullableConverter()
   Uint8List? d164;
-
-  /// 고위험병원체의전담관리자 - 연락처
   String? d167;
-
-  /// 고위험병원체의전담관리자 - 이메일
   String? d273;
-
-  /// 고위험병원체의전담관리자 - 핸드폰
   String? d276;
-
-  /// 점검일자
   @DateTimeNullableConverter()
   DateTime? d168;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 소속 기관(1)
   String? d170;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 성명(1)
   String? d169;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 서명(1)
   @Uint8ListNullableConverter()
   Uint8List? d185;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 소속 기관(2)
   String? d172;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 성명(2)
   String? d171;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 서명(2)
   @Uint8ListNullableConverter()
   Uint8List? d186;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 소속 기관(3)
   String? d174;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 성명(3)
   String? d173;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 서명(3)
   @Uint8ListNullableConverter()
   Uint8List? d187;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 소속 기관(4)
   String? d176;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 성명(4)
   String? d175;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 서명(4)
   @Uint8ListNullableConverter()
   Uint8List? d188;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 소속 기관(5)
   String? d178;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 성명(5)
   String? d177;
-
-  /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 서명(5)
   @Uint8ListNullableConverter()
   Uint8List? d189;
-
-  /// 유전자변형생물체 명칭(1)
   String? d77;
-
-  /// 유전자변형생물체 명칭(2)
   String? d78;
-
-  /// 유전자변형생물체 명칭(3)
   String? d79;
-
-  /// 고위험병원체 명칭(1)
   String? d80;
-
-  /// 고위험병원체 명칭(2)
   String? d81;
-
-  /// 고위험병원체 명칭(3)
   String? d82;
-
-  /// 주요실험방법(1)
   String? d83;
-
-  /// 주요실험방법(2)
   String? d84;
-
-  /// 주요실험방법(3)
   String? d85;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file1;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 이미지 비고
   String? d179;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 인원
   String? d180;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 radio
   String? d1;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 비고
   String? d181;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리자 인원
   String? d87;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리자 radio
   String? d2;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리자 비고
   String? d182;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 사용자 인원
   String? d88;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 사용자 radio
   String? d3;
-
-  /// 연구자 및 관리자 생물안전교육 이수 - 사용자 비고
   String? d183;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file2;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 이미지 비고
   String? d89;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 관리 책임자 인원
   String? d90;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 관리 책임자 radio
   String? d4;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 관리 책임자 비고
   String? d91;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 관리자 인원
   String? d92;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 관리자 radio
   String? d5;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 관리자 비고
   String? d93;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 사용자 인원
   String? d94;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 사용자 radio
   String? d6;
-
-  /// 밀폐구역 출입자 정상 혈청 보관 - 사용자 비고
   String? d95;
-
-  /// 검증서, 시설도면(건축,기계,전기,소방 등) 보관 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file3;
-
-  /// 검증서, 시설도면(건축,기계,전기,소방 등) 보관 - radio
   String? d7;
-
-  /// 검증서, 시설도면(건축,기계,전기,소방 등) 보관 - 비고
   String? d96;
-
-  /// 생물안전관리규정 수립 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file4;
-
-  /// 생물안전관리규정 수립 - radio
   String? d8;
-
-  /// 생물안전관리규정 수립 - 비고
   String? d97;
-
-  /// 기관생물안전지침(시설운영사항 별도) 마련 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file5;
-
-  /// 기관생물안전지침(시설운영사항 별도) 마련 - radio
   String? d9;
-
-  /// 기관생물안전지침(시설운영사항 별도) 마련 - 비고
   String? d98;
-
-  /// 시설 도면과의 일치성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file6;
-
-  /// 시설 도면과의 일치성 - radio
   String? d10;
-
-  /// 시설 도면과의 일치성 - 비고
   String? d99;
-
-  /// 주출입구 잠금장치 및 출입통제 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file7;
-
-  /// 주출입구 잠금장치 및 출입통제 - radio
   String? d11;
-
-  /// 주출입구 잠금장치 및 출입통제 - 비고
   String? d100;
-
-  /// 장비 반출 가능한 문 설치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file8;
-
-  /// 장비 반출 가능한 문 설치 - radio
   String? d12;
-
-  /// 장비 반출 가능한 문 설치 - 비고
   String? d101;
-
-  /// 밀폐구역 내 인터락(수동조작 가능) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file9;
-
-  /// 밀폐구역 내 인터락(수동조작 가능) - radio
   String? d13;
-
-  /// 밀폐구역 내 인터락(수동조작 가능) - 비고
   String? d102;
-
-  /// 도어 자동 닫힘 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file10;
-
-  /// 도어 자동 닫힘 - radio
   String? d14;
-
-  /// 도어 자동 닫힘 - 비고
   String? d103;
-
-  /// 비상샤워 설비 가동 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file11;
-
-  /// 비상샤워 설비 가동 - radio
   String? d15;
-
-  /// 비상샤워 설비 가동 - 비고
   String? d104;
-
-  /// 급기 덕트에 헤파 필터 설치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file12;
-
-  /// 급기 덕트에 헤파 필터 설치 - radio
   String? d16;
-
-  /// 급기 덕트에 헤파 필터 설치 - 비고
   String? d105;
-
-  /// 배기에 카본필터 등 냄새제거 장치 설치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file13;
-
-  /// 배기에 카본필터 등 냄새제거 장치 설치 - radio
   String? d17;
-
-  /// 배기에 카본필터 등 냄새제거 장치 설치 - 비고
   String? d106;
-
-  /// 밀폐구역 내 접함 및 관통 부위의 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file14;
-
-  /// 밀폐구역 내 접함 및 관통 부위의 기밀성 - radio
   String? d18;
-
-  /// 밀폐구역 내 접함 및 관통 부위의 기밀성 - 비고
   String? d107;
-
-  /// 밀폐구역 내 전열 콘센트 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file15;
-
-  /// 밀폐구역 내 전열 콘센트 기밀성 - radio
   String? d19;
-
-  /// 밀폐구역 내 전열 콘센트 기밀성 - 비고
   String? d108;
-
-  /// 밀폐구역 내 조명기구 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file16;
-
-  /// 밀폐구역 내 조명기구 기밀성 - radio
   String? d20;
-
-  /// 밀폐구역 내 조명기구 기밀성 - 비고
   String? d109;
-
-  /// 멸균기-벽체 이음새부위 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file17;
-
-  /// 멸균기-벽체 이음새부위 기밀성 - radio
   String? d21;
-
-  /// 멸균기-벽체 이음새부위 기밀성 - 비고
   String? d110;
-
-  /// 기타 실험실 내부 벽체 연결부, 코너, 이음새 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file18;
-
-  /// 기타 실험실 내부 벽체 연결부, 코너, 이음새 기밀성 - radio
   String? d22;
-
-  /// 기타 실험실 내부 벽체 연결부, 코너, 이음새 기밀성 - 비고
   String? d111;
-
-  /// 밀폐구역 내 싱크와 배수 위치 확인 및 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file19;
-
-  /// 밀폐구역 내 싱크와 배수 위치 확인 및 기밀성 - radio
   String? d23;
-
-  /// 밀폐구역 내 싱크와 배수 위치 확인 및 기밀성 - 비고
   String? d112;
-
-  /// 실험실 내 온도, 습도 및 소음도 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file20;
-
-  /// 실험실 내 온도, 습도 및 소음도 - radio
   String? d24;
-
-  /// 실험실 내 온도, 습도 및 소음도 - 비고
   String? d113;
-
-  /// 밀폐구역 내 바닥 마감상태 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file21;
-
-  /// 밀폐구역 내 바닥 마감상태 - radio
   String? d25;
-
-  /// 밀폐구역 내 바닥 마감상태 - 비고
   String? d114;
-
-  /// 손 소독기 및 눈 세척기 적정 위치 설치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file22;
-
-  /// 손 소독기 및 눈 세척기 적정 위치 설치 - radio
   String? d26;
-
-  /// 손 소독기 및 눈 세척기 적정 위치 설치 - 비고
   String? d115;
-
-  /// 패스박스 도어 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file23;
-
-  /// 패스박스 도어 기밀성 - radio
   String? d27;
-
-  /// 패스박스 도어 기밀성 - 비고
   String? d116;
-
-  /// 패스박스 도어 인터락 설정 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file24;
-
-  /// 패스박스 도어 인터락 설정 - radio
   String? d28;
-
-  /// 패스박스 도어 인터락 설정 - 비고
   String? d117;
-
-  /// 멸균기 열침투 테스트(BI 멸균 테스트) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file25;
-
-  /// 멸균기 열침투 테스트(BI 멸균 테스트) - radio
   String? d29;
-
-  /// 멸균기 열침투 테스트(BI 멸균 테스트) - 비고
   String? d118;
-
-  /// 생물안전작업대 적정 기류흐름 및 작동 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file26;
-
-  /// 생물안전작업대 적정 기류흐름 및 작동 - radio
   String? d30;
-
-  /// 생물안전작업대 적정 기류흐름 및 작동 - 비고
   String? d119;
-
-  /// 생물안전작업대 설치 위치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file27;
-
-  /// 생물안전작업대 설치 위치 - radio
   String? d31;
-
-  /// 생물안전작업대 설치 위치 - 비고
   String? d120;
-
-  /// Isolator 기밀성 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file28;
-
-  /// Isolator 기밀성 - radio
   String? d32;
-
-  /// Isolator 기밀성 - 비고
   String? d121;
-
-  /// 폐수처리 설비 제균필터 확인 및 설비 출입 통제 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file29;
-
-  /// 폐수처리 설비 제균필터 확인 및 설비 출입 통제 - radio
   String? d33;
-
-  /// 폐수처리 설비 제균필터 확인 및 설비 출입 통제 - 비고
   String? d122;
-
-  /// 생물위해표지판(사용병원체, 안전관리자명) 게시 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file30;
-
-  /// 생물위해표지판(사용병원체, 안전관리자명) 게시 - radio
   String? d34;
-
-  /// 생물위해표지판(사용병원체, 안전관리자명) 게시 - 비고
   String? d123;
-
-  /// 개인보호구 착,탈의 절차 게시 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file31;
-
-  /// 개인보호구 착,탈의 절차 게시 - radio
   String? d35;
-
-  /// 개인보호구 착,탈의 절차 게시 - 비고
   String? d124;
-
-  /// 밀폐구역 내 각 실험실 입구 차압계 설치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file32;
-
-  /// 밀폐구역 내 각 실험실 입구 차압계 설치 - radio
   String? d36;
-
-  /// 밀폐구역 내 각 실험실 입구 차압계 설치 - 비고
   String? d125;
-
-  /// 밀폐구역 내 비상시 연락체계도 게시 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file33;
-
-  /// 밀폐구역 내 비상시 연락체계도 게시 - radio
   String? d37;
-
-  /// 밀폐구역 내 비상시 연락체계도 게시 - 비고
   String? d126;
-
-  /// 덕트나 배관의 이름 표시 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file34;
-
-  /// 덕트나 배관의 이름 표시 - radio
   String? d38;
-
-  /// 덕트나 배관의 이름 표시 - 비고
   String? d127;
-
-  /// 비상시 가동 및 운영 정지 시의 절차 게시(밀폐시스템 이상 및 대량 스필 발생 포함) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file35;
-
-  /// 비상시 가동 및 운영 정지 시의 절차 게시(밀폐시스템 이상 및 대량 스필 발생 포함) - radio
   String? d67;
-
-  /// 비상시 가동 및 운영 정지 시의 절차 게시(밀폐시스템 이상 및 대량 스필 발생 포함) - 비고
   String? d128;
-
-  /// 배양장치 등에 각 등급에 맞는 표시 부착 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file36;
-
-  /// 배양장치 등에 각 등급에 맞는 표시 부착 - radio
   String? d39;
-
-  /// 배양장치 등에 각 등급에 맞는 표시 부착 - 비고
   String? d129;
-
-  /// 비상장비(손전등, 구급상자) 비치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file37;
-
-  /// 비상장비(손전등, 구급상자) 비치 - radio
   String? d40;
-
-  /// 비상장비(손전등, 구급상자) 비치 - 비고
   String? d130;
-
-  /// 양방향 통신 시스템(인터폰, 전화 등) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file38;
-
-  /// 양방향 통신 시스템(인터폰, 전화 등) - radio
   String? d41;
-
-  /// 양방향 통신 시스템(인터폰, 전화 등) - 비고
   String? d131;
-
-  /// CCTV 설치 위치 적절성 및 동작 확인 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file39;
-
-  /// CCTV 설치 위치 적절성 및 동작 확인 - radio
   String? d42;
-
-  /// CCTV 설치 위치 적절성 및 동작 확인 - 비고
   String? d132;
-
-  /// 경보장치의 적정 위치 설치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file40;
-
-  /// 경보장치의 적정 위치 설치 - radio
   String? d43;
-
-  /// 경보장치의 적정 위치 설치 - 비고
   String? d133;
-
-  /// 실간 차압역전 및 양압 형성 시 경보 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file41;
-
-  /// 실간 차압역전 및 양압 형성 시 경보 - radio
   String? d44;
-
-  /// 실간 차압역전 및 양압 형성 시 경보 - 비고
   String? d134;
-
-  /// 비상조명, 피난 유도등 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file42;
-
-  /// 비상조명, 피난 유도등 - radio
   String? d45;
-
-  /// 비상조명, 피난 유도등 - 비고
   String? d135;
-
-  /// 소화설비/장비 구비 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file43;
-
-  /// 소화설비/장비 구비 - radio
   String? d46;
-
-  /// 소화설비/장비 구비 - 비고
   String? d136;
-
-  /// 밀폐구역 내 스필 시 대응 장비(킷트) 등 구비 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file44;
-
-  /// 밀폐구역 내 스필 시 대응 장비(킷트) 등 구비 - radio
   String? d47;
-
-  /// 밀폐구역 내 스필 시 대응 장비(킷트) 등 구비 - 비고
   String? d137;
-
-  /// 데이터 전송용 전자시스템 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file45;
-
-  /// 데이터 전송용 전자시스템 - radio
   String? d48;
-
-  /// 데이터 전송용 전자시스템 - 비고
   String? d138;
-
-  /// 배관역류 방지장치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file46;
-
-  /// 배관역류 방지장치 - radio
   String? d49;
-
-  /// 배관역류 방지장치 - 비고
   String? d139;
-
-  /// 내부 차압 측정 계기 및 경보장치 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file47;
-
-  /// 내부 차압 측정 계기 및 경보장치 - radio
   String? d50;
-
-  /// 내부 차압 측정 계기 및 경보장치 - 비고
   String? d140;
-
-  /// 비상전원공급(UPS 등) 연동 확인 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file48;
-
-  /// 비상전원공급(UPS 등) 연동 확인 - radio
   String? d51;
-
-  /// 비상전원공급(UPS 등) 연동 확인 - 비고
   String? d141;
-
-  /// 가스공급 장치 설치 및 출입통제 확인 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file49;
-
-  /// 가스공급 장치 설치 및 출입통제 확인 - radio
   String? d52;
-
-  /// 가스공급 장치 설치 및 출입통제 확인 - 비고
   String? d142;
-
-  /// 실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file50;
-
-  /// 실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상) - radio
   String? d53;
-
-  /// 실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상) - 비고
   String? d143;
-
-  /// 차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지) - radio
   String? d54;
-
-  /// 차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지) - 비고
   String? d144;
-
-  /// 밀폐구역 내 실간차압이 -7.6 Pa 이상 유지 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file51;
-
-  /// 밀폐구역 내 실간차압이 -7.6 Pa 이상 유지 - radio
   String? d55;
-
-  /// 밀폐구역 내 실간차압이 -7.6 Pa 이상 유지 - 비고
   String? d145;
-
-  /// 밀폐구역 내 실간 일방향 기류 확인 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file52;
-
-  /// 밀폐구역 내 실간 일방향 기류 확인 - radio
   String? d56;
-
-  /// 밀폐구역 내 실간 일방향 기류 확인 - 비고
   String? d146;
-
-  /// 유효 교정장비 사용한 급, 배기 풍량 측정 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file53;
-
-  /// 유효 교정장비 사용한 급, 배기 풍량 측정 - radio
   String? d57;
-
-  /// 유효 교정장비 사용한 급, 배기 풍량 측정 - 비고
   String? d147;
-
-  /// 급기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file54;
-
-  /// 급기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압) - radio
   String? d58;
-
-  /// 급기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압) - 비고
   String? d148;
-
-  /// 급기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file55;
-
-  /// 급기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압) - radio
   String? d59;
-
-  /// 급기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압) - 비고
   String? d149;
-
-  /// 배기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file56;
-
-  /// 배기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압) - radio
   String? d60;
-
-  /// 배기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압) - 비고
   String? d150;
-
-  /// 배기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file57;
-
-  /// 배기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압) - radio
   String? d61;
-
-  /// 배기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압) - 비고
   String? d151;
-
-  /// 헤파필터 유닛, 배기덕트 압력 감소 시험 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file58;
-
-  /// 헤파필터 유닛, 배기덕트 압력 감소 시험 - radio
   String? d62;
-
-  /// 헤파필터 유닛, 배기덕트 압력 감소 시험 - 비고
   String? d152;
-
-  /// 헤파필터 유닛 완전성 테스트(PAO 테스트) - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file59;
-
-  /// 헤파필터 유닛 완전성 테스트(PAO 테스트) - radio
   String? d63;
-
-  /// 헤파필터 유닛 완전성 테스트(PAO 테스트) - 비고
   String? d153;
-
-  /// 시설 자동제어시스템의 재부팅시, 운영 설정값 유지 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file60;
-
-  /// 시설 자동제어시스템의 재부팅시, 운영 설정값 유지 - radio
   String? d64;
-
-  /// 시설 자동제어시스템의 재부팅시, 운영 설정값 유지 - 비고
   String? d154;
-
-  /// HVAC 덕트시스템 제작 손상 등 품질상태 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file61;
-
-  /// HVAC 덕트시스템 제작 손상 등 품질상태 - radio
   String? d65;
-
-  /// HVAC 덕트시스템 제작 손상 등 품질상태 - 비고
   String? d155;
-
-  /// 특이사항 - 이미지 파일
   @Uint8ListNullableConverter()
   Uint8List? file62;
-
-  /// 특이사항 - 비고
   String? d156;
 
   BioIo({
@@ -1148,11 +621,6 @@ class BioIo {
     this.file62,
     this.d156,
   });
-
-  @override
-  String toString() {
-    return 'BioIo{company: $company, d184: $d184, d280: $d280, d68: $d68, d69: $d69, d70: $d70, d71: $d71, d72: $d72, d73: $d73, d74: $d74, d75: $d75, d157: $d157, d76: $d76, d281: $d281, docno: $docno, d158: $d158, d282: $d282, d283: $d283, d284: $d284, d285: $d285, d286: $d286, d159: $d159, d162: $d162, d165: $d165, d271: $d271, d274: $d274, d160: $d160, d163: $d163, d166: $d166, d272: $d272, d275: $d275, d161: $d161, d164: $d164, d167: $d167, d273: $d273, d276: $d276, d168: $d168, d170: $d170, d169: $d169, d185: $d185, d172: $d172, d171: $d171, d186: $d186, d174: $d174, d173: $d173, d187: $d187, d176: $d176, d175: $d175, d188: $d188, d178: $d178, d177: $d177, d189: $d189, d77: $d77, d78: $d78, d79: $d79, d80: $d80, d81: $d81, d82: $d82, d83: $d83, d84: $d84, d85: $d85, file1: $file1, d179: $d179, d180: $d180, d1: $d1, d181: $d181, d87: $d87, d2: $d2, d182: $d182, d88: $d88, d3: $d3, d183: $d183, file2: $file2, d89: $d89, d90: $d90, d4: $d4, d91: $d91, d92: $d92, d5: $d5, d93: $d93, d94: $d94, d6: $d6, d95: $d95, file3: $file3, d7: $d7, d96: $d96, file4: $file4, d8: $d8, d97: $d97, file5: $file5, d9: $d9, d98: $d98, file6: $file6, d10: $d10, d99: $d99, file7: $file7, d11: $d11, d100: $d100, file8: $file8, d12: $d12, d101: $d101, file9: $file9, d13: $d13, d102: $d102, file10: $file10, d14: $d14, d103: $d103, file11: $file11, d15: $d15, d104: $d104, file12: $file12, d16: $d16, d105: $d105, file13: $file13, d17: $d17, d106: $d106, file14: $file14, d18: $d18, d107: $d107, file15: $file15, d19: $d19, d108: $d108, file16: $file16, d20: $d20, d109: $d109, file17: $file17, d21: $d21, d110: $d110, file18: $file18, d22: $d22, d111: $d111, file19: $file19, d23: $d23, d112: $d112, file20: $file20, d24: $d24, d113: $d113, file21: $file21, d25: $d25, d114: $d114, file22: $file22, d26: $d26, d115: $d115, file23: $file23, d27: $d27, d116: $d116, file24: $file24, d28: $d28, d117: $d117, file25: $file25, d29: $d29, d118: $d118, file26: $file26, d30: $d30, d119: $d119, file27: $file27, d31: $d31, d120: $d120, file28: $file28, d32: $d32, d121: $d121, file29: $file29, d33: $d33, d122: $d122, file30: $file30, d34: $d34, d123: $d123, file31: $file31, d35: $d35, d124: $d124, file32: $file32, d36: $d36, d125: $d125, file33: $file33, d37: $d37, d126: $d126, file34: $file34, d38: $d38, d127: $d127, file35: $file35, d67: $d67, d128: $d128, file36: $file36, d39: $d39, d129: $d129, file37: $file37, d40: $d40, d130: $d130, file38: $file38, d41: $d41, d131: $d131, file39: $file39, d42: $d42, d132: $d132, file40: $file40, d43: $d43, d133: $d133, file41: $file41, d44: $d44, d134: $d134, file42: $file42, d45: $d45, d135: $d135, file43: $file43, d46: $d46, d136: $d136, file44: $file44, d47: $d47, d137: $d137, file45: $file45, d48: $d48, d138: $d138, file46: $file46, d49: $d49, d139: $d139, file47: $file47, d50: $d50, d140: $d140, file48: $file48, d51: $d51, d141: $d141, file49: $file49, d52: $d52, d142: $d142, file50: $file50, d53: $d53, d143: $d143, d54: $d54, d144: $d144, file51: $file51, d55: $d55, d145: $d145, file52: $file52, d56: $d56, d146: $d146, file53: $file53, d57: $d57, d147: $d147, file54: $file54, d58: $d58, d148: $d148, file55: $file55, d59: $d59, d149: $d149, file56: $file56, d60: $d60, d150: $d150, file57: $file57, d61: $d61, d151: $d151, file58: $file58, d62: $d62, d152: $d152, file59: $file59, d63: $d63, d153: $d153, file60: $file60, d64: $d64, d154: $d154, file61: $file61, d65: $d65, d155: $d155, file62: $file62, d156: $d156}';
-  }
 
   factory BioIo.fromJson(Map<String, dynamic> json) => _$BioIoFromJson(json);
 
@@ -1583,10 +1051,12 @@ enum BioIoName {
   /// 질병관리청 의료안전예방국 생물안전평가과 - 점검자 서명(5)
   d189,
 
-  /// 유전자변형생물체 명칭(1)
+  /// (신규) 유전자변형생물체 명칭(1)
+  /// (정기) 병원체명(1)
   d77,
 
   /// 유전자변형생물체 명칭(2)
+  /// (정기) 주요실험방법(1)
   d78,
 
   /// 유전자변형생물체 명칭(3)
@@ -1610,52 +1080,64 @@ enum BioIoName {
   /// 주요실험방법(3)
   d85,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 이미지 파일
+  /// (신규) 연구자 및 관리자 생물안전교육 이수 - 이미지 파일
+  /// (정기) 1.1) 손소독기가 적절히 운영되는가? - 이미지 파일
   file1,
 
   /// 연구자 및 관리자 생물안전교육 이수 - 이미지 비고
   d179,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 인원
+  /// (신규) 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 인원
+  /// (정기) 병원체명(2)
   d180,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 radio
+  /// (신규) 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 radio
+  /// (정기) 1.1) 손소독기가 적절히 운영되는가? - radio
   d1,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리 책임자 비고
+  /// (신규 )연구자 및 관리자 생물안전교육 이수 - 관리 책임자 비고
+  /// (정기) 주요실험방법(2)
   d181,
 
   /// 연구자 및 관리자 생물안전교육 이수 - 관리자 인원
   d87,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리자 radio
+  /// (신규) 연구자 및 관리자 생물안전교육 이수 - 관리자 radio
+  /// (정기) 잠금장치 방식 선택
   d2,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 관리자 비고
+  /// (신규) 연구자 및 관리자 생물안전교육 이수 - 관리자 비고
+  /// (정기) 병원체명(3)
   d182,
 
   /// 연구자 및 관리자 생물안전교육 이수 - 사용자 인원
   d88,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 사용자 radio
+  /// (신규) 연구자 및 관리자 생물안전교육 이수 - 사용자 radio
+  /// (정기) 1.2) 실간 인터락 작동(수동조작 가능)이 적절한가? - radio
   d3,
 
-  /// 연구자 및 관리자 생물안전교육 이수 - 사용자 비고
+  /// (신규) 연구자 및 관리자 생물안전교육 이수 - 사용자 비고
+  /// (정기) 주요실험방법(3)
   d183,
 
-  /// 밀폐구역 출입자 정상 혈청 보관 - 이미지 파일
+  /// (신규) 밀폐구역 출입자 정상 혈청 보관 - 이미지 파일
+  /// (정기) 1.2) 실간 인터락 작동(수동조작 가능)이 적절한가? - 이미지
   file2,
 
   /// 밀폐구역 출입자 정상 혈청 보관 - 이미지 비고
   d89,
 
-  /// 밀폐구역 출입자 정상 혈청 보관 - 관리 책임자 인원
+  /// (신규) 밀폐구역 출입자 정상 혈청 보관 - 관리 책임자 인원
+  /// (정기) 1.2) 실간 인터락 작동(수동조작 가능)이 적절한가? - 비고
   d90,
 
   /// 밀폐구역 출입자 정상 혈청 보관 - 관리 책임자 radio
+  /// (정기) 비상샤워장비가 정상 작동하며 바닥이 양호한가? - radio
   d4,
 
   /// 밀폐구역 출입자 정상 혈청 보관 - 관리 책임자 비고
+  /// (정기) 비상샤워장비가 정상 작동하며 바닥이 양호한가? - 비고
   d91,
 
   /// 밀폐구역 출입자 정상 혈청 보관 - 관리자 인원
@@ -1677,6 +1159,7 @@ enum BioIoName {
   d95,
 
   /// 검증서, 시설도면(건축,기계,전기,소방 등) 보관 - 이미지 파일
+  /// (정기) 비상샤워장비가 정상 작동하며 바닥이 양호한가? - 이미지
   file3,
 
   /// 검증서, 시설도면(건축,기계,전기,소방 등) 보관 - radio
@@ -1698,6 +1181,7 @@ enum BioIoName {
   file5,
 
   /// 기관생물안전지침(시설운영사항 별도) 마련 - radio
+  /// (정기) 주출입구 잠금장치 및 보안장치가 적절히 설치‧운영되고 있는가? - radio
   d9,
 
   /// 기관생물안전지침(시설운영사항 별도) 마련 - 비고
@@ -1710,12 +1194,14 @@ enum BioIoName {
   d10,
 
   /// 시설 도면과의 일치성 - 비고
+  /// (정기) 출입구 잠금장치 및 보안장치가 적절히 설치‧운영되고 있는가? - radio
   d99,
 
   /// 주출입구 잠금장치 및 출입통제 - 이미지 파일
   file7,
 
   /// 주출입구 잠금장치 및 출입통제 - radio
+  /// (정기) 패스박스 작동상태가 적합한가? - radio
   d11,
 
   /// 주출입구 잠금장치 및 출입통제 - 비고
@@ -1725,21 +1211,25 @@ enum BioIoName {
   file8,
 
   /// 장비 반출 가능한 문 설치 - radio
+  /// (정기) 멸균기 작동(BI 테스트 포함)상태가 적합한가? - radio
   d12,
 
   /// 장비 반출 가능한 문 설치 - 비고
   d101,
 
-  /// 밀폐구역 내 인터락(수동조작 가능) - 이미지 파일
+  /// (신규) 밀폐구역 내 인터락(수동조작 가능) - 이미지 파일
+  /// (정기) 주출입구 잠금장치 및 보안장치가 적절히 설치‧운영되고 있는가? - 이미지
   file9,
 
   /// 밀폐구역 내 인터락(수동조작 가능) - radio
+  /// (정기) 생물안전작업대 작동상태가 적합한가?(풍속 실측 또는 BSC 디스플레이 확인) - radio
   d13,
 
   /// 밀폐구역 내 인터락(수동조작 가능) - 비고
   d102,
 
   /// 도어 자동 닫힘 - 이미지 파일
+  /// (정기) 출입구 잠금장치 및 보안장치가 적절히 설치‧운영되고 있는가? - 이미지
   file10,
 
   /// 도어 자동 닫힘 - radio
@@ -1749,6 +1239,7 @@ enum BioIoName {
   d103,
 
   /// 비상샤워 설비 가동 - 이미지 파일
+  /// (정기) 패스박스 작동상태가 적합한가? - 이미지
   file11,
 
   /// 비상샤워 설비 가동 - radio
@@ -1758,6 +1249,7 @@ enum BioIoName {
   d104,
 
   /// 급기 덕트에 헤파 필터 설치 - 이미지 파일
+  /// (정기) 멸균기 작동(BI 테스트 포함)상태가 적합한가? - 이미지
   file12,
 
   /// 급기 덕트에 헤파 필터 설치 - radio
@@ -1767,6 +1259,7 @@ enum BioIoName {
   d105,
 
   /// 배기에 카본필터 등 냄새제거 장치 설치 - 이미지 파일
+  /// (정기) 생물안전작업대 작동상태가 적합한가?(풍속 실측 또는 BSC 디스플레이 확인) - 이미지
   file13,
 
   /// 배기에 카본필터 등 냄새제거 장치 설치 - radio
@@ -2219,6 +1712,4 @@ enum BioIoName {
   /// (신규)특이사항 - 비고
   /// (정기)총평
   d156,
-
-
 }

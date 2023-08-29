@@ -13,9 +13,9 @@ final dateInputDecoration = InputDecoration(
   ),
 );
 
-final textFieldDecoration = InputDecoration(
+const textFieldDecoration = InputDecoration(
     // constraints: BoxConstraints(minHeight: 90.h),
-    border: const OutlineInputBorder(
+    border: OutlineInputBorder(
         borderSide: BorderSide(color: ColorGroup.gray)));
 
 final inputDecorationTheme = InputDecorationTheme(

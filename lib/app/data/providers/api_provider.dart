@@ -31,29 +31,32 @@ class ApiProvider {
       ))
         ..let((dio) {
           dio.interceptors
-              .add(LogInterceptor(requestBody: true, responseBody: true));
+              .add(LogInterceptor(
+            requestHeader: false,
+            responseHeader:false
+          ));
 
           /// dev
-          dio.interceptors
-              .add(InterceptorsWrapper(onRequest: (options, handler) async {
-            if (options.headers['access_token'] == null) {
-              Dio(BaseOptions(
-                baseUrl: Env.host,
-                contentType: "application/json",
-              )).get("/api/login.do", queryParameters: {
-                "userid": "test0223",
-                "passwd": "1234"
-              }).then((value) async {
-                final accessToken = value.headers.map["access_token"]!.first;
-                final refreshToken = value.headers.map["refresh_token"]!.first;
-                final SharedPreferences prefs =
-                    await SharedPreferences.getInstance();
-                prefs.setString("access_token", accessToken);
-                prefs.setString("refresh_token", refreshToken);
-              });
-            }
-            return handler.next(options);
-          }));
+          // dio.interceptors
+          //     .add(InterceptorsWrapper(onRequest: (options, handler) async {
+          //   if (options.headers['access_token'] == null) {
+          //     Dio(BaseOptions(
+          //       baseUrl: Env.host,
+          //       contentType: "application/json",
+          //     )).get("/api/login.do", queryParameters: {
+          //       "userid": "test0223",
+          //       "passwd": "1234"
+          //     }).then((value) async {
+          //       final accessToken = value.headers.map["access_token"]!.first;
+          //       final refreshToken = value.headers.map["refresh_token"]!.first;
+          //       final SharedPreferences prefs =
+          //           await SharedPreferences.getInstance();
+          //       prefs.setString("access_token", accessToken);
+          //       prefs.setString("refresh_token", refreshToken);
+          //     });
+          //   }
+          //   return handler.next(options);
+          // }));
 
           dio.interceptors
               .add(InterceptorsWrapper(onRequest: (options, handler) async {

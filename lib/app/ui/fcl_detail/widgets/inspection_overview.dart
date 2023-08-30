@@ -28,7 +28,8 @@ class InspectionOverview extends StatelessWidget {
   FclDetailVm get vm => FclDetailVm.to;
 
   @override
-  Widget build(BuildContext context) => Column(
+  Widget build(BuildContext context) =>
+      Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("점검개요",
@@ -153,7 +154,7 @@ class InspectionOverview extends StatelessWidget {
                       name: BioIoName.d76.name,
                       initialValue: vm.io.d76,
                       title:
-                          Text("고위험병원체", style: context.textTheme.titleMedium)),
+                      Text("고위험병원체", style: context.textTheme.titleMedium)),
                   FclTextField(
                     onSubmitted: (_) => vm.submit(),
                     hintText: "허가번호",
@@ -271,9 +272,9 @@ class InspectionOverview extends StatelessWidget {
             children: [
               Flexible(
                   child: FclDateField(
-                name: BioIoName.d168.name,
-                label: "점검일자",
-              )),
+                    name: BioIoName.d168.name,
+                    label: "점검일자",
+                  )),
               const Flexible(child: SizedBox.shrink())
             ].withSpaceBetween(width: 10.w),
           ),
@@ -284,7 +285,8 @@ class InspectionOverview extends StatelessWidget {
           const FclCheckerTable(),
           iff<Widget>(
               vm.bigCategory == FclBigCategory.REGULAR,
-              () => Column(
+                  () =>
+                  Column(
                     children: [
                       SizedBox(
                         height: 40.h,
@@ -304,9 +306,9 @@ class InspectionOverview extends StatelessWidget {
                                 enabled: false,
                                 style: buttonTextStyle,
                                 decoration: textFieldDecoration.copyWith(
-                                  disabledBorder: textFieldDecoration.border,
-                                  filled: true,
-                                  fillColor: const Color(0xfff2f2f2),
+                                    disabledBorder: textFieldDecoration.border,
+                                    filled: true,
+                                    fillColor: const Color(0xfff2f2f2),
                                     hintText: "점수합계"),
                               )),
                           const EmptyBox(),

@@ -27,20 +27,6 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
             height: 75.h,
           ),
         ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                "assets/images/icon_search.png",
-                height: 34.h,
-              )),
-          IconButton(
-              onPressed: () {},
-              icon: Image.asset(
-                "assets/images/icon_align.png",
-                height: 34.h,
-              ))
-        ],
         bottom: PreferredSize(
             preferredSize: Size(double.infinity, 90.h),
             child: Container(

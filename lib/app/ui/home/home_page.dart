@@ -22,7 +22,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => HomePageLayout(
-      // child: _UnConnected()
       child: Obx(() => _netVm.isConnect ? const _Connected() : _UnConnected()));
 }
 
@@ -113,6 +112,7 @@ class _ConnectedState extends State<_Connected> with PLoggerMixin {
   static const _passwdName = '_passwdName';
 
   static const _devUserId = "test0223";
+  // static const _devUserId = "test0";
   static const _devPasswd = "1234";
 
   _submit() {

@@ -16,6 +16,7 @@ import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
+import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
 class _Item extends StatelessWidget with PLoggerMixin{
   const _Item({super.key, required this.info, required this.category});
@@ -199,7 +200,12 @@ class FclListPage extends StatelessWidget {
                         style: const ButtonStyle(
                             backgroundColor:
                                 MaterialStatePropertyAll<Color>(Colors.black)),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(when(vm.bigCategory, {
+                            FclBigCategory.NEW: () => AppRoutes.fclNewDetailForm.name,
+                            FclBigCategory.REGULAR: () => AppRoutes.fclRegularDetailForm.name,
+                          })!);
+                        },
                         child: const Text("신규등록")),
                   ].withSpaceBetween(width: 24.w),
                 ),

@@ -69,7 +69,9 @@ class FormPageBottom extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      OutlinedButton(onPressed: () {}, child: const Text("취소하기")),
+                      OutlinedButton(onPressed: () {
+                        Get.back();
+                      }, child: const Text("취소하기")),
                       OutlinedButton(onPressed: () {}, child: const Text("인쇄하기")),
                       OutlinedButton(onPressed: () {}, child: const Text("미리보기")),
                       OutlinedButton(onPressed: () {}, child: const Text("PDF받기")),

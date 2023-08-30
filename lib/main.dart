@@ -47,9 +47,8 @@ class MyApp extends StatelessWidget {
             // initialRoute: AppRoutes.home.name,
             // initialRoute: AppRoutes.fclNewLIst.name,
             // initialRoute: AppRoutes.fclRegularList.name,
-
-            initialRoute: "/fcl/regular/detail/593",
-                // initialRoute: "/fcl/new/detail/479",
+            // initialRoute: "/fcl/regular/detail/593",
+                initialRoute: "/fcl/new/detail/479",
             theme: ThemeData(
                 buttonTheme: buttonMainTheme,
                 elevatedButtonTheme: elevatedButtonThemeData,

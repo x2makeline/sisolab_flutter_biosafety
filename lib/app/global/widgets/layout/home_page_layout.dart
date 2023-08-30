@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/home_app_bar.dart';
 
 class HomePageLayout extends StatelessWidget {
   const HomePageLayout({super.key, required this.child});
@@ -11,13 +12,7 @@ class HomePageLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 120.h,
-        leadingWidth: 0,
-        titleSpacing: 0,
-        title: Image.asset("assets/images/logo.png",
-            alignment: Alignment.centerLeft, height: 75.h),
-      ),
+      appBar: HomeAppBar(),
       body: Center(
         child: SizedBox(
           width: 800.w,

@@ -26,9 +26,9 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
   final DateTime? lastDate;
 
   @override
-  Widget build(BuildContext context) {
-    return FormBuilderDateTimePicker(
+  Widget build(BuildContext context) => FormBuilderDateTimePicker(
       initialDate: initialDate,
+      initialValue: initialDate,
       key: super.key,
       format: _format,
       controller: controller,
@@ -39,5 +39,4 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
       firstDate: firstDate ?? _initialFirstDate,
       lastDate: lastDate ?? _initialLastDate,
     );
-  }
 }

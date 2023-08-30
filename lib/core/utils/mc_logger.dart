@@ -33,6 +33,10 @@ mixin PLoggerMixin {
   PLogger get log => PLogger(
     prefix: runtimeType.toString(),
   );
+
+  PLogger get pLog => PLogger(
+    prefix: runtimeType.toString(),
+  );
 }
 
 class _PrefixPrinter extends LogPrinter {

@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/date_time_converter.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/uint8_list_converter.dart';
@@ -7,8 +8,10 @@ import 'package:sisolab_flutter_biosafety/core/utils/converters/yn_converter.dar
 
 part 'bio_io.g.dart';
 
+@CopyWith()
 @JsonSerializable()
 class BioIo {
+
   String? company;
   String? d184;
   String? d280;
@@ -892,6 +895,11 @@ class BioIo {
       );
 
   Map<String, dynamic> toJson() => _$BioIoToJson(this);
+
+  @override
+  String toString() {
+    return 'BioIo{company: $company, d184: $d184, d280: $d280, d68: $d68, d69: $d69, d70: $d70, d71: $d71, d72: $d72, d73: $d73, d74: $d74, d75: $d75, d157: $d157, d76: $d76, d281: $d281, docno: $docno, d158: $d158, d282: $d282, d283: $d283, d284: $d284, d285: $d285, d286: $d286, d159: $d159, d162: $d162, d165: $d165, d271: $d271, d274: $d274, d160: $d160, d163: $d163, d166: $d166, d272: $d272, d275: $d275, d161: $d161, d164: $d164, d167: $d167, d273: $d273, d276: $d276, d168: $d168, d170: $d170, d169: $d169, d185: $d185, d172: $d172, d171: $d171, d186: $d186, d174: $d174, d173: $d173, d187: $d187, d176: $d176, d175: $d175, d188: $d188, d178: $d178, d177: $d177, d189: $d189, d77: $d77, d78: $d78, d79: $d79, d80: $d80, d81: $d81, d82: $d82, d83: $d83, d84: $d84, d85: $d85, file1: $file1, d179: $d179, d180: $d180, d1: $d1, d181: $d181, d87: $d87, d2: $d2, d182: $d182, d88: $d88, d3: $d3, d183: $d183, file2: $file2, d89: $d89, d90: $d90, d4: $d4, d91: $d91, d92: $d92, d5: $d5, d93: $d93, d94: $d94, d6: $d6, d95: $d95, file3: $file3, d7: $d7, d96: $d96, file4: $file4, d8: $d8, d97: $d97, file5: $file5, d9: $d9, d98: $d98, file6: $file6, d10: $d10, d99: $d99, file7: $file7, d11: $d11, d100: $d100, file8: $file8, d12: $d12, d101: $d101, file9: $file9, d13: $d13, d102: $d102, file10: $file10, d14: $d14, d103: $d103, file11: $file11, d15: $d15, d104: $d104, file12: $file12, d16: $d16, d105: $d105, file13: $file13, d17: $d17, d106: $d106, file14: $file14, d18: $d18, d107: $d107, file15: $file15, d19: $d19, d108: $d108, file16: $file16, d20: $d20, d109: $d109, file17: $file17, d21: $d21, d110: $d110, file18: $file18, d22: $d22, d111: $d111, file19: $file19, d23: $d23, d112: $d112, file20: $file20, d24: $d24, d113: $d113, file21: $file21, d25: $d25, d114: $d114, file22: $file22, d26: $d26, d115: $d115, file23: $file23, d27: $d27, d116: $d116, file24: $file24, d28: $d28, d117: $d117, file25: $file25, d29: $d29, d118: $d118, file26: $file26, d30: $d30, d119: $d119, file27: $file27, d31: $d31, d120: $d120, file28: $file28, d32: $d32, d121: $d121, file29: $file29, d33: $d33, d122: $d122, file30: $file30, d34: $d34, d123: $d123, file31: $file31, d35: $d35, d124: $d124, file32: $file32, d36: $d36, d125: $d125, file33: $file33, d37: $d37, d126: $d126, file34: $file34, d38: $d38, d127: $d127, file35: $file35, d67: $d67, d128: $d128, file36: $file36, d39: $d39, d129: $d129, file37: $file37, d40: $d40, d130: $d130, file38: $file38, d41: $d41, d131: $d131, file39: $file39, d42: $d42, d132: $d132, file40: $file40, d43: $d43, d133: $d133, file41: $file41, d44: $d44, d134: $d134, file42: $file42, d45: $d45, d135: $d135, file43: $file43, d46: $d46, d136: $d136, file44: $file44, d47: $d47, d137: $d137, file45: $file45, d48: $d48, d138: $d138, file46: $file46, d49: $d49, d139: $d139, file47: $file47, d50: $d50, d140: $d140, file48: $file48, d51: $d51, d141: $d141, file49: $file49, d52: $d52, d142: $d142, file50: $file50, d53: $d53, d143: $d143, d54: $d54, d144: $d144, file51: $file51, d55: $d55, d145: $d145, file52: $file52, d56: $d56, d146: $d146, file53: $file53, d57: $d57, d147: $d147, file54: $file54, d58: $d58, d148: $d148, file55: $file55, d59: $d59, d149: $d149, file56: $file56, d60: $d60, d150: $d150, file57: $file57, d61: $d61, d151: $d151, file58: $file58, d62: $d62, d152: $d152, file59: $file59, d63: $d63, d153: $d153, file60: $file60, d64: $d64, d154: $d154, file61: $file61, d65: $d65, d155: $d155, file62: $file62, d156: $d156}';
+  }
 }
 
 enum BioIoName {

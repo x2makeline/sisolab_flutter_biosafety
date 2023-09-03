@@ -8,10 +8,10 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.da
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 /// 취급생물체정보
-class NewHandlingOrganismInformation extends StatelessWidget {
+class Tab2 extends StatelessWidget {
 
 
-   const NewHandlingOrganismInformation({super.key});
+   const Tab2({super.key});
    FclDetailVm  get vm => FclDetailVm.to;
 
   _wg(String label, List<(String, String?)> list) => FieldWithLabel(

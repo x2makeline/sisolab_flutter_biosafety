@@ -26,6 +26,10 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FormBuilderDateTimePicker(
+
+    onReset: () {
+      print(123);
+    },
       initialDate: initialDate,
       initialValue: initialDate,
       key: super.key,
@@ -35,6 +39,7 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
       style: context.textTheme.titleMedium?.copyWith(color: const Color(0xff767676)),
       decoration: dateInputDecoration,
       name: name,
+
       firstDate: firstDate ?? _initialFirstDate,
       lastDate: lastDate ?? _initialLastDate,
     );

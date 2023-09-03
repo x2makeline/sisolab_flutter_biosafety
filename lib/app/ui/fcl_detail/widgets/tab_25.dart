@@ -10,8 +10,8 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 6. 생물안전 정보 제공 및 이행
-class BioInfoOfferAndImp extends StatelessWidget {
-  const BioInfoOfferAndImp({super.key});
+class Tab25 extends StatelessWidget {
+  const Tab25({super.key});
 
   FclDetailVm get controller => FclDetailVm.to;
 

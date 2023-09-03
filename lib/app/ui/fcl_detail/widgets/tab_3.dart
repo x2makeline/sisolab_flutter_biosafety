@@ -10,8 +10,8 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_field
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// 기본 자료 확인
-class CheckBasicData extends StatelessWidget {
-  const CheckBasicData({super.key});
+class Tab3 extends StatelessWidget {
+  const Tab3({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
 

@@ -243,107 +243,110 @@ class FclListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Layout(
         title: when(vm.gbn, {
-              Gbn.fd1: () => "(정기)\n생물안전 3등급 시설 현장점검표",
-              Gbn.fd2: () => "(신규허가 ∙ 재확인)\n생물안전 3등급 시설 현장점검표",
-              Gbn.fd3: () => "고위험병원체 시설 현장점검표",
-            })!,
-        child: Padding(
-          padding: EdgeInsets.only(top: 47.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Flexible(
-                    child: FieldWithLabel(
-                      label: "제출기관",
-                      child: FormBuilderTextField(
-                        name: BioSearchInName.company.name,
-                        style: TextStyle(fontSize: 28.sp),
-                        decoration: const InputDecoration(hintText: "제출기관"),
+          Gbn.fd1: () => "(정기)\n생물안전 3등급 시설 현장점검표",
+          Gbn.fd2: () => "(신규허가 ∙ 재확인)\n생물안전 3등급 시설 현장점검표",
+          Gbn.fd3: () => "고위험병원체 시설 현장점검표",
+        })!,
+        child: FormBuilder(
+          key: vm.searchFormKey,
+          child: Padding(
+            padding: EdgeInsets.only(top: 47.h),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Flexible(
+                      child: FieldWithLabel(
+                        label: "제출기관",
+                        child: FormBuilderTextField(
+                          onSubmitted: (_) => vm.submit(),
+                          name: BioSearchInName.company.name,
+                          style: TextStyle(fontSize: 28.sp),
+                          decoration: const InputDecoration(hintText: "제출기관"),
+                        ),
                       ),
                     ),
-                  ),
-                  Flexible(
-                    child: FieldWithLabel(
-                      label: "기간선택",
-                      child: FormBuilderBetweenDate(
-                        endName: BioSearchInName.date1.name,
-                        startName: BioSearchInName.date2.name,
+                    Flexible(
+                      child: FieldWithLabel(
+                        label: "기간선택",
+                        child: FormBuilderBetweenDate(
+                          endName: BioSearchInName.date2.name,
+                          startName: BioSearchInName.date1.name,
+                        ),
                       ),
-                    ),
-                  )
-                ].withSpaceBetween(width: 40.w),
-              ),
-              SizedBox(
-                height: 47.h,
-              ),
-              const FclDivider.form(),
-              SizedBox(
-                height: 40.h,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      OutlinedButton(
-                          onPressed: () {}, child: const Text("엑셀다운")),
-                      ElevatedButton(
-                          style: const ButtonStyle(
-                              backgroundColor: MaterialStatePropertyAll<Color>(
-                                  Colors.black)),
-                          onPressed: () {
-                            Get.toNamed(when(vm.gbn, {
-                              Gbn.fd1: () =>
-                                  AppRoutes.fclRegularDetailForm.name,
-                              Gbn.fd2: () => AppRoutes.fclNewDetailForm.name,
-                            })!);
-                          },
-                          child: const Text("신규등록")),
-                    ].withSpaceBetween(width: 24.w),
-                  ),
-                  ElevatedButton(
-                      onPressed: () {
-                        vm.fetch();
-                      },
-                      child: const Text("조회")),
-                ],
-              ),
-              SizedBox(
-                height: 60.h,
-              ),
-              Obx(() => Text.rich(
-                  style: TextStyle(fontSize: 24.sp),
-                  TextSpan(children: [
-                    const TextSpan(text: "총 게시글 "),
-                    TextSpan(
-                        text: (vm.list.hasData
-                                ? vm.list.data!.data!.data.length
-                                : 0)
-                            .toString(),
-                        style: robotoTextStyle.copyWith(
-                            color: const Color(0xffff381e),
-                            fontWeight: FontWeight.w500)),
-                    const TextSpan(text: "건")
-                  ]))),
-              const FclDivider.black(),
-              Obx(() => vm.list.hasData
-                  ? ListView(
-                      shrinkWrap: true,
-                      primary: false,
-                      children: vm.list.data!.data!.data
-                          .map((e) => SizedBox(
-                              width: double.infinity,
-                              child: _Item(
-                                info: e,
-                                gbn: vm.gbn,
-                              )))
-                          .toList()
-                          .withWidgetBetween(const FclDivider.form()),
                     )
-                  : const Placeholder())
-            ],
+                  ].withSpaceBetween(width: 40.w),
+                ),
+                SizedBox(
+                  height: 47.h,
+                ),
+                const FclDivider.form(),
+                SizedBox(
+                  height: 40.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        OutlinedButton(
+                            onPressed: () {}, child: const Text("엑셀다운")),
+                        ElevatedButton(
+                            style: const ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll<Color>(
+                                        Colors.black)),
+                            onPressed: () {
+                              Get.toNamed(AppRoutes.fclList.name
+                                  .replaceFirst(RegExp(r'(:id)'), vm.gbn.name));
+
+                            },
+                            child: const Text("신규등록")),
+                      ].withSpaceBetween(width: 24.w),
+                    ),
+                    ElevatedButton(
+                        onPressed: () {
+                          vm.submit();
+                        },
+                        child: const Text("조회")),
+                  ],
+                ),
+                SizedBox(
+                  height: 60.h,
+                ),
+                Obx(() => Text.rich(
+                    style: TextStyle(fontSize: 24.sp),
+                    TextSpan(children: [
+                      const TextSpan(text: "총 게시글 "),
+                      TextSpan(
+                          text: (vm.list.hasData
+                                  ? vm.list.data!.data!.data.length
+                                  : 0)
+                              .toString(),
+                          style: robotoTextStyle.copyWith(
+                              color: const Color(0xffff381e),
+                              fontWeight: FontWeight.w500)),
+                      const TextSpan(text: "건")
+                    ]))),
+                const FclDivider.black(),
+                Obx(() => vm.list.hasData
+                    ? ListView(
+                        shrinkWrap: true,
+                        primary: false,
+                        children: vm.list.data!.data!.data
+                            .map((e) => SizedBox(
+                                width: double.infinity,
+                                child: _Item(
+                                  info: e,
+                                  gbn: vm.gbn,
+                                )))
+                            .toList()
+                            .withWidgetBetween(const FclDivider.form()),
+                      )
+                    : const Placeholder())
+              ],
+            ),
           ),
         ),
       );

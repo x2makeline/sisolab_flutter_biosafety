@@ -5,8 +5,6 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
-import 'package:sisolab_flutter_biosafety/app/data/repositories/hive_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
@@ -22,13 +20,10 @@ void main() async {
 
   await SPref.init();
   await Hive.initFlutter();
-  Hive.registerAdapter(BioIoAdapter());
-  await HiveRepository.openBox();
+  // Hive.registerAdapter(BioIoAdapter());
+  // await HiveRepository.openBox();
 
   // box.
-
-
-
 
   runApp(const MyApp());
 }
@@ -57,8 +52,9 @@ class MyApp extends StatelessWidget {
             initialRoute: AppRoutes.home.name,
             // initialRoute: AppRoutes.fclNewLIst.name,
             // initialRoute: AppRoutes.fclRegularList.name,
-            // initialRoute: "/fcl/regular/detail/593",
-            //     initialRoute: "/fcl/new/detail/609",
+            // initialRoute: "/fcl/fd1/detail/593",
+            //     initialRoute: "/fcl/fd2/detail/609",
+            // initialRoute: "/fcl/fd3/detail/593",
             theme: ThemeData(
                 buttonTheme: buttonMainTheme,
                 elevatedButtonTheme: elevatedButtonThemeData,

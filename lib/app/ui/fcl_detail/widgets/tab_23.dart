@@ -10,8 +10,8 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.da
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 4. 건축 특성(문과 천정, 등기구, 전기장비등의 마감, 관통, 코킹) 확인
-class BuildingCharacConf extends StatelessWidget {
-  const BuildingCharacConf({super.key});
+class Tab23 extends StatelessWidget {
+  const Tab23({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
 

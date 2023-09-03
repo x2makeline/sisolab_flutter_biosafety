@@ -9,9 +9,10 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-/// 13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지
-class FacilityAutomaticControl extends StatelessWidget {
-  const FacilityAutomaticControl({super.key});
+
+/// 10. 밀폐구역 내 환기 회수 확인
+class Tab10 extends StatelessWidget {
+  const Tab10({super.key});
 
   FclDetailVm get controller => FclDetailVm.to;
 
@@ -24,8 +25,7 @@ class FacilityAutomaticControl extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
-                  style: TextStyle(fontSize: 34.sp)),
+              Text("10. 밀폐구역 내 환기 회수 확인", style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
@@ -50,11 +50,11 @@ class FacilityAutomaticControl extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d154.name,
-                label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
-                imageName: BioIoName.file60.name,
+                noteName: BioIoName.d147.name,
+                label: "유효 교정장비 사용한 급, 배기 풍량 측정",
+                imageName: BioIoName.file53.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d64.name,
+                    name: BioIoName.d57.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

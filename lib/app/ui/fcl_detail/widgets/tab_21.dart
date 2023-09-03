@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-/// 공기조절
-class AirControl extends StatelessWidget {
-  const AirControl({super.key});
 
-  FclDetailVm get vm => FclDetailVm.to;
+
+/// 11. 급, 배기 연동 확인
+class Tab21 extends StatelessWidget {
+  const Tab21({super.key});
+
+  FclDetailVm get controller => FclDetailVm.to;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -24,15 +26,15 @@ class AirControl extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("3. 공기조절", style: TextStyle(fontSize: 34.sp)),
+              Text("11. 급, 배기 연동 확인", style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
                   Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
-                      value: vm.pastYearYn,
+                      value: controller.pastYearYn,
                       onChanged: (v) {
-                        vm.pastYearYn = v ?? false;
+                        controller.pastYearYn = v ?? false;
                       }))
                 ],
               )
@@ -49,28 +51,37 @@ class AirControl extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                initialNote: vm.io.d105,
-                noteName: BioIoName.d105.name,
-
-                label: "급기 덕트에 헤파 필터 설치",
-                imageName: BioIoName.file12.name,
-                initialImage: vm.io.file12,
+                noteName: BioIoName.d148.name,
+                label: "급기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압)",
+                imageName: BioIoName.file54.name,
                 fclRadio: FclRadio(
-                  initialValue: vm.io.d16,
-                    name: BioIoName.d16.name,
+                    name: BioIoName.d58.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d106.name,
-                initialNote: vm.io.d106,
-                label: "배기에 카본필터 등 냄새제거 장치 설치",
-                imageName: BioIoName.file13.name,
-                initialImage: vm.io.file13,
+                noteName: BioIoName.d149.name,
+                label: "급기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압)",
+                imageName: BioIoName.file55.name,
                 fclRadio: FclRadio(
-                  initialValue: vm.io.d17,
-                    name: BioIoName.d17.name,
+                    name: BioIoName.d59.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
+              FclField(
+                noteName: BioIoName.d150.name,
+                label: "배기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압)",
+                imageName: BioIoName.file56.name,
+                fclRadio: FclRadio(
+                    name: BioIoName.d60.name,
+                    map: FclNewDetailFields.saepnssUserRadio.map!),
+              ),
+              FclField(
+                noteName: BioIoName.d151.name,
+                label: "배기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압)",
+                imageName: BioIoName.file57.name,
+                fclRadio: FclRadio(
+                    name: BioIoName.d61.name,
+                    map: FclNewDetailFields.saepnssUserRadio.map!),
+              )
             ].withWidgetBetween(Column(
               children: [
                 SizedBox(

@@ -15,11 +15,11 @@ final dateInputDecoration = InputDecoration(
 
 const textFieldDecoration = InputDecoration(
     // constraints: BoxConstraints(minHeight: 90.h),
-    border: OutlineInputBorder(
-        borderSide: BorderSide(color: ColorGroup.gray)));
+    disabledBorder:
+        OutlineInputBorder(borderSide: BorderSide(color: ColorGroup.gray)),
+    border: OutlineInputBorder(borderSide: BorderSide(color: ColorGroup.gray)));
 
 final inputDecorationTheme = InputDecorationTheme(
-
     constraints: BoxConstraints(minHeight: 90.h),
     enabledBorder: textFieldDecoration.border,
     border: textFieldDecoration.border // enabledBorder: ,

@@ -9,9 +9,13 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-/// 7. 비상 시 가동성 확인
-class ChkAvailInCaseOfEmer extends StatelessWidget {
-  const ChkAvailInCaseOfEmer({super.key});
+
+
+
+
+/// 9. 내부로의 일방향 공기흐름 확인
+class Tab20 extends StatelessWidget {
+  const Tab20({super.key});
 
   FclDetailVm get controller => FclDetailVm.to;
 
@@ -24,7 +28,7 @@ class ChkAvailInCaseOfEmer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("7. 비상 시 가동성 확인", style: TextStyle(fontSize: 34.sp)),
+              Text("9. 내부로의 일방향 공기흐름 확인", style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
@@ -49,67 +53,34 @@ class ChkAvailInCaseOfEmer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d130.name,
-                label: "비상장비(손전등, 구급상자) 비치",
-                imageName: BioIoName.file37.name,
+                noteName: BioIoName.d143.name,
+                label: "실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상)",
+                imageName: BioIoName.file50.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d40.name,
+                    name: BioIoName.d53.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d131.name,
-                label: "양방향 통신 시스템(인터폰, 전화 등)",
-                imageName: BioIoName.file38.name,
+                noteName: BioIoName.d144.name,
+                label: "차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지)",
                 fclRadio: FclRadio(
-                    name: BioIoName.d41.name,
+                    name: BioIoName.d54.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d132.name,
-                label: "CCTV 설치 위치 적절성 및 동작 확인",
-                imageName: BioIoName.file39.name,
+                noteName: BioIoName.d145.name,
+                label: "밀폐구역 내 실간차압이 -7.6 Pa 이상 유지",
+                imageName: BioIoName.file51.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d42.name,
+                    name: BioIoName.d55.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d133.name,
-                label: "경보장치의 적정 위치 설치",
-                imageName: BioIoName.file40.name,
+                noteName: BioIoName.d146.name,
+                label: "밀폐구역 내 실간 일방향 기류 확인",
+                imageName: BioIoName.file52.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d43.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d134.name,
-                label: "실간 차압역전 및 양압 형성 시 경보",
-                imageName: BioIoName.file41.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d44.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d135.name,
-                label: "비상조명, 피난 유도등",
-                imageName: BioIoName.file42.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d45.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d136.name,
-                label: "소화설비/장비 구비",
-                imageName: BioIoName.file43.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d46.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d137.name,
-                label: "밀폐구역 내 스필 시 대응 장비(킷트) 등 구비",
-                imageName: BioIoName.file44.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d47.name,
+                    name: BioIoName.d56.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

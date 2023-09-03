@@ -3,17 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-
-
-/// 12. 헤파필터 유닛 및 배기덕트 누기 확인
-class ChkHpFtUnitAndExhDuctForLeaks extends StatelessWidget {
-  const ChkHpFtUnitAndExhDuctForLeaks({super.key});
+/// 특이사항
+class Tab6 extends StatelessWidget {
+  const Tab6({super.key});
 
   FclDetailVm get controller => FclDetailVm.to;
 
@@ -26,7 +22,8 @@ class ChkHpFtUnitAndExhDuctForLeaks extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text("12. 헤파필터 유닛 및 배기덕트 누기 확인", style: TextStyle(fontSize: 34.sp)),
+          Text("특이사항",
+              style: TextStyle(fontSize: 34.sp)),
           SizedBox(height: 14.h),
           Row(
             children: [
@@ -50,24 +47,11 @@ class ChkHpFtUnitAndExhDuctForLeaks extends StatelessWidget {
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           FclField(
-            noteName: BioIoName.d152.name,
-            label: "헤파필터 유닛, 배기덕트 압력 감소 시험",
-            imageName: BioIoName.file58.name,
-            fclRadio: FclRadio(
-                name: BioIoName.d62.name,
-                map: FclNewDetailFields.saepnssUserRadio.map!),
-          ),
-          FclField(
-            noteName: BioIoName.d153.name,
-            label: "헤파필터 유닛 완전성 테스트(PAO 테스트)",
-            imageName: BioIoName.file59.name,
-            fclRadio: FclRadio(
-                name: BioIoName.d63.name,
-                map: FclNewDetailFields.saepnssUserRadio.map!),
+            noteName: BioIoName.d156.name,
+            label: "특이사항",
+            imageName: BioIoName.file62.name,
           )
-
         ].withWidgetBetween(Column(
           children: [
             SizedBox(
@@ -80,6 +64,7 @@ class ChkHpFtUnitAndExhDuctForLeaks extends StatelessWidget {
           ],
         )),
       ),
+
       SizedBox(
         height: 47.h,
       ),

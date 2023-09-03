@@ -7,7 +7,119 @@ part of 'bio_io.dart';
 // **************************************************************************
 
 abstract class _$BioIoCWProxy {
+  BioIo d3(String? d3);
+
+  BioIo d4(String? d4);
+
+  BioIo d5(String? d5);
+
+  BioIo comAddress(String? comAddress);
+
+  BioIo comCode(String? comCode);
+
+  BioIo comName(String? comName);
+
+  BioIo attfile11str(String? attfile11str);
+
+  BioIo tableName(String? tableName);
+
+  BioIo attfile15str(String? attfile15str);
+
+  BioIo attfile4str(String? attfile4str);
+
+  BioIo attfile8str(String? attfile8str);
+
+  BioIo attfile20str(String? attfile20str);
+
+  BioIo attfile10str(String? attfile10str);
+
+  BioIo attfile14str(String? attfile14str);
+
+  BioIo attfile19str(String? attfile19str);
+
+  BioIo attfile3str(String? attfile3str);
+
+  BioIo attNameTxt20(String? attNameTxt20);
+
+  BioIo attfile18str(String? attfile18str);
+
+  BioIo attfile7str(String? attfile7str);
+
+  BioIo idx(int? idx);
+
+  BioIo status(String? status);
+
+  BioIo docno(String? docno);
+
+  BioIo attfile13str(String? attfile13str);
+
+  BioIo attfile17str(String? attfile17str);
+
+  BioIo attfile6str(String? attfile6str);
+
+  BioIo attNameTxt13(String? attNameTxt13);
+
+  BioIo attNameTxt12(String? attNameTxt12);
+
+  BioIo attfile2str(String? attfile2str);
+
+  BioIo attNameTxt11(String? attNameTxt11);
+
+  BioIo attNameTxt10(String? attNameTxt10);
+
+  BioIo attNameTxt17(String? attNameTxt17);
+
+  BioIo attNameTxt16(String? attNameTxt16);
+
+  BioIo attNameTxt15(String? attNameTxt15);
+
   BioIo company(String? company);
+
+  BioIo attNameTxt14(String? attNameTxt14);
+
+  BioIo attNameTxt19(String? attNameTxt19);
+
+  BioIo submitDatetime(String? submitDatetime);
+
+  BioIo attNameTxt18(String? attNameTxt18);
+
+  BioIo attNameTxt4(String? attNameTxt4);
+
+  BioIo attNameTxt3(String? attNameTxt3);
+
+  BioIo attNameTxt2(String? attNameTxt2);
+
+  BioIo attNameTxt1(String? attNameTxt1);
+
+  BioIo regId(String? regId);
+
+  BioIo simAuth(int? simAuth);
+
+  BioIo attfile12str(String? attfile12str);
+
+  BioIo attfile16str(String? attfile16str);
+
+  BioIo gbn(String? gbn);
+
+  BioIo attfile5str(String? attfile5str);
+
+  BioIo reg_datetime(int? reg_datetime);
+
+  BioIo attfile1str(String? attfile1str);
+
+  BioIo attfile9str(String? attfile9str);
+
+  BioIo printSubmitDt(String? printSubmitDt);
+
+  BioIo attNameTxt9(String? attNameTxt9);
+
+  BioIo attNameTxt8(String? attNameTxt8);
+
+  BioIo attNameTxt7(String? attNameTxt7);
+
+  BioIo attNameTxt6(String? attNameTxt6);
+
+  BioIo attNameTxt5(String? attNameTxt5);
 
   BioIo d184(String? d184);
 
@@ -34,8 +146,6 @@ abstract class _$BioIoCWProxy {
   BioIo d76(bool? d76);
 
   BioIo d281(String? d281);
-
-  BioIo docno(String? docno);
 
   BioIo d158(DateTime? d158);
 
@@ -147,8 +257,6 @@ abstract class _$BioIoCWProxy {
 
   BioIo d88(String? d88);
 
-  BioIo d3(String? d3);
-
   BioIo d183(String? d183);
 
   BioIo file2(String? file2);
@@ -157,13 +265,9 @@ abstract class _$BioIoCWProxy {
 
   BioIo d90(String? d90);
 
-  BioIo d4(String? d4);
-
   BioIo d91(String? d91);
 
   BioIo d92(String? d92);
-
-  BioIo d5(String? d5);
 
   BioIo d93(String? d93);
 
@@ -542,7 +646,63 @@ abstract class _$BioIoCWProxy {
   /// BioIo(...).copyWith(id: 12, name: "My name")
   /// ````
   BioIo call({
+    String? d3,
+    String? d4,
+    String? d5,
+    String? comAddress,
+    String? comCode,
+    String? comName,
+    String? attfile11str,
+    String? tableName,
+    String? attfile15str,
+    String? attfile4str,
+    String? attfile8str,
+    String? attfile20str,
+    String? attfile10str,
+    String? attfile14str,
+    String? attfile19str,
+    String? attfile3str,
+    String? attNameTxt20,
+    String? attfile18str,
+    String? attfile7str,
+    int? idx,
+    String? status,
+    String? docno,
+    String? attfile13str,
+    String? attfile17str,
+    String? attfile6str,
+    String? attNameTxt13,
+    String? attNameTxt12,
+    String? attfile2str,
+    String? attNameTxt11,
+    String? attNameTxt10,
+    String? attNameTxt17,
+    String? attNameTxt16,
+    String? attNameTxt15,
     String? company,
+    String? attNameTxt14,
+    String? attNameTxt19,
+    String? submitDatetime,
+    String? attNameTxt18,
+    String? attNameTxt4,
+    String? attNameTxt3,
+    String? attNameTxt2,
+    String? attNameTxt1,
+    String? regId,
+    int? simAuth,
+    String? attfile12str,
+    String? attfile16str,
+    String? gbn,
+    String? attfile5str,
+    int? reg_datetime,
+    String? attfile1str,
+    String? attfile9str,
+    String? printSubmitDt,
+    String? attNameTxt9,
+    String? attNameTxt8,
+    String? attNameTxt7,
+    String? attNameTxt6,
+    String? attNameTxt5,
     String? d184,
     String? d280,
     bool? d68,
@@ -556,7 +716,6 @@ abstract class _$BioIoCWProxy {
     String? d157,
     bool? d76,
     String? d281,
-    String? docno,
     DateTime? d158,
     String? d282,
     String? d283,
@@ -612,15 +771,12 @@ abstract class _$BioIoCWProxy {
     String? d2,
     String? d182,
     String? d88,
-    String? d3,
     String? d183,
     String? file2,
     String? d89,
     String? d90,
-    String? d4,
     String? d91,
     String? d92,
-    String? d5,
     String? d93,
     String? d94,
     String? d6,
@@ -816,7 +972,177 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   final BioIo _value;
 
   @override
+  BioIo d3(String? d3) => this(d3: d3);
+
+  @override
+  BioIo d4(String? d4) => this(d4: d4);
+
+  @override
+  BioIo d5(String? d5) => this(d5: d5);
+
+  @override
+  BioIo comAddress(String? comAddress) => this(comAddress: comAddress);
+
+  @override
+  BioIo comCode(String? comCode) => this(comCode: comCode);
+
+  @override
+  BioIo comName(String? comName) => this(comName: comName);
+
+  @override
+  BioIo attfile11str(String? attfile11str) => this(attfile11str: attfile11str);
+
+  @override
+  BioIo tableName(String? tableName) => this(tableName: tableName);
+
+  @override
+  BioIo attfile15str(String? attfile15str) => this(attfile15str: attfile15str);
+
+  @override
+  BioIo attfile4str(String? attfile4str) => this(attfile4str: attfile4str);
+
+  @override
+  BioIo attfile8str(String? attfile8str) => this(attfile8str: attfile8str);
+
+  @override
+  BioIo attfile20str(String? attfile20str) => this(attfile20str: attfile20str);
+
+  @override
+  BioIo attfile10str(String? attfile10str) => this(attfile10str: attfile10str);
+
+  @override
+  BioIo attfile14str(String? attfile14str) => this(attfile14str: attfile14str);
+
+  @override
+  BioIo attfile19str(String? attfile19str) => this(attfile19str: attfile19str);
+
+  @override
+  BioIo attfile3str(String? attfile3str) => this(attfile3str: attfile3str);
+
+  @override
+  BioIo attNameTxt20(String? attNameTxt20) => this(attNameTxt20: attNameTxt20);
+
+  @override
+  BioIo attfile18str(String? attfile18str) => this(attfile18str: attfile18str);
+
+  @override
+  BioIo attfile7str(String? attfile7str) => this(attfile7str: attfile7str);
+
+  @override
+  BioIo idx(int? idx) => this(idx: idx);
+
+  @override
+  BioIo status(String? status) => this(status: status);
+
+  @override
+  BioIo docno(String? docno) => this(docno: docno);
+
+  @override
+  BioIo attfile13str(String? attfile13str) => this(attfile13str: attfile13str);
+
+  @override
+  BioIo attfile17str(String? attfile17str) => this(attfile17str: attfile17str);
+
+  @override
+  BioIo attfile6str(String? attfile6str) => this(attfile6str: attfile6str);
+
+  @override
+  BioIo attNameTxt13(String? attNameTxt13) => this(attNameTxt13: attNameTxt13);
+
+  @override
+  BioIo attNameTxt12(String? attNameTxt12) => this(attNameTxt12: attNameTxt12);
+
+  @override
+  BioIo attfile2str(String? attfile2str) => this(attfile2str: attfile2str);
+
+  @override
+  BioIo attNameTxt11(String? attNameTxt11) => this(attNameTxt11: attNameTxt11);
+
+  @override
+  BioIo attNameTxt10(String? attNameTxt10) => this(attNameTxt10: attNameTxt10);
+
+  @override
+  BioIo attNameTxt17(String? attNameTxt17) => this(attNameTxt17: attNameTxt17);
+
+  @override
+  BioIo attNameTxt16(String? attNameTxt16) => this(attNameTxt16: attNameTxt16);
+
+  @override
+  BioIo attNameTxt15(String? attNameTxt15) => this(attNameTxt15: attNameTxt15);
+
+  @override
   BioIo company(String? company) => this(company: company);
+
+  @override
+  BioIo attNameTxt14(String? attNameTxt14) => this(attNameTxt14: attNameTxt14);
+
+  @override
+  BioIo attNameTxt19(String? attNameTxt19) => this(attNameTxt19: attNameTxt19);
+
+  @override
+  BioIo submitDatetime(String? submitDatetime) =>
+      this(submitDatetime: submitDatetime);
+
+  @override
+  BioIo attNameTxt18(String? attNameTxt18) => this(attNameTxt18: attNameTxt18);
+
+  @override
+  BioIo attNameTxt4(String? attNameTxt4) => this(attNameTxt4: attNameTxt4);
+
+  @override
+  BioIo attNameTxt3(String? attNameTxt3) => this(attNameTxt3: attNameTxt3);
+
+  @override
+  BioIo attNameTxt2(String? attNameTxt2) => this(attNameTxt2: attNameTxt2);
+
+  @override
+  BioIo attNameTxt1(String? attNameTxt1) => this(attNameTxt1: attNameTxt1);
+
+  @override
+  BioIo regId(String? regId) => this(regId: regId);
+
+  @override
+  BioIo simAuth(int? simAuth) => this(simAuth: simAuth);
+
+  @override
+  BioIo attfile12str(String? attfile12str) => this(attfile12str: attfile12str);
+
+  @override
+  BioIo attfile16str(String? attfile16str) => this(attfile16str: attfile16str);
+
+  @override
+  BioIo gbn(String? gbn) => this(gbn: gbn);
+
+  @override
+  BioIo attfile5str(String? attfile5str) => this(attfile5str: attfile5str);
+
+  @override
+  BioIo reg_datetime(int? reg_datetime) => this(reg_datetime: reg_datetime);
+
+  @override
+  BioIo attfile1str(String? attfile1str) => this(attfile1str: attfile1str);
+
+  @override
+  BioIo attfile9str(String? attfile9str) => this(attfile9str: attfile9str);
+
+  @override
+  BioIo printSubmitDt(String? printSubmitDt) =>
+      this(printSubmitDt: printSubmitDt);
+
+  @override
+  BioIo attNameTxt9(String? attNameTxt9) => this(attNameTxt9: attNameTxt9);
+
+  @override
+  BioIo attNameTxt8(String? attNameTxt8) => this(attNameTxt8: attNameTxt8);
+
+  @override
+  BioIo attNameTxt7(String? attNameTxt7) => this(attNameTxt7: attNameTxt7);
+
+  @override
+  BioIo attNameTxt6(String? attNameTxt6) => this(attNameTxt6: attNameTxt6);
+
+  @override
+  BioIo attNameTxt5(String? attNameTxt5) => this(attNameTxt5: attNameTxt5);
 
   @override
   BioIo d184(String? d184) => this(d184: d184);
@@ -856,9 +1182,6 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
 
   @override
   BioIo d281(String? d281) => this(d281: d281);
-
-  @override
-  BioIo docno(String? docno) => this(docno: docno);
 
   @override
   BioIo d158(DateTime? d158) => this(d158: d158);
@@ -1026,9 +1349,6 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   BioIo d88(String? d88) => this(d88: d88);
 
   @override
-  BioIo d3(String? d3) => this(d3: d3);
-
-  @override
   BioIo d183(String? d183) => this(d183: d183);
 
   @override
@@ -1041,16 +1361,10 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   BioIo d90(String? d90) => this(d90: d90);
 
   @override
-  BioIo d4(String? d4) => this(d4: d4);
-
-  @override
   BioIo d91(String? d91) => this(d91: d91);
 
   @override
   BioIo d92(String? d92) => this(d92: d92);
-
-  @override
-  BioIo d5(String? d5) => this(d5: d5);
 
   @override
   BioIo d93(String? d93) => this(d93: d93);
@@ -1616,7 +1930,63 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   /// BioIo(...).copyWith(id: 12, name: "My name")
   /// ````
   BioIo call({
+    Object? d3 = const $CopyWithPlaceholder(),
+    Object? d4 = const $CopyWithPlaceholder(),
+    Object? d5 = const $CopyWithPlaceholder(),
+    Object? comAddress = const $CopyWithPlaceholder(),
+    Object? comCode = const $CopyWithPlaceholder(),
+    Object? comName = const $CopyWithPlaceholder(),
+    Object? attfile11str = const $CopyWithPlaceholder(),
+    Object? tableName = const $CopyWithPlaceholder(),
+    Object? attfile15str = const $CopyWithPlaceholder(),
+    Object? attfile4str = const $CopyWithPlaceholder(),
+    Object? attfile8str = const $CopyWithPlaceholder(),
+    Object? attfile20str = const $CopyWithPlaceholder(),
+    Object? attfile10str = const $CopyWithPlaceholder(),
+    Object? attfile14str = const $CopyWithPlaceholder(),
+    Object? attfile19str = const $CopyWithPlaceholder(),
+    Object? attfile3str = const $CopyWithPlaceholder(),
+    Object? attNameTxt20 = const $CopyWithPlaceholder(),
+    Object? attfile18str = const $CopyWithPlaceholder(),
+    Object? attfile7str = const $CopyWithPlaceholder(),
+    Object? idx = const $CopyWithPlaceholder(),
+    Object? status = const $CopyWithPlaceholder(),
+    Object? docno = const $CopyWithPlaceholder(),
+    Object? attfile13str = const $CopyWithPlaceholder(),
+    Object? attfile17str = const $CopyWithPlaceholder(),
+    Object? attfile6str = const $CopyWithPlaceholder(),
+    Object? attNameTxt13 = const $CopyWithPlaceholder(),
+    Object? attNameTxt12 = const $CopyWithPlaceholder(),
+    Object? attfile2str = const $CopyWithPlaceholder(),
+    Object? attNameTxt11 = const $CopyWithPlaceholder(),
+    Object? attNameTxt10 = const $CopyWithPlaceholder(),
+    Object? attNameTxt17 = const $CopyWithPlaceholder(),
+    Object? attNameTxt16 = const $CopyWithPlaceholder(),
+    Object? attNameTxt15 = const $CopyWithPlaceholder(),
     Object? company = const $CopyWithPlaceholder(),
+    Object? attNameTxt14 = const $CopyWithPlaceholder(),
+    Object? attNameTxt19 = const $CopyWithPlaceholder(),
+    Object? submitDatetime = const $CopyWithPlaceholder(),
+    Object? attNameTxt18 = const $CopyWithPlaceholder(),
+    Object? attNameTxt4 = const $CopyWithPlaceholder(),
+    Object? attNameTxt3 = const $CopyWithPlaceholder(),
+    Object? attNameTxt2 = const $CopyWithPlaceholder(),
+    Object? attNameTxt1 = const $CopyWithPlaceholder(),
+    Object? regId = const $CopyWithPlaceholder(),
+    Object? simAuth = const $CopyWithPlaceholder(),
+    Object? attfile12str = const $CopyWithPlaceholder(),
+    Object? attfile16str = const $CopyWithPlaceholder(),
+    Object? gbn = const $CopyWithPlaceholder(),
+    Object? attfile5str = const $CopyWithPlaceholder(),
+    Object? reg_datetime = const $CopyWithPlaceholder(),
+    Object? attfile1str = const $CopyWithPlaceholder(),
+    Object? attfile9str = const $CopyWithPlaceholder(),
+    Object? printSubmitDt = const $CopyWithPlaceholder(),
+    Object? attNameTxt9 = const $CopyWithPlaceholder(),
+    Object? attNameTxt8 = const $CopyWithPlaceholder(),
+    Object? attNameTxt7 = const $CopyWithPlaceholder(),
+    Object? attNameTxt6 = const $CopyWithPlaceholder(),
+    Object? attNameTxt5 = const $CopyWithPlaceholder(),
     Object? d184 = const $CopyWithPlaceholder(),
     Object? d280 = const $CopyWithPlaceholder(),
     Object? d68 = const $CopyWithPlaceholder(),
@@ -1630,7 +2000,6 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
     Object? d157 = const $CopyWithPlaceholder(),
     Object? d76 = const $CopyWithPlaceholder(),
     Object? d281 = const $CopyWithPlaceholder(),
-    Object? docno = const $CopyWithPlaceholder(),
     Object? d158 = const $CopyWithPlaceholder(),
     Object? d282 = const $CopyWithPlaceholder(),
     Object? d283 = const $CopyWithPlaceholder(),
@@ -1686,15 +2055,12 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
     Object? d2 = const $CopyWithPlaceholder(),
     Object? d182 = const $CopyWithPlaceholder(),
     Object? d88 = const $CopyWithPlaceholder(),
-    Object? d3 = const $CopyWithPlaceholder(),
     Object? d183 = const $CopyWithPlaceholder(),
     Object? file2 = const $CopyWithPlaceholder(),
     Object? d89 = const $CopyWithPlaceholder(),
     Object? d90 = const $CopyWithPlaceholder(),
-    Object? d4 = const $CopyWithPlaceholder(),
     Object? d91 = const $CopyWithPlaceholder(),
     Object? d92 = const $CopyWithPlaceholder(),
-    Object? d5 = const $CopyWithPlaceholder(),
     Object? d93 = const $CopyWithPlaceholder(),
     Object? d94 = const $CopyWithPlaceholder(),
     Object? d6 = const $CopyWithPlaceholder(),
@@ -1882,10 +2248,234 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
     Object? d156 = const $CopyWithPlaceholder(),
   }) {
     return BioIo(
+      d3: d3 == const $CopyWithPlaceholder()
+          ? _value.d3
+          // ignore: cast_nullable_to_non_nullable
+          : d3 as String?,
+      d4: d4 == const $CopyWithPlaceholder()
+          ? _value.d4
+          // ignore: cast_nullable_to_non_nullable
+          : d4 as String?,
+      d5: d5 == const $CopyWithPlaceholder()
+          ? _value.d5
+          // ignore: cast_nullable_to_non_nullable
+          : d5 as String?,
+      comAddress: comAddress == const $CopyWithPlaceholder()
+          ? _value.comAddress
+          // ignore: cast_nullable_to_non_nullable
+          : comAddress as String?,
+      comCode: comCode == const $CopyWithPlaceholder()
+          ? _value.comCode
+          // ignore: cast_nullable_to_non_nullable
+          : comCode as String?,
+      comName: comName == const $CopyWithPlaceholder()
+          ? _value.comName
+          // ignore: cast_nullable_to_non_nullable
+          : comName as String?,
+      attfile11str: attfile11str == const $CopyWithPlaceholder()
+          ? _value.attfile11str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile11str as String?,
+      tableName: tableName == const $CopyWithPlaceholder()
+          ? _value.tableName
+          // ignore: cast_nullable_to_non_nullable
+          : tableName as String?,
+      attfile15str: attfile15str == const $CopyWithPlaceholder()
+          ? _value.attfile15str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile15str as String?,
+      attfile4str: attfile4str == const $CopyWithPlaceholder()
+          ? _value.attfile4str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile4str as String?,
+      attfile8str: attfile8str == const $CopyWithPlaceholder()
+          ? _value.attfile8str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile8str as String?,
+      attfile20str: attfile20str == const $CopyWithPlaceholder()
+          ? _value.attfile20str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile20str as String?,
+      attfile10str: attfile10str == const $CopyWithPlaceholder()
+          ? _value.attfile10str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile10str as String?,
+      attfile14str: attfile14str == const $CopyWithPlaceholder()
+          ? _value.attfile14str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile14str as String?,
+      attfile19str: attfile19str == const $CopyWithPlaceholder()
+          ? _value.attfile19str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile19str as String?,
+      attfile3str: attfile3str == const $CopyWithPlaceholder()
+          ? _value.attfile3str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile3str as String?,
+      attNameTxt20: attNameTxt20 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt20
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt20 as String?,
+      attfile18str: attfile18str == const $CopyWithPlaceholder()
+          ? _value.attfile18str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile18str as String?,
+      attfile7str: attfile7str == const $CopyWithPlaceholder()
+          ? _value.attfile7str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile7str as String?,
+      idx: idx == const $CopyWithPlaceholder()
+          ? _value.idx
+          // ignore: cast_nullable_to_non_nullable
+          : idx as int?,
+      status: status == const $CopyWithPlaceholder()
+          ? _value.status
+          // ignore: cast_nullable_to_non_nullable
+          : status as String?,
+      docno: docno == const $CopyWithPlaceholder()
+          ? _value.docno
+          // ignore: cast_nullable_to_non_nullable
+          : docno as String?,
+      attfile13str: attfile13str == const $CopyWithPlaceholder()
+          ? _value.attfile13str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile13str as String?,
+      attfile17str: attfile17str == const $CopyWithPlaceholder()
+          ? _value.attfile17str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile17str as String?,
+      attfile6str: attfile6str == const $CopyWithPlaceholder()
+          ? _value.attfile6str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile6str as String?,
+      attNameTxt13: attNameTxt13 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt13
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt13 as String?,
+      attNameTxt12: attNameTxt12 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt12
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt12 as String?,
+      attfile2str: attfile2str == const $CopyWithPlaceholder()
+          ? _value.attfile2str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile2str as String?,
+      attNameTxt11: attNameTxt11 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt11
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt11 as String?,
+      attNameTxt10: attNameTxt10 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt10
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt10 as String?,
+      attNameTxt17: attNameTxt17 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt17
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt17 as String?,
+      attNameTxt16: attNameTxt16 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt16
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt16 as String?,
+      attNameTxt15: attNameTxt15 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt15
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt15 as String?,
       company: company == const $CopyWithPlaceholder()
           ? _value.company
           // ignore: cast_nullable_to_non_nullable
           : company as String?,
+      attNameTxt14: attNameTxt14 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt14
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt14 as String?,
+      attNameTxt19: attNameTxt19 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt19
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt19 as String?,
+      submitDatetime: submitDatetime == const $CopyWithPlaceholder()
+          ? _value.submitDatetime
+          // ignore: cast_nullable_to_non_nullable
+          : submitDatetime as String?,
+      attNameTxt18: attNameTxt18 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt18
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt18 as String?,
+      attNameTxt4: attNameTxt4 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt4
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt4 as String?,
+      attNameTxt3: attNameTxt3 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt3
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt3 as String?,
+      attNameTxt2: attNameTxt2 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt2
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt2 as String?,
+      attNameTxt1: attNameTxt1 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt1
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt1 as String?,
+      regId: regId == const $CopyWithPlaceholder()
+          ? _value.regId
+          // ignore: cast_nullable_to_non_nullable
+          : regId as String?,
+      simAuth: simAuth == const $CopyWithPlaceholder()
+          ? _value.simAuth
+          // ignore: cast_nullable_to_non_nullable
+          : simAuth as int?,
+      attfile12str: attfile12str == const $CopyWithPlaceholder()
+          ? _value.attfile12str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile12str as String?,
+      attfile16str: attfile16str == const $CopyWithPlaceholder()
+          ? _value.attfile16str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile16str as String?,
+      gbn: gbn == const $CopyWithPlaceholder()
+          ? _value.gbn
+          // ignore: cast_nullable_to_non_nullable
+          : gbn as String?,
+      attfile5str: attfile5str == const $CopyWithPlaceholder()
+          ? _value.attfile5str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile5str as String?,
+      reg_datetime: reg_datetime == const $CopyWithPlaceholder()
+          ? _value.reg_datetime
+          // ignore: cast_nullable_to_non_nullable
+          : reg_datetime as int?,
+      attfile1str: attfile1str == const $CopyWithPlaceholder()
+          ? _value.attfile1str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile1str as String?,
+      attfile9str: attfile9str == const $CopyWithPlaceholder()
+          ? _value.attfile9str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile9str as String?,
+      printSubmitDt: printSubmitDt == const $CopyWithPlaceholder()
+          ? _value.printSubmitDt
+          // ignore: cast_nullable_to_non_nullable
+          : printSubmitDt as String?,
+      attNameTxt9: attNameTxt9 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt9
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt9 as String?,
+      attNameTxt8: attNameTxt8 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt8
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt8 as String?,
+      attNameTxt7: attNameTxt7 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt7
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt7 as String?,
+      attNameTxt6: attNameTxt6 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt6
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt6 as String?,
+      attNameTxt5: attNameTxt5 == const $CopyWithPlaceholder()
+          ? _value.attNameTxt5
+          // ignore: cast_nullable_to_non_nullable
+          : attNameTxt5 as String?,
       d184: d184 == const $CopyWithPlaceholder()
           ? _value.d184
           // ignore: cast_nullable_to_non_nullable
@@ -1938,10 +2528,6 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.d281
           // ignore: cast_nullable_to_non_nullable
           : d281 as String?,
-      docno: docno == const $CopyWithPlaceholder()
-          ? _value.docno
-          // ignore: cast_nullable_to_non_nullable
-          : docno as String?,
       d158: d158 == const $CopyWithPlaceholder()
           ? _value.d158
           // ignore: cast_nullable_to_non_nullable
@@ -2162,10 +2748,6 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.d88
           // ignore: cast_nullable_to_non_nullable
           : d88 as String?,
-      d3: d3 == const $CopyWithPlaceholder()
-          ? _value.d3
-          // ignore: cast_nullable_to_non_nullable
-          : d3 as String?,
       d183: d183 == const $CopyWithPlaceholder()
           ? _value.d183
           // ignore: cast_nullable_to_non_nullable
@@ -2182,10 +2764,6 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.d90
           // ignore: cast_nullable_to_non_nullable
           : d90 as String?,
-      d4: d4 == const $CopyWithPlaceholder()
-          ? _value.d4
-          // ignore: cast_nullable_to_non_nullable
-          : d4 as String?,
       d91: d91 == const $CopyWithPlaceholder()
           ? _value.d91
           // ignore: cast_nullable_to_non_nullable
@@ -2194,10 +2772,6 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.d92
           // ignore: cast_nullable_to_non_nullable
           : d92 as String?,
-      d5: d5 == const $CopyWithPlaceholder()
-          ? _value.d5
-          // ignore: cast_nullable_to_non_nullable
-          : d5 as String?,
       d93: d93 == const $CopyWithPlaceholder()
           ? _value.d93
           // ignore: cast_nullable_to_non_nullable
@@ -2949,811 +3523,67 @@ extension $BioIoCopyWith on BioIo {
 }
 
 // **************************************************************************
-// TypeAdapterGenerator
-// **************************************************************************
-
-class BioIoAdapter extends TypeAdapter<BioIo> {
-  @override
-  final int typeId = 0;
-
-  @override
-  BioIo read(BinaryReader reader) {
-    final numOfFields = reader.readByte();
-    final fields = <int, dynamic>{
-      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
-    };
-    return BioIo(
-      company: fields[0] as String?,
-      d184: fields[1] as String?,
-      d280: fields[2] as String?,
-      d68: fields[3] as bool?,
-      d69: fields[4] as bool?,
-      d70: fields[5] as bool?,
-      d71: fields[6] as bool?,
-      d72: fields[7] as bool?,
-      d73: fields[8] as bool?,
-      d74: fields[9] as bool?,
-      d75: fields[11] as bool?,
-      d157: fields[12] as String?,
-      d76: fields[13] as bool?,
-      d281: fields[14] as String?,
-      docno: fields[15] as String?,
-      d158: fields[16] as DateTime?,
-      d282: fields[17] as String?,
-      d283: fields[18] as String?,
-      d284: fields[19] as String?,
-      d285: fields[20] as String?,
-      d286: fields[21] as String?,
-      d159: fields[22] as String?,
-      d162: fields[23] as String?,
-      d165: fields[24] as String?,
-      d271: fields[25] as String?,
-      d274: fields[26] as String?,
-      d160: fields[27] as String?,
-      d163: fields[28] as String?,
-      d166: fields[29] as String?,
-      d272: fields[30] as String?,
-      d275: fields[31] as String?,
-      d161: fields[32] as String?,
-      d164: fields[33] as String?,
-      d167: fields[34] as String?,
-      d273: fields[35] as String?,
-      d276: fields[36] as String?,
-      d168: fields[37] as DateTime?,
-      d170: fields[38] as String?,
-      d169: fields[39] as String?,
-      d185: fields[40] as String?,
-      d172: fields[41] as String?,
-      d171: fields[42] as String?,
-      d186: fields[43] as String?,
-      d174: fields[44] as String?,
-      d173: fields[45] as String?,
-      d187: fields[46] as String?,
-      d176: fields[47] as String?,
-      d175: fields[48] as String?,
-      d188: fields[49] as String?,
-      d178: fields[50] as String?,
-      d177: fields[51] as String?,
-      d189: fields[52] as String?,
-      d77: fields[53] as String?,
-      d78: fields[54] as String?,
-      d79: fields[55] as String?,
-      d80: fields[56] as String?,
-      d81: fields[57] as String?,
-      d82: fields[58] as String?,
-      d83: fields[59] as String?,
-      d84: fields[60] as String?,
-      d85: fields[61] as String?,
-      file1: fields[62] as String?,
-      d179: fields[63] as String?,
-      d180: fields[64] as String?,
-      d1: fields[65] as String?,
-      d181: fields[66] as String?,
-      d87: fields[67] as String?,
-      d2: fields[68] as String?,
-      d182: fields[69] as String?,
-      d88: fields[70] as String?,
-      d3: fields[71] as String?,
-      d183: fields[72] as String?,
-      file2: fields[73] as String?,
-      d89: fields[74] as String?,
-      d90: fields[75] as String?,
-      d4: fields[76] as String?,
-      d91: fields[77] as String?,
-      d92: fields[78] as String?,
-      d5: fields[79] as String?,
-      d93: fields[80] as String?,
-      d94: fields[81] as String?,
-      d6: fields[82] as String?,
-      d95: fields[83] as String?,
-      file3: fields[84] as String?,
-      d7: fields[85] as String?,
-      d96: fields[86] as String?,
-      file4: fields[87] as String?,
-      d8: fields[88] as String?,
-      d97: fields[89] as String?,
-      file5: fields[90] as String?,
-      d9: fields[91] as String?,
-      d98: fields[92] as String?,
-      file6: fields[93] as String?,
-      d10: fields[94] as String?,
-      d99: fields[95] as String?,
-      file7: fields[96] as String?,
-      d11: fields[97] as String?,
-      d100: fields[98] as String?,
-      file8: fields[99] as String?,
-      d12: fields[100] as String?,
-      d101: fields[101] as String?,
-      file9: fields[102] as String?,
-      d13: fields[103] as String?,
-      d102: fields[104] as String?,
-      file10: fields[105] as String?,
-      d14: fields[255] as String?,
-      d103: fields[106] as String?,
-      file11: fields[107] as String?,
-      d15: fields[108] as String?,
-      d104: fields[109] as String?,
-      file12: fields[110] as String?,
-      d16: fields[111] as String?,
-      d105: fields[112] as String?,
-      file13: fields[113] as String?,
-      d17: fields[114] as String?,
-      d106: fields[115] as String?,
-      file14: fields[116] as String?,
-      d18: fields[117] as String?,
-      d107: fields[118] as String?,
-      file15: fields[119] as String?,
-      d19: fields[120] as String?,
-      d108: fields[121] as String?,
-      file16: fields[122] as String?,
-      d20: fields[123] as String?,
-      d109: fields[124] as String?,
-      file17: fields[125] as String?,
-      d21: fields[126] as String?,
-      d110: fields[127] as String?,
-      file18: fields[128] as String?,
-      d22: fields[129] as String?,
-      d111: fields[130] as String?,
-      file19: fields[131] as String?,
-      d23: fields[132] as String?,
-      d112: fields[133] as String?,
-      file20: fields[134] as String?,
-      d24: fields[135] as String?,
-      d113: fields[136] as String?,
-      file21: fields[137] as String?,
-      d25: fields[138] as String?,
-      d114: fields[139] as String?,
-      file22: fields[140] as String?,
-      d26: fields[141] as String?,
-      d115: fields[142] as String?,
-      file23: fields[143] as String?,
-      d27: fields[144] as String?,
-      d116: fields[145] as String?,
-      file24: fields[146] as String?,
-      d28: fields[147] as String?,
-      d117: fields[148] as String?,
-      file25: fields[149] as String?,
-      d29: fields[150] as String?,
-      d118: fields[151] as String?,
-      file26: fields[152] as String?,
-      d30: fields[153] as String?,
-      d119: fields[154] as String?,
-      file27: fields[155] as String?,
-      d31: fields[156] as String?,
-      d120: fields[157] as String?,
-      file28: fields[158] as String?,
-      d32: fields[159] as String?,
-      d121: fields[160] as String?,
-      file29: fields[161] as String?,
-      d33: fields[162] as String?,
-      d122: fields[163] as String?,
-      file30: fields[164] as String?,
-      d34: fields[165] as String?,
-      d123: fields[166] as String?,
-      file31: fields[167] as String?,
-      d35: fields[168] as String?,
-      d124: fields[169] as String?,
-      file32: fields[170] as String?,
-      d36: fields[171] as String?,
-      d125: fields[172] as String?,
-      file33: fields[173] as String?,
-      d37: fields[174] as String?,
-      d126: fields[175] as String?,
-      file34: fields[176] as String?,
-      d38: fields[177] as String?,
-      d127: fields[178] as String?,
-      file35: fields[179] as String?,
-      d67: fields[180] as String?,
-      d128: fields[181] as String?,
-      file36: fields[182] as String?,
-      d39: fields[183] as String?,
-      d129: fields[184] as String?,
-      file37: fields[185] as String?,
-      d40: fields[186] as String?,
-      d130: fields[187] as String?,
-      file38: fields[188] as String?,
-      d41: fields[189] as String?,
-      d131: fields[190] as String?,
-      file39: fields[191] as String?,
-      d42: fields[192] as String?,
-      d132: fields[193] as String?,
-      file40: fields[194] as String?,
-      d43: fields[195] as String?,
-      d133: fields[196] as String?,
-      file41: fields[197] as String?,
-      d44: fields[198] as String?,
-      d134: fields[199] as String?,
-      file42: fields[200] as String?,
-      d45: fields[201] as String?,
-      d135: fields[202] as String?,
-      file43: fields[203] as String?,
-      d46: fields[204] as String?,
-      d136: fields[205] as String?,
-      file44: fields[206] as String?,
-      d47: fields[207] as String?,
-      d137: fields[208] as String?,
-      file45: fields[209] as String?,
-      d48: fields[210] as String?,
-      d138: fields[211] as String?,
-      file46: fields[212] as String?,
-      d49: fields[213] as String?,
-      d139: fields[214] as String?,
-      file47: fields[215] as String?,
-      d50: fields[216] as String?,
-      d140: fields[217] as String?,
-      file48: fields[218] as String?,
-      d51: fields[219] as String?,
-      d141: fields[220] as String?,
-      file49: fields[221] as String?,
-      d52: fields[222] as String?,
-      d142: fields[223] as String?,
-      file50: fields[224] as String?,
-      d53: fields[225] as String?,
-      d143: fields[226] as String?,
-      d54: fields[227] as String?,
-      d144: fields[228] as String?,
-      file51: fields[229] as String?,
-      d55: fields[230] as String?,
-      d145: fields[231] as String?,
-      file52: fields[232] as String?,
-      d56: fields[233] as String?,
-      d146: fields[234] as String?,
-      file53: fields[235] as String?,
-      d57: fields[236] as String?,
-      d147: fields[237] as String?,
-      file54: fields[238] as String?,
-      d58: fields[239] as String?,
-      d148: fields[240] as String?,
-      file55: fields[241] as String?,
-      d59: fields[242] as String?,
-      d149: fields[243] as String?,
-      file56: fields[244] as String?,
-      d60: fields[245] as String?,
-      d150: fields[246] as String?,
-      file57: fields[247] as String?,
-      d61: fields[248] as String?,
-      d151: fields[249] as String?,
-      file58: fields[250] as String?,
-      d62: fields[251] as String?,
-      d152: fields[252] as String?,
-      file59: fields[253] as String?,
-      d63: fields[254] as String?,
-    );
-  }
-
-  @override
-  void write(BinaryWriter writer, BioIo obj) {
-    writer
-      ..writeByte(255)
-      ..writeByte(0)
-      ..write(obj.company)
-      ..writeByte(1)
-      ..write(obj.d184)
-      ..writeByte(2)
-      ..write(obj.d280)
-      ..writeByte(3)
-      ..write(obj.d68)
-      ..writeByte(4)
-      ..write(obj.d69)
-      ..writeByte(5)
-      ..write(obj.d70)
-      ..writeByte(6)
-      ..write(obj.d71)
-      ..writeByte(7)
-      ..write(obj.d72)
-      ..writeByte(8)
-      ..write(obj.d73)
-      ..writeByte(9)
-      ..write(obj.d74)
-      ..writeByte(11)
-      ..write(obj.d75)
-      ..writeByte(12)
-      ..write(obj.d157)
-      ..writeByte(13)
-      ..write(obj.d76)
-      ..writeByte(14)
-      ..write(obj.d281)
-      ..writeByte(15)
-      ..write(obj.docno)
-      ..writeByte(16)
-      ..write(obj.d158)
-      ..writeByte(17)
-      ..write(obj.d282)
-      ..writeByte(18)
-      ..write(obj.d283)
-      ..writeByte(19)
-      ..write(obj.d284)
-      ..writeByte(20)
-      ..write(obj.d285)
-      ..writeByte(21)
-      ..write(obj.d286)
-      ..writeByte(22)
-      ..write(obj.d159)
-      ..writeByte(23)
-      ..write(obj.d162)
-      ..writeByte(24)
-      ..write(obj.d165)
-      ..writeByte(25)
-      ..write(obj.d271)
-      ..writeByte(26)
-      ..write(obj.d274)
-      ..writeByte(27)
-      ..write(obj.d160)
-      ..writeByte(28)
-      ..write(obj.d163)
-      ..writeByte(29)
-      ..write(obj.d166)
-      ..writeByte(30)
-      ..write(obj.d272)
-      ..writeByte(31)
-      ..write(obj.d275)
-      ..writeByte(32)
-      ..write(obj.d161)
-      ..writeByte(33)
-      ..write(obj.d164)
-      ..writeByte(34)
-      ..write(obj.d167)
-      ..writeByte(35)
-      ..write(obj.d273)
-      ..writeByte(36)
-      ..write(obj.d276)
-      ..writeByte(37)
-      ..write(obj.d168)
-      ..writeByte(38)
-      ..write(obj.d170)
-      ..writeByte(39)
-      ..write(obj.d169)
-      ..writeByte(40)
-      ..write(obj.d185)
-      ..writeByte(41)
-      ..write(obj.d172)
-      ..writeByte(42)
-      ..write(obj.d171)
-      ..writeByte(43)
-      ..write(obj.d186)
-      ..writeByte(44)
-      ..write(obj.d174)
-      ..writeByte(45)
-      ..write(obj.d173)
-      ..writeByte(46)
-      ..write(obj.d187)
-      ..writeByte(47)
-      ..write(obj.d176)
-      ..writeByte(48)
-      ..write(obj.d175)
-      ..writeByte(49)
-      ..write(obj.d188)
-      ..writeByte(50)
-      ..write(obj.d178)
-      ..writeByte(51)
-      ..write(obj.d177)
-      ..writeByte(52)
-      ..write(obj.d189)
-      ..writeByte(53)
-      ..write(obj.d77)
-      ..writeByte(54)
-      ..write(obj.d78)
-      ..writeByte(55)
-      ..write(obj.d79)
-      ..writeByte(56)
-      ..write(obj.d80)
-      ..writeByte(57)
-      ..write(obj.d81)
-      ..writeByte(58)
-      ..write(obj.d82)
-      ..writeByte(59)
-      ..write(obj.d83)
-      ..writeByte(60)
-      ..write(obj.d84)
-      ..writeByte(61)
-      ..write(obj.d85)
-      ..writeByte(62)
-      ..write(obj.file1)
-      ..writeByte(63)
-      ..write(obj.d179)
-      ..writeByte(64)
-      ..write(obj.d180)
-      ..writeByte(65)
-      ..write(obj.d1)
-      ..writeByte(66)
-      ..write(obj.d181)
-      ..writeByte(67)
-      ..write(obj.d87)
-      ..writeByte(68)
-      ..write(obj.d2)
-      ..writeByte(69)
-      ..write(obj.d182)
-      ..writeByte(70)
-      ..write(obj.d88)
-      ..writeByte(71)
-      ..write(obj.d3)
-      ..writeByte(72)
-      ..write(obj.d183)
-      ..writeByte(73)
-      ..write(obj.file2)
-      ..writeByte(74)
-      ..write(obj.d89)
-      ..writeByte(75)
-      ..write(obj.d90)
-      ..writeByte(76)
-      ..write(obj.d4)
-      ..writeByte(77)
-      ..write(obj.d91)
-      ..writeByte(78)
-      ..write(obj.d92)
-      ..writeByte(79)
-      ..write(obj.d5)
-      ..writeByte(80)
-      ..write(obj.d93)
-      ..writeByte(81)
-      ..write(obj.d94)
-      ..writeByte(82)
-      ..write(obj.d6)
-      ..writeByte(83)
-      ..write(obj.d95)
-      ..writeByte(84)
-      ..write(obj.file3)
-      ..writeByte(85)
-      ..write(obj.d7)
-      ..writeByte(86)
-      ..write(obj.d96)
-      ..writeByte(87)
-      ..write(obj.file4)
-      ..writeByte(88)
-      ..write(obj.d8)
-      ..writeByte(89)
-      ..write(obj.d97)
-      ..writeByte(90)
-      ..write(obj.file5)
-      ..writeByte(91)
-      ..write(obj.d9)
-      ..writeByte(92)
-      ..write(obj.d98)
-      ..writeByte(93)
-      ..write(obj.file6)
-      ..writeByte(94)
-      ..write(obj.d10)
-      ..writeByte(95)
-      ..write(obj.d99)
-      ..writeByte(96)
-      ..write(obj.file7)
-      ..writeByte(97)
-      ..write(obj.d11)
-      ..writeByte(98)
-      ..write(obj.d100)
-      ..writeByte(99)
-      ..write(obj.file8)
-      ..writeByte(100)
-      ..write(obj.d12)
-      ..writeByte(101)
-      ..write(obj.d101)
-      ..writeByte(102)
-      ..write(obj.file9)
-      ..writeByte(103)
-      ..write(obj.d13)
-      ..writeByte(104)
-      ..write(obj.d102)
-      ..writeByte(105)
-      ..write(obj.file10)
-      ..writeByte(255)
-      ..write(obj.d14)
-      ..writeByte(106)
-      ..write(obj.d103)
-      ..writeByte(107)
-      ..write(obj.file11)
-      ..writeByte(108)
-      ..write(obj.d15)
-      ..writeByte(109)
-      ..write(obj.d104)
-      ..writeByte(110)
-      ..write(obj.file12)
-      ..writeByte(111)
-      ..write(obj.d16)
-      ..writeByte(112)
-      ..write(obj.d105)
-      ..writeByte(113)
-      ..write(obj.file13)
-      ..writeByte(114)
-      ..write(obj.d17)
-      ..writeByte(115)
-      ..write(obj.d106)
-      ..writeByte(116)
-      ..write(obj.file14)
-      ..writeByte(117)
-      ..write(obj.d18)
-      ..writeByte(118)
-      ..write(obj.d107)
-      ..writeByte(119)
-      ..write(obj.file15)
-      ..writeByte(120)
-      ..write(obj.d19)
-      ..writeByte(121)
-      ..write(obj.d108)
-      ..writeByte(122)
-      ..write(obj.file16)
-      ..writeByte(123)
-      ..write(obj.d20)
-      ..writeByte(124)
-      ..write(obj.d109)
-      ..writeByte(125)
-      ..write(obj.file17)
-      ..writeByte(126)
-      ..write(obj.d21)
-      ..writeByte(127)
-      ..write(obj.d110)
-      ..writeByte(128)
-      ..write(obj.file18)
-      ..writeByte(129)
-      ..write(obj.d22)
-      ..writeByte(130)
-      ..write(obj.d111)
-      ..writeByte(131)
-      ..write(obj.file19)
-      ..writeByte(132)
-      ..write(obj.d23)
-      ..writeByte(133)
-      ..write(obj.d112)
-      ..writeByte(134)
-      ..write(obj.file20)
-      ..writeByte(135)
-      ..write(obj.d24)
-      ..writeByte(136)
-      ..write(obj.d113)
-      ..writeByte(137)
-      ..write(obj.file21)
-      ..writeByte(138)
-      ..write(obj.d25)
-      ..writeByte(139)
-      ..write(obj.d114)
-      ..writeByte(140)
-      ..write(obj.file22)
-      ..writeByte(141)
-      ..write(obj.d26)
-      ..writeByte(142)
-      ..write(obj.d115)
-      ..writeByte(143)
-      ..write(obj.file23)
-      ..writeByte(144)
-      ..write(obj.d27)
-      ..writeByte(145)
-      ..write(obj.d116)
-      ..writeByte(146)
-      ..write(obj.file24)
-      ..writeByte(147)
-      ..write(obj.d28)
-      ..writeByte(148)
-      ..write(obj.d117)
-      ..writeByte(149)
-      ..write(obj.file25)
-      ..writeByte(150)
-      ..write(obj.d29)
-      ..writeByte(151)
-      ..write(obj.d118)
-      ..writeByte(152)
-      ..write(obj.file26)
-      ..writeByte(153)
-      ..write(obj.d30)
-      ..writeByte(154)
-      ..write(obj.d119)
-      ..writeByte(155)
-      ..write(obj.file27)
-      ..writeByte(156)
-      ..write(obj.d31)
-      ..writeByte(157)
-      ..write(obj.d120)
-      ..writeByte(158)
-      ..write(obj.file28)
-      ..writeByte(159)
-      ..write(obj.d32)
-      ..writeByte(160)
-      ..write(obj.d121)
-      ..writeByte(161)
-      ..write(obj.file29)
-      ..writeByte(162)
-      ..write(obj.d33)
-      ..writeByte(163)
-      ..write(obj.d122)
-      ..writeByte(164)
-      ..write(obj.file30)
-      ..writeByte(165)
-      ..write(obj.d34)
-      ..writeByte(166)
-      ..write(obj.d123)
-      ..writeByte(167)
-      ..write(obj.file31)
-      ..writeByte(168)
-      ..write(obj.d35)
-      ..writeByte(169)
-      ..write(obj.d124)
-      ..writeByte(170)
-      ..write(obj.file32)
-      ..writeByte(171)
-      ..write(obj.d36)
-      ..writeByte(172)
-      ..write(obj.d125)
-      ..writeByte(173)
-      ..write(obj.file33)
-      ..writeByte(174)
-      ..write(obj.d37)
-      ..writeByte(175)
-      ..write(obj.d126)
-      ..writeByte(176)
-      ..write(obj.file34)
-      ..writeByte(177)
-      ..write(obj.d38)
-      ..writeByte(178)
-      ..write(obj.d127)
-      ..writeByte(179)
-      ..write(obj.file35)
-      ..writeByte(180)
-      ..write(obj.d67)
-      ..writeByte(181)
-      ..write(obj.d128)
-      ..writeByte(182)
-      ..write(obj.file36)
-      ..writeByte(183)
-      ..write(obj.d39)
-      ..writeByte(184)
-      ..write(obj.d129)
-      ..writeByte(185)
-      ..write(obj.file37)
-      ..writeByte(186)
-      ..write(obj.d40)
-      ..writeByte(187)
-      ..write(obj.d130)
-      ..writeByte(188)
-      ..write(obj.file38)
-      ..writeByte(189)
-      ..write(obj.d41)
-      ..writeByte(190)
-      ..write(obj.d131)
-      ..writeByte(191)
-      ..write(obj.file39)
-      ..writeByte(192)
-      ..write(obj.d42)
-      ..writeByte(193)
-      ..write(obj.d132)
-      ..writeByte(194)
-      ..write(obj.file40)
-      ..writeByte(195)
-      ..write(obj.d43)
-      ..writeByte(196)
-      ..write(obj.d133)
-      ..writeByte(197)
-      ..write(obj.file41)
-      ..writeByte(198)
-      ..write(obj.d44)
-      ..writeByte(199)
-      ..write(obj.d134)
-      ..writeByte(200)
-      ..write(obj.file42)
-      ..writeByte(201)
-      ..write(obj.d45)
-      ..writeByte(202)
-      ..write(obj.d135)
-      ..writeByte(203)
-      ..write(obj.file43)
-      ..writeByte(204)
-      ..write(obj.d46)
-      ..writeByte(205)
-      ..write(obj.d136)
-      ..writeByte(206)
-      ..write(obj.file44)
-      ..writeByte(207)
-      ..write(obj.d47)
-      ..writeByte(208)
-      ..write(obj.d137)
-      ..writeByte(209)
-      ..write(obj.file45)
-      ..writeByte(210)
-      ..write(obj.d48)
-      ..writeByte(211)
-      ..write(obj.d138)
-      ..writeByte(212)
-      ..write(obj.file46)
-      ..writeByte(213)
-      ..write(obj.d49)
-      ..writeByte(214)
-      ..write(obj.d139)
-      ..writeByte(215)
-      ..write(obj.file47)
-      ..writeByte(216)
-      ..write(obj.d50)
-      ..writeByte(217)
-      ..write(obj.d140)
-      ..writeByte(218)
-      ..write(obj.file48)
-      ..writeByte(219)
-      ..write(obj.d51)
-      ..writeByte(220)
-      ..write(obj.d141)
-      ..writeByte(221)
-      ..write(obj.file49)
-      ..writeByte(222)
-      ..write(obj.d52)
-      ..writeByte(223)
-      ..write(obj.d142)
-      ..writeByte(224)
-      ..write(obj.file50)
-      ..writeByte(225)
-      ..write(obj.d53)
-      ..writeByte(226)
-      ..write(obj.d143)
-      ..writeByte(227)
-      ..write(obj.d54)
-      ..writeByte(228)
-      ..write(obj.d144)
-      ..writeByte(229)
-      ..write(obj.file51)
-      ..writeByte(230)
-      ..write(obj.d55)
-      ..writeByte(231)
-      ..write(obj.d145)
-      ..writeByte(232)
-      ..write(obj.file52)
-      ..writeByte(233)
-      ..write(obj.d56)
-      ..writeByte(234)
-      ..write(obj.d146)
-      ..writeByte(235)
-      ..write(obj.file53)
-      ..writeByte(236)
-      ..write(obj.d57)
-      ..writeByte(237)
-      ..write(obj.d147)
-      ..writeByte(238)
-      ..write(obj.file54)
-      ..writeByte(239)
-      ..write(obj.d58)
-      ..writeByte(240)
-      ..write(obj.d148)
-      ..writeByte(241)
-      ..write(obj.file55)
-      ..writeByte(242)
-      ..write(obj.d59)
-      ..writeByte(243)
-      ..write(obj.d149)
-      ..writeByte(244)
-      ..write(obj.file56)
-      ..writeByte(245)
-      ..write(obj.d60)
-      ..writeByte(246)
-      ..write(obj.d150)
-      ..writeByte(247)
-      ..write(obj.file57)
-      ..writeByte(248)
-      ..write(obj.d61)
-      ..writeByte(249)
-      ..write(obj.d151)
-      ..writeByte(250)
-      ..write(obj.file58)
-      ..writeByte(251)
-      ..write(obj.d62)
-      ..writeByte(252)
-      ..write(obj.d152)
-      ..writeByte(253)
-      ..write(obj.file59)
-      ..writeByte(254)
-      ..write(obj.d63);
-  }
-
-  @override
-  int get hashCode => typeId.hashCode;
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is BioIoAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
-}
-
-// **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
 BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
+      d3: json['d3'] as String?,
+      d4: json['d4'] as String?,
+      d5: json['d5'] as String?,
+      comAddress: json['com_address'] as String?,
+      comCode: json['com_code'] as String?,
+      comName: json['com_name'] as String?,
+      attfile11str: json['attfile11str'] as String?,
+      tableName: json['table_name'] as String?,
+      attfile15str: json['attfile15str'] as String?,
+      attfile4str: json['attfile4str'] as String?,
+      attfile8str: json['attfile8str'] as String?,
+      attfile20str: json['attfile20str'] as String?,
+      attfile10str: json['attfile10str'] as String?,
+      attfile14str: json['attfile14str'] as String?,
+      attfile19str: json['attfile19str'] as String?,
+      attfile3str: json['attfile3str'] as String?,
+      attNameTxt20: json['att_name_txt_20'] as String?,
+      attfile18str: json['attfile18str'] as String?,
+      attfile7str: json['attfile7str'] as String?,
+      idx: json['idx'] as int?,
+      status: json['status'] as String?,
+      docno: json['docno'] as String?,
+      attfile13str: json['attfile13str'] as String?,
+      attfile17str: json['attfile17str'] as String?,
+      attfile6str: json['attfile6str'] as String?,
+      attNameTxt13: json['att_name_txt_13'] as String?,
+      attNameTxt12: json['att_name_txt_12'] as String?,
+      attfile2str: json['attfile2str'] as String?,
+      attNameTxt11: json['att_name_txt_11'] as String?,
+      attNameTxt10: json['att_name_txt_10'] as String?,
+      attNameTxt17: json['att_name_txt_17'] as String?,
+      attNameTxt16: json['att_name_txt_16'] as String?,
+      attNameTxt15: json['att_name_txt_15'] as String?,
       company: json['company'] as String?,
+      attNameTxt14: json['att_name_txt_14'] as String?,
+      attNameTxt19: json['att_name_txt_19'] as String?,
+      submitDatetime: json['submit_datetime'] as String?,
+      attNameTxt18: json['att_name_txt_18'] as String?,
+      attNameTxt4: json['att_name_txt_4'] as String?,
+      attNameTxt3: json['att_name_txt_3'] as String?,
+      attNameTxt2: json['att_name_txt_2'] as String?,
+      attNameTxt1: json['att_name_txt_1'] as String?,
+      regId: json['reg_id'] as String?,
+      simAuth: json['sim_auth'] as int?,
+      attfile12str: json['attfile12str'] as String?,
+      attfile16str: json['attfile16str'] as String?,
+      gbn: json['gbn'] as String?,
+      attfile5str: json['attfile5str'] as String?,
+      reg_datetime: json['reg_datetime'] as int?,
+      attfile1str: json['attfile1str'] as String?,
+      attfile9str: json['attfile9str'] as String?,
+      printSubmitDt: json['print_submit_dt'] as String?,
+      attNameTxt9: json['att_name_txt_9'] as String?,
+      attNameTxt8: json['att_name_txt_8'] as String?,
+      attNameTxt7: json['att_name_txt_7'] as String?,
+      attNameTxt6: json['att_name_txt_6'] as String?,
+      attNameTxt5: json['att_name_txt_5'] as String?,
       d184: json['d184'] as String?,
       d280: json['d280'] as String?,
       d68: const YnNullableConverter().fromJson(json['d68'] as String?),
@@ -3767,7 +3597,6 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
       d157: json['d157'] as String?,
       d76: const YnNullableConverter().fromJson(json['d76'] as String?),
       d281: json['d281'] as String?,
-      docno: json['docno'] as String?,
       d158: const DateTimeNullableConverter().fromJson(json['d158'] as String?),
       d282: json['d282'] as String?,
       d283: json['d283'] as String?,
@@ -3823,15 +3652,12 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
       d2: json['d2'] as String?,
       d182: json['d182'] as String?,
       d88: json['d88'] as String?,
-      d3: json['d3'] as String?,
       d183: json['d183'] as String?,
       file2: json['file2'] as String?,
       d89: json['d89'] as String?,
       d90: json['d90'] as String?,
-      d4: json['d4'] as String?,
       d91: json['d91'] as String?,
       d92: json['d92'] as String?,
-      d5: json['d5'] as String?,
       d93: json['d93'] as String?,
       d94: json['d94'] as String?,
       d6: json['d6'] as String?,
@@ -4020,7 +3846,63 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
     );
 
 Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
+      'd3': instance.d3,
+      'd4': instance.d4,
+      'd5': instance.d5,
+      'com_address': instance.comAddress,
+      'com_name': instance.comName,
+      'com_code': instance.comCode,
+      'attfile11str': instance.attfile11str,
+      'table_name': instance.tableName,
+      'attfile15str': instance.attfile15str,
+      'attfile4str': instance.attfile4str,
+      'attfile8str': instance.attfile8str,
+      'attfile20str': instance.attfile20str,
+      'attfile10str': instance.attfile10str,
+      'attfile14str': instance.attfile14str,
+      'attfile19str': instance.attfile19str,
+      'attfile3str': instance.attfile3str,
+      'att_name_txt_20': instance.attNameTxt20,
+      'attfile18str': instance.attfile18str,
+      'attfile7str': instance.attfile7str,
+      'idx': instance.idx,
+      'status': instance.status,
+      'docno': instance.docno,
+      'attfile13str': instance.attfile13str,
+      'attfile17str': instance.attfile17str,
+      'attfile6str': instance.attfile6str,
+      'att_name_txt_13': instance.attNameTxt13,
+      'att_name_txt_12': instance.attNameTxt12,
+      'attfile2str': instance.attfile2str,
+      'att_name_txt_11': instance.attNameTxt11,
+      'att_name_txt_10': instance.attNameTxt10,
+      'att_name_txt_17': instance.attNameTxt17,
+      'att_name_txt_16': instance.attNameTxt16,
+      'att_name_txt_15': instance.attNameTxt15,
       'company': instance.company,
+      'att_name_txt_14': instance.attNameTxt14,
+      'att_name_txt_19': instance.attNameTxt19,
+      'submit_datetime': instance.submitDatetime,
+      'att_name_txt_18': instance.attNameTxt18,
+      'att_name_txt_4': instance.attNameTxt4,
+      'att_name_txt_3': instance.attNameTxt3,
+      'att_name_txt_2': instance.attNameTxt2,
+      'att_name_txt_1': instance.attNameTxt1,
+      'reg_id': instance.regId,
+      'sim_auth': instance.simAuth,
+      'attfile12str': instance.attfile12str,
+      'attfile16str': instance.attfile16str,
+      'gbn': instance.gbn,
+      'attfile5str': instance.attfile5str,
+      'reg_datetime': instance.reg_datetime,
+      'attfile1str': instance.attfile1str,
+      'attfile9str': instance.attfile9str,
+      'print_submit_dt': instance.printSubmitDt,
+      'att_name_txt_9': instance.attNameTxt9,
+      'att_name_txt_8': instance.attNameTxt8,
+      'att_name_txt_7': instance.attNameTxt7,
+      'att_name_txt_6': instance.attNameTxt6,
+      'att_name_txt_5': instance.attNameTxt5,
       'd184': instance.d184,
       'd280': instance.d280,
       'd68': const YnNullableConverter().toJson(instance.d68),
@@ -4034,7 +3916,6 @@ Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
       'd157': instance.d157,
       'd76': const YnNullableConverter().toJson(instance.d76),
       'd281': instance.d281,
-      'docno': instance.docno,
       'd158': const DateTimeNullableConverter().toJson(instance.d158),
       'd282': instance.d282,
       'd283': instance.d283,
@@ -4090,15 +3971,12 @@ Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
       'd2': instance.d2,
       'd182': instance.d182,
       'd88': instance.d88,
-      'd3': instance.d3,
       'd183': instance.d183,
       'file2': instance.file2,
       'd89': instance.d89,
       'd90': instance.d90,
-      'd4': instance.d4,
       'd91': instance.d91,
       'd92': instance.d92,
-      'd5': instance.d5,
       'd93': instance.d93,
       'd94': instance.d94,
       'd6': instance.d6,

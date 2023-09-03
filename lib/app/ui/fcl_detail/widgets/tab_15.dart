@@ -11,8 +11,8 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_b
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// (정기) 1. 밀폐구역 설비 가동성 확인(유지관리보고서 또는 필드확인)
-class ConOfFacOperInConAreas extends StatelessWidget {
-  const ConOfFacOperInConAreas({super.key});
+class Tab15 extends StatelessWidget {
+  const Tab15({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
 

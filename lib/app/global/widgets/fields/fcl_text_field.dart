@@ -14,14 +14,16 @@ class FclTextField extends FclField {
       super.label,
       void Function(String?)? onSubmitted,
       String? hintText,
+      bool enabled = true,
       required super.name})
       : super(
             type: FclType.text,
             builder: () => FormBuilderTextField(
+                  enabled: enabled,
                   name: name,
                   onSubmitted: onSubmitted,
                   initialValue: initialValue,
                   style: buttonTextStyle,
-                  decoration: textFieldDecoration.copyWith(hintText: hintText),
+                  decoration: textFieldDecoration.copyWith(hintText: hintText).copyWith(filled: !enabled),
                 ));
 }

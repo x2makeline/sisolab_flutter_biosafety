@@ -6,7 +6,6 @@ import 'package:sisolab_flutter_biosafety/app/data/models/login_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/login_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/proc_field_save_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_out.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
@@ -32,7 +31,8 @@ class ApiProvider with PLoggerMixin {
       ))
         ..let((dio) {
           /// dev
-          dio.interceptors.add(LogInterceptor());
+          dio.interceptors
+              .add(LogInterceptor(requestBody: true, responseBody: true));
 
           dio.interceptors
               .add(InterceptorsWrapper(onRequest: (options, handler) async {
@@ -81,22 +81,21 @@ class ApiProvider with PLoggerMixin {
   /// 현장점검 데이터 저장
   Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
     return ApiResponse<ProcFieldSaveOut>.fromJson(
-      (await _dio.post("/api/procFieldSave.do",
-              data: FormData.fromMap(req.toJson())))
-          .data,
+      (await _dio.post("/api/procFieldSave.do", data: req.toJson())).data,
       fromJson: (data) => ProcFieldSaveOut.fromJson(data),
     ).filter();
   }
 
   /// 현장점검 데이터 가져오기
-  Future<ApiResponse<SelectProcFieldOut>> selectProcField(
-          SelectProcFieldIn req) async =>
-      ApiResponse<SelectProcFieldOut>.fromJson(
+  Future<ApiResponse<BioIo>> selectProcField(SelectProcFieldIn req) async =>
+      ApiResponse<BioIo>.fromJson(
         (await _dio.get("/api/selectProcField.do",
                 queryParameters: req.toJson()))
             .data,
-        fromJson: (data) => SelectProcFieldOut.fromJson(
-            {"proc": data["proc"], "field": data["field"]}),
+        fromJson: (data) => BioIo.fromJson({
+          ...data["proc"],
+          ...data["field"],
+        }),
       ).filter();
 
   /// 현장점검 리스트 데이터 가져오기

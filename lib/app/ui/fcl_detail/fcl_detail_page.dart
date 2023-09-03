@@ -20,11 +20,11 @@ class FclDetailPage extends StatelessWidget with PLoggerMixin {
   @override
   Widget build(BuildContext context) => Layout(
         scrollController: vm.scrollController,
-        title: "${when(vm.gbn, {
-              Gbn.fd2: () => Constant.newTitle,
-              Gbn.fd1: () => Constant.regularTitle,
-              Gbn.fd3: () => Constant.riskTitle,
-            })}\n${Constant.fclTitle}",
+        title: when(vm.gbn, {
+          Gbn.fd1: () => "(정기)\n생물안전 3등급 시설 현장점검표",
+          Gbn.fd2: () => "(신규허가 ∙ 재확인)\n생물안전 3등급 시설 현장점검표",
+          Gbn.fd3: () => "고위험병원체 시설 현장점검표",
+        })!,
         child: Obx(() {
           if (vm.isLoading) {
             return const Placeholder();
@@ -53,11 +53,8 @@ class FclDetailPage extends StatelessWidget with PLoggerMixin {
                 Obx(() => FormBuilder(
                     key: vm.formKey,
                     child: DetailCategoryTab(
-                        tabMapList: when(vm.gbn, {
-                          Gbn.fd1: () => regularTabList,
-                          Gbn.fd2: () => newTabList,
-                          Gbn.fd3: () => [],
-                        })!,
+                        tabMapList: vm.tabList,
+                        isLoading: vm.isLoading,
                         activeTabIndex: vm.tabIndex,
                         onTab: (index) => vm.tabIndex = index))),
                 FormPageBottom()

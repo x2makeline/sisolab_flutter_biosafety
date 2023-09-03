@@ -15,9 +15,9 @@ abstract class _$SelectProcListInCWProxy {
 
   SelectProcListIn searchCompany(String? searchCompany);
 
-  SelectProcListIn searchDate1(String? searchDate1);
+  SelectProcListIn searchDate1(DateTime? searchDate1);
 
-  SelectProcListIn searchDate2(String? searchDate2);
+  SelectProcListIn searchDate2(DateTime? searchDate2);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `SelectProcListIn(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -30,8 +30,8 @@ abstract class _$SelectProcListInCWProxy {
     int? idx,
     int? pageIndex,
     String? searchCompany,
-    String? searchDate1,
-    String? searchDate2,
+    DateTime? searchDate1,
+    DateTime? searchDate2,
   });
 }
 
@@ -55,11 +55,11 @@ class _$SelectProcListInCWProxyImpl implements _$SelectProcListInCWProxy {
       this(searchCompany: searchCompany);
 
   @override
-  SelectProcListIn searchDate1(String? searchDate1) =>
+  SelectProcListIn searchDate1(DateTime? searchDate1) =>
       this(searchDate1: searchDate1);
 
   @override
-  SelectProcListIn searchDate2(String? searchDate2) =>
+  SelectProcListIn searchDate2(DateTime? searchDate2) =>
       this(searchDate2: searchDate2);
 
   @override
@@ -98,11 +98,11 @@ class _$SelectProcListInCWProxyImpl implements _$SelectProcListInCWProxy {
       searchDate1: searchDate1 == const $CopyWithPlaceholder()
           ? _value.searchDate1
           // ignore: cast_nullable_to_non_nullable
-          : searchDate1 as String?,
+          : searchDate1 as DateTime?,
       searchDate2: searchDate2 == const $CopyWithPlaceholder()
           ? _value.searchDate2
           // ignore: cast_nullable_to_non_nullable
-          : searchDate2 as String?,
+          : searchDate2 as DateTime?,
     );
   }
 }
@@ -123,8 +123,10 @@ SelectProcListIn _$SelectProcListInFromJson(Map<String, dynamic> json) =>
       idx: json['idx'] as int?,
       pageIndex: json['pageIndex'] as int,
       searchCompany: json['searchCompany'] as String?,
-      searchDate1: json['searchDate1'] as String?,
-      searchDate2: json['searchDate2'] as String?,
+      searchDate1: const DateTimeNullableConverter()
+          .fromJson(json['searchDate1'] as String?),
+      searchDate2: const DateTimeNullableConverter()
+          .fromJson(json['searchDate2'] as String?),
     );
 
 Map<String, dynamic> _$SelectProcListInToJson(SelectProcListIn instance) =>
@@ -133,8 +135,10 @@ Map<String, dynamic> _$SelectProcListInToJson(SelectProcListIn instance) =>
       'idx': instance.idx,
       'pageIndex': instance.pageIndex,
       'searchCompany': instance.searchCompany,
-      'searchDate1': instance.searchDate1,
-      'searchDate2': instance.searchDate2,
+      'searchDate1':
+          const DateTimeNullableConverter().toJson(instance.searchDate1),
+      'searchDate2':
+          const DateTimeNullableConverter().toJson(instance.searchDate2),
     };
 
 const _$GbnEnumMap = {

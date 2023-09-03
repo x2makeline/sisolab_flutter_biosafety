@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-/// 14. HVAC 덕트시스템 제작 손상 등 품질상태
-class HavcDuctSystem extends StatelessWidget {
-  const HavcDuctSystem({super.key});
+/// 공기조절
+class Tab5 extends StatelessWidget {
+  const Tab5({super.key});
 
-  FclDetailVm get controller => FclDetailVm.to;
+  FclDetailVm get vm => FclDetailVm.to;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -24,16 +24,15 @@ class HavcDuctSystem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("14. HVAC 덕트시스템 제작 손상 등 품질상태",
-                  style: TextStyle(fontSize: 34.sp)),
+              Text("3. 공기조절", style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
                   Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
-                      value: controller.pastYearYn,
+                      value: vm.pastYearYn,
                       onChanged: (v) {
-                        controller.pastYearYn = v ?? false;
+                        vm.pastYearYn = v ?? false;
                       }))
                 ],
               )
@@ -50,13 +49,28 @@ class HavcDuctSystem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d155.name,
-                label: "HVAC 덕트시스템 제작 손상 등 품질상태",
-                imageName: BioIoName.file61.name,
+                initialNote: vm.io.d105,
+                noteName: BioIoName.d105.name,
+
+                label: "급기 덕트에 헤파 필터 설치",
+                imageName: BioIoName.file12.name,
+                initialImage: vm.io.file12,
                 fclRadio: FclRadio(
-                    name: BioIoName.d65.name,
+                  initialValue: vm.io.d16,
+                    name: BioIoName.d16.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
-              )
+              ),
+              FclField(
+                noteName: BioIoName.d106.name,
+                initialNote: vm.io.d106,
+                label: "배기에 카본필터 등 냄새제거 장치 설치",
+                imageName: BioIoName.file13.name,
+                initialImage: vm.io.file13,
+                fclRadio: FclRadio(
+                  initialValue: vm.io.d17,
+                    name: BioIoName.d17.name,
+                    map: FclNewDetailFields.saepnssUserRadio.map!),
+              ),
             ].withWidgetBetween(Column(
               children: [
                 SizedBox(

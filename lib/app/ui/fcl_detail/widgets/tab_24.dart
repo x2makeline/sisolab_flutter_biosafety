@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-/// 8. 유틸리티 가동성 확인
-class CheckUtilityAvailability extends StatelessWidget {
-  const CheckUtilityAvailability({super.key});
+/// 5. 생물안전장비 설치 및 검증 확인
+class Tab24 extends StatelessWidget {
+  const Tab24({super.key});
 
   FclDetailVm get controller => FclDetailVm.to;
 
@@ -24,7 +24,7 @@ class CheckUtilityAvailability extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("8. 유틸리티 가동성 확인", style: TextStyle(fontSize: 34.sp)),
+              Text("5. 생물안전장비 설치 및 검증 확인", style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
@@ -49,43 +49,67 @@ class CheckUtilityAvailability extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d138.name,
-                label: "데이터 전송용 전자시스템",
-                imageName: BioIoName.file45.name,
+                noteName: BioIoName.d115.name,
+                label: "손 소독기 및 눈 세척기 적정 위치 설치",
+                imageName: BioIoName.file22.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d48.name,
+                    name: BioIoName.d26.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d139.name,
-                label: "배관역류 방지장치",
-                imageName: BioIoName.file46.name,
+                noteName: BioIoName.d116.name,
+                label: "패스박스 도어 기밀성",
+                imageName: BioIoName.file23.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d49.name,
+                    name: BioIoName.d27.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d140.name,
-                label: "내부 차압 측정 계기 및 경보장치",
-                imageName: BioIoName.file47.name,
+                noteName: BioIoName.d117.name,
+                label: "패스박스 도어 인터락 설정",
+                imageName: BioIoName.file24.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d50.name,
+                    name: BioIoName.d28.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d141.name,
-                label: "비상전원공급(UPS 등) 연동 확인",
-                imageName: BioIoName.file48.name,
+                noteName: BioIoName.d118.name,
+                label: "멸균기 열침투 테스트(BI 멸균 테스트)",
+                imageName: BioIoName.file25.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d51.name,
+                    name: BioIoName.d29.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d142.name,
-                label: "가스공급 장치 설치 및 출입통제 확인",
-                imageName: BioIoName.file49.name,
+                noteName: BioIoName.d119.name,
+                label: "생물안전작업대 적정 기류흐름 및 작동",
+                imageName: BioIoName.file26.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d52.name,
+                    name: BioIoName.d30.name,
+                    map: FclNewDetailFields.saepnssUserRadio.map!),
+              ),
+              FclField(
+                noteName: BioIoName.d120.name,
+                label: "생물안전작업대 설치 위치",
+                imageName: BioIoName.file27.name,
+                fclRadio: FclRadio(
+                    name: BioIoName.d31.name,
+                    map: FclNewDetailFields.saepnssUserRadio.map!),
+              ),
+              FclField(
+                noteName: BioIoName.d121.name,
+                label: "Isolator 기밀성",
+                imageName: BioIoName.file28.name,
+                fclRadio: FclRadio(
+                    name: BioIoName.d32.name,
+                    map: FclNewDetailFields.saepnssUserRadio.map!),
+              ),
+              FclField(
+                noteName: BioIoName.d122.name,
+                label: "폐수처리 설비 제균필터 확인 및 설비 출입 통제",
+                imageName: BioIoName.file29.name,
+                fclRadio: FclRadio(
+                    name: BioIoName.d33.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

@@ -10,9 +10,9 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.da
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_note.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
-/// (정기) 5. 유틸리티 가동성 확인(보고서 또는 필드 확인)
-class RegUtility extends StatelessWidget {
-  const RegUtility({super.key});
+/// (정기) 6. 폐기물(폐수) 처리 기록 확인(보고서 확인)
+class Tab26 extends StatelessWidget {
+  const Tab26({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
 
@@ -25,7 +25,7 @@ class RegUtility extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("5. 유틸리티 가동성 확인(보고서 또는 필드 확인)",
+              Text("6. 폐기물(폐수) 처리 기록 확인(보고서 확인)",
                   style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
@@ -50,7 +50,7 @@ class RegUtility extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("5.1) 유틸리티 가스공급장치 설비 관리가 적절한가?",
+              Text("6.1) 폐수 및 폐기물 처리기록이 적절히 유지되는가?",
                   style: context.textTheme.titleLarge),
               Padding(
                 padding: EdgeInsets.all(10.sp),
@@ -63,7 +63,7 @@ class RegUtility extends StatelessWidget {
                           style: BorderStyle.solid,
                           width: 4)),
                   child: Text(
-                    "- 가스저장실 출입통제장치 설치\n- 가스용기, 가스관, 레귤레이터 양호",
+                    "- 폐기물 처리대장 보유\n- 폐기물 처리대장 현행화",
                     style: TextStyle(fontSize: 28.sp),
                   ),
                 ),
@@ -74,18 +74,18 @@ class RegUtility extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file27.name,
+                    name: BioIoName.file28.name,
                   )),
               FclRadioGroup(
-                name: BioIoName.d27.name,
-                initialValue: vm.io.d27,
+                name: BioIoName.d28.name,
+                initialValue: vm.io.d28,
                 labelWithKey: false,
                 wrapAlignment: WrapAlignment.start,
                 orientation: OptionsOrientation.wrap,
                 map: const {"2": "2", "1": "1", "0": "0"},
               ),
               FormBuilderNote(
-                name: BioIoName.d116.name,
+                name: BioIoName.d117.name,
               ),
             ],
           ),

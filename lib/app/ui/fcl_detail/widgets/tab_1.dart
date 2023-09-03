@@ -22,8 +22,8 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_betwe
 import '../../../global/widgets/field_with_label.dart';
 
 /// 점검개요
-class InspectionOverview extends StatelessWidget {
-  const InspectionOverview({super.key});
+class Tab1 extends StatelessWidget {
+  const Tab1({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
 

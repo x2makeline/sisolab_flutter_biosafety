@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 class DetailCategoryTab extends StatefulWidget {
   const DetailCategoryTab(
       {Key? key,
       required this.tabMapList,
       required this.activeTabIndex,
-      required this.onTab})
+      required this.onTab,
+      required this.isLoading})
       : super(key: key);
 
   final List<FclTab> tabMapList;
@@ -18,6 +17,7 @@ class DetailCategoryTab extends StatefulWidget {
   final int activeTabIndex;
 
   final void Function(int index) onTab;
+  final bool isLoading;
 
   @override
   State<DetailCategoryTab> createState() => _DetailCategoryTabState();
@@ -25,8 +25,6 @@ class DetailCategoryTab extends StatefulWidget {
 
 class _DetailCategoryTabState extends State<DetailCategoryTab>
     with SingleTickerProviderStateMixin {
-  FclDetailVm get _controller => FclDetailVm.to;
-
   FclTab get activeTab => widget.tabMapList.elementAt(widget.activeTabIndex);
 
   @override
@@ -63,7 +61,8 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                                 entry.value.title,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 24.sp, color: const Color(0xff505050)),
+                                    fontSize: 24.sp,
+                                    color: const Color(0xff505050)),
                               )),
                             ),
                     ))
@@ -72,13 +71,13 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
           SizedBox(
             height: 40.h,
           ),
-          Obx(() => _controller.isLoading
+          widget.isLoading
               ? const Placeholder()
               : Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [activeTab.body],
-                ))
+                )
         ],
       );
 }

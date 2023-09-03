@@ -11,8 +11,8 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_b
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// (정기) 7. 기관생물안전위원회(IBC) 구성 운영 확인 검토(기록서류 확인)
-class Ibc extends StatelessWidget {
-  const Ibc({super.key});
+class Tab11 extends StatelessWidget {
+  const Tab11({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
   @override

@@ -1,7 +1,6 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
-import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_item.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/date_time_converter.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/yn_converter.dart';
 
@@ -9,781 +8,610 @@ part 'bio_io.g.dart';
 
 @CopyWith()
 @JsonSerializable()
-@HiveType(typeId: 0)
 class BioIo {
-  @HiveField(0)
+  String? d3;
+  String? d4;
+  String? d5;
+  @JsonKey(name: "com_address")
+  String? comAddress;
+  @JsonKey(name: "com_name")
+  String? comName;
+  @JsonKey(name: "com_code")
+  String? comCode;
+  String? attfile11str;
+  @JsonKey(name: "table_name")
+  String? tableName;
+  String? attfile15str;
+  String? attfile4str;
+  String? attfile8str;
+  String? attfile20str;
+  String? attfile10str;
+  String? attfile14str;
+  String? attfile19str;
+  String? attfile3str;
+  @JsonKey(name: "att_name_txt_20")
+  String? attNameTxt20;
+  String? attfile18str;
+  String? attfile7str;
+  int? idx;
+  String? status;
+  String? docno;
+  String? attfile13str;
+  String? attfile17str;
+  String? attfile6str;
+  @JsonKey(name: "att_name_txt_13")
+  String? attNameTxt13;
+  @JsonKey(name: "att_name_txt_12")
+  String? attNameTxt12;
+  String? attfile2str;
+  @JsonKey(name: "att_name_txt_11")
+  String? attNameTxt11;
+  @JsonKey(name: "att_name_txt_10")
+  String? attNameTxt10;
+  @JsonKey(name: "att_name_txt_17")
+  String? attNameTxt17;
+  @JsonKey(name: "att_name_txt_16")
+  String? attNameTxt16;
+  @JsonKey(name: "att_name_txt_15")
+  String? attNameTxt15;
   String? company;
+  @JsonKey(name: "att_name_txt_14")
+  String? attNameTxt14;
+  @JsonKey(name: "att_name_txt_19")
+  String? attNameTxt19;
+  @JsonKey(name: "submit_datetime")
+  String? submitDatetime;
+  @JsonKey(name: "att_name_txt_18")
+  String? attNameTxt18;
+  @JsonKey(name: "att_name_txt_4")
+  String? attNameTxt4;
+  @JsonKey(name: "att_name_txt_3")
+  String? attNameTxt3;
+  @JsonKey(name: "att_name_txt_2")
+  String? attNameTxt2;
+  @JsonKey(name: "att_name_txt_1")
+  String? attNameTxt1;
+  @JsonKey(name: "reg_id")
+  String? regId;
+  @JsonKey(name: "sim_auth")
+  int? simAuth;
+  String? attfile12str;
+  String? attfile16str;
+  String? gbn;
+  String? attfile5str;
+  @JsonKey(name: "reg_datetime")
+  int? reg_datetime;
+  String? attfile1str;
+  String? attfile9str;
+  @JsonKey(name: "print_submit_dt")
+  String? printSubmitDt;
+  @JsonKey(name: "att_name_txt_9")
+  String? attNameTxt9;
+  @JsonKey(name: "att_name_txt_8")
+  String? attNameTxt8;
+  @JsonKey(name: "att_name_txt_7")
+  String? attNameTxt7;
+  @JsonKey(name: "att_name_txt_6")
+  String? attNameTxt6;
+  @JsonKey(name: "att_name_txt_5")
+  String? attNameTxt5;
 
-  @HiveField(1)
+
+
+
   String? d184;
 
-  @HiveField(2)
   String? d280;
 
   @YnNullableConverter()
-  @HiveField(3)
   bool? d68;
 
   @YnNullableConverter()
-  @HiveField(4)
   bool? d69;
 
   @YnNullableConverter()
-  @HiveField(5)
   bool? d70;
 
   @YnNullableConverter()
-  @HiveField(6)
   bool? d71;
 
   @YnNullableConverter()
-  @HiveField(7)
   bool? d72;
 
   @YnNullableConverter()
-  @HiveField(8)
   bool? d73;
 
   @YnNullableConverter()
-  @HiveField(9)
   bool? d74;
 
   @YnNullableConverter()
-  @HiveField(11)
   bool? d75;
 
-  @HiveField(12)
   String? d157;
 
   @YnNullableConverter()
-  @HiveField(13)
   bool? d76;
 
-  @HiveField(14)
   String? d281;
 
-  @HiveField(15)
-  String? docno;
 
   @DateTimeNullableConverter()
-  @HiveField(16)
   DateTime? d158;
 
-  @HiveField(17)
   String? d282;
 
-  @HiveField(18)
   String? d283;
 
-  @HiveField(19)
   String? d284;
 
-  @HiveField(20)
   String? d285;
 
-  @HiveField(21)
   String? d286;
 
-  @HiveField(22)
   String? d159;
 
-  @HiveField(23)
   String? d162;
 
-  @HiveField(24)
   String? d165;
 
-  @HiveField(25)
   String? d271;
 
-  @HiveField(26)
   String? d274;
 
-  @HiveField(27)
   String? d160;
 
-  @HiveField(28)
   String? d163;
 
-  @HiveField(29)
   String? d166;
 
-  @HiveField(30)
   String? d272;
 
-  @HiveField(31)
   String? d275;
 
-  @HiveField(32)
   String? d161;
 
-  @HiveField(33)
   String? d164;
 
-  @HiveField(34)
   String? d167;
 
-  @HiveField(35)
   String? d273;
 
-  @HiveField(36)
   String? d276;
 
   @DateTimeNullableConverter()
-  @HiveField(37)
   DateTime? d168;
 
-  @HiveField(38)
   String? d170;
 
-  @HiveField(39)
   String? d169;
 
-  @HiveField(40)
   String? d185;
 
-  @HiveField(41)
   String? d172;
 
-  @HiveField(42)
   String? d171;
 
-  @HiveField(43)
   String? d186;
 
-  @HiveField(44)
   String? d174;
 
-  @HiveField(45)
   String? d173;
 
-  @HiveField(46)
   String? d187;
 
-  @HiveField(47)
   String? d176;
 
-  @HiveField(48)
   String? d175;
 
-  @HiveField(49)
   String? d188;
 
-  @HiveField(50)
   String? d178;
 
-  @HiveField(51)
   String? d177;
 
-  @HiveField(52)
   String? d189;
 
-  @HiveField(53)
   String? d77;
 
-  @HiveField(54)
   String? d78;
 
-  @HiveField(55)
   String? d79;
 
-  @HiveField(56)
   String? d80;
 
-  @HiveField(57)
   String? d81;
 
-  @HiveField(58)
   String? d82;
 
-  @HiveField(59)
   String? d83;
 
-  @HiveField(60)
   String? d84;
 
-  @HiveField(61)
   String? d85;
 
-  @HiveField(62)
   String? file1;
 
-  @HiveField(63)
   String? d179;
 
-  @HiveField(64)
   String? d180;
 
-  @HiveField(65)
   String? d1;
 
-  @HiveField(66)
   String? d181;
 
-  @HiveField(67)
   String? d87;
 
-  @HiveField(68)
   String? d2;
 
-  @HiveField(69)
   String? d182;
 
-  @HiveField(70)
   String? d88;
 
-  @HiveField(71)
-  String? d3;
 
-  @HiveField(72)
   String? d183;
 
-  @HiveField(73)
   String? file2;
 
-  @HiveField(74)
   String? d89;
 
-  @HiveField(75)
   String? d90;
 
-  @HiveField(76)
-  String? d4;
 
-  @HiveField(77)
   String? d91;
 
-  @HiveField(78)
   String? d92;
 
-  @HiveField(79)
-  String? d5;
 
-  @HiveField(80)
   String? d93;
 
-  @HiveField(81)
   String? d94;
 
-  @HiveField(82)
   String? d6;
 
-  @HiveField(83)
   String? d95;
 
-  @HiveField(84)
   String? file3;
 
-  @HiveField(85)
   String? d7;
 
-  @HiveField(86)
   String? d96;
 
-  @HiveField(87)
   String? file4;
 
-  @HiveField(88)
   String? d8;
 
-  @HiveField(89)
   String? d97;
 
-  @HiveField(90)
   String? file5;
 
-  @HiveField(91)
   String? d9;
 
-  @HiveField(92)
   String? d98;
 
-  @HiveField(93)
   String? file6;
 
-  @HiveField(94)
   String? d10;
 
-  @HiveField(95)
   String? d99;
 
-  @HiveField(96)
   String? file7;
 
-  @HiveField(97)
   String? d11;
 
-  @HiveField(98)
   String? d100;
 
-  @HiveField(99)
   String? file8;
 
-  @HiveField(100)
   String? d12;
 
-  @HiveField(101)
   String? d101;
 
-  @HiveField(102)
   String? file9;
 
-  @HiveField(103)
   String? d13;
 
-  @HiveField(104)
   String? d102;
 
-  @HiveField(105)
   String? file10;
 
-  @HiveField(255)
   String? d14;
 
-  @HiveField(106)
   String? d103;
 
-  @HiveField(107)
   String? file11;
 
-  @HiveField(108)
   String? d15;
 
-  @HiveField(109)
   String? d104;
 
-  @HiveField(110)
   String? file12;
 
-  @HiveField(111)
   String? d16;
 
-  @HiveField(112)
   String? d105;
 
-  @HiveField(113)
   String? file13;
 
-  @HiveField(114)
   String? d17;
 
-  @HiveField(115)
   String? d106;
 
-  @HiveField(116)
   String? file14;
 
-  @HiveField(117)
   String? d18;
 
-  @HiveField(118)
   String? d107;
 
-  @HiveField(119)
   String? file15;
 
-  @HiveField(120)
   String? d19;
 
-  @HiveField(121)
   String? d108;
 
-  @HiveField(122)
   String? file16;
 
-  @HiveField(123)
   String? d20;
 
-  @HiveField(124)
   String? d109;
 
-  @HiveField(125)
   String? file17;
 
-  @HiveField(126)
   String? d21;
 
-  @HiveField(127)
   String? d110;
 
-  @HiveField(128)
   String? file18;
 
-  @HiveField(129)
   String? d22;
 
-  @HiveField(130)
   String? d111;
 
-  @HiveField(131)
   String? file19;
 
-  @HiveField(132)
   String? d23;
 
-  @HiveField(133)
   String? d112;
 
-  @HiveField(134)
   String? file20;
 
-  @HiveField(135)
   String? d24;
 
-  @HiveField(136)
   String? d113;
 
-  @HiveField(137)
   String? file21;
 
-  @HiveField(138)
   String? d25;
 
-  @HiveField(139)
   String? d114;
 
-  @HiveField(140)
   String? file22;
 
-  @HiveField(141)
   String? d26;
 
-  @HiveField(142)
   String? d115;
 
-  @HiveField(143)
   String? file23;
 
-  @HiveField(144)
   String? d27;
 
-  @HiveField(145)
   String? d116;
 
-  @HiveField(146)
   String? file24;
 
-  @HiveField(147)
   String? d28;
 
-  @HiveField(148)
   String? d117;
 
-  @HiveField(149)
   String? file25;
 
-  @HiveField(150)
   String? d29;
 
-  @HiveField(151)
   String? d118;
 
-  @HiveField(152)
   String? file26;
 
-  @HiveField(153)
   String? d30;
 
-  @HiveField(154)
   String? d119;
 
-  @HiveField(155)
   String? file27;
 
-  @HiveField(156)
   String? d31;
 
-  @HiveField(157)
   String? d120;
 
-  @HiveField(158)
   String? file28;
 
-  @HiveField(159)
   String? d32;
 
-  @HiveField(160)
   String? d121;
 
-  @HiveField(161)
   String? file29;
 
-  @HiveField(162)
   String? d33;
 
-  @HiveField(163)
   String? d122;
 
-  @HiveField(164)
   String? file30;
 
-  @HiveField(165)
   String? d34;
 
-  @HiveField(166)
   String? d123;
 
-  @HiveField(167)
   String? file31;
 
-  @HiveField(168)
   String? d35;
 
-  @HiveField(169)
   String? d124;
 
-  @HiveField(170)
   String? file32;
 
-  @HiveField(171)
   String? d36;
 
-  @HiveField(172)
   String? d125;
 
-  @HiveField(173)
   String? file33;
 
-  @HiveField(174)
   String? d37;
 
-  @HiveField(175)
   String? d126;
 
-  @HiveField(176)
   String? file34;
 
-  @HiveField(177)
   String? d38;
 
-  @HiveField(178)
   String? d127;
 
-  @HiveField(179)
   String? file35;
 
-  @HiveField(180)
   String? d67;
 
-  @HiveField(181)
   String? d128;
 
-  @HiveField(182)
   String? file36;
 
-  @HiveField(183)
   String? d39;
 
-  @HiveField(184)
   String? d129;
 
-  @HiveField(185)
   String? file37;
 
-  @HiveField(186)
   String? d40;
 
-  @HiveField(187)
   String? d130;
 
-  @HiveField(188)
   String? file38;
 
-  @HiveField(189)
   String? d41;
 
-  @HiveField(190)
   String? d131;
 
-  @HiveField(191)
   String? file39;
 
-  @HiveField(192)
   String? d42;
 
-  @HiveField(193)
   String? d132;
 
-  @HiveField(194)
   String? file40;
 
-  @HiveField(195)
   String? d43;
 
-  @HiveField(196)
   String? d133;
 
-  @HiveField(197)
   String? file41;
 
-  @HiveField(198)
   String? d44;
 
-  @HiveField(199)
   String? d134;
 
-  @HiveField(200)
   String? file42;
 
-  @HiveField(201)
   String? d45;
 
-  @HiveField(202)
   String? d135;
 
-  @HiveField(203)
   String? file43;
 
-  @HiveField(204)
   String? d46;
 
-  @HiveField(205)
   String? d136;
 
-  @HiveField(206)
   String? file44;
 
-  @HiveField(207)
   String? d47;
 
-  @HiveField(208)
   String? d137;
 
-  @HiveField(209)
   String? file45;
 
-  @HiveField(210)
   String? d48;
 
-  @HiveField(211)
   String? d138;
 
-  @HiveField(212)
   String? file46;
 
-  @HiveField(213)
   String? d49;
 
-  @HiveField(214)
   String? d139;
 
-  @HiveField(215)
   String? file47;
 
-  @HiveField(216)
   String? d50;
 
-  @HiveField(217)
   String? d140;
 
-  @HiveField(218)
   String? file48;
 
-  @HiveField(219)
   String? d51;
 
-  @HiveField(220)
   String? d141;
 
-  @HiveField(221)
   String? file49;
 
-  @HiveField(222)
   String? d52;
 
-  @HiveField(223)
   String? d142;
 
-  @HiveField(224)
   String? file50;
 
-  @HiveField(225)
   String? d53;
 
-  @HiveField(226)
   String? d143;
 
-  @HiveField(227)
   String? d54;
 
-  @HiveField(228)
   String? d144;
 
-  @HiveField(229)
   String? file51;
 
-  @HiveField(230)
   String? d55;
 
-  @HiveField(231)
   String? d145;
 
-  @HiveField(232)
   String? file52;
 
-  @HiveField(233)
   String? d56;
 
-  @HiveField(234)
   String? d146;
 
-  @HiveField(235)
   String? file53;
 
-  @HiveField(236)
   String? d57;
 
-  @HiveField(237)
   String? d147;
 
-  @HiveField(238)
   String? file54;
 
-  @HiveField(239)
   String? d58;
 
-  @HiveField(240)
   String? d148;
 
-  @HiveField(241)
   String? file55;
 
-  @HiveField(242)
   String? d59;
 
-  @HiveField(243)
   String? d149;
 
-  @HiveField(244)
   String? file56;
 
-  @HiveField(245)
   String? d60;
 
-  @HiveField(246)
   String? d150;
 
-  @HiveField(247)
   String? file57;
 
-  @HiveField(248)
   String? d61;
-  @HiveField(249)
+
   String? d151;
 
-  @HiveField(250)
   String? file58;
 
-  @HiveField(251)
   String? d62;
 
-  @HiveField(252)
   String? d152;
 
-  @HiveField(253)
   String? file59;
 
-  @HiveField(254)
   String? d63;
 
   String? d153;
@@ -805,7 +633,64 @@ class BioIo {
   String? d156;
 
   BioIo({
+    this.d3,
+    this.d4,
+    this.d5,
+    this.comAddress,
+    this.comCode,
+    this.comName,
+    this.attfile11str,
+    this.tableName,
+    this.attfile15str,
+    this.attfile4str,
+    this.attfile8str,
+    this.attfile20str,
+    this.attfile10str,
+    this.attfile14str,
+    this.attfile19str,
+    this.attfile3str,
+    this.attNameTxt20,
+    this.attfile18str,
+    this.attfile7str,
+    this.idx,
+    this.status,
+    this.docno,
+    this.attfile13str,
+    this.attfile17str,
+    this.attfile6str,
+    this.attNameTxt13,
+    this.attNameTxt12,
+    this.attfile2str,
+    this.attNameTxt11,
+    this.attNameTxt10,
+    this.attNameTxt17,
+    this.attNameTxt16,
+    this.attNameTxt15,
     this.company,
+    this.attNameTxt14,
+    this.attNameTxt19,
+    this.submitDatetime,
+    this.attNameTxt18,
+    this.attNameTxt4,
+    this.attNameTxt3,
+    this.attNameTxt2,
+    this.attNameTxt1,
+    this.regId,
+    this.simAuth,
+    this.attfile12str,
+    this.attfile16str,
+    this.gbn,
+    this.attfile5str,
+    this.reg_datetime,
+    this.attfile1str,
+    this.attfile9str,
+    this.printSubmitDt,
+    this.attNameTxt9,
+    this.attNameTxt8,
+    this.attNameTxt7,
+    this.attNameTxt6,
+    this.attNameTxt5,
+
     this.d184,
     this.d280,
     this.d68,
@@ -819,7 +704,6 @@ class BioIo {
     this.d157,
     this.d76,
     this.d281,
-    this.docno,
     this.d158,
     this.d282,
     this.d283,
@@ -875,15 +759,12 @@ class BioIo {
     this.d2,
     this.d182,
     this.d88,
-    this.d3,
     this.d183,
     this.file2,
     this.d89,
     this.d90,
-    this.d4,
     this.d91,
     this.d92,
-    this.d5,
     this.d93,
     this.d94,
     this.d6,
@@ -1074,6 +955,9 @@ class BioIo {
   factory BioIo.fromJson(Map<String, dynamic> json) => _$BioIoFromJson(json);
 
   factory BioIo.fromForm(Map<String, dynamic> json) => BioIo(
+        comAddress: json['com_address'] as String?,
+        comCode: json['com_code'] as String?,
+        comName: json['com_name'] as String?,
         company: json['company'] as String?,
         d184: json['d184'] as String?,
         d280: json['d280'] as String?,
@@ -1344,11 +1228,7 @@ class BioIo {
 
   @override
   String toString() {
-    return 'BioIo{company: $company, d184: $d184, d280: $d280, d68: $d68, d69: $d69, d70: $d70, d71: $d71, d72: $d72, d73: $d73, d74: $d74, d75: $d75, d157: $d157, d76: $d76, d281: $d281, docno: $docno, d158: $d158, d282: $d282, d283: $d283, d284: $d284, d285: $d285, d286: $d286, d159: $d159, d162: $d162, d165: $d165, d271: $d271, d274: $d274, d160: $d160, d163: $d163, d166: $d166, d272: $d272, d275: $d275, d161: $d161, d164: $d164, d167: $d167, d273: $d273, d276: $d276, d168: $d168, d170: $d170, d169: $d169, d185: $d185, d172: $d172, d171: $d171, d186: $d186, d174: $d174, d173: $d173, d187: $d187, d176: $d176, d175: $d175, d188: $d188, d178: $d178, d177: $d177, d189: $d189, d77: $d77, d78: $d78, d79: $d79, d80: $d80, d81: $d81, d82: $d82, d83: $d83, d84: $d84, d85: $d85, file1: $file1, d179: $d179, d180: $d180, d1: $d1, d181: $d181, d87: $d87, d2: $d2, d182: $d182, d88: $d88, d3: $d3, d183: $d183, file2: $file2, d89: $d89, d90: $d90, d4: $d4, d91: $d91, d92: $d92, d5: $d5, d93: $d93, d94: $d94, d6: $d6, d95: $d95, file3: $file3, d7: $d7, d96: $d96, file4: $file4, d8: $d8, d97: $d97, file5: $file5, d9: $d9, d98: $d98, file6: $file6, d10: $d10, d99: $d99, file7: $file7, d11: $d11, d100: $d100, file8: $file8, d12: $d12, d101: $d101, file9: $file9, d13: $d13, d102: $d102, file10: $file10, d14: $d14, d103: $d103, file11: $file11, d15: $d15, d104: $d104, file12: $file12, d16: $d16, d105: $d105, file13: $file13, d17: $d17, d106: $d106, file14: $file14, d18: $d18, d107: $d107, file15: $file15, d19: $d19, d108: $d108, file16: $file16, d20: $d20, d109: $d109, file17: $file17, d21: $d21, d110: $d110, file18: $file18, d22: $d22, d111: $d111, file19: $file19, d23: $d23, d112: $d112, file20: $file20, d24: $d24, d113: $d113, file21: $file21, d25: $d25, d114: $d114, file22: $file22, d26: $d26, d115: $d115, file23: $file23, d27: $d27, d116: $d116, file24: $file24, d28: $d28, d117: $d117, file25: $file25, d29: $d29, d118: $d118, file26: $file26, d30: $d30, d119: $d119, file27: $file27, d31: $d31, d120: $d120, file28: $file28, d32: $d32, d121: $d121, file29: $file29, d33: $d33, d122: $d122, file30: $file30, d34: $d34, d123: $d123, file31: $file31, d35: $d35, d124: $d124, file32: $file32, d36: $d36, d125: $d125, file33: $file33, d37: $d37, d126: $d126, file34: $file34, d38: $d38, d127: $d127, file35: $file35, d67: $d67, d128: $d128, file36: $file36, d39: $d39, d129: $d129, file37: $file37, d40: $d40, d130: $d130, file38: $file38, d41: $d41, d131: $d131, file39: $file39, d42: $d42, d132: $d132, file40: $file40, d43: $d43, d133: $d133, file41: $file41, d44: $d44, d134: $d134, file42: $file42, d45: $d45, d135: $d135, file43: $file43, d46: $d46, d136: $d136, file44: $file44, d47: $d47, d137: $d137, file45: $file45, d48: $d48, d138: $d138, file46: $file46, d49: $d49, d139: $d139, file47: $file47, d50: $d50, d140: $d140, file48: $file48, d51: $d51, d141: $d141, file49: $file49, d52: $d52, d142: $d142, file50: $file50, d53: $d53, d143: $d143, d54: $d54, d144: $d144, file51: $file51, d55: $d55, d145: $d145, file52: $file52, d56: $d56, d146: $d146, file53: $file53, d57: $d57, d147: $d147, file54: $file54, d58: $d58, d148: $d148, file55: $file55, d59: $d59, d149: $d149, file56: $file56, d60: $d60, d150: $d150, file57: $file57, d61: $d61, d151: $d151, file58: $file58, d62: $d62, d152: $d152, file59: $file59, d63: $d63, d153: $d153, file60: $file60, d64: $d64, d154: $d154, file61: $file61, d65: $d65, d155: $d155, file62: $file62, d156: $d156}';
-  }
-
-  SelectProcListItem toSelectProcListItem() {
-    return SelectProcListItem(d168: d168);
+    return 'BioIo{d3: $d3, d4: $d4, d5: $d5, comAddress: $comAddress, comName: $comName, comCode: $comCode, attfile11str: $attfile11str, tableName: $tableName, attfile15str: $attfile15str, attfile4str: $attfile4str, attfile8str: $attfile8str, attfile20str: $attfile20str, attfile10str: $attfile10str, attfile14str: $attfile14str, attfile19str: $attfile19str, attfile3str: $attfile3str, attNameTxt20: $attNameTxt20, attfile18str: $attfile18str, attfile7str: $attfile7str, idx: $idx, status: $status, docno: $docno, attfile13str: $attfile13str, attfile17str: $attfile17str, attfile6str: $attfile6str, attNameTxt13: $attNameTxt13, attNameTxt12: $attNameTxt12, attfile2str: $attfile2str, attNameTxt11: $attNameTxt11, attNameTxt10: $attNameTxt10, attNameTxt17: $attNameTxt17, attNameTxt16: $attNameTxt16, attNameTxt15: $attNameTxt15, company: $company, attNameTxt14: $attNameTxt14, attNameTxt19: $attNameTxt19, submitDatetime: $submitDatetime, attNameTxt18: $attNameTxt18, attNameTxt4: $attNameTxt4, attNameTxt3: $attNameTxt3, attNameTxt2: $attNameTxt2, attNameTxt1: $attNameTxt1, regId: $regId, simAuth: $simAuth, attfile12str: $attfile12str, attfile16str: $attfile16str, gbn: $gbn, attfile5str: $attfile5str, reg_datetime: $reg_datetime, attfile1str: $attfile1str, attfile9str: $attfile9str, printSubmitDt: $printSubmitDt, attNameTxt9: $attNameTxt9, attNameTxt8: $attNameTxt8, attNameTxt7: $attNameTxt7, attNameTxt6: $attNameTxt6, attNameTxt5: $attNameTxt5, d184: $d184, d280: $d280, d68: $d68, d69: $d69, d70: $d70, d71: $d71, d72: $d72, d73: $d73, d74: $d74, d75: $d75, d157: $d157, d76: $d76, d281: $d281, d158: $d158, d282: $d282, d283: $d283, d284: $d284, d285: $d285, d286: $d286, d159: $d159, d162: $d162, d165: $d165, d271: $d271, d274: $d274, d160: $d160, d163: $d163, d166: $d166, d272: $d272, d275: $d275, d161: $d161, d164: $d164, d167: $d167, d273: $d273, d276: $d276, d168: $d168, d170: $d170, d169: $d169, d185: $d185, d172: $d172, d171: $d171, d186: $d186, d174: $d174, d173: $d173, d187: $d187, d176: $d176, d175: $d175, d188: $d188, d178: $d178, d177: $d177, d189: $d189, d77: $d77, d78: $d78, d79: $d79, d80: $d80, d81: $d81, d82: $d82, d83: $d83, d84: $d84, d85: $d85, file1: $file1, d179: $d179, d180: $d180, d1: $d1, d181: $d181, d87: $d87, d2: $d2, d182: $d182, d88: $d88, d183: $d183, file2: $file2, d89: $d89, d90: $d90, d91: $d91, d92: $d92, d93: $d93, d94: $d94, d6: $d6, d95: $d95, file3: $file3, d7: $d7, d96: $d96, file4: $file4, d8: $d8, d97: $d97, file5: $file5, d9: $d9, d98: $d98, file6: $file6, d10: $d10, d99: $d99, file7: $file7, d11: $d11, d100: $d100, file8: $file8, d12: $d12, d101: $d101, file9: $file9, d13: $d13, d102: $d102, file10: $file10, d14: $d14, d103: $d103, file11: $file11, d15: $d15, d104: $d104, file12: $file12, d16: $d16, d105: $d105, file13: $file13, d17: $d17, d106: $d106, file14: $file14, d18: $d18, d107: $d107, file15: $file15, d19: $d19, d108: $d108, file16: $file16, d20: $d20, d109: $d109, file17: $file17, d21: $d21, d110: $d110, file18: $file18, d22: $d22, d111: $d111, file19: $file19, d23: $d23, d112: $d112, file20: $file20, d24: $d24, d113: $d113, file21: $file21, d25: $d25, d114: $d114, file22: $file22, d26: $d26, d115: $d115, file23: $file23, d27: $d27, d116: $d116, file24: $file24, d28: $d28, d117: $d117, file25: $file25, d29: $d29, d118: $d118, file26: $file26, d30: $d30, d119: $d119, file27: $file27, d31: $d31, d120: $d120, file28: $file28, d32: $d32, d121: $d121, file29: $file29, d33: $d33, d122: $d122, file30: $file30, d34: $d34, d123: $d123, file31: $file31, d35: $d35, d124: $d124, file32: $file32, d36: $d36, d125: $d125, file33: $file33, d37: $d37, d126: $d126, file34: $file34, d38: $d38, d127: $d127, file35: $file35, d67: $d67, d128: $d128, file36: $file36, d39: $d39, d129: $d129, file37: $file37, d40: $d40, d130: $d130, file38: $file38, d41: $d41, d131: $d131, file39: $file39, d42: $d42, d132: $d132, file40: $file40, d43: $d43, d133: $d133, file41: $file41, d44: $d44, d134: $d134, file42: $file42, d45: $d45, d135: $d135, file43: $file43, d46: $d46, d136: $d136, file44: $file44, d47: $d47, d137: $d137, file45: $file45, d48: $d48, d138: $d138, file46: $file46, d49: $d49, d139: $d139, file47: $file47, d50: $d50, d140: $d140, file48: $file48, d51: $d51, d141: $d141, file49: $file49, d52: $d52, d142: $d142, file50: $file50, d53: $d53, d143: $d143, d54: $d54, d144: $d144, file51: $file51, d55: $d55, d145: $d145, file52: $file52, d56: $d56, d146: $d146, file53: $file53, d57: $d57, d147: $d147, file54: $file54, d58: $d58, d148: $d148, file55: $file55, d59: $d59, d149: $d149, file56: $file56, d60: $d60, d150: $d150, file57: $file57, d61: $d61, d151: $d151, file58: $file58, d62: $d62, d152: $d152, file59: $file59, d63: $d63, d153: $d153, file60: $file60, d64: $d64, d154: $d154, file61: $file61, d65: $d65, d155: $d155, file62: $file62, d156: $d156}';
   }
 }
 
@@ -2170,4 +2050,7 @@ enum BioIoName {
   /// (신규)특이사항 - 비고
   /// (정기)총평
   d156,
+  comName,
+  comCode,
+  comAddress
 }

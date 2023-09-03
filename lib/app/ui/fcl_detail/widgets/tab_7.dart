@@ -5,14 +5,14 @@ import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_regular_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// 취급생물체정보 - 정기
-class RegularHandlingOrganismInformation extends StatelessWidget {
-  const RegularHandlingOrganismInformation({super.key});
+class Tab7 extends StatelessWidget {
+  const Tab7({super.key});
 
 
-  FclRegularDetailVm get vm => FclRegularDetailVm.to;
+  FclDetailVm get vm => FclDetailVm.to;
 
   @override
   Widget build(BuildContext context) {

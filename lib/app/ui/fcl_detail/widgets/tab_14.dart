@@ -11,8 +11,8 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_b
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// (정기) 4. 시설 내 생물안전 정보 제공 확인
-class ConOfProvi extends StatelessWidget {
-  const ConOfProvi({super.key});
+class Tab14 extends StatelessWidget {
+  const Tab14({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
 

@@ -9,13 +9,9 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
-
-
-
-
-/// 9. 내부로의 일방향 공기흐름 확인
-class CheckTheOneWayAirflowToTheInside extends StatelessWidget {
-  const CheckTheOneWayAirflowToTheInside({super.key});
+/// 13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지
+class Tab13 extends StatelessWidget {
+  const Tab13({super.key});
 
   FclDetailVm get controller => FclDetailVm.to;
 
@@ -28,7 +24,8 @@ class CheckTheOneWayAirflowToTheInside extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("9. 내부로의 일방향 공기흐름 확인", style: TextStyle(fontSize: 34.sp)),
+              Text("13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
+                  style: TextStyle(fontSize: 34.sp)),
               SizedBox(height: 14.h),
               Row(
                 children: [
@@ -53,34 +50,11 @@ class CheckTheOneWayAirflowToTheInside extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d143.name,
-                label: "실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상)",
-                imageName: BioIoName.file50.name,
+                noteName: BioIoName.d154.name,
+                label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
+                imageName: BioIoName.file60.name,
                 fclRadio: FclRadio(
-                    name: BioIoName.d53.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d144.name,
-                label: "차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지)",
-                fclRadio: FclRadio(
-                    name: BioIoName.d54.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d145.name,
-                label: "밀폐구역 내 실간차압이 -7.6 Pa 이상 유지",
-                imageName: BioIoName.file51.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d55.name,
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-              ),
-              FclField(
-                noteName: BioIoName.d146.name,
-                label: "밀폐구역 내 실간 일방향 기류 확인",
-                imageName: BioIoName.file52.name,
-                fclRadio: FclRadio(
-                    name: BioIoName.d56.name,
+                    name: BioIoName.d64.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

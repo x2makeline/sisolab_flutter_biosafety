@@ -1,6 +1,7 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/converters/date_time_converter.dart';
 
 part 'select_proc_list_in.g.dart';
 
@@ -11,8 +12,10 @@ class SelectProcListIn {
   int? idx;
   int pageIndex;
   String? searchCompany;
-  String? searchDate1;
-  String? searchDate2;
+  @DateTimeNullableConverter()
+  DateTime? searchDate1;
+  @DateTimeNullableConverter()
+  DateTime? searchDate2;
 
   SelectProcListIn(
       {required this.gbn,

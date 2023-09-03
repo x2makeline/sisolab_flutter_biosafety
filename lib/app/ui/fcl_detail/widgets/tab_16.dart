@@ -12,8 +12,8 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_b
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// (정기) 출입통제 관리기록 등
-class ComingAndGoing extends StatelessWidget {
-  const ComingAndGoing({super.key});
+class Tab16 extends StatelessWidget {
+  const Tab16({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
 

@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
@@ -9,14 +10,12 @@ import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.d
 import 'package:sisolab_flutter_biosafety/app/data/providers/api_provider.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_field_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_form_state.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_new_detail_vm.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_regular_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-abstract class FclDetailVm extends GetxController with PLoggerMixin {
-  static FclDetailVm get to => Get.isRegistered<FclRegularDetailVm>()
-      ? FclRegularDetailVm.to
-      : FclNewDetailVm.to;
+class FclDetailVm extends GetxController with PLoggerMixin {
+  static FclDetailVm get to => Get.find();
 
   final _repository = SelectProcFieldRepository();
   final _apiPro = ApiProvider();
@@ -34,13 +33,16 @@ abstract class FclDetailVm extends GetxController with PLoggerMixin {
 
   set tabIndex(int index) => _tabIndex.value = index;
 
-  int get maxTabindex {
-    throw Error();
-  }
+  List<FclTab> get tabList => when(gbn, {
+        Gbn.fd1: () => regularTabList,
+        Gbn.fd2: () => newTabList,
+        Gbn.fd3: () => riskTabList
+      })!;
 
-  Gbn get gbn {
-    throw Error();
-  }
+  int get maxTabindex => tabList.length - 1;
+
+  final Gbn gbn =
+      Gbn.values.firstWhere((element) => element.name == Get.parameters["id"]);
 
   final _io = Rx<BioIo>(BioIo());
 
@@ -70,7 +72,7 @@ abstract class FclDetailVm extends GetxController with PLoggerMixin {
         .selectProcField(
             SelectProcFieldIn(gbn: gbn, idx: int.parse(Get.parameters['idx']!)))
         .then((value) {
-      _io.value = value.data!.bioIo;
+      _io.value = value.data!;
       pLog.i(_io.value);
       //     .copyWith(
       //     d158: DateTime.now().subtract(Duration(days: 2)),
@@ -82,16 +84,25 @@ abstract class FclDetailVm extends GetxController with PLoggerMixin {
     });
   }
 
-  submit() {
+  void submit() {
     if (formKey.currentState != null) {
       formKey.currentState!.save();
       pLog.d(formKey.currentState!.value);
+      final bioJson = {
+        ...io.toJson(),
+        ...BioIo.fromForm({...formKey.currentState!.value}).toJson()
+          ..removeWhere((key, value) => value == null),
+      };
+      final bio = BioIo.fromJson(bioJson);
 
-      final bio =
-          BioIo.fromForm({"idx": "609", ...formKey.currentState!.value});
-      pLog.d("submit $bio");
-      pLog.d("io.toJson ${io.toJson()}");
-      pLog.d("bio.toJson ${bio.toJson()}");
+      pLog.d("submit $bioJson");
+      pLog.d("io.toJson() ${io.toJson()}");
+      pLog.d(
+          "BioIo.fromForm({...formKey.currentState!.value}).toJson() ${BioIo.fromForm({
+            ...formKey.currentState!.value
+          }).toJson()..removeWhere((key, value) => value == null)}");
+      // pLog.d("io.toJson ${io.toJson()}");
+      // pLog.d("bio.toJson ${bio.toJson()}");
 
       _apiPro.procFieldSave(bio).then((value) => print(value));
     }

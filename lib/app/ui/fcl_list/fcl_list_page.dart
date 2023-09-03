@@ -4,8 +4,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_search_in.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
@@ -20,9 +20,9 @@ import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
 class _Item extends StatelessWidget with PLoggerMixin {
-  const _Item({required this.info, required this.category});
+  const _Item({required this.info, required this.gbn});
 
-  final FclBigCategory category;
+  final Gbn gbn;
 
   final SelectProcListItem info;
 
@@ -225,11 +225,14 @@ class _Item extends StatelessWidget with PLoggerMixin {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Get.toNamed("/fcl/${category.path}/detail/${info.idx}");
-      },
-      child: category == FclBigCategory.REGULAR ? _regTable : _newTable,
-    );
+        onTap: () {
+          Get.toNamed("/fcl/${gbn.name}/detail/${info.idx}");
+        },
+        child: when(gbn, {
+          Gbn.fd1: () => _regTable,
+          Gbn.fd2: () => _newTable,
+          Gbn.fd3: () => _newTable,
+        })!);
   }
 }
 
@@ -240,10 +243,11 @@ class FclListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Layout(
-        title: "${when(vm.bigCategory, {
-              FclBigCategory.NEW: () => Constant.newTitle,
-              FclBigCategory.REGULAR: () => Constant.regularTitle,
-            })!}\n${Constant.fclTitle}",
+        title: when(vm.gbn, {
+              Gbn.fd1: () => "(정기)\n생물안전 3등급 시설 현장점검표",
+              Gbn.fd2: () => "(신규허가 ∙ 재확인)\n생물안전 3등급 시설 현장점검표",
+              Gbn.fd3: () => "고위험병원체 시설 현장점검표",
+            })!,
         child: Padding(
           padding: EdgeInsets.only(top: 47.h),
           child: Column(
@@ -291,11 +295,10 @@ class FclListPage extends StatelessWidget {
                               backgroundColor: MaterialStatePropertyAll<Color>(
                                   Colors.black)),
                           onPressed: () {
-                            Get.toNamed(when(vm.bigCategory, {
-                              FclBigCategory.NEW: () =>
-                                  AppRoutes.fclNewDetailForm.name,
-                              FclBigCategory.REGULAR: () =>
+                            Get.toNamed(when(vm.gbn, {
+                              Gbn.fd1: () =>
                                   AppRoutes.fclRegularDetailForm.name,
+                              Gbn.fd2: () => AppRoutes.fclNewDetailForm.name,
                             })!);
                           },
                           child: const Text("신규등록")),
@@ -335,7 +338,7 @@ class FclListPage extends StatelessWidget {
                               width: double.infinity,
                               child: _Item(
                                 info: e,
-                                category: vm.bigCategory,
+                                gbn: vm.gbn,
                               )))
                           .toList()
                           .withWidgetBetween(const FclDivider.form()),

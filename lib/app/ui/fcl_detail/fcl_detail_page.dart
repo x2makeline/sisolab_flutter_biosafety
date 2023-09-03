@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/detail_category_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_page_bottom.dart';
@@ -20,9 +20,10 @@ class FclDetailPage extends StatelessWidget with PLoggerMixin {
   @override
   Widget build(BuildContext context) => Layout(
         scrollController: vm.scrollController,
-        title: "${when(vm.bigCategory, {
-              FclBigCategory.NEW: () => Constant.newTitle,
-              FclBigCategory.REGULAR: () => Constant.regularTitle,
+        title: "${when(vm.gbn, {
+              Gbn.fd2: () => Constant.newTitle,
+              Gbn.fd1: () => Constant.regularTitle,
+              Gbn.fd3: () => Constant.riskTitle,
             })}\n${Constant.fclTitle}",
         child: Obx(() {
           if (vm.isLoading) {
@@ -52,9 +53,10 @@ class FclDetailPage extends StatelessWidget with PLoggerMixin {
                 Obx(() => FormBuilder(
                     key: vm.formKey,
                     child: DetailCategoryTab(
-                        tabMapList: when(vm.bigCategory, {
-                          FclBigCategory.NEW: () => newTabList,
-                          FclBigCategory.REGULAR: () => regularTabList,
+                        tabMapList: when(vm.gbn, {
+                          Gbn.fd1: () => regularTabList,
+                          Gbn.fd2: () => newTabList,
+                          Gbn.fd3: () => [],
                         })!,
                         activeTabIndex: vm.tabIndex,
                         onTab: (index) => vm.tabIndex = index))),

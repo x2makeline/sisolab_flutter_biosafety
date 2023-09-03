@@ -4,8 +4,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
@@ -28,8 +28,7 @@ class InspectionOverview extends StatelessWidget {
   FclDetailVm get vm => FclDetailVm.to;
 
   @override
-  Widget build(BuildContext context) =>
-      Column(
+  Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("점검개요",
@@ -154,7 +153,7 @@ class InspectionOverview extends StatelessWidget {
                       name: BioIoName.d76.name,
                       initialValue: vm.io.d76,
                       title:
-                      Text("고위험병원체", style: context.textTheme.titleMedium)),
+                          Text("고위험병원체", style: context.textTheme.titleMedium)),
                   FclTextField(
                     onSubmitted: (_) => vm.submit(),
                     hintText: "허가번호",
@@ -272,22 +271,20 @@ class InspectionOverview extends StatelessWidget {
             children: [
               Flexible(
                   child: FclDateField(
-                    name: BioIoName.d168.name,
-                    initialDate: vm.io.d168,
-                    label: "점검일자",
-                  )),
+                name: BioIoName.d168.name,
+                initialDate: vm.io.d168,
+                label: "점검일자",
+              )),
               const Flexible(child: SizedBox.shrink())
             ].withSpaceBetween(width: 10.w),
           ),
-
           SizedBox(
             height: 40.h,
           ),
           const FclCheckerTable(),
           iff<Widget>(
-              vm.bigCategory == FclBigCategory.REGULAR,
-                  () =>
-                  Column(
+              vm.gbn == Gbn.fd1,
+              () => Column(
                     children: [
                       SizedBox(
                         height: 40.h,
@@ -326,8 +323,6 @@ class InspectionOverview extends StatelessWidget {
                           ))
                     ],
                   )).orElse(() => const EmptyBox())
-
-
         ],
       );
 }

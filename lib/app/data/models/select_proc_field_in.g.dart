@@ -21,4 +21,5 @@ Map<String, dynamic> _$SelectProcFieldInToJson(SelectProcFieldIn instance) =>
 const _$GbnEnumMap = {
   Gbn.fd2: 'fd2',
   Gbn.fd1: 'fd1',
+  Gbn.fd3: 'fd3',
 };

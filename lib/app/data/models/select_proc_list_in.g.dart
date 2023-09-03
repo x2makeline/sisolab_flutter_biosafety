@@ -140,4 +140,5 @@ Map<String, dynamic> _$SelectProcListInToJson(SelectProcListIn instance) =>
 const _$GbnEnumMap = {
   Gbn.fd2: 'fd2',
   Gbn.fd1: 'fd1',
+  Gbn.fd3: 'fd3',
 };

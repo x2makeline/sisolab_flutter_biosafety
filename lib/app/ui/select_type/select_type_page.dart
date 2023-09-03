@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/home_app_bar.dart';
@@ -30,7 +31,8 @@ class SelectTypePage extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Get.toNamed(AppRoutes.fclNewLIst.name);
+                    Get.toNamed(AppRoutes.fclList.name
+                        .replaceFirst(RegExp(r'(:id)'), Gbn.fd2.name));
                   },
                   child: Container(
                     height: 360.h,
@@ -62,7 +64,8 @@ class SelectTypePage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.toNamed(AppRoutes.fclRegularList.name);
+                    Get.toNamed(AppRoutes.fclList.name
+                        .replaceFirst(RegExp(r'(:id)'), Gbn.fd1.name));
                   },
                   child: Container(
                     height: 360.h,
@@ -93,7 +96,10 @@ class SelectTypePage extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(AppRoutes.fclList.name
+                        .replaceFirst(RegExp(r'(:id)'), Gbn.fd3.name));
+                  },
                   child: Container(
                     height: 360.h,
                     width: 400.w,

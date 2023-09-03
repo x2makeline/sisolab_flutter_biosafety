@@ -1,4 +1,3 @@
-import 'package:dartlin/control_flow.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/api_response.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
@@ -49,6 +48,7 @@ class FclListPageVm extends GetxController {
 
   AsyncStatus<ApiResponse<SelectProcListOut>> get list => _list.value;
 
+  @override
   void onInit() {
     super.onInit();
     fetch();

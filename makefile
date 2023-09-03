@@ -58,3 +58,7 @@ env.live:
 
 # 기본 타겟 설정 (빌드 및 실행)
 .DEFAULT_GOAL := dev
+
+# dart fix
+fix:
+	dart fix --apply

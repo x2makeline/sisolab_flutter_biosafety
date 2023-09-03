@@ -3,11 +3,14 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/data/repositories/hive_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 
 import 'app/global/bindings/global_binding.dart';
 import 'routes/app_routes.dart';
@@ -17,9 +20,16 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FormBuilderLocalizations.setCurrentInstance(FormBuilderLocalizationsImplKo());
 
-  final tokenVm = TokenVm();
-  await tokenVm.onInit();
-  Get.put(tokenVm);
+  await SPref.init();
+  await Hive.initFlutter();
+  Hive.registerAdapter(BioIoAdapter());
+  await HiveRepository.openBox();
+
+  // box.
+
+
+
+
   runApp(const MyApp());
 }
 
@@ -44,11 +54,11 @@ class MyApp extends StatelessWidget {
               Locale('ko'),
             ],
             locale: const Locale('ko'),
-            // initialRoute: AppRoutes.home.name,
+            initialRoute: AppRoutes.home.name,
             // initialRoute: AppRoutes.fclNewLIst.name,
             // initialRoute: AppRoutes.fclRegularList.name,
             // initialRoute: "/fcl/regular/detail/593",
-                initialRoute: "/fcl/new/detail/479",
+            //     initialRoute: "/fcl/new/detail/609",
             theme: ThemeData(
                 buttonTheme: buttonMainTheme,
                 elevatedButtonTheme: elevatedButtonThemeData,

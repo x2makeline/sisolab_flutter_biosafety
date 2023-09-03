@@ -11,6 +11,7 @@ class FormBuilderImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormBuilderFilePicker(
       onSaved: onSaved,
+
       decoration: const InputDecoration(
         enabledBorder: InputBorder.none),
       name: name,

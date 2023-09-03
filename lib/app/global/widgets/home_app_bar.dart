@@ -7,6 +7,7 @@ class HomeAppBar extends AppBar {
           toolbarHeight: 120.h,
           leadingWidth: 0,
           titleSpacing: 0,
+          centerTitle: true,
           title: Image.asset("assets/images/logo.png",
               alignment: Alignment.centerLeft, height: 75.h),
         );

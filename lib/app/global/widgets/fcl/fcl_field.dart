@@ -10,13 +10,19 @@ class FclField extends StatelessWidget {
       this.fclRadio,
       required this.noteName,
       required this.label,
+        this.initialNote,
+        this.initialImage,
       this.indent = true,
       this.endIndent = false});
 
   final String label;
   final String? imageName;
+  final String? initialImage;
   final FclRadio? fclRadio;
+
   final String noteName;
+  final String? initialNote;
+
   final bool indent;
   final bool endIndent;
 
@@ -26,6 +32,8 @@ class FclField extends StatelessWidget {
       children: [
         Text(label, style: context.textTheme.titleLarge),
         FclImageNoteTemplate(
+          initialImage: initialImage,
+          initialNote: initialNote,
           label: imageName != null ? "이미지 첨부" : null,
           noteName: noteName,
           fclRadio: fclRadio,

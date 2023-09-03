@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:sisolab_flutter_biosafety/app/data/models/login_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/login_out.dart';
-import 'package:sisolab_flutter_biosafety/app/data/providers/api_provider.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/repository.dart';
 
 class AuthRepository extends Repository {

@@ -5,20 +5,20 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/repositories/storage_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/errors/api_error.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/network_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout/home_page_layout.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
 class HomePage extends StatelessWidget {
-   HomePage({super.key});
+  HomePage({super.key});
 
-  final NetworkVm  _netVm =  NetworkVm.to;
+  final NetworkVm _netVm = NetworkVm.to;
 
   @override
   Widget build(BuildContext context) => HomePageLayout(
@@ -26,16 +26,15 @@ class HomePage extends StatelessWidget {
 }
 
 class _UnConnected extends StatelessWidget with PLoggerMixin {
-  _UnConnected({super.key});
+  _UnConnected();
 
   final _formKey = GlobalKey<FormBuilderState>();
-  final _storageRepository = StorageRepository();
   static const _userIdName = '_userIdName';
 
   _submit() {
     _formKey.currentState?.let((curr) => iff(curr.saveAndValidate(), () {
           log.i('userId ${curr.value[_userIdName]}');
-          _storageRepository.setUserId(curr.value[_userIdName]).then((value) {
+          Pref.userId.setValue(curr.value[_userIdName]).then((value) {
             iff(value, () {
               Get.offAllNamed(AppRoutes.selectType.name);
             });
@@ -112,6 +111,7 @@ class _ConnectedState extends State<_Connected> with PLoggerMixin {
   static const _passwdName = '_passwdName';
 
   static const _devUserId = "test0223";
+
   // static const _devUserId = "test0";
   static const _devPasswd = "1234";
 

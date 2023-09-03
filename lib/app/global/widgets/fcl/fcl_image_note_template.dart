@@ -11,29 +11,36 @@ class FclImageNoteTemplate extends StatelessWidget {
       this.label,
       required this.noteName,
       this.fclRadio,
+      this.initialNote,
+      this.initialImage,
       this.imageName});
 
   final String? label;
+
   final String noteName;
+  final String? initialNote;
   final String? imageName;
+  final String? initialImage;
   final FclRadio? fclRadio;
 
   @override
   Widget build(BuildContext context) {
     return NoteTemplate(
         label: label,
-        fclRadio: fclRadio,
         name: noteName,
+        initialValue: initialNote,
         builder: (_) => [
               if (imageName != null)
                 FormBuilderFclImagePicker(
                   name: imageName!,
+                  initialValue: initialImage,
                 ),
               if (fclRadio != null)
                 Row(
                   children: [
                     Flexible(
                         child: FormBuilderRadioGroup(
+                            initialValue: fclRadio!.initialValue,
                             decoration: const InputDecoration(
                                 enabledBorder: InputBorder.none),
                             name: fclRadio!.name,

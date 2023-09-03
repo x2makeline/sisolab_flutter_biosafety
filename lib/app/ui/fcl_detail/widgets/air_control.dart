@@ -13,7 +13,7 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_betw
 class AirControl extends StatelessWidget {
   const AirControl({super.key});
 
-  FclDetailVm get controller => FclDetailVm.to;
+  FclDetailVm get vm => FclDetailVm.to;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -30,9 +30,9 @@ class AirControl extends StatelessWidget {
                 children: [
                   Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
-                      value: controller.pastYearYn,
+                      value: vm.pastYearYn,
                       onChanged: (v) {
-                        controller.pastYearYn = v ?? false;
+                        vm.pastYearYn = v ?? false;
                       }))
                 ],
               )
@@ -49,18 +49,25 @@ class AirControl extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
+                initialNote: vm.io.d105,
                 noteName: BioIoName.d105.name,
+
                 label: "급기 덕트에 헤파 필터 설치",
                 imageName: BioIoName.file12.name,
+                initialImage: vm.io.file12,
                 fclRadio: FclRadio(
+                  initialValue: vm.io.d16,
                     name: BioIoName.d16.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
                 noteName: BioIoName.d106.name,
+                initialNote: vm.io.d106,
                 label: "배기에 카본필터 등 냄새제거 장치 설치",
                 imageName: BioIoName.file13.name,
+                initialImage: vm.io.file13,
                 fclRadio: FclRadio(
+                  initialValue: vm.io.d17,
                     name: BioIoName.d17.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),

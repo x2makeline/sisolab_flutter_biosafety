@@ -10,6 +10,9 @@ class FclPersonTemplate extends StatelessWidget {
       required this.noteName,
       required this.radioName,
       required this.countName,
+        this.initialRadio,
+        this.initialNote,
+        this.initialCount,
       required this.radioMap});
 
   final String label;
@@ -18,15 +21,21 @@ class FclPersonTemplate extends StatelessWidget {
   final Map<String, String> radioMap;
   final String countName;
 
+  final String? initialNote;
+  final String? initialRadio;
+  final String? initialCount;
+
   @override
   Widget build(BuildContext context) => NoteTemplate(
       label: label,
       name: noteName,
+      initialValue: initialNote,
       builder: (_) => [
             Row(
               children: [
                 Flexible(
                     child: FormBuilderTextField(
+                      initialValue: initialCount,
                   name: countName,
                   decoration: const InputDecoration(
                     suffixText: "명",
@@ -37,6 +46,7 @@ class FclPersonTemplate extends StatelessWidget {
                 ),
                 Flexible(
                     child: FormBuilderRadioGroup(
+                      initialValue: initialRadio,
                         decoration: const InputDecoration(
                             enabledBorder: InputBorder.none),
                         name: radioName,

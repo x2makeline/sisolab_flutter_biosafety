@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_note_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_person_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// 기본 자료 확인
 class CheckBasicData extends StatelessWidget {
   const CheckBasicData({super.key});
 
-  FclDetailVm get controller => FclDetailVm.to;
-
+  FclDetailVm get vm => FclDetailVm.to;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -31,9 +30,9 @@ class CheckBasicData extends StatelessWidget {
                 children: [
                   Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
-                      value: controller.pastYearYn,
+                      value: vm.pastYearYn,
                       onChanged: (v) {
-                        controller.pastYearYn = v ?? false;
+                        vm.pastYearYn = v ?? false;
                       }))
                 ],
               )
@@ -54,8 +53,10 @@ class CheckBasicData extends StatelessWidget {
                 height: 23.h,
               ),
               FclImageNoteTemplate(
+                initialImage: vm.io.file1,
                 label: "이미지 첨부",
                 noteName: BioIoName.d179.name,
+                initialNote: vm.io.d179,
                 imageName: BioIoName.file1.name,
               ),
               SizedBox(
@@ -63,6 +64,9 @@ class CheckBasicData extends StatelessWidget {
               ),
               FclPersonTemplate(
                   label: "관리책임자",
+                  initialNote: vm.io.d181,
+                  initialRadio: vm.io.d1,
+                  initialCount: vm.io.d180,
                   noteName: BioIoName.d181.name,
                   radioName: BioIoName.d1.name,
                   countName: BioIoName.d180.name,
@@ -72,6 +76,9 @@ class CheckBasicData extends StatelessWidget {
               ),
               FclPersonTemplate(
                   label: "관리자",
+                  initialNote: vm.io.d182,
+                  initialRadio: vm.io.d2,
+                  initialCount: vm.io.d87,
                   noteName: BioIoName.d182.name,
                   radioName: BioIoName.d2.name,
                   countName: BioIoName.d87.name,
@@ -81,6 +88,9 @@ class CheckBasicData extends StatelessWidget {
               ),
               FclPersonTemplate(
                   label: "사용자",
+                  initialNote: vm.io.d183,
+                  initialRadio: vm.io.d3,
+                  initialCount: vm.io.d88,
                   noteName: BioIoName.d183.name,
                   radioName: BioIoName.d3.name,
                   countName: BioIoName.d88.name,
@@ -99,6 +109,8 @@ class CheckBasicData extends StatelessWidget {
               ),
               FclImageNoteTemplate(
                 label: "이미지 첨부",
+                initialNote: vm.io.d89,
+                initialImage: vm.io.file2,
                 noteName: BioIoName.d89.name,
                 imageName: BioIoName.file2.name,
               ),
@@ -107,6 +119,9 @@ class CheckBasicData extends StatelessWidget {
               ),
               FclPersonTemplate(
                   label: "관리책임자",
+                  initialNote: vm.io.d91,
+                  initialRadio: vm.io.d4,
+                  initialCount: vm.io.d90,
                   noteName: BioIoName.d91.name,
                   radioName: BioIoName.d4.name,
                   countName: BioIoName.d90.name,
@@ -116,6 +131,9 @@ class CheckBasicData extends StatelessWidget {
               ),
               FclPersonTemplate(
                   label: "관리자",
+                  initialNote: vm.io.d93,
+                  initialRadio: vm.io.d5,
+                  initialCount: vm.io.d92,
                   noteName: BioIoName.d93.name,
                   radioName: BioIoName.d5.name,
                   countName: BioIoName.d92.name,
@@ -125,6 +143,9 @@ class CheckBasicData extends StatelessWidget {
               ),
               FclPersonTemplate(
                   label: "사용자",
+                  initialNote: vm.io.d95,
+                  initialRadio: vm.io.d6,
+                  initialCount: vm.io.d94,
                   noteName: BioIoName.d95.name,
                   radioName: BioIoName.d6.name,
                   countName: BioIoName.d94.name,
@@ -141,7 +162,12 @@ class CheckBasicData extends StatelessWidget {
               FclImageNoteTemplate(
                 label: "이미지 첨부",
                 noteName: BioIoName.d96.name,
+
+                initialNote: vm.io.d96,
+                initialImage: vm.io.file3,
+
                 fclRadio: FclRadio(
+                    initialValue: vm.io.d7,
                     name: BioIoName.d7.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
                 // radioName: BioIoName.d7.name,
@@ -157,10 +183,13 @@ class CheckBasicData extends StatelessWidget {
               Text("생물안전관리규정 수립", style: context.textTheme.titleLarge),
               FclImageNoteTemplate(
                 label: "이미지 첨부",
+                initialNote: vm.io.d97,
                 noteName: BioIoName.d97.name,
                 fclRadio: FclRadio(
+                    initialValue: vm.io.d8,
                     name: BioIoName.d8.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
+                initialImage: vm.io.file4,
                 imageName: BioIoName.file4.name,
               ),
               SizedBox(
@@ -174,10 +203,13 @@ class CheckBasicData extends StatelessWidget {
                   style: context.textTheme.titleLarge),
               FclImageNoteTemplate(
                 label: "이미지 첨부",
+                initialNote: vm.io.d98,
                 noteName: BioIoName.d98.name,
                 fclRadio: FclRadio(
+                    initialValue: vm.io.d9,
                     name: BioIoName.d9.name,
                     map: FclNewDetailFields.saepnssUserRadio.map!),
+                initialImage: vm.io.file5,
                 imageName: BioIoName.file5.name,
               ),
               SizedBox(

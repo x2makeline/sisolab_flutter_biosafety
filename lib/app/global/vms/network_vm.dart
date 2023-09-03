@@ -17,6 +17,7 @@ class NetworkVm extends GetxService with PLoggerMixin {
       ? _connectivityResult.value != ConnectivityResult.none
       : false;
 
+
   @override
   void onInit() {
     super.onInit();

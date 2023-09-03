@@ -8,7 +8,7 @@ part of 'select_proc_list_item.dart';
 
 SelectProcListItem _$SelectProcListItemFromJson(Map<String, dynamic> json) =>
     SelectProcListItem(
-      d168: json['d168'] as String? ?? "",
+      d168: const DateTimeNullableConverter().fromJson(json['d168'] as String?),
       modUserName: json['mod_user_name'] as String? ?? "",
       d184: json['d184'] as String? ?? "",
       simcnt: json['simcnt'] as int? ?? 0,
@@ -31,7 +31,7 @@ SelectProcListItem _$SelectProcListItemFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$SelectProcListItemToJson(SelectProcListItem instance) =>
     <String, dynamic>{
-      'd168': instance.d168,
+      'd168': const DateTimeNullableConverter().toJson(instance.d168),
       'mod_user_name': instance.modUserName,
       'd184': instance.d184,
       'simcnt': instance.simcnt,

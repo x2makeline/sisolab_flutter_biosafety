@@ -1,10 +1,11 @@
-import 'dart:typed_data';
-
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:signature/signature.dart';
+import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
+import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 
 class SignatureButton extends StatefulWidget {
   const SignatureButton(
@@ -12,8 +13,8 @@ class SignatureButton extends StatefulWidget {
       : super(key: key);
 
   final SignatureController? controller;
-  final Uint8List? initialValue;
-  final void Function(Uint8List? value)? onChange;
+  final String? initialValue;
+  final void Function(String? value)? onChange;
 
   @override
   State<SignatureButton> createState() => _SignatureButtonState();
@@ -21,7 +22,7 @@ class SignatureButton extends StatefulWidget {
 
 class _SignatureButtonState extends State<SignatureButton> {
   late final SignatureController controller;
-  Uint8List? uint8List;
+  String? base64;
   static final double _modalSingHeight = 600.h;
   static final double _modalSingWidth = 600.w;
 
@@ -31,21 +32,16 @@ class _SignatureButtonState extends State<SignatureButton> {
     controller =
         widget.controller ?? SignatureController(penColor: Colors.black);
 
-    if(widget.initialValue != null) {
-      uint8List = widget.initialValue;
-      iff(widget.onChange != null, () => widget.onChange!(uint8List));
-
+    if (widget.initialValue != null) {
+      base64 = widget.initialValue;
+      iff(widget.onChange != null, () => widget.onChange!(base64));
     }
-
-
-
   }
 
-  Future<Uint8List?> get pngBytes async => await controller.toPngBytes(
-      width: _modalSingWidth.toInt(), height: _modalSingHeight.toInt());
-
-  // Future<Image?> get img async =>
-  //     pngBytes.then((value) => value?.let((v) => Image.memory(v)));
+  Future<String?> get base64ByController async => controller.isEmpty
+      ? null
+      : uint8ListTob64((await controller.toPngBytes(
+          width: _modalSingWidth.toInt(), height: _modalSingHeight.toInt()))!);
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +59,11 @@ class _SignatureButtonState extends State<SignatureButton> {
                 TextButton(
                     onPressed: () async {
                       if (controller.isNotEmpty) {
-                        uint8List = await pngBytes;
+                        base64 = await base64ByController;
                         controller.clear();
 
-                        print(123);
                         if (widget.onChange != null) {
-                          print(456);
-                          widget.onChange!(uint8List);
+                          widget.onChange!(base64);
                         }
                       }
                       setState(() {});
@@ -91,18 +85,26 @@ class _SignatureButtonState extends State<SignatureButton> {
             height: 90.h,
             width: 90.h,
             decoration: BoxDecoration(
-              border: Border.all(width: 1),
+              border: Border.all(width: 1, color: ColorGroup.gray),
             ),
-            child: uint8List != null
+            child: base64 != null && Uri.parse(base64!).data != null
                 ? Image.memory(
-                    uint8List!,
+                    Uri.parse(base64!).data!.contentAsBytes(),
                     width: 90.h,
                     height: 90.h,
                   )
-                : Center(
-                    child: Text(
-                    "[서명]",
-                    style: TextStyle(fontSize: 28.sp),
-                  ))));
+                : Stack(
+              children: [
+                const Center(
+                  child: Text("[서명]"),
+                ),
+                TextField(
+                  decoration: InputDecoration(
+                    disabledBorder: textFieldDecoration.border,
+                  ),
+                  enabled: false,
+                )
+              ],
+            )));
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
@@ -10,15 +9,16 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) => AppBar(
         centerTitle: false,
         toolbarHeight: 120.h,
-        // leadingWidth: 0,
+        leadingWidth: 0,
         titleSpacing: 0,
-        leading: IconButton(
-          onPressed: () {
-            Get.back();
-          },
-          icon: const Icon(Icons.arrow_back_ios_new_rounded,
-              color: ColorGroup.black),
-        ),
+
+        // leading: IconButton(
+        //   onPressed: () {
+        //     Get.back();
+        //   },
+        //   icon: const Icon(Icons.arrow_back_ios_new_rounded,
+        //       color: ColorGroup.black),
+        // ),
         title: Padding(
           padding: EdgeInsets.only(left: 20.w),
           child: Image.asset(

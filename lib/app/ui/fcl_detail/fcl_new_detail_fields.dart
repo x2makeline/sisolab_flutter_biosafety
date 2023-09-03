@@ -180,4 +180,4 @@ enum FclNewDetailFields {
   final Map<String, String>? map;
 }
 
-const yesOrNoMap = {"yes": "예", "no": "아니오", "none": "해당없음"};
+const yesOrNoMap = {"예": "예", "아니오": "아니오", "해당없음": "해당없음"};

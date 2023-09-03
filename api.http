@@ -28,7 +28,7 @@ Access_Token: {{Access_Token}}
 
 ###
 # 현장점검  데이터 가져오기
-GET {{url}}/api/selectProcField.do?gbn=fd3&idx=592
+GET {{url}}/api/selectProcField.do?gbn=fd1&idx=592
 Content-Type: application/json
 Access_Token: {{Access_Token}}
 

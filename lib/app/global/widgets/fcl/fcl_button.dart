@@ -83,11 +83,11 @@ class FclButton extends ButtonStyleButton {
 
   @override
   ButtonStyle defaultStyleOf(BuildContext context) {
-    return ButtonStyle();
+    return const ButtonStyle();
   }
 
   @override
   ButtonStyle? themeStyleOf(BuildContext context) {
-    return ButtonStyle();
+    return const ButtonStyle();
   }
 }

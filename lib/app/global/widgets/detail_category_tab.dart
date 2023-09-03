@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 class DetailCategoryTab extends StatefulWidget {
   const DetailCategoryTab(
@@ -32,17 +32,13 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
   @override
   Widget build(BuildContext context) => Column(
         children: [
-          GridView.extent(
-            shrinkWrap: true,
-            primary: false,
-            maxCrossAxisExtent: 292.w,
-            childAspectRatio: 292 / 90,
-            addAutomaticKeepAlives: false,
+          Wrap(
             children: widget.tabMapList
                 .asMap()
                 .entries
                 .map((entry) => Container(
                       height: 90.h,
+                      width: 292.w,
                       decoration: BoxDecoration(
                           border: Border.all(color: ColorGroup.gray, width: 1)),
                       child: entry.key == widget.activeTabIndex
@@ -67,7 +63,7 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
                                 entry.value.title,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 24.sp, color: Color(0xff505050)),
+                                    fontSize: 24.sp, color: const Color(0xff505050)),
                               )),
                             ),
                     ))

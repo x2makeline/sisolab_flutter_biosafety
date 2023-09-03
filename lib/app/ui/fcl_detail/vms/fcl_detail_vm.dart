@@ -1,11 +1,9 @@
 import 'dart:math';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/providers/api_provider.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_field_repository.dart';
@@ -15,12 +13,10 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_new_detail_v
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_regular_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-
 abstract class FclDetailVm extends GetxController with PLoggerMixin {
-  static FclDetailVm get to =>
-      Get.isRegistered<FclRegularDetailVm>()
-          ? FclRegularDetailVm.to
-          : FclNewDetailVm.to;
+  static FclDetailVm get to => Get.isRegistered<FclRegularDetailVm>()
+      ? FclRegularDetailVm.to
+      : FclNewDetailVm.to;
 
   final _repository = SelectProcFieldRepository();
   final _apiPro = ApiProvider();
@@ -72,15 +68,15 @@ abstract class FclDetailVm extends GetxController with PLoggerMixin {
   _init() {
     _repository
         .selectProcField(SelectProcFieldIn(
-        gbn: bigCategory.gbn, idx: int.parse(Get.parameters['idx']!)))
+            gbn: bigCategory.gbn, idx: int.parse(Get.parameters['idx']!)))
         .then((value) {
       _io.value = value.data!.bioIo;
+      pLog.i(_io.value);
       //     .copyWith(
       //     d158: DateTime.now().subtract(Duration(days: 2)),
       //     d282 : "취급동물"
       // );
       // pLog.i(_io.value);
-
 
       _isLoading.value = false;
     });
@@ -89,8 +85,12 @@ abstract class FclDetailVm extends GetxController with PLoggerMixin {
   submit() {
     if (formKey.currentState != null) {
       formKey.currentState!.save();
-      final bio =
-      BioIo.fromForm({...formKey.currentState!.value, "docno": io.docno});
+      pLog.d(formKey.currentState!.value);
+
+      final bio = BioIo.fromForm({"idx" : "609", ...formKey.currentState!.value});
+      pLog.d("submit $bio");
+      pLog.d("io.toJson ${io.toJson()}");
+      pLog.d("bio.toJson ${bio.toJson()}");
 
       _apiPro.procFieldSave(bio).then((value) => print(value));
     }
@@ -107,6 +107,6 @@ abstract class FclDetailVm extends GetxController with PLoggerMixin {
     ever(_tabIndex, (_) => scrollController.jumpTo(0));
 
     formState =
-    idx != null ? FclDetailFormState.update : FclDetailFormState.insert;
+        idx != null ? FclDetailFormState.update : FclDetailFormState.insert;
   }
 }

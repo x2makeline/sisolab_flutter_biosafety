@@ -26,6 +26,5 @@ class _FclFieldState extends State<FclField> {
   @override
   Widget build(BuildContext context) {
     return FieldWithLabel(label: widget.label, child: widget.builder());
-    ;
   }
 }

@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 
 class FclRelatedPersonCol {
   String title;
@@ -10,7 +9,7 @@ class FclRelatedPersonCol {
   String hintText;
 
   String? initialName;
-  Uint8List? initialSignature;
+  String? initialSignature;
   String? initialContact;
   String? initialEmail;
   String? initialCellPhone;

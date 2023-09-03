@@ -4,7 +4,6 @@ import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_list_repository.dart';
-import 'package:sisolab_flutter_biosafety/app/global/constants/svc_constant.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_big_category.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_list_page_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/models/async_status.dart';
@@ -18,11 +17,13 @@ class FclRegularListPageVm extends FclListPageVm {
   final _list = RxNet<ApiResponse<SelectProcListOut>>(AsyncStatus.loading());
 
   final _param = Rx(SelectProcListIn(
-      gbn: Gbn.fd3, firstIndex: 0, lastIndex: SvcConstant.apiListSize));
+      gbn: Gbn.fd1, pageIndex: 1));
 
   /// ------------------------------------------------------
   @override
   void fetch() {
+
+
     _repository.selectProcList(_param.value).then((value) {
       if (value.isSuccess) {
         _list.value = AsyncStatus.success(value);

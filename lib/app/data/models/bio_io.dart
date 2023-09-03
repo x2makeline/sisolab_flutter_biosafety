@@ -1,361 +1,807 @@
-import 'dart:typed_data';
-
 import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_item.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/date_time_converter.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/converters/uint8_list_converter.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/yn_converter.dart';
 
 part 'bio_io.g.dart';
 
 @CopyWith()
 @JsonSerializable()
+@HiveType(typeId: 0)
 class BioIo {
-
+  @HiveField(0)
   String? company;
+
+  @HiveField(1)
   String? d184;
+
+  @HiveField(2)
   String? d280;
+
   @YnNullableConverter()
+  @HiveField(3)
   bool? d68;
+
   @YnNullableConverter()
+  @HiveField(4)
   bool? d69;
+
   @YnNullableConverter()
+  @HiveField(5)
   bool? d70;
+
   @YnNullableConverter()
+  @HiveField(6)
   bool? d71;
+
   @YnNullableConverter()
+  @HiveField(7)
   bool? d72;
+
   @YnNullableConverter()
+  @HiveField(8)
   bool? d73;
+
   @YnNullableConverter()
+  @HiveField(9)
   bool? d74;
+
   @YnNullableConverter()
+  @HiveField(11)
   bool? d75;
+
+  @HiveField(12)
   String? d157;
+
   @YnNullableConverter()
+  @HiveField(13)
   bool? d76;
+
+  @HiveField(14)
   String? d281;
+
+  @HiveField(15)
   String? docno;
+
   @DateTimeNullableConverter()
+  @HiveField(16)
   DateTime? d158;
+
+  @HiveField(17)
   String? d282;
+
+  @HiveField(18)
   String? d283;
+
+  @HiveField(19)
   String? d284;
+
+  @HiveField(20)
   String? d285;
+
+  @HiveField(21)
   String? d286;
+
+  @HiveField(22)
   String? d159;
-  @Uint8ListNullableConverter()
-  Uint8List? d162;
+
+  @HiveField(23)
+  String? d162;
+
+  @HiveField(24)
   String? d165;
+
+  @HiveField(25)
   String? d271;
+
+  @HiveField(26)
   String? d274;
+
+  @HiveField(27)
   String? d160;
-  @Uint8ListNullableConverter()
-  Uint8List? d163;
+
+  @HiveField(28)
+  String? d163;
+
+  @HiveField(29)
   String? d166;
+
+  @HiveField(30)
   String? d272;
+
+  @HiveField(31)
   String? d275;
+
+  @HiveField(32)
   String? d161;
-  @Uint8ListNullableConverter()
-  Uint8List? d164;
+
+  @HiveField(33)
+  String? d164;
+
+  @HiveField(34)
   String? d167;
+
+  @HiveField(35)
   String? d273;
+
+  @HiveField(36)
   String? d276;
+
   @DateTimeNullableConverter()
+  @HiveField(37)
   DateTime? d168;
+
+  @HiveField(38)
   String? d170;
+
+  @HiveField(39)
   String? d169;
-  @Uint8ListNullableConverter()
-  Uint8List? d185;
+
+  @HiveField(40)
+  String? d185;
+
+  @HiveField(41)
   String? d172;
+
+  @HiveField(42)
   String? d171;
-  @Uint8ListNullableConverter()
-  Uint8List? d186;
+
+  @HiveField(43)
+  String? d186;
+
+  @HiveField(44)
   String? d174;
+
+  @HiveField(45)
   String? d173;
-  @Uint8ListNullableConverter()
-  Uint8List? d187;
+
+  @HiveField(46)
+  String? d187;
+
+  @HiveField(47)
   String? d176;
+
+  @HiveField(48)
   String? d175;
-  @Uint8ListNullableConverter()
-  Uint8List? d188;
+
+  @HiveField(49)
+  String? d188;
+
+  @HiveField(50)
   String? d178;
+
+  @HiveField(51)
   String? d177;
-  @Uint8ListNullableConverter()
-  Uint8List? d189;
+
+  @HiveField(52)
+  String? d189;
+
+  @HiveField(53)
   String? d77;
+
+  @HiveField(54)
   String? d78;
+
+  @HiveField(55)
   String? d79;
+
+  @HiveField(56)
   String? d80;
+
+  @HiveField(57)
   String? d81;
+
+  @HiveField(58)
   String? d82;
+
+  @HiveField(59)
   String? d83;
+
+  @HiveField(60)
   String? d84;
+
+  @HiveField(61)
   String? d85;
-  @Uint8ListNullableConverter()
-  Uint8List? file1;
+
+  @HiveField(62)
+  String? file1;
+
+  @HiveField(63)
   String? d179;
+
+  @HiveField(64)
   String? d180;
+
+  @HiveField(65)
   String? d1;
+
+  @HiveField(66)
   String? d181;
+
+  @HiveField(67)
   String? d87;
+
+  @HiveField(68)
   String? d2;
+
+  @HiveField(69)
   String? d182;
+
+  @HiveField(70)
   String? d88;
+
+  @HiveField(71)
   String? d3;
+
+  @HiveField(72)
   String? d183;
-  @Uint8ListNullableConverter()
-  Uint8List? file2;
+
+  @HiveField(73)
+  String? file2;
+
+  @HiveField(74)
   String? d89;
+
+  @HiveField(75)
   String? d90;
+
+  @HiveField(76)
   String? d4;
+
+  @HiveField(77)
   String? d91;
+
+  @HiveField(78)
   String? d92;
+
+  @HiveField(79)
   String? d5;
+
+  @HiveField(80)
   String? d93;
+
+  @HiveField(81)
   String? d94;
+
+  @HiveField(82)
   String? d6;
+
+  @HiveField(83)
   String? d95;
-  @Uint8ListNullableConverter()
-  Uint8List? file3;
+
+  @HiveField(84)
+  String? file3;
+
+  @HiveField(85)
   String? d7;
+
+  @HiveField(86)
   String? d96;
-  @Uint8ListNullableConverter()
-  Uint8List? file4;
+
+  @HiveField(87)
+  String? file4;
+
+  @HiveField(88)
   String? d8;
+
+  @HiveField(89)
   String? d97;
-  @Uint8ListNullableConverter()
-  Uint8List? file5;
+
+  @HiveField(90)
+  String? file5;
+
+  @HiveField(91)
   String? d9;
+
+  @HiveField(92)
   String? d98;
-  @Uint8ListNullableConverter()
-  Uint8List? file6;
+
+  @HiveField(93)
+  String? file6;
+
+  @HiveField(94)
   String? d10;
+
+  @HiveField(95)
   String? d99;
-  @Uint8ListNullableConverter()
-  Uint8List? file7;
+
+  @HiveField(96)
+  String? file7;
+
+  @HiveField(97)
   String? d11;
+
+  @HiveField(98)
   String? d100;
-  @Uint8ListNullableConverter()
-  Uint8List? file8;
+
+  @HiveField(99)
+  String? file8;
+
+  @HiveField(100)
   String? d12;
+
+  @HiveField(101)
   String? d101;
-  @Uint8ListNullableConverter()
-  Uint8List? file9;
+
+  @HiveField(102)
+  String? file9;
+
+  @HiveField(103)
   String? d13;
+
+  @HiveField(104)
   String? d102;
-  @Uint8ListNullableConverter()
-  Uint8List? file10;
+
+  @HiveField(105)
+  String? file10;
+
+  @HiveField(255)
   String? d14;
+
+  @HiveField(106)
   String? d103;
-  @Uint8ListNullableConverter()
-  Uint8List? file11;
+
+  @HiveField(107)
+  String? file11;
+
+  @HiveField(108)
   String? d15;
+
+  @HiveField(109)
   String? d104;
-  @Uint8ListNullableConverter()
-  Uint8List? file12;
+
+  @HiveField(110)
+  String? file12;
+
+  @HiveField(111)
   String? d16;
+
+  @HiveField(112)
   String? d105;
-  @Uint8ListNullableConverter()
-  Uint8List? file13;
+
+  @HiveField(113)
+  String? file13;
+
+  @HiveField(114)
   String? d17;
+
+  @HiveField(115)
   String? d106;
-  @Uint8ListNullableConverter()
-  Uint8List? file14;
+
+  @HiveField(116)
+  String? file14;
+
+  @HiveField(117)
   String? d18;
+
+  @HiveField(118)
   String? d107;
-  @Uint8ListNullableConverter()
-  Uint8List? file15;
+
+  @HiveField(119)
+  String? file15;
+
+  @HiveField(120)
   String? d19;
+
+  @HiveField(121)
   String? d108;
-  @Uint8ListNullableConverter()
-  Uint8List? file16;
+
+  @HiveField(122)
+  String? file16;
+
+  @HiveField(123)
   String? d20;
+
+  @HiveField(124)
   String? d109;
-  @Uint8ListNullableConverter()
-  Uint8List? file17;
+
+  @HiveField(125)
+  String? file17;
+
+  @HiveField(126)
   String? d21;
+
+  @HiveField(127)
   String? d110;
-  @Uint8ListNullableConverter()
-  Uint8List? file18;
+
+  @HiveField(128)
+  String? file18;
+
+  @HiveField(129)
   String? d22;
+
+  @HiveField(130)
   String? d111;
-  @Uint8ListNullableConverter()
-  Uint8List? file19;
+
+  @HiveField(131)
+  String? file19;
+
+  @HiveField(132)
   String? d23;
+
+  @HiveField(133)
   String? d112;
-  @Uint8ListNullableConverter()
-  Uint8List? file20;
+
+  @HiveField(134)
+  String? file20;
+
+  @HiveField(135)
   String? d24;
+
+  @HiveField(136)
   String? d113;
-  @Uint8ListNullableConverter()
-  Uint8List? file21;
+
+  @HiveField(137)
+  String? file21;
+
+  @HiveField(138)
   String? d25;
+
+  @HiveField(139)
   String? d114;
-  @Uint8ListNullableConverter()
-  Uint8List? file22;
+
+  @HiveField(140)
+  String? file22;
+
+  @HiveField(141)
   String? d26;
+
+  @HiveField(142)
   String? d115;
-  @Uint8ListNullableConverter()
-  Uint8List? file23;
+
+  @HiveField(143)
+  String? file23;
+
+  @HiveField(144)
   String? d27;
+
+  @HiveField(145)
   String? d116;
-  @Uint8ListNullableConverter()
-  Uint8List? file24;
+
+  @HiveField(146)
+  String? file24;
+
+  @HiveField(147)
   String? d28;
+
+  @HiveField(148)
   String? d117;
-  @Uint8ListNullableConverter()
-  Uint8List? file25;
+
+  @HiveField(149)
+  String? file25;
+
+  @HiveField(150)
   String? d29;
+
+  @HiveField(151)
   String? d118;
-  @Uint8ListNullableConverter()
-  Uint8List? file26;
+
+  @HiveField(152)
+  String? file26;
+
+  @HiveField(153)
   String? d30;
+
+  @HiveField(154)
   String? d119;
-  @Uint8ListNullableConverter()
-  Uint8List? file27;
+
+  @HiveField(155)
+  String? file27;
+
+  @HiveField(156)
   String? d31;
+
+  @HiveField(157)
   String? d120;
-  @Uint8ListNullableConverter()
-  Uint8List? file28;
+
+  @HiveField(158)
+  String? file28;
+
+  @HiveField(159)
   String? d32;
+
+  @HiveField(160)
   String? d121;
-  @Uint8ListNullableConverter()
-  Uint8List? file29;
+
+  @HiveField(161)
+  String? file29;
+
+  @HiveField(162)
   String? d33;
+
+  @HiveField(163)
   String? d122;
-  @Uint8ListNullableConverter()
-  Uint8List? file30;
+
+  @HiveField(164)
+  String? file30;
+
+  @HiveField(165)
   String? d34;
+
+  @HiveField(166)
   String? d123;
-  @Uint8ListNullableConverter()
-  Uint8List? file31;
+
+  @HiveField(167)
+  String? file31;
+
+  @HiveField(168)
   String? d35;
+
+  @HiveField(169)
   String? d124;
-  @Uint8ListNullableConverter()
-  Uint8List? file32;
+
+  @HiveField(170)
+  String? file32;
+
+  @HiveField(171)
   String? d36;
+
+  @HiveField(172)
   String? d125;
-  @Uint8ListNullableConverter()
-  Uint8List? file33;
+
+  @HiveField(173)
+  String? file33;
+
+  @HiveField(174)
   String? d37;
+
+  @HiveField(175)
   String? d126;
-  @Uint8ListNullableConverter()
-  Uint8List? file34;
+
+  @HiveField(176)
+  String? file34;
+
+  @HiveField(177)
   String? d38;
+
+  @HiveField(178)
   String? d127;
-  @Uint8ListNullableConverter()
-  Uint8List? file35;
+
+  @HiveField(179)
+  String? file35;
+
+  @HiveField(180)
   String? d67;
+
+  @HiveField(181)
   String? d128;
-  @Uint8ListNullableConverter()
-  Uint8List? file36;
+
+  @HiveField(182)
+  String? file36;
+
+  @HiveField(183)
   String? d39;
+
+  @HiveField(184)
   String? d129;
-  @Uint8ListNullableConverter()
-  Uint8List? file37;
+
+  @HiveField(185)
+  String? file37;
+
+  @HiveField(186)
   String? d40;
+
+  @HiveField(187)
   String? d130;
-  @Uint8ListNullableConverter()
-  Uint8List? file38;
+
+  @HiveField(188)
+  String? file38;
+
+  @HiveField(189)
   String? d41;
+
+  @HiveField(190)
   String? d131;
-  @Uint8ListNullableConverter()
-  Uint8List? file39;
+
+  @HiveField(191)
+  String? file39;
+
+  @HiveField(192)
   String? d42;
+
+  @HiveField(193)
   String? d132;
-  @Uint8ListNullableConverter()
-  Uint8List? file40;
+
+  @HiveField(194)
+  String? file40;
+
+  @HiveField(195)
   String? d43;
+
+  @HiveField(196)
   String? d133;
-  @Uint8ListNullableConverter()
-  Uint8List? file41;
+
+  @HiveField(197)
+  String? file41;
+
+  @HiveField(198)
   String? d44;
+
+  @HiveField(199)
   String? d134;
-  @Uint8ListNullableConverter()
-  Uint8List? file42;
+
+  @HiveField(200)
+  String? file42;
+
+  @HiveField(201)
   String? d45;
+
+  @HiveField(202)
   String? d135;
-  @Uint8ListNullableConverter()
-  Uint8List? file43;
+
+  @HiveField(203)
+  String? file43;
+
+  @HiveField(204)
   String? d46;
+
+  @HiveField(205)
   String? d136;
-  @Uint8ListNullableConverter()
-  Uint8List? file44;
+
+  @HiveField(206)
+  String? file44;
+
+  @HiveField(207)
   String? d47;
+
+  @HiveField(208)
   String? d137;
-  @Uint8ListNullableConverter()
-  Uint8List? file45;
+
+  @HiveField(209)
+  String? file45;
+
+  @HiveField(210)
   String? d48;
+
+  @HiveField(211)
   String? d138;
-  @Uint8ListNullableConverter()
-  Uint8List? file46;
+
+  @HiveField(212)
+  String? file46;
+
+  @HiveField(213)
   String? d49;
+
+  @HiveField(214)
   String? d139;
-  @Uint8ListNullableConverter()
-  Uint8List? file47;
+
+  @HiveField(215)
+  String? file47;
+
+  @HiveField(216)
   String? d50;
+
+  @HiveField(217)
   String? d140;
-  @Uint8ListNullableConverter()
-  Uint8List? file48;
+
+  @HiveField(218)
+  String? file48;
+
+  @HiveField(219)
   String? d51;
+
+  @HiveField(220)
   String? d141;
-  @Uint8ListNullableConverter()
-  Uint8List? file49;
+
+  @HiveField(221)
+  String? file49;
+
+  @HiveField(222)
   String? d52;
+
+  @HiveField(223)
   String? d142;
-  @Uint8ListNullableConverter()
-  Uint8List? file50;
+
+  @HiveField(224)
+  String? file50;
+
+  @HiveField(225)
   String? d53;
+
+  @HiveField(226)
   String? d143;
+
+  @HiveField(227)
   String? d54;
+
+  @HiveField(228)
   String? d144;
-  @Uint8ListNullableConverter()
-  Uint8List? file51;
+
+  @HiveField(229)
+  String? file51;
+
+  @HiveField(230)
   String? d55;
+
+  @HiveField(231)
   String? d145;
-  @Uint8ListNullableConverter()
-  Uint8List? file52;
+
+  @HiveField(232)
+  String? file52;
+
+  @HiveField(233)
   String? d56;
+
+  @HiveField(234)
   String? d146;
-  @Uint8ListNullableConverter()
-  Uint8List? file53;
+
+  @HiveField(235)
+  String? file53;
+
+  @HiveField(236)
   String? d57;
+
+  @HiveField(237)
   String? d147;
-  @Uint8ListNullableConverter()
-  Uint8List? file54;
+
+  @HiveField(238)
+  String? file54;
+
+  @HiveField(239)
   String? d58;
+
+  @HiveField(240)
   String? d148;
-  @Uint8ListNullableConverter()
-  Uint8List? file55;
+
+  @HiveField(241)
+  String? file55;
+
+  @HiveField(242)
   String? d59;
+
+  @HiveField(243)
   String? d149;
-  @Uint8ListNullableConverter()
-  Uint8List? file56;
+
+  @HiveField(244)
+  String? file56;
+
+  @HiveField(245)
   String? d60;
+
+  @HiveField(246)
   String? d150;
-  @Uint8ListNullableConverter()
-  Uint8List? file57;
+
+  @HiveField(247)
+  String? file57;
+
+  @HiveField(248)
   String? d61;
+  @HiveField(249)
   String? d151;
-  @Uint8ListNullableConverter()
-  Uint8List? file58;
+
+  @HiveField(250)
+  String? file58;
+
+  @HiveField(251)
   String? d62;
+
+  @HiveField(252)
   String? d152;
-  @Uint8ListNullableConverter()
-  Uint8List? file59;
+
+  @HiveField(253)
+  String? file59;
+
+  @HiveField(254)
   String? d63;
+
   String? d153;
-  @Uint8ListNullableConverter()
-  Uint8List? file60;
+
+  String? file60;
+
   String? d64;
+
   String? d154;
-  @Uint8ListNullableConverter()
-  Uint8List? file61;
+
+  String? file61;
+
   String? d65;
+
   String? d155;
-  @Uint8ListNullableConverter()
-  Uint8List? file62;
+
+  String? file62;
+
   String? d156;
 
   BioIo({
@@ -650,36 +1096,36 @@ class BioIo {
         d285: json['d285'] as String?,
         d286: json['d286'] as String?,
         d159: json['d159'] as String?,
-        d162: json['d162'] as Uint8List?,
+        d162: json['d162'] as String?,
         d165: json['d165'] as String?,
         d271: json['d271'] as String?,
         d274: json['d274'] as String?,
         d160: json['d160'] as String?,
-        d163: json['d163'] as Uint8List?,
+        d163: json['d163'] as String?,
         d166: json['d166'] as String?,
         d272: json['d272'] as String?,
         d275: json['d275'] as String?,
         d161: json['d161'] as String?,
-        d164: json['d164'] as Uint8List?,
+        d164: json['d164'] as String?,
         d167: json['d167'] as String?,
         d273: json['d273'] as String?,
         d276: json['d276'] as String?,
         d168: json['d168'] as DateTime?,
         d170: json['d170'] as String?,
         d169: json['d169'] as String?,
-        d185: json['d185'] as Uint8List?,
+        d185: json['d185'] as String?,
         d172: json['d172'] as String?,
         d171: json['d171'] as String?,
-        d186: json['d186'] as Uint8List?,
+        d186: json['d186'] as String?,
         d174: json['d174'] as String?,
         d173: json['d173'] as String?,
-        d187: json['d187'] as Uint8List?,
+        d187: json['d187'] as String?,
         d176: json['d176'] as String?,
         d175: json['d175'] as String?,
-        d188: json['d188'] as Uint8List?,
+        d188: json['d188'] as String?,
         d178: json['d178'] as String?,
         d177: json['d177'] as String?,
-        d189: json['d189'] as Uint8List?,
+        d189: json['d189'] as String?,
         d77: json['d77'] as String?,
         d78: json['d78'] as String?,
         d79: json['d79'] as String?,
@@ -689,7 +1135,7 @@ class BioIo {
         d83: json['d83'] as String?,
         d84: json['d84'] as String?,
         d85: json['d85'] as String?,
-        file1: json['file1'] as Uint8List?,
+        file1: json['file1'] as String?,
         d179: json['d179'] as String?,
         d180: json['d180'] as String?,
         d1: json['d1'] as String?,
@@ -700,7 +1146,7 @@ class BioIo {
         d88: json['d88'] as String?,
         d3: json['d3'] as String?,
         d183: json['d183'] as String?,
-        file2: json['file2'] as Uint8List?,
+        file2: json['file2'] as String?,
         d89: json['d89'] as String?,
         d90: json['d90'] as String?,
         d4: json['d4'] as String?,
@@ -711,186 +1157,186 @@ class BioIo {
         d94: json['d94'] as String?,
         d6: json['d6'] as String?,
         d95: json['d95'] as String?,
-        file3: json['file3'] as Uint8List?,
+        file3: json['file3'] as String?,
         d7: json['d7'] as String?,
         d96: json['d96'] as String?,
-        file4: json['file4'] as Uint8List?,
+        file4: json['file4'] as String?,
         d8: json['d8'] as String?,
         d97: json['d97'] as String?,
-        file5: json['file5'] as Uint8List?,
+        file5: json['file5'] as String?,
         d9: json['d9'] as String?,
         d98: json['d98'] as String?,
-        file6: json['file6'] as Uint8List?,
+        file6: json['file6'] as String?,
         d10: json['d10'] as String?,
         d99: json['d99'] as String?,
-        file7: json['file7'] as Uint8List?,
+        file7: json['file7'] as String?,
         d11: json['d11'] as String?,
         d100: json['d100'] as String?,
-        file8: json['file8'] as Uint8List?,
+        file8: json['file8'] as String?,
         d12: json['d12'] as String?,
         d101: json['d101'] as String?,
-        file9: json['file9'] as Uint8List?,
+        file9: json['file9'] as String?,
         d13: json['d13'] as String?,
         d102: json['d102'] as String?,
-        file10: json['file10'] as Uint8List?,
+        file10: json['file10'] as String?,
         d14: json['d14'] as String?,
         d103: json['d103'] as String?,
-        file11: json['file11'] as Uint8List?,
+        file11: json['file11'] as String?,
         d15: json['d15'] as String?,
         d104: json['d104'] as String?,
-        file12: json['file12'] as Uint8List?,
+        file12: json['file12'] as String?,
         d16: json['d16'] as String?,
         d105: json['d105'] as String?,
-        file13: json['file13'] as Uint8List?,
+        file13: json['file13'] as String?,
         d17: json['d17'] as String?,
         d106: json['d106'] as String?,
-        file14: json['file14'] as Uint8List?,
+        file14: json['file14'] as String?,
         d18: json['d18'] as String?,
         d107: json['d107'] as String?,
-        file15: json['file15'] as Uint8List?,
+        file15: json['file15'] as String?,
         d19: json['d19'] as String?,
         d108: json['d108'] as String?,
-        file16: json['file16'] as Uint8List?,
+        file16: json['file16'] as String?,
         d20: json['d20'] as String?,
         d109: json['d109'] as String?,
-        file17: json['file17'] as Uint8List?,
+        file17: json['file17'] as String?,
         d21: json['d21'] as String?,
         d110: json['d110'] as String?,
-        file18: json['file18'] as Uint8List?,
+        file18: json['file18'] as String?,
         d22: json['d22'] as String?,
         d111: json['d111'] as String?,
-        file19: json['file19'] as Uint8List?,
+        file19: json['file19'] as String?,
         d23: json['d23'] as String?,
         d112: json['d112'] as String?,
-        file20: json['file20'] as Uint8List?,
+        file20: json['file20'] as String?,
         d24: json['d24'] as String?,
         d113: json['d113'] as String?,
-        file21: json['file21'] as Uint8List?,
+        file21: json['file21'] as String?,
         d25: json['d25'] as String?,
         d114: json['d114'] as String?,
-        file22: json['file22'] as Uint8List?,
+        file22: json['file22'] as String?,
         d26: json['d26'] as String?,
         d115: json['d115'] as String?,
-        file23: json['file23'] as Uint8List?,
+        file23: json['file23'] as String?,
         d27: json['d27'] as String?,
         d116: json['d116'] as String?,
-        file24: json['file24'] as Uint8List?,
+        file24: json['file24'] as String?,
         d28: json['d28'] as String?,
         d117: json['d117'] as String?,
-        file25: json['file25'] as Uint8List?,
+        file25: json['file25'] as String?,
         d29: json['d29'] as String?,
         d118: json['d118'] as String?,
-        file26: json['file26'] as Uint8List?,
+        file26: json['file26'] as String?,
         d30: json['d30'] as String?,
         d119: json['d119'] as String?,
-        file27: json['file27'] as Uint8List?,
+        file27: json['file27'] as String?,
         d31: json['d31'] as String?,
         d120: json['d120'] as String?,
-        file28: json['file28'] as Uint8List?,
+        file28: json['file28'] as String?,
         d32: json['d32'] as String?,
         d121: json['d121'] as String?,
-        file29: json['file29'] as Uint8List?,
+        file29: json['file29'] as String?,
         d33: json['d33'] as String?,
         d122: json['d122'] as String?,
-        file30: json['file30'] as Uint8List?,
+        file30: json['file30'] as String?,
         d34: json['d34'] as String?,
         d123: json['d123'] as String?,
-        file31: json['file31'] as Uint8List?,
+        file31: json['file31'] as String?,
         d35: json['d35'] as String?,
         d124: json['d124'] as String?,
-        file32: json['file32'] as Uint8List?,
+        file32: json['file32'] as String?,
         d36: json['d36'] as String?,
         d125: json['d125'] as String?,
-        file33: json['file33'] as Uint8List?,
+        file33: json['file33'] as String?,
         d37: json['d37'] as String?,
         d126: json['d126'] as String?,
-        file34: json['file34'] as Uint8List?,
+        file34: json['file34'] as String?,
         d38: json['d38'] as String?,
         d127: json['d127'] as String?,
-        file35: json['file35'] as Uint8List?,
+        file35: json['file35'] as String?,
         d67: json['d67'] as String?,
         d128: json['d128'] as String?,
-        file36: json['file36'] as Uint8List?,
+        file36: json['file36'] as String?,
         d39: json['d39'] as String?,
         d129: json['d129'] as String?,
-        file37: json['file37'] as Uint8List?,
+        file37: json['file37'] as String?,
         d40: json['d40'] as String?,
         d130: json['d130'] as String?,
-        file38: json['file38'] as Uint8List?,
+        file38: json['file38'] as String?,
         d41: json['d41'] as String?,
         d131: json['d131'] as String?,
-        file39: json['file39'] as Uint8List?,
+        file39: json['file39'] as String?,
         d42: json['d42'] as String?,
         d132: json['d132'] as String?,
-        file40: json['file40'] as Uint8List?,
+        file40: json['file40'] as String?,
         d43: json['d43'] as String?,
         d133: json['d133'] as String?,
-        file41: json['file41'] as Uint8List?,
+        file41: json['file41'] as String?,
         d44: json['d44'] as String?,
         d134: json['d134'] as String?,
-        file42: json['file42'] as Uint8List?,
+        file42: json['file42'] as String?,
         d45: json['d45'] as String?,
         d135: json['d135'] as String?,
-        file43: json['file43'] as Uint8List?,
+        file43: json['file43'] as String?,
         d46: json['d46'] as String?,
         d136: json['d136'] as String?,
-        file44: json['file44'] as Uint8List?,
+        file44: json['file44'] as String?,
         d47: json['d47'] as String?,
         d137: json['d137'] as String?,
-        file45: json['file45'] as Uint8List?,
+        file45: json['file45'] as String?,
         d48: json['d48'] as String?,
         d138: json['d138'] as String?,
-        file46: json['file46'] as Uint8List?,
+        file46: json['file46'] as String?,
         d49: json['d49'] as String?,
         d139: json['d139'] as String?,
-        file47: json['file47'] as Uint8List?,
+        file47: json['file47'] as String?,
         d50: json['d50'] as String?,
         d140: json['d140'] as String?,
-        file48: json['file48'] as Uint8List?,
+        file48: json['file48'] as String?,
         d51: json['d51'] as String?,
         d141: json['d141'] as String?,
-        file49: json['file49'] as Uint8List?,
+        file49: json['file49'] as String?,
         d52: json['d52'] as String?,
         d142: json['d142'] as String?,
-        file50: json['file50'] as Uint8List?,
+        file50: json['file50'] as String?,
         d53: json['d53'] as String?,
         d143: json['d143'] as String?,
         d54: json['d54'] as String?,
         d144: json['d144'] as String?,
-        file51: json['file51'] as Uint8List?,
+        file51: json['file51'] as String?,
         d55: json['d55'] as String?,
         d145: json['d145'] as String?,
-        file52: json['file52'] as Uint8List?,
+        file52: json['file52'] as String?,
         d56: json['d56'] as String?,
         d146: json['d146'] as String?,
-        file53: json['file53'] as Uint8List?,
+        file53: json['file53'] as String?,
         d57: json['d57'] as String?,
         d147: json['d147'] as String?,
-        file54: json['file54'] as Uint8List?,
+        file54: json['file54'] as String?,
         d58: json['d58'] as String?,
         d148: json['d148'] as String?,
-        file55: json['file55'] as Uint8List?,
+        file55: json['file55'] as String?,
         d59: json['d59'] as String?,
         d149: json['d149'] as String?,
-        file56: json['file56'] as Uint8List?,
+        file56: json['file56'] as String?,
         d60: json['d60'] as String?,
         d150: json['d150'] as String?,
-        file57: json['file57'] as Uint8List?,
+        file57: json['file57'] as String?,
         d61: json['d61'] as String?,
         d151: json['d151'] as String?,
-        file58: json['file58'] as Uint8List?,
+        file58: json['file58'] as String?,
         d62: json['d62'] as String?,
         d152: json['d152'] as String?,
-        file59: json['file59'] as Uint8List?,
+        file59: json['file59'] as String?,
         d63: json['d63'] as String?,
         d153: json['d153'] as String?,
-        file60: json['file60'] as Uint8List?,
+        file60: json['file60'] as String?,
         d64: json['d64'] as String?,
         d154: json['d154'] as String?,
-        file61: json['file61'] as Uint8List?,
+        file61: json['file61'] as String?,
         d65: json['d65'] as String?,
         d155: json['d155'] as String?,
-        file62: json['file62'] as Uint8List?,
+        file62: json['file62'] as String?,
         d156: json['d156'] as String?,
       );
 
@@ -899,6 +1345,10 @@ class BioIo {
   @override
   String toString() {
     return 'BioIo{company: $company, d184: $d184, d280: $d280, d68: $d68, d69: $d69, d70: $d70, d71: $d71, d72: $d72, d73: $d73, d74: $d74, d75: $d75, d157: $d157, d76: $d76, d281: $d281, docno: $docno, d158: $d158, d282: $d282, d283: $d283, d284: $d284, d285: $d285, d286: $d286, d159: $d159, d162: $d162, d165: $d165, d271: $d271, d274: $d274, d160: $d160, d163: $d163, d166: $d166, d272: $d272, d275: $d275, d161: $d161, d164: $d164, d167: $d167, d273: $d273, d276: $d276, d168: $d168, d170: $d170, d169: $d169, d185: $d185, d172: $d172, d171: $d171, d186: $d186, d174: $d174, d173: $d173, d187: $d187, d176: $d176, d175: $d175, d188: $d188, d178: $d178, d177: $d177, d189: $d189, d77: $d77, d78: $d78, d79: $d79, d80: $d80, d81: $d81, d82: $d82, d83: $d83, d84: $d84, d85: $d85, file1: $file1, d179: $d179, d180: $d180, d1: $d1, d181: $d181, d87: $d87, d2: $d2, d182: $d182, d88: $d88, d3: $d3, d183: $d183, file2: $file2, d89: $d89, d90: $d90, d4: $d4, d91: $d91, d92: $d92, d5: $d5, d93: $d93, d94: $d94, d6: $d6, d95: $d95, file3: $file3, d7: $d7, d96: $d96, file4: $file4, d8: $d8, d97: $d97, file5: $file5, d9: $d9, d98: $d98, file6: $file6, d10: $d10, d99: $d99, file7: $file7, d11: $d11, d100: $d100, file8: $file8, d12: $d12, d101: $d101, file9: $file9, d13: $d13, d102: $d102, file10: $file10, d14: $d14, d103: $d103, file11: $file11, d15: $d15, d104: $d104, file12: $file12, d16: $d16, d105: $d105, file13: $file13, d17: $d17, d106: $d106, file14: $file14, d18: $d18, d107: $d107, file15: $file15, d19: $d19, d108: $d108, file16: $file16, d20: $d20, d109: $d109, file17: $file17, d21: $d21, d110: $d110, file18: $file18, d22: $d22, d111: $d111, file19: $file19, d23: $d23, d112: $d112, file20: $file20, d24: $d24, d113: $d113, file21: $file21, d25: $d25, d114: $d114, file22: $file22, d26: $d26, d115: $d115, file23: $file23, d27: $d27, d116: $d116, file24: $file24, d28: $d28, d117: $d117, file25: $file25, d29: $d29, d118: $d118, file26: $file26, d30: $d30, d119: $d119, file27: $file27, d31: $d31, d120: $d120, file28: $file28, d32: $d32, d121: $d121, file29: $file29, d33: $d33, d122: $d122, file30: $file30, d34: $d34, d123: $d123, file31: $file31, d35: $d35, d124: $d124, file32: $file32, d36: $d36, d125: $d125, file33: $file33, d37: $d37, d126: $d126, file34: $file34, d38: $d38, d127: $d127, file35: $file35, d67: $d67, d128: $d128, file36: $file36, d39: $d39, d129: $d129, file37: $file37, d40: $d40, d130: $d130, file38: $file38, d41: $d41, d131: $d131, file39: $file39, d42: $d42, d132: $d132, file40: $file40, d43: $d43, d133: $d133, file41: $file41, d44: $d44, d134: $d134, file42: $file42, d45: $d45, d135: $d135, file43: $file43, d46: $d46, d136: $d136, file44: $file44, d47: $d47, d137: $d137, file45: $file45, d48: $d48, d138: $d138, file46: $file46, d49: $d49, d139: $d139, file47: $file47, d50: $d50, d140: $d140, file48: $file48, d51: $d51, d141: $d141, file49: $file49, d52: $d52, d142: $d142, file50: $file50, d53: $d53, d143: $d143, d54: $d54, d144: $d144, file51: $file51, d55: $d55, d145: $d145, file52: $file52, d56: $d56, d146: $d146, file53: $file53, d57: $d57, d147: $d147, file54: $file54, d58: $d58, d148: $d148, file55: $file55, d59: $d59, d149: $d149, file56: $file56, d60: $d60, d150: $d150, file57: $file57, d61: $d61, d151: $d151, file58: $file58, d62: $d62, d152: $d152, file59: $file59, d63: $d63, d153: $d153, file60: $file60, d64: $d64, d154: $d154, file61: $file61, d65: $d65, d155: $d155, file62: $file62, d156: $d156}';
+  }
+
+  SelectProcListItem toSelectProcListItem() {
+    return SelectProcListItem(d168: d168);
   }
 }
 

@@ -273,6 +273,7 @@ class InspectionOverview extends StatelessWidget {
               Flexible(
                   child: FclDateField(
                     name: BioIoName.d168.name,
+                    initialDate: vm.io.d168,
                     label: "점검일자",
                   )),
               const Flexible(child: SizedBox.shrink())
@@ -326,32 +327,7 @@ class InspectionOverview extends StatelessWidget {
                     ],
                   )).orElse(() => const EmptyBox())
 
-          // SizedBox(height: 20.h),
-          // SizedBox(
-          //   height: 90.h,
-          //   width: double.infinity,
-          //   child: OutlinedButton(
-          //       onPressed: () {
-          //         vm.addChecker();
-          //       },
-          //       child: Row(
-          //         mainAxisAlignment: MainAxisAlignment.center,
-          //         children: [
-          //           Image.asset(
-          //             "assets/images/img_plus.png",
-          //             width: 22.sp,
-          //             height: 22.sp,
-          //           ),
-          //           SizedBox(
-          //             width: 20.w,
-          //           ),
-          //           Text(
-          //             "점검자 추가",
-          //             style: buttonTextStyle,
-          //           ),
-          //         ],
-          //       )),
-          // )
+
         ],
       );
 }

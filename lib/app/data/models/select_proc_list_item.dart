@@ -1,21 +1,23 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/converters/date_time_converter.dart';
 
 part 'select_proc_list_item.g.dart';
 
 @JsonSerializable()
 class SelectProcListItem {
   /// 최근점검일
-  String d168;
+  @DateTimeNullableConverter()
+  DateTime? d168;
   @JsonKey(name: "mod_user_name")
-  String modUserName;
+  String? modUserName;
 
   /// 장소(시설명)
-  String d184;
+  String? d184;
   int simcnt;
 
   /// 문서번호
   String docno;
-  String title;
+  String? title;
 
   /// 등록자
   @JsonKey(name: 'reg_id')
@@ -46,7 +48,7 @@ class SelectProcListItem {
   String status;
 
   SelectProcListItem(
-      {this.d168 = "",
+      {this.d168,
       this.modUserName = "",
       this.d184 = "",
       this.simcnt = 0,
@@ -70,4 +72,7 @@ class SelectProcListItem {
       _$SelectProcListItemFromJson(json);
 
   Map<String, dynamic> toJson() => _$SelectProcListItemToJson(this);
+
+
+
 }

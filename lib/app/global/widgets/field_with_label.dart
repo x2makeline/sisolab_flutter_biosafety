@@ -25,7 +25,7 @@ class FieldWithLabel extends StatelessWidget {
         if (label != null)
           Text(
             label!,
-            style: style ?? context.textTheme.titleMedium,
+            style: style ?? context.textTheme.titleLarge,
           ),
         SizedBox(
           height: axis == Axis.horizontal ? labelPadding ?? 15.h : null,

@@ -11,17 +11,18 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_betwe
 class NewHandlingOrganismInformation extends StatelessWidget {
 
 
-   NewHandlingOrganismInformation({super.key});
-  final _controller = FclDetailVm.to;
+   const NewHandlingOrganismInformation({super.key});
+   FclDetailVm  get vm => FclDetailVm.to;
 
-  _wg(String label, List<String> list) => FieldWithLabel(
+  _wg(String label, List<(String, String?)> list) => FieldWithLabel(
       label: label,
       child: Row(
           children: list
               .map((e) => Flexible(
                     child: FormBuilderTextField(
-                      onSubmitted: (_) => _controller.submit(),
-                      name: e,
+                      onSubmitted: (_) => vm.submit(),
+                      name: e.$1,
+                      initialValue: e.$2,
                     ),
                   ))
               .toList()
@@ -42,25 +43,25 @@ class NewHandlingOrganismInformation extends StatelessWidget {
           height: 47.h,
         ),
         _wg("유전자변형생물체 명칭", [
-          BioIoName.d77.name,
-          BioIoName.d78.name,
-          BioIoName.d79.name,
+          (BioIoName.d77.name, vm.io.d77),
+          (BioIoName.d78.name, vm.io.d78),
+          (BioIoName.d79.name, vm.io.d79),
         ]),
         SizedBox(
           height: 40.h,
         ),
         _wg("고위험병원체 명칭", [
-          BioIoName.d80.name,
-          BioIoName.d81.name,
-          BioIoName.d82.name,
+          (BioIoName.d80.name, vm.io.d80),
+          (BioIoName.d81.name, vm.io.d81),
+          (BioIoName.d82.name, vm.io.d82),
         ]),
         SizedBox(
           height: 40.h,
         ),
         _wg("주요실험방법", [
-          BioIoName.d83.name,
-          BioIoName.d84.name,
-          BioIoName.d85.name,
+          (BioIoName.d83.name, vm.io.d83),
+          (BioIoName.d84.name, vm.io.d84),
+          (BioIoName.d85.name, vm.io.d85),
         ]),
         SizedBox(
           height: 47.h,

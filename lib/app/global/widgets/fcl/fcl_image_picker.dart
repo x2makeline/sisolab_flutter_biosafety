@@ -1,43 +1,34 @@
-import 'dart:io';
 
 import 'package:dartlin/control_flow.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_file_picker/form_builder_file_picker.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 class FclImagePicker extends StatefulWidget {
   const FclImagePicker({Key? key, this.onChange, this.initialValue})
       : super(key: key);
-  final void Function(List<PlatformFile> files)? onChange;
-  final List<PlatformFile>? initialValue;
+  final void Function(String file)? onChange;
+  final String? initialValue;
 
   @override
   State<FclImagePicker> createState() => _FclImagePickerState();
 }
 
 class _FclImagePickerState extends State<FclImagePicker> {
-  late List<PlatformFile> files;
+  late String? base64;
 
-  List<Widget> get _fileImageList => List.generate(
-      files.length,
-      (index) => SizedBox.square(
-            dimension: 100.sp,
-            child: kIsWeb
-                ? Image.memory(files[index].bytes!, fit: BoxFit.fill)
-                : Image.file(File(files[index].path!), fit: BoxFit.fill),
-          ));
+
 
   @override
   void initState() {
     super.initState();
     // FormBu
-    files = widget.initialValue ?? [];
+    base64 = widget.initialValue;
   }
 
   @override
@@ -46,32 +37,31 @@ class _FclImagePickerState extends State<FclImagePicker> {
         children: <Widget>[
           Row(
             children: <Widget>[
-
-              ElevatedButton(
-                  style:  const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll<Color>(Color(0xff505050))),
-                  onPressed: () async {
-                    final result = await FilePicker.platform.pickFiles(
-                      allowMultiple: true,
-                      type: FileType.image,
-                    );
-
-                    result?.files.let((fis) {
-                      for (var element in fis) {
-                        files.add(element);
+              SizedBox(
+                height: 90.h,
+                child: ElevatedButton(
+                    style: const ButtonStyle(
+                        backgroundColor:
+                            MaterialStatePropertyAll<Color>(Color(0xff505050))),
+                    onPressed: () async {
+                      final result = await FilePicker.platform.pickFiles(
+                        type: FileType.image,
+                      );
+                      if(result?.files.first.bytes != null) {
+                        setState(() {
+                          base64 = uint8ListTob64(result!.files.first.bytes!);
+                          widget.onChange?.let((it) => it(base64!));
+                        });
                       }
-                    });
 
-                    setState(() {
-                      widget.onChange?.let((it) => it(files));
-                    });
-                  },
-                  child: Text(
-                    "파일선택",
-                    style: context.textTheme.titleMedium
-                        ?.copyWith(color: Colors.white),
-                  )),
+
+                    },
+                    child: Text(
+                      "파일선택",
+                      style: context.textTheme.titleMedium
+                          ?.copyWith(color: Colors.white),
+                    )),
+              ),
               SizedBox(
                 width: 10.w,
               ),
@@ -93,28 +83,25 @@ class _FclImagePickerState extends State<FclImagePicker> {
               ),
             ],
           ),
-          if (_fileImageList.isNotEmpty)
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: _fileImageList.withSpaceBetween(width: 20.w),
-              ),
-            )
+          if (base64 != null)
+            Image.memory(                    Uri.parse(base64!).data!.contentAsBytes(),
+              width: 90.h,
+              height: 90.h,)
         ].withSpaceBetween(height: 15.h),
       );
 }
 
 class FormBuilderFclImagePicker extends StatelessWidget {
-  const FormBuilderFclImagePicker({super.key, required this.name});
+  const FormBuilderFclImagePicker({super.key, required this.name, this.initialValue});
 
   final String name;
+  final String? initialValue;
 
   @override
   Widget build(BuildContext context) {
     return FormBuilderField(
       name: name,
-      builder: (FormFieldState<List<PlatformFile>> field) => FclImagePicker(
+      builder: (FormFieldState<String> field) => FclImagePicker(
         onChange: field.setValue,
         initialValue: field.value,
       ),

@@ -1,4 +1,3 @@
-import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -44,10 +43,7 @@ class FormPageBottom extends StatelessWidget {
                               ))
                           : const EmptyBox()),
                       Obx(() => _controller.tabIndex > 0 ? SizedBox(width: 20.w,) : const EmptyBox()),
-                      Obx(() {
-                        print(_controller);
-                        print("maxTabindex ${_controller.maxTabindex}");
-                        return _controller.tabIndex < _controller.maxTabindex
+                      Obx(() => _controller.tabIndex < _controller.maxTabindex
                           ? OutlinedButton(
                               onPressed: () {
                                 _controller.nextTab();
@@ -63,8 +59,7 @@ class FormPageBottom extends StatelessWidget {
                                   ),
                                 ],
                               ))
-                          : const EmptyBox();
-                      })
+                          : const EmptyBox())
                     ],
                   ),
                   Row(

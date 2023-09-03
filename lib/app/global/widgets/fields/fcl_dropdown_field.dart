@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 
 import '../../models/fcl_type.dart';
@@ -11,16 +10,16 @@ class FclDropdownField extends FclField {
   FclDropdownField(
       {super.key,
       super.label,
-        String? initialValue,
+      String? initialValue,
       required super.name,
       String hintText = "선택",
       required Map<String, String> itemMap})
       : super(
             type: FclType.text,
             builder: () => SizedBox(
-              height: 90.h,
-              child: FormBuilderDropdown(
-                initialValue: initialValue,
+                  height: 90.h,
+                  child: FormBuilderDropdown(
+                    initialValue: initialValue,
                     iconSize: buttonTextStyle.fontSize!,
                     style: buttonTextStyle,
                     isDense: false,
@@ -45,5 +44,5 @@ class FclDropdownField extends FclField {
                           .toList()
                     ],
                   ),
-            ));
+                ));
 }

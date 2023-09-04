@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_form_builder_date_time_picker.dart';
+import 'package:sisolab_flutter_biosafety/core/extensions/dateformat.dart';
 
 class FormBuilderBetweenDate extends StatefulWidget {
   const FormBuilderBetweenDate(
@@ -61,7 +62,8 @@ class _FormBuilderBetweenDateState extends State<FormBuilderBetweenDate> {
               child: Obx(() => FclFormBuilderDateTimePicker(
                     controller: _controller1,
                     name: widget.startName,
-                    initialDate: startV.value,
+                // initialDate: initialDate?.let((it) => _format.parse(it)),
+                    initialDate: startV.value?.format1,
                     firstDate: _initialFirstDate,
                     lastDate: endV.value ?? _initialLastDate,
                   ))),
@@ -70,7 +72,7 @@ class _FormBuilderBetweenDateState extends State<FormBuilderBetweenDate> {
             child: Obx(() => FclFormBuilderDateTimePicker(
                   controller: _controller2,
                   name: widget.startName,
-                  initialDate: endV.value,
+                  initialDate: endV.value?.format1,
                   firstDate: startV.value ?? _initialFirstDate,
                   lastDate: _initialLastDate,
                 )),

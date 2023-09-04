@@ -49,67 +49,67 @@ class Tab18 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d130.name,
+                noteName: "d130",
                 label: "비상장비(손전등, 구급상자) 비치",
-                imageName: BioIoName.file37.name,
+                imageName: "file37",
                 fclRadio: FclRadio(
-                    name: BioIoName.d40.name,
+                    name: "d40",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d131.name,
+                noteName: "d131",
                 label: "양방향 통신 시스템(인터폰, 전화 등)",
-                imageName: BioIoName.file38.name,
+                imageName: "file38",
                 fclRadio: FclRadio(
-                    name: BioIoName.d41.name,
+                    name: "d41",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d132.name,
+                noteName: "d132",
                 label: "CCTV 설치 위치 적절성 및 동작 확인",
-                imageName: BioIoName.file39.name,
+                imageName: "file39",
                 fclRadio: FclRadio(
-                    name: BioIoName.d42.name,
+                    name: "d42",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d133.name,
+                noteName: "d133",
                 label: "경보장치의 적정 위치 설치",
-                imageName: BioIoName.file40.name,
+                imageName: "file40",
                 fclRadio: FclRadio(
-                    name: BioIoName.d43.name,
+                    name: "d43",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d134.name,
+                noteName: "d134",
                 label: "실간 차압역전 및 양압 형성 시 경보",
-                imageName: BioIoName.file41.name,
+                imageName: "file41",
                 fclRadio: FclRadio(
-                    name: BioIoName.d44.name,
+                    name: "d44",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d135.name,
+                noteName: "d135",
                 label: "비상조명, 피난 유도등",
-                imageName: BioIoName.file42.name,
+                imageName: "file42",
                 fclRadio: FclRadio(
-                    name: BioIoName.d45.name,
+                    name: "d45",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d136.name,
+                noteName: "d136",
                 label: "소화설비/장비 구비",
-                imageName: BioIoName.file43.name,
+                imageName: "file43",
                 fclRadio: FclRadio(
-                    name: BioIoName.d46.name,
+                    name: "d46",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d137.name,
+                noteName: "d137",
                 label: "밀폐구역 내 스필 시 대응 장비(킷트) 등 구비",
-                imageName: BioIoName.file44.name,
+                imageName: "file44",
                 fclRadio: FclRadio(
-                    name: BioIoName.d47.name,
+                    name: "d47",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

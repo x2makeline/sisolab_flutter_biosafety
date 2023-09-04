@@ -1,7 +1,9 @@
+import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class FclFormBuilderDateTimePicker extends StatelessWidget {
@@ -13,25 +15,22 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
       this.firstDate,
       this.lastDate});
 
-  static final _format = DateFormat("y.MM.dd");
+  static final _format = DateFormat("yyyy-MM-dd");
   final TextEditingController? controller;
   final String name;
   static final _initialFirstDate =
       DateTime.now().subtract(const Duration(days: 999));
   static final _initialLastDate = DateTime.now().add(const Duration(days: 999));
-  final DateTime? initialDate;
+  final String? initialDate;
 
   final DateTime? firstDate;
   final DateTime? lastDate;
 
   @override
-  Widget build(BuildContext context) => FormBuilderDateTimePicker(
-
-    onReset: () {
-      print(123);
-    },
-      initialDate: initialDate,
-      initialValue: initialDate,
+  Widget build(BuildContext context) {
+    return FormBuilderDateTimePicker(
+      initialDate: initialDate?.let((it) => _format.parse(it)),
+      initialValue: initialDate?.let((it) => _format.parse(it)),
       key: super.key,
       format: _format,
       controller: controller,
@@ -43,4 +42,5 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
       firstDate: firstDate ?? _initialFirstDate,
       lastDate: lastDate ?? _initialLastDate,
     );
+  }
 }

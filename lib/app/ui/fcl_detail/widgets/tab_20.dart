@@ -53,34 +53,34 @@ class Tab20 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d143.name,
+                noteName: "d143",
                 label: "실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상)",
-                imageName: BioIoName.file50.name,
+                imageName: "file50",
                 fclRadio: FclRadio(
-                    name: BioIoName.d53.name,
+                    name: "d53",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d144.name,
+                noteName: "d144",
                 label: "차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지)",
                 fclRadio: FclRadio(
-                    name: BioIoName.d54.name,
+                    name: "d54",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d145.name,
+                noteName: "d145",
                 label: "밀폐구역 내 실간차압이 -7.6 Pa 이상 유지",
-                imageName: BioIoName.file51.name,
+                imageName: "file51",
                 fclRadio: FclRadio(
-                    name: BioIoName.d55.name,
+                    name: "d55",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d146.name,
+                noteName: "d146",
                 label: "밀폐구역 내 실간 일방향 기류 확인",
-                imageName: BioIoName.file52.name,
+                imageName: "file52",
                 fclRadio: FclRadio(
-                    name: BioIoName.d56.name,
+                    name: "d56",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

@@ -49,67 +49,67 @@ class Tab24 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d115.name,
+                noteName: "d115",
                 label: "손 소독기 및 눈 세척기 적정 위치 설치",
-                imageName: BioIoName.file22.name,
+                imageName: "file22",
                 fclRadio: FclRadio(
-                    name: BioIoName.d26.name,
+                    name: "d26",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d116.name,
+                noteName: "d116",
                 label: "패스박스 도어 기밀성",
-                imageName: BioIoName.file23.name,
+                imageName: "file23",
                 fclRadio: FclRadio(
-                    name: BioIoName.d27.name,
+                    name: "d27",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d117.name,
+                noteName: "d117",
                 label: "패스박스 도어 인터락 설정",
-                imageName: BioIoName.file24.name,
+                imageName: "file24",
                 fclRadio: FclRadio(
-                    name: BioIoName.d28.name,
+                    name: "d28",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d118.name,
+                noteName: "d118",
                 label: "멸균기 열침투 테스트(BI 멸균 테스트)",
-                imageName: BioIoName.file25.name,
+                imageName: "file25",
                 fclRadio: FclRadio(
-                    name: BioIoName.d29.name,
+                    name: "d29",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d119.name,
+                noteName: "d119",
                 label: "생물안전작업대 적정 기류흐름 및 작동",
-                imageName: BioIoName.file26.name,
+                imageName: "file26",
                 fclRadio: FclRadio(
-                    name: BioIoName.d30.name,
+                    name: "d30",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d120.name,
+                noteName: "d120",
                 label: "생물안전작업대 설치 위치",
-                imageName: BioIoName.file27.name,
+                imageName: "file27",
                 fclRadio: FclRadio(
-                    name: BioIoName.d31.name,
+                    name: "d31",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d121.name,
+                noteName: "d121",
                 label: "Isolator 기밀성",
-                imageName: BioIoName.file28.name,
+                imageName: "file28",
                 fclRadio: FclRadio(
-                    name: BioIoName.d32.name,
+                    name: "d32",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d122.name,
+                noteName: "d122",
                 label: "폐수처리 설비 제균필터 확인 및 설비 출입 통제",
-                imageName: BioIoName.file29.name,
+                imageName: "file29",
                 fclRadio: FclRadio(
-                    name: BioIoName.d33.name,
+                    name: "d33",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

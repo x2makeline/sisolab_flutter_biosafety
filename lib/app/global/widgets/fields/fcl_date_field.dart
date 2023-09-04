@@ -4,7 +4,7 @@ import '../../models/fcl_type.dart';
 import 'fcl_field.dart';
 
 class FclDateField extends FclField {
-  FclDateField({DateTime? initialDate, super.key, super.label, required super.name})
+  FclDateField({String? initialDate, super.key, super.label, required super.name})
       : super(
             type: FclType.date,
             builder: () => FclFormBuilderDateTimePicker(name: name, initialDate: initialDate,));

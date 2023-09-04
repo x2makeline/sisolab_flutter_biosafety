@@ -58,10 +58,10 @@ class Tab22 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file9.name,
+                    name: "attfile9str",
                   )),
               FclRadioGroup(
-                name: BioIoName.d9.name,
+                name: "d9",
                 initialValue: vm.io.d9,
                 map: const {
                   "5": "주출입구 잠금장치가 설치되어 있지 않으며 CCTV가 설치되지 않은 실험실이 존재함.",
@@ -73,7 +73,7 @@ class Tab22 extends StatelessWidget {
                 },
               ),
               FormBuilderNote(
-                name: BioIoName.d98.name,
+                name: "d98",
               ),
             ],
           ),
@@ -91,10 +91,10 @@ class Tab22 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file10.name,
+                    name: "attfile10str",
                   )),
               FclRadioGroup(
-                name: BioIoName.d10.name,
+                name: "d10",
                 initialValue: vm.io.d10,
                 map: const {
                   "2": "주출입구 잠금장치가 설치되어 있지 않으며 CCTV가 설치되지 않은 실험실이 존재함.",
@@ -104,7 +104,7 @@ class Tab22 extends StatelessWidget {
                 },
               ),
               FormBuilderNote(
-                name: BioIoName.d99.name,
+                name: "d99",
               ),
             ],
           ),
@@ -118,11 +118,11 @@ class Tab22 extends StatelessWidget {
           FieldWithLabel(
               label: "이미지 첨부",
               child: FormBuilderFclImagePicker(
-                name: BioIoName.file11.name,
+                name: "attfile11str",
               )),
           FclRadioGroup(
             initialValue: vm.io.d11,
-            name: BioIoName.d11.name,
+            name: "d11",
             map: const {
               "5": "5 =  기밀이 불량하고 인터락 미작동",
               "3": "3 =  기밀이 불량하거나 인터락 미작동",
@@ -131,7 +131,7 @@ class Tab22 extends StatelessWidget {
             },
           ),
           FormBuilderNote(
-            name: BioIoName.d100.name,
+            name: "d100",
           ),
           SizedBox(height: 50.h),
           const FclDivider.form(),
@@ -147,11 +147,11 @@ class Tab22 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file12.name,
+                    name: "attfile12str",
                   )),
               FclRadioGroup(
                 initialValue: vm.io.d12,
-                name: BioIoName.d12.name,
+                name: "d12",
                 map: const {
                   "5": "5 =  멸균공정(121 ℃, 30 min) 작동 이상",
                   "3": "3 =  멸균공정에 이상이 없으나 누기 발견",
@@ -160,7 +160,7 @@ class Tab22 extends StatelessWidget {
                 },
               ),
               FormBuilderNote(
-                name: BioIoName.d101.name,
+                name: "d101",
               ),
             ],
           ),
@@ -194,11 +194,11 @@ class Tab22 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file13.name,
+                    name: "attfile13str",
                   )),
               FclRadioGroup(
                 initialValue: vm.io.d13,
-                name: BioIoName.d13.name,
+                name: "d13",
                 map: const {
                   "5": "5 =  멸균공정(121 ℃, 30 min) 작동 이상",
                   "3": "3 =  멸균공정에 이상이 없으나 누기 발견",
@@ -207,7 +207,7 @@ class Tab22 extends StatelessWidget {
                 },
               ),
               FormBuilderNote(
-                name: BioIoName.d102.name,
+                name: "d102",
               )
             ],
           ),
@@ -225,11 +225,11 @@ class Tab22 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file14.name,
+                    name: "attfile14str",
                   )),
               FclRadioGroup(
                 initialValue: vm.io.d14,
-                name: BioIoName.d14.name,
+                name: "d14",
                 labelWithKey: false,
                 wrapAlignment: WrapAlignment.start,
                 orientation: OptionsOrientation.wrap,
@@ -240,7 +240,7 @@ class Tab22 extends StatelessWidget {
                 },
               ),
               FormBuilderNote(
-                name: BioIoName.d103.name,
+                name: "d103",
               )
             ],
           ),
@@ -258,11 +258,11 @@ class Tab22 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file15.name,
+                    name: "attfile15str",
                   )),
               FclRadioGroup(
                 initialValue: vm.io.d15,
-                name: BioIoName.d15.name,
+                name: "d15",
                 labelWithKey: false,
                 wrapAlignment: WrapAlignment.start,
                 orientation: OptionsOrientation.wrap,
@@ -273,7 +273,7 @@ class Tab22 extends StatelessWidget {
                 },
               ),
               FormBuilderNote(
-                name: BioIoName.d104.name,
+                name: "d104",
               )
             ],
           ),
@@ -292,11 +292,11 @@ class Tab22 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file16.name,
+                    name: "attfile16str",
                   )),
               FclRadioGroup(
                 initialValue: vm.io.d16,
-                name: BioIoName.d16.name,
+                name: "d16",
                 labelWithKey: false,
                 wrapAlignment: WrapAlignment.start,
                 orientation: OptionsOrientation.wrap,
@@ -307,7 +307,7 @@ class Tab22 extends StatelessWidget {
                 },
               ),
               FormBuilderNote(
-                name: BioIoName.d105.name,
+                name: "d105",
               )
             ],
           ),

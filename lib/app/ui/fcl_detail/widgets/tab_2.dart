@@ -43,25 +43,25 @@ class Tab2 extends StatelessWidget {
           height: 47.h,
         ),
         _wg("유전자변형생물체 명칭", [
-          (BioIoName.d77.name, vm.io.d77),
-          (BioIoName.d78.name, vm.io.d78),
-          (BioIoName.d79.name, vm.io.d79),
+          ("d77", vm.io.d77),
+          ("d78", vm.io.d78),
+          ("d79", vm.io.d79),
         ]),
         SizedBox(
           height: 40.h,
         ),
         _wg("고위험병원체 명칭", [
-          (BioIoName.d80.name, vm.io.d80),
-          (BioIoName.d81.name, vm.io.d81),
-          (BioIoName.d82.name, vm.io.d82),
+          ("d80", vm.io.d80),
+          ("d81", vm.io.d81),
+          ("d82", vm.io.d82),
         ]),
         SizedBox(
           height: 40.h,
         ),
         _wg("주요실험방법", [
-          (BioIoName.d83.name, vm.io.d83),
-          (BioIoName.d84.name, vm.io.d84),
-          (BioIoName.d85.name, vm.io.d85),
+          ("d83", vm.io.d83),
+          ("d84", vm.io.d84),
+          ("d85", vm.io.d85),
         ]),
         SizedBox(
           height: 47.h,

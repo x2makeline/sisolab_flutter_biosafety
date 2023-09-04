@@ -58,7 +58,7 @@ class Tab15 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file1.name,
+                    name: "attfile1str",
                   )),
               FclRadioGroup(
                   initialValue: vm.io.d1,
@@ -69,7 +69,7 @@ class Tab15 extends StatelessWidget {
                     "1": "실험실(전실 포함) 내 손소독기가 설치되어있지 않으나 공용구역(복도, 탈의전실)에 설치",
                     "0": "밀폐구역내 손소독기 미설치"
                   },
-                  name: BioIoName.d1.name),
+                  name: "d1"),
               SizedBox(
                 height: 50.h,
               ),
@@ -84,7 +84,7 @@ class Tab15 extends StatelessWidget {
                       "기타": "기타 (물리적 키 등)"
                     },
                     initialValue: vm.io.d2,
-                    name: BioIoName.d2.name,
+                    name: "d2",
                     wrapAlignment: WrapAlignment.spaceBetween,
                     orientation: OptionsOrientation.wrap,
                   )),
@@ -102,10 +102,10 @@ class Tab15 extends StatelessWidget {
                   FieldWithLabel(
                       label: "이미지 첨부",
                       child: FormBuilderFclImagePicker(
-                        name: BioIoName.file2.name,
+                        name: "attfile2str",
                       )),
                   FclRadioGroup(
-                      name: BioIoName.d3.name,
+                      name: "d3",
                       initialValue: vm.io.d3,
                       map: const {
                         "5": '6개 인터락시험 중 모두 정상작동',
@@ -114,7 +114,7 @@ class Tab15 extends StatelessWidget {
                         '0': "6개 인터락시험 중 6개 모두 미작동"
                       }),
                   FormBuilderNote(
-                    name: BioIoName.d90.name,
+                    name: "d90",
                   ),
                 ],
               ),
@@ -132,10 +132,10 @@ class Tab15 extends StatelessWidget {
                   FieldWithLabel(
                       label: "이미지 첨부",
                       child: FormBuilderFclImagePicker(
-                        name: BioIoName.file3.name,
+                        name: "attfile3str",
                       )),
                   FclRadioGroup(
-                      name: BioIoName.d4.name,
+                      name: "d4",
                       initialValue: vm.io.d4,
                       map: const {
                         "3": '비상샤워설비 작동 이상',
@@ -143,7 +143,7 @@ class Tab15 extends StatelessWidget {
                         '0': "비상샤워설비 작동가능하며 바닥마감상태 양호"
                       }),
                   FormBuilderNote(
-                    name: BioIoName.d91.name,
+                    name: "d91",
                   ),
                 ],
               ),
@@ -161,10 +161,10 @@ class Tab15 extends StatelessWidget {
                   FieldWithLabel(
                       label: "이미지 첨부",
                       child: FormBuilderFclImagePicker(
-                        name: BioIoName.file4.name,
+                        name: "attfile4str",
                       )),
                   FclRadioGroup(
-                      name: BioIoName.d5.name,
+                      name: "d5",
                       initialValue: vm.io.d5,
                       map: const {
                         "5": '4개 실, 복도 환기횟수시험결과 모두 불만족',
@@ -173,7 +173,7 @@ class Tab15 extends StatelessWidget {
                         '0': "4개 실, 복도 환기횟수시험결과 모두 만족"
                       }),
                   FormBuilderNote(
-                    name: BioIoName.d93.name,
+                    name: "d93",
                   ),
                 ],
               ),
@@ -192,10 +192,10 @@ class Tab15 extends StatelessWidget {
                   FieldWithLabel(
                       label: "이미지 첨부",
                       child: FormBuilderFclImagePicker(
-                        name: BioIoName.file5.name,
+                        name: "attfile5str",
                       )),
                   FclRadioGroup(
-                      name: BioIoName.d39.name,
+                      name: "d39",
                       initialValue: vm.io.d39,
                       map: const {
                         "5": '밀폐구역 내 차압 역전',
@@ -204,7 +204,7 @@ class Tab15 extends StatelessWidget {
                         '0': "밀폐구역 내 기류흐름이 적절한 방향으로 형성되며 실간차압 -10~-15 Pa 유지"
                       }),
                   FormBuilderNote(
-                    name: BioIoName.d94.name,
+                    name: "d94",
                   ),
                 ],
               ),
@@ -222,10 +222,10 @@ class Tab15 extends StatelessWidget {
                   FieldWithLabel(
                       label: "이미지 첨부",
                       child: FormBuilderFclImagePicker(
-                        name: BioIoName.file6.name,
+                        name: "attfile6str",
                       )),
                   FclRadioGroup(
-                      name: BioIoName.d6.name,
+                      name: "d6",
                       initialValue: vm.io.d6,
                       map: const {
                         "5": '천장, 벽체, 전열 콘센트 등 누기 9곳 이상',
@@ -234,7 +234,7 @@ class Tab15 extends StatelessWidget {
                         '0': "천장, 벽체, 전열 콘센트 등 누기 0~2곳"
                       }),
                   FormBuilderNote(
-                    name: BioIoName.d95.name,
+                    name: "d95",
                   ),
                 ],
               ),
@@ -268,16 +268,16 @@ class Tab15 extends StatelessWidget {
                   FieldWithLabel(
                       label: "이미지 첨부",
                       child: FormBuilderFclImagePicker(
-                        name: BioIoName.file7.name,
+                        name: "attfile7str",
                       )),
                   FclRadioGroup(
-                      name: BioIoName.d7.name,
+                      name: "d7",
                       initialValue: vm.io.d7,
                       labelWithKey: false,
                       orientation: OptionsOrientation.wrap,
                       map: const {"2": '2', '1': "1", '0': "0"}),
                   FormBuilderNote(
-                    name: BioIoName.d96.name,
+                    name: "d96",
                   ),
                 ],
               ),
@@ -295,10 +295,10 @@ class Tab15 extends StatelessWidget {
                   FieldWithLabel(
                       label: "이미지 첨부",
                       child: FormBuilderFclImagePicker(
-                        name: BioIoName.file8.name,
+                        name: "attfile8str",
                       )),
                   FclRadioGroup(
-                      name: BioIoName.d8.name,
+                      name: "d8",
                       initialValue: vm.io.d8,
                       labelWithKey: false,
                       orientation: OptionsOrientation.wrap,
@@ -308,7 +308,7 @@ class Tab15 extends StatelessWidget {
                         'N/A': "N/A"
                       }),
                   FormBuilderNote(
-                    name: BioIoName.d97.name,
+                    name: "d97",
                   ),
                 ],
               ),

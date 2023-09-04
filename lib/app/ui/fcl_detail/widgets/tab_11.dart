@@ -73,10 +73,10 @@ class Tab11 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file29.name,
+                    name: "file29",
                   )),
               FclRadioGroup(
-                name: BioIoName.d29.name,
+                name: "d29",
                 initialValue: vm.io.d29,
                 labelWithKey: false,
                 wrapAlignment: WrapAlignment.start,
@@ -84,7 +84,7 @@ class Tab11 extends StatelessWidget {
                 map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
               ),
               FormBuilderNote(
-                name: BioIoName.d118.name,
+                name: "d118",
               ),
             ],
           ),
@@ -118,10 +118,10 @@ class Tab11 extends StatelessWidget {
               FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
-                    name: BioIoName.file30.name,
+                    name: "file30",
                   )),
               FclRadioGroup(
-                name: BioIoName.d30.name,
+                name: "d30",
                 initialValue: vm.io.d30,
                 labelWithKey: false,
                 wrapAlignment: WrapAlignment.start,
@@ -129,7 +129,7 @@ class Tab11 extends StatelessWidget {
                 map: const {"2": "2", "1": "1", "0": "0"},
               ),
               FormBuilderNote(
-                name: BioIoName.d119.name,
+                name: "d119",
               ),
             ],
           ),

@@ -20,7 +20,7 @@ const textFieldDecoration = InputDecoration(
     border: OutlineInputBorder(borderSide: BorderSide(color: ColorGroup.gray)));
 
 final inputDecorationTheme = InputDecorationTheme(
-    constraints: BoxConstraints(minHeight: 90.h),
+    // constraints: BoxConstraints(minHeight: 90.h),
     enabledBorder: textFieldDecoration.border,
     border: textFieldDecoration.border // enabledBorder: ,
     );

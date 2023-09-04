@@ -118,14 +118,12 @@ class BioIo {
   @YnNullableConverter()
   bool? d72;
 
-  @YnNullableConverter()
-  bool? d73;
+  String? d73;
 
   @YnNullableConverter()
   bool? d74;
 
-  @YnNullableConverter()
-  bool? d75;
+  String? d75;
 
   String? d157;
 
@@ -966,9 +964,9 @@ class BioIo {
         d70: json['d70'] as bool?,
         d71: json['d71'] as bool?,
         d72: json['d72'] as bool?,
-        d73: json['d73'] as bool?,
+        d73: json['d73'] as String?,
         d74: json['d74'] as bool?,
-        d75: json['d75'] as bool?,
+        d75: json['d75'] as String?,
         d157: json['d157'] as String?,
         d76: json['d76'] as bool?,
         d281: json['d281'] as String?,

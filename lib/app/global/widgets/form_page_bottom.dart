@@ -13,7 +13,6 @@ class FormPageBottom extends StatelessWidget {
 
   final _controller = FclDetailVm.to;
 
-
   @override
   Widget build(BuildContext context) => Column(
         children: [
@@ -42,7 +41,11 @@ class FormPageBottom extends StatelessWidget {
                                 ],
                               ))
                           : const EmptyBox()),
-                      Obx(() => _controller.tabIndex > 0 ? SizedBox(width: 20.w,) : const EmptyBox()),
+                      Obx(() => _controller.tabIndex > 0
+                          ? SizedBox(
+                              width: 20.w,
+                            )
+                          : const EmptyBox()),
                       Obx(() => _controller.tabIndex < _controller.maxTabindex
                           ? OutlinedButton(
                               onPressed: () {
@@ -64,12 +67,11 @@ class FormPageBottom extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      OutlinedButton(onPressed: () {
-                        Get.back();
-                      }, child: const Text("취소하기")),
-                      OutlinedButton(onPressed: () {}, child: const Text("인쇄하기")),
-                      OutlinedButton(onPressed: () {}, child: const Text("미리보기")),
-                      OutlinedButton(onPressed: () {}, child: const Text("PDF받기")),
+                      OutlinedButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: const Text("취소하기")),
                       ElevatedButton(
                           onPressed: () {
                             _controller.submit();

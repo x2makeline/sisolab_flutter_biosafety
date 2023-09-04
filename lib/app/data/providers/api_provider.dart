@@ -69,6 +69,8 @@ class ApiProvider with PLoggerMixin {
 //   주소 : http://125.6.37.38:9090/api/procFieldSave.do
 //
 // // 파라미터
+//   gbn : fd2 또는 fd3
+//
 //   현장점검 파라미터 일체
 //   idx 키값이 같이 넘어올 시 수정이 실행됨
 //
@@ -81,7 +83,7 @@ class ApiProvider with PLoggerMixin {
   /// 현장점검 데이터 저장
   Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
     return ApiResponse<ProcFieldSaveOut>.fromJson(
-      (await _dio.post("/api/procFieldSave.do", data: req.toJson())).data,
+      (await _dio.post("/api/procFieldSave.do", data: FormData.fromMap(req.toJson()))).data,
       fromJson: (data) => ProcFieldSaveOut.fromJson(data),
     ).filter();
   }

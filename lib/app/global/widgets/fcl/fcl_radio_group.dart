@@ -11,7 +11,7 @@ class FclRadioGroup extends StatelessWidget {
       this.labelWithKey = true,
       required this.map,
       this.initialValue,
-        this.onChanged,
+      this.onChanged,
       required this.name});
 
   final String? initialValue;
@@ -26,10 +26,12 @@ class FclRadioGroup extends StatelessWidget {
   Widget build(BuildContext context) => DefaultTextStyle(
         style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
         child: FormBuilderRadioGroup(
+
             wrapSpacing: 100.w,
             onChanged: onChanged,
             wrapAlignment: wrapAlignment,
             decoration: const InputDecoration(
+                contentPadding: EdgeInsets.zero,
                 enabledBorder: OutlineInputBorder(borderSide: BorderSide.none)),
             orientation: orientation,
             initialValue: initialValue,

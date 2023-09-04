@@ -15,7 +15,7 @@ Refresh_Token: {{Refresh_Token}}
 ###
 
 # 현장점검 데이터 가져오기
-GET {{url}}/api/selectProcField.do?gbn=fd3&idx=593
+GET {{url}}/api/selectProcField.do?gbn=fd3&idx=608
 Content-Type: application/json
 Access_Token: {{Access_Token}}
 
@@ -32,19 +32,25 @@ GET {{url}}/api/selectProcField.do?gbn=fd1&idx=592
 Content-Type: application/json
 Access_Token: {{Access_Token}}
 
+//* 현장점검 과년도 자료 가져오기 : GET방식
+//주소 : http://125.6.37.38:9090/api/procPreField.do
+//// 파라미터
+//gbn : fd2 또는 fd3
+//idx : 현장점검 Key
+//company : 운영기관명
+//d184 : 설치·운영 장소명
+//
+//// 헤더 정보
+//Access_Token : 사용자 접근 토큰
+//
+//// 리턴값 :
+//result : 1 => 성공, -1 => 오류, -2 => 유효하지 않은 AccessToken 입니다, -3 => 권한이 없습니다
+//message : 결과 메시지
+//proc : 과년도 신청정보
+//field : 과년도 현장점검 데이터
+
 ###
-# 현장점검 데이터 저장
-POST {{url}}/api/procFieldSave.do
+# 현장점검  데이터 가져오기
+GET {{url}}/api/procPreField.do?gbn=fd1&idx=592&company=test&d184=test
 Content-Type: application/json
 Access_Token: {{Access_Token}}
-
-{
-  ...
-}
-
-/// response
-{
-  "result": '-3',
-  'message' : "권한이 없습니다."
-}
-

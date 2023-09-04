@@ -1,4 +1,3 @@
-
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -21,8 +20,6 @@ class FclImagePicker extends StatefulWidget {
 
 class _FclImagePickerState extends State<FclImagePicker> {
   late String? base64;
-
-
 
   @override
   void initState() {
@@ -47,14 +44,12 @@ class _FclImagePickerState extends State<FclImagePicker> {
                       final result = await FilePicker.platform.pickFiles(
                         type: FileType.image,
                       );
-                      if(result?.files.first.bytes != null) {
+                      if (result?.files.first.bytes != null) {
                         setState(() {
                           base64 = uint8ListTob64(result!.files.first.bytes!);
                           widget.onChange?.let((it) => it(base64!));
                         });
                       }
-
-
                     },
                     child: Text(
                       "파일선택",
@@ -84,15 +79,18 @@ class _FclImagePickerState extends State<FclImagePicker> {
             ],
           ),
           if (base64 != null)
-            Image.memory(                    Uri.parse(base64!).data!.contentAsBytes(),
+            Image.memory(
+              Uri.parse(base64!).data!.contentAsBytes(),
               width: 90.h,
-              height: 90.h,)
+              height: 90.h,
+            )
         ].withSpaceBetween(height: 15.h),
       );
 }
 
 class FormBuilderFclImagePicker extends StatelessWidget {
-  const FormBuilderFclImagePicker({super.key, required this.name, this.initialValue});
+  const FormBuilderFclImagePicker(
+      {super.key, required this.name, this.initialValue});
 
   final String name;
   final String? initialValue;

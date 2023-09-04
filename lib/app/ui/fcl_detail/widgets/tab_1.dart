@@ -10,6 +10,7 @@ import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.d
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_checker_table.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_related_person_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_date_field.dart';
@@ -111,20 +112,22 @@ class Tab1 extends StatelessWidget {
                     initialValue: vm.io.d72,
                     title: Text("곤충", style: context.textTheme.titleMedium),
                   ),
-                  FormBuilderCheckbox(
-                    name: BioIoName.d73.name,
-                    initialValue: vm.io.d73,
-                    title: Text("신규허가", style: context.textTheme.titleMedium),
-                  ),
-                  FormBuilderCheckbox(
-                    name: BioIoName.d74.name,
-                    initialValue: vm.io.d74,
-                    title: Text("재확인", style: context.textTheme.titleMedium),
-                  ),
                 ],
               ),
             ),
           ),
+          FclRadioGroup(
+              labelWithKey: false,
+              orientation: OptionsOrientation.wrap,
+              map: const {"1": "신규허가", "2": "재확인"},
+              initialValue: vm.io.d73,
+              name: BioIoName.d73.name),
+          FclRadioGroup(
+              labelWithKey: false,
+              orientation: OptionsOrientation.wrap,
+              map: const {"1": "유전자변형생물체", "2": "고위험병원체"},
+              initialValue: vm.io.d75,
+              name: BioIoName.d75.name),
           TightGridView(
             crossAxisCount: 2,
             crossAxisSpacing: 40.w,
@@ -132,11 +135,6 @@ class Tab1 extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  FormBuilderCheckbox(
-                      initialValue: vm.io.d75,
-                      name: BioIoName.d75.name,
-                      title: Text("유전자변형생물체",
-                          style: context.textTheme.titleMedium)),
                   FclTextField(
                     onSubmitted: (_) => vm.submit(),
                     hintText: "허가번호",
@@ -144,23 +142,6 @@ class Tab1 extends StatelessWidget {
                     initialValue: vm.io.d157,
                     label: "허가번호",
                   )
-                ],
-              ),
-              const SizedBox.shrink(),
-              Column(
-                children: [
-                  FormBuilderCheckbox(
-                      name: BioIoName.d76.name,
-                      initialValue: vm.io.d76,
-                      title:
-                          Text("고위험병원체", style: context.textTheme.titleMedium)),
-                  FclTextField(
-                    onSubmitted: (_) => vm.submit(),
-                    hintText: "허가번호",
-                    name: BioIoName.d281.name,
-                    initialValue: vm.io.d281,
-                    label: "허가번호",
-                  ),
                 ],
               ),
               const SizedBox.shrink(),

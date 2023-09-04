@@ -24,7 +24,22 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   bool get pastYearYn => _pastYearYn.value;
 
-  set pastYearYn(bool v) => _pastYearYn.value = v;
+  set pastYearYn(bool v) {
+    if (!v) {
+      _pastYearYn.value = v;
+    } else {
+      pLog.i(io.company);
+      pLog.i(io.d184);
+      if (io.company == null ||
+          io.d184 == null ||
+          io.company!.isEmpty ||
+          io.d184!.isEmpty) {
+        Get.snackbar("메세지", "운영기관명과 설치 ∙ 운영 장소를 입력 후 저장해주세요.");
+      } else {
+        _pastYearYn.value = v;
+      }
+    }
+  }
 
   /// 활성화 탭 index
   final _tabIndex = 0.obs;
@@ -101,10 +116,13 @@ class FclDetailVm extends GetxController with PLoggerMixin {
           "BioIo.fromForm({...formKey.currentState!.value}).toJson() ${BioIo.fromForm({
             ...formKey.currentState!.value
           }).toJson()..removeWhere((key, value) => value == null)}");
-      // pLog.d("io.toJson ${io.toJson()}");
-      // pLog.d("bio.toJson ${bio.toJson()}");
 
-      _apiPro.procFieldSave(bio).then((value) => print(value));
+      _apiPro.procFieldSave(bio).then((value) {
+        if (value.isSuccess) {
+          Get.snackbar("메세지", "저장되었습니다.");
+          _init();
+        }
+      });
     }
   }
 

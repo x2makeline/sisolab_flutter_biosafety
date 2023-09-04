@@ -135,11 +135,11 @@ abstract class _$BioIoCWProxy {
 
   BioIo d72(bool? d72);
 
-  BioIo d73(bool? d73);
+  BioIo d73(String? d73);
 
   BioIo d74(bool? d74);
 
-  BioIo d75(bool? d75);
+  BioIo d75(String? d75);
 
   BioIo d157(String? d157);
 
@@ -710,9 +710,9 @@ abstract class _$BioIoCWProxy {
     bool? d70,
     bool? d71,
     bool? d72,
-    bool? d73,
+    String? d73,
     bool? d74,
-    bool? d75,
+    String? d75,
     String? d157,
     bool? d76,
     String? d281,
@@ -1166,13 +1166,13 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   BioIo d72(bool? d72) => this(d72: d72);
 
   @override
-  BioIo d73(bool? d73) => this(d73: d73);
+  BioIo d73(String? d73) => this(d73: d73);
 
   @override
   BioIo d74(bool? d74) => this(d74: d74);
 
   @override
-  BioIo d75(bool? d75) => this(d75: d75);
+  BioIo d75(String? d75) => this(d75: d75);
 
   @override
   BioIo d157(String? d157) => this(d157: d157);
@@ -2507,7 +2507,7 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
       d73: d73 == const $CopyWithPlaceholder()
           ? _value.d73
           // ignore: cast_nullable_to_non_nullable
-          : d73 as bool?,
+          : d73 as String?,
       d74: d74 == const $CopyWithPlaceholder()
           ? _value.d74
           // ignore: cast_nullable_to_non_nullable
@@ -2515,7 +2515,7 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
       d75: d75 == const $CopyWithPlaceholder()
           ? _value.d75
           // ignore: cast_nullable_to_non_nullable
-          : d75 as bool?,
+          : d75 as String?,
       d157: d157 == const $CopyWithPlaceholder()
           ? _value.d157
           // ignore: cast_nullable_to_non_nullable
@@ -3591,9 +3591,9 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
       d70: const YnNullableConverter().fromJson(json['d70'] as String?),
       d71: const YnNullableConverter().fromJson(json['d71'] as String?),
       d72: const YnNullableConverter().fromJson(json['d72'] as String?),
-      d73: const YnNullableConverter().fromJson(json['d73'] as String?),
+      d73: json['d73'] as String?,
       d74: const YnNullableConverter().fromJson(json['d74'] as String?),
-      d75: const YnNullableConverter().fromJson(json['d75'] as String?),
+      d75: json['d75'] as String?,
       d157: json['d157'] as String?,
       d76: const YnNullableConverter().fromJson(json['d76'] as String?),
       d281: json['d281'] as String?,
@@ -3910,9 +3910,9 @@ Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
       'd70': const YnNullableConverter().toJson(instance.d70),
       'd71': const YnNullableConverter().toJson(instance.d71),
       'd72': const YnNullableConverter().toJson(instance.d72),
-      'd73': const YnNullableConverter().toJson(instance.d73),
+      'd73': instance.d73,
       'd74': const YnNullableConverter().toJson(instance.d74),
-      'd75': const YnNullableConverter().toJson(instance.d75),
+      'd75': instance.d75,
       'd157': instance.d157,
       'd76': const YnNullableConverter().toJson(instance.d76),
       'd281': instance.d281,

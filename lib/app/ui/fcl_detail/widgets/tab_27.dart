@@ -40,12 +40,12 @@ class Tab27 extends StatelessWidget {
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "기관명",
-                name: BioIoName.company.name,
+                name: "company",
                 initialValue: vm.io.company,
                 label: "기관명",
               ),
               FclDateField(
-                name: BioIoName.d1.name,
+                name: "d1",
                 // initialDate: vm.io.d1,
                 label: "점검일시",
               ),
@@ -53,7 +53,7 @@ class Tab27 extends StatelessWidget {
                 onSubmitted: (_) => vm.submit(),
                 hintText: "대표자명",
                 enabled: false,
-                name: BioIoName.comName.name,
+                name: "comName",
                 initialValue: vm.io.comName,
                 label: "대표자명",
               ),
@@ -61,7 +61,7 @@ class Tab27 extends StatelessWidget {
                 enabled: false,
                 onSubmitted: (_) => vm.submit(),
                 hintText: "사업자등록번호",
-                name: BioIoName.comCode.name,
+                name: "comCode",
                 initialValue: vm.io.comCode,
                 label: "사업자등록번호",
               ),
@@ -76,7 +76,7 @@ class Tab27 extends StatelessWidget {
                 labelWithKey: false,
                 orientation: OptionsOrientation.wrap,
                 map: const {"1": "기관(연구기관)", "2": "기업", "3": "대학(병원)"},
-                name: BioIoName.d2.name,
+                name: "d2",
                 initialValue: vm.io.d2,
               )),
           SizedBox(
@@ -86,7 +86,7 @@ class Tab27 extends StatelessWidget {
             enabled: false,
             onSubmitted: (_) => vm.submit(),
             hintText: "주소(본사)",
-            name: BioIoName.comAddress.name,
+            name: "comAddress",
             initialValue: vm.io.comAddress,
             label: "주소(본사)",
           ),
@@ -114,7 +114,7 @@ class Tab27 extends StatelessWidget {
                                     borderSide: BorderSide.none)),
                             orientation: OptionsOrientation.horizontal,
                             initialValue: vm.io.d13,
-                            name: BioIoName.d13.name,
+                            name: "d13",
                             onChanged: (d) {
                               data.value = d == "5";
                             },
@@ -144,7 +144,7 @@ class Tab27 extends StatelessWidget {
                                         width: 200.w,
                                         child: FclTextField(
                                           enabled: data.value,
-                                          name: BioIoName.d135.name,
+                                          name: "d135",
                                           initialValue: vm.io.d135,
                                         )),
                                     const Text(")")
@@ -160,7 +160,7 @@ class Tab27 extends StatelessWidget {
           FclTextField(
             onSubmitted: (_) => vm.submit(),
             hintText: "[제KCDC-HP-00-0-00호]",
-            name: BioIoName.d156.name,
+            name: "d156",
             initialValue: vm.io.d156,
             label: "생물안전시설의 시설번호는? [제KCDC-HP-00-0-00호]",
           ),
@@ -183,7 +183,7 @@ class Tab27 extends StatelessWidget {
                 label: "전화",
                 child: FclTextField(
                   hintText: "전화번호 입력",
-                  name: BioIoName.d3.name,
+                  name: "d3",
                   initialValue: vm.io.d3,
                 ),
               ),
@@ -191,7 +191,7 @@ class Tab27 extends StatelessWidget {
                 label: "휴대폰번호",
                 child: FclTextField(
                   hintText: "휴대폰번호",
-                  name: BioIoName.d4.name,
+                  name: "d4",
                   initialValue: vm.io.d4,
                 ),
               ),
@@ -204,7 +204,7 @@ class Tab27 extends StatelessWidget {
             label: "전자우편주소",
             child: FclTextField(
               hintText: "전자우편주소 입력",
-              name: BioIoName.d5.name,
+              name: "d5",
               initialValue: vm.io.d5,
             ),
           ),
@@ -228,7 +228,7 @@ class Tab27 extends StatelessWidget {
                                     borderSide: BorderSide.none)),
                             orientation: OptionsOrientation.horizontal,
                             initialValue: vm.io.d14,
-                            name: BioIoName.d14.name,
+                            name: "d14",
                             onChanged: (d) {
                               data.value = d == "1";
                             },
@@ -242,7 +242,7 @@ class Tab27 extends StatelessWidget {
                                         width: 100.w,
                                         child: FclTextField(
                                           enabled: data.value,
-                                          name: BioIoName.d135.name,
+                                          name: "d135",
                                           initialValue: vm.io.d135,
                                         )),
                                     const Text("명)")
@@ -260,7 +260,7 @@ class Tab27 extends StatelessWidget {
                             enabled: data.value,
                             onSubmitted: (_) => vm.submit(),
                             hintText: "성명",
-                            name: BioIoName.d10.name,
+                            name: "d10",
                             initialValue: vm.io.d10,
                             label: "성명",
                           )
@@ -294,7 +294,7 @@ class Tab27 extends StatelessWidget {
                             labelWithKey: false,
                             map: const {"1": "있음", "2": "없음"},
                             initialValue: vm.io.d15,
-                            name: BioIoName.d15.name),
+                            name: "d15"),
                       ),
                       TightGridView(
                           crossAxisCount: 2,
@@ -305,7 +305,7 @@ class Tab27 extends StatelessWidget {
                                 label: "성명",
                                 child: FclTextField(
                                   enabled: data.value,
-                                  name: BioIoName.d11.name,
+                                  name: "d11",
                                   initialValue: vm.io.d11,
                                 ))
                           ])

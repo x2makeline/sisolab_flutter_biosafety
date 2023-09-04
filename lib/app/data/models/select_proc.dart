@@ -29,6 +29,8 @@ class SelectProc {
   @JsonKey(name: "print_submit_dt")
   String? printSubmitDt;
 
+
+
   String? attfile1str;
   String? attfile2str;
   String? attfile3str;
@@ -49,6 +51,35 @@ class SelectProc {
   String? attfile18str;
   String? attfile19str;
   String? attfile20str;
+  String? attfile21str;
+  String? attfile22str;
+  String? attfile23str;
+  String? attfile24str;
+  String? attfile25str;
+  String? attfile26str;
+  String? attfile27str;
+  String? attfile28str;
+  String? attfile29str;
+  String? attfile30str;
+  String? attfile31str;
+  String? attfile32str;
+  String? attfile33str;
+  String? attfile34str;
+  String? attfile35str;
+  String? attfile36str;
+  String? attfile37str;
+  String? attfile38str;
+  String? attfile39str;
+  String? attfile40str;
+  String? attfile41str;
+  String? attfile42str;
+  String? attfile43str;
+  String? attfile44str;
+  String? attfile45str;
+  String? attfile46str;
+  String? attfile47str;
+  String? attfile48str;
+  String? attfile49str;
   @JsonKey(name: "att_name_txt_1")
   String? attNameTxt1;
   @JsonKey(name: "att_name_txt_2")
@@ -144,6 +175,35 @@ class SelectProc {
     this.attfile18str,
     this.attfile19str,
     this.attfile20str,
+    this.attfile21str,
+    this.attfile22str,
+    this.attfile23str,
+    this.attfile24str,
+    this.attfile25str,
+    this.attfile26str,
+    this.attfile27str,
+    this.attfile28str,
+    this.attfile29str,
+    this.attfile30str,
+    this.attfile31str,
+    this.attfile32str,
+    this.attfile33str,
+    this.attfile34str,
+    this.attfile35str,
+    this.attfile36str,
+    this.attfile37str,
+    this.attfile38str,
+    this.attfile39str,
+    this.attfile40str,
+    this.attfile41str,
+    this.attfile42str,
+    this.attfile43str,
+    this.attfile44str,
+    this.attfile45str,
+    this.attfile46str,
+    this.attfile47str,
+    this.attfile48str,
+    this.attfile49str,
   });
 
   factory SelectProc.fromJson(Map<String, dynamic> json) =>

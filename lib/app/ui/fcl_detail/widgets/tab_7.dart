@@ -40,12 +40,12 @@ class Tab7 extends StatelessWidget {
             "주요실험방법",
             style: context.textTheme.titleMedium,
           ),
-          FclTextField(name: BioIoName.d77.name),
-          FclTextField(name: BioIoName.d78.name),
-          FclTextField(name: BioIoName.d180.name),
-          FclTextField(name: BioIoName.d181.name),
-          FclTextField(name: BioIoName.d182.name),
-          FclTextField(name: BioIoName.d183.name)
+          FclTextField(name: "d77"),
+          FclTextField(name: "d78"),
+          FclTextField(name: "d180"),
+          FclTextField(name: "d181"),
+          FclTextField(name: "d182"),
+          FclTextField(name: "d183")
         ]),
         SizedBox(
           height: 47.h,

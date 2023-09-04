@@ -52,19 +52,19 @@ class Tab17 extends StatelessWidget {
         children: [
 
           FclField(
-            noteName: BioIoName.d152.name,
+            noteName: "d152",
             label: "헤파필터 유닛, 배기덕트 압력 감소 시험",
-            imageName: BioIoName.file58.name,
+            imageName: "file58",
             fclRadio: FclRadio(
-                name: BioIoName.d62.name,
+                name: "d62",
                 map: FclNewDetailFields.saepnssUserRadio.map!),
           ),
           FclField(
-            noteName: BioIoName.d153.name,
+            noteName: "d153",
             label: "헤파필터 유닛 완전성 테스트(PAO 테스트)",
-            imageName: BioIoName.file59.name,
+            imageName: "file59",
             fclRadio: FclRadio(
-                name: BioIoName.d63.name,
+                name: "d63",
                 map: FclNewDetailFields.saepnssUserRadio.map!),
           )
 

@@ -18,6 +18,7 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_dropdown
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 import '../../../global/widgets/field_with_label.dart';
@@ -49,21 +50,21 @@ class Tab1 extends StatelessWidget {
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "운영기관명",
-                name: BioIoName.company.name,
+                name: "company",
                 initialValue: vm.io.company,
                 label: "운영기관명",
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "설치 ∙ 운영 장소",
-                name: BioIoName.d184.name,
+                name: "d184",
                 initialValue: vm.io.d184,
                 label: "설치 ∙ 운영 장소",
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "안전관리등급",
-                name: BioIoName.d280.name,
+                name: "d280",
                 initialValue: vm.io.d280,
                 label: "안전관리등급",
               ),
@@ -88,28 +89,33 @@ class Tab1 extends StatelessWidget {
                 addAutomaticKeepAlives: false,
                 children: [
                   FormBuilderCheckbox(
-                    name: BioIoName.d68.name,
-                    initialValue: vm.io.d68,
+                    name: "d68",
+                    initialValue: vm.io.d68 == "Y",
+                    onSaved: (newValue) => vm.io = vm.io.copyWith(d68: boolToYn(newValue) ),
                     title: Text("일반", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: BioIoName.d69.name,
-                    initialValue: vm.io.d69,
+                    name: "d69",
+                    initialValue: vm.io.d69 == "Y",
+                    onSaved: (newValue) => vm.io = vm.io.copyWith(d69: boolToYn(newValue) ),
                     title: Text("대량배양", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: BioIoName.d70.name,
-                    initialValue: vm.io.d70,
+                    name: "d70",
+                    initialValue: vm.io.d70 == "Y",
+                    onSaved: (newValue) => vm.io = vm.io.copyWith(d70: boolToYn(newValue) ),
                     title: Text("동물", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: BioIoName.d71.name,
-                    initialValue: vm.io.d71,
+                    name: "d71",
+                    initialValue: vm.io.d71 == "Y",
+                    onSaved: (newValue) => vm.io = vm.io.copyWith(d71: boolToYn(newValue) ),
                     title: Text("식물", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: BioIoName.d72.name,
-                    initialValue: vm.io.d72,
+                    name: "d72",
+                    initialValue: vm.io.d72 == "Y",
+                    onSaved: (newValue) => vm.io = vm.io.copyWith(d72: boolToYn(newValue) ),
                     title: Text("곤충", style: context.textTheme.titleMedium),
                   ),
                 ],
@@ -121,13 +127,13 @@ class Tab1 extends StatelessWidget {
               orientation: OptionsOrientation.wrap,
               map: const {"1": "신규허가", "2": "재확인"},
               initialValue: vm.io.d73,
-              name: BioIoName.d73.name),
+              name: "d73"),
           FclRadioGroup(
               labelWithKey: false,
               orientation: OptionsOrientation.wrap,
               map: const {"1": "유전자변형생물체", "2": "고위험병원체"},
               initialValue: vm.io.d75,
-              name: BioIoName.d75.name),
+              name: "d75"),
           TightGridView(
             crossAxisCount: 2,
             crossAxisSpacing: 40.w,
@@ -138,7 +144,7 @@ class Tab1 extends StatelessWidget {
                   FclTextField(
                     onSubmitted: (_) => vm.submit(),
                     hintText: "허가번호",
-                    name: BioIoName.d157.name,
+                    name: "d157",
                     initialValue: vm.io.d157,
                     label: "허가번호",
                   )
@@ -146,40 +152,40 @@ class Tab1 extends StatelessWidget {
               ),
               const SizedBox.shrink(),
               FclDateField(
-                name: BioIoName.d158.name,
+                name: "d158",
                 initialDate: vm.io.d158,
                 label: "최초허가일",
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "취급동물",
-                name: BioIoName.d282.name,
+                name: "d282",
                 initialValue: vm.io.d282,
                 label: "취급동물",
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "취급병원체",
-                name: BioIoName.d283.name,
+                name: "d283",
                 initialValue: vm.io.d283,
                 label: "취급병원체",
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "실험실 ∙ 전실 면적",
-                name: BioIoName.d284.name,
+                name: "d284",
                 initialValue: vm.io.d284,
                 label: "실험실 ∙ 전실 면적",
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "지역",
-                name: BioIoName.d285.name,
+                name: "d285",
                 initialValue: vm.io.d285,
                 label: "지역",
               ),
               FclDropdownField(
-                  name: BioIoName.d286.name,
+                  name: "d286",
                   initialValue: vm.io.d286,
                   label: "기관분류",
                   itemMap: const {
@@ -202,41 +208,41 @@ class Tab1 extends StatelessWidget {
             list: [
               FclRelatedPersonCol(
                   title: "생물안전관리책임자",
-                  nameNm: BioIoName.d159.name,
+                  nameNm: "d159",
                   initialName: vm.io.d159,
-                  cellPhoneNm: BioIoName.d274.name,
+                  cellPhoneNm: "d274",
                   initialCellPhone: vm.io.d274,
-                  contactNm: BioIoName.d165.name,
+                  contactNm: "d165",
                   initialContact: vm.io.d165,
-                  emailNm: BioIoName.d271.name,
+                  emailNm: "d271",
                   initialEmail: vm.io.d271,
-                  signatureNm: BioIoName.d162.name,
+                  signatureNm: "d162",
                   initialSignature: vm.io.d162,
                   hintText: "책임자"),
               FclRelatedPersonCol(
                   title: "생물안전관리자",
-                  nameNm: BioIoName.d160.name,
+                  nameNm: "d160",
                   initialName: vm.io.d160,
-                  cellPhoneNm: BioIoName.d275.name,
+                  cellPhoneNm: "d275",
                   initialCellPhone: vm.io.d275,
-                  contactNm: BioIoName.d166.name,
+                  contactNm: "d166",
                   initialContact: vm.io.d166,
-                  emailNm: BioIoName.d272.name,
+                  emailNm: "d272",
                   initialEmail: vm.io.d272,
-                  signatureNm: BioIoName.d163.name,
+                  signatureNm: "d163",
                   initialSignature: vm.io.d163,
                   hintText: "관리자"),
               FclRelatedPersonCol(
                   title: "고위험병원체의전담관리자",
-                  nameNm: BioIoName.d161.name,
+                  nameNm: "d161",
                   initialName: vm.io.d161,
-                  cellPhoneNm: BioIoName.d276.name,
+                  cellPhoneNm: "d276",
                   initialCellPhone: vm.io.d276,
-                  contactNm: BioIoName.d167.name,
+                  contactNm: "d167",
                   initialContact: vm.io.d167,
-                  emailNm: BioIoName.d273.name,
+                  emailNm: "d273",
                   initialEmail: vm.io.d273,
-                  signatureNm: BioIoName.d164.name,
+                  signatureNm: "d164",
                   initialSignature: vm.io.d164,
                   hintText: "전담관리자")
             ],
@@ -252,7 +258,7 @@ class Tab1 extends StatelessWidget {
             children: [
               Flexible(
                   child: FclDateField(
-                name: BioIoName.d168.name,
+                name: "d168",
                 initialDate: vm.io.d168,
                 label: "점검일자",
               )),
@@ -299,7 +305,7 @@ class Tab1 extends StatelessWidget {
                       FieldWithLabel(
                           label: "총평",
                           child: FormBuilderTextField(
-                            name: BioIoName.d156.name,
+                            name: "d156",
                             maxLines: 3,
                           ))
                     ],

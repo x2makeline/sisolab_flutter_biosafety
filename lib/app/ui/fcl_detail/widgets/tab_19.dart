@@ -49,43 +49,43 @@ class Tab19 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d138.name,
+                noteName: "d138",
                 label: "데이터 전송용 전자시스템",
-                imageName: BioIoName.file45.name,
+                imageName: "file45",
                 fclRadio: FclRadio(
-                    name: BioIoName.d48.name,
+                    name: "d48",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d139.name,
+                noteName: "d139",
                 label: "배관역류 방지장치",
-                imageName: BioIoName.file46.name,
+                imageName: "file46",
                 fclRadio: FclRadio(
-                    name: BioIoName.d49.name,
+                    name: "d49",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d140.name,
+                noteName: "d140",
                 label: "내부 차압 측정 계기 및 경보장치",
-                imageName: BioIoName.file47.name,
+                imageName: "file47",
                 fclRadio: FclRadio(
-                    name: BioIoName.d50.name,
+                    name: "d50",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d141.name,
+                noteName: "d141",
                 label: "비상전원공급(UPS 등) 연동 확인",
-                imageName: BioIoName.file48.name,
+                imageName: "file48",
                 fclRadio: FclRadio(
-                    name: BioIoName.d51.name,
+                    name: "d51",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d142.name,
+                noteName: "d142",
                 label: "가스공급 장치 설치 및 출입통제 확인",
-                imageName: BioIoName.file49.name,
+                imageName: "file49",
                 fclRadio: FclRadio(
-                    name: BioIoName.d52.name,
+                    name: "d52",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

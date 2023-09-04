@@ -50,25 +50,25 @@ class Tab5 extends StatelessWidget {
             children: [
               FclField(
                 initialNote: vm.io.d105,
-                noteName: BioIoName.d105.name,
+                noteName: "d105",
 
                 label: "급기 덕트에 헤파 필터 설치",
-                imageName: BioIoName.file12.name,
-                initialImage: vm.io.file12,
+                imageName: "attfile12str",
+                initialImage: vm.io.attfile12str, 
                 fclRadio: FclRadio(
                   initialValue: vm.io.d16,
-                    name: BioIoName.d16.name,
+                    name: "d16",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d106.name,
+                noteName: "d106",
                 initialNote: vm.io.d106,
                 label: "배기에 카본필터 등 냄새제거 장치 설치",
-                imageName: BioIoName.file13.name,
-                initialImage: vm.io.file13,
+                imageName: "attfile13str",
+                initialImage: vm.io.attfile13str,
                 fclRadio: FclRadio(
                   initialValue: vm.io.d17,
-                    name: BioIoName.d17.name,
+                    name: "d17",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
             ].withWidgetBetween(Column(

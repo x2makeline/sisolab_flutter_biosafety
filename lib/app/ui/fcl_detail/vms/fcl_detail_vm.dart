@@ -72,6 +72,8 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   late final FclDetailFormState formState;
 
   BioIo get io => _io.value;
+
+  set io(BioIo io) => _io.value = io;
   final formKey = GlobalKey<FormBuilderState>(debugLabel: 'FclDetailVm');
 
   prevTab() {
@@ -102,20 +104,20 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   void submit() {
     if (formKey.currentState != null) {
       formKey.currentState!.save();
-      pLog.d(formKey.currentState!.value);
+      pLog.i(formKey.currentState!.value.entries.where((e) => e.value != null));
       final bioJson = {
         ...io.toJson(),
-        ...BioIo.fromForm({...formKey.currentState!.value}).toJson()
-          ..removeWhere((key, value) => value == null),
+        ...BioIo.fromJson(formKey.currentState!.value).toJson()
+          ..removeWhere((key, value) => value == null)
+        // ...BioIo.fromForm({...formKey.currentState!.value}).toJson()
+        //   ..removeWhere((key, value) => value == null),
       };
       final bio = BioIo.fromJson(bioJson);
 
       pLog.d("submit $bioJson");
       pLog.d("io.toJson() ${io.toJson()}");
       pLog.d(
-          "BioIo.fromForm({...formKey.currentState!.value}).toJson() ${BioIo.fromForm({
-            ...formKey.currentState!.value
-          }).toJson()..removeWhere((key, value) => value == null)}");
+          "BioIo.fromJson(formKey.currentState!.value).toJson()..removeWhere((key, value) => value == null) ${BioIo.fromJson(formKey.currentState!.value).toJson()..removeWhere((key, value) => value == null)}");
 
       _apiPro.procFieldSave(bio).then((value) {
         if (value.isSuccess) {

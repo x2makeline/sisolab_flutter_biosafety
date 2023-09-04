@@ -50,11 +50,11 @@ class Tab13 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d154.name,
+                noteName: "d154",
                 label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
-                imageName: BioIoName.file60.name,
+                imageName: "file60",
                 fclRadio: FclRadio(
-                    name: BioIoName.d64.name,
+                    name: "d64",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

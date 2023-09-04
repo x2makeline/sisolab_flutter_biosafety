@@ -51,35 +51,35 @@ class Tab21 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d148.name,
+                noteName: "d148",
                 label: "급기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압)",
-                imageName: BioIoName.file54.name,
+                imageName: "file54",
                 fclRadio: FclRadio(
-                    name: BioIoName.d58.name,
+                    name: "d58",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d149.name,
+                noteName: "d149",
                 label: "급기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압)",
-                imageName: BioIoName.file55.name,
+                imageName: "file55",
                 fclRadio: FclRadio(
-                    name: BioIoName.d59.name,
+                    name: "d59",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d150.name,
+                noteName: "d150",
                 label: "배기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압)",
-                imageName: BioIoName.file56.name,
+                imageName: "file56",
                 fclRadio: FclRadio(
-                    name: BioIoName.d60.name,
+                    name: "d60",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               ),
               FclField(
-                noteName: BioIoName.d151.name,
+                noteName: "d151",
                 label: "배기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압)",
-                imageName: BioIoName.file57.name,
+                imageName: "file57",
                 fclRadio: FclRadio(
-                    name: BioIoName.d61.name,
+                    name: "d61",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

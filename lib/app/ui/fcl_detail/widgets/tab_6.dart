@@ -48,9 +48,9 @@ class Tab6 extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FclField(
-            noteName: BioIoName.d156.name,
+            noteName: "d156",
             label: "특이사항",
-            imageName: BioIoName.file62.name,
+            imageName: "file62",
           )
         ].withWidgetBetween(Column(
           children: [

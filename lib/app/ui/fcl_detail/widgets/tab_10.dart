@@ -50,11 +50,11 @@ class Tab10 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: BioIoName.d147.name,
+                noteName: "d147",
                 label: "유효 교정장비 사용한 급, 배기 풍량 측정",
-                imageName: BioIoName.file53.name,
+                imageName: "file53",
                 fclRadio: FclRadio(
-                    name: BioIoName.d57.name,
+                    name: "d57",
                     map: FclNewDetailFields.saepnssUserRadio.map!),
               )
             ].withWidgetBetween(Column(

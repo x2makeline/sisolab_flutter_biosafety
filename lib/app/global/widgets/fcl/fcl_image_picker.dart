@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -44,7 +46,15 @@ class _FclImagePickerState extends State<FclImagePicker> {
                       final result = await FilePicker.platform.pickFiles(
                         type: FileType.image,
                       );
-                      if (result?.files.first.bytes != null) {
+
+                      if (result?.files.first.path != null) {
+                        setState(() {
+                          base64 = uint8ListTob64(
+                              File(result!.files.first.path!)
+                                  .readAsBytesSync());
+                          widget.onChange?.let((it) => it(base64!));
+                        });
+                      } else if (result?.files.first.bytes != null) {
                         setState(() {
                           base64 = uint8ListTob64(result!.files.first.bytes!);
                           widget.onChange?.let((it) => it(base64!));

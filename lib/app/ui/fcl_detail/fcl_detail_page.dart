@@ -9,7 +9,6 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_page_bottom.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
-import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 class FclDetailPage extends StatelessWidget with PLoggerMixin {

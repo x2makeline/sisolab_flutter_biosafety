@@ -1,6 +1,5 @@
 import 'package:copy_with_extension/copy_with_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/date_time_converter.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/converters/yn_converter.dart';
 

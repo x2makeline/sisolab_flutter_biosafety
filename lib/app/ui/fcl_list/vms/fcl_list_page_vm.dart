@@ -6,7 +6,6 @@ import 'package:sisolab_flutter_biosafety/app/data/models/bio_search_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_out.dart';
-import 'package:sisolab_flutter_biosafety/app/data/repositories/hive_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_list_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/network_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/models/async_status.dart';

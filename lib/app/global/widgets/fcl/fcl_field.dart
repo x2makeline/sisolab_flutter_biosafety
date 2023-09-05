@@ -41,7 +41,7 @@ class FclField extends StatelessWidget {
             fclRadio: fclRadio,
             imageName: imageName,
           ),
-          if(child != null) child!
+          if (child != null) child!
         ],
       );
 }

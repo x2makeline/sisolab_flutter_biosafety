@@ -58,13 +58,13 @@ class Tab5 extends StatelessWidget {
                 fclRadio: FclRadio(
                     initialValue: vm.io.d16, name: "d16", map: yesOrNoMap),
                 child: Obx(() => PreDataBox(
-                  enable: vm.pastYearYn,
-                  list: [
-                    PreDataBoxItem(
-                        value: vm.preData?.d16, radioMap: yesOrNoMap),
-                    PreDataBoxItem(value: vm.preData?.d105)
-                  ],
-                )),
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d16, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d105)
+                      ],
+                    )),
               ),
               FclField(
                 noteName: "d106",
@@ -75,13 +75,13 @@ class Tab5 extends StatelessWidget {
                 fclRadio: FclRadio(
                     initialValue: vm.io.d17, name: "d17", map: yesOrNoMap),
                 child: Obx(() => PreDataBox(
-                  enable: vm.pastYearYn,
-                  list: [
-                    PreDataBoxItem(
-                        value: vm.preData?.d17, radioMap: yesOrNoMap),
-                    PreDataBoxItem(value: vm.preData?.d106)
-                  ],
-                )),
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d17, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d106)
+                      ],
+                    )),
               ),
             ].withWidgetBetween(Column(
               children: [

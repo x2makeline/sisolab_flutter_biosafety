@@ -72,7 +72,4 @@ class SelectProcListItem {
       _$SelectProcListItemFromJson(json);
 
   Map<String, dynamic> toJson() => _$SelectProcListItemToJson(this);
-
-
-
 }

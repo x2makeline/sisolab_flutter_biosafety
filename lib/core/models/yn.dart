@@ -3,5 +3,6 @@ enum Yn {
   n(["N", "n"]);
 
   const Yn(this.jsonValues);
+
   final List<String> jsonValues;
 }

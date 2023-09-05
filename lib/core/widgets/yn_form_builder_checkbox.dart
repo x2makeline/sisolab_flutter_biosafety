@@ -18,7 +18,6 @@ class YnFormBuilderCheckbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormBuilderCheckbox(
       name: name,
-
       initialValue: initialValue,
       title: title,
     );

@@ -34,10 +34,10 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
       format: _format,
       controller: controller,
       inputType: InputType.date,
-      style: context.textTheme.titleMedium?.copyWith(color: const Color(0xff767676)),
+      style: context.textTheme.titleMedium
+          ?.copyWith(color: const Color(0xff767676)),
       decoration: dateInputDecoration,
       name: name,
-
       firstDate: firstDate ?? _initialFirstDate,
       lastDate: lastDate ?? _initialLastDate,
     );

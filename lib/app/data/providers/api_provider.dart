@@ -84,7 +84,9 @@ class ApiProvider with PLoggerMixin {
   /// 현장점검 데이터 저장
   Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
     return ApiResponse<ProcFieldSaveOut>.fromJson(
-      (await _dio.post("/api/procFieldSave.do", data: FormData.fromMap(req.toJson()))).data,
+      (await _dio.post("/api/procFieldSave.do",
+              data: FormData.fromMap(req.toJson())))
+          .data,
       fromJson: (data) => ProcFieldSaveOut.fromJson(data),
     ).filter();
   }
@@ -121,8 +123,7 @@ class ApiProvider with PLoggerMixin {
   /// 현장점검 데이터 과년도 가져오기
   Future<ApiResponse<BioIo>> procPreField(ProcPreFieldIn req) async =>
       ApiResponse<BioIo>.fromJson(
-        (await _dio.get("/api/procPreField.do",
-            queryParameters: req.toJson()))
+        (await _dio.get("/api/procPreField.do", queryParameters: req.toJson()))
             .data,
         fromJson: (data) => BioIo.fromJson({
           ...data["proc"],

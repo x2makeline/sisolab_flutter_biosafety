@@ -1,9 +1,1 @@
-enum FclType {
-  text,
-  checkbox,
-  date,
-  dropdown,
-  sign
-}
-
-
+enum FclType { text, checkbox, date, dropdown, sign }

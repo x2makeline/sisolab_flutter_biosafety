@@ -6,4 +6,3 @@ class FclTab {
 
   FclTab({required this.title, required this.body});
 }
-

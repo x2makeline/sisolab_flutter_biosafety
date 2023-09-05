@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 /// 취급생물체정보
 class Tab2 extends StatelessWidget {
+  const Tab2({super.key});
 
-
-   const Tab2({super.key});
-   FclDetailVm  get vm => FclDetailVm.to;
+  FclDetailVm get vm => FclDetailVm.to;
 
   _wg(String label, List<(String, String?)> list) => FieldWithLabel(
       label: label,

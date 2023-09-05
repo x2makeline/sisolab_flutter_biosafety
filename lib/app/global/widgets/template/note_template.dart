@@ -9,9 +9,10 @@ class NoteTemplate extends StatelessWidget {
       {super.key,
       this.label,
       this.onSaved,
-        this.initialValue,
+      this.initialValue,
       required this.name,
       required this.builder});
+
   final String name;
   final String? label;
   final String? initialValue;
@@ -20,15 +21,15 @@ class NoteTemplate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => FieldWithLabel(
-        label: label,
-        child: Column(
-          children: [
-            ...builder(context),
-            FormBuilderNote(
-              name: name,
-              initialValue:initialValue,
-              onSaved: onSaved,
-            )
-          ].withSpaceBetween(height: 10.h),
-        ));
+      label: label,
+      child: Column(
+        children: [
+          ...builder(context),
+          FormBuilderNote(
+            name: name,
+            initialValue: initialValue,
+            onSaved: onSaved,
+          )
+        ].withSpaceBetween(height: 10.h),
+      ));
 }

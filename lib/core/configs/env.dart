@@ -7,5 +7,3 @@ abstract class Env {
   @EnviedField(varName: "HOST")
   static const String host = _Env.host;
 }
-
-

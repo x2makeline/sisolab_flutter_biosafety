@@ -38,7 +38,7 @@ class _FormBuilderBetweenDateState extends State<FormBuilderBetweenDate> {
     super.initState();
 
     _controller1.addListener(() {
-      if(_controller1.value.isBlank != null  && !_controller1.text.isBlank!) {
+      if (_controller1.value.isBlank != null && !_controller1.text.isBlank!) {
         startV.value = _format.parse(_controller1.text);
       } else {
         startV.value = null;
@@ -46,12 +46,11 @@ class _FormBuilderBetweenDateState extends State<FormBuilderBetweenDate> {
     });
 
     _controller2.addListener(() {
-      if(_controller2.value.isBlank != null  && !_controller2.text.isBlank!) {
+      if (_controller2.value.isBlank != null && !_controller2.text.isBlank!) {
         endV.value = _format.parse(_controller2.text);
       } else {
         endV.value = null;
       }
-
     });
   }
 
@@ -63,7 +62,7 @@ class _FormBuilderBetweenDateState extends State<FormBuilderBetweenDate> {
                     controller: _controller1,
                     name: widget.startName,
 
-                // initialDate: initialDate?.let((it) => _format.parse(it)),
+                    // initialDate: initialDate?.let((it) => _format.parse(it)),
                     initialDate: startV.value?.format1,
                     firstDate: _initialFirstDate,
                     lastDate: endV.value ?? _initialLastDate,

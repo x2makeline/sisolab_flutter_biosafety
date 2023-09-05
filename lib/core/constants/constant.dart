@@ -41,7 +41,7 @@ class Constant {
 }
 
 const yesOrNoMap = {"예": "예", "아니오": "아니오", "해당없음": "해당없음"};
-const yesOrNoMap2 = {"예": "예", "아니오": "아니오", "해당없음": "해당없음", "4" : "4"};
+const yesOrNoMap2 = {"예": "예", "아니오": "아니오", "해당없음": "해당없음", "4": "4"};
 
 /// 신규허가 ∙ 재확인 텝 목록
 final List<FclTab> newTabList = [

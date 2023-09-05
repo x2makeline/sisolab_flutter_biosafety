@@ -7,10 +7,10 @@ class RefreshTokenIn {
   String accessToken;
   String refreshToken;
 
-
   RefreshTokenIn({required this.accessToken, required this.refreshToken});
 
-  factory RefreshTokenIn.fromJson(Map<String, dynamic> json) => _$RefreshTokenInFromJson(json);
+  factory RefreshTokenIn.fromJson(Map<String, dynamic> json) =>
+      _$RefreshTokenInFromJson(json);
 
   Map<String, dynamic> toJson() => _$RefreshTokenInToJson(this);
 }

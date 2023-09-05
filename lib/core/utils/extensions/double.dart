@@ -1,4 +1,3 @@
-
 const scale = 1100 / 1563;
 
 extension DoubleExt on double {

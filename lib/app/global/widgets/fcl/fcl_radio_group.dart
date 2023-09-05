@@ -26,7 +26,6 @@ class FclRadioGroup extends StatelessWidget {
   Widget build(BuildContext context) => DefaultTextStyle(
         style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
         child: FormBuilderRadioGroup(
-
             wrapSpacing: 100.w,
             onChanged: onChanged,
             wrapAlignment: wrapAlignment,

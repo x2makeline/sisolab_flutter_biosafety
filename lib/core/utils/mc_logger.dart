@@ -12,12 +12,12 @@ class PLoggerPrinter extends PrettyPrinter {
     int? methodCount,
     int errorMethodCount = _defaultStackMethodCount,
   }) : super(
-      printTime: false,
-      colors: true,
-      noBoxingByDefault: false,
-      lineLength: _lineLength,
-      methodCount:
-      methodCount ?? (stackYn ? _defaultStackMethodCount : 0));
+            printTime: false,
+            colors: true,
+            noBoxingByDefault: false,
+            lineLength: _lineLength,
+            methodCount:
+                methodCount ?? (stackYn ? _defaultStackMethodCount : 0));
 }
 
 final pLogger = PLogger();
@@ -25,18 +25,18 @@ final pLogger = PLogger();
 class PLogger extends Logger {
   PLogger({LogPrinter? printer, String? prefix})
       : super(
-      printer: PrefixPrinter(
-          _PrefixPrinter(printer ?? PLoggerPrinter(), prefix: prefix)));
+            printer: PrefixPrinter(
+                _PrefixPrinter(printer ?? PLoggerPrinter(), prefix: prefix)));
 }
 
 mixin PLoggerMixin {
   PLogger get log => PLogger(
-    prefix: runtimeType.toString(),
-  );
+        prefix: runtimeType.toString(),
+      );
 
   PLogger get pLog => PLogger(
-    prefix: runtimeType.toString(),
-  );
+        prefix: runtimeType.toString(),
+      );
 }
 
 class _PrefixPrinter extends LogPrinter {
@@ -44,16 +44,16 @@ class _PrefixPrinter extends LogPrinter {
   final String? prefix;
 
   _PrefixPrinter(
-      this._realPrinter, {
-        this.prefix,
-      });
+    this._realPrinter, {
+    this.prefix,
+  });
 
   @override
   List<String> log(LogEvent event) => _realPrinter.log(LogEvent(
       event.level,
       "${event.time}${iff(prefix != null, () => "\n$prefix") ?? ""}\n${StringBuffer().let((it) {
         for (var element in List.generate(PLoggerPrinter._lineLength - 4,
-                (index) => PrettyPrinter.doubleDivider)) {
+            (index) => PrettyPrinter.doubleDivider)) {
           it.write(element);
         }
         return it;

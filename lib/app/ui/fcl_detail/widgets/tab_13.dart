@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지
 class Tab13 extends StatelessWidget {
   const Tab13({super.key});
 
-  FclDetailVm get controller => FclDetailVm.to;
+  FclDetailVm get vm => FclDetailVm.to;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -31,9 +32,9 @@ class Tab13 extends StatelessWidget {
                 children: [
                   Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
-                      value: controller.pastYearYn,
+                      value: vm.pastYearYn,
                       onChanged: (v) {
-                        controller.pastYearYn = v ?? false;
+                        vm.pastYearYn = v ?? false;
                       }))
                 ],
               )
@@ -50,13 +51,18 @@ class Tab13 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: "d154",
-                label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
-                imageName: "file60",
-                fclRadio: FclRadio(
-                    name: "d64",
-                    map: yesOrNoMap),
-              )
+                  noteName: "d154",
+                  label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
+                  imageName: "file60",
+                  fclRadio: FclRadio(name: "d64", map: yesOrNoMap),
+                  child: Obx(() => PreDataBox(
+                        enable: vm.pastYearYn,
+                        list: [
+                          PreDataBoxItem(
+                              value: vm.preData?.d64, radioMap: yesOrNoMap),
+                          PreDataBoxItem(value: vm.preData?.d154)
+                        ],
+                      )))
             ].withWidgetBetween(Column(
               children: [
                 SizedBox(

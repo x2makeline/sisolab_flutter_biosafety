@@ -35,47 +35,49 @@ class _Check {
 
 class _FclCheckerTableState extends State<FclCheckerTable> {
   FclDetailVm get vm => FclDetailVm.to;
-    List<_Check> get  _checkerArrName => [
-    _Check(
-      initialName: vm.io.d170,
-        name: "d170",
-        dpName: "d169",
-        initialDp : vm.io.d169,
-        signName: "d185",
-      initialSign : vm.io.d185,
-    ),
-      _Check(
-        initialName: vm.io.d172,
-        name: "d172",
-        dpName: "d171",
-        initialDp : vm.io.d171,
-        signName: "d186",
-        initialSign : vm.io.d186,
-      ),
-      _Check(
-        initialName: vm.io.d174,
-        name: "d174",
-        dpName: "d173",
-        initialDp : vm.io.d173,
-        signName: "d187",
-        initialSign : vm.io.d187,
-      ),
-      _Check(
-        initialName: vm.io.d176,
-        name: "d176",
-        dpName: "d175",
-        initialDp : vm.io.d175,
-        signName: "d188",
-        initialSign : vm.io.d188,
-      ),
-      _Check(
-        initialName: vm.io.d178,
-        name: "d178",
-        dpName: "d177",
-        initialDp : vm.io.d177,
-        signName: "d189",
-        initialSign : vm.io.d189,
-      )];
+
+  List<_Check> get _checkerArrName => [
+        _Check(
+          initialName: vm.io.d170,
+          name: "d170",
+          dpName: "d169",
+          initialDp: vm.io.d169,
+          signName: "d185",
+          initialSign: vm.io.d185,
+        ),
+        _Check(
+          initialName: vm.io.d172,
+          name: "d172",
+          dpName: "d171",
+          initialDp: vm.io.d171,
+          signName: "d186",
+          initialSign: vm.io.d186,
+        ),
+        _Check(
+          initialName: vm.io.d174,
+          name: "d174",
+          dpName: "d173",
+          initialDp: vm.io.d173,
+          signName: "d187",
+          initialSign: vm.io.d187,
+        ),
+        _Check(
+          initialName: vm.io.d176,
+          name: "d176",
+          dpName: "d175",
+          initialDp: vm.io.d175,
+          signName: "d188",
+          initialSign: vm.io.d188,
+        ),
+        _Check(
+          initialName: vm.io.d178,
+          name: "d178",
+          dpName: "d177",
+          initialDp: vm.io.d177,
+          signName: "d189",
+          initialSign: vm.io.d189,
+        )
+      ];
 
   int checkerCount = 0;
 
@@ -112,7 +114,10 @@ class _FclCheckerTableState extends State<FclCheckerTable> {
                         SizedBox(
                           width: 10.w,
                         ),
-                        FormBuilderSign(name: e.signName, initialValue: e.initialSign,)
+                        FormBuilderSign(
+                          name: e.signName,
+                          initialValue: e.initialSign,
+                        )
                       ],
                     ))
                   ].withSpaceBetween(width: 10.w),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
@@ -55,7 +54,7 @@ class Tab22 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile9str",
@@ -72,7 +71,7 @@ class Tab22 extends StatelessWidget {
                       "주출입구 잠금장치가 설치되어 있으며 모든 실험실에 CCTV가 설치됨. CCTV 영상자료의 3개월치 저장이 가능함."
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d98",
               ),
             ],
@@ -88,7 +87,7 @@ class Tab22 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile10str",
@@ -103,7 +102,7 @@ class Tab22 extends StatelessWidget {
                       "주출입구 잠금장치가 설치되어 있으며 모든 실험실에 CCTV가 설치됨. CCTV 영상자료의 3개월치 저장이 불가능함.",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d99",
               ),
             ],
@@ -115,7 +114,7 @@ class Tab22 extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          FieldWithLabel(
+          const FieldWithLabel(
               label: "이미지 첨부",
               child: FormBuilderFclImagePicker(
                 name: "attfile11str",
@@ -130,7 +129,7 @@ class Tab22 extends StatelessWidget {
               "0": "0 =  기밀이 양호하고 인터락이 정상작동하며 UV intensity가 40 uw/cm 이상"
             },
           ),
-          FormBuilderNote(
+          const FormBuilderNote(
             name: "d100",
           ),
           SizedBox(height: 50.h),
@@ -144,7 +143,7 @@ class Tab22 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile12str",
@@ -159,7 +158,7 @@ class Tab22 extends StatelessWidget {
                   "0": "0 =  멸균공정에 이상이 없고 누기가 발견되지 않으며 소음도 65 dB 미만"
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d101",
               ),
             ],
@@ -191,7 +190,7 @@ class Tab22 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile13str",
@@ -206,7 +205,7 @@ class Tab22 extends StatelessWidget {
                   "0": "0 =  멸균공정에 이상이 없고 누기가 발견되지 않으며 소음도 65 dB 미만"
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d102",
               )
             ],
@@ -222,7 +221,7 @@ class Tab22 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile14str",
@@ -239,7 +238,7 @@ class Tab22 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d103",
               )
             ],
@@ -255,7 +254,7 @@ class Tab22 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile15str",
@@ -272,7 +271,7 @@ class Tab22 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d104",
               )
             ],
@@ -289,7 +288,7 @@ class Tab22 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile16str",
@@ -306,7 +305,7 @@ class Tab22 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d105",
               )
             ],

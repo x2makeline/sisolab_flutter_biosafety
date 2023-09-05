@@ -10,15 +10,17 @@ class FclField extends StatelessWidget {
       this.fclRadio,
       required this.noteName,
       required this.label,
-        this.initialNote,
-        this.initialImage,
+      this.initialNote,
+      this.initialImage,
       this.indent = true,
+      this.child,
       this.endIndent = false});
 
   final String label;
   final String? imageName;
   final String? initialImage;
   final FclRadio? fclRadio;
+  final Widget? child;
 
   final String noteName;
   final String? initialNote;
@@ -28,17 +30,18 @@ class FclField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label, style: context.textTheme.titleLarge),
-        FclImageNoteTemplate(
-          initialImage: initialImage,
-          initialNote: initialNote,
-          label: imageName != null ? "이미지 첨부" : null,
-          noteName: noteName,
-          fclRadio: fclRadio,
-          imageName: imageName,
-        ),
-      ],
-    );
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: context.textTheme.titleLarge),
+          FclImageNoteTemplate(
+            initialImage: initialImage,
+            initialNote: initialNote,
+            label: imageName != null ? "이미지 첨부" : null,
+            noteName: noteName,
+            fclRadio: fclRadio,
+            imageName: imageName,
+          ),
+          if(child != null) child!
+        ],
+      );
 }

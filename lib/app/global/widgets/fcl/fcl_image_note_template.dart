@@ -13,10 +13,11 @@ class FclImageNoteTemplate extends StatelessWidget {
       this.fclRadio,
       this.initialNote,
       this.initialImage,
+      this.child,
       this.imageName});
 
   final String? label;
-
+  final Widget? child;
   final String noteName;
   final String? initialNote;
   final String? imageName;

@@ -18,5 +18,6 @@ class ProcPreFieldIn extends SelectProcFieldIn {
   factory ProcPreFieldIn.fromJson(Map<String, dynamic> json) =>
       _$ProcPreFieldInFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$ProcPreFieldInToJson(this);
 }

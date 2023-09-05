@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class FclFormBuilderDateTimePicker extends StatelessWidget {

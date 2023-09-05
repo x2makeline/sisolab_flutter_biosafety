@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
@@ -70,7 +69,7 @@ class Tab11 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file29",
@@ -83,7 +82,7 @@ class Tab11 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d118",
               ),
             ],
@@ -115,7 +114,7 @@ class Tab11 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file30",
@@ -128,7 +127,7 @@ class Tab11 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d119",
               ),
             ],

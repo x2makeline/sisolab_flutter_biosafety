@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
@@ -70,7 +69,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file31",
@@ -83,7 +82,7 @@ class Tab16 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d120",
               ),
             ],
@@ -115,7 +114,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file32",
@@ -128,7 +127,7 @@ class Tab16 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d121",
               ),
             ],
@@ -160,7 +159,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file33",
@@ -173,7 +172,7 @@ class Tab16 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d122",
               ),
             ],
@@ -205,7 +204,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file34",
@@ -218,7 +217,7 @@ class Tab16 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d123",
               ),
             ],
@@ -250,7 +249,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file35",
@@ -263,7 +262,7 @@ class Tab16 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d124",
               ),
             ],
@@ -303,7 +302,7 @@ class Tab16 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const { "2": "2", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d125",
               ),
             ],
@@ -319,7 +318,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file36",
@@ -336,7 +335,7 @@ class Tab16 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d126",
               ),
             ],
@@ -352,7 +351,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file37",
@@ -369,7 +368,7 @@ class Tab16 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d127",
               ),
             ],
@@ -385,7 +384,7 @@ class Tab16 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file38",
@@ -402,7 +401,7 @@ class Tab16 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d128",
               ),
             ],

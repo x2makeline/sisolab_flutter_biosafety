@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-
+import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
@@ -52,14 +52,19 @@ class Tab5 extends StatelessWidget {
               FclField(
                 initialNote: vm.io.d105,
                 noteName: "d105",
-
                 label: "급기 덕트에 헤파 필터 설치",
                 imageName: "attfile12str",
-                initialImage: vm.io.attfile12str, 
+                initialImage: vm.io.attfile12str,
                 fclRadio: FclRadio(
-                  initialValue: vm.io.d16,
-                    name: "d16",
-                    map: yesOrNoMap),
+                    initialValue: vm.io.d16, name: "d16", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                  enable: vm.pastYearYn,
+                  list: [
+                    PreDataBoxItem(
+                        value: vm.preData?.d16, radioMap: yesOrNoMap),
+                    PreDataBoxItem(value: vm.preData?.d105)
+                  ],
+                )),
               ),
               FclField(
                 noteName: "d106",
@@ -68,9 +73,15 @@ class Tab5 extends StatelessWidget {
                 imageName: "attfile13str",
                 initialImage: vm.io.attfile13str,
                 fclRadio: FclRadio(
-                  initialValue: vm.io.d17,
-                    name: "d17",
-                    map: yesOrNoMap),
+                    initialValue: vm.io.d17, name: "d17", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                  enable: vm.pastYearYn,
+                  list: [
+                    PreDataBoxItem(
+                        value: vm.preData?.d17, radioMap: yesOrNoMap),
+                    PreDataBoxItem(value: vm.preData?.d106)
+                  ],
+                )),
               ),
             ].withWidgetBetween(Column(
               children: [

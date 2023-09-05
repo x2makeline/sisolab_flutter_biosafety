@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-
+import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
@@ -56,9 +56,15 @@ class Tab4 extends StatelessWidget {
                 imageName: "attfile6str",
                 initialImage: vm.io.attfile6str,
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d10,
-                    name: "d10",
-                    map: yesOrNoMap),
+                    initialValue: vm.io.d10, name: "d10", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d10, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d99)
+                      ],
+                    )),
               ),
               FclField(
                 noteName: "d100",
@@ -66,10 +72,16 @@ class Tab4 extends StatelessWidget {
                 label: "주출입구 잠금장치 및 출입통제",
                 imageName: "attfile7str",
                 initialImage: vm.io.attfile7str,
-                fclRadio: FclRadio( 
-                    initialValue: vm.io.d11,
-                    name: "d11",
-                    map: yesOrNoMap),
+                fclRadio: FclRadio(
+                    initialValue: vm.io.d11, name: "d11", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d11, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d100)
+                      ],
+                    )),
               ),
               FclField(
                 noteName: "d101",
@@ -78,9 +90,15 @@ class Tab4 extends StatelessWidget {
                 imageName: "attfile8str",
                 initialImage: vm.io.attfile8str,
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d12,
-                    name: "d12",
-                    map: yesOrNoMap),
+                    initialValue: vm.io.d12, name: "d12", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d12, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d101)
+                      ],
+                    )),
               ),
               FclField(
                 noteName: "d102",
@@ -89,9 +107,15 @@ class Tab4 extends StatelessWidget {
                 imageName: "attfile9str",
                 initialImage: vm.io.attfile9str,
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d13,
-                    name: "d13",
-                    map: yesOrNoMap),
+                    initialValue: vm.io.d13, name: "d13", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d13, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d102)
+                      ],
+                    )),
               ),
               FclField(
                 noteName: "d103",
@@ -100,9 +124,15 @@ class Tab4 extends StatelessWidget {
                 imageName: "attfile10str",
                 initialImage: vm.io.attfile10str,
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d14,
-                    name: "d14",
-                    map: yesOrNoMap),
+                    initialValue: vm.io.d14, name: "d14", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d14, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d103)
+                      ],
+                    )),
               ),
               FclField(
                 initialNote: vm.io.d104,
@@ -111,9 +141,15 @@ class Tab4 extends StatelessWidget {
                 initialImage: vm.io.attfile11str,
                 imageName: "attfile11str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d15,
-                    name: "d15",
-                    map: yesOrNoMap),
+                    initialValue: vm.io.d15, name: "d15", map: yesOrNoMap),
+                child: Obx(() => PreDataBox(
+                      enable: vm.pastYearYn,
+                      list: [
+                        PreDataBoxItem(
+                            value: vm.preData?.d15, radioMap: yesOrNoMap),
+                        PreDataBoxItem(value: vm.preData?.d104)
+                      ],
+                    )),
               ),
             ].withWidgetBetween(Column(
               children: [

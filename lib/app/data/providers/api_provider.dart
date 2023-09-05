@@ -5,6 +5,7 @@ import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/login_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/login_out.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/proc_field_save_out.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/proc_pre_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_out.dart';
@@ -93,6 +94,35 @@ class ApiProvider with PLoggerMixin {
       ApiResponse<BioIo>.fromJson(
         (await _dio.get("/api/selectProcField.do",
                 queryParameters: req.toJson()))
+            .data,
+        fromJson: (data) => BioIo.fromJson({
+          ...data["proc"],
+          ...data["field"],
+        }),
+      ).filter();
+
+//   * 현장점검 과년도 자료 가져오기 : GET방식
+//   주소 : http://125.6.37.38:9090/api/procPreField.do
+// // 파라미터
+//   gbn : fd2 또는 fd3
+//   idx : 현장점검 Key
+//   company : 운영기관명
+//   d184 : 설치·운영 장소명
+//
+// // 헤더 정보
+//   Access_Token : 사용자 접근 토큰
+//
+// // 리턴값 :
+//   result : 1 => 성공, -1 => 오류, -2 => 유효하지 않은 AccessToken 입니다, -3 => 권한이 없습니다
+//   message : 결과 메시지
+//   proc : 과년도 신청정보
+//   field : 과년도 현장점검 데이터
+
+  /// 현장점검 데이터 과년도 가져오기
+  Future<ApiResponse<BioIo>> procPreField(ProcPreFieldIn req) async =>
+      ApiResponse<BioIo>.fromJson(
+        (await _dio.get("/api/procPreField.do",
+            queryParameters: req.toJson()))
             .data,
         fromJson: (data) => BioIo.fromJson({
           ...data["proc"],

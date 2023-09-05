@@ -5,8 +5,9 @@ import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 공기조절
@@ -58,7 +59,7 @@ class Tab5 extends StatelessWidget {
                 fclRadio: FclRadio(
                   initialValue: vm.io.d16,
                     name: "d16",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d106",
@@ -69,7 +70,7 @@ class Tab5 extends StatelessWidget {
                 fclRadio: FclRadio(
                   initialValue: vm.io.d17,
                     name: "d17",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
             ].withWidgetBetween(Column(
               children: [

@@ -62,6 +62,7 @@ class _FormBuilderBetweenDateState extends State<FormBuilderBetweenDate> {
               child: Obx(() => FclFormBuilderDateTimePicker(
                     controller: _controller1,
                     name: widget.startName,
+
                 // initialDate: initialDate?.let((it) => _format.parse(it)),
                     initialDate: startV.value?.format1,
                     firstDate: _initialFirstDate,

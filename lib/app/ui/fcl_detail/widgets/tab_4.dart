@@ -5,8 +5,9 @@ import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 2. 실험구역 설치 적절성 확인
@@ -57,7 +58,7 @@ class Tab4 extends StatelessWidget {
                 fclRadio: FclRadio(
                     initialValue: vm.io.d10,
                     name: "d10",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d100",
@@ -68,7 +69,7 @@ class Tab4 extends StatelessWidget {
                 fclRadio: FclRadio( 
                     initialValue: vm.io.d11,
                     name: "d11",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d101",
@@ -79,7 +80,7 @@ class Tab4 extends StatelessWidget {
                 fclRadio: FclRadio(
                     initialValue: vm.io.d12,
                     name: "d12",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d102",
@@ -90,7 +91,7 @@ class Tab4 extends StatelessWidget {
                 fclRadio: FclRadio(
                     initialValue: vm.io.d13,
                     name: "d13",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d103",
@@ -101,7 +102,7 @@ class Tab4 extends StatelessWidget {
                 fclRadio: FclRadio(
                     initialValue: vm.io.d14,
                     name: "d14",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
               FclField(
                 initialNote: vm.io.d104,
@@ -112,7 +113,7 @@ class Tab4 extends StatelessWidget {
                 fclRadio: FclRadio(
                     initialValue: vm.io.d15,
                     name: "d15",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               ),
             ].withWidgetBetween(Column(
               children: [

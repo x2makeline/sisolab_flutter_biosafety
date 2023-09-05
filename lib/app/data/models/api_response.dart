@@ -17,7 +17,7 @@ class ApiResponse<D> {
   ApiResponse.fromJson(Map<String, dynamic> json,
       {D Function(dynamic)? fromJson})
       : result = json['result'] as String,
-        message = json["message"] as String,
+        message = json["message"] as String? ?? "",
         isError = json['result'] != successResult,
         isSuccess = json['result'] == successResult,
         data = fromJson != null ? fromJson(json) : null;

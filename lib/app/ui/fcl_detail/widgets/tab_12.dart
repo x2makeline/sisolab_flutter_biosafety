@@ -6,7 +6,8 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.da
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
+
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 14. HVAC 덕트시스템 제작 손상 등 품질상태
@@ -55,7 +56,7 @@ class Tab12 extends StatelessWidget {
                 imageName: "file61",
                 fclRadio: FclRadio(
                     name: "d65",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               )
             ].withWidgetBetween(Column(
               children: [

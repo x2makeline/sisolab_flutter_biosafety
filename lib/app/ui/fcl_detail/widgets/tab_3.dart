@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_note_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_person_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 
 /// 기본 자료 확인
 class Tab3 extends StatelessWidget {
@@ -54,11 +55,17 @@ class Tab3 extends StatelessWidget {
               ),
               FclImageNoteTemplate(
                 initialImage: vm.io.attfile1str,
-                label: "이미지 첨부", 
+                label: "이미지 첨부",
                 noteName: "d179",
                 initialNote: vm.io.d179,
                 imageName: "attfile1str",
               ),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d179),
+                    ],
+                  )),
               SizedBox(
                 height: 40.h,
               ),
@@ -70,7 +77,16 @@ class Tab3 extends StatelessWidget {
                   noteName: "d181",
                   radioName: "d1",
                   countName: "d180",
-                  radioMap: FclNewDetailFields.cbtframManagerRadio.map!),
+                  radioMap: yesOrNoMap2),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d180),
+                      PreDataBoxItem(
+                          value: vm.preData?.d1, radioMap: yesOrNoMap2),
+                      PreDataBoxItem(value: vm.preData?.d181)
+                    ],
+                  )),
               SizedBox(
                 height: 40.h,
               ),
@@ -82,7 +98,16 @@ class Tab3 extends StatelessWidget {
                   noteName: "d182",
                   radioName: "d2",
                   countName: "d87",
-                  radioMap: FclNewDetailFields.cbtframAdministratorRadio.map!),
+                  radioMap: yesOrNoMap2),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d87),
+                      PreDataBoxItem(
+                          value: vm.preData?.d2, radioMap: yesOrNoMap2),
+                      PreDataBoxItem(value: vm.preData?.d182)
+                    ],
+                  )),
               SizedBox(
                 height: 40.h,
               ),
@@ -94,7 +119,16 @@ class Tab3 extends StatelessWidget {
                   noteName: "d183",
                   radioName: "d3",
                   countName: "d88",
-                  radioMap: FclNewDetailFields.cbtframUserRadio.map!),
+                  radioMap: yesOrNoMap),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d88),
+                      PreDataBoxItem(
+                          value: vm.preData?.d3, radioMap: yesOrNoMap),
+                      PreDataBoxItem(value: vm.preData?.d183)
+                    ],
+                  )),
               SizedBox(
                 height: 47.h,
               ),
@@ -109,11 +143,17 @@ class Tab3 extends StatelessWidget {
               ),
               FclImageNoteTemplate(
                 label: "이미지 첨부",
-                initialNote: vm.io.d89, 
+                initialNote: vm.io.d89,
                 initialImage: vm.io.attfile2str,
                 noteName: "d89",
                 imageName: "attfile2str",
               ),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d89),
+                    ],
+                  )),
               SizedBox(
                 height: 40.h,
               ),
@@ -125,7 +165,16 @@ class Tab3 extends StatelessWidget {
                   noteName: "d91",
                   radioName: "d4",
                   countName: "d90",
-                  radioMap: FclNewDetailFields.saepnssManagerRadio.map!),
+                  radioMap: yesOrNoMap),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d90),
+                      PreDataBoxItem(
+                          value: vm.preData?.d4, radioMap: yesOrNoMap),
+                      PreDataBoxItem(value: vm.preData?.d91)
+                    ],
+                  )),
               SizedBox(
                 height: 40.h,
               ),
@@ -137,7 +186,16 @@ class Tab3 extends StatelessWidget {
                   noteName: "d93",
                   radioName: "d5",
                   countName: "d92",
-                  radioMap: FclNewDetailFields.saepnssAdministratorRadio.map!),
+                  radioMap: yesOrNoMap),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d92),
+                      PreDataBoxItem(
+                          value: vm.preData?.d5, radioMap: yesOrNoMap),
+                      PreDataBoxItem(value: vm.preData?.d93)
+                    ],
+                  )),
               SizedBox(
                 height: 40.h,
               ),
@@ -149,7 +207,16 @@ class Tab3 extends StatelessWidget {
                   noteName: "d95",
                   radioName: "d6",
                   countName: "d94",
-                  radioMap: FclNewDetailFields.saepnssUserRadio.map!),
+                  radioMap: yesOrNoMap),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d94),
+                      PreDataBoxItem(
+                          value: vm.preData?.d6, radioMap: yesOrNoMap),
+                      PreDataBoxItem(value: vm.preData?.d95)
+                    ],
+                  )),
               SizedBox(
                 height: 47.h,
               ),
@@ -162,17 +229,21 @@ class Tab3 extends StatelessWidget {
               FclImageNoteTemplate(
                 label: "이미지 첨부",
                 noteName: "d96",
-
-                initialNote: vm.io.d96, 
+                initialNote: vm.io.d96,
                 initialImage: vm.io.attfile3str,
-
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d7,
-                    name: "d7",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d7, name: "d7", map: yesOrNoMap),
                 // radioName: "d7",
                 imageName: "attfile3str",
               ),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(
+                          value: vm.preData?.d7, radioMap: yesOrNoMap),
+                      PreDataBoxItem(value: vm.preData?.d96),
+                    ],
+                  )),
               SizedBox(
                 height: 47.h,
               ),
@@ -186,12 +257,18 @@ class Tab3 extends StatelessWidget {
                 initialNote: vm.io.d97,
                 noteName: "d97",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d8,
-                    name: "d8",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
-                initialImage: vm.io.attfile4str, 
+                    initialValue: vm.io.d8, name: "d8", map: yesOrNoMap),
+                initialImage: vm.io.attfile4str,
                 imageName: "attfile4str",
               ),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(
+                          value: vm.preData?.d8, radioMap: yesOrNoMap),
+                      PreDataBoxItem(value: vm.preData?.d97)
+                    ],
+                  )),
               SizedBox(
                 height: 47.h,
               ),
@@ -206,12 +283,17 @@ class Tab3 extends StatelessWidget {
                 initialNote: vm.io.d98,
                 noteName: "d98",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d9,
-                    name: "d9",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d9, name: "d9", map: yesOrNoMap),
                 initialImage: vm.io.attfile5str,
                 imageName: "attfile5str",
               ),
+              Obx(() => PreDataBox(
+                    enable: vm.pastYearYn,
+                    list: [
+                      PreDataBoxItem(value: vm.preData?.d9),
+                      PreDataBoxItem(value: vm.preData?.d98),
+                    ],
+                  )),
               SizedBox(
                 height: 47.h,
               ),

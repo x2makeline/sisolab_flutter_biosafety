@@ -6,12 +6,15 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/proc_pre_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/providers/api_provider.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_field_repository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_form_state.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
+import 'package:sisolab_flutter_biosafety/core/extensions/dateformat.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 class FclDetailVm extends GetxController with PLoggerMixin {
@@ -21,15 +24,16 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   final _apiPro = ApiProvider();
   final _pastYearYn = RxBool(false);
   final ScrollController scrollController = ScrollController();
+  final _io = Rx<BioIo>(BioIo());
+  final _preData = Rxn<BioIo>();
 
   bool get pastYearYn => _pastYearYn.value;
+  BioIo? get preData => _preData.value;
 
   set pastYearYn(bool v) {
     if (!v) {
       _pastYearYn.value = v;
     } else {
-      pLog.i(io.company);
-      pLog.i(io.d184);
       if (io.company == null ||
           io.d184 == null ||
           io.company!.isEmpty ||
@@ -58,8 +62,6 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   final Gbn gbn =
       Gbn.values.firstWhere((element) => element.name == Get.parameters["id"]);
-
-  final _io = Rx<BioIo>(BioIo());
 
   /// 문서번호
   final String? idx = Get.parameters['idx'];
@@ -91,11 +93,6 @@ class FclDetailVm extends GetxController with PLoggerMixin {
         .then((value) {
       _io.value = value.data!;
       pLog.i(_io.value);
-      //     .copyWith(
-      //     d158: DateTime.now().subtract(Duration(days: 2)),
-      //     d282 : "취급동물"
-      // );
-      // pLog.i(_io.value);
 
       _isLoading.value = false;
     });
@@ -104,20 +101,26 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   void submit() {
     if (formKey.currentState != null) {
       formKey.currentState!.save();
-      pLog.i(formKey.currentState!.value.entries.where((e) => e.value != null));
       final bioJson = {
         ...io.toJson(),
-        ...BioIo.fromJson(formKey.currentState!.value).toJson()
+        ...BioIo.fromJson(formKey.currentState!.value.map((key, value) {
+          if (value == null) {
+            return MapEntry(key, value);
+          } else {
+            switch (value.runtimeType) {
+              case DateTime:
+                return MapEntry(key, (value as DateTime).format1);
+              case bool:
+                return MapEntry(key, boolToYn((value as bool)));
+            }
+          }
+          return MapEntry(key, value);
+        })).toJson()
           ..removeWhere((key, value) => value == null)
-        // ...BioIo.fromForm({...formKey.currentState!.value}).toJson()
-        //   ..removeWhere((key, value) => value == null),
       };
       final bio = BioIo.fromJson(bioJson);
 
       pLog.d("submit $bioJson");
-      pLog.d("io.toJson() ${io.toJson()}");
-      pLog.d(
-          "BioIo.fromJson(formKey.currentState!.value).toJson()..removeWhere((key, value) => value == null) ${BioIo.fromJson(formKey.currentState!.value).toJson()..removeWhere((key, value) => value == null)}");
 
       _apiPro.procFieldSave(bio).then((value) {
         if (value.isSuccess) {
@@ -137,6 +140,16 @@ class FclDetailVm extends GetxController with PLoggerMixin {
       _isLoading.value = false;
     }
     ever(_tabIndex, (_) => scrollController.jumpTo(0));
+    ever(_pastYearYn, (v) {
+      if (v && _preData.value == null) {
+        _repository
+            .procPreField(ProcPreFieldIn(
+                company: io.company!, d184: io.d184!, gbn: gbn, idx: io.idx!))
+            .then((value) {
+          _preData.value = value.data;
+        });
+      }
+    });
 
     formState =
         idx != null ? FclDetailFormState.update : FclDetailFormState.insert;

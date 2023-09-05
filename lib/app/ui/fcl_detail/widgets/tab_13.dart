@@ -6,7 +6,8 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.da
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
+
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지
@@ -55,7 +56,7 @@ class Tab13 extends StatelessWidget {
                 imageName: "file60",
                 fclRadio: FclRadio(
                     name: "d64",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    map: yesOrNoMap),
               )
             ].withWidgetBetween(Column(
               children: [

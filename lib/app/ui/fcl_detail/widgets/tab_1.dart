@@ -91,31 +91,26 @@ class Tab1 extends StatelessWidget {
                   FormBuilderCheckbox(
                     name: "d68",
                     initialValue: vm.io.d68 == "Y",
-                    onSaved: (newValue) => vm.io = vm.io.copyWith(d68: boolToYn(newValue) ),
                     title: Text("일반", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
                     name: "d69",
                     initialValue: vm.io.d69 == "Y",
-                    onSaved: (newValue) => vm.io = vm.io.copyWith(d69: boolToYn(newValue) ),
                     title: Text("대량배양", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
                     name: "d70",
                     initialValue: vm.io.d70 == "Y",
-                    onSaved: (newValue) => vm.io = vm.io.copyWith(d70: boolToYn(newValue) ),
                     title: Text("동물", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
                     name: "d71",
                     initialValue: vm.io.d71 == "Y",
-                    onSaved: (newValue) => vm.io = vm.io.copyWith(d71: boolToYn(newValue) ),
                     title: Text("식물", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
                     name: "d72",
                     initialValue: vm.io.d72 == "Y",
-                    onSaved: (newValue) => vm.io = vm.io.copyWith(d72: boolToYn(newValue) ),
                     title: Text("곤충", style: context.textTheme.titleMedium),
                   ),
                 ],

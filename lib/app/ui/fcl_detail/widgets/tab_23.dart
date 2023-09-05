@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_new_detail_fields.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 4. 건축 특성(문과 천정, 등기구, 전기장비등의 마감, 관통, 코킹) 확인
@@ -56,9 +55,7 @@ class Tab23 extends StatelessWidget {
                 label: "밀폐구역 내 접함 및 관통 부위의 기밀성",
                 imageName: "attfile14str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d18,
-                    name: "d18",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d18, name: "d18", map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d108",
@@ -67,9 +64,7 @@ class Tab23 extends StatelessWidget {
                 label: "밀폐구역 내 전열 콘센트 기밀성",
                 imageName: "attfile15str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d19,
-                    name: "d19",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d19, name: "d19", map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d109",
@@ -78,9 +73,7 @@ class Tab23 extends StatelessWidget {
                 label: "밀폐구역 내 조명기구 기밀성",
                 imageName: "attfile16str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d20,
-                    name: "d20",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d20, name: "d20", map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d110",
@@ -89,9 +82,7 @@ class Tab23 extends StatelessWidget {
                 label: "멸균기-벽체 이음새부위 기밀성",
                 imageName: "attfile17str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d21,
-                    name: "d21",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d21, name: "d21", map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d111",
@@ -100,9 +91,7 @@ class Tab23 extends StatelessWidget {
                 label: "기타 실험실 내부 벽체 연결부, 코너, 이음새 기밀성",
                 imageName: "attfile18str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d22,
-                    name: "d22",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d22, name: "d22", map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d112",
@@ -111,9 +100,7 @@ class Tab23 extends StatelessWidget {
                 label: "밀폐구역 내 싱크와 배수 위치 확인 및 기밀성",
                 imageName: "attfile19str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d23,
-                    name: "d23",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d23, name: "d23", map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d113",
@@ -122,9 +109,7 @@ class Tab23 extends StatelessWidget {
                 label: "실험실 내 온도, 습도 및 소음도",
                 imageName: "attfile20str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d24,
-                    name: "d24",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d24, name: "d24", map: yesOrNoMap),
               ),
               FclField(
                 noteName: "d114",
@@ -133,9 +118,7 @@ class Tab23 extends StatelessWidget {
                 label: "밀폐구역 내 바닥 마감상태",
                 imageName: "attfile21str",
                 fclRadio: FclRadio(
-                    initialValue: vm.io.d25,
-                    name: "d25",
-                    map: FclNewDetailFields.saepnssUserRadio.map!),
+                    initialValue: vm.io.d25, name: "d25", map: yesOrNoMap),
               )
             ].withWidgetBetween(Column(
               children: [

@@ -17,14 +17,11 @@ void main() async {
   Intl.defaultLocale = 'ko-KP';
   WidgetsFlutterBinding.ensureInitialized();
   FormBuilderLocalizations.setCurrentInstance(FormBuilderLocalizationsImplKo());
-
   await SPref.init();
   await Hive.initFlutter();
   // Hive.registerAdapter(BioIoAdapter());
   // await HiveRepository.openBox();
-
   // box.
-
   runApp(const MyApp());
 }
 

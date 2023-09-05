@@ -6,8 +6,6 @@ class GlobalBinding extends Bindings {
   @override
   Future<void> dependencies() async {
     Get.put(NetworkVm());
-
     Get.put(TokenVm());
-
   }
 }

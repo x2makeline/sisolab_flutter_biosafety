@@ -10,10 +10,10 @@ class NoteTemplate extends StatelessWidget {
       this.label,
       this.onSaved,
       this.initialValue,
-      required this.name,
+      this.name,
       required this.builder});
 
-  final String name;
+  final String? name;
   final String? label;
   final String? initialValue;
   final List<Widget> Function(BuildContext context) builder;
@@ -25,11 +25,12 @@ class NoteTemplate extends StatelessWidget {
       child: Column(
         children: [
           ...builder(context),
-          FormBuilderNote(
-            name: name,
-            initialValue: initialValue,
-            onSaved: onSaved,
-          )
+          if(name != null)
+            FormBuilderNote(
+              name: name!,
+              initialValue: initialValue,
+              onSaved: onSaved,
+            )
         ].withSpaceBetween(height: 10.h),
       ));
 }

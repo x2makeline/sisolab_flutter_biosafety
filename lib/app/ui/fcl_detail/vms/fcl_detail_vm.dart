@@ -145,10 +145,17 @@ class FclDetailVm extends GetxController with PLoggerMixin {
       if (v && _preData.value == null) {
         _repository
             .procPreField(ProcPreFieldIn(
-                company: io.company!, d184: io.d184!, gbn: gbn, idx: io.idx!))
+            company: "운영기관", d184: "test", gbn: Gbn.fd2, idx: 609))
             .then((value) {
           _preData.value = value.data;
         });
+
+        // _repository
+        //     .procPreField(ProcPreFieldIn(
+        //         company: io.company!, d184: io.d184!, gbn: gbn, idx: io.idx!))
+        //     .then((value) {
+        //   _preData.value = value.data;
+        // });
       }
     });
 

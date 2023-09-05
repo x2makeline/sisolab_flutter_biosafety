@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
@@ -70,7 +69,7 @@ class Tab8 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile17str",
@@ -83,7 +82,7 @@ class Tab8 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d106",
               ),
             ],
@@ -115,7 +114,7 @@ class Tab8 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile18str",
@@ -128,7 +127,7 @@ class Tab8 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d107",
               ),
             ],
@@ -160,7 +159,7 @@ class Tab8 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile19str",
@@ -173,7 +172,7 @@ class Tab8 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d108",
               ),
             ],
@@ -205,7 +204,7 @@ class Tab8 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile20str",
@@ -218,7 +217,7 @@ class Tab8 extends StatelessWidget {
                 orientation: OptionsOrientation.wrap,
                 map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d109",
               ),
             ],
@@ -234,7 +233,7 @@ class Tab8 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "attfile21str",
@@ -251,7 +250,7 @@ class Tab8 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d110",
               ),
             ],
@@ -267,7 +266,7 @@ class Tab8 extends StatelessWidget {
               SizedBox(
                 height: 20.h,
               ),
-              FieldWithLabel(
+              const FieldWithLabel(
                   label: "이미지 첨부",
                   child: FormBuilderFclImagePicker(
                     name: "file22",
@@ -284,7 +283,7 @@ class Tab8 extends StatelessWidget {
                   "N/A": "N/A",
                 },
               ),
-              FormBuilderNote(
+              const FormBuilderNote(
                 name: "d111",
               ),
             ],

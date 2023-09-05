@@ -1488,6 +1488,7 @@ class BioIo implements SelectProc, SelectProcField {
 
   factory BioIo.fromJson(Map<String, dynamic> json) => _$BioIoFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$BioIoToJson(this);
 
   BioIo(

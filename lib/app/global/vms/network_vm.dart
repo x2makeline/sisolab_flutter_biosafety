@@ -4,9 +4,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-/**
- * 영구 유지 -
- */
+/// 영구 유지 -
 class NetworkVm extends GetxService with PLoggerMixin {
   final _connectivity = Connectivity();
 

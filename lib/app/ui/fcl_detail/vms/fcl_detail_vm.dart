@@ -28,6 +28,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   final _preData = Rxn<BioIo>();
 
   bool get pastYearYn => _pastYearYn.value;
+
   BioIo? get preData => _preData.value;
 
   set pastYearYn(bool v) {

@@ -1,4 +1,1 @@
-enum FclDetailFormState {
-  update,
-  insert
-}
+enum FclDetailFormState { update, insert }

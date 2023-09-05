@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/field_with_label.dart';
 import '../../models/fcl_type.dart';
+import '../../widgets/field_with_label.dart';
 
 abstract class FclField extends StatefulWidget {
   const FclField(
@@ -11,7 +11,6 @@ abstract class FclField extends StatefulWidget {
       required this.type,
       required this.builder})
       : super(key: key);
-
 
   final String? label;
   final FclType type;

@@ -7,6 +7,4 @@ class ColorGroup {
   static const green = Color(0xff188657);
   static const red = Color(0xffff381e);
   static const darkGray = Color(0xff505050);
-
-
 }

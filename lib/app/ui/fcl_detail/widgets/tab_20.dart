@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
@@ -12,7 +14,7 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_betw
 class Tab20 extends StatelessWidget {
   const Tab20({super.key});
 
-  FclDetailVm get controller => FclDetailVm.to;
+  FclDetailVm get vm => FclDetailVm.to;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -29,9 +31,9 @@ class Tab20 extends StatelessWidget {
                 children: [
                   Text("과년도 자료", style: TextStyle(fontSize: 28.sp)),
                   Obx(() => Checkbox(
-                      value: controller.pastYearYn,
+                      value: vm.pastYearYn,
                       onChanged: (v) {
-                        controller.pastYearYn = v ?? false;
+                        vm.pastYearYn = v ?? false;
                       }))
                 ],
               )
@@ -48,28 +50,56 @@ class Tab20 extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               FclField(
-                noteName: "d143",
-                label: "실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상)",
-                imageName: "file50",
-                fclRadio: FclRadio(name: "d53", map: yesOrNoMap),
-              ),
+                  noteName: "d143",
+                  label: "실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상)",
+                  imageName: "file50",
+                  fclRadio: FclRadio(name: "d53", map: yesOrNoMap),
+                  child: Obx(() => PreDataBox(
+                        enable: vm.pastYearYn,
+                        list: [
+                          PreDataBoxItem(
+                              value: vm.preData?.d53, radioMap: yesOrNoMap),
+                          PreDataBoxItem(value: vm.preData?.d143)
+                        ],
+                      ))),
               FclField(
-                noteName: "d144",
-                label: "차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지)",
-                fclRadio: FclRadio(name: "d54", map: yesOrNoMap),
-              ),
+                  noteName: "d144",
+                  label: "차압 측정(청정지역과 오염지역은 최소 –24 Pa 유지)",
+                  fclRadio: FclRadio(name: "d54", map: yesOrNoMap),
+                  child: Obx(() => PreDataBox(
+                        enable: vm.pastYearYn,
+                        list: [
+                          PreDataBoxItem(
+                              value: vm.preData?.d54, radioMap: yesOrNoMap),
+                          PreDataBoxItem(value: vm.preData?.d107)
+                        ],
+                      ))),
               FclField(
-                noteName: "d145",
-                label: "밀폐구역 내 실간차압이 -7.6 Pa 이상 유지",
-                imageName: "file51",
-                fclRadio: FclRadio(name: "d55", map: yesOrNoMap),
-              ),
+                  noteName: "d145",
+                  label: "밀폐구역 내 실간차압이 -7.6 Pa 이상 유지",
+                  imageName: "file51",
+                  fclRadio: FclRadio(name: "d55", map: yesOrNoMap),
+                  child: Obx(() => PreDataBox(
+                        enable: vm.pastYearYn,
+                        list: [
+                          PreDataBoxItem(
+                              value: vm.preData?.d55, radioMap: yesOrNoMap),
+                          PreDataBoxItem(value: vm.preData?.d145)
+                        ],
+                      ))),
               FclField(
-                noteName: "d146",
-                label: "밀폐구역 내 실간 일방향 기류 확인",
-                imageName: "file52",
-                fclRadio: FclRadio(name: "d56", map: yesOrNoMap),
-              )
+                  noteName: "d146",
+                  label: "밀폐구역 내 실간 일방향 기류 확인",
+                  imageName: "file52",
+                  fclRadio: FclRadio(name: "d56", map: yesOrNoMap),
+                  child: Obx(() => PreDataBox(
+                        enable: vm.pastYearYn,
+                        list: [
+                          PreDataBoxItem(
+                              value: vm.preData?.d56, radioMap: yesOrNoMap),
+                          PreDataBoxItem(value: vm.preData?.d146)
+                        ],
+                      )))
             ].withWidgetBetween(Column(
               children: [
                 SizedBox(

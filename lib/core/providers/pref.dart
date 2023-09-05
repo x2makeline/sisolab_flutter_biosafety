@@ -24,6 +24,7 @@ class SPref {
 enum Pref<T> with PLoggerMixin {
   accessToken<String>(),
   refreshToken<String>(),
+
   /// offline id
   userId<String>();
 

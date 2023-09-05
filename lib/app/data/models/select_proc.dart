@@ -29,8 +29,6 @@ class SelectProc {
   @JsonKey(name: "print_submit_dt")
   String? printSubmitDt;
 
-
-
   String? attfile1str;
   String? attfile2str;
   String? attfile3str;

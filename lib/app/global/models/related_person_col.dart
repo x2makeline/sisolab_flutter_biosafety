@@ -1,4 +1,3 @@
-
 class FclRelatedPersonCol {
   String title;
   String nameNm;

@@ -94,17 +94,17 @@ class _SignatureButtonState extends State<SignatureButton> {
                     height: 90.h,
                   )
                 : Stack(
-              children: [
-                const Center(
-                  child: Text("[서명]"),
-                ),
-                TextField(
-                  decoration: InputDecoration(
-                    disabledBorder: textFieldDecoration.border,
-                  ),
-                  enabled: false,
-                )
-              ],
-            )));
+                    children: [
+                      const Center(
+                        child: Text("[서명]"),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          disabledBorder: textFieldDecoration.border,
+                        ),
+                        enabled: false,
+                      )
+                    ],
+                  )));
   }
 }

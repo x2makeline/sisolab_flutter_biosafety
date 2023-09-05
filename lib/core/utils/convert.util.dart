@@ -9,5 +9,4 @@ String uint8ListTob64(Uint8List uint8list) {
   return header + base64String;
 }
 
-
 String? boolToYn(bool? v) => v?.let((it) => it ? "Y" : "N");

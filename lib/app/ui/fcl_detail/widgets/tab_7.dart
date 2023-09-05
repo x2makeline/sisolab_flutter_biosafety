@@ -10,7 +10,6 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.da
 class Tab7 extends StatelessWidget {
   const Tab7({super.key});
 
-
   FclDetailVm get vm => FclDetailVm.to;
 
   @override

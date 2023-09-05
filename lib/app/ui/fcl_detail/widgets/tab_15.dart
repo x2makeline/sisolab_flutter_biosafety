@@ -103,15 +103,12 @@ class Tab15 extends StatelessWidget {
                       child: FormBuilderFclImagePicker(
                         name: "attfile2str",
                       )),
-                  FclRadioGroup(
-                      name: "d3",
-                      initialValue: vm.io.d3,
-                      map: const {
-                        "5": '6개 인터락시험 중 모두 정상작동',
-                        '3': "6개 인터락시험 중 1~2개 미작동",
-                        '1': "6개 인터락시험 중 3~4개 미작동",
-                        '0': "6개 인터락시험 중 6개 모두 미작동"
-                      }),
+                  FclRadioGroup(name: "d3", initialValue: vm.io.d3, map: const {
+                    "5": '6개 인터락시험 중 모두 정상작동',
+                    '3': "6개 인터락시험 중 1~2개 미작동",
+                    '1': "6개 인터락시험 중 3~4개 미작동",
+                    '0': "6개 인터락시험 중 6개 모두 미작동"
+                  }),
                   const FormBuilderNote(
                     name: "d90",
                   ),
@@ -133,14 +130,11 @@ class Tab15 extends StatelessWidget {
                       child: FormBuilderFclImagePicker(
                         name: "attfile3str",
                       )),
-                  FclRadioGroup(
-                      name: "d4",
-                      initialValue: vm.io.d4,
-                      map: const {
-                        "3": '비상샤워설비 작동 이상',
-                        '2': "비상샤워설비 작동가능하나 바닥마감상태 불량",
-                        '0': "비상샤워설비 작동가능하며 바닥마감상태 양호"
-                      }),
+                  FclRadioGroup(name: "d4", initialValue: vm.io.d4, map: const {
+                    "3": '비상샤워설비 작동 이상',
+                    '2': "비상샤워설비 작동가능하나 바닥마감상태 불량",
+                    '0': "비상샤워설비 작동가능하며 바닥마감상태 양호"
+                  }),
                   const FormBuilderNote(
                     name: "d91",
                   ),
@@ -162,15 +156,12 @@ class Tab15 extends StatelessWidget {
                       child: FormBuilderFclImagePicker(
                         name: "attfile4str",
                       )),
-                  FclRadioGroup(
-                      name: "d5",
-                      initialValue: vm.io.d5,
-                      map: const {
-                        "5": '4개 실, 복도 환기횟수시험결과 모두 불만족',
-                        '3': "4개 실, 복도 환기횟수시험결과 중 1~2개 만족",
-                        '1': "4개 실, 복도 환기횟수시험결과 중 3개 만족",
-                        '0': "4개 실, 복도 환기횟수시험결과 모두 만족"
-                      }),
+                  FclRadioGroup(name: "d5", initialValue: vm.io.d5, map: const {
+                    "5": '4개 실, 복도 환기횟수시험결과 모두 불만족',
+                    '3': "4개 실, 복도 환기횟수시험결과 중 1~2개 만족",
+                    '1': "4개 실, 복도 환기횟수시험결과 중 3개 만족",
+                    '0': "4개 실, 복도 환기횟수시험결과 모두 만족"
+                  }),
                   const FormBuilderNote(
                     name: "d93",
                   ),
@@ -223,15 +214,12 @@ class Tab15 extends StatelessWidget {
                       child: FormBuilderFclImagePicker(
                         name: "attfile6str",
                       )),
-                  FclRadioGroup(
-                      name: "d6",
-                      initialValue: vm.io.d6,
-                      map: const {
-                        "5": '천장, 벽체, 전열 콘센트 등 누기 9곳 이상',
-                        '3': "천장, 벽체, 전열 콘센트 등 누기 6~8곳",
-                        '1': "천장, 벽체, 전열 콘센트 등 누기 3~5곳",
-                        '0': "천장, 벽체, 전열 콘센트 등 누기 0~2곳"
-                      }),
+                  FclRadioGroup(name: "d6", initialValue: vm.io.d6, map: const {
+                    "5": '천장, 벽체, 전열 콘센트 등 누기 9곳 이상',
+                    '3': "천장, 벽체, 전열 콘센트 등 누기 6~8곳",
+                    '1': "천장, 벽체, 전열 콘센트 등 누기 3~5곳",
+                    '0': "천장, 벽체, 전열 콘센트 등 누기 0~2곳"
+                  }),
                   const FormBuilderNote(
                     name: "d95",
                   ),

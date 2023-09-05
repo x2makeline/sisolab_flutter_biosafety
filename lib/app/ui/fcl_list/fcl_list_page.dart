@@ -300,7 +300,6 @@ class FclListPage extends StatelessWidget {
                             onPressed: () {
                               Get.toNamed(AppRoutes.fclList.name
                                   .replaceFirst(RegExp(r'(:id)'), vm.gbn.name));
-
                             },
                             child: const Text("신규등록")),
                       ].withSpaceBetween(width: 24.w),

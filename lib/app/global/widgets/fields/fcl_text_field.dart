@@ -24,6 +24,8 @@ class FclTextField extends FclField {
                   onSubmitted: onSubmitted,
                   initialValue: initialValue,
                   style: buttonTextStyle,
-                  decoration: textFieldDecoration.copyWith(hintText: hintText).copyWith(filled: !enabled),
+                  decoration: textFieldDecoration
+                      .copyWith(hintText: hintText)
+                      .copyWith(filled: !enabled),
                 ));
 }

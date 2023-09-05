@@ -4,6 +4,7 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_betwe
 
 class FormBuilderImage extends StatelessWidget {
   const FormBuilderImage({super.key, required this.name, this.onSaved});
+
   final String name;
   final void Function(List<PlatformFile>?)? onSaved;
 
@@ -11,9 +12,7 @@ class FormBuilderImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormBuilderFilePicker(
       onSaved: onSaved,
-
-      decoration: const InputDecoration(
-        enabledBorder: InputBorder.none),
+      decoration: const InputDecoration(enabledBorder: InputBorder.none),
       name: name,
       previewImages: true,
       customFileViewerBuilder: (list, fn) {
@@ -51,6 +50,3 @@ class FormBuilderImage extends StatelessWidget {
     );
   }
 }
-
-
-

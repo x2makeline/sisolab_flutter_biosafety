@@ -300,7 +300,7 @@ class Tab16 extends StatelessWidget {
                 labelWithKey: false,
                 wrapAlignment: WrapAlignment.start,
                 orientation: OptionsOrientation.wrap,
-                map: const { "2": "2", "1": "1", "0": "0"},
+                map: const {"2": "2", "1": "1", "0": "0"},
               ),
               const FormBuilderNote(
                 name: "d125",

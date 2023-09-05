@@ -12,5 +12,3 @@ extension ListChunk<T> on List<T> {
     return chunkedList;
   }
 }
-
-

@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
-
-
 class FclButton extends ButtonStyleButton {
-
-
-
   static TextStyle defaultTextStyle = const TextStyle(fontSize: 28);
 
   const FclButton({

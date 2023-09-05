@@ -14,6 +14,7 @@ class Tab11 extends StatelessWidget {
   const Tab11({super.key});
 
   FclDetailVm get vm => FclDetailVm.to;
+
   @override
   Widget build(BuildContext context) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,

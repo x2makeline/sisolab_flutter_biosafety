@@ -421,9 +421,7 @@ class SelectProcField {
   String? file9editable;
   String? file10editable;
 
-
   SelectProcField({
-
     this.file1editable,
     this.file2editable,
     this.file3editable,
@@ -434,7 +432,6 @@ class SelectProcField {
     this.file8editable,
     this.file9editable,
     this.file10editable,
-
     this.d1,
     this.d2,
     this.d3,

@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 12. 헤파필터 유닛 및 배기덕트 누기 확인
 class Tab17 extends StatelessWidget {
@@ -44,53 +40,38 @@ class Tab17 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FclField(
-                  noteName: "d152",
+          Obx(() => FclFieldView(
                   label: "헤파필터 유닛, 배기덕트 압력 감소 시험",
-                  imageName: "file58",
-                  fclRadio: FclRadio(name: "d62", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d62, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d152)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d153",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile58str', initialValue: vm.io.attfile58str),
+                    FclRadioField(
+                        name: 'd62',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d62,
+                        initialValue: vm.io.d62),
+                    FclNoteField(
+                        name: 'd152',
+                        initialValue: vm.io.d152,
+                        preValue: vm.preData?.d152)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "헤파필터 유닛 완전성 테스트(PAO 테스트)",
-                  imageName: "file59",
-                  fclRadio: FclRadio(name: "d63", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d63, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d153)
-                        ],
-                      )))
-            ].withWidgetBetween(Column(
-              children: [
-                SizedBox(
-                  height: 47.h,
-                ),
-                const FclDivider.form(),
-                SizedBox(
-                  height: 47.h,
-                )
-              ],
-            )),
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile59str', initialValue: vm.io.attfile59str),
+                    FclRadioField(
+                        name: 'd63',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d63,
+                        initialValue: vm.io.d63),
+                    FclNoteField(
+                        name: 'd153',
+                        initialValue: vm.io.d153,
+                        preValue: vm.preData?.d153)
+                  ]))
         ],
       );
 }

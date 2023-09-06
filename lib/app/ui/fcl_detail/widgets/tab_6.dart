@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 특이사항
 class Tab6 extends StatelessWidget {
@@ -41,35 +38,18 @@ class Tab6 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FclField(
-                  noteName: "d156",
+          Obx(() => FclFieldView(
                   label: "특이사항",
-                  imageName: "file62",
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [PreDataBoxItem(value: vm.preData?.d156)],
-                      )))
-            ].withWidgetBetween(Column(
-              children: [
-                SizedBox(
-                  height: 47.h,
-                ),
-                const FclDivider.form(),
-                SizedBox(
-                  height: 47.h,
-                )
-              ],
-            )),
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: false,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile22str', initialValue: vm.io.attfile22str),
+                    FclNoteField(
+                        name: 'd156',
+                        initialValue: vm.io.d156,
+                        preValue: vm.preData?.d156)
+                  ]))
         ],
       );
 }

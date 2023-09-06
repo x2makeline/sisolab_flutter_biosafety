@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 4. 건축 특성(문과 천정, 등기구, 전기장비등의 마감, 관통, 코킹) 확인
 class Tab23 extends StatelessWidget {
@@ -44,156 +40,135 @@ class Tab23 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FclField(
-                noteName: "d107",
-                initialNote: vm.io.d107,
-                initialImage: vm.io.attfile14str,
-                label: "밀폐구역 내 접함 및 관통 부위의 기밀성",
-                imageName: "attfile14str",
-                fclRadio: FclRadio(
-                    initialValue: vm.io.d18, name: "d18", map: yesOrNoMap),
-                child: Obx(() => PreDataBox(
-                      enable: vm.pastYearYn,
-                      list: [
-                        PreDataBoxItem(
-                            value: vm.preData?.d18, radioMap: yesOrNoMap),
-                        PreDataBoxItem(value: vm.preData?.d107)
-                      ],
-                    )),
-              ),
-              FclField(
-                  noteName: "d108",
-                  initialNote: vm.io.d108,
-                  initialImage: vm.io.attfile15str,
+          Obx(() => FclFieldView(
+                  label: "밀폐구역 내 접함 및 관통 부위의 기밀성",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile14str', initialValue: vm.io.attfile14str),
+                    FclRadioField(
+                        name: 'd18',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d18,
+                        initialValue: vm.io.d18),
+                    FclNoteField(
+                        name: 'd107',
+                        initialValue: vm.io.d107,
+                        preValue: vm.preData?.d107)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "밀폐구역 내 전열 콘센트 기밀성",
-                  imageName: "attfile15str",
-                  fclRadio: FclRadio(
-                      initialValue: vm.io.d19, name: "d19", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d19, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d108)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d109",
-                  initialNote: vm.io.d109,
-                  initialImage: vm.io.attfile16str,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile15str', initialValue: vm.io.attfile15str),
+                    FclRadioField(
+                        name: 'd19',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d19,
+                        initialValue: vm.io.d19),
+                    FclNoteField(
+                        name: 'd108',
+                        initialValue: vm.io.d108,
+                        preValue: vm.preData?.d108)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "밀폐구역 내 조명기구 기밀성",
-                  imageName: "attfile16str",
-                  fclRadio: FclRadio(
-                      initialValue: vm.io.d20, name: "d20", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d20, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d109)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d110",
-                  initialNote: vm.io.d110,
-                  initialImage: vm.io.attfile17str,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile16str', initialValue: vm.io.attfile16str),
+                    FclRadioField(
+                        name: 'd20',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d20,
+                        initialValue: vm.io.d20),
+                    FclNoteField(
+                        name: 'd109',
+                        initialValue: vm.io.d109,
+                        preValue: vm.preData?.d109)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "멸균기-벽체 이음새부위 기밀성",
-                  imageName: "attfile17str",
-                  fclRadio: FclRadio(
-                      initialValue: vm.io.d21, name: "d21", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d21, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d110)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d111",
-                  initialNote: vm.io.d111,
-                  initialImage: vm.io.attfile18str,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile17str', initialValue: vm.io.attfile17str),
+                    FclRadioField(
+                        name: 'd21',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d21,
+                        initialValue: vm.io.d21),
+                    FclNoteField(
+                        name: 'd110',
+                        initialValue: vm.io.d110,
+                        preValue: vm.preData?.d110)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "기타 실험실 내부 벽체 연결부, 코너, 이음새 기밀성",
-                  imageName: "attfile18str",
-                  fclRadio: FclRadio(
-                      initialValue: vm.io.d22, name: "d22", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d22, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d111)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d112",
-                  initialNote: vm.io.d112,
-                  initialImage: vm.io.attfile19str,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile18str', initialValue: vm.io.attfile18str),
+                    FclRadioField(
+                        name: 'd22',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d22,
+                        initialValue: vm.io.d22),
+                    FclNoteField(
+                        name: 'd111',
+                        initialValue: vm.io.d111,
+                        preValue: vm.preData?.d111)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "밀폐구역 내 싱크와 배수 위치 확인 및 기밀성",
-                  imageName: "attfile19str",
-                  fclRadio: FclRadio(
-                      initialValue: vm.io.d23, name: "d23", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d23, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d112)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d113",
-                  initialNote: vm.io.d113,
-                  initialImage: vm.io.attfile20str,
-                  label: "실험실 내 온도, 습도 및 소음도",
-                  imageName: "attfile20str",
-                  fclRadio: FclRadio(
-                      initialValue: vm.io.d24, name: "d24", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d24, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d113)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d114",
-                  initialNote: vm.io.d114,
-                  initialImage: vm.io.attfile21str,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile19str', initialValue: vm.io.attfile19str),
+                    FclRadioField(
+                        name: 'd23',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d23,
+                        initialValue: vm.io.d23),
+                    FclNoteField(
+                        name: 'd112',
+                        initialValue: vm.io.d112,
+                        preValue: vm.preData?.d112)
+                  ])),
+          Obx(() => FclFieldView(
+                  label: "밀폐구역 내 싱크와 배수 위치 확인 및 기밀성",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile20str', initialValue: vm.io.attfile20str),
+                    FclRadioField(
+                        name: 'd24',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d24,
+                        initialValue: vm.io.d24),
+                    FclNoteField(
+                        name: 'd113',
+                        initialValue: vm.io.d113,
+                        preValue: vm.preData?.d113)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "밀폐구역 내 바닥 마감상태",
-                  imageName: "attfile21str",
-                  fclRadio: FclRadio(
-                      initialValue: vm.io.d25, name: "d25", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d25, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d114)
-                        ],
-                      )))
-            ].withWidgetBetween(Column(
-              children: [
-                SizedBox(
-                  height: 47.h,
-                ),
-                const FclDivider.form(),
-                SizedBox(
-                  height: 47.h,
-                )
-              ],
-            )),
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: true,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile21str', initialValue: vm.io.attfile21str),
+                    FclRadioField(
+                        name: 'd25',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d25,
+                        initialValue: vm.io.d25),
+                    FclNoteField(
+                        name: 'd114',
+                        initialValue: vm.io.d114,
+                        preValue: vm.preData?.d114)
+                  ])),
         ],
       );
 }

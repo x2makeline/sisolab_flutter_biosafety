@@ -991,6 +991,46 @@ abstract class _$BioIoCWProxy {
 
   BioIo tableName(String? tableName);
 
+  BioIo attfile50str(String? attfile50str);
+
+  BioIo attfile51str(String? attfile51str);
+
+  BioIo attfile52str(String? attfile52str);
+
+  BioIo attfile53str(String? attfile53str);
+
+  BioIo attfile54str(String? attfile54str);
+
+  BioIo attfile55str(String? attfile55str);
+
+  BioIo attfile56str(String? attfile56str);
+
+  BioIo attfile57str(String? attfile57str);
+
+  BioIo attfile58str(String? attfile58str);
+
+  BioIo attfile59str(String? attfile59str);
+
+  BioIo attfile60str(String? attfile60str);
+
+  BioIo attfile61str(String? attfile61str);
+
+  BioIo attfile62str(String? attfile62str);
+
+  BioIo attfile63str(String? attfile63str);
+
+  BioIo attfile64str(String? attfile64str);
+
+  BioIo attfile65str(String? attfile65str);
+
+  BioIo attfile66str(String? attfile66str);
+
+  BioIo attfile67str(String? attfile67str);
+
+  BioIo attfile68str(String? attfile68str);
+
+  BioIo attfile69str(String? attfile69str);
+
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BioIo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
   /// Usage
@@ -1490,6 +1530,26 @@ abstract class _$BioIoCWProxy {
     int? simAuth,
     String? status,
     String? tableName,
+    String? attfile50str,
+    String? attfile51str,
+    String? attfile52str,
+    String? attfile53str,
+    String? attfile54str,
+    String? attfile55str,
+    String? attfile56str,
+    String? attfile57str,
+    String? attfile58str,
+    String? attfile59str,
+    String? attfile60str,
+    String? attfile61str,
+    String? attfile62str,
+    String? attfile63str,
+    String? attfile64str,
+    String? attfile65str,
+    String? attfile66str,
+    String? attfile67str,
+    String? attfile68str,
+    String? attfile69str,
   });
 }
 
@@ -2987,6 +3047,66 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   BioIo tableName(String? tableName) => this(tableName: tableName);
 
   @override
+  BioIo attfile50str(String? attfile50str) => this(attfile50str: attfile50str);
+
+  @override
+  BioIo attfile51str(String? attfile51str) => this(attfile51str: attfile51str);
+
+  @override
+  BioIo attfile52str(String? attfile52str) => this(attfile52str: attfile52str);
+
+  @override
+  BioIo attfile53str(String? attfile53str) => this(attfile53str: attfile53str);
+
+  @override
+  BioIo attfile54str(String? attfile54str) => this(attfile54str: attfile54str);
+
+  @override
+  BioIo attfile55str(String? attfile55str) => this(attfile55str: attfile55str);
+
+  @override
+  BioIo attfile56str(String? attfile56str) => this(attfile56str: attfile56str);
+
+  @override
+  BioIo attfile57str(String? attfile57str) => this(attfile57str: attfile57str);
+
+  @override
+  BioIo attfile58str(String? attfile58str) => this(attfile58str: attfile58str);
+
+  @override
+  BioIo attfile59str(String? attfile59str) => this(attfile59str: attfile59str);
+
+  @override
+  BioIo attfile60str(String? attfile60str) => this(attfile60str: attfile60str);
+
+  @override
+  BioIo attfile61str(String? attfile61str) => this(attfile61str: attfile61str);
+
+  @override
+  BioIo attfile62str(String? attfile62str) => this(attfile62str: attfile62str);
+
+  @override
+  BioIo attfile63str(String? attfile63str) => this(attfile63str: attfile63str);
+
+  @override
+  BioIo attfile64str(String? attfile64str) => this(attfile64str: attfile64str);
+
+  @override
+  BioIo attfile65str(String? attfile65str) => this(attfile65str: attfile65str);
+
+  @override
+  BioIo attfile66str(String? attfile66str) => this(attfile66str: attfile66str);
+
+  @override
+  BioIo attfile67str(String? attfile67str) => this(attfile67str: attfile67str);
+
+  @override
+  BioIo attfile68str(String? attfile68str) => this(attfile68str: attfile68str);
+
+  @override
+  BioIo attfile69str(String? attfile69str) => this(attfile69str: attfile69str);
+
+  @override
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BioIo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -3487,6 +3607,26 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
     Object? simAuth = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
     Object? tableName = const $CopyWithPlaceholder(),
+    Object? attfile50str = const $CopyWithPlaceholder(),
+    Object? attfile51str = const $CopyWithPlaceholder(),
+    Object? attfile52str = const $CopyWithPlaceholder(),
+    Object? attfile53str = const $CopyWithPlaceholder(),
+    Object? attfile54str = const $CopyWithPlaceholder(),
+    Object? attfile55str = const $CopyWithPlaceholder(),
+    Object? attfile56str = const $CopyWithPlaceholder(),
+    Object? attfile57str = const $CopyWithPlaceholder(),
+    Object? attfile58str = const $CopyWithPlaceholder(),
+    Object? attfile59str = const $CopyWithPlaceholder(),
+    Object? attfile60str = const $CopyWithPlaceholder(),
+    Object? attfile61str = const $CopyWithPlaceholder(),
+    Object? attfile62str = const $CopyWithPlaceholder(),
+    Object? attfile63str = const $CopyWithPlaceholder(),
+    Object? attfile64str = const $CopyWithPlaceholder(),
+    Object? attfile65str = const $CopyWithPlaceholder(),
+    Object? attfile66str = const $CopyWithPlaceholder(),
+    Object? attfile67str = const $CopyWithPlaceholder(),
+    Object? attfile68str = const $CopyWithPlaceholder(),
+    Object? attfile69str = const $CopyWithPlaceholder(),
   }) {
     return BioIo(
       attNameTxt1: attNameTxt1 == const $CopyWithPlaceholder()
@@ -5457,6 +5597,86 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.tableName
           // ignore: cast_nullable_to_non_nullable
           : tableName as String?,
+      attfile50str: attfile50str == const $CopyWithPlaceholder()
+          ? _value.attfile50str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile50str as String?,
+      attfile51str: attfile51str == const $CopyWithPlaceholder()
+          ? _value.attfile51str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile51str as String?,
+      attfile52str: attfile52str == const $CopyWithPlaceholder()
+          ? _value.attfile52str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile52str as String?,
+      attfile53str: attfile53str == const $CopyWithPlaceholder()
+          ? _value.attfile53str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile53str as String?,
+      attfile54str: attfile54str == const $CopyWithPlaceholder()
+          ? _value.attfile54str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile54str as String?,
+      attfile55str: attfile55str == const $CopyWithPlaceholder()
+          ? _value.attfile55str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile55str as String?,
+      attfile56str: attfile56str == const $CopyWithPlaceholder()
+          ? _value.attfile56str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile56str as String?,
+      attfile57str: attfile57str == const $CopyWithPlaceholder()
+          ? _value.attfile57str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile57str as String?,
+      attfile58str: attfile58str == const $CopyWithPlaceholder()
+          ? _value.attfile58str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile58str as String?,
+      attfile59str: attfile59str == const $CopyWithPlaceholder()
+          ? _value.attfile59str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile59str as String?,
+      attfile60str: attfile60str == const $CopyWithPlaceholder()
+          ? _value.attfile60str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile60str as String?,
+      attfile61str: attfile61str == const $CopyWithPlaceholder()
+          ? _value.attfile61str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile61str as String?,
+      attfile62str: attfile62str == const $CopyWithPlaceholder()
+          ? _value.attfile62str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile62str as String?,
+      attfile63str: attfile63str == const $CopyWithPlaceholder()
+          ? _value.attfile63str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile63str as String?,
+      attfile64str: attfile64str == const $CopyWithPlaceholder()
+          ? _value.attfile64str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile64str as String?,
+      attfile65str: attfile65str == const $CopyWithPlaceholder()
+          ? _value.attfile65str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile65str as String?,
+      attfile66str: attfile66str == const $CopyWithPlaceholder()
+          ? _value.attfile66str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile66str as String?,
+      attfile67str: attfile67str == const $CopyWithPlaceholder()
+          ? _value.attfile67str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile67str as String?,
+      attfile68str: attfile68str == const $CopyWithPlaceholder()
+          ? _value.attfile68str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile68str as String?,
+      attfile69str: attfile69str == const $CopyWithPlaceholder()
+          ? _value.attfile69str
+          // ignore: cast_nullable_to_non_nullable
+          : attfile69str as String?,
     );
   }
 }
@@ -5964,6 +6184,26 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
       simAuth: json['simAuth'] as int?,
       status: json['status'] as String?,
       tableName: json['tableName'] as String?,
+      attfile50str: json['attfile50str'] as String?,
+      attfile51str: json['attfile51str'] as String?,
+      attfile52str: json['attfile52str'] as String?,
+      attfile53str: json['attfile53str'] as String?,
+      attfile54str: json['attfile54str'] as String?,
+      attfile55str: json['attfile55str'] as String?,
+      attfile56str: json['attfile56str'] as String?,
+      attfile57str: json['attfile57str'] as String?,
+      attfile58str: json['attfile58str'] as String?,
+      attfile59str: json['attfile59str'] as String?,
+      attfile60str: json['attfile60str'] as String?,
+      attfile61str: json['attfile61str'] as String?,
+      attfile62str: json['attfile62str'] as String?,
+      attfile63str: json['attfile63str'] as String?,
+      attfile64str: json['attfile64str'] as String?,
+      attfile65str: json['attfile65str'] as String?,
+      attfile66str: json['attfile66str'] as String?,
+      attfile67str: json['attfile67str'] as String?,
+      attfile68str: json['attfile68str'] as String?,
+      attfile69str: json['attfile69str'] as String?,
     );
 
 Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
@@ -6459,4 +6699,24 @@ Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
       'simAuth': instance.simAuth,
       'status': instance.status,
       'tableName': instance.tableName,
+      'attfile50str': instance.attfile50str,
+      'attfile51str': instance.attfile51str,
+      'attfile52str': instance.attfile52str,
+      'attfile53str': instance.attfile53str,
+      'attfile54str': instance.attfile54str,
+      'attfile55str': instance.attfile55str,
+      'attfile56str': instance.attfile56str,
+      'attfile57str': instance.attfile57str,
+      'attfile58str': instance.attfile58str,
+      'attfile59str': instance.attfile59str,
+      'attfile60str': instance.attfile60str,
+      'attfile61str': instance.attfile61str,
+      'attfile62str': instance.attfile62str,
+      'attfile63str': instance.attfile63str,
+      'attfile64str': instance.attfile64str,
+      'attfile65str': instance.attfile65str,
+      'attfile66str': instance.attfile66str,
+      'attfile67str': instance.attfile67str,
+      'attfile68str': instance.attfile68str,
+      'attfile69str': instance.attfile69str,
     };

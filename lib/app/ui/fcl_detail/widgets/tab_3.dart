@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_note_template.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_person_template.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 
@@ -43,262 +39,193 @@ class Tab3 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text("연구자 및 관리자 생물안전교육 이수", style: context.textTheme.titleLarge),
-              SizedBox(
-                height: 23.h,
-              ),
-              FclImageNoteTemplate(
-                initialImage: vm.io.attfile1str,
-                label: "이미지 첨부",
-                noteName: "d179",
-                initialNote: vm.io.d179,
-                imageName: "attfile1str",
-              ),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d179),
-                    ],
-                  )),
-              SizedBox(
-                height: 40.h,
-              ),
-              FclPersonTemplate(
+          Obx(() => FclFieldView(
+                  label: "연구자 및 관리자 생물안전교육 이수",
+                  lastDividerYn: false,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile1str', initialValue: vm.io.attfile1str),
+                    FclNoteField(
+                        name: 'd179',
+                        initialValue: vm.io.d179,
+                        preValue: vm.preData?.d179)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "관리책임자",
-                  initialNote: vm.io.d181,
-                  initialRadio: vm.io.d1,
-                  initialCount: vm.io.d180,
-                  noteName: "d181",
-                  radioName: "d1",
-                  countName: "d180",
-                  radioMap: yesOrNoMap2),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d180),
-                      PreDataBoxItem(
-                          value: vm.preData?.d1, radioMap: yesOrNoMap2),
-                      PreDataBoxItem(value: vm.preData?.d181)
-                    ],
-                  )),
-              SizedBox(
-                height: 40.h,
-              ),
-              FclPersonTemplate(
+                  lastDividerYn: false,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclTextField(
+                        name: "d180",
+                        initialValue: vm.io.d180,
+                        preValue: vm.preData?.d180,
+                        suffixType: TextSuffixType.count,
+                        radioField: FclRadioField(
+                            name: "d1",
+                            map: yesOrNoMap2,
+                            initialValue: vm.io.d1,
+                            preValue: vm.preData?.d1)),
+                    FclNoteField(
+                        name: 'd181',
+                        initialValue: vm.io.d181,
+                        preValue: vm.preData?.d181)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "관리자",
-                  initialNote: vm.io.d182,
-                  initialRadio: vm.io.d2,
-                  initialCount: vm.io.d87,
-                  noteName: "d182",
-                  radioName: "d2",
-                  countName: "d87",
-                  radioMap: yesOrNoMap2),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d87),
-                      PreDataBoxItem(
-                          value: vm.preData?.d2, radioMap: yesOrNoMap2),
-                      PreDataBoxItem(value: vm.preData?.d182)
-                    ],
-                  )),
-              SizedBox(
-                height: 40.h,
-              ),
-              FclPersonTemplate(
-                  label: "사용자",
-                  initialNote: vm.io.d183,
-                  initialRadio: vm.io.d3,
-                  initialCount: vm.io.d88,
-                  noteName: "d183",
-                  radioName: "d3",
-                  countName: "d88",
-                  radioMap: yesOrNoMap),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d88),
-                      PreDataBoxItem(
-                          value: vm.preData?.d3, radioMap: yesOrNoMap),
-                      PreDataBoxItem(value: vm.preData?.d183)
-                    ],
-                  )),
-              SizedBox(
-                height: 47.h,
-              ),
-              const FclDivider.form(),
-              SizedBox(
-                height: 47.h,
-              ),
-              Text("밀폐구역 출입자 정상 혈청 보관",
-                  style: Theme.of(context).textTheme.titleLarge),
-              SizedBox(
-                height: 23.h,
-              ),
-              FclImageNoteTemplate(
-                label: "이미지 첨부",
-                initialNote: vm.io.d89,
-                initialImage: vm.io.attfile2str,
-                noteName: "d89",
-                imageName: "attfile2str",
-              ),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d89),
-                    ],
-                  )),
-              SizedBox(
-                height: 40.h,
-              ),
-              FclPersonTemplate(
+                  lastDividerYn: false,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclTextField(
+                        name: "d87",
+                        initialValue: vm.io.d87,
+                        preValue: vm.preData?.d87,
+                        suffixType: TextSuffixType.count,
+                        radioField: FclRadioField(
+                            name: "d2",
+                            map: yesOrNoMap2,
+                            initialValue: vm.io.d2,
+                            preValue: vm.preData?.d2)),
+                    FclNoteField(
+                        name: 'd182',
+                        initialValue: vm.io.d182,
+                        preValue: vm.preData?.d182)
+                  ])),
+          Obx(() =>
+              FclFieldView(label: "사용자", preYn: vm.pastYearYn, fieldList: [
+                FclTextField(
+                    name: "d88",
+                    initialValue: vm.io.d88,
+                    preValue: vm.preData?.d88,
+                    suffixType: TextSuffixType.count,
+                    radioField: FclRadioField(
+                        name: "d3",
+                        map: yesOrNoMap2,
+                        initialValue: vm.io.d3,
+                        preValue: vm.preData?.d3)),
+                FclNoteField(
+                    name: 'd183',
+                    initialValue: vm.io.d183,
+                    preValue: vm.preData?.d183)
+              ])),
+          Obx(() => FclFieldView(
+                  label: "밀폐구역 출입자 정상 혈청 보관",
+                  lastDividerYn: false,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile2str', initialValue: vm.io.attfile2str),
+                    FclNoteField(
+                        name: 'd89',
+                        initialValue: vm.io.d89,
+                        preValue: vm.preData?.d89)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "관리책임자",
-                  initialNote: vm.io.d91,
-                  initialRadio: vm.io.d4,
-                  initialCount: vm.io.d90,
-                  noteName: "d91",
-                  radioName: "d4",
-                  countName: "d90",
-                  radioMap: yesOrNoMap),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d90),
-                      PreDataBoxItem(
-                          value: vm.preData?.d4, radioMap: yesOrNoMap),
-                      PreDataBoxItem(value: vm.preData?.d91)
-                    ],
-                  )),
-              SizedBox(
-                height: 40.h,
-              ),
-              FclPersonTemplate(
+                  lastDividerYn: false,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclTextField(
+                        name: "d90",
+                        initialValue: vm.io.d90,
+                        preValue: vm.preData?.d90,
+                        suffixType: TextSuffixType.count,
+                        radioField: FclRadioField(
+                            name: "d4",
+                            map: yesOrNoMap,
+                            initialValue: vm.io.d4,
+                            preValue: vm.preData?.d4)),
+                    FclNoteField(
+                        name: 'd91',
+                        initialValue: vm.io.d91,
+                        preValue: vm.preData?.d91)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "관리자",
-                  initialNote: vm.io.d93,
-                  initialRadio: vm.io.d5,
-                  initialCount: vm.io.d92,
-                  noteName: "d93",
-                  radioName: "d5",
-                  countName: "d92",
-                  radioMap: yesOrNoMap),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d92),
-                      PreDataBoxItem(
-                          value: vm.preData?.d5, radioMap: yesOrNoMap),
-                      PreDataBoxItem(value: vm.preData?.d93)
-                    ],
-                  )),
-              SizedBox(
-                height: 40.h,
-              ),
-              FclPersonTemplate(
-                  label: "사용자",
-                  initialNote: vm.io.d95,
-                  initialRadio: vm.io.d6,
-                  initialCount: vm.io.d94,
-                  noteName: "d95",
-                  radioName: "d6",
-                  countName: "d94",
-                  radioMap: yesOrNoMap),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d94),
-                      PreDataBoxItem(
-                          value: vm.preData?.d6, radioMap: yesOrNoMap),
-                      PreDataBoxItem(value: vm.preData?.d95)
-                    ],
-                  )),
-              SizedBox(
-                height: 47.h,
-              ),
-              const FclDivider.form(),
-              SizedBox(
-                height: 47.h,
-              ),
-              Text("검증서, 시설도면(건축,기계,전기,소방 등) 보관",
-                  style: context.textTheme.titleLarge),
-              FclImageNoteTemplate(
-                label: "이미지 첨부",
-                noteName: "d96",
-                initialNote: vm.io.d96,
-                initialImage: vm.io.attfile3str,
-                fclRadio: FclRadio(
-                    initialValue: vm.io.d7, name: "d7", map: yesOrNoMap),
-                // radioName: "d7",
-                imageName: "attfile3str",
-              ),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(
-                          value: vm.preData?.d7, radioMap: yesOrNoMap),
-                      PreDataBoxItem(value: vm.preData?.d96),
-                    ],
-                  )),
-              SizedBox(
-                height: 47.h,
-              ),
-              const FclDivider.form(),
-              SizedBox(
-                height: 47.h,
-              ),
-              Text("생물안전관리규정 수립", style: context.textTheme.titleLarge),
-              FclImageNoteTemplate(
-                label: "이미지 첨부",
-                initialNote: vm.io.d97,
-                noteName: "d97",
-                fclRadio: FclRadio(
-                    initialValue: vm.io.d8, name: "d8", map: yesOrNoMap),
-                initialImage: vm.io.attfile4str,
-                imageName: "attfile4str",
-              ),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(
-                          value: vm.preData?.d8, radioMap: yesOrNoMap),
-                      PreDataBoxItem(value: vm.preData?.d97)
-                    ],
-                  )),
-              SizedBox(
-                height: 47.h,
-              ),
-              const FclDivider.form(),
-              SizedBox(
-                height: 47.h,
-              ),
-              Text("기관생물안전지침(시설운영사항 별도) 마련",
-                  style: context.textTheme.titleLarge),
-              FclImageNoteTemplate(
-                label: "이미지 첨부",
-                initialNote: vm.io.d98,
-                noteName: "d98",
-                fclRadio: FclRadio(
-                    initialValue: vm.io.d9, name: "d9", map: yesOrNoMap),
-                initialImage: vm.io.attfile5str,
-                imageName: "attfile5str",
-              ),
-              Obx(() => PreDataBox(
-                    enable: vm.pastYearYn,
-                    list: [
-                      PreDataBoxItem(value: vm.preData?.d9),
-                      PreDataBoxItem(value: vm.preData?.d98),
-                    ],
-                  )),
-              SizedBox(
-                height: 47.h,
-              ),
-            ],
-          )
+                  lastDividerYn: false,
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclTextField(
+                        name: "d92",
+                        initialValue: vm.io.d92,
+                        preValue: vm.preData?.d92,
+                        suffixType: TextSuffixType.count,
+                        radioField: FclRadioField(
+                            name: "d5",
+                            map: yesOrNoMap,
+                            initialValue: vm.io.d5,
+                            preValue: vm.preData?.d5)),
+                    FclNoteField(
+                        name: 'd93',
+                        initialValue: vm.io.d93,
+                        preValue: vm.preData?.d93)
+                  ])),
+          Obx(() =>
+              FclFieldView(label: "관리자", preYn: vm.pastYearYn, fieldList: [
+                FclTextField(
+                    name: "d94",
+                    initialValue: vm.io.d94,
+                    preValue: vm.preData?.d94,
+                    suffixType: TextSuffixType.count,
+                    radioField: FclRadioField(
+                        name: "d6",
+                        map: yesOrNoMap,
+                        initialValue: vm.io.d6,
+                        preValue: vm.preData?.d6)),
+                FclNoteField(
+                    name: 'd95',
+                    initialValue: vm.io.d95,
+                    preValue: vm.preData?.d95)
+              ])),
+          Obx(() => FclFieldView(
+                  label: "검증서, 시설도면(건축,기계,전기,소방 등) 보관",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile3str', initialValue: vm.io.attfile3str),
+                    FclRadioField(
+                        name: 'd7',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d7,
+                        initialValue: vm.io.d7),
+                    FclNoteField(
+                        name: 'd96',
+                        initialValue: vm.io.d96,
+                        preValue: vm.preData?.d96)
+                  ])),
+          Obx(() => FclFieldView(
+                  label: "생물안전관리규정 수립",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile4str', initialValue: vm.io.attfile4str),
+                    FclRadioField(
+                        name: 'd8',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d8,
+                        initialValue: vm.io.d8),
+                    FclNoteField(
+                        name: 'd97',
+                        initialValue: vm.io.d97,
+                        preValue: vm.preData?.d97)
+                  ])),
+          Obx(() => FclFieldView(
+                  lastDividerYn: false,
+                  label: "기관생물안전지침(시설운영사항 별도) 마련",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile5str', initialValue: vm.io.attfile5str),
+                    FclRadioField(
+                        name: 'd9',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d9,
+                        initialValue: vm.io.d9),
+                    FclNoteField(
+                        name: 'd98',
+                        initialValue: vm.io.d98,
+                        preValue: vm.preData?.d98)
+                  ])),
         ],
       );
 }

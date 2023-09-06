@@ -12,7 +12,7 @@ class FclRadio {
   FclRadio(
       {required this.name,
       required this.map,
-        this.labelWithKey = false,
+      this.labelWithKey = false,
       this.initialValue,
       this.wrapAlignment = WrapAlignment.start,
       this.orientation = OptionsOrientation.wrap});

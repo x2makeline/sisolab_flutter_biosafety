@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 
 /// (정기) 3. 비상 시 가동성 확인
 class Tab8 extends StatelessWidget {
@@ -130,11 +131,7 @@ class Tab8 extends StatelessWidget {
                         name: 'attfile21str', initialValue: vm.io.attfile21str),
                     FclRadioField(
                         name: 'd21',
-                        map: const {
-                          "Pass": "Pass",
-                          "Fail": "Fail",
-                          "N/A": "N/A",
-                        },
+                        map: passOrNaMap,
                         preValue: vm.preData?.d21,
                         initialValue: vm.io.d21),
                     FclNoteField(
@@ -151,11 +148,7 @@ class Tab8 extends StatelessWidget {
                         name: 'attfile22str', initialValue: vm.io.attfile22str),
                     FclRadioField(
                         name: 'd22',
-                        map: const {
-                          "Pass": "Pass",
-                          "Fail": "Fail",
-                          "N/A": "N/A",
-                        },
+                        map: passOrNaMap,
                         preValue: vm.preData?.d22,
                         initialValue: vm.io.d22),
                     FclNoteField(

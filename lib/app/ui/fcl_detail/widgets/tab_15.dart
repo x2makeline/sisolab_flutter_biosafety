@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 
 /// (정기) 1. 밀폐구역 설비 가동성 확인(유지관리보고서 또는 필드확인)
 class Tab15 extends StatelessWidget {
@@ -221,11 +222,7 @@ class Tab15 extends StatelessWidget {
                         name: 'attfile8str', initialValue: vm.io.attfile8str),
                     FclRadioField(
                         name: 'd8',
-                        map: const {
-                          "Pass": 'Pass',
-                          'Fail': "Fail",
-                          'N/A': "N/A"
-                        },
+                        map: passOrNaMap,
                         preValue: vm.preData?.d8,
                         initialValue: vm.io.d8),
                     FclNoteField(

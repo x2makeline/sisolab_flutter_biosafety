@@ -4,6 +4,7 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_10.dart'
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_11.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_12.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_13.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_14.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_15.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_16.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_17.dart';
@@ -42,6 +43,11 @@ class Constant {
 
 const yesOrNoMap = {"예": "예", "아니오": "아니오", "해당없음": "해당없음"};
 const yesOrNoMap2 = {"예": "예", "아니오": "아니오", "해당없음": "해당없음", "4": "4"};
+const passOrNaMap = {
+  "Pass": "Pass",
+  "Fail": "Fail",
+  "N/A": "N/A",
+};
 
 /// 신규허가 ∙ 재확인 텝 목록
 final List<FclTab> newTabList = [
@@ -71,6 +77,7 @@ final List<FclTab> regularTabList = [
   FclTab(title: "밀폐구역 설비 가동성 확인", body: const Tab15()),
   FclTab(title: "생물안전장비 가동성 확인", body: const Tab22()),
   FclTab(title: "비상 시 가동성 확인", body: const Tab8()),
+  FclTab(title: "시설 내 생물안전 정보 제공 확인", body: const Tab14()),
   FclTab(title: "유틸리티 가동성 확인", body: const Tab9()),
   FclTab(title: "폐기물(폐수) 처리 기록 확인", body: const Tab26()),
   FclTab(title: "IBC 구성 운영 확인", body: const Tab11()),

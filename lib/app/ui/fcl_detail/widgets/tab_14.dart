@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_note.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 
 /// (정기) 4. 시설 내 생물안전 정보 제공 확인
 class Tab14 extends StatelessWidget {
@@ -42,177 +39,87 @@ class Tab14 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("4.1) 생물위해표지판(사용병원체, 안전관리자명) 및 밀폐구역 내 비상시 연락체계도 게시",
-                  style: context.textTheme.titleLarge),
-              Padding(
-                padding: EdgeInsets.all(10.sp),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(30.sp),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color(0xff188657),
-                          style: BorderStyle.solid,
-                          width: 4)),
-                  child: Text(
-                    "- 주출입구 생물위해표지판 부착\n- 실험실 출입구 생물위해표지판 부착\n- 비상연락체계도 게시 및 현행화",
-                    style: TextStyle(fontSize: 28.sp),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              const FieldWithLabel(
-                  label: "이미지 첨부",
-                  child: FormBuilderFclImagePicker(
-                    name: "file23",
-                  )),
-              FclRadioGroup(
-                name: "d23",
-                initialValue: vm.io.d23,
-                labelWithKey: false,
-                wrapAlignment: WrapAlignment.start,
-                orientation: OptionsOrientation.wrap,
-                map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
-              ),
-              const FormBuilderNote(
-                name: "d112",
-              ),
-            ],
-          ),
-          SizedBox(height: 50.h),
-          const FclDivider.form(),
-          SizedBox(height: 50.h),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("4.2) 개인보호구 착‧탈의 절차를 게시하였는가?",
-                  style: context.textTheme.titleLarge),
-              Padding(
-                padding: EdgeInsets.all(10.sp),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(30.sp),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color(0xff188657),
-                          style: BorderStyle.solid,
-                          width: 4)),
-                  child: Text(
-                    "- 입갱의실 내 개인보호구 착의 절차 게시\n- 탈의실 내 개인보호구 탈의 절차 게시",
-                    style: TextStyle(fontSize: 28.sp),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              const FieldWithLabel(
-                  label: "이미지 첨부",
-                  child: FormBuilderFclImagePicker(
-                    name: "file24",
-                  )),
-              FclRadioGroup(
-                name: "d24",
-                initialValue: vm.io.d24,
-                labelWithKey: false,
-                wrapAlignment: WrapAlignment.start,
-                orientation: OptionsOrientation.wrap,
-                map: const {"2": "2", "1": "1", "0": "0"},
-              ),
-              const FormBuilderNote(
-                name: "d113",
-              ),
-            ],
-          ),
-          SizedBox(height: 50.h),
-          const FclDivider.form(),
-          SizedBox(height: 50.h),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("4.3) 덕트나 배관의 유체종류 및 방향을 표기하였는가?",
-                  style: context.textTheme.titleLarge),
-              Padding(
-                padding: EdgeInsets.all(10.sp),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(30.sp),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color(0xff188657),
-                          style: BorderStyle.solid,
-                          width: 4)),
-                  child: Text(
-                    "- 덕트에 유체종류 및 방향 표기\n- 배관에 유체종류 및 방향 표기",
-                    style: TextStyle(fontSize: 28.sp),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              const FieldWithLabel(
-                  label: "이미지 첨부",
-                  child: FormBuilderFclImagePicker(
-                    name: "file25",
-                  )),
-              FclRadioGroup(
-                name: "d25",
-                initialValue: vm.io.d25,
-                labelWithKey: false,
-                wrapAlignment: WrapAlignment.start,
-                orientation: OptionsOrientation.wrap,
-                map: const {"2": "2", "1": "1", "0": "0"},
-              ),
-              const FormBuilderNote(
-                name: "d114",
-              ),
-            ],
-          ),
-          SizedBox(height: 50.h),
-          const FclDivider.form(),
-          SizedBox(height: 50.h),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("대량) 배양장치 등에 각 등급에 맞는 표시를 부착하였는가?",
-                  style: context.textTheme.titleLarge),
-              SizedBox(
-                height: 20.h,
-              ),
-              const FieldWithLabel(
-                  label: "이미지 첨부",
-                  child: FormBuilderFclImagePicker(
-                    name: "file26",
-                  )),
-              FclRadioGroup(
-                name: "d26",
-                initialValue: vm.io.d26,
-                labelWithKey: false,
-                wrapAlignment: WrapAlignment.start,
-                orientation: OptionsOrientation.wrap,
-                map: const {
-                  "Pass": "Pass",
-                  "Fail": "Fail",
-                  "N/A": "N/A",
-                },
-              ),
-              const FormBuilderNote(
-                name: "d115",
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+          Obx(() => FclFieldView(
+                  label: '4.1) 생물위해표지판(사용병원체, 안전관리자명) 및 밀폐구역 내 비상시 연락체계도 게시',
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: false,
+                  desc: const [
+                    "- 주출입구 생물위해표지판 부착",
+                    "- 실험실 출입구 생물위해표지판 부착",
+                    "- 비상연락체계도 게시 및 현행화"
+                  ],
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile23str', initialValue: vm.io.attfile23str),
+                    FclRadioField(
+                        name: 'd23',
+                        map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
+                        preValue: vm.preData?.d23,
+                        initialValue: vm.io.d23),
+                    FclNoteField(
+                        name: 'd112',
+                        initialValue: vm.io.d112,
+                        preValue: vm.preData?.d112)
+                  ])),
+          Obx(() => FclFieldView(
+                  label: '4.2) 개인보호구 착‧탈의 절차를 게시하였는가?',
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: false,
+                  desc: const [
+                    "- 입갱의실 내 개인보호구 착의 절차 게시",
+                    "- 탈의실 내 개인보호구 탈의 절차 게시",
+                  ],
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile24str', initialValue: vm.io.attfile24str),
+                    FclRadioField(
+                        name: 'd24',
+                        map: const {"2": "2", "1": "1", "0": "0"},
+                        preValue: vm.preData?.d24,
+                        initialValue: vm.io.d24),
+                    FclNoteField(
+                        name: 'd113',
+                        initialValue: vm.io.d113,
+                        preValue: vm.preData?.d113)
+                  ])),
+          Obx(() => FclFieldView(
+                  label: '4.3) 덕트나 배관의 유체종류 및 방향을 표기하였는가?',
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: false,
+                  desc: const [
+                    "- 덕트에 유체종류 및 방향 표기",
+                    "- 배관에 유체종류 및 방향 표기"
+                  ],
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile25str', initialValue: vm.io.attfile25str),
+                    FclRadioField(
+                        name: 'd25',
+                        map: const {"2": "2", "1": "1", "0": "0"},
+                        preValue: vm.preData?.d25,
+                        initialValue: vm.io.d25),
+                    FclNoteField(
+                        name: 'd114',
+                        initialValue: vm.io.d114,
+                        preValue: vm.preData?.d114)
+                  ])),
+          Obx(() => FclFieldView(
+                  label: '대량) 배양장치 등에 각 등급에 맞는 표시를 부착하였는가?',
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: false,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile26str', initialValue: vm.io.attfile26str),
+                    FclRadioField(
+                        name: 'd26',
+                        map: passOrNaMap,
+                        preValue: vm.preData?.d26,
+                        initialValue: vm.io.d26),
+                    FclNoteField(
+                        name: 'd115',
+                        initialValue: vm.io.d115,
+                        preValue: vm.preData?.d115)
+                  ]))
         ],
       );
 }

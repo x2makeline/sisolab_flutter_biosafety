@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 13. 시설 자동제어시스템의 재부팅시, 운영 설정값 유지
 class Tab13 extends StatelessWidget {
@@ -44,40 +40,22 @@ class Tab13 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FclField(
-                  noteName: "d154",
+          Obx(() => FclFieldView(
                   label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
-                  imageName: "file60",
-                  fclRadio: FclRadio(name: "d64", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d64, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d154)
-                        ],
-                      )))
-            ].withWidgetBetween(Column(
-              children: [
-                SizedBox(
-                  height: 47.h,
-                ),
-                const FclDivider.form(),
-                SizedBox(
-                  height: 47.h,
-                )
-              ],
-            )),
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile60str', initialValue: vm.io.attfile60str),
+                    FclRadioField(
+                        name: 'd64',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d64,
+                        initialValue: vm.io.d64),
+                    FclNoteField(
+                        name: 'd154',
+                        initialValue: vm.io.d154,
+                        preValue: vm.preData?.d154)
+                  ]))
         ],
       );
 }

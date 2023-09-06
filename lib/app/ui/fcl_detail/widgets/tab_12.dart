@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 14. HVAC 덕트시스템 제작 손상 등 품질상태
 class Tab12 extends StatelessWidget {
@@ -44,40 +40,22 @@ class Tab12 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FclField(
-                  noteName: "d155",
+          Obx(() => FclFieldView(
                   label: "HVAC 덕트시스템 제작 손상 등 품질상태",
-                  imageName: "file61",
-                  fclRadio: FclRadio(name: "d65", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d65, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d155)
-                        ],
-                      )))
-            ].withWidgetBetween(Column(
-              children: [
-                SizedBox(
-                  height: 47.h,
-                ),
-                const FclDivider.form(),
-                SizedBox(
-                  height: 47.h,
-                )
-              ],
-            )),
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile61str', initialValue: vm.io.attfile61str),
+                    FclRadioField(
+                        name: 'd65',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d65,
+                        initialValue: vm.io.d65),
+                    FclNoteField(
+                        name: 'd155',
+                        initialValue: vm.io.d155,
+                        preValue: vm.preData?.d155)
+                  ]))
         ],
       );
 }

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 
 /// (정기) 2. 생물안전장비 가동성 확인(보고서 또는 필드 확인)
 class Tab22 extends StatelessWidget {
@@ -166,11 +167,7 @@ class Tab22 extends StatelessWidget {
                         name: 'attfile14str', initialValue: vm.io.attfile14str),
                     FclRadioField(
                         name: 'd14',
-                        map: const {
-                          "Pass": "Pass",
-                          "Fail": "Fail",
-                          "N/A": "N/A",
-                        },
+                        map: passOrNaMap,
                         preValue: vm.preData?.d14,
                         initialValue: vm.io.d14),
                     FclNoteField(
@@ -186,11 +183,7 @@ class Tab22 extends StatelessWidget {
                         name: 'attfile15str', initialValue: vm.io.attfile15str),
                     FclRadioField(
                         name: 'd15',
-                        map: const {
-                          "Pass": "Pass",
-                          "Fail": "Fail",
-                          "N/A": "N/A",
-                        },
+                        map: passOrNaMap,
                         preValue: vm.preData?.d15,
                         initialValue: vm.io.d15),
                     FclNoteField(
@@ -208,11 +201,7 @@ class Tab22 extends StatelessWidget {
                         name: 'attfile16str', initialValue: vm.io.attfile16str),
                     FclRadioField(
                         name: 'd16',
-                        map: const {
-                          "Pass": "Pass",
-                          "Fail": "Fail",
-                          "N/A": "N/A",
-                        },
+                        map: passOrNaMap,
                         preValue: vm.preData?.d16,
                         initialValue: vm.io.d16),
                     FclNoteField(

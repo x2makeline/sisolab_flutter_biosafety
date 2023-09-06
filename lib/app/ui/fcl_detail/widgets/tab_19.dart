@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 8. 유틸리티 가동성 확인
 class Tab19 extends StatelessWidget {
@@ -43,92 +39,87 @@ class Tab19 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FclField(
-                  noteName: "d138",
+          Obx(() => FclFieldView(
                   label: "데이터 전송용 전자시스템",
-                  imageName: "file45",
-                  fclRadio: FclRadio(name: "d48", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d48, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d138)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d139",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile45str', initialValue: vm.io.attfile45str),
+                    FclRadioField(
+                        name: 'd48',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d48,
+                        initialValue: vm.io.d48),
+                    FclNoteField(
+                        name: 'd138',
+                        initialValue: vm.io.d138,
+                        preValue: vm.preData?.d138)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "배관역류 방지장치",
-                  imageName: "file46",
-                  fclRadio: FclRadio(name: "d49", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d49, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d139)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d140",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile46str', initialValue: vm.io.attfile46str),
+                    FclRadioField(
+                        name: 'd49',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d49,
+                        initialValue: vm.io.d49),
+                    FclNoteField(
+                        name: 'd139',
+                        initialValue: vm.io.d139,
+                        preValue: vm.preData?.d139)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "내부 차압 측정 계기 및 경보장치",
-                  imageName: "file47",
-                  fclRadio: FclRadio(name: "d50", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d50, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d140)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d141",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile47str', initialValue: vm.io.attfile47str),
+                    FclRadioField(
+                        name: 'd50',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d50,
+                        initialValue: vm.io.d50),
+                    FclNoteField(
+                        name: 'd140',
+                        initialValue: vm.io.d140,
+                        preValue: vm.preData?.d140)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "비상전원공급(UPS 등) 연동 확인",
-                  imageName: "file48",
-                  fclRadio: FclRadio(name: "d51", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d51, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d141)
-                        ],
-                      ))),
-              FclField(
-                  noteName: "d142",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile48str', initialValue: vm.io.attfile48str),
+                    FclRadioField(
+                        name: 'd51',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d51,
+                        initialValue: vm.io.d51),
+                    FclNoteField(
+                        name: 'd141',
+                        initialValue: vm.io.d141,
+                        preValue: vm.preData?.d141)
+                  ])),
+          Obx(() => FclFieldView(
                   label: "가스공급 장치 설치 및 출입통제 확인",
-                  imageName: "file49",
-                  fclRadio: FclRadio(name: "d52", map: yesOrNoMap),
-                  child: Obx(() => PreDataBox(
-                        enable: vm.pastYearYn,
-                        list: [
-                          PreDataBoxItem(
-                              value: vm.preData?.d52, radioMap: yesOrNoMap),
-                          PreDataBoxItem(value: vm.preData?.d142)
-                        ],
-                      )))
-            ].withWidgetBetween(Column(
-              children: [
-                SizedBox(
-                  height: 47.h,
-                ),
-                const FclDivider.form(),
-                SizedBox(
-                  height: 47.h,
-                )
-              ],
-            )),
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: false,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile49str', initialValue: vm.io.attfile49str),
+                    FclRadioField(
+                        name: 'd52',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d52,
+                        initialValue: vm.io.d52),
+                    FclNoteField(
+                        name: 'd142',
+                        initialValue: vm.io.d142,
+                        preValue: vm.preData?.d142)
+                  ])),
         ],
       );
 }

@@ -25,7 +25,7 @@ class NoteTemplate extends StatelessWidget {
       child: Column(
         children: [
           ...builder(context),
-          if(name != null)
+          if (name != null)
             FormBuilderNote(
               name: name!,
               initialValue: initialValue,

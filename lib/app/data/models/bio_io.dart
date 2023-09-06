@@ -1983,5 +1983,85 @@ class BioIo implements SelectProc, SelectProcField {
       this.reg_datetime,
       this.simAuth,
       this.status,
-      this.tableName});
+      this.tableName,
+      this.attfile50str,
+      this.attfile51str,
+      this.attfile52str,
+      this.attfile53str,
+      this.attfile54str,
+      this.attfile55str,
+      this.attfile56str,
+      this.attfile57str,
+      this.attfile58str,
+      this.attfile59str,
+      this.attfile60str,
+      this.attfile61str,
+      this.attfile62str,
+      this.attfile63str,
+      this.attfile64str,
+      this.attfile65str,
+      this.attfile66str,
+      this.attfile67str,
+      this.attfile68str,
+      this.attfile69str});
+
+  @override
+  String? attfile50str;
+
+  @override
+  String? attfile51str;
+
+  @override
+  String? attfile52str;
+
+  @override
+  String? attfile53str;
+
+  @override
+  String? attfile54str;
+
+  @override
+  String? attfile55str;
+
+  @override
+  String? attfile56str;
+
+  @override
+  String? attfile57str;
+
+  @override
+  String? attfile58str;
+
+  @override
+  String? attfile59str;
+
+  @override
+  String? attfile60str;
+
+  @override
+  String? attfile61str;
+
+  @override
+  String? attfile62str;
+
+  @override
+  String? attfile63str;
+
+  @override
+  String? attfile64str;
+
+  @override
+  String? attfile65str;
+
+  @override
+  String? attfile66str;
+
+  @override
+  String? attfile67str;
+
+  @override
+  String? attfile68str;
+
+  @override
+  String? attfile69str;
 }

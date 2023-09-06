@@ -64,7 +64,7 @@ final List<FclTab> newTabList = [
   FclTab(title: "특이사항", body: const Tab6()),
 ];
 
-/// 신규허가 ∙ 재확인 텝 목록
+/// 정기 텝 목록
 final List<FclTab> regularTabList = [
   FclTab(title: "점검개요", body: const Tab1()),
   FclTab(title: "취급생물체정보", body: const Tab7()),

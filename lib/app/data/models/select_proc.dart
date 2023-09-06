@@ -78,6 +78,26 @@ class SelectProc {
   String? attfile47str;
   String? attfile48str;
   String? attfile49str;
+  String? attfile50str;
+  String? attfile51str;
+  String? attfile52str;
+  String? attfile53str;
+  String? attfile54str;
+  String? attfile55str;
+  String? attfile56str;
+  String? attfile57str;
+  String? attfile58str;
+  String? attfile59str;
+  String? attfile60str;
+  String? attfile61str;
+  String? attfile62str;
+  String? attfile63str;
+  String? attfile64str;
+  String? attfile65str;
+  String? attfile66str;
+  String? attfile67str;
+  String? attfile68str;
+  String? attfile69str;
   @JsonKey(name: "att_name_txt_1")
   String? attNameTxt1;
   @JsonKey(name: "att_name_txt_2")
@@ -202,6 +222,26 @@ class SelectProc {
     this.attfile47str,
     this.attfile48str,
     this.attfile49str,
+    this.attfile50str,
+    this.attfile51str,
+    this.attfile52str,
+    this.attfile53str,
+    this.attfile54str,
+    this.attfile55str,
+    this.attfile56str,
+    this.attfile57str,
+    this.attfile58str,
+    this.attfile59str,
+    this.attfile60str,
+    this.attfile61str,
+    this.attfile62str,
+    this.attfile63str,
+    this.attfile64str,
+    this.attfile65str,
+    this.attfile66str,
+    this.attfile67str,
+    this.attfile68str,
+    this.attfile69str,
   });
 
   factory SelectProc.fromJson(Map<String, dynamic> json) =>

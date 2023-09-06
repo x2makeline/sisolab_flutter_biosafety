@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_note.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 
 /// (정기) 5. 유틸리티 가동성 확인(보고서 또는 필드 확인)
@@ -43,54 +39,27 @@ class Tab9 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("5.1) 유틸리티 가스공급장치 설비 관리가 적절한가?",
-                  style: context.textTheme.titleLarge),
-              Padding(
-                padding: EdgeInsets.all(10.sp),
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.all(30.sp),
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color(0xff188657),
-                          style: BorderStyle.solid,
-                          width: 4)),
-                  child: Text(
-                    "- 가스저장실 출입통제장치 설치\n- 가스용기, 가스관, 레귤레이터 양호",
-                    style: TextStyle(fontSize: 28.sp),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              const FieldWithLabel(
-                  label: "이미지 첨부",
-                  child: FormBuilderFclImagePicker(
-                    name: "file27",
-                  )),
-              FclRadioGroup(
-                name: "d27",
-                initialValue: vm.io.d27,
-                labelWithKey: false,
-                wrapAlignment: WrapAlignment.start,
-                orientation: OptionsOrientation.wrap,
-                map: const {"2": "2", "1": "1", "0": "0"},
-              ),
-              const FormBuilderNote(
-                name: "d116",
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+          Obx(() => FclFieldView(
+                desc: const ["- 가스저장실 출입통제장치 설치", "- 가스용기, 가스관, 레귤레이터 양호"],
+                label: "5.1) 유틸리티 가스공급장치 설비 관리가 적절한가?",
+                lastDividerYn: false,
+                fieldList: [
+                  FclImageField(
+                      name: "attfile27str",
+                      initialValue: vm.io.attfile27str,
+                      preValue: vm.preData?.attfile27str),
+                  FclRadioField(
+                      name: "d27",
+                      map: {"2": "2", "1": "1", "0": "0"},
+                      initialValue: vm.io.d27,
+                      preValue: vm.preData?.d27),
+                  FclNoteField(
+                      name: 'd116',
+                      initialValue: vm.io.d116,
+                      preValue: vm.preData?.d116)
+                ],
+                preYn: vm.pastYearYn,
+              )),
         ],
       );
 }

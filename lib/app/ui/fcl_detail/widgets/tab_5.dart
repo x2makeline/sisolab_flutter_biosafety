@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/models/pre_data_box_item.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/pre_data_box.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 
 /// 공기조절
 class Tab5 extends StatelessWidget {
@@ -43,61 +39,39 @@ class Tab5 extends StatelessWidget {
             height: 22.h,
           ),
           const FclDivider.black(),
-          SizedBox(
-            height: 47.h,
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FclField(
-                initialNote: vm.io.d105,
-                noteName: "d105",
-                label: "급기 덕트에 헤파 필터 설치",
-                imageName: "attfile12str",
-                initialImage: vm.io.attfile12str,
-                fclRadio: FclRadio(
-                    initialValue: vm.io.d16, name: "d16", map: yesOrNoMap),
-                child: Obx(() => PreDataBox(
-                      enable: vm.pastYearYn,
-                      list: [
-                        PreDataBoxItem(
-                            value: vm.preData?.d16, radioMap: yesOrNoMap),
-                        PreDataBoxItem(value: vm.preData?.d105)
-                      ],
-                    )),
-              ),
-              FclField(
-                noteName: "d106",
-                initialNote: vm.io.d106,
-                label: "배기에 카본필터 등 냄새제거 장치 설치",
-                imageName: "attfile13str",
-                initialImage: vm.io.attfile13str,
-                fclRadio: FclRadio(
-                    initialValue: vm.io.d17, name: "d17", map: yesOrNoMap),
-                child: Obx(() => PreDataBox(
-                      enable: vm.pastYearYn,
-                      list: [
-                        PreDataBoxItem(
-                            value: vm.preData?.d17, radioMap: yesOrNoMap),
-                        PreDataBoxItem(value: vm.preData?.d106)
-                      ],
-                    )),
-              ),
-            ].withWidgetBetween(Column(
-              children: [
-                SizedBox(
-                  height: 47.h,
-                ),
-                const FclDivider.form(),
-                SizedBox(
-                  height: 47.h,
-                )
-              ],
-            )),
-          ),
-          SizedBox(
-            height: 47.h,
-          ),
+          Obx(() => FclFieldView(
+                  label: "급기 덕트에 헤파 필터 설치",
+                  preYn: vm.pastYearYn,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile12str', initialValue: vm.io.attfile12str),
+                    FclRadioField(
+                        name: 'd16',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d16,
+                        initialValue: vm.io.d16),
+                    FclNoteField(
+                        name: 'd105',
+                        initialValue: vm.io.d105,
+                        preValue: vm.preData?.d105)
+                  ])),
+          Obx(() => FclFieldView(
+                  label: "배기에 카본필터 등 냄새제거 장치 설치",
+                  preYn: vm.pastYearYn,
+                  lastDividerYn: false,
+                  fieldList: [
+                    FclImageField(
+                        name: 'attfile13str', initialValue: vm.io.attfile13str),
+                    FclRadioField(
+                        name: 'd17',
+                        map: yesOrNoMap,
+                        preValue: vm.preData?.d17,
+                        initialValue: vm.io.d17),
+                    FclNoteField(
+                        name: 'd106',
+                        initialValue: vm.io.d106,
+                        preValue: vm.preData?.d106)
+                  ])),
         ],
       );
 }

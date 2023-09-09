@@ -34,12 +34,12 @@ class FclDetailPage extends StatelessWidget with PLoggerMixin {
                 SizedBox(
                   height: 47.h,
                 ),
-                Obx(() => vm.idx == null
+                vm.localId == null
                     ? const EmptyBox()
                     : Column(
                         children: [
                           Text(
-                            "문서번호 : ${vm.io.docno}",
+                            "로컬 ID : ${vm.io.localId}",
                             textAlign: TextAlign.start,
                             style: TextStyle(
                                 fontWeight: FontWeight.w500, fontSize: 46.sp),
@@ -48,7 +48,7 @@ class FclDetailPage extends StatelessWidget with PLoggerMixin {
                             height: 24.h,
                           )
                         ],
-                      )),
+                      ),
                 Obx(() => FormBuilder(
                     key: vm.formKey,
                     child: DetailCategoryTab(

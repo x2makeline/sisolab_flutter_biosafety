@@ -5,9 +5,10 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/home_app_bar.dart';
 
 class HomePageLayout extends StatelessWidget {
-  const HomePageLayout({super.key, required this.child});
+  const HomePageLayout({super.key, required this.child, this.bottomYn = true});
 
   final Widget child;
+  final bool bottomYn;
 
   @override
   Widget build(BuildContext context) {
@@ -42,18 +43,20 @@ class HomePageLayout extends StatelessWidget {
                         EdgeInsets.only(left: 46.w, right: 46.w, top: 80.h),
                     child: child,
                   ),
-                  SizedBox(
-                    height: 80.h,
-                  ),
-                  const FclDivider.form(),
-                  SizedBox(
-                    height: 60.h,
-                  ),
-                  Text(
-                    "COPYRIGHT © 2023 질병관리청 ALL RIGHTS RESERVED.",
-                    style:
-                        TextStyle(fontSize: 24.sp, color: ColorGroup.darkGray),
-                  )
+                  if (bottomYn) ...[
+                    SizedBox(
+                      height: 80.h,
+                    ),
+                    const FclDivider.form(),
+                    SizedBox(
+                      height: 60.h,
+                    ),
+                    Text(
+                      "COPYRIGHT © 2023 질병관리청 ALL RIGHTS RESERVED.",
+                      style: TextStyle(
+                          fontSize: 24.sp, color: ColorGroup.darkGray),
+                    )
+                  ]
                 ],
               )
             ],

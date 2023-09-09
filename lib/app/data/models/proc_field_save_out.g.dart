@@ -7,7 +7,11 @@ part of 'proc_field_save_out.dart';
 // **************************************************************************
 
 ProcFieldSaveOut _$ProcFieldSaveOutFromJson(Map<String, dynamic> json) =>
-    ProcFieldSaveOut();
+    ProcFieldSaveOut(
+      idx: json['idx'] as String?,
+    );
 
 Map<String, dynamic> _$ProcFieldSaveOutToJson(ProcFieldSaveOut instance) =>
-    <String, dynamic>{};
+    <String, dynamic>{
+      'idx': instance.idx,
+    };

@@ -74,7 +74,12 @@ class FormPageBottom extends StatelessWidget {
                           child: const Text("취소하기")),
                       ElevatedButton(
                           onPressed: () {
-                            _controller.submit();
+                            _controller.submitLocal();
+                          },
+                          child: const Text("임시저장")),
+                      ElevatedButton(
+                          onPressed: () {
+                            _controller.submitServer();
                           },
                           child: const Text("저장하기")),
                     ].withSpaceBetween(width: 20.w),

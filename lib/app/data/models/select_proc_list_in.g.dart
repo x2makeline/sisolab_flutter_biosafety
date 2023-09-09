@@ -11,8 +11,6 @@ abstract class _$SelectProcListInCWProxy {
 
   SelectProcListIn idx(int? idx);
 
-  SelectProcListIn pageIndex(int pageIndex);
-
   SelectProcListIn searchCompany(String? searchCompany);
 
   SelectProcListIn searchDate1(DateTime? searchDate1);
@@ -28,7 +26,6 @@ abstract class _$SelectProcListInCWProxy {
   SelectProcListIn call({
     Gbn? gbn,
     int? idx,
-    int? pageIndex,
     String? searchCompany,
     DateTime? searchDate1,
     DateTime? searchDate2,
@@ -46,9 +43,6 @@ class _$SelectProcListInCWProxyImpl implements _$SelectProcListInCWProxy {
 
   @override
   SelectProcListIn idx(int? idx) => this(idx: idx);
-
-  @override
-  SelectProcListIn pageIndex(int pageIndex) => this(pageIndex: pageIndex);
 
   @override
   SelectProcListIn searchCompany(String? searchCompany) =>
@@ -73,7 +67,6 @@ class _$SelectProcListInCWProxyImpl implements _$SelectProcListInCWProxy {
   SelectProcListIn call({
     Object? gbn = const $CopyWithPlaceholder(),
     Object? idx = const $CopyWithPlaceholder(),
-    Object? pageIndex = const $CopyWithPlaceholder(),
     Object? searchCompany = const $CopyWithPlaceholder(),
     Object? searchDate1 = const $CopyWithPlaceholder(),
     Object? searchDate2 = const $CopyWithPlaceholder(),
@@ -87,10 +80,6 @@ class _$SelectProcListInCWProxyImpl implements _$SelectProcListInCWProxy {
           ? _value.idx
           // ignore: cast_nullable_to_non_nullable
           : idx as int?,
-      pageIndex: pageIndex == const $CopyWithPlaceholder() || pageIndex == null
-          ? _value.pageIndex
-          // ignore: cast_nullable_to_non_nullable
-          : pageIndex as int,
       searchCompany: searchCompany == const $CopyWithPlaceholder()
           ? _value.searchCompany
           // ignore: cast_nullable_to_non_nullable
@@ -121,7 +110,6 @@ SelectProcListIn _$SelectProcListInFromJson(Map<String, dynamic> json) =>
     SelectProcListIn(
       gbn: $enumDecode(_$GbnEnumMap, json['gbn']),
       idx: json['idx'] as int?,
-      pageIndex: json['pageIndex'] as int,
       searchCompany: json['searchCompany'] as String?,
       searchDate1: const DateTimeNullableConverter()
           .fromJson(json['searchDate1'] as String?),
@@ -133,7 +121,6 @@ Map<String, dynamic> _$SelectProcListInToJson(SelectProcListIn instance) =>
     <String, dynamic>{
       'gbn': _$GbnEnumMap[instance.gbn]!,
       'idx': instance.idx,
-      'pageIndex': instance.pageIndex,
       'searchCompany': instance.searchCompany,
       'searchDate1':
           const DateTimeNullableConverter().toJson(instance.searchDate1),

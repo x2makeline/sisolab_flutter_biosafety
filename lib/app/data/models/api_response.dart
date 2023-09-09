@@ -32,11 +32,4 @@ class ApiResponse<D> {
   String toString() =>
       'ApiResponse{result: $result, data: $data, message: $message, isSuccess: $isSuccess, isError: $isError}';
 
-  filter() {
-    if (isError) {
-      throw ApiError(this);
-    } else {
-      return this;
-    }
-  }
 }

@@ -4,9 +4,8 @@ import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-class TokenVm extends GetxController with PLoggerMixin {
+class TokenVm extends GetxService with PLoggerMixin {
   static TokenVm get to => Get.find();
-  final AuthRepository _authRepository = AuthRepository();
 
   final _token = Rxn<Token>();
 
@@ -20,11 +19,11 @@ class TokenVm extends GetxController with PLoggerMixin {
     _sync();
   }
 
-  Future<void> login({required String userId, required String passwd}) async {
-    final result = await _authRepository.login(userId: userId, passwd: passwd);
-    await setTokenToPref(Token(
-        accessToken: result.accessToken, refreshToken: result.refreshToken));
-  }
+  // Future<void> login({required String userId, required String passwd}) async {
+  //   final result = await _authRepository.login(userId: userId, passwd: passwd);
+  //   await setTokenToPref(Token(
+  //       accessToken: result.accessToken, refreshToken: result.refreshToken));
+  // }
 
   Future<void> setTokenToPref(Token? token) async {
     if (token != null) {

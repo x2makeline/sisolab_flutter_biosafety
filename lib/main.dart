@@ -3,12 +3,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/sqflite_provider.dart';
 
 import 'app/global/bindings/global_binding.dart';
 import 'routes/app_routes.dart';
@@ -17,11 +17,10 @@ void main() async {
   Intl.defaultLocale = 'ko-KP';
   WidgetsFlutterBinding.ensureInitialized();
   FormBuilderLocalizations.setCurrentInstance(FormBuilderLocalizationsImplKo());
+
   await SPref.init();
-  await Hive.initFlutter();
-  // Hive.registerAdapter(BioIoAdapter());
-  // await HiveRepository.openBox();
-  // box.
+  await SqfliteProvider.init();
+
   runApp(const MyApp());
 }
 
@@ -46,11 +45,13 @@ class MyApp extends StatelessWidget {
               Locale('ko'),
             ],
             locale: const Locale('ko'),
-            // initialRoute: AppRoutes.home.name,
-            // initialRoute: AppRoutes.fclNewLIst.name,
+            initialRoute: AppRoutes.nonLogin.name,
+            // initialRoute: "/fcl/fd1/list",
             // initialRoute: AppRoutes.fclRegularList.name,
-            initialRoute: "/fcl/fd1/detail/613",
+            // initialRoute: "/fcl/fd1/detail/613",
             // initialRoute: "/fcl/fd2/detail/609",
+            // initialRoute: "/fcl/fd2/detail",
+            // initialRoute: "/fcl/fd3/detail",
             // initialRoute: "/fcl/fd3/detail/593",
             theme: ThemeData(
                 buttonTheme: buttonMainTheme,

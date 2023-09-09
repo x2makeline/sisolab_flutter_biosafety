@@ -9,16 +9,20 @@ import 'package:sisolab_flutter_biosafety/app/data/models/proc_pre_field_in.dart
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_out.dart';
+import 'package:sisolab_flutter_biosafety/app/global/errors/api_error.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
-import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/configs/env.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 /// 싱글톤
 class ApiProvider with PLoggerMixin {
-  TokenVm get _tokenVm => TokenVm.to;
-
-  Token? get _token => _tokenVm.token;
+  Token? get _token => Pref.accessToken.value != null
+      ? Token(
+          accessToken: Pref.accessToken.value!,
+          refreshToken: Pref.refreshToken.value!,
+        )
+      : null;
 
   ApiProvider._();
 
@@ -30,41 +34,41 @@ class ApiProvider with PLoggerMixin {
         baseUrl: Env.host,
         contentType: "application/json",
       ))
-        ..let((dio) {
-          /// dev
-          dio.interceptors
-              .add(LogInterceptor(requestBody: true, responseBody: true));
+        ..let(
+          (dio) {
+            dio.interceptors
+                .add(InterceptorsWrapper(onRequest: (options, handler) async {
+              /// 로그인 제외
+              if (options.path != "/api/login.do") {
+                if (_token != null) {
+                  if (_token!.expByAccessToken.compareTo(DateTime.now()) < 0) {
+                    return handler.reject(DioException(
+                        requestOptions: options,
+                        error: ApiError(type: ApiErrorType.expiredToken)));
+                  }
 
-          dio.interceptors
-              .add(InterceptorsWrapper(onRequest: (options, handler) async {
-            if (_token != null &&
-                options.path != "/api/refeshToken.do" &&
-                options.path != "/api/login.do") {
-              pLog.i("token $_token");
-              if (_token!.expByAccessToken.compareTo(DateTime.now()) < 0) {
-                final result = await refreshToken(_token!);
-
-                if (result.isSuccess) {
-                  await _tokenVm.setTokenToPref(Token(
-                      accessToken: result.data!.accessToken,
-                      refreshToken: result.data!.refreshToken));
+                  options.headers['access_token'] = _token!.accessToken;
+                } else {
+                  return handler.reject(DioException(
+                      requestOptions: options,
+                      error: ApiError(type: ApiErrorType.nonToken)));
                 }
               }
 
-              options.headers['access_token'] = _token!.accessToken;
-            }
-
-            return handler.next(options);
-          }));
-
-          // dio.interceptors.add(InterceptorsWrapper(onRequest: (options, handler) async {
-          //   if (_token != null) {
-          //     options.headers['access_token'] = _token!.accessToken;
-          //   }
-          //
-          //   return handler.next(options);
-          // }));
-        });
+              return handler.next(options);
+            }, onResponse: (res, handler) {
+              if (res.data['result'] != '1') {
+                final apiRes = ApiResponse.fromJson(res.data);
+                ApiError(apiResponse: apiRes).snackBar;
+                return handler.reject(DioException(
+                    requestOptions: res.requestOptions,
+                    response: res,
+                    error: ApiError(apiResponse: apiRes)));
+              }
+              return handler.next(res);
+            }));
+          },
+        );
 
 //   * 현장점검 데이터 저장 : POST방식
 //   주소 : http://125.6.37.38:9090/api/procFieldSave.do
@@ -82,14 +86,13 @@ class ApiProvider with PLoggerMixin {
 //   result : 1 => 성공, -1 => 오류, -2 => 유효하지 않은 AccessToken 입니다, -3 => 권한이 없습니다
 //   message : 결과 메시지
   /// 현장점검 데이터 저장
-  Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
-    return ApiResponse<ProcFieldSaveOut>.fromJson(
-      (await _dio.post("/api/procFieldSave.do",
-              data: FormData.fromMap(req.toJson())))
-          .data,
-      fromJson: (data) => ProcFieldSaveOut.fromJson(data),
-    ).filter();
-  }
+  Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async =>
+      ApiResponse<ProcFieldSaveOut>.fromJson(
+        (await _dio.post("/api/procFieldSave.do",
+                data: FormData.fromMap(req.toJson())))
+            .data,
+        fromJson: (data) => ProcFieldSaveOut.fromJson(data),
+      );
 
   /// 현장점검 데이터 가져오기
   Future<ApiResponse<BioIo>> selectProcField(SelectProcFieldIn req) async =>
@@ -101,7 +104,7 @@ class ApiProvider with PLoggerMixin {
           ...data["proc"],
           ...data["field"],
         }),
-      ).filter();
+      );
 
 //   * 현장점검 과년도 자료 가져오기 : GET방식
 //   주소 : http://125.6.37.38:9090/api/procPreField.do
@@ -129,7 +132,7 @@ class ApiProvider with PLoggerMixin {
           ...data["proc"],
           ...data["field"],
         }),
-      ).filter();
+      );
 
   /// 현장점검 리스트 데이터 가져오기
   Future<ApiResponse<SelectProcListOut>> selectProcList(
@@ -139,14 +142,14 @@ class ApiProvider with PLoggerMixin {
                 queryParameters: req.toJson()))
             .data,
         fromJson: (json) => SelectProcListOut.fromJson({"data": json["list"]}),
-      ).filter();
+      );
 
   /// 로그인
   Future<ApiResponse<LoginOut>> login(LoginIn req) {
     return _dio
         .get("/api/login.do", queryParameters: req.toJson())
         .then((value) {
-      ApiResponse.fromJson(value.data).filter();
+      ApiResponse.fromJson(value.data);
 
       return ApiResponse(
           message: "",
@@ -167,7 +170,7 @@ class ApiProvider with PLoggerMixin {
               'refresh_token': token.refreshToken,
             }))
         .then((value) {
-      ApiResponse.fromJson(value.data).filter();
+      ApiResponse.fromJson(value.data);
 
       return ApiResponse(
           message: "",

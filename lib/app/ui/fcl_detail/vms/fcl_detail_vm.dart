@@ -1,20 +1,25 @@
 import 'dart:math';
 
 import 'package:dartlin/control_flow.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/proc_pre_field_in.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.dart';
-import 'package:sisolab_flutter_biosafety/app/data/providers/api_provider.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_field_repository.dart';
+import 'package:sisolab_flutter_biosafety/app/global/errors/api_error.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_detail_form_state.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_list_page_vm.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/login/login_page.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/extensions/dateformat.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/api_provider.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/sqflite_provider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/functions.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 class FclDetailVm extends GetxController with PLoggerMixin {
@@ -31,18 +36,23 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   BioIo? get preData => _preData.value;
 
-  set pastYearYn(bool v) {
-    if (!v) {
-      _pastYearYn.value = v;
-    } else {
-      if (io.company == null ||
-          io.d184 == null ||
-          io.company!.isEmpty ||
-          io.d184!.isEmpty) {
-        Get.snackbar("메세지", "운영기관명과 설치 ∙ 운영 장소를 입력 후 저장해주세요.");
+  Future<void> setPastYearYn(bool v) async {
+    if (v) {
+      /// 네트워크 연결 상태
+      if (await isConnect()) {
+        if (io.company == null ||
+            io.d184 == null ||
+            io.company!.isEmpty ||
+            io.d184!.isEmpty) {
+          Get.snackbar("메세지", "운영기관명과 설치 ∙ 운영 장소를 입력 후 저장해주세요.");
+        } else {
+          _pastYearYn.value = v;
+        }
       } else {
-        _pastYearYn.value = v;
+        showOfflineSb();
       }
+    } else {
+      _pastYearYn.value = v;
     }
   }
 
@@ -64,8 +74,8 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   final Gbn gbn =
       Gbn.values.firstWhere((element) => element.name == Get.parameters["id"]);
 
-  /// 문서번호
-  final String? idx = Get.parameters['idx'];
+  /// 로컬 id
+  final int? localId = Get.parameters['localId']?.let((it) => int.parse(it));
 
   final _isLoading = true.obs;
 
@@ -87,79 +97,111 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     _tabIndex.value = min(maxTabindex, tabIndex + 1);
   }
 
-  _init() {
-    _repository
-        .selectProcField(
-            SelectProcFieldIn(gbn: gbn, idx: int.parse(Get.parameters['idx']!)))
-        .then((value) {
-      _io.value = value.data!;
-      pLog.i(_io.value);
+  _init(int localId) {
+    SqfliteProvider.select(localId).then((value) {
+      _io.value = value;
 
       _isLoading.value = false;
     });
   }
 
-  void submit() {
-    if (formKey.currentState != null) {
-      formKey.currentState!.save();
-      final bioJson = {
-        ...io.toJson(),
-        ...BioIo.fromJson(formKey.currentState!.value.map((key, value) {
-          if (value == null) {
-            return MapEntry(key, value);
-          } else {
-            switch (value.runtimeType) {
-              case DateTime:
-                return MapEntry(key, (value as DateTime).format1);
-              case bool:
-                return MapEntry(key, boolToYn((value as bool)));
+  Future<void> submitServer([BioIo? io]) async {
+    if (await isConnect()) {
+      final bio = submit();
+      bio.idx = io?.idx ?? bio.idx;
+
+      try {
+        await _apiPro.procFieldSave(bio).then((value) async {
+          if (value.isSuccess) {
+            if (bio.idx == null && value.data?.idx != null) {
+              bio.idx = int.parse(value.data!.idx!);
+
+              await submitServer(bio);
+            } else {
+              Get.snackbar("메세지", "저장되었습니다.");
+              FclListPageVm.to.submit();
+              Get.back();
             }
           }
-          return MapEntry(key, value);
-        })).toJson()
-          ..removeWhere((key, value) => value == null)
-      };
-      final bio = BioIo.fromJson(bioJson);
-
-      pLog.d("submit $bioJson");
-
-      _apiPro.procFieldSave(bio).then((value) {
-        if (value.isSuccess) {
-          Get.snackbar("메세지", "저장되었습니다.");
-          _init();
+        });
+      } on DioException catch (e) {
+        pLog.e(e);
+        if (e.error is ApiError &&
+            [ApiErrorType.nonToken, ApiErrorType.expiredToken]
+                .contains((e.error as ApiError).type)) {
+          Get.bottomSheet(LoginPage(
+            onSuccess: (token) async {
+              await submitServer(io);
+              Get.back();
+            },
+          ));
         }
-      });
+        rethrow;
+      }
+    } else {
+      showOfflineSb();
     }
+  }
+
+  Future<void> submitLocal() async {
+    await SqfliteProvider.merge(submit());
+    FclListPageVm.to.submit();
+    Get.back();
+  }
+
+  BioIo submit({BioIo? inputIo}) {
+    formKey.currentState!.save();
+    final bioJson = {
+      "gbn": gbn.name,
+      ...io.toJson()..removeWhere((key, value) => value == null),
+      ...BioIo.fromJson(formKey.currentState!.value.map((key, value) {
+        if (value == null) {
+          return MapEntry(key, value);
+        } else {
+          switch (value.runtimeType) {
+            case DateTime:
+              return MapEntry(key, (value as DateTime).format1);
+            case bool:
+              return MapEntry(key, boolToYn((value as bool)));
+          }
+        }
+        return MapEntry(key, value);
+      })).toJson()
+        ..removeWhere((key, value) => value == null)
+    };
+    final bio = inputIo ?? BioIo.fromJson(bioJson);
+
+    return bio;
   }
 
   @override
   void onInit() {
     super.onInit();
-    if (idx != null) {
-      _init();
+    if (localId != null) {
+      _init(localId!);
     } else {
       _isLoading.value = false;
     }
-    ever(_tabIndex, (_) => scrollController.jumpTo(0));
+    // ever(_tabIndex, (_) => scrollController.jumpTo(0));
     ever(_pastYearYn, (v) {
       if (v && _preData.value == null) {
-        _repository
-            .procPreField(ProcPreFieldIn(
-                company: "운영기관", d184: "test", gbn: Gbn.fd2, idx: 609))
-            .then((value) {
-          _preData.value = value.data;
-        });
-
         // _repository
         //     .procPreField(ProcPreFieldIn(
-        //         company: io.company!, d184: io.d184!, gbn: gbn, idx: io.idx!))
+        //         company: "운영기관", d184: "test", gbn: Gbn.fd2, idx: 609))
         //     .then((value) {
         //   _preData.value = value.data;
         // });
+
+        _repository
+            .procPreField(ProcPreFieldIn(
+                company: io.company!, d184: io.d184!, gbn: gbn, idx: io.idx!))
+            .then((value) {
+          _preData.value = value.data;
+        });
       }
     });
 
     formState =
-        idx != null ? FclDetailFormState.update : FclDetailFormState.insert;
+        localId != null ? FclDetailFormState.update : FclDetailFormState.insert;
   }
 }

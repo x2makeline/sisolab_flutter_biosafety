@@ -10,20 +10,19 @@ part 'select_proc_list_in.g.dart';
 class SelectProcListIn {
   Gbn gbn;
   int? idx;
-  int pageIndex;
   String? searchCompany;
   @DateTimeNullableConverter()
   DateTime? searchDate1;
   @DateTimeNullableConverter()
   DateTime? searchDate2;
 
+
   SelectProcListIn(
       {required this.gbn,
       this.idx,
-      required this.pageIndex,
       this.searchCompany,
       this.searchDate1,
-      this.searchDate2});
+      this.searchDate2}) ;
 
   factory SelectProcListIn.fromJson(Map<String, dynamic> json) =>
       _$SelectProcListInFromJson(json);
@@ -32,6 +31,6 @@ class SelectProcListIn {
 
   @override
   String toString() {
-    return 'SelectProcListIn{gbn: $gbn, idx: $idx, pageIndex: $pageIndex, searchCompany: $searchCompany, searchDate1: $searchDate1, searchDate2: $searchDate2}';
+    return 'SelectProcListIn{gbn: $gbn, idx: $idx, searchCompany: $searchCompany, searchDate1: $searchDate1, searchDate2: $searchDate2}';
   }
 }

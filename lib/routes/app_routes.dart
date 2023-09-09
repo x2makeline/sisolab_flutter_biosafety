@@ -3,11 +3,11 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/bindings/fcl_detail_
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_detail_page.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/bindings/fcl_list_binding.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/fcl_list_page.dart';
-import 'package:sisolab_flutter_biosafety/app/ui/home/home_page.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/login/login_page.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/select_type/select_type_page.dart';
 
 List<GetPage> routes = [
-  AppRoutes.home,
+  AppRoutes.nonLogin,
   AppRoutes.fclList,
   AppRoutes.selectType,
   AppRoutes.fclDetailForm,
@@ -15,7 +15,8 @@ List<GetPage> routes = [
 ];
 
 abstract class AppRoutes {
-  static GetPage home = GetPage(name: "/", page: () => HomePage());
+  static GetPage nonLogin =
+      GetPage(name: "/", page: () => const NonLoginPage());
   static GetPage selectType =
       GetPage(name: "/selectType", page: () => const SelectTypePage());
 
@@ -30,7 +31,7 @@ abstract class AppRoutes {
     binding: FclDetailBinding(),
   );
   static GetPage fclDetailSelect = GetPage(
-    name: "/fcl/:id/detail/:idx",
+    name: "/fcl/:id/detail/:localId",
     page: () => const FclDetailPage(),
     binding: FclDetailBinding(),
   );

@@ -3,16 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_search_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_item.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_between_date.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_list_page_vm.dart';
-import 'package:sisolab_flutter_biosafety/core/extensions/dateformat.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
@@ -23,7 +22,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
 
   final Gbn gbn;
 
-  final SelectProcListItem info;
+  final BioIo info;
 
   static final TextStyle _titleStyle = TextStyle(
       fontSize: 24.sp,
@@ -48,7 +47,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
             children: <Widget>[
               TableCell(
                 verticalAlignment: TableCellVerticalAlignment.middle,
-                child: Text(info.docno,
+                child: Text(info.localId.toString(),
                     style: TextStyle(
                         fontSize: 28.sp, fontWeight: FontWeight.w500)),
               ),
@@ -71,11 +70,11 @@ class _Item extends StatelessWidget with PLoggerMixin {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    info.company,
+                    info.company ?? "",
                     style: _contentStyle,
                   ),
                   Text(
-                    info.d168?.format2 ?? "",
+                    info.d168 ?? "",
                     style: _contentStyle,
                   )
                 ].withSpaceBetween(height: 20.h),
@@ -102,7 +101,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
                     info.d184.toString(),
                     style: _contentStyle,
                   ),
-                  Text(info.modDatetime, style: _contentStyle)
+                  Text("", style: _contentStyle)
                 ].withSpaceBetween(height: 20.h),
               )),
               TableCell(
@@ -122,7 +121,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        info.d158,
+                        info.d158 ?? "",
                         style: _contentStyle,
                       )
                     ],
@@ -138,7 +137,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
               fit: FlexFit.tight,
               flex: 3,
               child: Center(
-                child: Text(info.docno,
+                child: Text(info.localId.toString(),
                     style: TextStyle(
                         fontSize: 28.sp, fontWeight: FontWeight.w500)),
               )),
@@ -168,7 +167,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    info.company,
+                    info.company ?? "",
                     style: _contentStyle,
                   ),
                   Text(
@@ -181,7 +180,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
                         fit: FlexFit.tight,
                         flex: 3,
                         child: Text(
-                          info.d158,
+                          info.d158 ?? "",
                           style: _contentStyle,
                         ),
                       ),
@@ -197,7 +196,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
                         fit: FlexFit.tight,
                         flex: 3,
                         child: Text(
-                          info.d158,
+                          info.d158 ?? "",
                           style: _contentStyle,
                         ),
                       ),
@@ -212,7 +211,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
                       Flexible(
                         fit: FlexFit.tight,
                         flex: 3,
-                        child: Text(info.modDatetime, style: _contentStyle),
+                        child: Text("", style: _contentStyle),
                       ),
                     ],
                   )
@@ -225,7 +224,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Get.toNamed("/fcl/${gbn.name}/detail/${info.idx}");
+          Get.toNamed("/fcl/${gbn.name}/detail/${info.localId}");
         },
         child: when(gbn, {
           Gbn.fd1: () => _regTable,
@@ -298,7 +297,7 @@ class FclListPage extends StatelessWidget {
                                     MaterialStatePropertyAll<Color>(
                                         Colors.black)),
                             onPressed: () {
-                              Get.toNamed(AppRoutes.fclList.name
+                              Get.toNamed(AppRoutes.fclDetailForm.name
                                   .replaceFirst(RegExp(r'(:id)'), vm.gbn.name));
                             },
                             child: const Text("신규등록")),
@@ -319,9 +318,7 @@ class FclListPage extends StatelessWidget {
                     TextSpan(children: [
                       const TextSpan(text: "총 게시글 "),
                       TextSpan(
-                          text: (vm.list.hasData
-                                  ? vm.list.data!.data!.data.length
-                                  : 0)
+                          text: (vm.list.hasData ? vm.list.data!.length : 0)
                               .toString(),
                           style: robotoTextStyle.copyWith(
                               color: const Color(0xffff381e),
@@ -333,7 +330,7 @@ class FclListPage extends StatelessWidget {
                     ? ListView(
                         shrinkWrap: true,
                         primary: false,
-                        children: vm.list.data!.data!.data
+                        children: vm.list.data!
                             .map((e) => SizedBox(
                                 width: double.infinity,
                                 child: _Item(

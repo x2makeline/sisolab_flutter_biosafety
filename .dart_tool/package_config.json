@@ -380,12 +380,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "hive_flutter",
-      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/hive_flutter-1.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "hive_generator",
       "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/hive_generator-2.0.1",
       "packageUri": "lib/",
@@ -860,7 +854,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-09-06T10:52:11.908210Z",
+  "generated": "2023-09-09T09:50:07.298239Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

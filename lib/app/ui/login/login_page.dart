@@ -5,9 +5,9 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/global/errors/api_error.dart';
+import 'package:sisolab_flutter_biosafety/app/data/repositories/auth_respository.dart';
+import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/app/global/vms/network_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout/home_page_layout.dart';
@@ -15,14 +15,28 @@ import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
+class NonLoginPage extends StatelessWidget {
+  const NonLoginPage({super.key});
 
-  final NetworkVm _netVm = NetworkVm.to;
+  @override
+  Widget build(BuildContext context) => HomePageLayout(child: _UnConnected());
+}
+
+class LoginPage extends StatelessWidget {
+  const LoginPage({
+    super.key,
+    required this.onSuccess,
+  });
+
+  final void Function(Token token) onSuccess;
 
   @override
   Widget build(BuildContext context) => HomePageLayout(
-      child: Obx(() => _netVm.isConnect ? const _Connected() : _UnConnected()));
+        bottomYn: false,
+        child: _Connected(
+          onSuccess: onSuccess,
+        ),
+      );
 }
 
 class _UnConnected extends StatelessWidget with PLoggerMixin {
@@ -95,15 +109,10 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
       );
 }
 
-class _Connected extends StatefulWidget {
-  const _Connected({Key? key}) : super(key: key);
-
-  @override
-  State<_Connected> createState() => _ConnectedState();
-}
-
-class _ConnectedState extends State<_Connected> with PLoggerMixin {
+class _Connected extends StatelessWidget with PLoggerMixin {
   final _formKey = GlobalKey<FormBuilderState>();
+  final void Function(Token token) onSuccess;
+  final AuthRepository _authRepository = AuthRepository();
 
   final tokenVm = TokenVm.to;
 
@@ -115,18 +124,24 @@ class _ConnectedState extends State<_Connected> with PLoggerMixin {
   // static const _devUserId = "test0";
   static const _devPasswd = "1234";
 
+  _Connected({required this.onSuccess});
+
   _submit() {
     _formKey.currentState?.let((curr) => iff(curr.saveAndValidate(), () async {
-          log.i('userId ${curr.value[_userIdName]}');
-          log.i('passwd ${curr.value[_passwdName]}');
-          try {
-            await tokenVm.login(
-                userId: curr.value[_userIdName],
-                passwd: curr.value[_passwdName]);
-            Get.offAllNamed(AppRoutes.selectType.name);
-          } on ApiError catch (e) {
-            e.snackBar();
-          }
+          // final result = await tokenVm.login(
+          //     userId: curr.value[_userIdName], passwd: curr.value[_passwdName]);
+          _authRepository
+              .login(
+                  userId: curr.value[_userIdName],
+                  passwd: curr.value[_passwdName])
+              .then((value) async {
+            await Pref.accessToken.setValue(value.accessToken);
+            await Pref.refreshToken.setValue(value.refreshToken);
+
+            onSuccess(Token(
+                accessToken: value.accessToken,
+                refreshToken: value.refreshToken));
+          });
         }));
   }
 
@@ -140,7 +155,9 @@ class _ConnectedState extends State<_Connected> with PLoggerMixin {
           FieldWithLabel(
               label: "작업 ID",
               child: FormBuilderTextField(
-                initialValue: iff(kDebugMode, () => _devUserId),
+                enabled: false,
+                initialValue:
+                    Pref.userId.value ?? iff(kDebugMode, () => _devUserId),
                 onSubmitted: (_) => _submit(),
                 decoration: const InputDecoration(hintText: "작업 ID"),
                 name: _userIdName,
@@ -174,7 +191,9 @@ class _ConnectedState extends State<_Connected> with PLoggerMixin {
           SizedBox(
             width: double.infinity,
             child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.back();
+                },
                 child: const Text(
                   "취소",
                 )),

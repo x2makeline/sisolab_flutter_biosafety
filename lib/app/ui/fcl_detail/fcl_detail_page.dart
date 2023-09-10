@@ -26,7 +26,7 @@ class FclDetailPage extends StatelessWidget with PLoggerMixin {
         })!,
         child: Obx(() {
           if (vm.isLoading) {
-            return const Placeholder();
+            return const Center(child: CircularProgressIndicator());
           } else {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,

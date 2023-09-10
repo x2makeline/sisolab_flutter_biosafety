@@ -213,7 +213,9 @@ class FclListPage extends StatelessWidget {
                             .toList()
                             .withWidgetBetween(const FclDivider.form()),
                       )
-                    : const Placeholder())
+                    : const Center(
+                        child: CircularProgressIndicator(),
+                      ))
               ],
             ),
           ),

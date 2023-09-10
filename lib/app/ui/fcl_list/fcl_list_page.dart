@@ -31,7 +31,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
 
   static final TextStyle _contentStyle = TextStyle(fontSize: 24.sp);
 
-  Table get _newTable => Table(
+  Table get _table => Table(
         columnWidths: const <int, TableColumnWidth>{
           0: FlexColumnWidth(3),
           1: FlexColumnWidth(2),
@@ -52,68 +52,30 @@ class _Item extends StatelessWidget with PLoggerMixin {
                         fontSize: 28.sp, fontWeight: FontWeight.w500)),
               ),
               TableCell(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "기관명",
-                    style: _titleStyle,
-                  ),
-                  Text(
-                    "최근점검일",
-                    style: _titleStyle,
-                  )
-                ].withSpaceBetween(height: 20.h),
+                  child: Text(
+                "기관명",
+                style: _titleStyle,
               )),
               TableCell(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    info.company ?? "",
-                    style: _contentStyle,
-                  ),
-                  Text(
-                    info.d168 ?? "",
-                    style: _contentStyle,
-                  )
-                ].withSpaceBetween(height: 20.h),
+                  child: Text(
+                info.company ?? "",
+                style: _contentStyle,
               )),
               TableCell(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '장소(시설명)',
-                    style: _titleStyle,
-                  ),
-                  Text(
-                    "작성일자",
-                    style: _titleStyle,
-                  )
-                ].withSpaceBetween(height: 20.h),
+                  child: Text(
+                '장소(시설명)',
+                style: _titleStyle,
               )),
               TableCell(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    info.d184.toString(),
-                    style: _contentStyle,
-                  ),
-                  Text("", style: _contentStyle)
-                ].withSpaceBetween(height: 20.h),
+                  child: Text(
+                info.d184 ??  "",
+                style: _contentStyle,
               )),
               TableCell(
                   verticalAlignment: TableCellVerticalAlignment.top,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "최초허가일",
-                        style: _titleStyle,
-                      )
-                    ],
+                  child: Text(
+                    "임시저장일",
+                    style: _titleStyle,
                   )),
               TableCell(
                   verticalAlignment: TableCellVerticalAlignment.top,
@@ -121,7 +83,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        info.d158 ?? "",
+                        info.localRegDateTime ?? "",
                         style: _contentStyle,
                       )
                     ],
@@ -131,111 +93,18 @@ class _Item extends StatelessWidget with PLoggerMixin {
         ],
       );
 
-  Widget get _regTable => Row(
-        children: [
-          Flexible(
-              fit: FlexFit.tight,
-              flex: 3,
-              child: Center(
-                child: Text(info.localId.toString(),
-                    style: TextStyle(
-                        fontSize: 28.sp, fontWeight: FontWeight.w500)),
-              )),
-          Flexible(
-              fit: FlexFit.tight,
-              flex: 2,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "기관명",
-                    style: _titleStyle,
-                  ),
-                  Text(
-                    "장소(시설명)",
-                    style: _titleStyle,
-                  ),
-                  Text(
-                    "최초허가일",
-                    style: _titleStyle,
-                  )
-                ].withSpaceBetween(height: 20.h),
-              )),
-          Flexible(
-              flex: 13,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    info.company ?? "",
-                    style: _contentStyle,
-                  ),
-                  Text(
-                    info.d184 ?? "",
-                    style: _contentStyle,
-                  ),
-                  Row(
-                    children: [
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 3,
-                        child: Text(
-                          info.d158 ?? "",
-                          style: _contentStyle,
-                        ),
-                      ),
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 2,
-                        child: Text(
-                          "최근점검일",
-                          style: _titleStyle,
-                        ),
-                      ),
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 3,
-                        child: Text(
-                          info.d158 ?? "",
-                          style: _contentStyle,
-                        ),
-                      ),
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 2,
-                        child: Text(
-                          "작성일자",
-                          style: _titleStyle,
-                        ),
-                      ),
-                      Flexible(
-                        fit: FlexFit.tight,
-                        flex: 3,
-                        child: Text("", style: _contentStyle),
-                      ),
-                    ],
-                  )
-                ].withSpaceBetween(height: 20.h),
-              ))
-        ],
-      );
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
           Get.toNamed("/fcl/${gbn.name}/detail/${info.localId}");
         },
-        child: when(gbn, {
-          Gbn.fd1: () => _regTable,
-          Gbn.fd2: () => _newTable,
-          Gbn.fd3: () => _newTable,
-        })!);
+        child: _table);
   }
 }
 
 class FclListPage extends StatelessWidget {
-  FclListPageVm get vm => FclListPageVm.to;
+  FclListPageVm get vm => Get.put(FclListPageVm());
 
   const FclListPage({super.key});
 

@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/sqflite_provider.dart';
 
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
             ],
             locale: const Locale('ko'),
             initialRoute: AppRoutes.nonLogin.name,
+            // initialRoute: AppRoutes.selectType.name,
             // initialRoute: "/fcl/fd1/list",
             // initialRoute: AppRoutes.fclRegularList.name,
             // initialRoute: "/fcl/fd1/detail/613",
@@ -53,6 +55,11 @@ class MyApp extends StatelessWidget {
             // initialRoute: "/fcl/fd2/detail",
             // initialRoute: "/fcl/fd3/detail",
             // initialRoute: "/fcl/fd3/detail/593",
+
+            builder: (_, w) => MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: w ?? EmptyBox(),
+            ),
             theme: ThemeData(
                 buttonTheme: buttonMainTheme,
                 elevatedButtonTheme: elevatedButtonThemeData,

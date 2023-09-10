@@ -82,7 +82,7 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("\u2022 입력한 ID로 작업을 시작합니다.\n"),
-                    Row(
+                    Wrap(
                       children: [
                         Text("\u2022 "),
                         Text(

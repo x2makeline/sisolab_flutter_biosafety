@@ -14,7 +14,7 @@ import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 class FclDetailPage extends StatelessWidget with PLoggerMixin {
   const FclDetailPage({super.key});
 
-  FclDetailVm get vm => FclDetailVm.to;
+  FclDetailVm get vm => Get.put(FclDetailVm());
 
   @override
   Widget build(BuildContext context) => Layout(

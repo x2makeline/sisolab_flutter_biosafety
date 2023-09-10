@@ -26,11 +26,12 @@ class FclListPageVm extends GetxController with PLoggerMixin {
     await SqfliteProvider.selectList(req).then((value) {
       _list.value = AsyncStatus.success(value);
     });
-
   }
 
   Future<void> submit() async {
+
     if (searchFormKey.currentState != null) {
+
       searchFormKey.currentState!.save();
 
       final v = searchFormKey.currentState!.value;

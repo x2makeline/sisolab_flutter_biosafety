@@ -4,11 +4,13 @@ import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
 final dateInputDecoration = InputDecoration(
   hintText: "YYYY.MM.DD",
-  suffixIconConstraints: BoxConstraints(minHeight: 42.h, maxHeight: 42.h),
+  suffixIconConstraints: BoxConstraints(minHeight: 42.sp, minWidth: 42.sp),
   suffixIcon: Padding(
-    padding: EdgeInsets.symmetric(horizontal: 24.sp),
+    padding:  EdgeInsets.all(20.sp),
     child: Image.asset(
       "assets/images/icon_calender.png",
+      height: 42.sp,
+      width: 42.sp,
     ),
   ),
 );

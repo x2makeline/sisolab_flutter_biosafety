@@ -9,6 +9,10 @@ part of 'bio_io.dart';
 abstract class _$BioIoCWProxy {
   BioIo localId(int? localId);
 
+  BioIo localRegDateTime(String? localRegDateTime);
+
+  BioIo localUpdDateTime(String? localUpdDateTime);
+
   BioIo attNameTxt1(String? attNameTxt1);
 
   BioIo attNameTxt10(String? attNameTxt10);
@@ -1041,6 +1045,8 @@ abstract class _$BioIoCWProxy {
   /// ````
   BioIo call({
     int? localId,
+    String? localRegDateTime,
+    String? localUpdDateTime,
     String? attNameTxt1,
     String? attNameTxt10,
     String? attNameTxt11,
@@ -1564,6 +1570,14 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
 
   @override
   BioIo localId(int? localId) => this(localId: localId);
+
+  @override
+  BioIo localRegDateTime(String? localRegDateTime) =>
+      this(localRegDateTime: localRegDateTime);
+
+  @override
+  BioIo localUpdDateTime(String? localUpdDateTime) =>
+      this(localUpdDateTime: localUpdDateTime);
 
   @override
   BioIo attNameTxt1(String? attNameTxt1) => this(attNameTxt1: attNameTxt1);
@@ -3122,6 +3136,8 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   /// ````
   BioIo call({
     Object? localId = const $CopyWithPlaceholder(),
+    Object? localRegDateTime = const $CopyWithPlaceholder(),
+    Object? localUpdDateTime = const $CopyWithPlaceholder(),
     Object? attNameTxt1 = const $CopyWithPlaceholder(),
     Object? attNameTxt10 = const $CopyWithPlaceholder(),
     Object? attNameTxt11 = const $CopyWithPlaceholder(),
@@ -3640,6 +3656,14 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.localId
           // ignore: cast_nullable_to_non_nullable
           : localId as int?,
+      localRegDateTime: localRegDateTime == const $CopyWithPlaceholder()
+          ? _value.localRegDateTime
+          // ignore: cast_nullable_to_non_nullable
+          : localRegDateTime as String?,
+      localUpdDateTime: localUpdDateTime == const $CopyWithPlaceholder()
+          ? _value.localUpdDateTime
+          // ignore: cast_nullable_to_non_nullable
+          : localUpdDateTime as String?,
       attNameTxt1: attNameTxt1 == const $CopyWithPlaceholder()
           ? _value.attNameTxt1
           // ignore: cast_nullable_to_non_nullable
@@ -5704,6 +5728,8 @@ extension $BioIoCopyWith on BioIo {
 
 BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
       localId: json['localId'] as int?,
+      localRegDateTime: json['localRegDateTime'] as String?,
+      localUpdDateTime: json['localUpdDateTime'] as String?,
       attNameTxt1: json['attNameTxt1'] as String?,
       attNameTxt10: json['attNameTxt10'] as String?,
       attNameTxt11: json['attNameTxt11'] as String?,
@@ -6220,6 +6246,8 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
 
 Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
       'localId': instance.localId,
+      'localRegDateTime': instance.localRegDateTime,
+      'localUpdDateTime': instance.localUpdDateTime,
       'attNameTxt1': instance.attNameTxt1,
       'attNameTxt10': instance.attNameTxt10,
       'attNameTxt11': instance.attNameTxt11,

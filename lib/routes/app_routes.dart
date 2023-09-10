@@ -23,12 +23,12 @@ abstract class AppRoutes {
   static GetPage fclList = GetPage(
     name: "/fcl/:id/list",
     page: () => const FclListPage(),
-    binding: FclListBinding(),
+    // binding: FclListBinding(),
   );
   static GetPage fclDetailForm = GetPage(
     name: "/fcl/:id/detail",
     page: () => const FclDetailPage(),
-    binding: FclDetailBinding(),
+    // binding: FclDetailBinding(),
   );
   static GetPage fclDetailSelect = GetPage(
     name: "/fcl/:id/detail/:localId",

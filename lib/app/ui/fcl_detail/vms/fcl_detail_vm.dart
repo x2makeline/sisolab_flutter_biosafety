@@ -119,7 +119,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
               await submitServer(bio);
             } else {
               Get.snackbar("메세지", "저장되었습니다.");
-              FclListPageVm.to.submit();
+              await FclListPageVm.to.submit();
               Get.back();
             }
           }
@@ -131,7 +131,11 @@ class FclDetailVm extends GetxController with PLoggerMixin {
                 .contains((e.error as ApiError).type)) {
           Get.bottomSheet(LoginPage(
             onSuccess: (token) async {
-              await submitServer(io);
+              await submitServer(bio);
+              if(bio.localId != null) {
+                await SqfliteProvider.delete(bio.localId!);
+              }
+              await FclListPageVm.to.submit();
               Get.back();
             },
           ));
@@ -144,8 +148,11 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   }
 
   Future<void> submitLocal() async {
-    await SqfliteProvider.merge(submit());
-    FclListPageVm.to.submit();
+    final io =submit();
+    io.localRegDateTime = io.localRegDateTime ?? DateTime.now().format3;
+    io.localUpdDateTime = DateTime.now().format1;
+    await SqfliteProvider.merge(io);
+    await FclListPageVm.to.submit();
     Get.back();
   }
 

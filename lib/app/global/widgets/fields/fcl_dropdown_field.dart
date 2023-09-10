@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 import '../../models/fcl_type.dart';
 import 'fcl_field.dart';
@@ -16,15 +19,16 @@ class FclDropdownField extends FclField {
       required Map<String, String> itemMap})
       : super(
             type: FclType.text,
-            builder: () => SizedBox(
+            builder: () {
+              return SizedBox(
                   height: 90.h,
                   child: FormBuilderDropdown(
+
                     initialValue: initialValue,
                     iconSize: buttonTextStyle.fontSize!,
                     style: buttonTextStyle,
-                    isDense: false,
                     name: name,
-                    itemHeight: 90.h,
+                    itemHeight: max(kMinInteractiveDimension, 90.h),
                     items: [
                       DropdownMenuItem(
                         value: null,
@@ -44,5 +48,6 @@ class FclDropdownField extends FclField {
                           .toList()
                     ],
                   ),
-                ));
+                );
+            });
 }

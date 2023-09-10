@@ -34,7 +34,7 @@ class SqfliteProvider  with PLoggerMixin{
 
     return (await db.query("io", where: '''
         gbn='${req.gbn.name}' 
-        ${req.searchCompany != null ? "AND company LIKE '%${req.searchCompany}%'" : ''}  
+        ${req.searchCompany != null && req.searchCompany!.isNotEmpty ? "AND company LIKE '%${req.searchCompany}%'" : ''}  
         
       ''')).let((it) => List.generate(it.length, (i) => BioIo.fromJson(it[i])));
   }
@@ -50,7 +50,9 @@ class SqfliteProvider  with PLoggerMixin{
 
       return db.execute('''
 CREATE TABLE $tbNm ( 
-  localId INTEGER primary key autoincrement, 
+  localId INTEGER primary key autoincrement,
+  localRegDateTime text, 
+  localUpdDateTime text, 
   attNameTxt1 text,
 attNameTxt10 text,
 attNameTxt11 text,

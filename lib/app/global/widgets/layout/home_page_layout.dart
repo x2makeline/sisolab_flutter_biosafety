@@ -24,7 +24,8 @@ class HomePageLayout extends StatelessWidget {
                 Container(
                   decoration: const BoxDecoration(
                       border: Border(
-                          bottom: BorderSide(color: ColorGroup.black, width: 1))),
+                          bottom:
+                              BorderSide(color: ColorGroup.black, width: 1))),
                   child: Padding(
                     padding: EdgeInsets.all(56.sp),
                     child: Align(

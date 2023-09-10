@@ -1,5 +1,3 @@
-import 'package:sisolab_flutter_biosafety/app/global/errors/api_error.dart';
-
 class ApiResponse<D> {
   static const successResult = "1";
 
@@ -31,5 +29,4 @@ class ApiResponse<D> {
   @override
   String toString() =>
       'ApiResponse{result: $result, data: $data, message: $message, isSuccess: $isSuccess, isError: $isError}';
-
 }

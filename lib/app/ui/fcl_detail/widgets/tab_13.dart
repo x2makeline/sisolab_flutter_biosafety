@@ -30,7 +30,7 @@ class Tab13 extends StatelessWidget {
                   Obx(() => Checkbox(
                       value: vm.pastYearYn,
                       onChanged: (v) {
-                        vm.setPastYearYn(v ?? false);;
+                        vm.setPastYearYn(v ?? false);
                       }))
                 ],
               )

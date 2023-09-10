@@ -12,6 +12,7 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.da
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_between_date.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_list_page_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/extensions/bio_list_ext.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
@@ -68,7 +69,7 @@ class _Item extends StatelessWidget with PLoggerMixin {
               )),
               TableCell(
                   child: Text(
-                info.d184 ??  "",
+                info.d184 ?? "",
                 style: _contentStyle,
               )),
               TableCell(
@@ -159,7 +160,10 @@ class FclListPage extends StatelessWidget {
                     Row(
                       children: [
                         OutlinedButton(
-                            onPressed: () {}, child: const Text("엑셀다운")),
+                            onPressed: () async {
+                              await vm.list.data?.excel;
+                            },
+                            child: const Text("엑셀다운")),
                         ElevatedButton(
                             style: const ButtonStyle(
                                 backgroundColor:

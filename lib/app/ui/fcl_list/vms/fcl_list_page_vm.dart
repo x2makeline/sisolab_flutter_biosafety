@@ -29,9 +29,7 @@ class FclListPageVm extends GetxController with PLoggerMixin {
   }
 
   Future<void> submit() async {
-
     if (searchFormKey.currentState != null) {
-
       searchFormKey.currentState!.save();
 
       final v = searchFormKey.currentState!.value;

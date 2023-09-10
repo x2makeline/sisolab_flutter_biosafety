@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/repositories/auth_respository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';

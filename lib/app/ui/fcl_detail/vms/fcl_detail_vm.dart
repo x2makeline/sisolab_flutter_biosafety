@@ -132,7 +132,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
           Get.bottomSheet(LoginPage(
             onSuccess: (token) async {
               await submitServer(bio);
-              if(bio.localId != null) {
+              if (bio.localId != null) {
                 await SqfliteProvider.delete(bio.localId!);
               }
               await FclListPageVm.to.submit();
@@ -148,7 +148,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   }
 
   Future<void> submitLocal() async {
-    final io =submit();
+    final io = submit();
     io.localRegDateTime = io.localRegDateTime ?? DateTime.now().format3;
     io.localUpdDateTime = DateTime.now().format1;
     await SqfliteProvider.merge(io);

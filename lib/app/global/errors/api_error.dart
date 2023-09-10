@@ -16,10 +16,7 @@ class ApiError {
   ApiErrorType type;
   String? message;
 
-  ApiError(
-      {this.apiResponse,
-      this.type = ApiErrorType.unknown,
-      this.message});
+  ApiError({this.apiResponse, this.type = ApiErrorType.unknown, this.message});
 
   get snackBar {
     Get.snackbar("에러", message ?? apiResponse?.message ?? type.message);

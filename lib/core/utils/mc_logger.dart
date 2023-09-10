@@ -17,7 +17,6 @@ class PLoggerPrinter extends PrettyPrinter {
             noBoxingByDefault: false,
             lineLength: _lineLength,
             methodCount:
-
                 methodCount ?? (stackYn ? _defaultStackMethodCount : 3));
 }
 

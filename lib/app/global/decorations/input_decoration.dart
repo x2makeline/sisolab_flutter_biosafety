@@ -6,7 +6,7 @@ final dateInputDecoration = InputDecoration(
   hintText: "YYYY.MM.DD",
   suffixIconConstraints: BoxConstraints(minHeight: 42.sp, minWidth: 42.sp),
   suffixIcon: Padding(
-    padding:  EdgeInsets.all(20.sp),
+    padding: EdgeInsets.all(20.sp),
     child: Image.asset(
       "assets/images/icon_calender.png",
       height: 42.sp,

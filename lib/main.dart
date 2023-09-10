@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
 
             builder: (_, w) => MediaQuery(
               data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-              child: w ?? EmptyBox(),
+              child: w ?? const EmptyBox(),
             ),
             theme: ThemeData(
                 buttonTheme: buttonMainTheme,

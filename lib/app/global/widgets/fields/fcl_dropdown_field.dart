@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 import '../../models/fcl_type.dart';
 import 'fcl_field.dart';
@@ -21,33 +20,32 @@ class FclDropdownField extends FclField {
             type: FclType.text,
             builder: () {
               return SizedBox(
-                  height: 90.h,
-                  child: FormBuilderDropdown(
-
-                    initialValue: initialValue,
-                    iconSize: buttonTextStyle.fontSize!,
-                    style: buttonTextStyle,
-                    name: name,
-                    itemHeight: max(kMinInteractiveDimension, 90.h),
-                    items: [
-                      DropdownMenuItem(
-                        value: null,
-                        child: Text(
-                          hintText,
-                          style: buttonTextStyle,
-                        ),
+                height: 90.h,
+                child: FormBuilderDropdown(
+                  initialValue: initialValue,
+                  iconSize: buttonTextStyle.fontSize!,
+                  style: buttonTextStyle,
+                  name: name,
+                  itemHeight: max(kMinInteractiveDimension, 90.h),
+                  items: [
+                    DropdownMenuItem(
+                      value: null,
+                      child: Text(
+                        hintText,
+                        style: buttonTextStyle,
                       ),
-                      ...itemMap.entries
-                          .map((e) => DropdownMenuItem(
-                                value: e.key,
-                                child: Text(
-                                  e.value,
-                                  style: buttonTextStyle,
-                                ),
-                              ))
-                          .toList()
-                    ],
-                  ),
-                );
+                    ),
+                    ...itemMap.entries
+                        .map((e) => DropdownMenuItem(
+                              value: e.key,
+                              child: Text(
+                                e.value,
+                                style: buttonTextStyle,
+                              ),
+                            ))
+                        .toList()
+                  ],
+                ),
+              );
             });
 }

@@ -5,7 +5,7 @@ import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.da
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sqflite/sqflite.dart';
 
-class SqfliteProvider  with PLoggerMixin{
+class SqfliteProvider with PLoggerMixin {
   static late final Database db;
   static final _pLog = PLogger(prefix: "SqfliteProvider");
   static const tbNm = "io";
@@ -13,25 +13,16 @@ class SqfliteProvider  with PLoggerMixin{
   static Future<int> merge(BioIo io) async {
     _pLog.i("insert ${io.localId}");
 
-    return await db.insert(
-      tbNm,
-      io.toJson(),
-      conflictAlgorithm: ConflictAlgorithm.replace
-    );
+    return await db.insert(tbNm, io.toJson(),
+        conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   static Future<int> delete(int localId) async {
     _pLog.i("delete $localId");
-    return await db.delete(
-      tbNm,
-      where: "localId = $localId"
-    );
+    return await db.delete(tbNm, where: "localId = $localId");
   }
 
-
-
   static Future<List<BioIo>> selectList(SelectProcListIn req) async {
-
     return (await db.query("io", where: '''
         gbn='${req.gbn.name}' 
         ${req.searchCompany != null && req.searchCompany!.isNotEmpty ? "AND company LIKE '%${req.searchCompany}%'" : ''}  
@@ -39,15 +30,13 @@ class SqfliteProvider  with PLoggerMixin{
       ''')).let((it) => List.generate(it.length, (i) => BioIo.fromJson(it[i])));
   }
 
-  static Future<BioIo> select(int localId) async =>
-      BioIo.fromJson((await db.query("io", where: 'localId = ?', whereArgs: [localId])).first);
-
+  static Future<BioIo> select(int localId) async => BioIo.fromJson(
+      (await db.query("io", where: 'localId = ?', whereArgs: [localId])).first);
 
   static Future<void> init() async {
-    print(join(await getDatabasesPath(), 'bio_database.db'));
+    await deleteDatabase(join(await getDatabasesPath(), 'bio_database.db'));
     db = await openDatabase(join(await getDatabasesPath(), 'bio_database.db'),
-        onCreate: (db, _) {
-
+        version: 2, onCreate: (db, _) {
       return db.execute('''
 CREATE TABLE $tbNm ( 
   localId INTEGER primary key autoincrement,
@@ -567,6 +556,6 @@ attfile68str text,
 attfile69str text
 );
 ''');
-    }, version: 1);
+    });
   }
 }

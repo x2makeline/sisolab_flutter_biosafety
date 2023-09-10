@@ -16,13 +16,12 @@ class SelectProcListIn {
   @DateTimeNullableConverter()
   DateTime? searchDate2;
 
-
   SelectProcListIn(
       {required this.gbn,
       this.idx,
       this.searchCompany,
       this.searchDate1,
-      this.searchDate2}) ;
+      this.searchDate2});
 
   factory SelectProcListIn.fromJson(Map<String, dynamic> json) =>
       _$SelectProcListInFromJson(json);

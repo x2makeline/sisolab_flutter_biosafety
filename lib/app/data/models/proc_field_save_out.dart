@@ -6,7 +6,6 @@ part 'proc_field_save_out.g.dart';
 class ProcFieldSaveOut {
   String? idx;
 
-
   @override
   String toString() {
     return 'ProcFieldSaveOut{idx: $idx}';

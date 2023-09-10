@@ -230,6 +230,18 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "equatable",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/equatable-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "excel",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/excel-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "expandable_page_view",
       "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/expandable_page_view-1.0.17",
       "packageUri": "lib/",
@@ -519,9 +531,9 @@
     },
     {
       "name": "path_provider",
-      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/path_provider-2.1.0",
+      "rootUri": "file:///Users/dongwon/.pub-cache/hosted/pub.dev/path_provider-2.1.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.19"
     },
     {
       "name": "path_provider_android",
@@ -854,7 +866,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-09-09T16:47:46.374166Z",
+  "generated": "2023-09-10T13:02:20.552055Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

@@ -37,7 +37,6 @@ class SelectTypePage extends StatelessWidget {
                     },
                     child: Container(
                       padding: EdgeInsets.all(100.sp),
-
                       color: const Color(0xff0e409f),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +122,6 @@ class SelectTypePage extends StatelessWidget {
                           Text('안전 및 보안관리\n현장점검표',
                               textAlign: TextAlign.center,
                               style: TextStyle(
-
                                 color: Colors.white,
                                 fontSize: 28.sp,
                               ))
@@ -150,8 +148,8 @@ class SelectTypePage extends StatelessWidget {
                     ),
                     Text(
                       "COPYRIGHT © 2023 질병관리청 ALL RIGHTS RESERVED.",
-                      style:
-                          TextStyle(fontSize: 24.sp, color: ColorGroup.darkGray),
+                      style: TextStyle(
+                          fontSize: 24.sp, color: ColorGroup.darkGray),
                     )
                   ],
                 ),

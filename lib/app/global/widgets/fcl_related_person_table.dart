@@ -3,7 +3,7 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_sign.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder_sign.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 class FclRelatedPersonTable extends StatelessWidget {

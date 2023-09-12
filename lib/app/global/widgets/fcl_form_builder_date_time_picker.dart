@@ -12,10 +12,12 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
       required this.name,
       this.initialDate,
       this.firstDate,
+        this.enabled,
       this.lastDate});
 
   static final _format = DateFormat("yyyy-MM-dd");
   final TextEditingController? controller;
+  final bool? enabled;
   final String name;
   static final _initialFirstDate =
       DateTime.now().subtract(const Duration(days: 999));
@@ -28,6 +30,7 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FormBuilderDateTimePicker(
+      enabled: enabled ?? true,
       initialDate: initialDate?.let((it) => _format.parse(it)),
       initialValue: initialDate?.let((it) => _format.parse(it)),
       key: super.key,

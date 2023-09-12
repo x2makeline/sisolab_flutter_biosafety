@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_radio.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/template/note_template.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_image_picker.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_radio_group.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/note_template.dart';
 
 class FclImageNoteTemplate extends StatelessWidget {
   const FclImageNoteTemplate(

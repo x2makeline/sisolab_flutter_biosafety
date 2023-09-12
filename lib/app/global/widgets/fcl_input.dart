@@ -4,8 +4,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_image_picker.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_image_picker.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
@@ -23,20 +23,24 @@ abstract class FclField<T> {
 
   FclInputFieldType type;
 
+  bool? enabled;
+
   FclField(
       {required this.type,
       this.initialValue,
+      this.enabled,
       this.preValue,
       required this.name});
 }
 
 enum TextSuffixType { count }
 
-class FclTextField extends FclField<String> {
-  FclTextField(
+class FclTextField2 extends FclField<String> {
+  FclTextField2(
       {super.initialValue,
       super.preValue,
       required super.name,
+      super.enabled,
       this.suffixType,
       this.radioField})
       : super(type: FclInputFieldType.text);
@@ -46,12 +50,20 @@ class FclTextField extends FclField<String> {
 }
 
 class FclNoteField extends FclField<String> {
-  FclNoteField({super.initialValue, super.preValue, required super.name})
+  String? hintText;
+
+  FclNoteField(
+      {this.hintText,
+      super.enabled,
+      super.initialValue,
+      super.preValue,
+      required super.name})
       : super(type: FclInputFieldType.note);
 }
 
 class FclImageField extends FclField<String> {
-  FclImageField({super.initialValue, super.preValue, required super.name})
+  FclImageField(
+      {super.initialValue, super.enabled, super.preValue, required super.name})
       : super(type: FclInputFieldType.image);
 }
 
@@ -65,6 +77,7 @@ class FclRadioField extends FclField<String> {
 
   FclRadioField({
     this.onChanged,
+    super.enabled,
     required super.name,
     required this.map,
     super.preValue,
@@ -80,21 +93,23 @@ class FclInputField {
   bool preYn;
   List<FclField> fieldList;
 
-  FclInputField({this.label, required this.fieldList, this.preYn = false})
-      : assert(fieldList.isNotEmpty);
+  FclInputField({this.label, required this.fieldList, this.preYn = false});
 }
 
 class FclFieldView extends StatelessWidget {
-  FclFieldView(
+  const FclFieldView(
       {super.key,
       this.label,
       this.preYn = false,
       required this.fieldList,
       this.lastDividerYn = true,
-      this.desc})
-      : assert(fieldList.isNotEmpty),
-        assert(desc == null || desc.isNotEmpty);
+      this.lastPaddingYn = true,
+      this.firstPaddingYn = true,
+      this.desc});
+
   final bool lastDividerYn;
+  final bool lastPaddingYn;
+  final bool firstPaddingYn;
   final String? label;
   final bool preYn;
   final List<FclField> fieldList;
@@ -103,17 +118,20 @@ class FclFieldView extends StatelessWidget {
   Widget note(FclNoteField field) => FormBuilderTextField(
         name: field.name,
         maxLines: 3,
+        enabled: field.enabled ?? true,
         initialValue: field.initialValue,
         keyboardType: TextInputType.multiline,
         style: TextStyle(
           fontSize: 28.sp,
         ),
-        decoration: const InputDecoration(
-            hintText: "관련 내용을 입력해주세요.", constraints: BoxConstraints()),
+        decoration: InputDecoration(
+            hintText: field.hintText ?? "관련 내용을 입력해주세요.",
+            constraints: BoxConstraints()),
       );
 
-  Widget text(FclTextField field) => FormBuilderTextField(
+  Widget text(FclTextField2 field) => FormBuilderTextField(
         initialValue: field.initialValue,
+        enabled: field.enabled ?? true,
         name: field.name,
         decoration: when(field.suffixType, {
               TextSuffixType.count: () => const InputDecoration(
@@ -134,6 +152,7 @@ class FclFieldView extends StatelessWidget {
   Widget radio(FclRadioField field) => DefaultTextStyle(
         style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
         child: FormBuilderRadioGroup(
+            enabled: field.enabled ?? true,
             wrapSpacing: 100.w,
             onChanged: field.onChanged,
             wrapAlignment: field.wrapAlignment,
@@ -157,9 +176,10 @@ class FclFieldView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          height: 40.h,
-        ),
+        if (firstPaddingYn)
+          SizedBox(
+            height: 40.h,
+          ),
         if (label != null) Text(label!, style: context.textTheme.titleLarge),
         if (desc != null)
           Padding(
@@ -187,7 +207,7 @@ class FclFieldView extends StatelessWidget {
           children: fieldList
               .map((e) => when<FclInputFieldType, Widget>(e.type, {
                     FclInputFieldType.text: () =>
-                        (e as FclTextField).let((it) => it.radioField != null
+                        (e as FclTextField2).let((it) => it.radioField != null
                             ? Row(
                                 children: [
                                   Flexible(child: text(it)),
@@ -235,9 +255,10 @@ class FclFieldView extends StatelessWidget {
               ],
             ),
           ),
-        SizedBox(
-          height: 40.h,
-        ),
+        if (lastPaddingYn)
+          SizedBox(
+            height: 40.h,
+          ),
         if (lastDividerYn) const FclDivider.form()
       ],
     );

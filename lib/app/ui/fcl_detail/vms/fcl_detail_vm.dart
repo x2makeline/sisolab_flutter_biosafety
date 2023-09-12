@@ -57,7 +57,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   }
 
   /// 활성화 탭 index
-  final _tabIndex = 0.obs;
+  final _tabIndex = 7.obs;
 
   int get tabIndex => _tabIndex.value;
 

@@ -24,5 +24,6 @@ const textFieldDecoration = InputDecoration(
 final inputDecorationTheme = InputDecorationTheme(
     // constraints: BoxConstraints(minHeight: 90.h),
     enabledBorder: textFieldDecoration.border,
+    disabledBorder: textFieldDecoration.border,
     border: textFieldDecoration.border // enabledBorder: ,
     );

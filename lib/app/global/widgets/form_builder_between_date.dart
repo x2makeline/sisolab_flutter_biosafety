@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_form_builder_date_time_picker.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_form_builder_date_time_picker.dart';
 import 'package:sisolab_flutter_biosafety/core/extensions/dateformat.dart';
 
 class FormBuilderBetweenDate extends StatefulWidget {

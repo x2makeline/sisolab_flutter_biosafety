@@ -3,21 +3,50 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl/fcl_radio_group.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_date_field.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fields/fcl_text_field.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_date_field.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 import '../../../global/widgets/field_with_label.dart';
 
 /// 고위험 - 점검개요
-class Tab27 extends StatelessWidget {
-  const Tab27({super.key});
+class Tab27 extends StatefulWidget {
+  const Tab27({Key? key}) : super(key: key);
 
+  @override
+  State<Tab27> createState() => _Tab27State();
+}
+
+class _Tab27State extends State<Tab27> {
   FclDetailVm get vm => FclDetailVm.to;
+  final d13 = false.obs;
+  final d14 = false.obs;
+  final d15 = false.obs;
+  final d16 = false.obs;
+  final d17 = false.obs;
+  final d18 = false.obs;
+  final d19 = false.obs;
+  final d20 = false.obs;
+  final d21 = false.obs;
+  final d22 = false.obs;
+
+  @override
+  void initState() {
+    super.initState();
+    d13.value = vm.io.d13 == "5";
+    d14.value = vm.io.d14 == "1";
+    d15.value = vm.io.d15 == "1";
+    d16.value = vm.io.d16 == "1";
+    d17.value = vm.io.d17 == "1";
+    d18.value = vm.io.d18 == "1";
+    d19.value = vm.io.d19 == "1";
+    d20.value = vm.io.d20 == "1";
+    d21.value = vm.io.d21 == "1";
+    d22.value = vm.io.d22 == "1";
+  }
 
   @override
   Widget build(BuildContext context) => Column(
@@ -106,55 +135,53 @@ class Tab27 extends StatelessWidget {
               label: "생물안전시설의 밀폐등급은?",
               child: DefaultTextStyle(
                   style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
-                  child: ObxValue(
-                      (data) => FormBuilderRadioGroup(
-                            wrapSpacing: 100.w,
-                            decoration: const InputDecoration(
-                                contentPadding: EdgeInsets.zero,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none)),
-                            orientation: OptionsOrientation.horizontal,
-                            initialValue: vm.io.d13,
-                            name: "d13",
-                            onChanged: (d) {
-                              data.value = d == "5";
-                            },
-                            options: [
-                              const FormBuilderFieldOption(
-                                value: "1",
-                                child: Text("BL1"),
-                              ),
-                              const FormBuilderFieldOption(
-                                value: "2",
-                                child: Text("BL2"),
-                              ),
-                              const FormBuilderFieldOption(
-                                value: "3",
-                                child: Text("BL3"),
-                              ),
-                              const FormBuilderFieldOption(
-                                value: "4",
-                                child: Text("BL4"),
-                              ),
-                              FormBuilderFieldOption(
-                                value: "5",
-                                child: Row(
-                                  children: [
-                                    const Text("기타 ("),
-                                    SizedBox(
-                                        width: 200.w,
-                                        child: FclTextField(
-                                          enabled: data.value,
-                                          name: "d135",
-                                          initialValue: vm.io.d135,
-                                        )),
-                                    const Text(")")
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                      Rx(vm.io.d13 == "5")))),
+                  child: FormBuilderRadioGroup(
+                    wrapSpacing: 100.w,
+                    decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.zero,
+                        enabledBorder:
+                            OutlineInputBorder(borderSide: BorderSide.none)),
+                    orientation: OptionsOrientation.horizontal,
+                    initialValue: vm.io.d13,
+                    name: "d13",
+                    onChanged: (d) {
+                      d13.value = d == "5";
+                    },
+                    options: [
+                      const FormBuilderFieldOption(
+                        value: "1",
+                        child: Text("BL1"),
+                      ),
+                      const FormBuilderFieldOption(
+                        value: "2",
+                        child: Text("BL2"),
+                      ),
+                      const FormBuilderFieldOption(
+                        value: "3",
+                        child: Text("BL3"),
+                      ),
+                      const FormBuilderFieldOption(
+                        value: "4",
+                        child: Text("BL4"),
+                      ),
+                      FormBuilderFieldOption(
+                        value: "5",
+                        child: Row(
+                          children: [
+                            const Text("기타 ("),
+                            SizedBox(
+                                width: 200.w,
+                                child: Obx(() => FclTextField(
+                                      enabled: d13.value,
+                                      name: "d135",
+                                      initialValue: vm.io.d135,
+                                    ))),
+                            const Text(")")
+                          ],
+                        ),
+                      )
+                    ],
+                  ))),
           SizedBox(
             height: 40.h,
           ),
@@ -257,57 +284,55 @@ class Tab27 extends StatelessWidget {
           const FclDivider.black(),
           DefaultTextStyle(
               style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
-              child: ObxValue(
-                  (data) => Column(
-                        children: [
-                          FormBuilderRadioGroup(
-                            wrapSpacing: 100.w,
-                            wrapRunSpacing: 100.w,
-                            decoration: const InputDecoration(
-                                contentPadding: EdgeInsets.zero,
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide.none)),
-                            orientation: OptionsOrientation.horizontal,
-                            initialValue: vm.io.d14,
-                            name: "d14",
-                            onChanged: (d) {
-                              data.value = d == "1";
-                            },
-                            options: [
-                              FormBuilderFieldOption(
-                                value: "1",
-                                child: Row(
-                                  children: [
-                                    const Text("있음 ("),
-                                    SizedBox(
-                                        width: 100.w,
-                                        child: Obx(() => FclTextField(
-                                              enabled: data.value,
-                                              name: "d135",
-                                              initialValue: vm.io.d135,
-                                            ))),
-                                    const Text("명)")
-                                  ],
-                                ),
-                              ),
-                              const FormBuilderFieldOption(
-                                value: "2",
-                                child: Text("없음"),
-                              ),
-                            ],
-                          ),
-                          const Text("※ 취급자 정보(여러 명일 경우 별도첨부)"),
-                          Obx(() => FclTextField(
-                                enabled: data.value,
-                                onSubmitted: (_) => vm.submit(),
-                                hintText: "성명",
-                                name: "d10",
-                                initialValue: vm.io.d10,
-                                label: "성명",
-                              ))
-                        ],
+              child: Column(
+                children: [
+                  FormBuilderRadioGroup(
+                    wrapSpacing: 100.w,
+                    wrapRunSpacing: 100.w,
+                    decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.zero,
+                        enabledBorder:
+                            OutlineInputBorder(borderSide: BorderSide.none)),
+                    orientation: OptionsOrientation.horizontal,
+                    initialValue: vm.io.d14,
+                    name: "d14",
+                    onChanged: (d) {
+                      d14.value = d == "1";
+                    },
+                    options: [
+                      FormBuilderFieldOption(
+                        value: "1",
+                        child: Row(
+                          children: [
+                            const Text("있음 ("),
+                            SizedBox(
+                                width: 100.w,
+                                child: Obx(() => FclTextField(
+                                      enabled: d14.value,
+                                      name: "d141",
+                                      initialValue: vm.io.d141,
+                                    ))),
+                            const Text("명)")
+                          ],
+                        ),
                       ),
-                  Rx(vm.io.d14 == "1"))),
+                      const FormBuilderFieldOption(
+                        value: "2",
+                        child: Text("없음"),
+                      ),
+                    ],
+                  ),
+                  const Text("※ 취급자 정보(여러 명일 경우 별도첨부)"),
+                  Obx(() => FclTextField(
+                        enabled: d14.value,
+                        onSubmitted: (_) => vm.submit(),
+                        hintText: "성명",
+                        name: "d10",
+                        initialValue: vm.io.d10,
+                        label: "성명",
+                      ))
+                ],
+              )),
           SizedBox(
             height: 40.h,
           ),
@@ -318,132 +343,479 @@ class Tab27 extends StatelessWidget {
           Text("보안 담당자",
               style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w500)),
           const FclDivider.black(),
-          ObxValue(
-              (data) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      FieldWithLabel(
-                        label: "보안관리 책임자",
-                        child: Obx(() => FclRadioGroup(
-                            onChanged: (d) {
-                              data.value = d == "1";
-                            },
-                            orientation: OptionsOrientation.wrap,
-                            labelWithKey: false,
-                            map: const {"1": "있음", "2": "없음"},
-                            initialValue: vm.io.d15,
-                            name: "d15")),
-                      ),
-                      TightGridView(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 40.w,
-                          mainAxisSpacing: 40.w,
-                          children: [
-                            FieldWithLabel(
-                                label: "성명",
-                                child: Obx(() => FclTextField(
-                                      hintText: "성명",
-                                      enabled: data.value,
-                                      name: "d11",
-                                      initialValue: vm.io.d11,
-                                    ))),
-                            FieldWithLabel(
-                                label: "소속부서 및 직급",
-                                child: Obx(() => FclTextField(
-                                      hintText: "소속부서 및 직급",
-                                      enabled: data.value,
-                                      name: "d12",
-                                      initialValue: vm.io.d12,
-                                    ))),
-                            FieldWithLabel(
-                                label: "소속기관내 근무기간",
-                                child: Obx(() => FclTextField(
-                                      hintText: '소속기관내 근무기간',
-                                      enabled: data.value,
-                                      name: "d80",
-                                      initialValue: vm.io.d80,
-                                    ))),
-                            ObxValue(
-                                (p0) => FieldWithLabel(
-                                    label: "안전 및 보안 자격증 보유",
-                                    child: FormBuilderRadioGroup(
-                                      enabled: data.value,
-                                      wrapSpacing: 100.w,
-                                      wrapRunSpacing: 100.w,
-                                      decoration: const InputDecoration(
-                                          contentPadding: EdgeInsets.zero,
-                                          disabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide.none),
-                                          enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide.none)),
-                                      orientation:
-                                          OptionsOrientation.horizontal,
-                                      initialValue: vm.io.d16,
-                                      name: "d16",
-                                      onChanged: (d) {
-                                        p0.value = d == "1";
-                                      },
-                                      options: [
-                                        FormBuilderFieldOption(
-                                          value: "1",
-                                          child: Row(
-                                            children: [
-                                              const Text("네 (종류"),
-                                              SizedBox(
-                                                  width: 100.w,
-                                                  child: Obx(() {
-                                                    pLogger.i(p0.value);
-                                                    pLogger.i(data.value);
-                                                    return FclTextField(
-                                                      enabled: p0.value &&
-                                                          data.value,
-                                                      name: "d81",
-                                                      initialValue: vm.io.d81,
-                                                    );
-                                                  })),
-                                              const Text(")")
-                                            ],
-                                          ),
-                                        ),
-                                        const FormBuilderFieldOption(
-                                          value: "2",
-                                          child: Text("아니요"),
-                                        ),
-                                      ],
-                                    )),
-                                Rx(vm.io.d16 != null)),
-                            FieldWithLabel(
-                                label: "전화",
-                                child: FclTextField(
-                                  hintText: '전화',
-                                  enabled: data.value,
-                                  name: "d89",
-                                  initialValue: vm.io.d89,
-                                )),
-                            FieldWithLabel(
-                                label: "휴대폰번호",
-                                child: FclTextField(
-                                  hintText: '휴대폰번호',
-                                  enabled: data.value,
-                                  name: "d90",
-                                  initialValue: vm.io.d90,
-                                ))
-                          ]),
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      FieldWithLabel(
-                        label: "전자우편주소",
-                        child: FclTextField(
-                          hintText: "전자우편주소 입력",
-                          name: "d91",
-                          enabled: data.value,
-                          initialValue: vm.io.d91,
-                        ),
-                      ),
-                    ],
-                  ),
-              Rx(vm.io.d15 == "1"))
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FieldWithLabel(
+                label: "보안관리 책임자",
+                child: Obx(() => FclRadioGroup(
+                    onChanged: (d) {
+                      d15.value = d == "1";
+                    },
+                    orientation: OptionsOrientation.wrap,
+                    labelWithKey: false,
+                    map: const {"1": "있음", "2": "없음"},
+                    initialValue: vm.io.d15,
+                    name: "d15")),
+              ),
+              TightGridView(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 40.w,
+                  mainAxisSpacing: 40.w,
+                  children: [
+                    FieldWithLabel(
+                        label: "성명",
+                        child: Obx(() => FclTextField(
+                              hintText: "성명",
+                              enabled: d15.value,
+                              name: "d11",
+                              initialValue: vm.io.d11,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속부서 및 직급",
+                        child: Obx(() => FclTextField(
+                              hintText: "소속부서 및 직급",
+                              enabled: d15.value,
+                              name: "d12",
+                              initialValue: vm.io.d12,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속기관내 근무기간",
+                        child: Obx(() => FclTextField(
+                              hintText: '소속기관내 근무기간',
+                              enabled: d15.value,
+                              name: "d80",
+                              initialValue: vm.io.d80,
+                            ))),
+                    FieldWithLabel(
+                        label: "안전 및 보안 자격증 보유",
+                        child: Obx(() => FormBuilderRadioGroup(
+                              enabled: d15.value,
+                              wrapSpacing: 100.w,
+                              wrapRunSpacing: 100.w,
+                              decoration: const InputDecoration(
+                                  contentPadding: EdgeInsets.zero,
+                                  disabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none)),
+                              orientation: OptionsOrientation.horizontal,
+                              initialValue: vm.io.d16,
+                              name: "d16",
+                              onChanged: (d) {
+                                d16.value = d == "1";
+                              },
+                              options: [
+                                FormBuilderFieldOption(
+                                  value: "1",
+                                  child: Row(
+                                    children: [
+                                      const Text("네 (종류"),
+                                      SizedBox(
+                                          width: 100.w,
+                                          child: Obx(() => FclTextField(
+                                                enabled: d16.value && d15.value,
+                                                name: "d81",
+                                                initialValue: vm.io.d81,
+                                              ))),
+                                      const Text(")")
+                                    ],
+                                  ),
+                                ),
+                                const FormBuilderFieldOption(
+                                  value: "2",
+                                  child: Text("아니요"),
+                                ),
+                              ],
+                            ))),
+                    FieldWithLabel(
+                        label: "전화",
+                        child: Obx(() => FclTextField(
+                              hintText: '전화',
+                              enabled: d15.value,
+                              name: "d82",
+                              initialValue: vm.io.d82,
+                            ))),
+                    FieldWithLabel(
+                        label: "휴대폰번호",
+                        child: Obx(() => FclTextField(
+                              hintText: '휴대폰번호',
+                              enabled: d15.value,
+                              name: "d83",
+                              initialValue: vm.io.d83,
+                            )))
+                  ]),
+              SizedBox(
+                height: 40.h,
+              ),
+              FieldWithLabel(
+                label: "전자우편주소",
+                child: Obx(() => FclTextField(
+                      hintText: "전자우편주소 입력",
+                      name: "d84",
+                      enabled: d15.value,
+                      initialValue: vm.io.d84,
+                    )),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              const FclDivider.form(),
+              SizedBox(
+                height: 40.h,
+              ),
+              FieldWithLabel(
+                label: "보안관리 실무관리자",
+                child: Obx(() => FclRadioGroup(
+                    onChanged: (d) {
+                      d17.value = d == "1";
+                    },
+                    orientation: OptionsOrientation.wrap,
+                    labelWithKey: false,
+                    map: const {"1": "있음", "2": "없음"},
+                    initialValue: vm.io.d17,
+                    name: "d17")),
+              ),
+              TightGridView(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 40.w,
+                  mainAxisSpacing: 40.w,
+                  children: [
+                    FieldWithLabel(
+                        label: "성명",
+                        child: Obx(() => FclTextField(
+                              hintText: "성명",
+                              enabled: d17.value,
+                              name: "d85",
+                              initialValue: vm.io.d85,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속부서 및 직급",
+                        child: Obx(() => FclTextField(
+                              hintText: "소속부서 및 직급",
+                              enabled: d17.value,
+                              name: "d86",
+                              initialValue: vm.io.d86,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속기관내 근무기간",
+                        child: Obx(() => FclTextField(
+                              hintText: '소속기관내 근무기간',
+                              enabled: d17.value,
+                              name: "d87",
+                              initialValue: vm.io.d87,
+                            ))),
+                    FieldWithLabel(
+                        label: "안전 및 보안 자격증 보유",
+                        child: Obx(() => FormBuilderRadioGroup(
+                              enabled: d17.value,
+                              wrapSpacing: 100.w,
+                              wrapRunSpacing: 100.w,
+                              decoration: const InputDecoration(
+                                  contentPadding: EdgeInsets.zero,
+                                  disabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none)),
+                              orientation: OptionsOrientation.horizontal,
+                              initialValue: vm.io.d18,
+                              name: "d18",
+                              onChanged: (d) {
+                                d18.value = d == "1";
+                              },
+                              options: [
+                                FormBuilderFieldOption(
+                                  value: "1",
+                                  child: Row(
+                                    children: [
+                                      const Text("네 (종류"),
+                                      SizedBox(
+                                          width: 100.w,
+                                          child: Obx(() => FclTextField(
+                                                enabled: d18.value && d17.value,
+                                                name: "d88",
+                                                initialValue: vm.io.d88,
+                                              ))),
+                                      const Text(")")
+                                    ],
+                                  ),
+                                ),
+                                const FormBuilderFieldOption(
+                                  value: "2",
+                                  child: Text("아니요"),
+                                ),
+                              ],
+                            ))),
+                    FieldWithLabel(
+                        label: "전화",
+                        child: Obx(() => FclTextField(
+                              hintText: '전화',
+                              enabled: d17.value,
+                              name: "d89",
+                              initialValue: vm.io.d89,
+                            ))),
+                    FieldWithLabel(
+                        label: "휴대폰번호",
+                        child: Obx(() => FclTextField(
+                              hintText: '휴대폰번호',
+                              enabled: d17.value,
+                              name: "d90",
+                              initialValue: vm.io.d90,
+                            )))
+                  ]),
+              SizedBox(
+                height: 40.h,
+              ),
+              FieldWithLabel(
+                label: "전자우편주소",
+                child: Obx(() => FclTextField(
+                      hintText: "전자우편주소 입력",
+                      name: "d91",
+                      enabled: d17.value,
+                      initialValue: vm.io.d91,
+                    )),
+              ),
+            ],
+          ),
+          Text("생물안전 담당자",
+              style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.w500)),
+          const FclDivider.black(),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FieldWithLabel(
+                label: "생물안전관리 책임자",
+                child: Obx(() => FclRadioGroup(
+                    onChanged: (d) {
+                      d19.value = d == "1";
+                    },
+                    orientation: OptionsOrientation.wrap,
+                    labelWithKey: false,
+                    map: const {"1": "있음", "2": "없음"},
+                    initialValue: vm.io.d19,
+                    name: "d19")),
+              ),
+              TightGridView(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 40.w,
+                  mainAxisSpacing: 40.w,
+                  children: [
+                    FieldWithLabel(
+                        label: "성명",
+                        child: Obx(() => FclTextField(
+                              hintText: "성명",
+                              enabled: d19.value,
+                              name: "d92",
+                              initialValue: vm.io.d92,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속부서 및 직급",
+                        child: Obx(() => FclTextField(
+                              hintText: "소속부서 및 직급",
+                              enabled: d19.value,
+                              name: "d93",
+                              initialValue: vm.io.d93,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속기관내 근무기간",
+                        child: Obx(() => FclTextField(
+                              hintText: '소속기관내 근무기간',
+                              enabled: d19.value,
+                              name: "d94",
+                              initialValue: vm.io.d94,
+                            ))),
+                    FieldWithLabel(
+                        label: "안전 및 보안 자격증 보유",
+                        child: Obx(() => FormBuilderRadioGroup(
+                              enabled: d19.value,
+                              wrapSpacing: 100.w,
+                              wrapRunSpacing: 100.w,
+                              decoration: const InputDecoration(
+                                  contentPadding: EdgeInsets.zero,
+                                  disabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none)),
+                              orientation: OptionsOrientation.horizontal,
+                              initialValue: vm.io.d20,
+                              name: "d20",
+                              onChanged: (d) {
+                                d20.value = d == "1";
+                              },
+                              options: [
+                                FormBuilderFieldOption(
+                                  value: "1",
+                                  child: Row(
+                                    children: [
+                                      const Text("네 (종류"),
+                                      SizedBox(
+                                          width: 100.w,
+                                          child: Obx(() {
+                                            return FclTextField(
+                                              enabled: d20.value && d19.value,
+                                              name: "d95",
+                                              initialValue: vm.io.d95,
+                                            );
+                                          })),
+                                      const Text(")")
+                                    ],
+                                  ),
+                                ),
+                                const FormBuilderFieldOption(
+                                  value: "2",
+                                  child: Text("아니요"),
+                                ),
+                              ],
+                            ))),
+                    FieldWithLabel(
+                        label: "전화",
+                        child: Obx(() => FclTextField(
+                              hintText: '전화',
+                              enabled: d19.value,
+                              name: "d96",
+                              initialValue: vm.io.d96,
+                            ))),
+                    FieldWithLabel(
+                        label: "휴대폰번호",
+                        child: Obx(() => FclTextField(
+                              hintText: '휴대폰번호',
+                              enabled: d19.value,
+                              name: "d97",
+                              initialValue: vm.io.d97,
+                            )))
+                  ]),
+              SizedBox(
+                height: 40.h,
+              ),
+              FieldWithLabel(
+                label: "전자우편주소",
+                child: Obx(() => FclTextField(
+                      hintText: "전자우편주소 입력",
+                      name: "d98",
+                      enabled: d19.value,
+                      initialValue: vm.io.d98,
+                    )),
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              const FclDivider.form(),
+              SizedBox(
+                height: 40.h,
+              ),
+              FieldWithLabel(
+                label: "보안관리 실무관리자",
+                child: Obx(() => FclRadioGroup(
+                    onChanged: (d) => d21.value = d == "1",
+                    orientation: OptionsOrientation.wrap,
+                    labelWithKey: false,
+                    map: const {"1": "있음", "2": "없음"},
+                    initialValue: vm.io.d21,
+                    name: "d21")),
+              ),
+              TightGridView(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 40.w,
+                  mainAxisSpacing: 40.w,
+                  children: [
+                    FieldWithLabel(
+                        label: "성명",
+                        child: Obx(() => FclTextField(
+                              hintText: "성명",
+                              enabled: d21.value,
+                              name: "d99",
+                              initialValue: vm.io.d99,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속부서 및 직급",
+                        child: Obx(() => FclTextField(
+                              hintText: "소속부서 및 직급",
+                              enabled: d21.value,
+                              name: "d100",
+                              initialValue: vm.io.d100,
+                            ))),
+                    FieldWithLabel(
+                        label: "소속기관내 근무기간",
+                        child: Obx(() => FclTextField(
+                              hintText: '소속기관내 근무기간',
+                              enabled: d21.value,
+                              name: "d101",
+                              initialValue: vm.io.d101,
+                            ))),
+                    FieldWithLabel(
+                        label: "안전 및 보안 자격증 보유",
+                        child: Obx(() => FormBuilderRadioGroup(
+                              enabled: d21.value,
+                              wrapSpacing: 100.w,
+                              wrapRunSpacing: 100.w,
+                              decoration: const InputDecoration(
+                                  contentPadding: EdgeInsets.zero,
+                                  disabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide.none)),
+                              orientation: OptionsOrientation.horizontal,
+                              initialValue: vm.io.d22,
+                              name: "d22",
+                              onChanged: (d) {
+                                d22.value = d == "1";
+                              },
+                              options: [
+                                FormBuilderFieldOption(
+                                  value: "1",
+                                  child: Row(
+                                    children: [
+                                      const Text("네 (종류"),
+                                      SizedBox(
+                                          width: 100.w,
+                                          child: Obx(() {
+                                            return FclTextField(
+                                              enabled: d22.value && d21.value,
+                                              name: "d102",
+                                              initialValue: vm.io.d102,
+                                            );
+                                          })),
+                                      const Text(")")
+                                    ],
+                                  ),
+                                ),
+                                const FormBuilderFieldOption(
+                                  value: "2",
+                                  child: Text("아니요"),
+                                ),
+                              ],
+                            ))),
+                    FieldWithLabel(
+                        label: "전화",
+                        child: Obx(() => FclTextField(
+                              hintText: '전화',
+                              enabled: d21.value,
+                              name: "d103",
+                              initialValue: vm.io.d103,
+                            ))),
+                    FieldWithLabel(
+                        label: "휴대폰번호",
+                        child: Obx(() => FclTextField(
+                              hintText: '휴대폰번호',
+                              enabled: d21.value,
+                              name: "d104",
+                              initialValue: vm.io.d104,
+                            )))
+                  ]),
+              SizedBox(
+                height: 40.h,
+              ),
+              FieldWithLabel(
+                label: "전자우편주소",
+                child: Obx(() => FclTextField(
+                      hintText: "전자우편주소 입력",
+                      name: "d105",
+                      enabled: d21.value,
+                      initialValue: vm.io.d105,
+                    )),
+              ),
+            ],
+          )
         ],
       );
 }

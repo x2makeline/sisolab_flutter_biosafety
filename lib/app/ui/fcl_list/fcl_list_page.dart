@@ -9,7 +9,7 @@ import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder/form_builder_between_date.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder_between_date.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_list_page_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/extensions/bio_list_ext.dart';

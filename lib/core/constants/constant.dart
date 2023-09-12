@@ -19,7 +19,14 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_24.dart'
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_25.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_26.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_27.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_28.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_29.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_3.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_30.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_31.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_32.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_33.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_34.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_4.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_5.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_6.dart';
@@ -42,6 +49,8 @@ class Constant {
 }
 
 const yesOrNoMap = {"예": "예", "아니오": "아니오", "해당없음": "해당없음"};
+const yesOrNoNumMap = {"1": "네", "2": "아니오", "3": "해당없음"};
+const yesOrNoNumMap2 = {"1": "네", "2": "아니오"};
 const yesOrNoMap2 = {"예": "예", "아니오": "아니오", "해당없음": "해당없음", "4": "4"};
 const passOrNaMap = {
   "Pass": "Pass",
@@ -87,13 +96,13 @@ final List<FclTab> regularTabList = [
 /// 고위험 텝 목록
 final List<FclTab> riskTabList = [
   FclTab(title: "점검개요", body: const Tab27()),
-  FclTab(title: "고위험병원체 보유 및 보유량 확인", body: const Tab7()),
-  FclTab(title: "미신고 고위험병원체 보유 및 보유량 확인", body: const Tab15()),
-  FclTab(title: "관리장부 및 기록 관리", body: const Tab22()),
-  FclTab(title: "물리적 보안(보존구역)", body: const Tab8()),
-  FclTab(title: "물리적 보안(취급구역)", body: const Tab9()),
-  FclTab(title: "시설 및 장비 관리", body: const Tab26()),
-  FclTab(title: "인적 보안", body: const Tab11()),
+  FclTab(title: "고위험병원체 보유 및 보유량 확인", body: const Tab28()),
+  FclTab(title: "미신고 고위험병원체 보유 및 보유량 확인", body: const Tab29()),
+  FclTab(title: "관리장부 및 기록 관리", body: const Tab30()),
+  FclTab(title: "물리적 보안(보존구역)", body: const Tab31()),
+  FclTab(title: "물리적 보안(취급구역)", body: const Tab32()),
+  FclTab(title: "시설 및 장비 관리", body: const Tab33()),
+  FclTab(title: "인적 보안", body: const Tab34()),
   FclTab(title: "운송 보안", body: const Tab16()),
   FclTab(title: "실험실 안전관리에 관한 사항", body: const Tab16()),
   FclTab(title: "종합평가", body: const Tab16()),

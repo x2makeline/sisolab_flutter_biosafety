@@ -56,7 +56,7 @@ class Tab3 extends StatelessWidget {
                   lastDividerYn: false,
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclTextField(
+                    FclTextField2(
                         name: "d180",
                         initialValue: vm.io.d180,
                         preValue: vm.preData?.d180,
@@ -76,7 +76,7 @@ class Tab3 extends StatelessWidget {
                   lastDividerYn: false,
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclTextField(
+                    FclTextField2(
                         name: "d87",
                         initialValue: vm.io.d87,
                         preValue: vm.preData?.d87,
@@ -93,7 +93,7 @@ class Tab3 extends StatelessWidget {
                   ])),
           Obx(() =>
               FclFieldView(label: "사용자", preYn: vm.pastYearYn, fieldList: [
-                FclTextField(
+                FclTextField2(
                     name: "d88",
                     initialValue: vm.io.d88,
                     preValue: vm.preData?.d88,
@@ -125,7 +125,7 @@ class Tab3 extends StatelessWidget {
                   lastDividerYn: false,
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclTextField(
+                    FclTextField2(
                         name: "d90",
                         initialValue: vm.io.d90,
                         preValue: vm.preData?.d90,
@@ -145,7 +145,7 @@ class Tab3 extends StatelessWidget {
                   lastDividerYn: false,
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclTextField(
+                    FclTextField2(
                         name: "d92",
                         initialValue: vm.io.d92,
                         preValue: vm.preData?.d92,
@@ -162,7 +162,7 @@ class Tab3 extends StatelessWidget {
                   ])),
           Obx(() =>
               FclFieldView(label: "관리자", preYn: vm.pastYearYn, fieldList: [
-                FclTextField(
+                FclTextField2(
                     name: "d94",
                     initialValue: vm.io.d94,
                     preValue: vm.preData?.d94,

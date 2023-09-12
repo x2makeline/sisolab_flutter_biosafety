@@ -10,7 +10,7 @@ import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/layout/home_page_layout.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/home_page_layout.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';

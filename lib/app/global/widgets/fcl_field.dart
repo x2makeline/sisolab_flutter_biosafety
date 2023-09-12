@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../models/fcl_type.dart';
-import '../../widgets/field_with_label.dart';
+import '../models/fcl_type.dart';
+import 'field_with_label.dart';
 
 abstract class FclField extends StatefulWidget {
   const FclField(

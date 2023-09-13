@@ -57,7 +57,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   }
 
   /// 활성화 탭 index
-  final _tabIndex = 7.obs;
+  final _tabIndex = 0.obs;
 
   int get tabIndex => _tabIndex.value;
 
@@ -112,34 +112,34 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
       try {
         await _apiPro.procFieldSave(bio).then((value) async {
+          pLog.i(value);
           if (value.isSuccess) {
-            if (bio.idx == null && value.data?.idx != null) {
-              bio.idx = int.parse(value.data!.idx!);
-
-              await submitServer(bio);
-            } else {
-              Get.snackbar("메세지", "저장되었습니다.");
-              await FclListPageVm.to.submit();
-              Get.back();
+            if (bio.localId != null) {
+              await SqfliteProvider.delete(bio.localId!);
             }
+            await FclListPageVm.to.submit();
+
+            Get.back();
+            Get.snackbar("메세지", "저장되었습니다.");
+
+
           }
         });
       } on DioException catch (e) {
-        pLog.e(e);
+
         if (e.error is ApiError &&
             [ApiErrorType.nonToken, ApiErrorType.expiredToken]
                 .contains((e.error as ApiError).type)) {
           Get.bottomSheet(LoginPage(
             onSuccess: (token) async {
               await submitServer(bio);
-              if (bio.localId != null) {
-                await SqfliteProvider.delete(bio.localId!);
-              }
-              await FclListPageVm.to.submit();
-              Get.back();
+
             },
           ));
         }
+        rethrow;
+      } catch(e) {
+        pLog.e(e);
         rethrow;
       }
     } else {

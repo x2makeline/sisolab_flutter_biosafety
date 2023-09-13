@@ -27,6 +27,9 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_31.dart'
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_32.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_33.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_34.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_35.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_36.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_37.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_4.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_5.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_6.dart';
@@ -103,7 +106,7 @@ final List<FclTab> riskTabList = [
   FclTab(title: "물리적 보안(취급구역)", body: const Tab32()),
   FclTab(title: "시설 및 장비 관리", body: const Tab33()),
   FclTab(title: "인적 보안", body: const Tab34()),
-  FclTab(title: "운송 보안", body: const Tab16()),
-  FclTab(title: "실험실 안전관리에 관한 사항", body: const Tab16()),
-  FclTab(title: "종합평가", body: const Tab16()),
+  FclTab(title: "운송 보안", body: const Tab35()),
+  FclTab(title: "실험실 안전관리에 관한 사항", body: const Tab36()),
+  FclTab(title: "종합평가", body: const Tab37()),
 ];

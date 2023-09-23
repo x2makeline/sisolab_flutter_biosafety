@@ -161,7 +161,7 @@ class FclListPage extends StatelessWidget {
                       children: [
                         OutlinedButton(
                             onPressed: () async {
-                              await vm.list.data?.excel;
+                              await vm.list.data?.downloadExcel();
                             },
                             child: const Text("엑셀다운")),
                         ElevatedButton(

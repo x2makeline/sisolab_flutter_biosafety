@@ -24,6 +24,7 @@ class FclListPageVm extends GetxController with PLoggerMixin {
   /// ------------------------------------------------------
   Future<void> fetch(SelectProcListIn req) async {
     await SqfliteProvider.selectList(req).then((value) {
+
       _list.value = AsyncStatus.success(value);
     });
   }
@@ -33,6 +34,7 @@ class FclListPageVm extends GetxController with PLoggerMixin {
       searchFormKey.currentState!.save();
 
       final v = searchFormKey.currentState!.value;
+
 
       await fetch(SelectProcListIn(
           gbn: gbn,

@@ -21,7 +21,6 @@ void main() async {
 
   await SPref.init();
   await SqfliteProvider.init();
-
   runApp(const MyApp());
 }
 
@@ -49,10 +48,10 @@ class MyApp extends StatelessWidget {
             initialRoute: AppRoutes.nonLogin.name,
             // initialRoute: AppRoutes.selectType.name,
             // initialRoute: "/fcl/fd1/list",
-        // initialRoute: "/fcl/fd3/list",
+            // initialRoute: "/fcl/fd3/list",
             // initialRoute: AppRoutes.fclRegularList.name,
             // initialRoute: "/fcl/fd1/detail/613",
-        // initialRoute: "/fcl/fd3/detail",
+            // initialRoute: "/fcl/fd3/detail",
             // initialRoute: "/fcl/fd2/detail/609",
             // initialRoute: "/fcl/fd2/detail",
             // initialRoute: "/fcl/fd3/detail",

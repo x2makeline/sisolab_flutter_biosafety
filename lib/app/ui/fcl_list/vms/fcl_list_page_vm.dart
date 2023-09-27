@@ -7,26 +7,24 @@ import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
 import 'package:sisolab_flutter_biosafety/core/models/async_status.dart';
 import 'package:sisolab_flutter_biosafety/core/models/rx_net.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/hive_provider.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/sqflite_provider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 class FclListPageVm extends GetxController with PLoggerMixin {
   static FclListPageVm get to => Get.find();
 
-  final Gbn gbn =
-      Gbn.values.firstWhere((element) => element.name == Get.parameters["id"]);
+  late final Gbn gbn = Get.arguments?['gbn'] ?? Gbn.fd2;
   final searchFormKey = GlobalKey<FormBuilderState>();
 
-  final _list = RxNet<List<BioIo>>(AsyncStatus.loading());
+  final _list = RxList<BioIo>();
 
   final pageIndex = 0.obs;
 
   /// ------------------------------------------------------
   Future<void> fetch(SelectProcListIn req) async {
-    await SqfliteProvider.selectList(req).then((value) {
+    _list.value = HiveProvider.selectList(req);
 
-      _list.value = AsyncStatus.success(value);
-    });
   }
 
   Future<void> submit() async {
@@ -34,7 +32,6 @@ class FclListPageVm extends GetxController with PLoggerMixin {
       searchFormKey.currentState!.save();
 
       final v = searchFormKey.currentState!.value;
-
 
       await fetch(SelectProcListIn(
           gbn: gbn,
@@ -44,7 +41,7 @@ class FclListPageVm extends GetxController with PLoggerMixin {
     }
   }
 
-  AsyncStatus<List<BioIo>> get list => _list.value;
+  List<BioIo> get list => _list;
 
   @override
   void onReady() {

@@ -18,7 +18,6 @@ class SqfliteProvider  {
   }
 
   static Future<int> delete(int localId) async {
-    pLog.i("delete $localId");
     return await db.delete(tbNm, where: "localId = $localId");
   }
 
@@ -27,23 +26,22 @@ class SqfliteProvider  {
     return (await db.query("io", where: '''
         gbn='${req.gbn.name}' 
         ${req.searchCompany != null && req.searchCompany!.isNotEmpty ? "AND company LIKE '%${req.searchCompany}%'" : ''}
-        
         ${req.searchDate1 != null ? "AND datetime(localRegDateTime) >= datetime('${req.searchDate1!}')" : ''}
         ${req.searchDate2 != null ? "AND datetime(localRegDateTime) <= datetime('${req.searchDate2!}')" : ''}
-          
-      ''')).let((it) {
-      pLog.i(it);
+      ''', columns: ['company', 'd184', 'localId', 'localRegDateTime'])).let((it) {
         return List.generate(it.length, (i) => BioIo.fromJson(it[i]));
       });
   }
+
+
 
   static Future<BioIo> select(int localId) async => BioIo.fromJson(
       (await db.query("io", where: 'localId = ?', whereArgs: [localId])).first);
 
   static Future<void> init() async {
 
-    // await deleteDatabase(join(await getDatabasesPath(), 'bio_database.db'));
     db = await openDatabase(join(await getDatabasesPath(), 'bio_database.db'),
+
         version: 2, onCreate: (db, _) {
       return db.execute('''
 CREATE TABLE $tbNm ( 

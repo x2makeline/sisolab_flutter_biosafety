@@ -15,10 +15,6 @@ class FclDateField extends FclField {
             builder: () => FclFormBuilderDateTimePicker(
                   name: name,
                   enabled: enabled,
-                  initialDate: initialDate != null
-                      ? initialDate.isEmpty
-                          ? null
-                          : null
-                      : initialDate,
+                  initialDate: initialDate
                 ));
 }

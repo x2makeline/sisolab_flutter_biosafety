@@ -17,7 +17,7 @@ import 'package:sisolab_flutter_biosafety/app/ui/login/login_page.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/extensions/dateformat.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/api_provider.dart';
-import 'package:sisolab_flutter_biosafety/core/providers/sqflite_provider.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/hive_provider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/functions.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
@@ -29,12 +29,20 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   final _apiPro = ApiProvider();
   final _pastYearYn = RxBool(false);
   final ScrollController scrollController = ScrollController();
-  final _io = Rx<BioIo>(BioIo());
+  final _io = Rx<BioIo>(BioIo())
+    ..listen((p0) {
+      print(p0);
+    });
   final _preData = Rxn<BioIo>();
 
   bool get pastYearYn => _pastYearYn.value;
 
   BioIo? get preData => _preData.value;
+
+  @override
+  void onClose() {
+    print("onClose");
+  }
 
   Future<void> setPastYearYn(bool v) async {
     if (v) {
@@ -71,15 +79,10 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   int get maxTabindex => tabList.length - 1;
 
-  final Gbn gbn =
-      Gbn.values.firstWhere((element) => element.name == Get.parameters["id"]);
+  late final Gbn gbn = Get.arguments['gbn'];
 
   /// 로컬 id
-  final int? localId = Get.parameters['localId']?.let((it) => int.parse(it));
-
-  final _isLoading = true.obs;
-
-  bool get isLoading => _isLoading.value;
+  late final String? localId = Get.arguments['localId'];
 
   /// form state
   late final FclDetailFormState formState;
@@ -97,12 +100,8 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     _tabIndex.value = min(maxTabindex, tabIndex + 1);
   }
 
-  _init(int localId) {
-    SqfliteProvider.select(localId).then((value) {
-      _io.value = value;
-
-      _isLoading.value = false;
-    });
+  _init(String localId) {
+    _io.value = HiveProvider.select(localId) ?? BioIo();
   }
 
   Future<void> submitServer([BioIo? io]) async {
@@ -112,33 +111,30 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
       try {
         await _apiPro.procFieldSave(bio).then((value) async {
-          pLog.i(value);
           if (value.isSuccess) {
             if (bio.localId != null) {
-              await SqfliteProvider.delete(bio.localId!);
+              await HiveProvider.delete(bio.localId!);
             }
             await FclListPageVm.to.submit();
 
             Get.back();
             Get.snackbar("메세지", "저장되었습니다.");
-
-
           }
         });
       } on DioException catch (e) {
-
         if (e.error is ApiError &&
             [ApiErrorType.nonToken, ApiErrorType.expiredToken]
                 .contains((e.error as ApiError).type)) {
-          Get.bottomSheet(LoginPage(
-            onSuccess: (token) async {
-              await submitServer(bio);
-
-            },
-          ));
+          Get.bottomSheet(SafeArea(
+            child: LoginPage(
+              onSuccess: (token) async {
+                await submitServer(bio);
+              },
+            ),
+          ), isScrollControlled: true);
         }
         rethrow;
-      } catch(e) {
+      } catch (e) {
         pLog.e(e);
         rethrow;
       }
@@ -150,8 +146,13 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   Future<void> submitLocal() async {
     final io = submit();
     io.localRegDateTime = io.localRegDateTime ?? DateTime.now().format2;
-    io.localUpdDateTime = DateTime.now().format1;
-    await SqfliteProvider.merge(io);
+    io.localUpdDateTime = DateTime.now().format2;
+    if (io.localId != null) {
+      await HiveProvider.update(io.localId!, io);
+    } else {
+      await HiveProvider.insert(io);
+    }
+
     await FclListPageVm.to.submit();
     Get.back();
   }
@@ -186,22 +187,12 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     super.onInit();
     if (localId != null) {
       _init(localId!);
-    } else {
-      _isLoading.value = false;
     }
-    // ever(_tabIndex, (_) => scrollController.jumpTo(0));
     ever(_pastYearYn, (v) {
       if (v && _preData.value == null) {
-        // _repository
-        //     .procPreField(ProcPreFieldIn(
-        //         company: "운영기관", d184: "test", gbn: Gbn.fd2, idx: 609))
-        //     .then((value) {
-        //   _preData.value = value.data;
-        // });
-
         _repository
-            .procPreField(ProcPreFieldIn(
-                company: io.company!, d184: io.d184!, gbn: gbn, idx: io.idx!))
+            .procPreField(
+                ProcPreFieldIn(company: io.company!, d184: io.d184!, gbn: gbn))
             .then((value) {
           _preData.value = value.data;
         });

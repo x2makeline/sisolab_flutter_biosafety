@@ -33,7 +33,7 @@ class FormPageBottom extends StatelessWidget {
                                 children: [
                                   Icon(
                                     Icons.arrow_back_ios,
-                                    size: buttonTextStyle.fontSize,
+                                    size: buttonTextStyle?.fontSize,
                                   ),
                                   const Text(
                                     "이전",
@@ -58,7 +58,7 @@ class FormPageBottom extends StatelessWidget {
                                   ),
                                   Icon(
                                     Icons.arrow_forward_ios,
-                                    size: buttonTextStyle.fontSize,
+                                    size: buttonTextStyle?.fontSize,
                                   ),
                                 ],
                               ))

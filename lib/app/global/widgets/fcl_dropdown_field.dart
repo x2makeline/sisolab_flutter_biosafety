@@ -19,33 +19,30 @@ class FclDropdownField extends FclField {
       : super(
             type: FclType.text,
             builder: () {
-              return SizedBox(
-                height: 90.h,
-                child: FormBuilderDropdown(
-                  initialValue: initialValue,
-                  iconSize: buttonTextStyle.fontSize!,
-                  style: buttonTextStyle,
-                  name: name,
-                  itemHeight: max(kMinInteractiveDimension, 90.h),
-                  items: [
-                    DropdownMenuItem(
-                      value: null,
-                      child: Text(
-                        hintText,
-                        style: buttonTextStyle,
-                      ),
+              return FormBuilderDropdown(
+                initialValue: initialValue,
+                iconSize: buttonTextStyle?.fontSize ?? 24,
+                style: buttonTextStyle,
+                name: name,
+                // itemHeight: max(kMinInteractiveDimension, 90.h),
+                items: [
+                  DropdownMenuItem(
+                    value: null,
+                    child: Text(
+                      hintText,
+                      style: buttonTextStyle,
                     ),
-                    ...itemMap.entries
-                        .map((e) => DropdownMenuItem(
-                              value: e.key,
-                              child: Text(
-                                e.value,
-                                style: buttonTextStyle,
-                              ),
-                            ))
-                        .toList()
-                  ],
-                ),
+                  ),
+                  ...itemMap.entries
+                      .map((e) => DropdownMenuItem(
+                    value: e.key,
+                    child: Text(
+                      e.value,
+                      style: buttonTextStyle,
+                    ),
+                  ))
+                      .toList()
+                ],
               );
             });
 }

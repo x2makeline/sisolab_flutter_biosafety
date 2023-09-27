@@ -4,20 +4,18 @@ import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 
 class DetailCategoryTab extends StatefulWidget {
-  const DetailCategoryTab(
-      {Key? key,
-      required this.tabMapList,
-      required this.activeTabIndex,
-      required this.onTab,
-      required this.isLoading})
-      : super(key: key);
+  const DetailCategoryTab({
+    Key? key,
+    required this.tabMapList,
+    required this.activeTabIndex,
+    required this.onTab,
+  }) : super(key: key);
 
   final List<FclTab> tabMapList;
 
   final int activeTabIndex;
 
   final void Function(int index) onTab;
-  final bool isLoading;
 
   @override
   State<DetailCategoryTab> createState() => _DetailCategoryTabState();
@@ -71,13 +69,11 @@ class _DetailCategoryTabState extends State<DetailCategoryTab>
           SizedBox(
             height: 40.h,
           ),
-          widget.isLoading
-              ? const Placeholder()
-              : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [activeTab.body],
-                )
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [activeTab.body],
+          )
         ],
       );
 }

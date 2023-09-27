@@ -18,6 +18,7 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_text_field.dart
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 import '../../../global/widgets/field_with_label.dart';
 
@@ -144,10 +145,14 @@ class Tab1 extends StatelessWidget {
                 ],
               ),
               const SizedBox.shrink(),
-              FclDateField(
-                name: "d158",
-                initialDate: vm.io.d158,
-                label: "최초허가일",
+              Builder(
+                builder: (context) {
+                  return FclDateField(
+                    name: "d158",
+                    initialDate: vm.io.d158,
+                    label: "최초허가일",
+                  );
+                }
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),

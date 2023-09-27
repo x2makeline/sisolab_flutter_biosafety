@@ -4,6 +4,6 @@ import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.da
 class FclDetailBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyReplace(() => FclDetailVm());
+    Get.put(FclDetailVm());
   }
 }

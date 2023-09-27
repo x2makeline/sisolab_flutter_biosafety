@@ -5,15 +5,16 @@ import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_field_in.d
 part 'proc_pre_field_in.g.dart';
 
 @JsonSerializable()
-class ProcPreFieldIn extends SelectProcFieldIn {
+class ProcPreFieldIn  {
   String company;
   String d184;
+  Gbn gbn;
 
   ProcPreFieldIn(
       {required this.company,
       required this.d184,
-      required super.gbn,
-      required super.idx});
+      required this.gbn,
+      });
 
   factory ProcPreFieldIn.fromJson(Map<String, dynamic> json) =>
       _$ProcPreFieldInFromJson(json);

@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -79,7 +80,22 @@ class _FclCheckerTableState extends State<FclCheckerTable> {
         )
       ];
 
-  int checkerCount = 0;
+  late int checkerCount;
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    checkerCount = 4 - [
+      [vm.io.d178, vm.io.d177, vm.io.d189],
+      [vm.io.d176, vm.io.d175, vm.io.d188],
+      [vm.io.d174, vm.io.d173, vm.io.d187],
+      [vm.io.d172, vm.io.d171, vm.io.d186],
+      [vm.io.d170, vm.io.d169, vm.io.d185],
+    ].toList().indexWhere((e) => e.any((aa) => aa !=null && aa.isNotEmpty)).let((r) => r == -1 ? 4 : r);
+
+  }
 
   _add() {
     setState(() {

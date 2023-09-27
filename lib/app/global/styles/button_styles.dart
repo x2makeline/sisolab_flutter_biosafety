@@ -10,9 +10,8 @@ final buttonMainTheme = ButtonThemeData(
 
 final elevatedButtonThemeData = ElevatedButtonThemeData(
     style: ButtonStyle(
-
         // fixedSize: MaterialStatePropertyAll<Size>(Size(double.infinity, 90.h)),
-        minimumSize: MaterialStatePropertyAll<Size>(Size(184.w, 90.h)),
+        // minimumSize: MaterialStatePropertyAll<Size>(Size(184.w, 90.h)),
         textStyle: MaterialStatePropertyAll<TextStyle>(buttonTextStyle),
         padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(
             buttonMainTheme.padding),
@@ -27,7 +26,7 @@ final outlinedButtonThemeData = OutlinedButtonThemeData(
     style: ButtonStyle(
 
         // fixedSize: MaterialStatePropertyAll<Size>(Size(double.infinity, 90.h)),
-        minimumSize: MaterialStatePropertyAll<Size>(Size(184.w, 90.h)),
+        // minimumSize: MaterialStatePropertyAll<Size>(Size(184.w, 90.h)),
         textStyle: MaterialStatePropertyAll<TextStyle>(buttonTextStyle),
         padding: MaterialStatePropertyAll<EdgeInsetsGeometry>(
             buttonMainTheme.padding),

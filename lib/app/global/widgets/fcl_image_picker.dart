@@ -9,6 +9,7 @@ import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 class FclImagePicker extends StatefulWidget {
   const FclImagePicker({Key? key, this.onChange, this.initialValue})
@@ -26,7 +27,7 @@ class _FclImagePickerState extends State<FclImagePicker> {
   @override
   void initState() {
     super.initState();
-    // FormBu
+
     base64 = widget.initialValue;
   }
 
@@ -36,37 +37,33 @@ class _FclImagePickerState extends State<FclImagePicker> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              SizedBox(
-                height: 90.h,
-                child: ElevatedButton(
-                    style: const ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll<Color>(Color(0xff505050))),
-                    onPressed: () async {
-                      final result = await FilePicker.platform.pickFiles(
-                        type: FileType.image,
-                      );
+              ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll<Color>(Color(0xff505050))),
+                  onPressed: () async {
+                    final result = await FilePicker.platform.pickFiles(
+                      type: FileType.image,
+                    );
 
-                      if (result?.files.first.path != null) {
-                        setState(() {
-                          base64 = uint8ListTob64(
-                              File(result!.files.first.path!)
-                                  .readAsBytesSync());
-                          widget.onChange?.let((it) => it(base64!));
-                        });
-                      } else if (result?.files.first.bytes != null) {
-                        setState(() {
-                          base64 = uint8ListTob64(result!.files.first.bytes!);
-                          widget.onChange?.let((it) => it(base64!));
-                        });
-                      }
-                    },
-                    child: Text(
-                      "파일선택",
-                      style: context.textTheme.titleMedium
-                          ?.copyWith(color: Colors.white),
-                    )),
-              ),
+                    if (result?.files.first.path != null) {
+                      setState(() {
+                        base64 = uint8ListTob64(
+                            File(result!.files.first.path!).readAsBytesSync());
+                        widget.onChange?.let((it) => it(base64!));
+                      });
+                    } else if (result?.files.first.bytes != null) {
+                      setState(() {
+                        base64 = uint8ListTob64(result!.files.first.bytes!);
+                        widget.onChange?.let((it) => it(base64!));
+                      });
+                    }
+                  },
+                  child: Text(
+                    "파일선택",
+                    style: context.textTheme.titleMedium
+                        ?.copyWith(color: Colors.white),
+                  )),
               SizedBox(
                 width: 10.w,
               ),
@@ -106,13 +103,11 @@ class FormBuilderFclImagePicker extends StatelessWidget {
   final String? initialValue;
 
   @override
-  Widget build(BuildContext context) {
-    return FormBuilderField(
-      name: name,
-      builder: (FormFieldState<String> field) => FclImagePicker(
-        onChange: field.setValue,
-        initialValue: field.value,
-      ),
-    );
-  }
+  Widget build(BuildContext context) => FormBuilderField(
+        name: name,
+        builder: (FormFieldState<String> field) => FclImagePicker(
+          onChange: field.setValue,
+          initialValue: initialValue,
+        ),
+      );
 }

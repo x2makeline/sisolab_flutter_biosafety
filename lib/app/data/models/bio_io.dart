@@ -8,7 +8,7 @@ part 'bio_io.g.dart';
 @CopyWith()
 @JsonSerializable()
 class BioIo implements SelectProc, SelectProcField {
-  int? localId;
+  String? localId;
   String? localRegDateTime;
   String? localUpdDateTime;
   @override

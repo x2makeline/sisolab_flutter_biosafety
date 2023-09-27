@@ -8,8 +8,8 @@ import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoratio
 import 'package:sisolab_flutter_biosafety/app/global/styles/button_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
+import 'package:sisolab_flutter_biosafety/core/providers/hive_provider.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
-import 'package:sisolab_flutter_biosafety/core/providers/sqflite_provider.dart';
 
 import 'app/global/bindings/global_binding.dart';
 import 'routes/app_routes.dart';
@@ -20,7 +20,8 @@ void main() async {
   FormBuilderLocalizations.setCurrentInstance(FormBuilderLocalizationsImplKo());
 
   await SPref.init();
-  await SqfliteProvider.init();
+  await HiveProvider.init();
+
   runApp(const MyApp());
 }
 
@@ -45,9 +46,9 @@ class MyApp extends StatelessWidget {
               Locale('ko'),
             ],
             locale: const Locale('ko'),
-            initialRoute: AppRoutes.nonLogin.name,
+            // initialRoute: AppRoutes.nonLogin.name,
             // initialRoute: AppRoutes.selectType.name,
-            // initialRoute: "/fcl/fd1/list",
+            initialRoute: AppRoutes.fclList.name,
             // initialRoute: "/fcl/fd3/list",
             // initialRoute: AppRoutes.fclRegularList.name,
             // initialRoute: "/fcl/fd1/detail/613",

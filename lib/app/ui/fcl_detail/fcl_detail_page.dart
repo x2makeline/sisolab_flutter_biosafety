@@ -9,57 +9,56 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_page_bottom.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
-class FclDetailPage extends StatelessWidget with PLoggerMixin {
-  const FclDetailPage({super.key});
-
-  FclDetailVm get vm => Get.put(FclDetailVm());
+class FclDetailPage extends StatefulWidget {
+  const FclDetailPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => Layout(
-        scrollController: vm.scrollController,
-        title: when(vm.gbn, {
-          Gbn.fd1: () => "(정기)\n생물안전 3등급 시설 현장점검표",
-          Gbn.fd2: () => "(신규허가 ∙ 재확인)\n생물안전 3등급 시설 현장점검표",
-          Gbn.fd3: () => "고위험병원체 시설 현장점검표",
-        })!,
-        child: Obx(() {
-          if (vm.isLoading) {
-            return const Center(child: CircularProgressIndicator());
-          } else {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 47.h,
+  State<FclDetailPage> createState() => _FclDetailPageState();
+}
+
+class _FclDetailPageState extends State<FclDetailPage> {
+  FclDetailVm get vm => Get.find<FclDetailVm>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Layout(
+      scrollController: vm.scrollController,
+      title: when(vm.gbn, {
+        Gbn.fd1: () => "(정기)\n생물안전 3등급 시설 현장점검표",
+        Gbn.fd2: () => "(신규허가 ∙ 재확인)\n생물안전 3등급 시설 현장점검표",
+        Gbn.fd3: () => "고위험병원체 시설 현장점검표",
+      })!,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 47.h,
+          ),
+          vm.localId == null
+              ? const EmptyBox()
+              : Column(
+                  children: [
+                    Text(
+                      "로컬 ID : ${vm.io.localId}",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 46.sp),
+                    ),
+                    SizedBox(
+                      height: 24.h,
+                    )
+                  ],
                 ),
-                vm.localId == null
-                    ? const EmptyBox()
-                    : Column(
-                        children: [
-                          Text(
-                            "로컬 ID : ${vm.io.localId}",
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 46.sp),
-                          ),
-                          SizedBox(
-                            height: 24.h,
-                          )
-                        ],
-                      ),
-                Obx(() => FormBuilder(
-                    key: vm.formKey,
-                    child: DetailCategoryTab(
-                        tabMapList: vm.tabList,
-                        isLoading: vm.isLoading,
-                        activeTabIndex: vm.tabIndex,
-                        onTab: (index) => vm.tabIndex = index))),
-                FormPageBottom()
-              ],
-            );
-          }
-        }),
-      );
+          Obx(() => FormBuilder(
+              key: vm.formKey,
+              child: DetailCategoryTab(
+                  tabMapList: vm.tabList,
+                  activeTabIndex: vm.tabIndex,
+                  onTab: (index) => vm.tabIndex = index))),
+          FormPageBottom()
+        ],
+      ),
+    );
+  }
 }

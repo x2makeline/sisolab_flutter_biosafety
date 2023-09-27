@@ -11,15 +11,13 @@ ProcPreFieldIn _$ProcPreFieldInFromJson(Map<String, dynamic> json) =>
       company: json['company'] as String,
       d184: json['d184'] as String,
       gbn: $enumDecode(_$GbnEnumMap, json['gbn']),
-      idx: json['idx'] as int,
     );
 
 Map<String, dynamic> _$ProcPreFieldInToJson(ProcPreFieldIn instance) =>
     <String, dynamic>{
-      'gbn': _$GbnEnumMap[instance.gbn]!,
-      'idx': instance.idx,
       'company': instance.company,
       'd184': instance.d184,
+      'gbn': _$GbnEnumMap[instance.gbn]!,
     };
 
 const _$GbnEnumMap = {

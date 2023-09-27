@@ -7,7 +7,6 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/auth_respository.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
-import 'package:sisolab_flutter_biosafety/app/global/styles/color_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/home_page_layout.dart';
@@ -73,26 +72,28 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
             SizedBox(
               height: 28.h,
             ),
-            DefaultTextStyle(
-                style: TextStyle(
-                    color: ColorGroup.black,
-                    fontSize: 24.sp,
-                    fontWeight: FontWeight.w500),
-                child: const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "\u2022 입력한 ID로 작업을 시작합니다.\n",
+                  style: Get.textTheme.titleMedium,
+                ),
+                Wrap(
                   children: [
-                    Text("\u2022 입력한 ID로 작업을 시작합니다.\n"),
-                    Wrap(
-                      children: [
-                        Text("\u2022 "),
-                        Text(
-                          "작업자가 변경되는 경우, 앱을 새로 시작하여 ID를 입력하세요.",
-                          style: TextStyle(color: Color(0xffff381e)),
-                        )
-                      ],
+                    Text(
+                      "\u2022 ",
+                      style: Get.textTheme.titleMedium,
+                    ),
+                    Text(
+                      "작업자가 변경되는 경우, 앱을 새로 시작하여 ID를 입력하세요.",
+                      style: Get.textTheme.titleMedium
+                          ?.copyWith(color: const Color(0xffff381e)),
                     )
                   ],
-                )),
+                )
+              ],
+            ),
             SizedBox(
               height: 60.h,
             ),
@@ -146,60 +147,58 @@ class _Connected extends StatelessWidget with PLoggerMixin {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return FormBuilder(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FieldWithLabel(
-              label: "작업 ID",
-              child: FormBuilderTextField(
-                enabled: false,
-                initialValue:
-                    Pref.userId.value ?? iff(kDebugMode, () => _devUserId),
-                onSubmitted: (_) => _submit(),
-                decoration: const InputDecoration(hintText: "작업 ID"),
-                name: _userIdName,
-              )),
-          SizedBox(
-            height: 42.h,
-          ),
-          FieldWithLabel(
-              label: "Password",
-              child: FormBuilderTextField(
-                initialValue: iff(kDebugMode, () => _devPasswd),
-                obscureText: true,
-                onSubmitted: (_) => _submit(),
-                decoration: const InputDecoration(hintText: "Password"),
-                name: _passwdName,
-              )),
-          SizedBox(
-            height: 40.h,
-          ),
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-                onPressed: _submit,
-                child: const Text(
-                  "로그인",
+  Widget build(BuildContext context) => FormBuilder(
+        key: _formKey,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            FieldWithLabel(
+                label: "작업 ID",
+                child: FormBuilderTextField(
+                  enabled: false,
+                  initialValue:
+                      Pref.userId.value ?? iff(kDebugMode, () => _devUserId),
+                  onSubmitted: (_) => _submit(),
+                  decoration: const InputDecoration(hintText: "작업 ID"),
+                  name: _userIdName,
                 )),
-          ),
-          SizedBox(
-            height: 40.h,
-          ),
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton(
-                onPressed: () {
-                  Get.back();
-                },
-                child: const Text(
-                  "취소",
+            SizedBox(
+              height: 42.h,
+            ),
+            FieldWithLabel(
+                label: "Password",
+                child: FormBuilderTextField(
+                  initialValue: iff(kDebugMode, () => _devPasswd),
+                  obscureText: true,
+                  onSubmitted: (_) => _submit(),
+                  decoration: const InputDecoration(hintText: "Password"),
+                  name: _passwdName,
                 )),
-          )
-        ],
-      ),
-    );
-  }
+            SizedBox(
+              height: 40.h,
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                  onPressed: _submit,
+                  child: const Text(
+                    "로그인",
+                  )),
+            ),
+            SizedBox(
+              height: 40.h,
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text(
+                    "취소",
+                  )),
+            )
+          ],
+        ),
+      );
 }

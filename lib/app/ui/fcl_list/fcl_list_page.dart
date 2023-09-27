@@ -98,16 +98,18 @@ class _Item extends StatelessWidget with PLoggerMixin {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Get.toNamed("/fcl/${gbn.name}/detail/${info.localId}");
+          Get.toNamed(AppRoutes.fclDetailForm.name,
+              arguments: {'gbn': gbn, 'localId': info.localId});
+          // Get.toNamed("/fcl/${gbn.name}/detail/${info.localId}");
         },
         child: _table);
   }
 }
 
 class FclListPage extends StatelessWidget {
-  FclListPageVm get vm => Get.put(FclListPageVm());
+  final FclListPageVm vm = Get.put(FclListPageVm());
 
-  const FclListPage({super.key});
+  FclListPage({super.key});
 
   @override
   Widget build(BuildContext context) => Layout(
@@ -161,7 +163,7 @@ class FclListPage extends StatelessWidget {
                       children: [
                         OutlinedButton(
                             onPressed: () async {
-                              await vm.list.data?.downloadExcel();
+                              await vm.list.downloadExcel();
                             },
                             child: const Text("엑셀다운")),
                         ElevatedButton(
@@ -170,8 +172,10 @@ class FclListPage extends StatelessWidget {
                                     MaterialStatePropertyAll<Color>(
                                         Colors.black)),
                             onPressed: () {
-                              Get.toNamed(AppRoutes.fclDetailForm.name
-                                  .replaceFirst(RegExp(r'(:id)'), vm.gbn.name));
+                              Get.toNamed(AppRoutes.fclDetailForm.name,
+                                  arguments: {'gbn': vm.gbn});
+                              // Get.toNamed(AppRoutes.fclDetailForm.name
+                              //     .replaceFirst(RegExp(r'(:id)'), vm.gbn.name));
                             },
                             child: const Text("신규등록")),
                       ].withSpaceBetween(width: 24.w),
@@ -191,31 +195,26 @@ class FclListPage extends StatelessWidget {
                     TextSpan(children: [
                       const TextSpan(text: "총 게시글 "),
                       TextSpan(
-                          text: (vm.list.hasData ? vm.list.data!.length : 0)
-                              .toString(),
+                          text: vm.list.length.toString(),
                           style: robotoTextStyle.copyWith(
                               color: const Color(0xffff381e),
                               fontWeight: FontWeight.w500)),
                       const TextSpan(text: "건")
                     ]))),
                 const FclDivider.black(),
-                Obx(() => vm.list.hasData
-                    ? ListView(
-                        shrinkWrap: true,
-                        primary: false,
-                        children: vm.list.data!
-                            .map((e) => SizedBox(
-                                width: double.infinity,
-                                child: _Item(
-                                  info: e,
-                                  gbn: vm.gbn,
-                                )))
-                            .toList()
-                            .withWidgetBetween(const FclDivider.form()),
-                      )
-                    : const Center(
-                        child: CircularProgressIndicator(),
-                      ))
+                Obx(() => ListView(
+                      shrinkWrap: true,
+                      primary: false,
+                      children: vm.list
+                          .map((e) => SizedBox(
+                              width: double.infinity,
+                              child: _Item(
+                                info: e,
+                                gbn: vm.gbn,
+                              )))
+                          .toList()
+                          .withWidgetBetween(const FclDivider.form()),
+                    ))
               ],
             ),
           ),

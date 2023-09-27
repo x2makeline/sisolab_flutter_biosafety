@@ -7,7 +7,7 @@ part of 'bio_io.dart';
 // **************************************************************************
 
 abstract class _$BioIoCWProxy {
-  BioIo localId(int? localId);
+  BioIo localId(String? localId);
 
   BioIo localRegDateTime(String? localRegDateTime);
 
@@ -1044,7 +1044,7 @@ abstract class _$BioIoCWProxy {
   /// BioIo(...).copyWith(id: 12, name: "My name")
   /// ````
   BioIo call({
-    int? localId,
+    String? localId,
     String? localRegDateTime,
     String? localUpdDateTime,
     String? attNameTxt1,
@@ -1569,7 +1569,7 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   final BioIo _value;
 
   @override
-  BioIo localId(int? localId) => this(localId: localId);
+  BioIo localId(String? localId) => this(localId: localId);
 
   @override
   BioIo localRegDateTime(String? localRegDateTime) =>
@@ -3655,7 +3655,7 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
       localId: localId == const $CopyWithPlaceholder()
           ? _value.localId
           // ignore: cast_nullable_to_non_nullable
-          : localId as int?,
+          : localId as String?,
       localRegDateTime: localRegDateTime == const $CopyWithPlaceholder()
           ? _value.localRegDateTime
           // ignore: cast_nullable_to_non_nullable
@@ -5727,7 +5727,7 @@ extension $BioIoCopyWith on BioIo {
 // **************************************************************************
 
 BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
-      localId: json['localId'] as int?,
+      localId: json['localId'] as String?,
       localRegDateTime: json['localRegDateTime'] as String?,
       localUpdDateTime: json['localUpdDateTime'] as String?,
       attNameTxt1: json['attNameTxt1'] as String?,

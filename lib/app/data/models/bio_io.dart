@@ -72,151 +72,151 @@ class BioIo implements SelectProc, SelectProcField {
   String? attNameTxt9;
 
   @override
-  String? attfile10str;
+  String? file10;
 
   @override
-  String? attfile11str;
+  String? file11;
 
   @override
-  String? attfile12str;
+  String? file12;
 
   @override
-  String? attfile13str;
+  String? file13;
 
   @override
-  String? attfile14str;
+  String? file14;
 
   @override
-  String? attfile15str;
+  String? file15;
 
   @override
-  String? attfile16str;
+  String? file16;
 
   @override
-  String? attfile17str;
+  String? file17;
 
   @override
-  String? attfile18str;
+  String? file18;
 
   @override
-  String? attfile19str;
+  String? file19;
 
   @override
-  String? attfile1str;
+  String? file1;
 
   @override
-  String? attfile20str;
+  String? file20;
 
   @override
-  String? attfile21str;
+  String? file21;
 
   @override
-  String? attfile22str;
+  String? file22;
 
   @override
-  String? attfile23str;
+  String? file23;
 
   @override
-  String? attfile24str;
+  String? file24;
 
   @override
-  String? attfile25str;
+  String? file25;
 
   @override
-  String? attfile26str;
+  String? file26;
 
   @override
-  String? attfile27str;
+  String? file27;
 
   @override
-  String? attfile28str;
+  String? file28;
 
   @override
-  String? attfile29str;
+  String? file29;
 
   @override
-  String? attfile2str;
+  String? file2;
 
   @override
-  String? attfile30str;
+  String? file30;
 
   @override
-  String? attfile31str;
+  String? file31;
 
   @override
-  String? attfile32str;
+  String? file32;
 
   @override
-  String? attfile33str;
+  String? file33;
 
   @override
-  String? attfile34str;
+  String? file34;
 
   @override
-  String? attfile35str;
+  String? file35;
 
   @override
-  String? attfile36str;
+  String? file36;
 
   @override
-  String? attfile37str;
+  String? file37;
 
   @override
-  String? attfile38str;
+  String? file38;
 
   @override
-  String? attfile39str;
+  String? file39;
 
   @override
-  String? attfile3str;
+  String? file3;
 
   @override
-  String? attfile40str;
+  String? file40;
 
   @override
-  String? attfile41str;
+  String? file41;
 
   @override
-  String? attfile42str;
+  String? file42;
 
   @override
-  String? attfile43str;
+  String? file43;
 
   @override
-  String? attfile44str;
+  String? file44;
 
   @override
-  String? attfile45str;
+  String? file45;
 
   @override
-  String? attfile46str;
+  String? file46;
 
   @override
-  String? attfile47str;
+  String? file47;
 
   @override
-  String? attfile48str;
+  String? file48;
 
   @override
-  String? attfile49str;
+  String? file49;
 
   @override
-  String? attfile4str;
+  String? file4;
 
   @override
-  String? attfile5str;
+  String? file5;
 
   @override
-  String? attfile6str;
+  String? file6;
 
   @override
-  String? attfile7str;
+  String? file7;
 
   @override
-  String? attfile8str;
+  String? file8;
 
   @override
-  String? attfile9str;
+  String? file9;
 
   @override
   String? comAddress;
@@ -1489,7 +1489,7 @@ class BioIo implements SelectProc, SelectProcField {
 
   @override
   String toString() {
-    return 'BioIo{localId: $localId, localRegDateTime: $localRegDateTime, localUpdDateTime: $localUpdDateTime, attNameTxt1: $attNameTxt1, attNameTxt10: $attNameTxt10, attNameTxt11: $attNameTxt11, attNameTxt12: $attNameTxt12, attNameTxt13: $attNameTxt13, attNameTxt14: $attNameTxt14, attNameTxt15: $attNameTxt15, attNameTxt16: $attNameTxt16, attNameTxt17: $attNameTxt17, attNameTxt18: $attNameTxt18, attNameTxt19: $attNameTxt19, attNameTxt2: $attNameTxt2, attNameTxt20: $attNameTxt20, attNameTxt3: $attNameTxt3, attNameTxt4: $attNameTxt4, attNameTxt5: $attNameTxt5, attNameTxt6: $attNameTxt6, attNameTxt7: $attNameTxt7, attNameTxt8: $attNameTxt8, attNameTxt9: $attNameTxt9, attfile10str: $attfile10str, attfile11str: $attfile11str, attfile12str: $attfile12str, attfile13str: $attfile13str, attfile14str: $attfile14str, attfile15str: $attfile15str, attfile16str: $attfile16str, attfile17str: $attfile17str, attfile18str: $attfile18str, attfile19str: $attfile19str, attfile1str: $attfile1str, attfile20str: $attfile20str, attfile21str: $attfile21str, attfile22str: $attfile22str, attfile23str: $attfile23str, attfile24str: $attfile24str, attfile25str: $attfile25str, attfile26str: $attfile26str, attfile27str: $attfile27str, attfile28str: $attfile28str, attfile29str: $attfile29str, attfile2str: $attfile2str, attfile30str: $attfile30str, attfile31str: $attfile31str, attfile32str: $attfile32str, attfile33str: $attfile33str, attfile34str: $attfile34str, attfile35str: $attfile35str, attfile36str: $attfile36str, attfile37str: $attfile37str, attfile38str: $attfile38str, attfile39str: $attfile39str, attfile3str: $attfile3str, attfile40str: $attfile40str, attfile41str: $attfile41str, attfile42str: $attfile42str, attfile43str: $attfile43str, attfile44str: $attfile44str, attfile45str: $attfile45str, attfile46str: $attfile46str, attfile47str: $attfile47str, attfile48str: $attfile48str, attfile49str: $attfile49str, attfile4str: $attfile4str, attfile5str: $attfile5str, attfile6str: $attfile6str, attfile7str: $attfile7str, attfile8str: $attfile8str, attfile9str: $attfile9str, comAddress: $comAddress, comCode: $comCode, comName: $comName, company: $company, d1: $d1, d10: $d10, d100: $d100, d101: $d101, d102: $d102, d103: $d103, d104: $d104, d105: $d105, d106: $d106, d107: $d107, d108: $d108, d109: $d109, d11: $d11, d110: $d110, d111: $d111, d112: $d112, d113: $d113, d114: $d114, d115: $d115, d116: $d116, d117: $d117, d118: $d118, d119: $d119, d12: $d12, d120: $d120, d121: $d121, d122: $d122, d123: $d123, d124: $d124, d125: $d125, d126: $d126, d127: $d127, d128: $d128, d129: $d129, d13: $d13, d130: $d130, d131: $d131, d132: $d132, d133: $d133, d134: $d134, d135: $d135, d136: $d136, d137: $d137, d138: $d138, d139: $d139, d14: $d14, d140: $d140, d141: $d141, d142: $d142, d143: $d143, d144: $d144, d145: $d145, d146: $d146, d147: $d147, d148: $d148, d149: $d149, d15: $d15, d150: $d150, d151: $d151, d152: $d152, d153: $d153, d154: $d154, d155: $d155, d156: $d156, d157: $d157, d158: $d158, d159: $d159, d16: $d16, d160: $d160, d161: $d161, d162: $d162, d163: $d163, d164: $d164, d165: $d165, d166: $d166, d167: $d167, d168: $d168, d169: $d169, d17: $d17, d170: $d170, d171: $d171, d172: $d172, d173: $d173, d174: $d174, d175: $d175, d176: $d176, d177: $d177, d178: $d178, d179: $d179, d18: $d18, d180: $d180, d181: $d181, d182: $d182, d183: $d183, d184: $d184, d185: $d185, d186: $d186, d187: $d187, d188: $d188, d189: $d189, d19: $d19, d190: $d190, d191: $d191, d192: $d192, d193: $d193, d194: $d194, d195: $d195, d196: $d196, d197: $d197, d198: $d198, d199: $d199, d2: $d2, d20: $d20, d200: $d200, d201: $d201, d202: $d202, d203: $d203, d204: $d204, d205: $d205, d206: $d206, d207: $d207, d208: $d208, d209: $d209, d21: $d21, d210: $d210, d211: $d211, d212: $d212, d213: $d213, d214: $d214, d215: $d215, d216: $d216, d217: $d217, d218: $d218, d219: $d219, d22: $d22, d220: $d220, d221: $d221, d222: $d222, d223: $d223, d224: $d224, d225: $d225, d226: $d226, d227: $d227, d228: $d228, d229: $d229, d23: $d23, d230: $d230, d231: $d231, d232: $d232, d233: $d233, d234: $d234, d235: $d235, d236: $d236, d237: $d237, d238: $d238, d239: $d239, d24: $d24, d240: $d240, d241: $d241, d242: $d242, d243: $d243, d244: $d244, d245: $d245, d246: $d246, d247: $d247, d248: $d248, d249: $d249, d25: $d25, d250: $d250, d251: $d251, d252: $d252, d253: $d253, d254: $d254, d255: $d255, d256: $d256, d257: $d257, d258: $d258, d259: $d259, d26: $d26, d260: $d260, d261: $d261, d262: $d262, d263: $d263, d264: $d264, d265: $d265, d266: $d266, d267: $d267, d268: $d268, d269: $d269, d27: $d27, d270: $d270, d271: $d271, d272: $d272, d273: $d273, d274: $d274, d275: $d275, d276: $d276, d277: $d277, d278: $d278, d279: $d279, d28: $d28, d280: $d280, d281: $d281, d282: $d282, d283: $d283, d284: $d284, d285: $d285, d286: $d286, d287: $d287, d288: $d288, d289: $d289, d29: $d29, d290: $d290, d291: $d291, d292: $d292, d293: $d293, d294: $d294, d295: $d295, d296: $d296, d297: $d297, d298: $d298, d299: $d299, d3: $d3, d30: $d30, d300: $d300, d301: $d301, d302: $d302, d303: $d303, d304: $d304, d305: $d305, d306: $d306, d307: $d307, d308: $d308, d309: $d309, d31: $d31, d310: $d310, d311: $d311, d312: $d312, d313: $d313, d314: $d314, d315: $d315, d316: $d316, d317: $d317, d318: $d318, d319: $d319, d32: $d32, d320: $d320, d321: $d321, d322: $d322, d323: $d323, d324: $d324, d325: $d325, d326: $d326, d327: $d327, d328: $d328, d329: $d329, d33: $d33, d330: $d330, d331: $d331, d332: $d332, d333: $d333, d334: $d334, d335: $d335, d336: $d336, d337: $d337, d338: $d338, d339: $d339, d34: $d34, d340: $d340, d341: $d341, d342: $d342, d343: $d343, d344: $d344, d345: $d345, d346: $d346, d347: $d347, d348: $d348, d349: $d349, d35: $d35, d350: $d350, d351: $d351, d352: $d352, d353: $d353, d354: $d354, d355: $d355, d356: $d356, d357: $d357, d358: $d358, d359: $d359, d36: $d36, d360: $d360, d361: $d361, d362: $d362, d363: $d363, d364: $d364, d365: $d365, d366: $d366, d367: $d367, d368: $d368, d369: $d369, d37: $d37, d370: $d370, d371: $d371, d372: $d372, d373: $d373, d374: $d374, d375: $d375, d376: $d376, d377: $d377, d378: $d378, d379: $d379, d38: $d38, d380: $d380, d381: $d381, d382: $d382, d383: $d383, d384: $d384, d385: $d385, d386: $d386, d387: $d387, d388: $d388, d389: $d389, d39: $d39, d390: $d390, d391: $d391, d392: $d392, d393: $d393, d394: $d394, d395: $d395, d396: $d396, d397: $d397, d398: $d398, d399: $d399, d4: $d4, d40: $d40, d400: $d400, d41: $d41, d42: $d42, d43: $d43, d44: $d44, d45: $d45, d46: $d46, d47: $d47, d48: $d48, d49: $d49, d5: $d5, d50: $d50, d51: $d51, d52: $d52, d53: $d53, d54: $d54, d55: $d55, d56: $d56, d57: $d57, d58: $d58, d59: $d59, d6: $d6, d60: $d60, d61: $d61, d62: $d62, d63: $d63, d64: $d64, d65: $d65, d66: $d66, d67: $d67, d68: $d68, d69: $d69, d7: $d7, d70: $d70, d71: $d71, d72: $d72, d73: $d73, d74: $d74, d75: $d75, d76: $d76, d77: $d77, d78: $d78, d79: $d79, d8: $d8, d80: $d80, d81: $d81, d82: $d82, d83: $d83, d84: $d84, d85: $d85, d86: $d86, d87: $d87, d88: $d88, d89: $d89, d9: $d9, d90: $d90, d91: $d91, d92: $d92, d93: $d93, d94: $d94, d95: $d95, d96: $d96, d97: $d97, d98: $d98, d99: $d99, docno: $docno, file10editable: $file10editable, file1editable: $file1editable, file2editable: $file2editable, file3editable: $file3editable, file4editable: $file4editable, file5editable: $file5editable, file6editable: $file6editable, file7editable: $file7editable, file8editable: $file8editable, file9editable: $file9editable, gbn: $gbn, idx: $idx, printSubmitDt: $printSubmitDt, regId: $regId, reg_datetime: $reg_datetime, simAuth: $simAuth, status: $status, tableName: $tableName, attfile50str: $attfile50str, attfile51str: $attfile51str, attfile52str: $attfile52str, attfile53str: $attfile53str, attfile54str: $attfile54str, attfile55str: $attfile55str, attfile56str: $attfile56str, attfile57str: $attfile57str, attfile58str: $attfile58str, attfile59str: $attfile59str, attfile60str: $attfile60str, attfile61str: $attfile61str, attfile62str: $attfile62str, attfile63str: $attfile63str, attfile64str: $attfile64str, attfile65str: $attfile65str, attfile66str: $attfile66str, attfile67str: $attfile67str, attfile68str: $attfile68str, attfile69str: $attfile69str}';
+    return 'BioIo{localId: $localId, localRegDateTime: $localRegDateTime, localUpdDateTime: $localUpdDateTime, attNameTxt1: $attNameTxt1, attNameTxt10: $attNameTxt10, attNameTxt11: $attNameTxt11, attNameTxt12: $attNameTxt12, attNameTxt13: $attNameTxt13, attNameTxt14: $attNameTxt14, attNameTxt15: $attNameTxt15, attNameTxt16: $attNameTxt16, attNameTxt17: $attNameTxt17, attNameTxt18: $attNameTxt18, attNameTxt19: $attNameTxt19, attNameTxt2: $attNameTxt2, attNameTxt20: $attNameTxt20, attNameTxt3: $attNameTxt3, attNameTxt4: $attNameTxt4, attNameTxt5: $attNameTxt5, attNameTxt6: $attNameTxt6, attNameTxt7: $attNameTxt7, attNameTxt8: $attNameTxt8, attNameTxt9: $attNameTxt9, file10: $file10, file11: $file11, file12: $file12, file13: $file13, file14: $file14, file15: $file15, file16: $file16, file17: $file17, file18: $file18, file19: $file19, file1: $file1, file20: $file20, file21: $file21, file22: $file22, file23: $file23, file24: $file24, file25: $file25, file26: $file26, file27: $file27, file28: $file28, file29: $file29, file2: $file2, file30: $file30, file31: $file31, file32: $file32, file33: $file33, file34: $file34, file35: $file35, file36: $file36, file37: $file37, file38: $file38, file39: $file39, file3: $file3, file40: $file40, file41: $file41, file42: $file42, file43: $file43, file44: $file44, file45: $file45, file46: $file46, file47: $file47, file48: $file48, file49: $file49, file4: $file4, file5: $file5, file6: $file6, file7: $file7, file8: $file8, file9: $file9, comAddress: $comAddress, comCode: $comCode, comName: $comName, company: $company, d1: $d1, d10: $d10, d100: $d100, d101: $d101, d102: $d102, d103: $d103, d104: $d104, d105: $d105, d106: $d106, d107: $d107, d108: $d108, d109: $d109, d11: $d11, d110: $d110, d111: $d111, d112: $d112, d113: $d113, d114: $d114, d115: $d115, d116: $d116, d117: $d117, d118: $d118, d119: $d119, d12: $d12, d120: $d120, d121: $d121, d122: $d122, d123: $d123, d124: $d124, d125: $d125, d126: $d126, d127: $d127, d128: $d128, d129: $d129, d13: $d13, d130: $d130, d131: $d131, d132: $d132, d133: $d133, d134: $d134, d135: $d135, d136: $d136, d137: $d137, d138: $d138, d139: $d139, d14: $d14, d140: $d140, d141: $d141, d142: $d142, d143: $d143, d144: $d144, d145: $d145, d146: $d146, d147: $d147, d148: $d148, d149: $d149, d15: $d15, d150: $d150, d151: $d151, d152: $d152, d153: $d153, d154: $d154, d155: $d155, d156: $d156, d157: $d157, d158: $d158, d159: $d159, d16: $d16, d160: $d160, d161: $d161, d162: $d162, d163: $d163, d164: $d164, d165: $d165, d166: $d166, d167: $d167, d168: $d168, d169: $d169, d17: $d17, d170: $d170, d171: $d171, d172: $d172, d173: $d173, d174: $d174, d175: $d175, d176: $d176, d177: $d177, d178: $d178, d179: $d179, d18: $d18, d180: $d180, d181: $d181, d182: $d182, d183: $d183, d184: $d184, d185: $d185, d186: $d186, d187: $d187, d188: $d188, d189: $d189, d19: $d19, d190: $d190, d191: $d191, d192: $d192, d193: $d193, d194: $d194, d195: $d195, d196: $d196, d197: $d197, d198: $d198, d199: $d199, d2: $d2, d20: $d20, d200: $d200, d201: $d201, d202: $d202, d203: $d203, d204: $d204, d205: $d205, d206: $d206, d207: $d207, d208: $d208, d209: $d209, d21: $d21, d210: $d210, d211: $d211, d212: $d212, d213: $d213, d214: $d214, d215: $d215, d216: $d216, d217: $d217, d218: $d218, d219: $d219, d22: $d22, d220: $d220, d221: $d221, d222: $d222, d223: $d223, d224: $d224, d225: $d225, d226: $d226, d227: $d227, d228: $d228, d229: $d229, d23: $d23, d230: $d230, d231: $d231, d232: $d232, d233: $d233, d234: $d234, d235: $d235, d236: $d236, d237: $d237, d238: $d238, d239: $d239, d24: $d24, d240: $d240, d241: $d241, d242: $d242, d243: $d243, d244: $d244, d245: $d245, d246: $d246, d247: $d247, d248: $d248, d249: $d249, d25: $d25, d250: $d250, d251: $d251, d252: $d252, d253: $d253, d254: $d254, d255: $d255, d256: $d256, d257: $d257, d258: $d258, d259: $d259, d26: $d26, d260: $d260, d261: $d261, d262: $d262, d263: $d263, d264: $d264, d265: $d265, d266: $d266, d267: $d267, d268: $d268, d269: $d269, d27: $d27, d270: $d270, d271: $d271, d272: $d272, d273: $d273, d274: $d274, d275: $d275, d276: $d276, d277: $d277, d278: $d278, d279: $d279, d28: $d28, d280: $d280, d281: $d281, d282: $d282, d283: $d283, d284: $d284, d285: $d285, d286: $d286, d287: $d287, d288: $d288, d289: $d289, d29: $d29, d290: $d290, d291: $d291, d292: $d292, d293: $d293, d294: $d294, d295: $d295, d296: $d296, d297: $d297, d298: $d298, d299: $d299, d3: $d3, d30: $d30, d300: $d300, d301: $d301, d302: $d302, d303: $d303, d304: $d304, d305: $d305, d306: $d306, d307: $d307, d308: $d308, d309: $d309, d31: $d31, d310: $d310, d311: $d311, d312: $d312, d313: $d313, d314: $d314, d315: $d315, d316: $d316, d317: $d317, d318: $d318, d319: $d319, d32: $d32, d320: $d320, d321: $d321, d322: $d322, d323: $d323, d324: $d324, d325: $d325, d326: $d326, d327: $d327, d328: $d328, d329: $d329, d33: $d33, d330: $d330, d331: $d331, d332: $d332, d333: $d333, d334: $d334, d335: $d335, d336: $d336, d337: $d337, d338: $d338, d339: $d339, d34: $d34, d340: $d340, d341: $d341, d342: $d342, d343: $d343, d344: $d344, d345: $d345, d346: $d346, d347: $d347, d348: $d348, d349: $d349, d35: $d35, d350: $d350, d351: $d351, d352: $d352, d353: $d353, d354: $d354, d355: $d355, d356: $d356, d357: $d357, d358: $d358, d359: $d359, d36: $d36, d360: $d360, d361: $d361, d362: $d362, d363: $d363, d364: $d364, d365: $d365, d366: $d366, d367: $d367, d368: $d368, d369: $d369, d37: $d37, d370: $d370, d371: $d371, d372: $d372, d373: $d373, d374: $d374, d375: $d375, d376: $d376, d377: $d377, d378: $d378, d379: $d379, d38: $d38, d380: $d380, d381: $d381, d382: $d382, d383: $d383, d384: $d384, d385: $d385, d386: $d386, d387: $d387, d388: $d388, d389: $d389, d39: $d39, d390: $d390, d391: $d391, d392: $d392, d393: $d393, d394: $d394, d395: $d395, d396: $d396, d397: $d397, d398: $d398, d399: $d399, d4: $d4, d40: $d40, d400: $d400, d41: $d41, d42: $d42, d43: $d43, d44: $d44, d45: $d45, d46: $d46, d47: $d47, d48: $d48, d49: $d49, d5: $d5, d50: $d50, d51: $d51, d52: $d52, d53: $d53, d54: $d54, d55: $d55, d56: $d56, d57: $d57, d58: $d58, d59: $d59, d6: $d6, d60: $d60, d61: $d61, d62: $d62, d63: $d63, d64: $d64, d65: $d65, d66: $d66, d67: $d67, d68: $d68, d69: $d69, d7: $d7, d70: $d70, d71: $d71, d72: $d72, d73: $d73, d74: $d74, d75: $d75, d76: $d76, d77: $d77, d78: $d78, d79: $d79, d8: $d8, d80: $d80, d81: $d81, d82: $d82, d83: $d83, d84: $d84, d85: $d85, d86: $d86, d87: $d87, d88: $d88, d89: $d89, d9: $d9, d90: $d90, d91: $d91, d92: $d92, d93: $d93, d94: $d94, d95: $d95, d96: $d96, d97: $d97, d98: $d98, d99: $d99, docno: $docno, file10editable: $file10editable, file1editable: $file1editable, file2editable: $file2editable, file3editable: $file3editable, file4editable: $file4editable, file5editable: $file5editable, file6editable: $file6editable, file7editable: $file7editable, file8editable: $file8editable, file9editable: $file9editable, gbn: $gbn, idx: $idx, printSubmitDt: $printSubmitDt, regId: $regId, reg_datetime: $reg_datetime, simAuth: $simAuth, status: $status, tableName: $tableName, file50: $file50, file51: $file51, file52: $file52, file53: $file53, file54: $file54, file55: $file55, file56: $file56, file57: $file57, file58: $file58, file59: $file59, file60: $file60, file61: $file61, file62: $file62, file63: $file63, file64: $file64, file65: $file65, file66: $file66, file67: $file67, file68: $file68, file69: $file69}';
   }
 
   static jsonFromForm(Map<String, dynamic> json) => BioIo.fromJson(json);
@@ -1523,55 +1523,55 @@ class BioIo implements SelectProc, SelectProcField {
       this.attNameTxt7,
       this.attNameTxt8,
       this.attNameTxt9,
-      this.attfile10str,
-      this.attfile11str,
-      this.attfile12str,
-      this.attfile13str,
-      this.attfile14str,
-      this.attfile15str,
-      this.attfile16str,
-      this.attfile17str,
-      this.attfile18str,
-      this.attfile19str,
-      this.attfile1str,
-      this.attfile20str,
-      this.attfile21str,
-      this.attfile22str,
-      this.attfile23str,
-      this.attfile24str,
-      this.attfile25str,
-      this.attfile26str,
-      this.attfile27str,
-      this.attfile28str,
-      this.attfile29str,
-      this.attfile2str,
-      this.attfile30str,
-      this.attfile31str,
-      this.attfile32str,
-      this.attfile33str,
-      this.attfile34str,
-      this.attfile35str,
-      this.attfile36str,
-      this.attfile37str,
-      this.attfile38str,
-      this.attfile39str,
-      this.attfile3str,
-      this.attfile40str,
-      this.attfile41str,
-      this.attfile42str,
-      this.attfile43str,
-      this.attfile44str,
-      this.attfile45str,
-      this.attfile46str,
-      this.attfile47str,
-      this.attfile48str,
-      this.attfile49str,
-      this.attfile4str,
-      this.attfile5str,
-      this.attfile6str,
-      this.attfile7str,
-      this.attfile8str,
-      this.attfile9str,
+      this.file10,
+      this.file11,
+      this.file12,
+      this.file13,
+      this.file14,
+      this.file15,
+      this.file16,
+      this.file17,
+      this.file18,
+      this.file19,
+      this.file1,
+      this.file20,
+      this.file21,
+      this.file22,
+      this.file23,
+      this.file24,
+      this.file25,
+      this.file26,
+      this.file27,
+      this.file28,
+      this.file29,
+      this.file2,
+      this.file30,
+      this.file31,
+      this.file32,
+      this.file33,
+      this.file34,
+      this.file35,
+      this.file36,
+      this.file37,
+      this.file38,
+      this.file39,
+      this.file3,
+      this.file40,
+      this.file41,
+      this.file42,
+      this.file43,
+      this.file44,
+      this.file45,
+      this.file46,
+      this.file47,
+      this.file48,
+      this.file49,
+      this.file4,
+      this.file5,
+      this.file6,
+      this.file7,
+      this.file8,
+      this.file9,
       this.comAddress,
       this.comCode,
       this.comName,
@@ -1995,84 +1995,84 @@ class BioIo implements SelectProc, SelectProcField {
       this.simAuth,
       this.status,
       this.tableName,
-      this.attfile50str,
-      this.attfile51str,
-      this.attfile52str,
-      this.attfile53str,
-      this.attfile54str,
-      this.attfile55str,
-      this.attfile56str,
-      this.attfile57str,
-      this.attfile58str,
-      this.attfile59str,
-      this.attfile60str,
-      this.attfile61str,
-      this.attfile62str,
-      this.attfile63str,
-      this.attfile64str,
-      this.attfile65str,
-      this.attfile66str,
-      this.attfile67str,
-      this.attfile68str,
-      this.attfile69str});
+      this.file50,
+      this.file51,
+      this.file52,
+      this.file53,
+      this.file54,
+      this.file55,
+      this.file56,
+      this.file57,
+      this.file58,
+      this.file59,
+      this.file60,
+      this.file61,
+      this.file62,
+      this.file63,
+      this.file64,
+      this.file65,
+      this.file66,
+      this.file67,
+      this.file68,
+      this.file69});
 
   @override
-  String? attfile50str;
+  String? file50;
 
   @override
-  String? attfile51str;
+  String? file51;
 
   @override
-  String? attfile52str;
+  String? file52;
 
   @override
-  String? attfile53str;
+  String? file53;
 
   @override
-  String? attfile54str;
+  String? file54;
 
   @override
-  String? attfile55str;
+  String? file55;
 
   @override
-  String? attfile56str;
+  String? file56;
 
   @override
-  String? attfile57str;
+  String? file57;
 
   @override
-  String? attfile58str;
+  String? file58;
 
   @override
-  String? attfile59str;
+  String? file59;
 
   @override
-  String? attfile60str;
+  String? file60;
 
   @override
-  String? attfile61str;
+  String? file61;
 
   @override
-  String? attfile62str;
+  String? file62;
 
   @override
-  String? attfile63str;
+  String? file63;
 
   @override
-  String? attfile64str;
+  String? file64;
 
   @override
-  String? attfile65str;
+  String? file65;
 
   @override
-  String? attfile66str;
+  String? file66;
 
   @override
-  String? attfile67str;
+  String? file67;
 
   @override
-  String? attfile68str;
+  String? file68;
 
   @override
-  String? attfile69str;
+  String? file69;
 }

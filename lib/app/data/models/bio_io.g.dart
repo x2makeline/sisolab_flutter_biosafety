@@ -53,103 +53,103 @@ abstract class _$BioIoCWProxy {
 
   BioIo attNameTxt9(String? attNameTxt9);
 
-  BioIo attfile10str(String? attfile10str);
+  BioIo file10(String? file10);
 
-  BioIo attfile11str(String? attfile11str);
+  BioIo file11(String? file11);
 
-  BioIo attfile12str(String? attfile12str);
+  BioIo file12(String? file12);
 
-  BioIo attfile13str(String? attfile13str);
+  BioIo file13(String? file13);
 
-  BioIo attfile14str(String? attfile14str);
+  BioIo file14(String? file14);
 
-  BioIo attfile15str(String? attfile15str);
+  BioIo file15(String? file15);
 
-  BioIo attfile16str(String? attfile16str);
+  BioIo file16(String? file16);
 
-  BioIo attfile17str(String? attfile17str);
+  BioIo file17(String? file17);
 
-  BioIo attfile18str(String? attfile18str);
+  BioIo file18(String? file18);
 
-  BioIo attfile19str(String? attfile19str);
+  BioIo file19(String? file19);
 
-  BioIo attfile1str(String? attfile1str);
+  BioIo file1(String? file1);
 
-  BioIo attfile20str(String? attfile20str);
+  BioIo file20(String? file20);
 
-  BioIo attfile21str(String? attfile21str);
+  BioIo file21(String? file21);
 
-  BioIo attfile22str(String? attfile22str);
+  BioIo file22(String? file22);
 
-  BioIo attfile23str(String? attfile23str);
+  BioIo file23(String? file23);
 
-  BioIo attfile24str(String? attfile24str);
+  BioIo file24(String? file24);
 
-  BioIo attfile25str(String? attfile25str);
+  BioIo file25(String? file25);
 
-  BioIo attfile26str(String? attfile26str);
+  BioIo file26(String? file26);
 
-  BioIo attfile27str(String? attfile27str);
+  BioIo file27(String? file27);
 
-  BioIo attfile28str(String? attfile28str);
+  BioIo file28(String? file28);
 
-  BioIo attfile29str(String? attfile29str);
+  BioIo file29(String? file29);
 
-  BioIo attfile2str(String? attfile2str);
+  BioIo file2(String? file2);
 
-  BioIo attfile30str(String? attfile30str);
+  BioIo file30(String? file30);
 
-  BioIo attfile31str(String? attfile31str);
+  BioIo file31(String? file31);
 
-  BioIo attfile32str(String? attfile32str);
+  BioIo file32(String? file32);
 
-  BioIo attfile33str(String? attfile33str);
+  BioIo file33(String? file33);
 
-  BioIo attfile34str(String? attfile34str);
+  BioIo file34(String? file34);
 
-  BioIo attfile35str(String? attfile35str);
+  BioIo file35(String? file35);
 
-  BioIo attfile36str(String? attfile36str);
+  BioIo file36(String? file36);
 
-  BioIo attfile37str(String? attfile37str);
+  BioIo file37(String? file37);
 
-  BioIo attfile38str(String? attfile38str);
+  BioIo file38(String? file38);
 
-  BioIo attfile39str(String? attfile39str);
+  BioIo file39(String? file39);
 
-  BioIo attfile3str(String? attfile3str);
+  BioIo file3(String? file3);
 
-  BioIo attfile40str(String? attfile40str);
+  BioIo file40(String? file40);
 
-  BioIo attfile41str(String? attfile41str);
+  BioIo file41(String? file41);
 
-  BioIo attfile42str(String? attfile42str);
+  BioIo file42(String? file42);
 
-  BioIo attfile43str(String? attfile43str);
+  BioIo file43(String? file43);
 
-  BioIo attfile44str(String? attfile44str);
+  BioIo file44(String? file44);
 
-  BioIo attfile45str(String? attfile45str);
+  BioIo file45(String? file45);
 
-  BioIo attfile46str(String? attfile46str);
+  BioIo file46(String? file46);
 
-  BioIo attfile47str(String? attfile47str);
+  BioIo file47(String? file47);
 
-  BioIo attfile48str(String? attfile48str);
+  BioIo file48(String? file48);
 
-  BioIo attfile49str(String? attfile49str);
+  BioIo file49(String? file49);
 
-  BioIo attfile4str(String? attfile4str);
+  BioIo file4(String? file4);
 
-  BioIo attfile5str(String? attfile5str);
+  BioIo file5(String? file5);
 
-  BioIo attfile6str(String? attfile6str);
+  BioIo file6(String? file6);
 
-  BioIo attfile7str(String? attfile7str);
+  BioIo file7(String? file7);
 
-  BioIo attfile8str(String? attfile8str);
+  BioIo file8(String? file8);
 
-  BioIo attfile9str(String? attfile9str);
+  BioIo file9(String? file9);
 
   BioIo comAddress(String? comAddress);
 
@@ -997,45 +997,45 @@ abstract class _$BioIoCWProxy {
 
   BioIo tableName(String? tableName);
 
-  BioIo attfile50str(String? attfile50str);
+  BioIo file50(String? file50);
 
-  BioIo attfile51str(String? attfile51str);
+  BioIo file51(String? file51);
 
-  BioIo attfile52str(String? attfile52str);
+  BioIo file52(String? file52);
 
-  BioIo attfile53str(String? attfile53str);
+  BioIo file53(String? file53);
 
-  BioIo attfile54str(String? attfile54str);
+  BioIo file54(String? file54);
 
-  BioIo attfile55str(String? attfile55str);
+  BioIo file55(String? file55);
 
-  BioIo attfile56str(String? attfile56str);
+  BioIo file56(String? file56);
 
-  BioIo attfile57str(String? attfile57str);
+  BioIo file57(String? file57);
 
-  BioIo attfile58str(String? attfile58str);
+  BioIo file58(String? file58);
 
-  BioIo attfile59str(String? attfile59str);
+  BioIo file59(String? file59);
 
-  BioIo attfile60str(String? attfile60str);
+  BioIo file60(String? file60);
 
-  BioIo attfile61str(String? attfile61str);
+  BioIo file61(String? file61);
 
-  BioIo attfile62str(String? attfile62str);
+  BioIo file62(String? file62);
 
-  BioIo attfile63str(String? attfile63str);
+  BioIo file63(String? file63);
 
-  BioIo attfile64str(String? attfile64str);
+  BioIo file64(String? file64);
 
-  BioIo attfile65str(String? attfile65str);
+  BioIo file65(String? file65);
 
-  BioIo attfile66str(String? attfile66str);
+  BioIo file66(String? file66);
 
-  BioIo attfile67str(String? attfile67str);
+  BioIo file67(String? file67);
 
-  BioIo attfile68str(String? attfile68str);
+  BioIo file68(String? file68);
 
-  BioIo attfile69str(String? attfile69str);
+  BioIo file69(String? file69);
 
   /// This function **does support** nullification of nullable fields. All `null` values passed to `non-nullable` fields will be ignored. You can also use `BioIo(...).copyWith.fieldName(...)` to override fields one at a time with nullification support.
   ///
@@ -1067,55 +1067,55 @@ abstract class _$BioIoCWProxy {
     String? attNameTxt7,
     String? attNameTxt8,
     String? attNameTxt9,
-    String? attfile10str,
-    String? attfile11str,
-    String? attfile12str,
-    String? attfile13str,
-    String? attfile14str,
-    String? attfile15str,
-    String? attfile16str,
-    String? attfile17str,
-    String? attfile18str,
-    String? attfile19str,
-    String? attfile1str,
-    String? attfile20str,
-    String? attfile21str,
-    String? attfile22str,
-    String? attfile23str,
-    String? attfile24str,
-    String? attfile25str,
-    String? attfile26str,
-    String? attfile27str,
-    String? attfile28str,
-    String? attfile29str,
-    String? attfile2str,
-    String? attfile30str,
-    String? attfile31str,
-    String? attfile32str,
-    String? attfile33str,
-    String? attfile34str,
-    String? attfile35str,
-    String? attfile36str,
-    String? attfile37str,
-    String? attfile38str,
-    String? attfile39str,
-    String? attfile3str,
-    String? attfile40str,
-    String? attfile41str,
-    String? attfile42str,
-    String? attfile43str,
-    String? attfile44str,
-    String? attfile45str,
-    String? attfile46str,
-    String? attfile47str,
-    String? attfile48str,
-    String? attfile49str,
-    String? attfile4str,
-    String? attfile5str,
-    String? attfile6str,
-    String? attfile7str,
-    String? attfile8str,
-    String? attfile9str,
+    String? file10,
+    String? file11,
+    String? file12,
+    String? file13,
+    String? file14,
+    String? file15,
+    String? file16,
+    String? file17,
+    String? file18,
+    String? file19,
+    String? file1,
+    String? file20,
+    String? file21,
+    String? file22,
+    String? file23,
+    String? file24,
+    String? file25,
+    String? file26,
+    String? file27,
+    String? file28,
+    String? file29,
+    String? file2,
+    String? file30,
+    String? file31,
+    String? file32,
+    String? file33,
+    String? file34,
+    String? file35,
+    String? file36,
+    String? file37,
+    String? file38,
+    String? file39,
+    String? file3,
+    String? file40,
+    String? file41,
+    String? file42,
+    String? file43,
+    String? file44,
+    String? file45,
+    String? file46,
+    String? file47,
+    String? file48,
+    String? file49,
+    String? file4,
+    String? file5,
+    String? file6,
+    String? file7,
+    String? file8,
+    String? file9,
     String? comAddress,
     String? comCode,
     String? comName,
@@ -1539,26 +1539,26 @@ abstract class _$BioIoCWProxy {
     int? simAuth,
     String? status,
     String? tableName,
-    String? attfile50str,
-    String? attfile51str,
-    String? attfile52str,
-    String? attfile53str,
-    String? attfile54str,
-    String? attfile55str,
-    String? attfile56str,
-    String? attfile57str,
-    String? attfile58str,
-    String? attfile59str,
-    String? attfile60str,
-    String? attfile61str,
-    String? attfile62str,
-    String? attfile63str,
-    String? attfile64str,
-    String? attfile65str,
-    String? attfile66str,
-    String? attfile67str,
-    String? attfile68str,
-    String? attfile69str,
+    String? file50,
+    String? file51,
+    String? file52,
+    String? file53,
+    String? file54,
+    String? file55,
+    String? file56,
+    String? file57,
+    String? file58,
+    String? file59,
+    String? file60,
+    String? file61,
+    String? file62,
+    String? file63,
+    String? file64,
+    String? file65,
+    String? file66,
+    String? file67,
+    String? file68,
+    String? file69,
   });
 }
 
@@ -1640,151 +1640,151 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   BioIo attNameTxt9(String? attNameTxt9) => this(attNameTxt9: attNameTxt9);
 
   @override
-  BioIo attfile10str(String? attfile10str) => this(attfile10str: attfile10str);
+  BioIo file10(String? file10) => this(file10: file10);
 
   @override
-  BioIo attfile11str(String? attfile11str) => this(attfile11str: attfile11str);
+  BioIo file11(String? file11) => this(file11: file11);
 
   @override
-  BioIo attfile12str(String? attfile12str) => this(attfile12str: attfile12str);
+  BioIo file12(String? file12) => this(file12: file12);
 
   @override
-  BioIo attfile13str(String? attfile13str) => this(attfile13str: attfile13str);
+  BioIo file13(String? file13) => this(file13: file13);
 
   @override
-  BioIo attfile14str(String? attfile14str) => this(attfile14str: attfile14str);
+  BioIo file14(String? file14) => this(file14: file14);
 
   @override
-  BioIo attfile15str(String? attfile15str) => this(attfile15str: attfile15str);
+  BioIo file15(String? file15) => this(file15: file15);
 
   @override
-  BioIo attfile16str(String? attfile16str) => this(attfile16str: attfile16str);
+  BioIo file16(String? file16) => this(file16: file16);
 
   @override
-  BioIo attfile17str(String? attfile17str) => this(attfile17str: attfile17str);
+  BioIo file17(String? file17) => this(file17: file17);
 
   @override
-  BioIo attfile18str(String? attfile18str) => this(attfile18str: attfile18str);
+  BioIo file18(String? file18) => this(file18: file18);
 
   @override
-  BioIo attfile19str(String? attfile19str) => this(attfile19str: attfile19str);
+  BioIo file19(String? file19) => this(file19: file19);
 
   @override
-  BioIo attfile1str(String? attfile1str) => this(attfile1str: attfile1str);
+  BioIo file1(String? file1) => this(file1: file1);
 
   @override
-  BioIo attfile20str(String? attfile20str) => this(attfile20str: attfile20str);
+  BioIo file20(String? file20) => this(file20: file20);
 
   @override
-  BioIo attfile21str(String? attfile21str) => this(attfile21str: attfile21str);
+  BioIo file21(String? file21) => this(file21: file21);
 
   @override
-  BioIo attfile22str(String? attfile22str) => this(attfile22str: attfile22str);
+  BioIo file22(String? file22) => this(file22: file22);
 
   @override
-  BioIo attfile23str(String? attfile23str) => this(attfile23str: attfile23str);
+  BioIo file23(String? file23) => this(file23: file23);
 
   @override
-  BioIo attfile24str(String? attfile24str) => this(attfile24str: attfile24str);
+  BioIo file24(String? file24) => this(file24: file24);
 
   @override
-  BioIo attfile25str(String? attfile25str) => this(attfile25str: attfile25str);
+  BioIo file25(String? file25) => this(file25: file25);
 
   @override
-  BioIo attfile26str(String? attfile26str) => this(attfile26str: attfile26str);
+  BioIo file26(String? file26) => this(file26: file26);
 
   @override
-  BioIo attfile27str(String? attfile27str) => this(attfile27str: attfile27str);
+  BioIo file27(String? file27) => this(file27: file27);
 
   @override
-  BioIo attfile28str(String? attfile28str) => this(attfile28str: attfile28str);
+  BioIo file28(String? file28) => this(file28: file28);
 
   @override
-  BioIo attfile29str(String? attfile29str) => this(attfile29str: attfile29str);
+  BioIo file29(String? file29) => this(file29: file29);
 
   @override
-  BioIo attfile2str(String? attfile2str) => this(attfile2str: attfile2str);
+  BioIo file2(String? file2) => this(file2: file2);
 
   @override
-  BioIo attfile30str(String? attfile30str) => this(attfile30str: attfile30str);
+  BioIo file30(String? file30) => this(file30: file30);
 
   @override
-  BioIo attfile31str(String? attfile31str) => this(attfile31str: attfile31str);
+  BioIo file31(String? file31) => this(file31: file31);
 
   @override
-  BioIo attfile32str(String? attfile32str) => this(attfile32str: attfile32str);
+  BioIo file32(String? file32) => this(file32: file32);
 
   @override
-  BioIo attfile33str(String? attfile33str) => this(attfile33str: attfile33str);
+  BioIo file33(String? file33) => this(file33: file33);
 
   @override
-  BioIo attfile34str(String? attfile34str) => this(attfile34str: attfile34str);
+  BioIo file34(String? file34) => this(file34: file34);
 
   @override
-  BioIo attfile35str(String? attfile35str) => this(attfile35str: attfile35str);
+  BioIo file35(String? file35) => this(file35: file35);
 
   @override
-  BioIo attfile36str(String? attfile36str) => this(attfile36str: attfile36str);
+  BioIo file36(String? file36) => this(file36: file36);
 
   @override
-  BioIo attfile37str(String? attfile37str) => this(attfile37str: attfile37str);
+  BioIo file37(String? file37) => this(file37: file37);
 
   @override
-  BioIo attfile38str(String? attfile38str) => this(attfile38str: attfile38str);
+  BioIo file38(String? file38) => this(file38: file38);
 
   @override
-  BioIo attfile39str(String? attfile39str) => this(attfile39str: attfile39str);
+  BioIo file39(String? file39) => this(file39: file39);
 
   @override
-  BioIo attfile3str(String? attfile3str) => this(attfile3str: attfile3str);
+  BioIo file3(String? file3) => this(file3: file3);
 
   @override
-  BioIo attfile40str(String? attfile40str) => this(attfile40str: attfile40str);
+  BioIo file40(String? file40) => this(file40: file40);
 
   @override
-  BioIo attfile41str(String? attfile41str) => this(attfile41str: attfile41str);
+  BioIo file41(String? file41) => this(file41: file41);
 
   @override
-  BioIo attfile42str(String? attfile42str) => this(attfile42str: attfile42str);
+  BioIo file42(String? file42) => this(file42: file42);
 
   @override
-  BioIo attfile43str(String? attfile43str) => this(attfile43str: attfile43str);
+  BioIo file43(String? file43) => this(file43: file43);
 
   @override
-  BioIo attfile44str(String? attfile44str) => this(attfile44str: attfile44str);
+  BioIo file44(String? file44) => this(file44: file44);
 
   @override
-  BioIo attfile45str(String? attfile45str) => this(attfile45str: attfile45str);
+  BioIo file45(String? file45) => this(file45: file45);
 
   @override
-  BioIo attfile46str(String? attfile46str) => this(attfile46str: attfile46str);
+  BioIo file46(String? file46) => this(file46: file46);
 
   @override
-  BioIo attfile47str(String? attfile47str) => this(attfile47str: attfile47str);
+  BioIo file47(String? file47) => this(file47: file47);
 
   @override
-  BioIo attfile48str(String? attfile48str) => this(attfile48str: attfile48str);
+  BioIo file48(String? file48) => this(file48: file48);
 
   @override
-  BioIo attfile49str(String? attfile49str) => this(attfile49str: attfile49str);
+  BioIo file49(String? file49) => this(file49: file49);
 
   @override
-  BioIo attfile4str(String? attfile4str) => this(attfile4str: attfile4str);
+  BioIo file4(String? file4) => this(file4: file4);
 
   @override
-  BioIo attfile5str(String? attfile5str) => this(attfile5str: attfile5str);
+  BioIo file5(String? file5) => this(file5: file5);
 
   @override
-  BioIo attfile6str(String? attfile6str) => this(attfile6str: attfile6str);
+  BioIo file6(String? file6) => this(file6: file6);
 
   @override
-  BioIo attfile7str(String? attfile7str) => this(attfile7str: attfile7str);
+  BioIo file7(String? file7) => this(file7: file7);
 
   @override
-  BioIo attfile8str(String? attfile8str) => this(attfile8str: attfile8str);
+  BioIo file8(String? file8) => this(file8: file8);
 
   @override
-  BioIo attfile9str(String? attfile9str) => this(attfile9str: attfile9str);
+  BioIo file9(String? file9) => this(file9: file9);
 
   @override
   BioIo comAddress(String? comAddress) => this(comAddress: comAddress);
@@ -3067,64 +3067,64 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
   BioIo tableName(String? tableName) => this(tableName: tableName);
 
   @override
-  BioIo attfile50str(String? attfile50str) => this(attfile50str: attfile50str);
+  BioIo file50(String? file50) => this(file50: file50);
 
   @override
-  BioIo attfile51str(String? attfile51str) => this(attfile51str: attfile51str);
+  BioIo file51(String? file51) => this(file51: file51);
 
   @override
-  BioIo attfile52str(String? attfile52str) => this(attfile52str: attfile52str);
+  BioIo file52(String? file52) => this(file52: file52);
 
   @override
-  BioIo attfile53str(String? attfile53str) => this(attfile53str: attfile53str);
+  BioIo file53(String? file53) => this(file53: file53);
 
   @override
-  BioIo attfile54str(String? attfile54str) => this(attfile54str: attfile54str);
+  BioIo file54(String? file54) => this(file54: file54);
 
   @override
-  BioIo attfile55str(String? attfile55str) => this(attfile55str: attfile55str);
+  BioIo file55(String? file55) => this(file55: file55);
 
   @override
-  BioIo attfile56str(String? attfile56str) => this(attfile56str: attfile56str);
+  BioIo file56(String? file56) => this(file56: file56);
 
   @override
-  BioIo attfile57str(String? attfile57str) => this(attfile57str: attfile57str);
+  BioIo file57(String? file57) => this(file57: file57);
 
   @override
-  BioIo attfile58str(String? attfile58str) => this(attfile58str: attfile58str);
+  BioIo file58(String? file58) => this(file58: file58);
 
   @override
-  BioIo attfile59str(String? attfile59str) => this(attfile59str: attfile59str);
+  BioIo file59(String? file59) => this(file59: file59);
 
   @override
-  BioIo attfile60str(String? attfile60str) => this(attfile60str: attfile60str);
+  BioIo file60(String? file60) => this(file60: file60);
 
   @override
-  BioIo attfile61str(String? attfile61str) => this(attfile61str: attfile61str);
+  BioIo file61(String? file61) => this(file61: file61);
 
   @override
-  BioIo attfile62str(String? attfile62str) => this(attfile62str: attfile62str);
+  BioIo file62(String? file62) => this(file62: file62);
 
   @override
-  BioIo attfile63str(String? attfile63str) => this(attfile63str: attfile63str);
+  BioIo file63(String? file63) => this(file63: file63);
 
   @override
-  BioIo attfile64str(String? attfile64str) => this(attfile64str: attfile64str);
+  BioIo file64(String? file64) => this(file64: file64);
 
   @override
-  BioIo attfile65str(String? attfile65str) => this(attfile65str: attfile65str);
+  BioIo file65(String? file65) => this(file65: file65);
 
   @override
-  BioIo attfile66str(String? attfile66str) => this(attfile66str: attfile66str);
+  BioIo file66(String? file66) => this(file66: file66);
 
   @override
-  BioIo attfile67str(String? attfile67str) => this(attfile67str: attfile67str);
+  BioIo file67(String? file67) => this(file67: file67);
 
   @override
-  BioIo attfile68str(String? attfile68str) => this(attfile68str: attfile68str);
+  BioIo file68(String? file68) => this(file68: file68);
 
   @override
-  BioIo attfile69str(String? attfile69str) => this(attfile69str: attfile69str);
+  BioIo file69(String? file69) => this(file69: file69);
 
   @override
 
@@ -3158,55 +3158,55 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
     Object? attNameTxt7 = const $CopyWithPlaceholder(),
     Object? attNameTxt8 = const $CopyWithPlaceholder(),
     Object? attNameTxt9 = const $CopyWithPlaceholder(),
-    Object? attfile10str = const $CopyWithPlaceholder(),
-    Object? attfile11str = const $CopyWithPlaceholder(),
-    Object? attfile12str = const $CopyWithPlaceholder(),
-    Object? attfile13str = const $CopyWithPlaceholder(),
-    Object? attfile14str = const $CopyWithPlaceholder(),
-    Object? attfile15str = const $CopyWithPlaceholder(),
-    Object? attfile16str = const $CopyWithPlaceholder(),
-    Object? attfile17str = const $CopyWithPlaceholder(),
-    Object? attfile18str = const $CopyWithPlaceholder(),
-    Object? attfile19str = const $CopyWithPlaceholder(),
-    Object? attfile1str = const $CopyWithPlaceholder(),
-    Object? attfile20str = const $CopyWithPlaceholder(),
-    Object? attfile21str = const $CopyWithPlaceholder(),
-    Object? attfile22str = const $CopyWithPlaceholder(),
-    Object? attfile23str = const $CopyWithPlaceholder(),
-    Object? attfile24str = const $CopyWithPlaceholder(),
-    Object? attfile25str = const $CopyWithPlaceholder(),
-    Object? attfile26str = const $CopyWithPlaceholder(),
-    Object? attfile27str = const $CopyWithPlaceholder(),
-    Object? attfile28str = const $CopyWithPlaceholder(),
-    Object? attfile29str = const $CopyWithPlaceholder(),
-    Object? attfile2str = const $CopyWithPlaceholder(),
-    Object? attfile30str = const $CopyWithPlaceholder(),
-    Object? attfile31str = const $CopyWithPlaceholder(),
-    Object? attfile32str = const $CopyWithPlaceholder(),
-    Object? attfile33str = const $CopyWithPlaceholder(),
-    Object? attfile34str = const $CopyWithPlaceholder(),
-    Object? attfile35str = const $CopyWithPlaceholder(),
-    Object? attfile36str = const $CopyWithPlaceholder(),
-    Object? attfile37str = const $CopyWithPlaceholder(),
-    Object? attfile38str = const $CopyWithPlaceholder(),
-    Object? attfile39str = const $CopyWithPlaceholder(),
-    Object? attfile3str = const $CopyWithPlaceholder(),
-    Object? attfile40str = const $CopyWithPlaceholder(),
-    Object? attfile41str = const $CopyWithPlaceholder(),
-    Object? attfile42str = const $CopyWithPlaceholder(),
-    Object? attfile43str = const $CopyWithPlaceholder(),
-    Object? attfile44str = const $CopyWithPlaceholder(),
-    Object? attfile45str = const $CopyWithPlaceholder(),
-    Object? attfile46str = const $CopyWithPlaceholder(),
-    Object? attfile47str = const $CopyWithPlaceholder(),
-    Object? attfile48str = const $CopyWithPlaceholder(),
-    Object? attfile49str = const $CopyWithPlaceholder(),
-    Object? attfile4str = const $CopyWithPlaceholder(),
-    Object? attfile5str = const $CopyWithPlaceholder(),
-    Object? attfile6str = const $CopyWithPlaceholder(),
-    Object? attfile7str = const $CopyWithPlaceholder(),
-    Object? attfile8str = const $CopyWithPlaceholder(),
-    Object? attfile9str = const $CopyWithPlaceholder(),
+    Object? file10 = const $CopyWithPlaceholder(),
+    Object? file11 = const $CopyWithPlaceholder(),
+    Object? file12 = const $CopyWithPlaceholder(),
+    Object? file13 = const $CopyWithPlaceholder(),
+    Object? file14 = const $CopyWithPlaceholder(),
+    Object? file15 = const $CopyWithPlaceholder(),
+    Object? file16 = const $CopyWithPlaceholder(),
+    Object? file17 = const $CopyWithPlaceholder(),
+    Object? file18 = const $CopyWithPlaceholder(),
+    Object? file19 = const $CopyWithPlaceholder(),
+    Object? file1 = const $CopyWithPlaceholder(),
+    Object? file20 = const $CopyWithPlaceholder(),
+    Object? file21 = const $CopyWithPlaceholder(),
+    Object? file22 = const $CopyWithPlaceholder(),
+    Object? file23 = const $CopyWithPlaceholder(),
+    Object? file24 = const $CopyWithPlaceholder(),
+    Object? file25 = const $CopyWithPlaceholder(),
+    Object? file26 = const $CopyWithPlaceholder(),
+    Object? file27 = const $CopyWithPlaceholder(),
+    Object? file28 = const $CopyWithPlaceholder(),
+    Object? file29 = const $CopyWithPlaceholder(),
+    Object? file2 = const $CopyWithPlaceholder(),
+    Object? file30 = const $CopyWithPlaceholder(),
+    Object? file31 = const $CopyWithPlaceholder(),
+    Object? file32 = const $CopyWithPlaceholder(),
+    Object? file33 = const $CopyWithPlaceholder(),
+    Object? file34 = const $CopyWithPlaceholder(),
+    Object? file35 = const $CopyWithPlaceholder(),
+    Object? file36 = const $CopyWithPlaceholder(),
+    Object? file37 = const $CopyWithPlaceholder(),
+    Object? file38 = const $CopyWithPlaceholder(),
+    Object? file39 = const $CopyWithPlaceholder(),
+    Object? file3 = const $CopyWithPlaceholder(),
+    Object? file40 = const $CopyWithPlaceholder(),
+    Object? file41 = const $CopyWithPlaceholder(),
+    Object? file42 = const $CopyWithPlaceholder(),
+    Object? file43 = const $CopyWithPlaceholder(),
+    Object? file44 = const $CopyWithPlaceholder(),
+    Object? file45 = const $CopyWithPlaceholder(),
+    Object? file46 = const $CopyWithPlaceholder(),
+    Object? file47 = const $CopyWithPlaceholder(),
+    Object? file48 = const $CopyWithPlaceholder(),
+    Object? file49 = const $CopyWithPlaceholder(),
+    Object? file4 = const $CopyWithPlaceholder(),
+    Object? file5 = const $CopyWithPlaceholder(),
+    Object? file6 = const $CopyWithPlaceholder(),
+    Object? file7 = const $CopyWithPlaceholder(),
+    Object? file8 = const $CopyWithPlaceholder(),
+    Object? file9 = const $CopyWithPlaceholder(),
     Object? comAddress = const $CopyWithPlaceholder(),
     Object? comCode = const $CopyWithPlaceholder(),
     Object? comName = const $CopyWithPlaceholder(),
@@ -3630,26 +3630,26 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
     Object? simAuth = const $CopyWithPlaceholder(),
     Object? status = const $CopyWithPlaceholder(),
     Object? tableName = const $CopyWithPlaceholder(),
-    Object? attfile50str = const $CopyWithPlaceholder(),
-    Object? attfile51str = const $CopyWithPlaceholder(),
-    Object? attfile52str = const $CopyWithPlaceholder(),
-    Object? attfile53str = const $CopyWithPlaceholder(),
-    Object? attfile54str = const $CopyWithPlaceholder(),
-    Object? attfile55str = const $CopyWithPlaceholder(),
-    Object? attfile56str = const $CopyWithPlaceholder(),
-    Object? attfile57str = const $CopyWithPlaceholder(),
-    Object? attfile58str = const $CopyWithPlaceholder(),
-    Object? attfile59str = const $CopyWithPlaceholder(),
-    Object? attfile60str = const $CopyWithPlaceholder(),
-    Object? attfile61str = const $CopyWithPlaceholder(),
-    Object? attfile62str = const $CopyWithPlaceholder(),
-    Object? attfile63str = const $CopyWithPlaceholder(),
-    Object? attfile64str = const $CopyWithPlaceholder(),
-    Object? attfile65str = const $CopyWithPlaceholder(),
-    Object? attfile66str = const $CopyWithPlaceholder(),
-    Object? attfile67str = const $CopyWithPlaceholder(),
-    Object? attfile68str = const $CopyWithPlaceholder(),
-    Object? attfile69str = const $CopyWithPlaceholder(),
+    Object? file50 = const $CopyWithPlaceholder(),
+    Object? file51 = const $CopyWithPlaceholder(),
+    Object? file52 = const $CopyWithPlaceholder(),
+    Object? file53 = const $CopyWithPlaceholder(),
+    Object? file54 = const $CopyWithPlaceholder(),
+    Object? file55 = const $CopyWithPlaceholder(),
+    Object? file56 = const $CopyWithPlaceholder(),
+    Object? file57 = const $CopyWithPlaceholder(),
+    Object? file58 = const $CopyWithPlaceholder(),
+    Object? file59 = const $CopyWithPlaceholder(),
+    Object? file60 = const $CopyWithPlaceholder(),
+    Object? file61 = const $CopyWithPlaceholder(),
+    Object? file62 = const $CopyWithPlaceholder(),
+    Object? file63 = const $CopyWithPlaceholder(),
+    Object? file64 = const $CopyWithPlaceholder(),
+    Object? file65 = const $CopyWithPlaceholder(),
+    Object? file66 = const $CopyWithPlaceholder(),
+    Object? file67 = const $CopyWithPlaceholder(),
+    Object? file68 = const $CopyWithPlaceholder(),
+    Object? file69 = const $CopyWithPlaceholder(),
   }) {
     return BioIo(
       localId: localId == const $CopyWithPlaceholder()
@@ -3744,202 +3744,202 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.attNameTxt9
           // ignore: cast_nullable_to_non_nullable
           : attNameTxt9 as String?,
-      attfile10str: attfile10str == const $CopyWithPlaceholder()
-          ? _value.attfile10str
+      file10: file10 == const $CopyWithPlaceholder()
+          ? _value.file10
           // ignore: cast_nullable_to_non_nullable
-          : attfile10str as String?,
-      attfile11str: attfile11str == const $CopyWithPlaceholder()
-          ? _value.attfile11str
+          : file10 as String?,
+      file11: file11 == const $CopyWithPlaceholder()
+          ? _value.file11
           // ignore: cast_nullable_to_non_nullable
-          : attfile11str as String?,
-      attfile12str: attfile12str == const $CopyWithPlaceholder()
-          ? _value.attfile12str
+          : file11 as String?,
+      file12: file12 == const $CopyWithPlaceholder()
+          ? _value.file12
           // ignore: cast_nullable_to_non_nullable
-          : attfile12str as String?,
-      attfile13str: attfile13str == const $CopyWithPlaceholder()
-          ? _value.attfile13str
+          : file12 as String?,
+      file13: file13 == const $CopyWithPlaceholder()
+          ? _value.file13
           // ignore: cast_nullable_to_non_nullable
-          : attfile13str as String?,
-      attfile14str: attfile14str == const $CopyWithPlaceholder()
-          ? _value.attfile14str
+          : file13 as String?,
+      file14: file14 == const $CopyWithPlaceholder()
+          ? _value.file14
           // ignore: cast_nullable_to_non_nullable
-          : attfile14str as String?,
-      attfile15str: attfile15str == const $CopyWithPlaceholder()
-          ? _value.attfile15str
+          : file14 as String?,
+      file15: file15 == const $CopyWithPlaceholder()
+          ? _value.file15
           // ignore: cast_nullable_to_non_nullable
-          : attfile15str as String?,
-      attfile16str: attfile16str == const $CopyWithPlaceholder()
-          ? _value.attfile16str
+          : file15 as String?,
+      file16: file16 == const $CopyWithPlaceholder()
+          ? _value.file16
           // ignore: cast_nullable_to_non_nullable
-          : attfile16str as String?,
-      attfile17str: attfile17str == const $CopyWithPlaceholder()
-          ? _value.attfile17str
+          : file16 as String?,
+      file17: file17 == const $CopyWithPlaceholder()
+          ? _value.file17
           // ignore: cast_nullable_to_non_nullable
-          : attfile17str as String?,
-      attfile18str: attfile18str == const $CopyWithPlaceholder()
-          ? _value.attfile18str
+          : file17 as String?,
+      file18: file18 == const $CopyWithPlaceholder()
+          ? _value.file18
           // ignore: cast_nullable_to_non_nullable
-          : attfile18str as String?,
-      attfile19str: attfile19str == const $CopyWithPlaceholder()
-          ? _value.attfile19str
+          : file18 as String?,
+      file19: file19 == const $CopyWithPlaceholder()
+          ? _value.file19
           // ignore: cast_nullable_to_non_nullable
-          : attfile19str as String?,
-      attfile1str: attfile1str == const $CopyWithPlaceholder()
-          ? _value.attfile1str
+          : file19 as String?,
+      file1: file1 == const $CopyWithPlaceholder()
+          ? _value.file1
           // ignore: cast_nullable_to_non_nullable
-          : attfile1str as String?,
-      attfile20str: attfile20str == const $CopyWithPlaceholder()
-          ? _value.attfile20str
+          : file1 as String?,
+      file20: file20 == const $CopyWithPlaceholder()
+          ? _value.file20
           // ignore: cast_nullable_to_non_nullable
-          : attfile20str as String?,
-      attfile21str: attfile21str == const $CopyWithPlaceholder()
-          ? _value.attfile21str
+          : file20 as String?,
+      file21: file21 == const $CopyWithPlaceholder()
+          ? _value.file21
           // ignore: cast_nullable_to_non_nullable
-          : attfile21str as String?,
-      attfile22str: attfile22str == const $CopyWithPlaceholder()
-          ? _value.attfile22str
+          : file21 as String?,
+      file22: file22 == const $CopyWithPlaceholder()
+          ? _value.file22
           // ignore: cast_nullable_to_non_nullable
-          : attfile22str as String?,
-      attfile23str: attfile23str == const $CopyWithPlaceholder()
-          ? _value.attfile23str
+          : file22 as String?,
+      file23: file23 == const $CopyWithPlaceholder()
+          ? _value.file23
           // ignore: cast_nullable_to_non_nullable
-          : attfile23str as String?,
-      attfile24str: attfile24str == const $CopyWithPlaceholder()
-          ? _value.attfile24str
+          : file23 as String?,
+      file24: file24 == const $CopyWithPlaceholder()
+          ? _value.file24
           // ignore: cast_nullable_to_non_nullable
-          : attfile24str as String?,
-      attfile25str: attfile25str == const $CopyWithPlaceholder()
-          ? _value.attfile25str
+          : file24 as String?,
+      file25: file25 == const $CopyWithPlaceholder()
+          ? _value.file25
           // ignore: cast_nullable_to_non_nullable
-          : attfile25str as String?,
-      attfile26str: attfile26str == const $CopyWithPlaceholder()
-          ? _value.attfile26str
+          : file25 as String?,
+      file26: file26 == const $CopyWithPlaceholder()
+          ? _value.file26
           // ignore: cast_nullable_to_non_nullable
-          : attfile26str as String?,
-      attfile27str: attfile27str == const $CopyWithPlaceholder()
-          ? _value.attfile27str
+          : file26 as String?,
+      file27: file27 == const $CopyWithPlaceholder()
+          ? _value.file27
           // ignore: cast_nullable_to_non_nullable
-          : attfile27str as String?,
-      attfile28str: attfile28str == const $CopyWithPlaceholder()
-          ? _value.attfile28str
+          : file27 as String?,
+      file28: file28 == const $CopyWithPlaceholder()
+          ? _value.file28
           // ignore: cast_nullable_to_non_nullable
-          : attfile28str as String?,
-      attfile29str: attfile29str == const $CopyWithPlaceholder()
-          ? _value.attfile29str
+          : file28 as String?,
+      file29: file29 == const $CopyWithPlaceholder()
+          ? _value.file29
           // ignore: cast_nullable_to_non_nullable
-          : attfile29str as String?,
-      attfile2str: attfile2str == const $CopyWithPlaceholder()
-          ? _value.attfile2str
+          : file29 as String?,
+      file2: file2 == const $CopyWithPlaceholder()
+          ? _value.file2
           // ignore: cast_nullable_to_non_nullable
-          : attfile2str as String?,
-      attfile30str: attfile30str == const $CopyWithPlaceholder()
-          ? _value.attfile30str
+          : file2 as String?,
+      file30: file30 == const $CopyWithPlaceholder()
+          ? _value.file30
           // ignore: cast_nullable_to_non_nullable
-          : attfile30str as String?,
-      attfile31str: attfile31str == const $CopyWithPlaceholder()
-          ? _value.attfile31str
+          : file30 as String?,
+      file31: file31 == const $CopyWithPlaceholder()
+          ? _value.file31
           // ignore: cast_nullable_to_non_nullable
-          : attfile31str as String?,
-      attfile32str: attfile32str == const $CopyWithPlaceholder()
-          ? _value.attfile32str
+          : file31 as String?,
+      file32: file32 == const $CopyWithPlaceholder()
+          ? _value.file32
           // ignore: cast_nullable_to_non_nullable
-          : attfile32str as String?,
-      attfile33str: attfile33str == const $CopyWithPlaceholder()
-          ? _value.attfile33str
+          : file32 as String?,
+      file33: file33 == const $CopyWithPlaceholder()
+          ? _value.file33
           // ignore: cast_nullable_to_non_nullable
-          : attfile33str as String?,
-      attfile34str: attfile34str == const $CopyWithPlaceholder()
-          ? _value.attfile34str
+          : file33 as String?,
+      file34: file34 == const $CopyWithPlaceholder()
+          ? _value.file34
           // ignore: cast_nullable_to_non_nullable
-          : attfile34str as String?,
-      attfile35str: attfile35str == const $CopyWithPlaceholder()
-          ? _value.attfile35str
+          : file34 as String?,
+      file35: file35 == const $CopyWithPlaceholder()
+          ? _value.file35
           // ignore: cast_nullable_to_non_nullable
-          : attfile35str as String?,
-      attfile36str: attfile36str == const $CopyWithPlaceholder()
-          ? _value.attfile36str
+          : file35 as String?,
+      file36: file36 == const $CopyWithPlaceholder()
+          ? _value.file36
           // ignore: cast_nullable_to_non_nullable
-          : attfile36str as String?,
-      attfile37str: attfile37str == const $CopyWithPlaceholder()
-          ? _value.attfile37str
+          : file36 as String?,
+      file37: file37 == const $CopyWithPlaceholder()
+          ? _value.file37
           // ignore: cast_nullable_to_non_nullable
-          : attfile37str as String?,
-      attfile38str: attfile38str == const $CopyWithPlaceholder()
-          ? _value.attfile38str
+          : file37 as String?,
+      file38: file38 == const $CopyWithPlaceholder()
+          ? _value.file38
           // ignore: cast_nullable_to_non_nullable
-          : attfile38str as String?,
-      attfile39str: attfile39str == const $CopyWithPlaceholder()
-          ? _value.attfile39str
+          : file38 as String?,
+      file39: file39 == const $CopyWithPlaceholder()
+          ? _value.file39
           // ignore: cast_nullable_to_non_nullable
-          : attfile39str as String?,
-      attfile3str: attfile3str == const $CopyWithPlaceholder()
-          ? _value.attfile3str
+          : file39 as String?,
+      file3: file3 == const $CopyWithPlaceholder()
+          ? _value.file3
           // ignore: cast_nullable_to_non_nullable
-          : attfile3str as String?,
-      attfile40str: attfile40str == const $CopyWithPlaceholder()
-          ? _value.attfile40str
+          : file3 as String?,
+      file40: file40 == const $CopyWithPlaceholder()
+          ? _value.file40
           // ignore: cast_nullable_to_non_nullable
-          : attfile40str as String?,
-      attfile41str: attfile41str == const $CopyWithPlaceholder()
-          ? _value.attfile41str
+          : file40 as String?,
+      file41: file41 == const $CopyWithPlaceholder()
+          ? _value.file41
           // ignore: cast_nullable_to_non_nullable
-          : attfile41str as String?,
-      attfile42str: attfile42str == const $CopyWithPlaceholder()
-          ? _value.attfile42str
+          : file41 as String?,
+      file42: file42 == const $CopyWithPlaceholder()
+          ? _value.file42
           // ignore: cast_nullable_to_non_nullable
-          : attfile42str as String?,
-      attfile43str: attfile43str == const $CopyWithPlaceholder()
-          ? _value.attfile43str
+          : file42 as String?,
+      file43: file43 == const $CopyWithPlaceholder()
+          ? _value.file43
           // ignore: cast_nullable_to_non_nullable
-          : attfile43str as String?,
-      attfile44str: attfile44str == const $CopyWithPlaceholder()
-          ? _value.attfile44str
+          : file43 as String?,
+      file44: file44 == const $CopyWithPlaceholder()
+          ? _value.file44
           // ignore: cast_nullable_to_non_nullable
-          : attfile44str as String?,
-      attfile45str: attfile45str == const $CopyWithPlaceholder()
-          ? _value.attfile45str
+          : file44 as String?,
+      file45: file45 == const $CopyWithPlaceholder()
+          ? _value.file45
           // ignore: cast_nullable_to_non_nullable
-          : attfile45str as String?,
-      attfile46str: attfile46str == const $CopyWithPlaceholder()
-          ? _value.attfile46str
+          : file45 as String?,
+      file46: file46 == const $CopyWithPlaceholder()
+          ? _value.file46
           // ignore: cast_nullable_to_non_nullable
-          : attfile46str as String?,
-      attfile47str: attfile47str == const $CopyWithPlaceholder()
-          ? _value.attfile47str
+          : file46 as String?,
+      file47: file47 == const $CopyWithPlaceholder()
+          ? _value.file47
           // ignore: cast_nullable_to_non_nullable
-          : attfile47str as String?,
-      attfile48str: attfile48str == const $CopyWithPlaceholder()
-          ? _value.attfile48str
+          : file47 as String?,
+      file48: file48 == const $CopyWithPlaceholder()
+          ? _value.file48
           // ignore: cast_nullable_to_non_nullable
-          : attfile48str as String?,
-      attfile49str: attfile49str == const $CopyWithPlaceholder()
-          ? _value.attfile49str
+          : file48 as String?,
+      file49: file49 == const $CopyWithPlaceholder()
+          ? _value.file49
           // ignore: cast_nullable_to_non_nullable
-          : attfile49str as String?,
-      attfile4str: attfile4str == const $CopyWithPlaceholder()
-          ? _value.attfile4str
+          : file49 as String?,
+      file4: file4 == const $CopyWithPlaceholder()
+          ? _value.file4
           // ignore: cast_nullable_to_non_nullable
-          : attfile4str as String?,
-      attfile5str: attfile5str == const $CopyWithPlaceholder()
-          ? _value.attfile5str
+          : file4 as String?,
+      file5: file5 == const $CopyWithPlaceholder()
+          ? _value.file5
           // ignore: cast_nullable_to_non_nullable
-          : attfile5str as String?,
-      attfile6str: attfile6str == const $CopyWithPlaceholder()
-          ? _value.attfile6str
+          : file5 as String?,
+      file6: file6 == const $CopyWithPlaceholder()
+          ? _value.file6
           // ignore: cast_nullable_to_non_nullable
-          : attfile6str as String?,
-      attfile7str: attfile7str == const $CopyWithPlaceholder()
-          ? _value.attfile7str
+          : file6 as String?,
+      file7: file7 == const $CopyWithPlaceholder()
+          ? _value.file7
           // ignore: cast_nullable_to_non_nullable
-          : attfile7str as String?,
-      attfile8str: attfile8str == const $CopyWithPlaceholder()
-          ? _value.attfile8str
+          : file7 as String?,
+      file8: file8 == const $CopyWithPlaceholder()
+          ? _value.file8
           // ignore: cast_nullable_to_non_nullable
-          : attfile8str as String?,
-      attfile9str: attfile9str == const $CopyWithPlaceholder()
-          ? _value.attfile9str
+          : file8 as String?,
+      file9: file9 == const $CopyWithPlaceholder()
+          ? _value.file9
           // ignore: cast_nullable_to_non_nullable
-          : attfile9str as String?,
+          : file9 as String?,
       comAddress: comAddress == const $CopyWithPlaceholder()
           ? _value.comAddress
           // ignore: cast_nullable_to_non_nullable
@@ -5632,86 +5632,86 @@ class _$BioIoCWProxyImpl implements _$BioIoCWProxy {
           ? _value.tableName
           // ignore: cast_nullable_to_non_nullable
           : tableName as String?,
-      attfile50str: attfile50str == const $CopyWithPlaceholder()
-          ? _value.attfile50str
+      file50: file50 == const $CopyWithPlaceholder()
+          ? _value.file50
           // ignore: cast_nullable_to_non_nullable
-          : attfile50str as String?,
-      attfile51str: attfile51str == const $CopyWithPlaceholder()
-          ? _value.attfile51str
+          : file50 as String?,
+      file51: file51 == const $CopyWithPlaceholder()
+          ? _value.file51
           // ignore: cast_nullable_to_non_nullable
-          : attfile51str as String?,
-      attfile52str: attfile52str == const $CopyWithPlaceholder()
-          ? _value.attfile52str
+          : file51 as String?,
+      file52: file52 == const $CopyWithPlaceholder()
+          ? _value.file52
           // ignore: cast_nullable_to_non_nullable
-          : attfile52str as String?,
-      attfile53str: attfile53str == const $CopyWithPlaceholder()
-          ? _value.attfile53str
+          : file52 as String?,
+      file53: file53 == const $CopyWithPlaceholder()
+          ? _value.file53
           // ignore: cast_nullable_to_non_nullable
-          : attfile53str as String?,
-      attfile54str: attfile54str == const $CopyWithPlaceholder()
-          ? _value.attfile54str
+          : file53 as String?,
+      file54: file54 == const $CopyWithPlaceholder()
+          ? _value.file54
           // ignore: cast_nullable_to_non_nullable
-          : attfile54str as String?,
-      attfile55str: attfile55str == const $CopyWithPlaceholder()
-          ? _value.attfile55str
+          : file54 as String?,
+      file55: file55 == const $CopyWithPlaceholder()
+          ? _value.file55
           // ignore: cast_nullable_to_non_nullable
-          : attfile55str as String?,
-      attfile56str: attfile56str == const $CopyWithPlaceholder()
-          ? _value.attfile56str
+          : file55 as String?,
+      file56: file56 == const $CopyWithPlaceholder()
+          ? _value.file56
           // ignore: cast_nullable_to_non_nullable
-          : attfile56str as String?,
-      attfile57str: attfile57str == const $CopyWithPlaceholder()
-          ? _value.attfile57str
+          : file56 as String?,
+      file57: file57 == const $CopyWithPlaceholder()
+          ? _value.file57
           // ignore: cast_nullable_to_non_nullable
-          : attfile57str as String?,
-      attfile58str: attfile58str == const $CopyWithPlaceholder()
-          ? _value.attfile58str
+          : file57 as String?,
+      file58: file58 == const $CopyWithPlaceholder()
+          ? _value.file58
           // ignore: cast_nullable_to_non_nullable
-          : attfile58str as String?,
-      attfile59str: attfile59str == const $CopyWithPlaceholder()
-          ? _value.attfile59str
+          : file58 as String?,
+      file59: file59 == const $CopyWithPlaceholder()
+          ? _value.file59
           // ignore: cast_nullable_to_non_nullable
-          : attfile59str as String?,
-      attfile60str: attfile60str == const $CopyWithPlaceholder()
-          ? _value.attfile60str
+          : file59 as String?,
+      file60: file60 == const $CopyWithPlaceholder()
+          ? _value.file60
           // ignore: cast_nullable_to_non_nullable
-          : attfile60str as String?,
-      attfile61str: attfile61str == const $CopyWithPlaceholder()
-          ? _value.attfile61str
+          : file60 as String?,
+      file61: file61 == const $CopyWithPlaceholder()
+          ? _value.file61
           // ignore: cast_nullable_to_non_nullable
-          : attfile61str as String?,
-      attfile62str: attfile62str == const $CopyWithPlaceholder()
-          ? _value.attfile62str
+          : file61 as String?,
+      file62: file62 == const $CopyWithPlaceholder()
+          ? _value.file62
           // ignore: cast_nullable_to_non_nullable
-          : attfile62str as String?,
-      attfile63str: attfile63str == const $CopyWithPlaceholder()
-          ? _value.attfile63str
+          : file62 as String?,
+      file63: file63 == const $CopyWithPlaceholder()
+          ? _value.file63
           // ignore: cast_nullable_to_non_nullable
-          : attfile63str as String?,
-      attfile64str: attfile64str == const $CopyWithPlaceholder()
-          ? _value.attfile64str
+          : file63 as String?,
+      file64: file64 == const $CopyWithPlaceholder()
+          ? _value.file64
           // ignore: cast_nullable_to_non_nullable
-          : attfile64str as String?,
-      attfile65str: attfile65str == const $CopyWithPlaceholder()
-          ? _value.attfile65str
+          : file64 as String?,
+      file65: file65 == const $CopyWithPlaceholder()
+          ? _value.file65
           // ignore: cast_nullable_to_non_nullable
-          : attfile65str as String?,
-      attfile66str: attfile66str == const $CopyWithPlaceholder()
-          ? _value.attfile66str
+          : file65 as String?,
+      file66: file66 == const $CopyWithPlaceholder()
+          ? _value.file66
           // ignore: cast_nullable_to_non_nullable
-          : attfile66str as String?,
-      attfile67str: attfile67str == const $CopyWithPlaceholder()
-          ? _value.attfile67str
+          : file66 as String?,
+      file67: file67 == const $CopyWithPlaceholder()
+          ? _value.file67
           // ignore: cast_nullable_to_non_nullable
-          : attfile67str as String?,
-      attfile68str: attfile68str == const $CopyWithPlaceholder()
-          ? _value.attfile68str
+          : file67 as String?,
+      file68: file68 == const $CopyWithPlaceholder()
+          ? _value.file68
           // ignore: cast_nullable_to_non_nullable
-          : attfile68str as String?,
-      attfile69str: attfile69str == const $CopyWithPlaceholder()
-          ? _value.attfile69str
+          : file68 as String?,
+      file69: file69 == const $CopyWithPlaceholder()
+          ? _value.file69
           // ignore: cast_nullable_to_non_nullable
-          : attfile69str as String?,
+          : file69 as String?,
     );
   }
 }
@@ -5750,55 +5750,55 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
       attNameTxt7: json['attNameTxt7'] as String?,
       attNameTxt8: json['attNameTxt8'] as String?,
       attNameTxt9: json['attNameTxt9'] as String?,
-      attfile10str: json['attfile10str'] as String?,
-      attfile11str: json['attfile11str'] as String?,
-      attfile12str: json['attfile12str'] as String?,
-      attfile13str: json['attfile13str'] as String?,
-      attfile14str: json['attfile14str'] as String?,
-      attfile15str: json['attfile15str'] as String?,
-      attfile16str: json['attfile16str'] as String?,
-      attfile17str: json['attfile17str'] as String?,
-      attfile18str: json['attfile18str'] as String?,
-      attfile19str: json['attfile19str'] as String?,
-      attfile1str: json['attfile1str'] as String?,
-      attfile20str: json['attfile20str'] as String?,
-      attfile21str: json['attfile21str'] as String?,
-      attfile22str: json['attfile22str'] as String?,
-      attfile23str: json['attfile23str'] as String?,
-      attfile24str: json['attfile24str'] as String?,
-      attfile25str: json['attfile25str'] as String?,
-      attfile26str: json['attfile26str'] as String?,
-      attfile27str: json['attfile27str'] as String?,
-      attfile28str: json['attfile28str'] as String?,
-      attfile29str: json['attfile29str'] as String?,
-      attfile2str: json['attfile2str'] as String?,
-      attfile30str: json['attfile30str'] as String?,
-      attfile31str: json['attfile31str'] as String?,
-      attfile32str: json['attfile32str'] as String?,
-      attfile33str: json['attfile33str'] as String?,
-      attfile34str: json['attfile34str'] as String?,
-      attfile35str: json['attfile35str'] as String?,
-      attfile36str: json['attfile36str'] as String?,
-      attfile37str: json['attfile37str'] as String?,
-      attfile38str: json['attfile38str'] as String?,
-      attfile39str: json['attfile39str'] as String?,
-      attfile3str: json['attfile3str'] as String?,
-      attfile40str: json['attfile40str'] as String?,
-      attfile41str: json['attfile41str'] as String?,
-      attfile42str: json['attfile42str'] as String?,
-      attfile43str: json['attfile43str'] as String?,
-      attfile44str: json['attfile44str'] as String?,
-      attfile45str: json['attfile45str'] as String?,
-      attfile46str: json['attfile46str'] as String?,
-      attfile47str: json['attfile47str'] as String?,
-      attfile48str: json['attfile48str'] as String?,
-      attfile49str: json['attfile49str'] as String?,
-      attfile4str: json['attfile4str'] as String?,
-      attfile5str: json['attfile5str'] as String?,
-      attfile6str: json['attfile6str'] as String?,
-      attfile7str: json['attfile7str'] as String?,
-      attfile8str: json['attfile8str'] as String?,
-      attfile9str: json['attfile9str'] as String?,
+      file10: json['file10'] as String?,
+      file11: json['file11'] as String?,
+      file12: json['file12'] as String?,
+      file13: json['file13'] as String?,
+      file14: json['file14'] as String?,
+      file15: json['file15'] as String?,
+      file16: json['file16'] as String?,
+      file17: json['file17'] as String?,
+      file18: json['file18'] as String?,
+      file19: json['file19'] as String?,
+      file1: json['file1'] as String?,
+      file20: json['file20'] as String?,
+      file21: json['file21'] as String?,
+      file22: json['file22'] as String?,
+      file23: json['file23'] as String?,
+      file24: json['file24'] as String?,
+      file25: json['file25'] as String?,
+      file26: json['file26'] as String?,
+      file27: json['file27'] as String?,
+      file28: json['file28'] as String?,
+      file29: json['file29'] as String?,
+      file2: json['file2'] as String?,
+      file30: json['file30'] as String?,
+      file31: json['file31'] as String?,
+      file32: json['file32'] as String?,
+      file33: json['file33'] as String?,
+      file34: json['file34'] as String?,
+      file35: json['file35'] as String?,
+      file36: json['file36'] as String?,
+      file37: json['file37'] as String?,
+      file38: json['file38'] as String?,
+      file39: json['file39'] as String?,
+      file3: json['file3'] as String?,
+      file40: json['file40'] as String?,
+      file41: json['file41'] as String?,
+      file42: json['file42'] as String?,
+      file43: json['file43'] as String?,
+      file44: json['file44'] as String?,
+      file45: json['file45'] as String?,
+      file46: json['file46'] as String?,
+      file47: json['file47'] as String?,
+      file48: json['file48'] as String?,
+      file49: json['file49'] as String?,
+      file4: json['file4'] as String?,
+      file5: json['file5'] as String?,
+      file6: json['file6'] as String?,
+      file7: json['file7'] as String?,
+      file8: json['file8'] as String?,
+      file9: json['file9'] as String?,
       comAddress: json['comAddress'] as String?,
       comCode: json['comCode'] as String?,
       comName: json['comName'] as String?,
@@ -6222,26 +6222,26 @@ BioIo _$BioIoFromJson(Map<String, dynamic> json) => BioIo(
       simAuth: json['simAuth'] as int?,
       status: json['status'] as String?,
       tableName: json['tableName'] as String?,
-      attfile50str: json['attfile50str'] as String?,
-      attfile51str: json['attfile51str'] as String?,
-      attfile52str: json['attfile52str'] as String?,
-      attfile53str: json['attfile53str'] as String?,
-      attfile54str: json['attfile54str'] as String?,
-      attfile55str: json['attfile55str'] as String?,
-      attfile56str: json['attfile56str'] as String?,
-      attfile57str: json['attfile57str'] as String?,
-      attfile58str: json['attfile58str'] as String?,
-      attfile59str: json['attfile59str'] as String?,
-      attfile60str: json['attfile60str'] as String?,
-      attfile61str: json['attfile61str'] as String?,
-      attfile62str: json['attfile62str'] as String?,
-      attfile63str: json['attfile63str'] as String?,
-      attfile64str: json['attfile64str'] as String?,
-      attfile65str: json['attfile65str'] as String?,
-      attfile66str: json['attfile66str'] as String?,
-      attfile67str: json['attfile67str'] as String?,
-      attfile68str: json['attfile68str'] as String?,
-      attfile69str: json['attfile69str'] as String?,
+      file50: json['file50'] as String?,
+      file51: json['file51'] as String?,
+      file52: json['file52'] as String?,
+      file53: json['file53'] as String?,
+      file54: json['file54'] as String?,
+      file55: json['file55'] as String?,
+      file56: json['file56'] as String?,
+      file57: json['file57'] as String?,
+      file58: json['file58'] as String?,
+      file59: json['file59'] as String?,
+      file60: json['file60'] as String?,
+      file61: json['file61'] as String?,
+      file62: json['file62'] as String?,
+      file63: json['file63'] as String?,
+      file64: json['file64'] as String?,
+      file65: json['file65'] as String?,
+      file66: json['file66'] as String?,
+      file67: json['file67'] as String?,
+      file68: json['file68'] as String?,
+      file69: json['file69'] as String?,
     );
 
 Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
@@ -6268,55 +6268,55 @@ Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
       'attNameTxt7': instance.attNameTxt7,
       'attNameTxt8': instance.attNameTxt8,
       'attNameTxt9': instance.attNameTxt9,
-      'attfile10str': instance.attfile10str,
-      'attfile11str': instance.attfile11str,
-      'attfile12str': instance.attfile12str,
-      'attfile13str': instance.attfile13str,
-      'attfile14str': instance.attfile14str,
-      'attfile15str': instance.attfile15str,
-      'attfile16str': instance.attfile16str,
-      'attfile17str': instance.attfile17str,
-      'attfile18str': instance.attfile18str,
-      'attfile19str': instance.attfile19str,
-      'attfile1str': instance.attfile1str,
-      'attfile20str': instance.attfile20str,
-      'attfile21str': instance.attfile21str,
-      'attfile22str': instance.attfile22str,
-      'attfile23str': instance.attfile23str,
-      'attfile24str': instance.attfile24str,
-      'attfile25str': instance.attfile25str,
-      'attfile26str': instance.attfile26str,
-      'attfile27str': instance.attfile27str,
-      'attfile28str': instance.attfile28str,
-      'attfile29str': instance.attfile29str,
-      'attfile2str': instance.attfile2str,
-      'attfile30str': instance.attfile30str,
-      'attfile31str': instance.attfile31str,
-      'attfile32str': instance.attfile32str,
-      'attfile33str': instance.attfile33str,
-      'attfile34str': instance.attfile34str,
-      'attfile35str': instance.attfile35str,
-      'attfile36str': instance.attfile36str,
-      'attfile37str': instance.attfile37str,
-      'attfile38str': instance.attfile38str,
-      'attfile39str': instance.attfile39str,
-      'attfile3str': instance.attfile3str,
-      'attfile40str': instance.attfile40str,
-      'attfile41str': instance.attfile41str,
-      'attfile42str': instance.attfile42str,
-      'attfile43str': instance.attfile43str,
-      'attfile44str': instance.attfile44str,
-      'attfile45str': instance.attfile45str,
-      'attfile46str': instance.attfile46str,
-      'attfile47str': instance.attfile47str,
-      'attfile48str': instance.attfile48str,
-      'attfile49str': instance.attfile49str,
-      'attfile4str': instance.attfile4str,
-      'attfile5str': instance.attfile5str,
-      'attfile6str': instance.attfile6str,
-      'attfile7str': instance.attfile7str,
-      'attfile8str': instance.attfile8str,
-      'attfile9str': instance.attfile9str,
+      'file10': instance.file10,
+      'file11': instance.file11,
+      'file12': instance.file12,
+      'file13': instance.file13,
+      'file14': instance.file14,
+      'file15': instance.file15,
+      'file16': instance.file16,
+      'file17': instance.file17,
+      'file18': instance.file18,
+      'file19': instance.file19,
+      'file1': instance.file1,
+      'file20': instance.file20,
+      'file21': instance.file21,
+      'file22': instance.file22,
+      'file23': instance.file23,
+      'file24': instance.file24,
+      'file25': instance.file25,
+      'file26': instance.file26,
+      'file27': instance.file27,
+      'file28': instance.file28,
+      'file29': instance.file29,
+      'file2': instance.file2,
+      'file30': instance.file30,
+      'file31': instance.file31,
+      'file32': instance.file32,
+      'file33': instance.file33,
+      'file34': instance.file34,
+      'file35': instance.file35,
+      'file36': instance.file36,
+      'file37': instance.file37,
+      'file38': instance.file38,
+      'file39': instance.file39,
+      'file3': instance.file3,
+      'file40': instance.file40,
+      'file41': instance.file41,
+      'file42': instance.file42,
+      'file43': instance.file43,
+      'file44': instance.file44,
+      'file45': instance.file45,
+      'file46': instance.file46,
+      'file47': instance.file47,
+      'file48': instance.file48,
+      'file49': instance.file49,
+      'file4': instance.file4,
+      'file5': instance.file5,
+      'file6': instance.file6,
+      'file7': instance.file7,
+      'file8': instance.file8,
+      'file9': instance.file9,
       'comAddress': instance.comAddress,
       'comCode': instance.comCode,
       'comName': instance.comName,
@@ -6740,24 +6740,24 @@ Map<String, dynamic> _$BioIoToJson(BioIo instance) => <String, dynamic>{
       'simAuth': instance.simAuth,
       'status': instance.status,
       'tableName': instance.tableName,
-      'attfile50str': instance.attfile50str,
-      'attfile51str': instance.attfile51str,
-      'attfile52str': instance.attfile52str,
-      'attfile53str': instance.attfile53str,
-      'attfile54str': instance.attfile54str,
-      'attfile55str': instance.attfile55str,
-      'attfile56str': instance.attfile56str,
-      'attfile57str': instance.attfile57str,
-      'attfile58str': instance.attfile58str,
-      'attfile59str': instance.attfile59str,
-      'attfile60str': instance.attfile60str,
-      'attfile61str': instance.attfile61str,
-      'attfile62str': instance.attfile62str,
-      'attfile63str': instance.attfile63str,
-      'attfile64str': instance.attfile64str,
-      'attfile65str': instance.attfile65str,
-      'attfile66str': instance.attfile66str,
-      'attfile67str': instance.attfile67str,
-      'attfile68str': instance.attfile68str,
-      'attfile69str': instance.attfile69str,
+      'file50': instance.file50,
+      'file51': instance.file51,
+      'file52': instance.file52,
+      'file53': instance.file53,
+      'file54': instance.file54,
+      'file55': instance.file55,
+      'file56': instance.file56,
+      'file57': instance.file57,
+      'file58': instance.file58,
+      'file59': instance.file59,
+      'file60': instance.file60,
+      'file61': instance.file61,
+      'file62': instance.file62,
+      'file63': instance.file63,
+      'file64': instance.file64,
+      'file65': instance.file65,
+      'file66': instance.file66,
+      'file67': instance.file67,
+      'file68': instance.file68,
+      'file69': instance.file69,
     };

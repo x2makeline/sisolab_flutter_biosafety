@@ -44,7 +44,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile6str', initialValue: vm.io.attfile6str),
+                        name: 'file6', initialValue: vm.io.file6),
                     FclRadioField(
                         name: 'd10',
                         map: yesOrNoMap,
@@ -60,7 +60,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile7str', initialValue: vm.io.attfile7str),
+                        name: 'file7', initialValue: vm.io.file7),
                     FclRadioField(
                         name: 'd11',
                         map: yesOrNoMap,
@@ -76,7 +76,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile8str', initialValue: vm.io.attfile8str),
+                        name: 'file8', initialValue: vm.io.file8),
                     FclRadioField(
                         name: 'd12',
                         map: yesOrNoMap,
@@ -92,7 +92,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile9str', initialValue: vm.io.attfile9str),
+                        name: 'file9', initialValue: vm.io.file9),
                     FclRadioField(
                         name: 'd13',
                         map: yesOrNoMap,
@@ -108,7 +108,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile10str', initialValue: vm.io.attfile10str),
+                        name: 'file10', initialValue: vm.io.file10),
                     FclRadioField(
                         name: 'd14',
                         map: yesOrNoMap,
@@ -125,7 +125,7 @@ class Tab4 extends StatelessWidget {
                   lastDividerYn: false,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile11str', initialValue: vm.io.attfile11str),
+                        name: 'file11', initialValue: vm.io.file11),
                     FclRadioField(
                         name: 'd15',
                         map: yesOrNoMap,

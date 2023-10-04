@@ -45,9 +45,9 @@ class Tab9 extends StatelessWidget {
                 lastDividerYn: false,
                 fieldList: [
                   FclImageField(
-                      name: "attfile27str",
-                      initialValue: vm.io.attfile27str,
-                      preValue: vm.preData?.attfile27str),
+                      name: "file27",
+                      initialValue: vm.io.file27,
+                      preValue: vm.preData?.file27),
                   FclRadioField(
                       name: "d27",
                       map: {"2": "2", "1": "1", "0": "0"},

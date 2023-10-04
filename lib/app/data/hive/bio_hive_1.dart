@@ -72,151 +72,151 @@ class BioHive1 extends HiveObject {
   String? attNameTxt9;
 
   @HiveField(23)
-  String? attfile10str;
+  String? file10;
 
   @HiveField(24)
-  String? attfile11str;
+  String? file11;
 
   @HiveField(25)
-  String? attfile12str;
+  String? file12;
 
   @HiveField(26)
-  String? attfile13str;
+  String? file13;
 
   @HiveField(27)
-  String? attfile14str;
+  String? file14;
 
   @HiveField(28)
-  String? attfile15str;
+  String? file15;
 
   @HiveField(29)
-  String? attfile16str;
+  String? file16;
 
   @HiveField(30)
-  String? attfile17str;
+  String? file17;
 
   @HiveField(31)
-  String? attfile18str;
+  String? file18;
 
   @HiveField(32)
-  String? attfile19str;
+  String? file19;
 
   @HiveField(33)
-  String? attfile1str;
+  String? file1;
 
   @HiveField(34)
-  String? attfile20str;
+  String? file20;
 
   @HiveField(35)
-  String? attfile21str;
+  String? file21;
 
   @HiveField(36)
-  String? attfile22str;
+  String? file22;
 
   @HiveField(37)
-  String? attfile23str;
+  String? file23;
 
   @HiveField(38)
-  String? attfile24str;
+  String? file24;
 
   @HiveField(39)
-  String? attfile25str;
+  String? file25;
 
   @HiveField(40)
-  String? attfile26str;
+  String? file26;
 
   @HiveField(41)
-  String? attfile27str;
+  String? file27;
 
   @HiveField(42)
-  String? attfile28str;
+  String? file28;
 
   @HiveField(43)
-  String? attfile29str;
+  String? file29;
 
   @HiveField(44)
-  String? attfile2str;
+  String? file2;
 
   @HiveField(45)
-  String? attfile30str;
+  String? file30;
 
   @HiveField(46)
-  String? attfile31str;
+  String? file31;
 
   @HiveField(47)
-  String? attfile32str;
+  String? file32;
 
   @HiveField(48)
-  String? attfile33str;
+  String? file33;
 
   @HiveField(49)
-  String? attfile34str;
+  String? file34;
 
   @HiveField(50)
-  String? attfile35str;
+  String? file35;
 
   @HiveField(51)
-  String? attfile36str;
+  String? file36;
 
   @HiveField(52)
-  String? attfile37str;
+  String? file37;
 
   @HiveField(53)
-  String? attfile38str;
+  String? file38;
 
   @HiveField(54)
-  String? attfile39str;
+  String? file39;
 
   @HiveField(55)
-  String? attfile3str;
+  String? file3;
 
   @HiveField(56)
-  String? attfile40str;
+  String? file40;
 
   @HiveField(57)
-  String? attfile41str;
+  String? file41;
 
   @HiveField(58)
-  String? attfile42str;
+  String? file42;
 
   @HiveField(59)
-  String? attfile43str;
+  String? file43;
 
   @HiveField(60)
-  String? attfile44str;
+  String? file44;
 
   @HiveField(61)
-  String? attfile45str;
+  String? file45;
 
   @HiveField(62)
-  String? attfile46str;
+  String? file46;
 
   @HiveField(63)
-  String? attfile47str;
+  String? file47;
 
   @HiveField(64)
-  String? attfile48str;
+  String? file48;
 
   @HiveField(65)
-  String? attfile49str;
+  String? file49;
 
   @HiveField(66)
-  String? attfile4str;
+  String? file4;
 
   @HiveField(67)
-  String? attfile5str;
+  String? file5;
 
   @HiveField(68)
-  String? attfile6str;
+  String? file6;
 
   @HiveField(69)
-  String? attfile7str;
+  String? file7;
 
   @HiveField(70)
-  String? attfile8str;
+  String? file8;
 
   @HiveField(71)
-  String? attfile9str;
+  String? file9;
 
   BioHive1(
       {this.localId,
@@ -242,53 +242,53 @@ class BioHive1 extends HiveObject {
       this.attNameTxt7,
       this.attNameTxt8,
       this.attNameTxt9,
-      this.attfile10str,
-      this.attfile11str,
-      this.attfile12str,
-      this.attfile13str,
-      this.attfile14str,
-      this.attfile15str,
-      this.attfile16str,
-      this.attfile17str,
-      this.attfile18str,
-      this.attfile19str,
-      this.attfile1str,
-      this.attfile20str,
-      this.attfile21str,
-      this.attfile22str,
-      this.attfile23str,
-      this.attfile24str,
-      this.attfile25str,
-      this.attfile26str,
-      this.attfile27str,
-      this.attfile28str,
-      this.attfile29str,
-      this.attfile2str,
-      this.attfile30str,
-      this.attfile31str,
-      this.attfile32str,
-      this.attfile33str,
-      this.attfile34str,
-      this.attfile35str,
-      this.attfile36str,
-      this.attfile37str,
-      this.attfile38str,
-      this.attfile39str,
-      this.attfile3str,
-      this.attfile40str,
-      this.attfile41str,
-      this.attfile42str,
-      this.attfile43str,
-      this.attfile44str,
-      this.attfile45str,
-      this.attfile46str,
-      this.attfile47str,
-      this.attfile48str,
-      this.attfile49str,
-      this.attfile4str,
-      this.attfile5str,
-      this.attfile6str,
-      this.attfile7str,
-      this.attfile8str,
-      this.attfile9str});
+      this.file10,
+      this.file11,
+      this.file12,
+      this.file13,
+      this.file14,
+      this.file15,
+      this.file16,
+      this.file17,
+      this.file18,
+      this.file19,
+      this.file1,
+      this.file20,
+      this.file21,
+      this.file22,
+      this.file23,
+      this.file24,
+      this.file25,
+      this.file26,
+      this.file27,
+      this.file28,
+      this.file29,
+      this.file2,
+      this.file30,
+      this.file31,
+      this.file32,
+      this.file33,
+      this.file34,
+      this.file35,
+      this.file36,
+      this.file37,
+      this.file38,
+      this.file39,
+      this.file3,
+      this.file40,
+      this.file41,
+      this.file42,
+      this.file43,
+      this.file44,
+      this.file45,
+      this.file46,
+      this.file47,
+      this.file48,
+      this.file49,
+      this.file4,
+      this.file5,
+      this.file6,
+      this.file7,
+      this.file8,
+      this.file9});
 }

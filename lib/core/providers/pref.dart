@@ -30,7 +30,7 @@ enum Pref<T> with PLoggerMixin {
 
   T? get value => SPref.sPref.get(name) as T?;
 
-  Future<bool> setValue(T? value) async => SPref.sPref.let((sPref) async {
+  Future<bool> setValue([T? value]) async => SPref.sPref.let((sPref) async {
         pLog.d("setValue $value");
         if (value is int) {
           return await sPref.setInt(name, value);

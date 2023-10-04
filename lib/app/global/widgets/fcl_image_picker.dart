@@ -21,13 +21,12 @@ class FclImagePicker extends StatefulWidget {
   State<FclImagePicker> createState() => _FclImagePickerState();
 }
 
-class _FclImagePickerState extends State<FclImagePicker> {
+class _FclImagePickerState extends State<FclImagePicker> with PLoggerMixin {
   late String? base64;
 
   @override
   void initState() {
     super.initState();
-
     base64 = widget.initialValue;
   }
 
@@ -95,19 +94,16 @@ class _FclImagePickerState extends State<FclImagePicker> {
       );
 }
 
-class FormBuilderFclImagePicker extends StatelessWidget {
-  const FormBuilderFclImagePicker(
-      {super.key, required this.name, this.initialValue});
-
-  final String name;
-  final String? initialValue;
-
-  @override
-  Widget build(BuildContext context) => FormBuilderField(
-        name: name,
-        builder: (FormFieldState<String> field) => FclImagePicker(
-          onChange: field.setValue,
-          initialValue: initialValue,
-        ),
-      );
+class FormBuilderFclImagePicker extends FormBuilderFieldDecoration<String> {
+  FormBuilderFclImagePicker({
+    super.key,
+    required super.name,
+    super.initialValue,
+  }) : super(
+            builder: (FormFieldState<String?> field) {
+              return FclImagePicker(
+                  onChange: field.setValue,
+                  initialValue: field.value,
+                );
+            });
 }

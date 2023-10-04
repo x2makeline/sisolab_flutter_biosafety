@@ -44,7 +44,7 @@ class Tab19 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile45str', initialValue: vm.io.attfile45str),
+                        name: 'file45', initialValue: vm.io.file45),
                     FclRadioField(
                         name: 'd48',
                         map: yesOrNoMap,
@@ -60,7 +60,7 @@ class Tab19 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile46str', initialValue: vm.io.attfile46str),
+                        name: 'file46', initialValue: vm.io.file46),
                     FclRadioField(
                         name: 'd49',
                         map: yesOrNoMap,
@@ -76,7 +76,7 @@ class Tab19 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile47str', initialValue: vm.io.attfile47str),
+                        name: 'file47', initialValue: vm.io.file47),
                     FclRadioField(
                         name: 'd50',
                         map: yesOrNoMap,
@@ -92,7 +92,7 @@ class Tab19 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile48str', initialValue: vm.io.attfile48str),
+                        name: 'file48', initialValue: vm.io.file48),
                     FclRadioField(
                         name: 'd51',
                         map: yesOrNoMap,
@@ -109,7 +109,7 @@ class Tab19 extends StatelessWidget {
                   lastDividerYn: false,
                   fieldList: [
                     FclImageField(
-                        name: 'attfile49str', initialValue: vm.io.attfile49str),
+                        name: 'file49', initialValue: vm.io.file49),
                     FclRadioField(
                         name: 'd52',
                         map: yesOrNoMap,

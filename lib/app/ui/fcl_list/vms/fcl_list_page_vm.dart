@@ -14,7 +14,7 @@ import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 class FclListPageVm extends GetxController with PLoggerMixin {
   static FclListPageVm get to => Get.find();
 
-  late final Gbn gbn = Get.arguments?['gbn'] ?? Gbn.fd2;
+  late final Gbn gbn = Get.arguments?['gbn'];
   final searchFormKey = GlobalKey<FormBuilderState>();
 
   final _list = RxList<BioIo>();

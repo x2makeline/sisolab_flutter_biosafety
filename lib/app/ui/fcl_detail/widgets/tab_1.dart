@@ -1,24 +1,18 @@
-import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
-import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
-import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_checker_table.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_date_field.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_dropdown_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_related_person_table.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_date_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
-import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 import '../../../global/widgets/field_with_label.dart';
 
@@ -84,7 +78,7 @@ class Tab1 extends StatelessWidget {
                 shrinkWrap: true,
                 primary: false,
                 maxCrossAxisExtent: 300.w,
-                childAspectRatio: 200 / 56,
+                childAspectRatio: 200 / 100,
                 addAutomaticKeepAlives: false,
                 children: [
                   FormBuilderCheckbox(
@@ -145,15 +139,13 @@ class Tab1 extends StatelessWidget {
                 ],
               ),
               const SizedBox.shrink(),
-              Builder(
-                builder: (context) {
-                  return FclDateField(
-                    name: "d158",
-                    initialDate: vm.io.d158,
-                    label: "최초허가일",
-                  );
-                }
-              ),
+              Builder(builder: (context) {
+                return FclDateField(
+                  name: "d158",
+                  initialDate: vm.io.d158,
+                  label: "최초허가일",
+                );
+              }),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "취급동물",
@@ -267,47 +259,6 @@ class Tab1 extends StatelessWidget {
             height: 40.h,
           ),
           const FclCheckerTable(),
-          iff<Widget>(
-              vm.gbn == Gbn.fd1,
-              () => Column(
-                    children: [
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      const FclDivider.form(),
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      TightGridView(
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 40.w,
-                        mainAxisSpacing: 40.h,
-                        children: [
-                          FieldWithLabel(
-                              label: "점수합계",
-                              child: TextField(
-                                enabled: false,
-                                style: buttonTextStyle,
-                                decoration: textFieldDecoration.copyWith(
-                                    disabledBorder: textFieldDecoration.border,
-                                    filled: true,
-                                    fillColor: const Color(0xfff2f2f2),
-                                    hintText: "점수합계"),
-                              )),
-                          const EmptyBox(),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      FieldWithLabel(
-                          label: "총평",
-                          child: FormBuilderTextField(
-                            name: "d156",
-                            maxLines: 3,
-                          ))
-                    ],
-                  )).orElse(() => const EmptyBox())
         ],
       );
 }

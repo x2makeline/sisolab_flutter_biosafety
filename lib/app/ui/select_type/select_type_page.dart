@@ -32,8 +32,8 @@ class SelectTypePage extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Get.toNamed(AppRoutes.fclList.name
-                          .replaceFirst(RegExp(r'(:id)'), Gbn.fd2.name));
+                      Get.toNamed(AppRoutes.fclList.name,
+                          arguments: {'gbn': Gbn.fd2});
                     },
                     child: Container(
                       padding: EdgeInsets.all(100.sp),
@@ -65,8 +65,8 @@ class SelectTypePage extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.toNamed(AppRoutes.fclList.name
-                          .replaceFirst(RegExp(r'(:id)'), Gbn.fd1.name));
+                      Get.toNamed(AppRoutes.fclList.name,
+                          arguments: {'gbn': Gbn.fd1});
                     },
                     child: Container(
                       padding: EdgeInsets.all(100.sp),
@@ -98,8 +98,8 @@ class SelectTypePage extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.toNamed(AppRoutes.fclList.name
-                          .replaceFirst(RegExp(r'(:id)'), Gbn.fd3.name));
+                      Get.toNamed(AppRoutes.fclList.name,
+                          arguments: {'gbn': Gbn.fd3});
                     },
                     child: Container(
                       padding: EdgeInsets.all(100.sp),

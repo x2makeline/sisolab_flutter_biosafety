@@ -86,13 +86,20 @@ class ApiProvider with PLoggerMixin {
 //   result : 1 => 성공, -1 => 오류, -2 => 유효하지 않은 AccessToken 입니다, -3 => 권한이 없습니다
 //   message : 결과 메시지
   /// 현장점검 데이터 저장
-  Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async =>
-      ApiResponse<ProcFieldSaveOut>.fromJson(
+  Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
+    pLog.i("procFieldSave ${req.toJson()}");
+    pLog.i(req.gbn);
+    pLog.i(req.file1);
+    return ApiResponse<ProcFieldSaveOut>.fromJson(
         (await _dio.post("/api/procFieldSave.do",
                 data: FormData.fromMap(req.toJson())))
             .data,
-        fromJson: (data) => ProcFieldSaveOut.fromJson(data),
+        fromJson: (data) {
+          pLog.i(data);
+          return ProcFieldSaveOut.fromJson(data);
+        },
       );
+  }
 
   /// 현장점검 데이터 가져오기
   Future<ApiResponse<BioIo>> selectProcField(SelectProcFieldIn req) async =>

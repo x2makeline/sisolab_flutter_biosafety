@@ -15,6 +15,7 @@ class TokenVm extends GetxService with PLoggerMixin {
   @override
   void onInit() {
     super.onInit();
+    clear();
     _sync();
   }
 
@@ -30,6 +31,11 @@ class TokenVm extends GetxService with PLoggerMixin {
       await Pref.refreshToken.setValue(token.refreshToken);
     }
     _sync();
+  }
+
+  clear() {
+    Pref.accessToken.setValue();
+    Pref.refreshToken.setValue();
   }
 
   void _sync() {

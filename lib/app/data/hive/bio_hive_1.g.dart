@@ -40,55 +40,55 @@ class BioHive1Adapter extends TypeAdapter<BioHive1> {
       attNameTxt7: fields[20] as String?,
       attNameTxt8: fields[21] as String?,
       attNameTxt9: fields[22] as String?,
-      attfile10str: fields[23] as String?,
-      attfile11str: fields[24] as String?,
-      attfile12str: fields[25] as String?,
-      attfile13str: fields[26] as String?,
-      attfile14str: fields[27] as String?,
-      attfile15str: fields[28] as String?,
-      attfile16str: fields[29] as String?,
-      attfile17str: fields[30] as String?,
-      attfile18str: fields[31] as String?,
-      attfile19str: fields[32] as String?,
-      attfile1str: fields[33] as String?,
-      attfile20str: fields[34] as String?,
-      attfile21str: fields[35] as String?,
-      attfile22str: fields[36] as String?,
-      attfile23str: fields[37] as String?,
-      attfile24str: fields[38] as String?,
-      attfile25str: fields[39] as String?,
-      attfile26str: fields[40] as String?,
-      attfile27str: fields[41] as String?,
-      attfile28str: fields[42] as String?,
-      attfile29str: fields[43] as String?,
-      attfile2str: fields[44] as String?,
-      attfile30str: fields[45] as String?,
-      attfile31str: fields[46] as String?,
-      attfile32str: fields[47] as String?,
-      attfile33str: fields[48] as String?,
-      attfile34str: fields[49] as String?,
-      attfile35str: fields[50] as String?,
-      attfile36str: fields[51] as String?,
-      attfile37str: fields[52] as String?,
-      attfile38str: fields[53] as String?,
-      attfile39str: fields[54] as String?,
-      attfile3str: fields[55] as String?,
-      attfile40str: fields[56] as String?,
-      attfile41str: fields[57] as String?,
-      attfile42str: fields[58] as String?,
-      attfile43str: fields[59] as String?,
-      attfile44str: fields[60] as String?,
-      attfile45str: fields[61] as String?,
-      attfile46str: fields[62] as String?,
-      attfile47str: fields[63] as String?,
-      attfile48str: fields[64] as String?,
-      attfile49str: fields[65] as String?,
-      attfile4str: fields[66] as String?,
-      attfile5str: fields[67] as String?,
-      attfile6str: fields[68] as String?,
-      attfile7str: fields[69] as String?,
-      attfile8str: fields[70] as String?,
-      attfile9str: fields[71] as String?,
+      file10: fields[23] as String?,
+      file11: fields[24] as String?,
+      file12: fields[25] as String?,
+      file13: fields[26] as String?,
+      file14: fields[27] as String?,
+      file15: fields[28] as String?,
+      file16: fields[29] as String?,
+      file17: fields[30] as String?,
+      file18: fields[31] as String?,
+      file19: fields[32] as String?,
+      file1: fields[33] as String?,
+      file20: fields[34] as String?,
+      file21: fields[35] as String?,
+      file22: fields[36] as String?,
+      file23: fields[37] as String?,
+      file24: fields[38] as String?,
+      file25: fields[39] as String?,
+      file26: fields[40] as String?,
+      file27: fields[41] as String?,
+      file28: fields[42] as String?,
+      file29: fields[43] as String?,
+      file2: fields[44] as String?,
+      file30: fields[45] as String?,
+      file31: fields[46] as String?,
+      file32: fields[47] as String?,
+      file33: fields[48] as String?,
+      file34: fields[49] as String?,
+      file35: fields[50] as String?,
+      file36: fields[51] as String?,
+      file37: fields[52] as String?,
+      file38: fields[53] as String?,
+      file39: fields[54] as String?,
+      file3: fields[55] as String?,
+      file40: fields[56] as String?,
+      file41: fields[57] as String?,
+      file42: fields[58] as String?,
+      file43: fields[59] as String?,
+      file44: fields[60] as String?,
+      file45: fields[61] as String?,
+      file46: fields[62] as String?,
+      file47: fields[63] as String?,
+      file48: fields[64] as String?,
+      file49: fields[65] as String?,
+      file4: fields[66] as String?,
+      file5: fields[67] as String?,
+      file6: fields[68] as String?,
+      file7: fields[69] as String?,
+      file8: fields[70] as String?,
+      file9: fields[71] as String?,
     );
   }
 
@@ -143,103 +143,103 @@ class BioHive1Adapter extends TypeAdapter<BioHive1> {
       ..writeByte(22)
       ..write(obj.attNameTxt9)
       ..writeByte(23)
-      ..write(obj.attfile10str)
+      ..write(obj.file10)
       ..writeByte(24)
-      ..write(obj.attfile11str)
+      ..write(obj.file11)
       ..writeByte(25)
-      ..write(obj.attfile12str)
+      ..write(obj.file12)
       ..writeByte(26)
-      ..write(obj.attfile13str)
+      ..write(obj.file13)
       ..writeByte(27)
-      ..write(obj.attfile14str)
+      ..write(obj.file14)
       ..writeByte(28)
-      ..write(obj.attfile15str)
+      ..write(obj.file15)
       ..writeByte(29)
-      ..write(obj.attfile16str)
+      ..write(obj.file16)
       ..writeByte(30)
-      ..write(obj.attfile17str)
+      ..write(obj.file17)
       ..writeByte(31)
-      ..write(obj.attfile18str)
+      ..write(obj.file18)
       ..writeByte(32)
-      ..write(obj.attfile19str)
+      ..write(obj.file19)
       ..writeByte(33)
-      ..write(obj.attfile1str)
+      ..write(obj.file1)
       ..writeByte(34)
-      ..write(obj.attfile20str)
+      ..write(obj.file20)
       ..writeByte(35)
-      ..write(obj.attfile21str)
+      ..write(obj.file21)
       ..writeByte(36)
-      ..write(obj.attfile22str)
+      ..write(obj.file22)
       ..writeByte(37)
-      ..write(obj.attfile23str)
+      ..write(obj.file23)
       ..writeByte(38)
-      ..write(obj.attfile24str)
+      ..write(obj.file24)
       ..writeByte(39)
-      ..write(obj.attfile25str)
+      ..write(obj.file25)
       ..writeByte(40)
-      ..write(obj.attfile26str)
+      ..write(obj.file26)
       ..writeByte(41)
-      ..write(obj.attfile27str)
+      ..write(obj.file27)
       ..writeByte(42)
-      ..write(obj.attfile28str)
+      ..write(obj.file28)
       ..writeByte(43)
-      ..write(obj.attfile29str)
+      ..write(obj.file29)
       ..writeByte(44)
-      ..write(obj.attfile2str)
+      ..write(obj.file2)
       ..writeByte(45)
-      ..write(obj.attfile30str)
+      ..write(obj.file30)
       ..writeByte(46)
-      ..write(obj.attfile31str)
+      ..write(obj.file31)
       ..writeByte(47)
-      ..write(obj.attfile32str)
+      ..write(obj.file32)
       ..writeByte(48)
-      ..write(obj.attfile33str)
+      ..write(obj.file33)
       ..writeByte(49)
-      ..write(obj.attfile34str)
+      ..write(obj.file34)
       ..writeByte(50)
-      ..write(obj.attfile35str)
+      ..write(obj.file35)
       ..writeByte(51)
-      ..write(obj.attfile36str)
+      ..write(obj.file36)
       ..writeByte(52)
-      ..write(obj.attfile37str)
+      ..write(obj.file37)
       ..writeByte(53)
-      ..write(obj.attfile38str)
+      ..write(obj.file38)
       ..writeByte(54)
-      ..write(obj.attfile39str)
+      ..write(obj.file39)
       ..writeByte(55)
-      ..write(obj.attfile3str)
+      ..write(obj.file3)
       ..writeByte(56)
-      ..write(obj.attfile40str)
+      ..write(obj.file40)
       ..writeByte(57)
-      ..write(obj.attfile41str)
+      ..write(obj.file41)
       ..writeByte(58)
-      ..write(obj.attfile42str)
+      ..write(obj.file42)
       ..writeByte(59)
-      ..write(obj.attfile43str)
+      ..write(obj.file43)
       ..writeByte(60)
-      ..write(obj.attfile44str)
+      ..write(obj.file44)
       ..writeByte(61)
-      ..write(obj.attfile45str)
+      ..write(obj.file45)
       ..writeByte(62)
-      ..write(obj.attfile46str)
+      ..write(obj.file46)
       ..writeByte(63)
-      ..write(obj.attfile47str)
+      ..write(obj.file47)
       ..writeByte(64)
-      ..write(obj.attfile48str)
+      ..write(obj.file48)
       ..writeByte(65)
-      ..write(obj.attfile49str)
+      ..write(obj.file49)
       ..writeByte(66)
-      ..write(obj.attfile4str)
+      ..write(obj.file4)
       ..writeByte(67)
-      ..write(obj.attfile5str)
+      ..write(obj.file5)
       ..writeByte(68)
-      ..write(obj.attfile6str)
+      ..write(obj.file6)
       ..writeByte(69)
-      ..write(obj.attfile7str)
+      ..write(obj.file7)
       ..writeByte(70)
-      ..write(obj.attfile8str)
+      ..write(obj.file8)
       ..writeByte(71)
-      ..write(obj.attfile9str);
+      ..write(obj.file9);
   }
 
   @override

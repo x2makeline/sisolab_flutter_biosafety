@@ -29,75 +29,75 @@ class SelectProc {
   @JsonKey(name: "print_submit_dt")
   String? printSubmitDt;
 
-  String? attfile1str;
-  String? attfile2str;
-  String? attfile3str;
-  String? attfile4str;
-  String? attfile5str;
-  String? attfile6str;
-  String? attfile7str;
-  String? attfile8str;
-  String? attfile9str;
-  String? attfile10str;
-  String? attfile11str;
-  String? attfile12str;
-  String? attfile13str;
-  String? attfile14str;
-  String? attfile15str;
-  String? attfile16str;
-  String? attfile17str;
-  String? attfile18str;
-  String? attfile19str;
-  String? attfile20str;
-  String? attfile21str;
-  String? attfile22str;
-  String? attfile23str;
-  String? attfile24str;
-  String? attfile25str;
-  String? attfile26str;
-  String? attfile27str;
-  String? attfile28str;
-  String? attfile29str;
-  String? attfile30str;
-  String? attfile31str;
-  String? attfile32str;
-  String? attfile33str;
-  String? attfile34str;
-  String? attfile35str;
-  String? attfile36str;
-  String? attfile37str;
-  String? attfile38str;
-  String? attfile39str;
-  String? attfile40str;
-  String? attfile41str;
-  String? attfile42str;
-  String? attfile43str;
-  String? attfile44str;
-  String? attfile45str;
-  String? attfile46str;
-  String? attfile47str;
-  String? attfile48str;
-  String? attfile49str;
-  String? attfile50str;
-  String? attfile51str;
-  String? attfile52str;
-  String? attfile53str;
-  String? attfile54str;
-  String? attfile55str;
-  String? attfile56str;
-  String? attfile57str;
-  String? attfile58str;
-  String? attfile59str;
-  String? attfile60str;
-  String? attfile61str;
-  String? attfile62str;
-  String? attfile63str;
-  String? attfile64str;
-  String? attfile65str;
-  String? attfile66str;
-  String? attfile67str;
-  String? attfile68str;
-  String? attfile69str;
+  String? file1;
+  String? file2;
+  String? file3;
+  String? file4;
+  String? file5;
+  String? file6;
+  String? file7;
+  String? file8;
+  String? file9;
+  String? file10;
+  String? file11;
+  String? file12;
+  String? file13;
+  String? file14;
+  String? file15;
+  String? file16;
+  String? file17;
+  String? file18;
+  String? file19;
+  String? file20;
+  String? file21;
+  String? file22;
+  String? file23;
+  String? file24;
+  String? file25;
+  String? file26;
+  String? file27;
+  String? file28;
+  String? file29;
+  String? file30;
+  String? file31;
+  String? file32;
+  String? file33;
+  String? file34;
+  String? file35;
+  String? file36;
+  String? file37;
+  String? file38;
+  String? file39;
+  String? file40;
+  String? file41;
+  String? file42;
+  String? file43;
+  String? file44;
+  String? file45;
+  String? file46;
+  String? file47;
+  String? file48;
+  String? file49;
+  String? file50;
+  String? file51;
+  String? file52;
+  String? file53;
+  String? file54;
+  String? file55;
+  String? file56;
+  String? file57;
+  String? file58;
+  String? file59;
+  String? file60;
+  String? file61;
+  String? file62;
+  String? file63;
+  String? file64;
+  String? file65;
+  String? file66;
+  String? file67;
+  String? file68;
+  String? file69;
   @JsonKey(name: "att_name_txt_1")
   String? attNameTxt1;
   @JsonKey(name: "att_name_txt_2")
@@ -173,75 +173,75 @@ class SelectProc {
     this.attNameTxt18,
     this.attNameTxt19,
     this.attNameTxt20,
-    this.attfile1str,
-    this.attfile2str,
-    this.attfile3str,
-    this.attfile4str,
-    this.attfile5str,
-    this.attfile6str,
-    this.attfile7str,
-    this.attfile8str,
-    this.attfile9str,
-    this.attfile10str,
-    this.attfile11str,
-    this.attfile12str,
-    this.attfile13str,
-    this.attfile14str,
-    this.attfile15str,
-    this.attfile16str,
-    this.attfile17str,
-    this.attfile18str,
-    this.attfile19str,
-    this.attfile20str,
-    this.attfile21str,
-    this.attfile22str,
-    this.attfile23str,
-    this.attfile24str,
-    this.attfile25str,
-    this.attfile26str,
-    this.attfile27str,
-    this.attfile28str,
-    this.attfile29str,
-    this.attfile30str,
-    this.attfile31str,
-    this.attfile32str,
-    this.attfile33str,
-    this.attfile34str,
-    this.attfile35str,
-    this.attfile36str,
-    this.attfile37str,
-    this.attfile38str,
-    this.attfile39str,
-    this.attfile40str,
-    this.attfile41str,
-    this.attfile42str,
-    this.attfile43str,
-    this.attfile44str,
-    this.attfile45str,
-    this.attfile46str,
-    this.attfile47str,
-    this.attfile48str,
-    this.attfile49str,
-    this.attfile50str,
-    this.attfile51str,
-    this.attfile52str,
-    this.attfile53str,
-    this.attfile54str,
-    this.attfile55str,
-    this.attfile56str,
-    this.attfile57str,
-    this.attfile58str,
-    this.attfile59str,
-    this.attfile60str,
-    this.attfile61str,
-    this.attfile62str,
-    this.attfile63str,
-    this.attfile64str,
-    this.attfile65str,
-    this.attfile66str,
-    this.attfile67str,
-    this.attfile68str,
-    this.attfile69str,
+    this.file1,
+    this.file2,
+    this.file3,
+    this.file4,
+    this.file5,
+    this.file6,
+    this.file7,
+    this.file8,
+    this.file9,
+    this.file10,
+    this.file11,
+    this.file12,
+    this.file13,
+    this.file14,
+    this.file15,
+    this.file16,
+    this.file17,
+    this.file18,
+    this.file19,
+    this.file20,
+    this.file21,
+    this.file22,
+    this.file23,
+    this.file24,
+    this.file25,
+    this.file26,
+    this.file27,
+    this.file28,
+    this.file29,
+    this.file30,
+    this.file31,
+    this.file32,
+    this.file33,
+    this.file34,
+    this.file35,
+    this.file36,
+    this.file37,
+    this.file38,
+    this.file39,
+    this.file40,
+    this.file41,
+    this.file42,
+    this.file43,
+    this.file44,
+    this.file45,
+    this.file46,
+    this.file47,
+    this.file48,
+    this.file49,
+    this.file50,
+    this.file51,
+    this.file52,
+    this.file53,
+    this.file54,
+    this.file55,
+    this.file56,
+    this.file57,
+    this.file58,
+    this.file59,
+    this.file60,
+    this.file61,
+    this.file62,
+    this.file63,
+    this.file64,
+    this.file65,
+    this.file66,
+    this.file67,
+    this.file68,
+    this.file69,
   });
 
   factory SelectProc.fromJson(Map<String, dynamic> json) =>

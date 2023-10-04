@@ -54,7 +54,7 @@ class Constant {
 const yesOrNoMap = {"예": "예", "아니오": "아니오", "해당없음": "해당없음"};
 const yesOrNoNumMap = {"1": "네", "2": "아니오", "3": "해당없음"};
 const yesOrNoNumMap2 = {"1": "네", "2": "아니오"};
-const yesOrNoMap2 = {"예": "예", "아니오": "아니오", "해당없음": "해당없음", "4": "4"};
+const yesOrNoMap2 = {"예": "예", "아니오": "아니오", "해당없음": "해당없음"};
 const passOrNaMap = {
   "Pass": "Pass",
   "Fail": "Fail",

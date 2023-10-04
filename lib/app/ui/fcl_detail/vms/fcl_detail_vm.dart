@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartlin/control_flow.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ import 'package:sisolab_flutter_biosafety/core/providers/hive_provider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/functions.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
+import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
 class FclDetailVm extends GetxController with PLoggerMixin {
   static FclDetailVm get to => Get.find();
@@ -117,8 +119,13 @@ class FclDetailVm extends GetxController with PLoggerMixin {
             }
             await FclListPageVm.to.submit();
 
+
             Get.back();
+            Get.until((route) => Get.currentRoute == AppRoutes.fclList.name);
             Get.snackbar("메세지", "저장되었습니다.");
+            // if(Get.context != null) {
+            //   Navigator.pop(Get.context!);
+            // }
           }
         });
       } on DioException catch (e) {

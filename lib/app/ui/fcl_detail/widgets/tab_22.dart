@@ -42,22 +42,22 @@ class Tab22 extends StatelessWidget {
           ),
           const FclDivider.black(),
           Obx(() => FclFieldView(
-                  label: '2.1) 주출입구 잠금장치 및 보안장치가 적절히 설치‧운영되고 있는가?',
+                  label: '2.1) 손소독기가 적절히 운영되는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file9', initialValue: vm.io.file9),
+                    FclImageField(name: 'file9', initialValue: vm.io.file9),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
                         name: 'd9',
                         map: const {
-                          "5": "주출입구 잠금장치가 설치되어 있지 않으며 CCTV가 설치되지 않은 실험실이 존재함.",
-                          "3": "주출입구 잠금장치가 설치되어 있으며 CCTV가 설치되지 않은 실험실이 존재함.",
+                          "3":
+                              "실험실(전실 포함)과 공용구역(복도, 탈의전실)에 모두 손소독기가 설치되어있고 모두 정상 작동",
+                          "2":
+                              "실험실(전실 포함)과 공용구역(복도, 탈의전실)에 모두 손소독기가 설치되어있으나 일부 작동 불량",
                           "1":
-                              "주출입구 잠금장치가 설치되어 있으며 모든 실험실에 CCTV가 설치됨. CCTV 영상자료의 3개월치 저장이 불가능함.",
-                          "0":
-                              "주출입구 잠금장치가 설치되어 있으며 모든 실험실에 CCTV가 설치됨. CCTV 영상자료의 3개월치 저장이 가능함."
+                              "실험실(전실 포함) 내 손소독기가 설치되어있지 않으나 공용구역(복도, 탈의전실)에 설치",
+                          "0": "밀폐구역내 손소독기 미설치"
                         },
                         preValue: vm.preData?.d9,
                         initialValue: vm.io.d9),
@@ -67,20 +67,18 @@ class Tab22 extends StatelessWidget {
                         preValue: vm.preData?.d98)
                   ])),
           Obx(() => FclFieldView(
-                  label: '2.2) 주출입구 잠금장치 및 보안장치가 적절히 설치‧운영되고 있는가?',
+                  label: '2.2) 눈세척기가 적절히 운영되는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file10', initialValue: vm.io.file10),
+                    FclImageField(name: 'file10', initialValue: vm.io.file10),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
                         name: 'd10',
                         map: const {
-                          "2": "주출입구 잠금장치가 설치되어 있지 않으며 CCTV가 설치되지 않은 실험실이 존재함.",
-                          "1": "주출입구 잠금장치가 설치되어 있으며 CCTV가 설치되지 않은 실험실이 존재함.",
-                          "0":
-                              "주출입구 잠금장치가 설치되어 있으며 모든 실험실에 CCTV가 설치됨. CCTV 영상자료의 3개월치 저장이 불가능함.",
+                          "2": "밀폐구역내 눈세척기가 설치되어있고 모두 정상 작동",
+                          "1": "밀폐구역내 눈세척기가 설치되어있으나 일부 작동 불량",
+                          "0": "밀폐구역내 눈세척기 미설치",
                         },
                         preValue: vm.preData?.d10,
                         initialValue: vm.io.d10),
@@ -93,8 +91,7 @@ class Tab22 extends StatelessWidget {
                   label: '2.3) 패스박스 작동상태가 적합한가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file11', initialValue: vm.io.file11),
+                    FclImageField(name: 'file11', initialValue: vm.io.file11),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -116,8 +113,7 @@ class Tab22 extends StatelessWidget {
                   label: '2.4) 멸균기 작동(BI 테스트 포함)상태가 적합한가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file12', initialValue: vm.io.file12),
+                    FclImageField(name: 'file12', initialValue: vm.io.file12),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -140,8 +136,7 @@ class Tab22 extends StatelessWidget {
               desc: const ['※ 적정유입풍속 : 0.5 ± 0.025 m/s'],
               preYn: vm.pastYearYn,
               fieldList: [
-                FclImageField(
-                    name: 'file13', initialValue: vm.io.file13),
+                FclImageField(name: 'file13', initialValue: vm.io.file13),
                 FclRadioField(
                     orientation: OptionsOrientation.vertical,
                     labelWithKey: true,
@@ -163,8 +158,7 @@ class Tab22 extends StatelessWidget {
                   label: '동물) 동물실은 외부와의 최소음압 70 Pa을 유지하는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file14', initialValue: vm.io.file14),
+                    FclImageField(name: 'file14', initialValue: vm.io.file14),
                     FclRadioField(
                         name: 'd14',
                         map: passOrNaMap,
@@ -179,8 +173,7 @@ class Tab22 extends StatelessWidget {
                   label: '대량) 멸균조작이 가능한 배양장치 설치 및 정기적으로 밀페도 검사를 실시하는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file15', initialValue: vm.io.file15),
+                    FclImageField(name: 'file15', initialValue: vm.io.file15),
                     FclRadioField(
                         name: 'd15',
                         map: passOrNaMap,
@@ -197,8 +190,7 @@ class Tab22 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file16', initialValue: vm.io.file16),
+                    FclImageField(name: 'file16', initialValue: vm.io.file16),
                     FclRadioField(
                         name: 'd16',
                         map: passOrNaMap,

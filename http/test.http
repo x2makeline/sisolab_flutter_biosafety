@@ -1,3 +1,34 @@
 
 GET http://125.6.37.38/compList.do?obj=company&keyword=%E3%85%8F
 Content-Type: application/json
+
+
+###
+GET http://125.6.37.38:9090/api/login.do?userid=dongwon&passwd=dongwon123%21
+
+Access_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiMjEiLCJ0eXBlIjoiQWNjZXNzX1Rva2VuIiwiZXhwIjoxNjk2NTI0MzQ5LCJ1c2VySWQiOiJkb25nd29uIiwiaWF0IjoxNjk2NDk5MTQ5fQ.Vax6DmUssaBDQXUNECUJY9Ed6oGn1yf3UKnRD10r8o4
+Refresh_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiMjEiLCJ0eXBlIjoiUmVmcmVzaF9Ub2tlbiIsImV4cCI6MTY5NjUyNDM0OSwidXNlcklkIjoiZG9uZ3dvbiIsImlhdCI6MTY5NjQ5OTE0OX0.Bk2Nwr1hlTmbdgjoHWb7pADgtj1CfXhNKQD0atBTrJM
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 05 Oct 2023 09:45:49 GMT
+Keep-Alive: timeout=20
+Connection: keep-alive
+###
+###
+POST http://125.6.37.38:9090/api/procFieldSave.do
+Content-Type: application/json
+Access_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
+
+{
+  "gbn": "fd2",
+  "company":"1",
+  "d1" : "sdfsdfsd",
+  "d184" : "1"
+}
+
+###
+{
+  "result": "-1",
+  "message": "오류가 발생하였습니다."
+}
+

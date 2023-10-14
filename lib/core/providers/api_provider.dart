@@ -92,7 +92,7 @@ class ApiProvider with PLoggerMixin {
     pLog.i(req.file1);
     return ApiResponse<ProcFieldSaveOut>.fromJson(
         (await _dio.post("/api/procFieldSave.do",
-                data: FormData.fromMap(req.toJson())))
+                data: req.toJson()))
             .data,
         fromJson: (data) {
           pLog.i(data);

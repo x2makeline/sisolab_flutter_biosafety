@@ -40,8 +40,12 @@ class Tab11 extends StatelessWidget {
           ),
           const FclDivider.black(),
           Obx(() => FclFieldView(
-                desc: const ["- 폐기물 처리대장 보유", "- 폐기물 처리대장 현행화"],
-                label: "7.1) 폐수 및 폐기물 처리기록이 적절히 유지되는가?",
+                desc: const [
+                  "- IBC 구성됨",
+                  "- 생물안전관리책임자 및 생물안전관리자 지정",
+                  "- 교육이수 여부 확인(지정요건 충족여부)"
+                ],
+                label: "7.1) IBC 구성 및 생물안전관리책임자 지정이 적절한가?",
                 lastDividerYn: false,
                 fieldList: [
                   FclImageField(

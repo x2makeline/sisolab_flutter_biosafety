@@ -126,7 +126,7 @@ class FclFieldView extends StatelessWidget {
         ),
         decoration: InputDecoration(
             hintText: field.hintText ?? "관련 내용을 입력해주세요.",
-            constraints: BoxConstraints()),
+            constraints: const BoxConstraints()),
       );
 
   Widget text(FclTextField2 field) => FormBuilderTextField(
@@ -134,9 +134,10 @@ class FclFieldView extends StatelessWidget {
         enabled: field.enabled ?? true,
         name: field.name,
         decoration: when(field.suffixType, {
-              TextSuffixType.count: () => const InputDecoration(
-                    suffixText: "명",
-                  )
+              TextSuffixType.count: () =>  InputDecoration(
+                  suffixIcon: Padding(padding: EdgeInsets.all(20.sp),child: const Text('명'),),
+
+        )
             }) ??
             const InputDecoration(),
       );

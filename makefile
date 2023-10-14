@@ -56,6 +56,9 @@ env.stage:
 env.live:
 	sort -u -t '=' -k 1,1 .env.common .env.live > .env
 
+apk.build:
+	flutter build apk --release --no-tree-shake-icons
+
 # 기본 타겟 설정 (빌드 및 실행)
 .DEFAULT_GOAL := dev
 

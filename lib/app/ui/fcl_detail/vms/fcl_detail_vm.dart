@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartlin/control_flow.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -119,7 +118,6 @@ class FclDetailVm extends GetxController with PLoggerMixin {
             }
             await FclListPageVm.to.submit();
 
-
             Get.back();
             Get.until((route) => Get.currentRoute == AppRoutes.fclList.name);
             Get.snackbar("메세지", "저장되었습니다.");
@@ -164,7 +162,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     Get.back();
   }
 
-  BioIo submit({BioIo? inputIo}) {
+  BioIo submit() {
     formKey.currentState!.save();
     final bioJson = {
       "gbn": gbn.name,
@@ -181,12 +179,21 @@ class FclDetailVm extends GetxController with PLoggerMixin {
           }
         }
         return MapEntry(key, value);
+      }).let((it) {
+        it["d75"] =
+            (it["d75_1"] == "Y" ? "1" : "") + (it["d75_2"] == "Y" ? "2" : "");
+
+        return it;
       })).toJson()
         ..removeWhere((key, value) => value == null)
     };
-    final bio = inputIo ?? BioIo.fromJson(bioJson);
 
-    return bio;
+    print('bioJson["d75_1"]');
+    print(bioJson["d75_1"]);
+    print('bioJson["d75_2"]');
+    print(bioJson["d75_2"]);
+
+    return BioIo.fromJson(bioJson);
   }
 
   @override

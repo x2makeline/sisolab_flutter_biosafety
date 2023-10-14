@@ -1,13 +1,14 @@
+import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_checker_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_date_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_dropdown_field.dart';
-import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_related_person_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
@@ -16,11 +17,26 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_betwe
 
 import '../../../global/widgets/field_with_label.dart';
 
-/// 점검개요
-class Tab1 extends StatelessWidget {
-  const Tab1({super.key});
+class Tab1 extends StatefulWidget {
+  const Tab1({Key? key}) : super(key: key);
 
+  @override
+  State<Tab1> createState() => _Tab1State();
+}
+
+class _Tab1State extends State<Tab1> {
   FclDetailVm get vm => FclDetailVm.to;
+  final d75_1 = false.obs;
+  final d75_2 = false.obs;
+
+  @override
+  void initState() {
+    super.initState();
+
+    print(vm.io.d75);
+    d75_1.value = vm.io.d75 != null && vm.io.d75!.contains("1");
+    d75_2.value = vm.io.d75 != null && vm.io.d75!.contains("2");
+  }
 
   @override
   Widget build(BuildContext context) => Column(
@@ -110,42 +126,69 @@ class Tab1 extends StatelessWidget {
               ),
             ),
           ),
-          FclRadioGroup(
-              labelWithKey: false,
-              orientation: OptionsOrientation.wrap,
-              map: const {"1": "신규허가", "2": "재확인"},
-              initialValue: vm.io.d73,
-              name: "d73"),
-          FclRadioGroup(
-              labelWithKey: false,
-              orientation: OptionsOrientation.wrap,
-              map: const {"1": "유전자변형생물체", "2": "고위험병원체"},
-              initialValue: vm.io.d75,
-              name: "d75"),
+          TightGridView(
+              crossAxisCount: 2,
+              crossAxisSpacing: 40.w,
+              mainAxisSpacing: 40.h,
+              children: [
+                FormBuilderCheckbox(
+                  name: "d75_1",
+
+                  initialValue: d75_1.value,
+                  onChanged: (v) {
+                    v?.let((v) => d75_1.value = v);
+                  },
+                  title: Text("유전자변형생물체", style: context.textTheme.titleMedium),
+                ),
+                const EmptyBox(),
+                Obx(() => FclTextField(
+                      enabled: d75_1.value,
+                      onSubmitted: (_) => vm.submit(),
+                      hintText: "허가번호",
+                      name: "d157",
+                      initialValue: vm.io.d157,
+                      label: "허가번호",
+                    )),
+                Builder(
+                    builder: (context) => Obx(() => FclDateField(
+                          enabled: d75_1.value,
+                          name: "d158",
+                          initialDate: vm.io.d158,
+                          label: "최초허가일",
+                        ))),
+                FormBuilderCheckbox(
+                  name: "d75_2",
+                  initialValue: d75_2.value,
+                  onChanged: (v) {
+                    v?.let((v) => d75_2.value = v);
+                  },
+                  title: Text("고위험병원체", style: context.textTheme.titleMedium),
+                ),
+                const EmptyBox(),
+                Obx(() => FclTextField(
+                      enabled: d75_2.value,
+                      onSubmitted: (_) => vm.submit(),
+                      hintText: "허가번호",
+                      name: "d281",
+                      initialValue: vm.io.d281,
+                      label: "허가번호",
+                    )),
+                Builder(
+                    builder: (context) => Obx(() => FclDateField(
+                          enabled: d75_2.value,
+                          name: "d197",
+                          initialDate: vm.io.d197,
+                          label: "최초허가일",
+                        )))
+              ]),
+          SizedBox(
+            height: 40.h,
+          ),
           TightGridView(
             crossAxisCount: 2,
             crossAxisSpacing: 40.w,
             mainAxisSpacing: 40.h,
             children: [
-              Column(
-                children: [
-                  FclTextField(
-                    onSubmitted: (_) => vm.submit(),
-                    hintText: "허가번호",
-                    name: "d157",
-                    initialValue: vm.io.d157,
-                    label: "허가번호",
-                  )
-                ],
-              ),
-              const SizedBox.shrink(),
-              Builder(builder: (context) {
-                return FclDateField(
-                  name: "d158",
-                  initialDate: vm.io.d158,
-                  label: "최초허가일",
-                );
-              }),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "취급동물",
@@ -183,9 +226,25 @@ class Tab1 extends StatelessWidget {
                     "교육기관": "교육기관",
                     "민간기관": "민간기관",
                     "의료기관": "의료기관"
-                  })
+                  }),
             ],
           ),
+          SizedBox(
+            height: 20.h,
+          ),
+          FieldWithLabel(
+              label: "변경신고 확인",
+              child: FormBuilderTextField(
+                name: "d196",
+                maxLines: 3,
+                initialValue: vm.io.d196,
+                keyboardType: TextInputType.multiline,
+                style: TextStyle(
+                  fontSize: 28.sp,
+                ),
+                decoration:
+                    const InputDecoration(constraints: BoxConstraints()),
+              )),
           SizedBox(
             height: 47.h,
           ),

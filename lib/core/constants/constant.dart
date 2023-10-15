@@ -1,3 +1,4 @@
+import 'package:sisolab_flutter_biosafety/app/data/models/company_autocomplete.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/fcl_tab.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_1.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/widgets/tab_10.dart';
@@ -109,4 +110,138 @@ final List<FclTab> riskTabList = [
   FclTab(title: "운송 보안", body: const Tab35()),
   FclTab(title: "실험실 안전관리에 관한 사항", body: const Tab36()),
   FclTab(title: "종합평가", body: const Tab37()),
+];
+
+final List<CompanyAutocomplete> companyAutocompleteList = [
+  CompanyAutocomplete(
+      company: "충남대학교",
+      d184: "수의과대학",
+      d280: "BL3",
+      d157: "제KCDC-08-3-03호",
+      d281: "제KCDC-HP-08-3-03호"),
+  CompanyAutocomplete(
+      company: "건국대학교",
+      d184: "생물안전위원회(의과대학) 5층",
+      d280: "BL3",
+      d157: "제KCDC-09-3-01호",
+      d281: "제KCDC-HP-09-3-01호"),
+  CompanyAutocomplete(
+      company: "(재)한국파스퇴르연구소",
+      d184: "생물안전팀",
+      d280: "BL3",
+      d157: "제KCDC-09-3-03호",
+      d281: "제KCDC-HP-09-3-03호"),
+  CompanyAutocomplete(
+    company: "제주특별자치도동물위생시험소",
+    d184: "방역진단과",
+    d280: "BL3",
+    d157: "제KCDC-09-3-04호",
+  ),
+  CompanyAutocomplete(
+      company: "국제백신연구소",
+      d280: "BL3",
+      d157: "제KCDC-09-3-05호",
+      d281: "제KCDC-HP-09-3-05호"),
+  CompanyAutocomplete(
+      company: "서울대학교병원",
+      d184: "실험안전실(전임상실험부)",
+      d280: "BL3",
+      d157: "제KCDC-09-3-06호",
+      d281: "제KCDC-HP-09-3-06호"),
+  CompanyAutocomplete(
+      company: "서울대학교",
+      d184: "실험안전실(전임상실험부)",
+      d280: "BL3",
+      d157: "제KCDC-09-3-08호",
+      d281: "제KCDC-HP-09-3-08호"),
+  CompanyAutocomplete(
+      company: "울산광역시보건환경연구원 동물위생시험소a",
+      // d184: "실험안전실(전임상실험부)",
+      d280: "BL3",
+      // d157: "제KCDC-09-3-08호",
+      d281: "제KCDC-HP-10-3-02호"),
+  CompanyAutocomplete(
+      company: "전라북도보건환경연구원",
+      // d184: "실험안전실(전임상실험부)",
+      d280: "BL3",
+      // d157: "제KCDC-09-3-08호",
+      d281: "제KCDC-HP-10-3-03호"),
+  CompanyAutocomplete(
+    company: "경상북도동물위생시험소",
+    // d184: "실험안전실(전임상실험부)",
+    d280: "BL3",
+    d157: "제KCDC-10-3-04호",
+    // d281: "제KCDC-HP-10-3-03호"
+  ),
+  CompanyAutocomplete(
+      company: "건국대학교",
+      d184: "생물안전위원회 8층(실험동물연구센터)",
+      d280: "BL3",
+      d157: "제KCDC-10-3-06호",
+      d281: "제KCDC-HP-10-3-06호"),
+  CompanyAutocomplete(
+      company: "경상남도동물위생시험소(본소)",
+      // d184: "생물안전위원회 8층(실험동물연구센터)",
+      d280: "BL3",
+      // d157: "제KCDC-10-3-04호",
+      d281: "제KCDC-HP-10-3-07호"),
+  CompanyAutocomplete(
+      company: "국군화생방방호사령부 화생방방어연구소a",
+      d184: "생물분석과",
+      d280: "BL3",
+      d157: "제KCDC-10-3-08호",
+      d281: "제KCDC-HP-10-3-08호"),
+  CompanyAutocomplete(
+    company: "충청남도동물위생시험소",
+    // d184: "생물분석과",
+    d280: "BL3",
+    d157: "제KCDC-11-3-02호",
+    // d281: "제KCDC-HP-10-3-08호"
+  ),
+  CompanyAutocomplete(
+      company: "전라남도동물위생시험소",
+      // d184: "생물분석과",
+      d280: "BL3",
+      // d157: "제KCDC-11-3-04호",
+      d281: "제KCDC-HP-11-3-04호"),
+  CompanyAutocomplete(
+    company: "식품의약품안전처",
+    d184: "백신검정과",
+    d280: "BL3",
+    d157: "제KCDC-11-3-05호",
+    // d281: "제KCDC-HP-11-3-05호"
+  ),
+  CompanyAutocomplete(
+      company: "질병관리청",
+      d184: "생물안전평가과 4동",
+      d280: "BL3",
+      d157: "제KCDC-11-3-06호",
+      d281: "제KCDC-HP-11-3-06호"),
+  CompanyAutocomplete(
+      company: "서울특별시보건환경연구원",
+      // d184: "생물안전평가과 4동",
+      d280: "BL3",
+      // d157: "제KCDC-11-3-06호",
+      d281: "제KCDC-HP-11-3-07호"),
+  CompanyAutocomplete(
+    company: "강원도동물위생시험소",
+    // d184: "생물안전평가과 4동",
+    d280: "BL3",
+    d157: "제KCDC-11-3-09호",
+    // d281: "제KCDC-HP-11-3-07호"
+  ),
+  CompanyAutocomplete(
+      company: "질병관리청 호남권질병대응센터",
+      // d184: "생물안전평가과 4동",
+      d280: "BL3",
+      // d157: "제KCDC-11-3-09호",
+      d281: "제KCDC-HP-11-3-11호"),
+  CompanyAutocomplete(
+      company: "전라북도동물위생시험소(본소)",
+      // d184: "생물안전평가과 4동",
+      d280: "BL3",
+      d157: "제KCDC-11-3-12호",
+      // d281: "제KCDC-HP-11-3-11호"
+  )
+
 ];

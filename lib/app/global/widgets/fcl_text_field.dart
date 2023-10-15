@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:sisolab_flutter_biosafety/app/global/decorations/input_decoration.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
@@ -14,6 +15,8 @@ class FclTextField extends FclField {
       super.label,
       void Function(String?)? onSubmitted,
       String? hintText,
+      TextEditingController? textEditingController,
+      FocusNode? focusNode,
       bool enabled = true,
       required super.name})
       : super(
@@ -21,6 +24,8 @@ class FclTextField extends FclField {
             builder: () => FormBuilderTextField(
                   enabled: enabled,
                   name: name,
+                  focusNode: focusNode,
+                  controller: textEditingController,
                   onSubmitted: onSubmitted,
                   initialValue: initialValue,
                   style: buttonTextStyle,

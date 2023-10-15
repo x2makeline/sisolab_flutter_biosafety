@@ -13,6 +13,7 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_related_person_
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
+import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 
 import '../../../global/widgets/field_with_label.dart';
@@ -29,11 +30,15 @@ class _Tab1State extends State<Tab1> {
   final d75_1 = false.obs;
   final d75_2 = false.obs;
 
+  final d184Controller = TextEditingController();
+  final d280Controller = TextEditingController();
+  final d157Controller = TextEditingController();
+  final d281Controller = TextEditingController();
+
   @override
   void initState() {
     super.initState();
 
-    print(vm.io.d75);
     d75_1.value = vm.io.d75 != null && vm.io.d75!.contains("1");
     d75_2.value = vm.io.d75 != null && vm.io.d75!.contains("2");
   }
@@ -56,17 +61,56 @@ class _Tab1State extends State<Tab1> {
             crossAxisSpacing: 40.w,
             mainAxisSpacing: 40.h,
             children: [
-              FclTextField(
-                onSubmitted: (_) => vm.submit(),
-                hintText: "운영기관명",
-                name: "company",
-                initialValue: vm.io.company,
-                label: "운영기관명",
+              Autocomplete(
+                onSelected: (value) {
+                  companyAutocompleteList
+                      .indexWhere((v) => v.company == value)
+                      .let((it) {
+                    if (it > -1) {
+                      final company = companyAutocompleteList.elementAt(it);
+
+                      company.d184?.let((it) => d184Controller.text = it);
+                      company.d280?.let((it) {
+                        d280Controller.text = it;
+                      });
+                      company.d157?.let((it) {
+                        d157Controller.text = it;
+                        vm.formKey.currentState?.fields["d75_1"]
+                            ?.didChange(true);
+                      });
+                      company.d281?.let((it) {
+                        d281Controller.text = it;
+                        vm.formKey.currentState?.fields["d75_2"]
+                            ?.didChange(true);
+                      });
+                      setState(() {});
+                    }
+                  });
+                },
+                optionsBuilder: (textEditingValue) =>
+                    textEditingValue.text.isNotEmpty
+                        ? companyAutocompleteList
+                            .where((element) =>
+                                element.company.contains(textEditingValue.text))
+                            .map((e) => e.company)
+                        : const Iterable<String>.empty(),
+                fieldViewBuilder: (_, controller, focusNode, onFieldSubmitted) {
+                  return FclTextField(
+                    focusNode: focusNode,
+                    textEditingController: controller,
+                    onSubmitted: (_) => vm.submit(),
+                    hintText: "운영기관명",
+                    name: "company",
+                    initialValue: vm.io.company,
+                    label: "운영기관명",
+                  );
+                },
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "설치 ∙ 운영 장소",
                 name: "d184",
+                textEditingController: d184Controller,
                 initialValue: vm.io.d184,
                 label: "설치 ∙ 운영 장소",
               ),
@@ -74,6 +118,7 @@ class _Tab1State extends State<Tab1> {
                 onSubmitted: (_) => vm.submit(),
                 hintText: "안전관리등급",
                 name: "d280",
+                textEditingController: d280Controller,
                 initialValue: vm.io.d280,
                 label: "안전관리등급",
               ),
@@ -133,7 +178,6 @@ class _Tab1State extends State<Tab1> {
               children: [
                 FormBuilderCheckbox(
                   name: "d75_1",
-
                   initialValue: d75_1.value,
                   onChanged: (v) {
                     v?.let((v) => d75_1.value = v);
@@ -146,6 +190,7 @@ class _Tab1State extends State<Tab1> {
                       onSubmitted: (_) => vm.submit(),
                       hintText: "허가번호",
                       name: "d157",
+                      textEditingController: d157Controller,
                       initialValue: vm.io.d157,
                       label: "허가번호",
                     )),
@@ -170,6 +215,7 @@ class _Tab1State extends State<Tab1> {
                       onSubmitted: (_) => vm.submit(),
                       hintText: "허가번호",
                       name: "d281",
+                      textEditingController: d281Controller,
                       initialValue: vm.io.d281,
                       label: "허가번호",
                     )),

@@ -1,5 +1,6 @@
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -31,11 +32,6 @@ class _Tab1State extends State<Tab1> {
   final d75_1 = false.obs;
   final d75_2 = false.obs;
 
-  final d184Controller = TextEditingController();
-  final d280Controller = TextEditingController();
-  final d157Controller = TextEditingController();
-  final d281Controller = TextEditingController();
-
   @override
   void initState() {
     super.initState();
@@ -63,23 +59,84 @@ class _Tab1State extends State<Tab1> {
             mainAxisSpacing: 40.h,
             children: [
               Autocomplete<CompanyAutocomplete>(
-                displayStringForOption: (c) =>
-                    "${c.company} - ${c.d157} - ${c.d281}",
+                optionsViewBuilder:
+                    (BuildContext context, onSelected, options) => Align(
+                  alignment: Alignment.topLeft,
+                  child: Material(
+                    elevation: 4.0,
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxHeight: 200),
+                      child: ListView.builder(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        itemCount: options.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          final CompanyAutocomplete option =
+                              options.elementAt(index);
+                          return InkWell(
+                            onTap: () {
+                              onSelected(option);
+                            },
+                            child: Builder(builder: (BuildContext context) {
+                              final bool highlight =
+                                  AutocompleteHighlightedOption.of(context) ==
+                                      index;
+                              if (highlight) {
+                                SchedulerBinding.instance
+                                    .addPostFrameCallback((Duration timeStamp) {
+                                  Scrollable.ensureVisible(context,
+                                      alignment: 0.5);
+                                });
+                              }
+                              return Container(
+                                color: highlight
+                                    ? Theme.of(context).focusColor
+                                    : null,
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text(
+                                    "${option.company} - ${option.d157} - ${option.d281}"),
+                              );
+                            }),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+                initialValue: vm.io.company != null
+                    ? TextEditingValue(text: vm.io.company!)
+                    : null,
                 // optionsViewBuilder: ,
                 onSelected: (CompanyAutocomplete company) {
                   // controller.text = company.company;
-                  company.d184?.let((it) => d184Controller.text = it);
-                  company.d280?.let((it) {
-                    d280Controller.text = it;
-                  });
-                  company.d157?.let((it) {
-                    d157Controller.text = it;
+                  if (company.d184 != null) {
+                    vm.d184Controller.text = company.d184!;
+                  } else {
+                    vm.d184Controller.clear();
+                  }
+
+                  if (company.d280 != null) {
+                    vm.d280Controller.text = company.d280!;
+                  } else {
+                    vm.d280Controller.clear();
+                  }
+
+                  if (company.d157 != null) {
+                    vm.d157Controller.text = company.d157!;
                     vm.formKey.currentState?.fields["d75_1"]?.didChange(true);
-                  });
-                  company.d281?.let((it) {
-                    d281Controller.text = it;
+                  } else {
+                    vm.d157Controller.clear();
+                    vm.formKey.currentState?.fields["d75_1"]?.didChange(false);
+                  }
+
+                  if (company.d281 != null) {
+                    vm.d281Controller.text = company.d281!;
                     vm.formKey.currentState?.fields["d75_2"]?.didChange(true);
-                  });
+                  } else {
+                    vm.d281Controller.clear();
+                    vm.formKey.currentState?.fields["d75_2"]?.didChange(false);
+                  }
+
                   setState(() {});
                 },
                 optionsBuilder: (textEditingValue) =>
@@ -88,33 +145,28 @@ class _Tab1State extends State<Tab1> {
                             element.company.contains(textEditingValue.text))
                         : const Iterable<CompanyAutocomplete>.empty(),
                 fieldViewBuilder:
-                    (_, controller, focusNode, onFieldSubmitted) {
-
-                      return FclTextField(
+                    (_, controller, focusNode, onFieldSubmitted) =>
+                        FclTextField(
                   focusNode: focusNode,
                   textEditingController: controller,
                   onSubmitted: (_) => vm.submit(),
                   hintText: "운영기관명",
                   name: "company",
-                  initialValue: vm.io.company,
                   label: "운영기관명",
-                );
-                    },
+                ),
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "설치 ∙ 운영 장소",
                 name: "d184",
-                textEditingController: d184Controller,
-                initialValue: vm.io.d184,
+                textEditingController: vm.d184Controller,
                 label: "설치 ∙ 운영 장소",
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "안전관리등급",
                 name: "d280",
-                textEditingController: d280Controller,
-                initialValue: vm.io.d280,
+                textEditingController: vm.d280Controller,
                 label: "안전관리등급",
               ),
             ],
@@ -185,8 +237,7 @@ class _Tab1State extends State<Tab1> {
                       onSubmitted: (_) => vm.submit(),
                       hintText: "허가번호",
                       name: "d157",
-                      textEditingController: d157Controller,
-                      initialValue: vm.io.d157,
+                      textEditingController: vm.d157Controller,
                       label: "허가번호",
                     )),
                 Builder(
@@ -210,8 +261,7 @@ class _Tab1State extends State<Tab1> {
                       onSubmitted: (_) => vm.submit(),
                       hintText: "허가번호",
                       name: "d281",
-                      textEditingController: d281Controller,
-                      initialValue: vm.io.d281,
+                      textEditingController: vm.d281Controller,
                       label: "허가번호",
                     )),
                 Builder(

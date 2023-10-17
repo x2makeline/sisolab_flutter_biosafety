@@ -27,23 +27,74 @@ import 'package:velocity_x/velocity_x.dart';
 class FclDetailVm extends GetxController with PLoggerMixin {
   static FclDetailVm get to => Get.find();
 
+  final d184Controller = TextEditingController();
+  final d280Controller = TextEditingController();
+  final d157Controller = TextEditingController();
+  final d281Controller = TextEditingController();
   final _repository = SelectProcFieldRepository();
   final _apiPro = ApiProvider();
   final _pastYearYn = RxBool(false);
   final ScrollController scrollController = ScrollController();
-  final _io = Rx<BioIo>(BioIo())
-    ..listen((p0) {
-      print(p0);
-    });
+  final _io = Rx<BioIo>(BioIo());
+
   final _preData = Rxn<BioIo>();
 
   bool get pastYearYn => _pastYearYn.value;
 
   BioIo? get preData => _preData.value;
 
+
+  @override
+  void onInit() {
+    super.onInit();
+    _io.listen((p0) {
+
+      print("d184 ${p0.d184}");
+      print("d280 ${p0.d280}");
+      print("d157 ${p0.d157}");
+      print("d281 ${p0.d281}");
+      if(p0.d184 != null) {
+        d184Controller.text = p0.d184!;
+      }
+
+      if(p0.d280 != null) {
+        d280Controller.text = p0.d280!;
+      }
+      if(p0.d157 != null) {
+        d157Controller.text = p0.d157!;
+      }
+      if(p0.d281 != null) {
+        d281Controller.text = p0.d281!;
+      }
+
+    });
+    if (localId != null) {
+      _init(localId!);
+    }
+
+    ever(_pastYearYn, (v) {
+      if (v && _preData.value == null) {
+        _repository
+            .procPreField(
+            ProcPreFieldIn(company: io.company!, d184: io.d184!, gbn: gbn))
+            .then((value) {
+          _preData.value = value.data;
+        });
+      }
+    });
+
+    formState =
+    localId != null ? FclDetailFormState.update : FclDetailFormState.insert;
+  }
+
+
   @override
   void onClose() {
     print("onClose");
+    d184Controller.dispose();
+    d280Controller.dispose();
+    d157Controller.dispose();
+    d281Controller.dispose();
   }
 
   Future<void> setPastYearYn(bool v) async {
@@ -201,24 +252,4 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     return BioIo.fromJson(bioJson);
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-    if (localId != null) {
-      _init(localId!);
-    }
-    ever(_pastYearYn, (v) {
-      if (v && _preData.value == null) {
-        _repository
-            .procPreField(
-                ProcPreFieldIn(company: io.company!, d184: io.d184!, gbn: gbn))
-            .then((value) {
-          _preData.value = value.data;
-        });
-      }
-    });
-
-    formState =
-        localId != null ? FclDetailFormState.update : FclDetailFormState.insert;
-  }
 }

@@ -11,4 +11,7 @@ class CompanyAutocomplete {
 
   CompanyAutocomplete(
       {required this.company, this.d184, this.d280, this.d157, this.d281});
+
+  @override
+  String toString() => company;
 }

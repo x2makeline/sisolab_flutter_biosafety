@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/company_autocomplete.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_checker_table.dart';
@@ -61,50 +62,44 @@ class _Tab1State extends State<Tab1> {
             crossAxisSpacing: 40.w,
             mainAxisSpacing: 40.h,
             children: [
-              Autocomplete(
-                onSelected: (value) {
-                  companyAutocompleteList
-                      .indexWhere((v) => v.company == value)
-                      .let((it) {
-                    if (it > -1) {
-                      final company = companyAutocompleteList.elementAt(it);
-
-                      company.d184?.let((it) => d184Controller.text = it);
-                      company.d280?.let((it) {
-                        d280Controller.text = it;
-                      });
-                      company.d157?.let((it) {
-                        d157Controller.text = it;
-                        vm.formKey.currentState?.fields["d75_1"]
-                            ?.didChange(true);
-                      });
-                      company.d281?.let((it) {
-                        d281Controller.text = it;
-                        vm.formKey.currentState?.fields["d75_2"]
-                            ?.didChange(true);
-                      });
-                      setState(() {});
-                    }
+              Autocomplete<CompanyAutocomplete>(
+                displayStringForOption: (c) =>
+                    "${c.company} - ${c.d157} - ${c.d281}",
+                // optionsViewBuilder: ,
+                onSelected: (CompanyAutocomplete company) {
+                  // controller.text = company.company;
+                  company.d184?.let((it) => d184Controller.text = it);
+                  company.d280?.let((it) {
+                    d280Controller.text = it;
                   });
+                  company.d157?.let((it) {
+                    d157Controller.text = it;
+                    vm.formKey.currentState?.fields["d75_1"]?.didChange(true);
+                  });
+                  company.d281?.let((it) {
+                    d281Controller.text = it;
+                    vm.formKey.currentState?.fields["d75_2"]?.didChange(true);
+                  });
+                  setState(() {});
                 },
                 optionsBuilder: (textEditingValue) =>
                     textEditingValue.text.isNotEmpty
-                        ? companyAutocompleteList
-                            .where((element) =>
-                                element.company.contains(textEditingValue.text))
-                            .map((e) => e.company)
-                        : const Iterable<String>.empty(),
-                fieldViewBuilder: (_, controller, focusNode, onFieldSubmitted) {
-                  return FclTextField(
-                    focusNode: focusNode,
-                    textEditingController: controller,
-                    onSubmitted: (_) => vm.submit(),
-                    hintText: "운영기관명",
-                    name: "company",
-                    initialValue: vm.io.company,
-                    label: "운영기관명",
-                  );
-                },
+                        ? companyAutocompleteList.where((element) =>
+                            element.company.contains(textEditingValue.text))
+                        : const Iterable<CompanyAutocomplete>.empty(),
+                fieldViewBuilder:
+                    (_, controller, focusNode, onFieldSubmitted) {
+
+                      return FclTextField(
+                  focusNode: focusNode,
+                  textEditingController: controller,
+                  onSubmitted: (_) => vm.submit(),
+                  hintText: "운영기관명",
+                  name: "company",
+                  initialValue: vm.io.company,
+                  label: "운영기관명",
+                );
+                    },
               ),
               FclTextField(
                 onSubmitted: (_) => vm.submit(),

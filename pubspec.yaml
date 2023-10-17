@@ -67,6 +67,7 @@ dependencies:
   path_provider: ^2.1.1
   open_file_plus: ^3.4.1
   hive_flutter: ^1.1.0
+  sliver_tools: ^0.2.12
 
 dev_dependencies:
   flutter_test:

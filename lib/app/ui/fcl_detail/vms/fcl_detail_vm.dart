@@ -22,6 +22,7 @@ import 'package:sisolab_flutter_biosafety/core/utils/convert.util.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/functions.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class FclDetailVm extends GetxController with PLoggerMixin {
   static FclDetailVm get to => Get.find();
@@ -70,7 +71,11 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   int get tabIndex => _tabIndex.value;
 
-  set tabIndex(int index) => _tabIndex.value = index;
+  setTabIndex(int index) {
+    _tabIndex.value = index;
+    scrollController.jumpToTop();
+  }
+
 
   List<FclTab> get tabList => when(gbn, {
         Gbn.fd1: () => regularTabList,

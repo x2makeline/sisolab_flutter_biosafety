@@ -38,12 +38,12 @@ class Tab7 extends StatelessWidget {
             "주요실험방법",
             style: context.textTheme.titleMedium,
           ),
-          FclTextField(name: "d77"),
-          FclTextField(name: "d78"),
-          FclTextField(name: "d180"),
-          FclTextField(name: "d181"),
-          FclTextField(name: "d182"),
-          FclTextField(name: "d183")
+          FclTextField(name: "d77", initialValue: vm.io.d77,),
+          FclTextField(name: "d78",initialValue: vm.io.d78,),
+          FclTextField(name: "d180",initialValue: vm.io.d180,),
+          FclTextField(name: "d181",initialValue: vm.io.d181,),
+          FclTextField(name: "d182",initialValue: vm.io.d182,),
+          FclTextField(name: "d183",initialValue: vm.io.d183,)
         ]),
         SizedBox(
           height: 47.h,

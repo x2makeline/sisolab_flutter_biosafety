@@ -192,30 +192,60 @@ class _Tab1State extends State<Tab1> {
                 addAutomaticKeepAlives: false,
                 children: [
                   FormBuilderCheckbox(
-                    name: "d68",
-                    initialValue: vm.io.d68 == "Y",
+                    name: "d68_1",
+                    initialValue: vm.io.d68?.contains("1"),
+                    onChanged: (v) {
+                      if (v != null) {
+                        vm.io.d68 = (vm.io.d68 ?? "").replaceAll("1", "") +
+                            (v ? "1" : "");
+                      }
+                    },
                     title: Text("일반", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: "d69",
-                    initialValue: vm.io.d69 == "Y",
+                    name: "d68_2",
+                    initialValue: vm.io.d68?.contains("2"),
+                    onChanged: (v) {
+                      if (v != null) {
+                        vm.io.d68 = (vm.io.d68 ?? "").replaceAll("2", "") +
+                            (v ? "2" : "");
+                      }
+                    },
                     title: Text("대량배양", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: "d70",
-                    initialValue: vm.io.d70 == "Y",
+                    name: "d68_3",
+                    initialValue: vm.io.d68?.contains("3"),
+                    onChanged: (v) {
+                      if (v != null) {
+                        vm.io.d68 = (vm.io.d68 ?? "").replaceAll("3", "") +
+                            (v ? "3" : "");
+                      }
+                    },
                     title: Text("동물", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: "d71",
-                    initialValue: vm.io.d71 == "Y",
+                    name: "d68_4",
+                    initialValue: vm.io.d68?.contains("4"),
+                    onChanged: (v) {
+                      if (v != null) {
+                        vm.io.d68 = (vm.io.d68 ?? "").replaceAll("4", "") +
+                            (v ? "4" : "");
+                      }
+                    },
                     title: Text("식물", style: context.textTheme.titleMedium),
                   ),
                   FormBuilderCheckbox(
-                    name: "d72",
-                    initialValue: vm.io.d72 == "Y",
+                    name: "d68_5",
+                    initialValue: vm.io.d68?.contains("5"),
+                    onChanged: (v) {
+                      if (v != null) {
+                        vm.io.d68 = (vm.io.d68 ?? "").replaceAll("5", "") +
+                            (v ? "5" : "");
+                      }
+                    },
                     title: Text("곤충", style: context.textTheme.titleMedium),
-                  ),
+                  )
                 ],
               ),
             ),

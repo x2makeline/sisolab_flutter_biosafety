@@ -169,7 +169,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
         await _apiPro.procFieldSave(bio).then((value) async {
           if (value.isSuccess) {
             if (bio.localId != null) {
-              await HiveProvider.delete(bio.localId!);
+              // await HiveProvider.delete(bio.localId!);
             }
             await FclListPageVm.to.submit();
 

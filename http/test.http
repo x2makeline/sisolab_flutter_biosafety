@@ -16,8 +16,8 @@ Connection: keep-alive
 ###
 ###
 POST http://125.6.37.38:9090/api/procFieldSave.do
-Content-Type: application/json
-Access_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
+Content-Type: multipart/form-data
+Access_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiMjEiLCJ0eXBlIjoiQWNjZXNzX1Rva2VuIiwiZXhwIjoxNjk3ODkyNjA2LCJ1c2VySWQiOiJkb25nd29uIiwiaWF0IjoxNjk3ODY3NDA2fQ.Rzw-HbGcD5490GuRqY03UecFppzYuUAaOPJqh8nxUjs
 
 {
   "gbn": "fd2",

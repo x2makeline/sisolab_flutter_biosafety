@@ -49,10 +49,6 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     super.onInit();
     _io.listen((p0) {
 
-      print("d184 ${p0.d184}");
-      print("d280 ${p0.d280}");
-      print("d157 ${p0.d157}");
-      print("d281 ${p0.d281}");
       if(p0.d184 != null) {
         d184Controller.text = p0.d184!;
       }
@@ -162,8 +158,11 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   }
 
   Future<void> submitServer([BioIo? io]) async {
+
     if (await isConnect()) {
+
       final bio = submit();
+      pLog.i("submitServer $bio");
       bio.idx = io?.idx ?? bio.idx;
 
       try {
@@ -244,10 +243,6 @@ class FclDetailVm extends GetxController with PLoggerMixin {
         ..removeWhere((key, value) => value == null)
     };
 
-    print('bioJson["d75_1"]');
-    print(bioJson["d75_1"]);
-    print('bioJson["d75_2"]');
-    print(bioJson["d75_2"]);
 
     return BioIo.fromJson(bioJson);
   }

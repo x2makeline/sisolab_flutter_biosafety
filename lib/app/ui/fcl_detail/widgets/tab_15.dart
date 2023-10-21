@@ -45,8 +45,7 @@ class Tab15 extends StatelessWidget {
                   label: "1.1) 손소독기가 적절히 운영되는가?",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file1', initialValue: vm.io.file1),
+                    FclImageField(name: 'file1', initialValue: vm.io.file1),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -82,8 +81,7 @@ class Tab15 extends StatelessWidget {
                   label: "1.2) 실간 인터락 작동(수동조작 가능)이 적절한가?",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file2', initialValue: vm.io.file2),
+                    FclImageField(name: 'file2', initialValue: vm.io.file2),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -105,8 +103,7 @@ class Tab15 extends StatelessWidget {
                   label: "1.3) 비상샤워장비가 정상 작동하며 바닥이 양호한가?",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file3', initialValue: vm.io.file3),
+                    FclImageField(name: 'file3', initialValue: vm.io.file3),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -127,8 +124,7 @@ class Tab15 extends StatelessWidget {
                   label: "1.4) 각 실 환기횟수는 적정한가? (자동제어시스템 또는 풍량실측 확인)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file4', initialValue: vm.io.file4),
+                    FclImageField(name: 'file4', initialValue: vm.io.file4),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -151,17 +147,16 @@ class Tab15 extends StatelessWidget {
                       "1.5) 밀폐구역 내 생물학적 위험도에 따른 순차적 음압이 형성되고 적절한 실간 차압을 유지하는가? (실내 차압계 및 연무테스트 확인)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file5', initialValue: vm.io.file5),
+                    FclImageField(name: 'file5', initialValue: vm.io.file5),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
                         name: 'd196',
                         map: const {
-                          "5": '밀폐구역 내 차압 역전',
-                          '3':
-                              "밀폐구역 내 기류흐름이 적절한 방향으로 형성되었으나 실간 차압(그래프)이 -10~-15 Pa 유지 못함",
-                          '0': "밀폐구역 내 기류흐름이 적절한 방향으로 형성되며 실간차압 -10~-15 Pa 유지"
+                          "5": '4개 실, 복도 환기횟수시험결과 모두 불만족',
+                          '3': "4개 실, 복도 환기횟수시험결과 중 1~2개 만족",
+                          "1": "4개 실, 복도 환기횟수시험결과 중 3개 만족",
+                          '0': "4개 실, 복도 환기횟수시험결과 모두 만족"
                         },
                         preValue: vm.preData?.d196,
                         initialValue: vm.io.d196),
@@ -174,8 +169,7 @@ class Tab15 extends StatelessWidget {
                   label: '1.6) 밀폐구역 내 이음매 완전성(벽체, 천장 등)을 확보하였는가?(연무테스트 확인)',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file6', initialValue: vm.io.file6),
+                    FclImageField(name: 'file6', initialValue: vm.io.file6),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -201,8 +195,7 @@ class Tab15 extends StatelessWidget {
                     "- 밀폐구역 내 적정 온습도가 정상 유지 여부"
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file7', initialValue: vm.io.file7),
+                    FclImageField(name: 'file7', initialValue: vm.io.file7),
                     FclRadioField(
                         name: 'd7',
                         map: const {"2": '2', '1': "1", '0': "0"},
@@ -218,8 +211,7 @@ class Tab15 extends StatelessWidget {
                   label: '동물실은 외부와의 최소음압 70 Pa을 유지하는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file8', initialValue: vm.io.file8),
+                    FclImageField(name: 'file8', initialValue: vm.io.file8),
                     FclRadioField(
                         name: 'd8',
                         map: passOrNaMap,

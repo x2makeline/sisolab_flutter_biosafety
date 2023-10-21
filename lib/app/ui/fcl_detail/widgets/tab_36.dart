@@ -137,7 +137,7 @@ class _Tab36State extends State<Tab36> {
                         )))),
             FieldWithLabel(
                 label:
-                    "고위험병원체 취급시설 사용자에게 연 2시간 이상 질병관리청 또는 질병관리청장이 지정한 안전 관리전문기관에서 운영하는 생물안전교육(「감염병의 예방 및 관리에 관한 법률」, ‘고위험병원체 취급시설 및 안전관리에 관한 고시’ 근거)을 하고 있는가?",
+                    "고위험병원체 취급시설 사용자에게 연 2시간 이상 질병관리청 또는 질병관리청장이 지정한 안전 관리전문기관에서 운영하는 생물안전교육(「감염병의 예방 및 관리에 관한 법률」, ‘고위험병원체 취급시설 및 안전관리에 관한 고시’ 근거)을 하고 있는가?\n※ 교육 증빙자료 비치",
                 child: DefaultTextStyle(
                     style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
                     child: Obx(() => FormBuilderRadioGroup(
@@ -178,7 +178,7 @@ class _Tab36State extends State<Tab36> {
                           ],
                         )))),
             FieldWithLabel(
-                label: "고위험병원체 관리자, 취급자 등에게 사용시설 및 기관내 생물안전교육을 하고 있는가?",
+                label: "고위험병원체 관리자, 취급자 등에게 사용시설 및 기관내 생물안전교육을 하고 있는가?\n※ 교육 증빙자료 비치",
                 child: DefaultTextStyle(
                     style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
                     child: Obx(() => FormBuilderRadioGroup(

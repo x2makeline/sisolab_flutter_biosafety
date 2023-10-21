@@ -31,7 +31,7 @@ class Tab30 extends StatelessWidget {
                   fieldList: [
                     FclRadioField(
                         name: 'd34',
-                        map: yesOrNoNumMap,
+                        map: yesOrNoNumMap2,
                         initialValue: vm.io.d34),
                   ])),
           Obx(() => FclFieldView(
@@ -40,7 +40,7 @@ class Tab30 extends StatelessWidget {
                   fieldList: [
                     FclRadioField(
                         name: 'd35',
-                        map: yesOrNoNumMap2,
+                        map: yesOrNoNumMap,
                         initialValue: vm.io.d35),
                   ])),
           Obx(() => FclFieldView(

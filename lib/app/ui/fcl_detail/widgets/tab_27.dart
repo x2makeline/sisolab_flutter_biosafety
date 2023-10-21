@@ -81,13 +81,11 @@ class _Tab27State extends State<Tab27> {
               FclTextField(
                 onSubmitted: (_) => vm.submit(),
                 hintText: "대표자명",
-                enabled: false,
                 name: "comName",
                 initialValue: vm.io.comName,
                 label: "대표자명",
               ),
               FclTextField(
-                enabled: false,
                 onSubmitted: (_) => vm.submit(),
                 hintText: "사업자등록번호",
                 name: "comCode",
@@ -112,7 +110,6 @@ class _Tab27State extends State<Tab27> {
             height: 40.h,
           ),
           FclTextField(
-            enabled: false,
             onSubmitted: (_) => vm.submit(),
             hintText: "주소(본사)",
             name: "comAddress",
@@ -123,7 +120,6 @@ class _Tab27State extends State<Tab27> {
             height: 40.h,
           ),
           FclTextField(
-            enabled: false,
             onSubmitted: (_) => vm.submit(),
             name: "주소",
             label: "주소",
@@ -465,7 +461,7 @@ class _Tab27State extends State<Tab27> {
                 height: 40.h,
               ),
               FieldWithLabel(
-                label: "보안관리 실무관리자",
+                label: "생물안전 관리자",
                 child: Obx(() => FclRadioGroup(
                     onChanged: (d) {
                       d17.value = d == "1";

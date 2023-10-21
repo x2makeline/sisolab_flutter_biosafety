@@ -47,6 +47,7 @@ class ApiProvider with PLoggerMixin {
                         error: ApiError(type: ApiErrorType.expiredToken)));
                   }
 
+                  print(_token!.accessToken);
                   options.headers['access_token'] = _token!.accessToken;
                 } else {
                   return handler.reject(DioException(
@@ -88,11 +89,11 @@ class ApiProvider with PLoggerMixin {
   /// 현장점검 데이터 저장
   Future<ApiResponse<ProcFieldSaveOut>> procFieldSave(BioIo req) async {
     pLog.i("procFieldSave ${req.toJson()}");
-    pLog.i(req.gbn);
-    pLog.i(req.file1);
+    pLog.i("procFieldSave.gbn ${req.toJson()["gbn"]}");
+
     return ApiResponse<ProcFieldSaveOut>.fromJson(
         (await _dio.post("/api/procFieldSave.do",
-                data: req.toJson()))
+                data: FormData.fromMap(req.toJson())))
             .data,
         fromJson: (data) {
           pLog.i(data);

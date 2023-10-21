@@ -46,7 +46,6 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
 
   _submit() {
     _formKey.currentState?.let((curr) => iff(curr.saveAndValidate(), () {
-          log.i('userId ${curr.value[_userIdName]}');
           Pref.userId.setValue(curr.value[_userIdName]).then((value) {
             iff(value, () {
               Get.offAllNamed(AppRoutes.selectType.name);
@@ -54,6 +53,8 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
           });
         }));
   }
+
+  static const _devUserId = "dongwon";
 
   @override
   Widget build(BuildContext context) => FormBuilder(
@@ -66,6 +67,8 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
                 child: FormBuilderTextField(
                   validator: FormBuilderValidators.required(),
                   onSubmitted: (_) => _submit(),
+                  initialValue:
+                      Pref.userId.value ?? iff(kDebugMode, () => _devUserId),
                   decoration: const InputDecoration(hintText: "작업 ID"),
                   name: _userIdName,
                 )),
@@ -120,10 +123,10 @@ class _Connected extends StatelessWidget with PLoggerMixin {
   static const _userIdName = '_userIdName';
   static const _passwdName = '_passwdName';
 
-  static const _devUserId = "test0223";
+  static const _devUserId = "dongwon";
 
   // static const _devUserId = "test0";
-  static const _devPasswd = "1234";
+  static const _devPasswd = "dongwon123!";
 
   _Connected({required this.onSuccess});
 

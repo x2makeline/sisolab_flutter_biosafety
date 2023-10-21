@@ -137,7 +137,7 @@ class Tab23 extends StatelessWidget {
                         preValue: vm.preData?.d112)
                   ])),
           Obx(() => FclFieldView(
-                  label: "밀폐구역 내 싱크와 배수 위치 확인 및 기밀성",
+                  label: "실험실 내 온도, 습도 및 소음도",
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(

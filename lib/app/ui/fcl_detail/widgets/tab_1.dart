@@ -5,12 +5,14 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/company_autocomplete.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/global/models/related_person_col.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/empty_box.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_checker_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_date_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_dropdown_field.dart';
+import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_radio_group.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_related_person_table.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_text_field.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/tight_grid_view.dart';
@@ -218,6 +220,19 @@ class _Tab1State extends State<Tab1> {
               ),
             ),
           ),
+          Obx(() => vm.gbn == Gbn.fd2
+              ? FclRadioGroup(
+                  labelWithKey: false,
+                  orientation: OptionsOrientation.wrap,
+                  map: const {"1": "신규허가", "2": "재확인"},
+                  initialValue: vm.io.d73,
+                  name: "d73")
+              : FclRadioGroup(
+                  labelWithKey: false,
+                  orientation: OptionsOrientation.wrap,
+                  map: const {"1": "연구시설", "2": "고위험병원체 취급시설"},
+                  initialValue: vm.io.d14,
+                  name: "d14")),
           TightGridView(
               crossAxisCount: 2,
               crossAxisSpacing: 40.w,

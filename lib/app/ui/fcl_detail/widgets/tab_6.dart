@@ -44,7 +44,7 @@ class Tab6 extends StatelessWidget {
                   lastDividerYn: false,
                   fieldList: [
                     FclImageField(
-                        name: 'file22', initialValue: vm.io.file22),
+                        name: 'file22', ),
                     FclNoteField(
                         name: 'd156',
                         initialValue: vm.io.d156,

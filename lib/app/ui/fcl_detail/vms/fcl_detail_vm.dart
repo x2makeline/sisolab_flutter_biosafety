@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:dartlin/control_flow.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
+import 'package:sisolab_flutter_biosafety/app/data/models/bio_io_file.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/proc_pre_field_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/repositories/select_proc_field_repository.dart';
@@ -36,6 +38,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   final _pastYearYn = RxBool(false);
   final ScrollController scrollController = ScrollController();
   final _io = Rx<BioIo>(BioIo());
+  final _iof = Rx<BioIoFile>(BioIoFile());
 
   final _preData = Rxn<BioIo>();
 
@@ -43,26 +46,24 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   BioIo? get preData => _preData.value;
 
-
   @override
   void onInit() {
     super.onInit();
-    _io.listen((p0) {
 
-      if(p0.d184 != null) {
+    _io.listen((p0) {
+      if (p0.d184 != null) {
         d184Controller.text = p0.d184!;
       }
 
-      if(p0.d280 != null) {
+      if (p0.d280 != null) {
         d280Controller.text = p0.d280!;
       }
-      if(p0.d157 != null) {
+      if (p0.d157 != null) {
         d157Controller.text = p0.d157!;
       }
-      if(p0.d281 != null) {
+      if (p0.d281 != null) {
         d281Controller.text = p0.d281!;
       }
-
     });
     if (localId != null) {
       _init(localId!);
@@ -72,7 +73,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
       if (v && _preData.value == null) {
         _repository
             .procPreField(
-            ProcPreFieldIn(company: io.company!, d184: io.d184!, gbn: gbn))
+                ProcPreFieldIn(company: io.company!, d184: io.d184!, gbn: gbn))
             .then((value) {
           _preData.value = value.data;
         });
@@ -80,9 +81,8 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     });
 
     formState =
-    localId != null ? FclDetailFormState.update : FclDetailFormState.insert;
+        localId != null ? FclDetailFormState.update : FclDetailFormState.insert;
   }
-
 
   @override
   void onClose() {
@@ -123,7 +123,6 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     scrollController.jumpToTop();
   }
 
-
   List<FclTab> get tabList => when(gbn, {
         Gbn.fd1: () => regularTabList,
         Gbn.fd2: () => newTabList,
@@ -142,7 +141,10 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   BioIo get io => _io.value;
 
+  BioIoFile get iof => _iof.value;
+
   set io(BioIo io) => _io.value = io;
+
   final formKey = GlobalKey<FormBuilderState>(debugLabel: 'FclDetailVm');
 
   prevTab() {
@@ -154,16 +156,51 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   }
 
   _init(String localId) {
-    _io.value = HiveProvider.select(localId) ?? BioIo();
+    final hiveObj = HiveProvider.select(localId);
+    _io.value = hiveObj?.$1 ?? BioIo();
+    _iof.value = hiveObj?.$2 ?? BioIoFile();
   }
 
-  Future<void> submitServer([BioIo? io]) async {
+  Future<Map<String, String>> _upload(BioIoFile iof) async {
+    final filesMap = formKey.currentState!.value.entries
+        .where((e) => e.value is List<String>)
+        .toList()
+        .map((e) {
+      return MapEntry(e.key, e.value as List<String>);
+    }).toList();
 
+    final files = List<IoFile>.empty(growable: true);
+    final map = <String, List<String>>{};
+
+    for (MapEntry<String, List<String>> e in filesMap) {
+      e.value.asMap().entries.forEach((o) {
+        files.add(IoFile(file: File(o.value), fieldName: e.key, index: o.key));
+      });
+    }
+
+    if (files.isNotEmpty) {
+      pLog.i("files ${files}");
+      await _apiPro.upload(files.map((e) => e.file).toList()).then((value) {
+        pLog.i("upload response $value");
+
+        value.forEachIndexed((index, element) {
+          final ioFile = files[index];
+          map[ioFile.fieldName] = map[ioFile.fieldName] ?? [];
+          map[ioFile.fieldName]!.add(element);
+        });
+      });
+    }
+
+    pLog.i("map $map");
+    return {for (var v in map.entries) v.key: v.value.join(",")};
+  }
+
+  Future<void> submitServer() async {
     if (await isConnect()) {
+      final (_bio, bioFile) = submit();
 
-      final bio = submit();
-      pLog.i("submitServer $bio");
-      bio.idx = io?.idx ?? bio.idx;
+      final bio =
+          BioIo.fromJson({..._bio.toJson(), ...(await _upload(bioFile))});
 
       try {
         await _apiPro.procFieldSave(bio).then((value) async {
@@ -188,14 +225,13 @@ class FclDetailVm extends GetxController with PLoggerMixin {
           Get.bottomSheet(SafeArea(
             child: LoginPage(
               onSuccess: (token) async {
-                await submitServer(bio);
+                await submitServer();
               },
             ),
           ), isScrollControlled: true);
         }
         rethrow;
       } catch (e) {
-        pLog.e(e);
         rethrow;
       }
     } else {
@@ -204,25 +240,30 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   }
 
   Future<void> submitLocal() async {
-    final io = submit();
+    final (io, iof) = submit();
+
     io.localRegDateTime = io.localRegDateTime ?? DateTime.now().format2;
     io.localUpdDateTime = DateTime.now().format2;
     if (io.localId != null) {
-      await HiveProvider.update(io.localId!, io);
+      await HiveProvider.update(io.localId!, io, iof);
     } else {
-      await HiveProvider.insert(io);
+      await HiveProvider.insert(io, iof);
     }
 
     await FclListPageVm.to.submit();
     Get.back();
   }
 
-  BioIo submit() {
+  (BioIo, BioIoFile) submit() {
     formKey.currentState!.save();
+
+    final currentValue = formKey.currentState!.value;
     final bioJson = {
       "gbn": gbn.name,
-      ...io.toJson()..removeWhere((key, value) => value == null),
-      ...BioIo.fromJson(formKey.currentState!.value.map((key, value) {
+      ...io.toJson()
+        ..removeWhere((key, value) =>
+            value == null || value.runtimeType == (List<String>)),
+      ...BioIo.fromJson(currentValue.map((key, value) {
         if (value == null) {
           return MapEntry(key, value);
         } else {
@@ -231,6 +272,8 @@ class FclDetailVm extends GetxController with PLoggerMixin {
               return MapEntry(key, (value as DateTime).format1);
             case bool:
               return MapEntry(key, boolToYn((value as bool)));
+            case const (List<String>):
+              return MapEntry(key, '');
           }
         }
         return MapEntry(key, value);
@@ -242,9 +285,23 @@ class FclDetailVm extends GetxController with PLoggerMixin {
       })).toJson()
         ..removeWhere((key, value) => value == null)
     };
+    final bio = BioIo.fromJson(bioJson);
 
+    final bioFile = BioIoFile.fromMapDynamic(currentValue);
 
-    return BioIo.fromJson(bioJson);
+    return (bio, bioFile);
   }
+}
 
+class IoFile {
+  File file;
+  String fieldName;
+  int index;
+
+  IoFile({required this.file, required this.fieldName, required this.index});
+
+  @override
+  String toString() {
+    return 'IoFile{file: ${file.runtimeType}, fieldName: $fieldName, index: $index}';
+  }
 }

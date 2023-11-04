@@ -1,3 +1,6 @@
+import 'dart:io';
+import 'dart:typed_data';
+
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -61,7 +64,7 @@ class FclNoteField extends FclField<String> {
       : super(type: FclInputFieldType.note);
 }
 
-class FclImageField extends FclField<String> {
+class FclImageField extends FclField<List<String>> {
   FclImageField(
       {super.initialValue, super.enabled, super.preValue, required super.name})
       : super(type: FclInputFieldType.image);

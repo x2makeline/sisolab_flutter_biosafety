@@ -67,8 +67,7 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
                 child: FormBuilderTextField(
                   validator: FormBuilderValidators.required(),
                   onSubmitted: (_) => _submit(),
-                  initialValue:
-                      Pref.userId.value ?? iff(kDebugMode, () => _devUserId),
+                  initialValue: iff(kDebugMode, () => _devUserId),
                   decoration: const InputDecoration(hintText: "작업 ID"),
                   name: _userIdName,
                 )),

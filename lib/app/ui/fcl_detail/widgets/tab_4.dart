@@ -44,7 +44,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file6', initialValue: vm.io.file6),
+                        name: 'file6', ),
                     FclRadioField(
                         name: 'd10',
                         map: yesOrNoMap,
@@ -60,7 +60,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file7', initialValue: vm.io.file7),
+                        name: 'file7', ),
                     FclRadioField(
                         name: 'd11',
                         map: yesOrNoMap,
@@ -76,7 +76,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file8', initialValue: vm.io.file8),
+                        name: 'file8', ),
                     FclRadioField(
                         name: 'd12',
                         map: yesOrNoMap,
@@ -92,7 +92,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file9', initialValue: vm.io.file9),
+                        name: 'file9', ),
                     FclRadioField(
                         name: 'd13',
                         map: yesOrNoMap,
@@ -108,7 +108,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file10', initialValue: vm.io.file10),
+                        name: 'file10', ),
                     FclRadioField(
                         name: 'd14',
                         map: yesOrNoMap,
@@ -125,7 +125,7 @@ class Tab4 extends StatelessWidget {
                   lastDividerYn: false,
                   fieldList: [
                     FclImageField(
-                        name: 'file11', initialValue: vm.io.file11),
+                        name: 'file11', ),
                     FclRadioField(
                         name: 'd15',
                         map: yesOrNoMap,

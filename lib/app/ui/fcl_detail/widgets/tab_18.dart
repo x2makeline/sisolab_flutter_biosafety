@@ -44,7 +44,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file37', initialValue: vm.io.file37),
+                        name: 'file37', ),
                     FclRadioField(
                         name: 'd40',
                         map: yesOrNoMap,
@@ -60,7 +60,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file38', initialValue: vm.io.file38),
+                        name: 'file38', ),
                     FclRadioField(
                         name: 'd41',
                         map: yesOrNoMap,
@@ -76,7 +76,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file39', initialValue: vm.io.file39),
+                        name: 'file39', ),
                     FclRadioField(
                         name: 'd42',
                         map: yesOrNoMap,
@@ -92,7 +92,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file40', initialValue: vm.io.file40),
+                        name: 'file40', ),
                     FclRadioField(
                         name: 'd43',
                         map: yesOrNoMap,
@@ -108,7 +108,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file41', initialValue: vm.io.file41),
+                        name: 'file41', ),
                     FclRadioField(
                         name: 'd44',
                         map: yesOrNoMap,
@@ -124,7 +124,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file42', initialValue: vm.io.file42),
+                        name: 'file42', ),
                     FclRadioField(
                         name: 'd45',
                         map: yesOrNoMap,
@@ -140,7 +140,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: 'file43', initialValue: vm.io.file43),
+                        name: 'file43', ),
                     FclRadioField(
                         name: 'd46',
                         map: yesOrNoMap,
@@ -157,7 +157,7 @@ class Tab18 extends StatelessWidget {
                   lastDividerYn: false,
                   fieldList: [
                     FclImageField(
-                        name: 'file44', initialValue: vm.io.file44),
+                        name: 'file44', ),
                     FclRadioField(
                         name: 'd47',
                         map: yesOrNoMap,

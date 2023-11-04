@@ -46,8 +46,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file31",
-                      initialValue: vm.io.file31,
-                      preValue: vm.preData?.file31),
+                      ),
                   FclRadioField(
                       name: "d31",
                       map: const {"2": "2", "1": "1", "0": "0"},
@@ -71,8 +70,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file32",
-                      initialValue: vm.io.file32,
-                      preValue: vm.preData?.file32),
+                      ),
                   FclRadioField(
                       name: "d32",
                       map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -92,8 +90,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file33",
-                      initialValue: vm.io.file33,
-                      preValue: vm.preData?.file33),
+                      ),
                   FclRadioField(
                       name: "d33",
                       map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -113,8 +110,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file34",
-                      initialValue: vm.io.file34,
-                      preValue: vm.preData?.file34),
+                      ),
                   FclRadioField(
                       name: "d34",
                       map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -138,8 +134,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file35",
-                      initialValue: vm.io.file35,
-                      preValue: vm.preData?.file35),
+                      ),
                   FclRadioField(
                       name: "d35",
                       map: const {"2": "2", "1": "1", "0": "0"},
@@ -160,10 +155,7 @@ class Tab16 extends StatelessWidget {
                 label: "13) 설치류 해충방지 장치설치 또는 프로그램이 있는가?",
                 lastDividerYn: false,
                 fieldList: [
-                  // FclImageField(
-                  //     name: "file36",
-                  //     initialValue: vm.io.file36,
-                  //     preValue: vm.preData?.file36),
+
                   FclRadioField(
                       name: "d36",
                       map: const {"2": "2", "1": "1", "0": "0"},
@@ -182,8 +174,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file36",
-                      initialValue: vm.io.file36,
-                      preValue: vm.preData?.file36),
+                      ),
                   FclRadioField(
                       name: "d37",
                       map: passOrNaMap,
@@ -202,8 +193,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file37",
-                      initialValue: vm.io.file37,
-                      preValue: vm.preData?.file37),
+                      ),
                   FclRadioField(
                       name: "d38",
                       map: passOrNaMap,
@@ -222,8 +212,7 @@ class Tab16 extends StatelessWidget {
                 fieldList: [
                   FclImageField(
                       name: "file38",
-                      initialValue: vm.io.file38,
-                      preValue: vm.preData?.file38),
+                      ),
                   FclRadioField(
                       name: "d67",
                       map: passOrNaMap,

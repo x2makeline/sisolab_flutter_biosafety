@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartlin/control_flow.dart';
 import 'package:dio/dio.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/api_response.dart';
@@ -39,7 +41,8 @@ class ApiProvider with PLoggerMixin {
             dio.interceptors
                 .add(InterceptorsWrapper(onRequest: (options, handler) async {
               /// 로그인 제외
-              if (options.path != "/api/login.do") {
+              if (!['/comm/uploadfile2.do', "/api/login.do"]
+                  .contains(options.path)) {
                 if (_token != null) {
                   if (_token!.expByAccessToken.compareTo(DateTime.now()) < 0) {
                     return handler.reject(DioException(
@@ -92,14 +95,14 @@ class ApiProvider with PLoggerMixin {
     pLog.i("procFieldSave.gbn ${req.toJson()["gbn"]}");
 
     return ApiResponse<ProcFieldSaveOut>.fromJson(
-        (await _dio.post("/api/procFieldSave.do",
-                data: FormData.fromMap(req.toJson())))
-            .data,
-        fromJson: (data) {
-          pLog.i(data);
-          return ProcFieldSaveOut.fromJson(data);
-        },
-      );
+      (await _dio.post("/api/procFieldSave.do",
+              data: FormData.fromMap(req.toJson())))
+          .data,
+      fromJson: (data) {
+        pLog.i(data);
+        return ProcFieldSaveOut.fromJson(data);
+      },
+    );
   }
 
   /// 현장점검 데이터 가져오기
@@ -166,6 +169,27 @@ class ApiProvider with PLoggerMixin {
             accessToken: value.headers.map["access_token"]!.first,
             refreshToken: value.headers.map["refresh_token"]!.first,
           ));
+    });
+  }
+
+  Future<List<String>> upload(List<File> files) async {
+
+    return await Dio(BaseOptions(
+      baseUrl: Env.host,
+      contentType: "application/json",
+    ))
+        .post('/comm/uploadfile2.do',
+        data: FormData.fromMap({
+          "files[]": files
+              .map((file) => MultipartFile.fromFileSync(file.path))
+              .toList(),
+        }),
+        options: Options(
+          contentType: "multipart/form-data",
+        ))
+        .then((value) {
+
+          return (value.data as List<dynamic>).map((e) => e as String).toList();
     });
   }
 

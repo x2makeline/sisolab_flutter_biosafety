@@ -24,11 +24,21 @@ Access_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiMjEiLCJ0eXBlIjoiQ
   "company":"1",
   "d1" : "sdfsdfsd",
   "d184" : "1"
-}
+}http://125.6.37.38:9090/comm/uploadFile2.do
 
 ###
-{
-  "result": "-1",
-  "message": "오류가 발생하였습니다."
-}
+GET http://125.6.37.38:9090/api/selectProcList.do?gbn=fd2
+Access_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiMjEiLCJ0eXBlIjoiQWNjZXNzX1Rva2VuIiwiZXhwIjoxNjk4NzgzOTI1LCJ1c2VySWQiOiJkb25nd29uIiwiaWF0IjoxNjk4NzU4NzI1fQ.66gKiTCo0baFfJFOJqAQvVjMw3dEQDbBEb3PqjFlqfM
 
+###
+GET http://125.6.37.38:9090/api/selectProcField.do?idx=792&gbn=fd2
+Access_Token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoIjoiMjEiLCJ0eXBlIjoiQWNjZXNzX1Rva2VuIiwiZXhwIjoxNjk4OTU2NjI3LCJ1c2VySWQiOiJkb25nd29uIiwiaWF0IjoxNjk4OTMxNDI3fQ.BfvUUildcJM-bev4D_dSDd89ygL6NeA8i0wcTjAnmDk
+
+###
+POST http://125.6.37.38:9090/comm/uploadfile2.do
+Content-Type: multipart/form-data
+Cookie: JSESSIONID=A52222D1108066EAC351D324E90990D4
+
+
+###
+POST http://192.168.0.12:3000/app/upload

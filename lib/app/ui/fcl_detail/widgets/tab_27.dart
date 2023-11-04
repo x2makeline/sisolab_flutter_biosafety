@@ -700,7 +700,7 @@ class _Tab27State extends State<Tab27> {
                 height: 40.h,
               ),
               FieldWithLabel(
-                label: "보안관리 실무관리자",
+                label: "생물안전 실무관리자",
                 child: Obx(() => FclRadioGroup(
                     onChanged: (d) => d21.value = d == "1",
                     orientation: OptionsOrientation.wrap,

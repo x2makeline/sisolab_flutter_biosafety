@@ -50,7 +50,7 @@ class Tab14 extends StatelessWidget {
                   ],
                   fieldList: [
                     FclImageField(
-                        name: 'file23', initialValue: vm.io.file23),
+                        name: 'file23', ),
                     FclRadioField(
                         name: 'd23',
                         map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -71,7 +71,7 @@ class Tab14 extends StatelessWidget {
                   ],
                   fieldList: [
                     FclImageField(
-                        name: 'file24', initialValue: vm.io.file24),
+                        name: 'file24', ),
                     FclRadioField(
                         name: 'd24',
                         map: const {"2": "2", "1": "1", "0": "0"},
@@ -92,7 +92,7 @@ class Tab14 extends StatelessWidget {
                   ],
                   fieldList: [
                     FclImageField(
-                        name: 'file25', initialValue: vm.io.file25),
+                        name: 'file25', ),
                     FclRadioField(
                         name: 'd25',
                         map: const {"2": "2", "1": "1", "0": "0"},
@@ -109,7 +109,7 @@ class Tab14 extends StatelessWidget {
                   lastDividerYn: false,
                   fieldList: [
                     FclImageField(
-                        name: 'file26', initialValue: vm.io.file26),
+                        name: 'file26', ),
                     FclRadioField(
                         name: 'd26',
                         map: passOrNaMap,

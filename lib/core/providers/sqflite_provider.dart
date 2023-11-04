@@ -5,7 +5,7 @@ import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.da
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sqflite/sqflite.dart';
 
-class SqfliteProvider  {
+class SqfliteProvider {
   static late final Database db;
   static final pLog = PLogger(prefix: "SqfliteProvider");
   static const tbNm = "io";
@@ -28,20 +28,17 @@ class SqfliteProvider  {
         ${req.searchCompany != null && req.searchCompany!.isNotEmpty ? "AND company LIKE '%${req.searchCompany}%'" : ''}
         ${req.searchDate1 != null ? "AND datetime(localRegDateTime) >= datetime('${req.searchDate1!}')" : ''}
         ${req.searchDate2 != null ? "AND datetime(localRegDateTime) <= datetime('${req.searchDate2!}')" : ''}
-      ''', columns: ['company', 'd184', 'localId', 'localRegDateTime'])).let((it) {
-        return List.generate(it.length, (i) => BioIo.fromJson(it[i]));
-      });
+      ''', columns: ['company', 'd184', 'localId', 'localRegDateTime']))
+        .let((it) {
+      return List.generate(it.length, (i) => BioIo.fromJson(it[i]));
+    });
   }
-
-
 
   static Future<BioIo> select(int localId) async => BioIo.fromJson(
       (await db.query("io", where: 'localId = ?', whereArgs: [localId])).first);
 
   static Future<void> init() async {
-
     db = await openDatabase(join(await getDatabasesPath(), 'bio_database.db'),
-
         version: 2, onCreate: (db, _) {
       return db.execute('''
 CREATE TABLE $tbNm ( 

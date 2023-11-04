@@ -48,7 +48,6 @@ class _Tab33State extends State<Tab33> {
                 child: DefaultTextStyle(
                     style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
                     child: Obx(() => FormBuilderRadioGroup(
-
                           wrapSpacing: 100.w,
                           decoration: const InputDecoration(
                               contentPadding: EdgeInsets.zero,

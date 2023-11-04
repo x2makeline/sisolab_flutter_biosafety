@@ -43,8 +43,7 @@ class Tab4 extends StatelessWidget {
                   label: "시설 도면과의 일치성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file6', ),
+                    FclImageField(name: 'd206', initialValue: vm.iof.d206),
                     FclRadioField(
                         name: 'd10',
                         map: yesOrNoMap,
@@ -59,8 +58,7 @@ class Tab4 extends StatelessWidget {
                   label: "주출입구 잠금장치 및 출입통제",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file7', ),
+                    FclImageField(name: 'd207', initialValue: vm.iof.d207),
                     FclRadioField(
                         name: 'd11',
                         map: yesOrNoMap,
@@ -75,8 +73,7 @@ class Tab4 extends StatelessWidget {
                   label: "장비 반출 가능한 문 설치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file8', ),
+                    FclImageField(name: 'd208', initialValue: vm.iof.d208),
                     FclRadioField(
                         name: 'd12',
                         map: yesOrNoMap,
@@ -91,8 +88,7 @@ class Tab4 extends StatelessWidget {
                   label: "밀폐구역 내 인터락(수동조작 가능)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file9', ),
+                    FclImageField(name: 'd209', initialValue: vm.iof.d209),
                     FclRadioField(
                         name: 'd13',
                         map: yesOrNoMap,
@@ -107,8 +103,7 @@ class Tab4 extends StatelessWidget {
                   label: "밀폐구역 내 인터락(수동조작 가능)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file10', ),
+                    FclImageField(name: 'd210', initialValue: vm.iof.d210),
                     FclRadioField(
                         name: 'd14',
                         map: yesOrNoMap,
@@ -124,8 +119,7 @@ class Tab4 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file11', ),
+                    FclImageField(name: 'd211', initialValue: vm.iof.d211),
                     FclRadioField(
                         name: 'd15',
                         map: yesOrNoMap,

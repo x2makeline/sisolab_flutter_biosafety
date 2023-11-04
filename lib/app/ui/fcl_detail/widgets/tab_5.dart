@@ -43,8 +43,7 @@ class Tab5 extends StatelessWidget {
                   label: "급기 덕트에 헤파 필터 설치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file12', ),
+                    FclImageField(name: 'd212', initialValue: vm.iof.d212),
                     FclRadioField(
                         name: 'd16',
                         map: yesOrNoMap,
@@ -60,8 +59,7 @@ class Tab5 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file13', ),
+                    FclImageField(name: 'd213', initialValue: vm.iof.d213),
                     FclRadioField(
                         name: 'd17',
                         map: yesOrNoMap,

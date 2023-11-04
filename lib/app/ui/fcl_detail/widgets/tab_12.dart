@@ -44,8 +44,7 @@ class Tab12 extends StatelessWidget {
                   label: "HVAC 덕트시스템 제작 손상 등 품질상태",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file61', ),
+                    FclImageField(name: 'd261', initialValue: vm.iof.d261),
                     FclRadioField(
                         name: 'd65',
                         map: yesOrNoMap,

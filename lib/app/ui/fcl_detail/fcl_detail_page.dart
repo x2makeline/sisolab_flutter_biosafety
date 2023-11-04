@@ -28,8 +28,7 @@ class _FclDetailPageState extends State<FclDetailPage> {
   FclTab get activeTab => vm.tabList.elementAt(vm.tabIndex);
 
   @override
-  Widget build(BuildContext context) =>
-      Scaffold(
+  Widget build(BuildContext context) => Scaffold(
         appBar: const TopBar(),
         body: CustomScrollView(
           controller: vm.scrollController,
@@ -57,8 +56,7 @@ class _FclDetailPageState extends State<FclDetailPage> {
                     if (vm.localId == null)
                       const EmptyBox()
                     else
-                      Obx(() =>
-                          Column(
+                      Obx(() => Column(
                             children: [
                               Text(
                                 "로컬 ID : ${vm.io.localId}",
@@ -79,48 +77,46 @@ class _FclDetailPageState extends State<FclDetailPage> {
             SliverPinnedHeader(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40.w),
-                child: Obx(() =>
-                    Container(
+                child: Obx(() => Container(
                       color: context.theme.scaffoldBackgroundColor,
                       child: Wrap(
                         children: vm.tabList
                             .asMap()
                             .entries
-                            .map((entry) =>
-                            Container(
-                              height: 90.h,
-                              width: 292.w,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: ColorGroup.gray, width: 1)),
-                              child: entry.key == vm.tabIndex
-                                  ? Container(
-                                decoration: const BoxDecoration(
-                                  color: ColorGroup.green,
-                                ),
-                                child: Center(
-                                    child: Text(
-                                      entry.value.title,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 24.sp,
-                                      ),
-                                    )),
-                              )
-                                  : InkWell(
-                                onTap: () =>
-                                    vm.setTabIndex(entry.key),
-                                child: Center(
-                                    child: Text(
-                                      entry.value.title,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 24.sp,
-                                          color: const Color(0xff505050)),
-                                    )),
-                              ),
-                            ))
+                            .map((entry) => Container(
+                                  height: 90.h,
+                                  width: 292.w,
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: ColorGroup.gray, width: 1)),
+                                  child: entry.key == vm.tabIndex
+                                      ? Container(
+                                          decoration: const BoxDecoration(
+                                            color: ColorGroup.green,
+                                          ),
+                                          child: Center(
+                                              child: Text(
+                                            entry.value.title,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 24.sp,
+                                            ),
+                                          )),
+                                        )
+                                      : InkWell(
+                                          onTap: () =>
+                                              vm.setTabIndex(entry.key),
+                                          child: Center(
+                                              child: Text(
+                                            entry.value.title,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontSize: 24.sp,
+                                                color: const Color(0xff505050)),
+                                          )),
+                                        ),
+                                ))
                             .toList(),
                       ),
                     )),
@@ -140,14 +136,12 @@ class _FclDetailPageState extends State<FclDetailPage> {
                         children: vm.tabList
                             .asMap()
                             .entries
-                            .map((e) =>
-                            Obx(() => Visibility(
-                              visible: vm.tabIndex == e.key,
-                              child: e.value.body,
-                            )))
+                            .map((e) => Obx(() => Visibility(
+                                  visible: vm.tabIndex == e.key,
+                                  child: e.value.body,
+                                )))
                             .toList(),
-                      ))
-              ),
+                      ))),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 40.h),
                 child: FormPageBottom(),
@@ -237,16 +231,15 @@ class _FclDetailPageState extends State<FclDetailPage> {
                         "전화  02-0410-1234",
                         "팩스  02-0410-5678"
                       ]
-                          .map((e) =>
-                          Padding(
-                            padding: EdgeInsets.only(right: 40.w),
-                            child: Text(
-                              e,
-                              style: TextStyle(
-                                  fontSize: 24.sp,
-                                  color: const Color(0xff101010)),
-                            ),
-                          ))
+                          .map((e) => Padding(
+                                padding: EdgeInsets.only(right: 40.w),
+                                child: Text(
+                                  e,
+                                  style: TextStyle(
+                                      fontSize: 24.sp,
+                                      color: const Color(0xff101010)),
+                                ),
+                              ))
                           .toList(),
                     ),
                     SizedBox(

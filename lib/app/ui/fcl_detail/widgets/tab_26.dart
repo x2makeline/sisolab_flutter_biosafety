@@ -44,9 +44,7 @@ class Tab26 extends StatelessWidget {
                 label: "6.1) 폐수 및 폐기물 처리기록이 적절히 유지되는가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file28",
-                      ),
+                  FclImageField(name: "d228", initialValue: vm.iof.d228),
                   FclRadioField(
                       name: "d28",
                       map: {"2": "2", "1": "1", "0": "0"},

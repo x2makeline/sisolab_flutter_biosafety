@@ -43,8 +43,7 @@ class Tab20 extends StatelessWidget {
                   label: "실험구역 내 상대적으로 순차적인 음압 유지(환기횟수 10회 이상)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file50', ),
+                    FclImageField(name: 'd250', initialValue: vm.iof.d250),
                     FclRadioField(
                         name: 'd53',
                         map: yesOrNoMap,
@@ -73,8 +72,7 @@ class Tab20 extends StatelessWidget {
                   label: "밀폐구역 내 실간차압이 -7.6 Pa 이상 유지",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file51', ),
+                    FclImageField(name: 'd251', initialValue: vm.iof.d251),
                     FclRadioField(
                         name: 'd55',
                         map: yesOrNoMap,
@@ -89,8 +87,7 @@ class Tab20 extends StatelessWidget {
                   label: "밀폐구역 내 실간 일방향 기류 확인",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file52', ),
+                    FclImageField(name: 'd252', initialValue: vm.iof.d252),
                     FclRadioField(
                         name: 'd56',
                         map: yesOrNoMap,

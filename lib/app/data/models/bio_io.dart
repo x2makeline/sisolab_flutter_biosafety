@@ -14,17 +14,12 @@ class BioIo implements SelectProc {
   String? localRegDateTime;
   String? localUpdDateTime;
 
-
-  
   String? comAddress;
 
-  
   String? comCode;
 
-  
   String? comName;
 
-  
   String? company;
 
   String? d1;
@@ -41,1217 +36,813 @@ class BioIo implements SelectProc {
 
   String? d104;
 
-  
   String? d105;
 
-  
   String? d106;
 
-  
   String? d107;
 
-  
   String? d108;
 
-  
   String? d109;
 
-  
   String? d11;
 
-  
   String? d110;
 
-  
   String? d111;
 
-  
   String? d112;
 
-  
   String? d113;
 
-  
   String? d114;
 
-  
   String? d115;
 
-  
   String? d116;
 
-  
   String? d117;
 
-  
   String? d118;
 
-  
   String? d119;
 
-  
   String? d12;
 
-  
   String? d120;
 
-  
   String? d121;
 
-  
   String? d122;
 
-  
   String? d123;
 
-  
   String? d124;
 
-  
   String? d125;
 
-  
   String? d126;
 
-  
   String? d127;
 
-  
   String? d128;
 
-  
   String? d129;
 
-  
   String? d13;
 
-  
   String? d130;
 
-  
   String? d131;
 
-  
   String? d132;
 
-  
   String? d133;
 
-  
   String? d134;
 
-  
   String? d135;
 
-  
   String? d136;
 
-  
   String? d137;
 
-  
   String? d138;
 
-  
   String? d139;
 
-  
   String? d14;
 
-  
   String? d140;
 
-  
   String? d141;
 
-  
   String? d142;
 
-  
   String? d143;
 
-  
   String? d144;
 
-  
   String? d145;
 
-  
   String? d146;
 
-  
   String? d147;
 
-  
   String? d148;
 
-  
   String? d149;
 
-  
   String? d15;
 
-  
   String? d150;
 
-  
   String? d151;
 
-  
   String? d152;
 
-  
   String? d153;
 
-  
   String? d154;
 
-  
   String? d155;
 
-  
   String? d156;
 
-  
   String? d157;
 
-  
   String? d158;
 
-  
   String? d159;
 
-  
   String? d16;
 
-  
   String? d160;
 
-  
   String? d161;
 
-  
   String? d162;
 
-  
   String? d163;
 
-  
   String? d164;
 
-  
   String? d165;
 
-  
   String? d166;
 
-  
   String? d167;
 
-  
   String? d168;
 
-  
   String? d169;
 
-  
   String? d17;
 
-  
   String? d170;
 
-  
   String? d171;
 
-  
   String? d172;
 
-  
   String? d173;
 
-  
   String? d174;
 
-  
   String? d175;
 
-  
   String? d176;
 
-  
   String? d177;
 
-  
   String? d178;
 
-  
   String? d179;
 
-  
   String? d18;
 
-  
   String? d180;
 
-  
   String? d181;
 
-  
   String? d182;
 
-  
   String? d183;
 
-  
   String? d184;
 
-  
   String? d185;
 
-  
   String? d186;
 
-  
   String? d187;
 
-  
   String? d188;
 
-  
   String? d189;
 
-  
   String? d19;
 
-  
   String? d190;
 
-  
   String? d191;
 
-  
   String? d192;
 
-  
   String? d193;
 
-  
   String? d194;
 
-  
   String? d195;
 
-  
   String? d196;
 
-  
   String? d197;
 
-  
   String? d198;
 
-  
   String? d199;
 
-  
   String? d2;
 
-  
   String? d20;
 
-  
   String? d200;
 
-  
   String? d201;
 
-
-  
   String? d202;
 
-  
   String? d203;
 
-  
   String? d204;
 
-  
   String? d205;
 
-  
   String? d206;
 
-  
   String? d207;
 
-  
   String? d208;
 
-  
   String? d209;
 
-  
   String? d21;
 
-  
   String? d210;
 
-  
   String? d211;
 
-  
   String? d212;
 
-  
   String? d213;
 
-  
   String? d214;
 
-  
   String? d215;
 
-  
   String? d216;
 
-  
   String? d217;
 
-  
   String? d218;
 
-  
   String? d219;
 
-  
   String? d22;
 
-  
   String? d220;
 
-  
   String? d221;
 
-  
   String? d222;
 
-  
   String? d223;
 
-  
   String? d224;
 
-  
   String? d225;
 
-  
   String? d226;
 
-  
   String? d227;
 
-  
   String? d228;
 
-  
   String? d229;
 
-  
   String? d23;
 
-  
   String? d230;
 
-  
   String? d231;
 
-  
   String? d232;
 
-  
   String? d233;
 
-  
   String? d234;
 
-  
   String? d235;
 
-  
   String? d236;
 
-  
   String? d237;
 
-  
   String? d238;
 
-  
   String? d239;
 
-  
   String? d24;
 
-  
   String? d240;
 
-  
   String? d241;
 
-  
   String? d242;
 
-  
   String? d243;
 
-  
   String? d244;
 
-  
   String? d245;
 
-  
   String? d246;
 
-  
   String? d247;
 
-  
   String? d248;
 
-  
   String? d249;
 
-  
   String? d25;
 
-  
   String? d250;
 
-  
   String? d251;
 
-  
   String? d252;
 
-  
   String? d253;
 
-  
   String? d254;
 
-  
   String? d255;
 
-  
   String? d256;
 
-  
   String? d257;
 
-  
   String? d258;
 
-  
   String? d259;
 
-  
   String? d26;
 
-  
   String? d260;
 
-  
   String? d261;
 
-  
   String? d262;
 
-  
   String? d263;
 
-  
   String? d264;
 
-  
   String? d265;
 
-  
   String? d266;
 
-  
   String? d267;
 
-  
   String? d268;
 
-  
   String? d269;
 
-  
   String? d27;
 
-  
   String? d270;
 
-  
   String? d271;
 
-  
   String? d272;
 
-  
   String? d273;
 
-  
   String? d274;
 
-  
   String? d275;
 
-  
   String? d276;
 
-  
   String? d277;
 
-  
   String? d278;
 
-  
   String? d279;
 
-  
   String? d28;
 
-  
   String? d280;
 
-  
   String? d281;
 
-  
   String? d282;
 
-  
   String? d283;
 
-  
   String? d284;
 
-  
   String? d285;
 
-  
   String? d286;
 
-  
   String? d287;
 
-  
   String? d288;
 
-  
   String? d289;
 
-  
   String? d29;
 
-  
   String? d290;
 
-  
   String? d291;
 
-  
   String? d292;
 
-  
   String? d293;
 
-  
   String? d294;
 
-  
   String? d295;
 
-  
   String? d296;
 
-  
   String? d297;
 
-  
   String? d298;
 
-  
   String? d299;
 
-  
   String? d3;
 
-  
   String? d30;
 
-  
   String? d300;
 
-  
   String? d301;
 
-  
   String? d302;
 
-  
   String? d303;
 
-  
   String? d304;
 
-  
   String? d305;
 
-  
   String? d306;
 
-  
   String? d307;
 
-  
   String? d308;
 
-  
   String? d309;
 
-  
   String? d31;
 
-  
   String? d310;
 
-  
   String? d311;
 
-  
   String? d312;
 
-  
   String? d313;
 
-  
   String? d314;
 
-  
   String? d315;
 
-  
   String? d316;
 
-  
   String? d317;
 
-  
   String? d318;
 
-  
   String? d319;
 
-  
   String? d32;
 
-  
   String? d320;
 
-  
   String? d321;
 
-  
   String? d322;
 
-  
   String? d323;
 
-  
   String? d324;
 
-  
   String? d325;
 
-  
   String? d326;
 
-  
   String? d327;
 
-  
   String? d328;
 
-  
   String? d329;
 
-  
   String? d33;
 
-  
   String? d330;
 
-  
   String? d331;
 
-  
   String? d332;
 
-  
   String? d333;
 
-  
   String? d334;
 
-  
   String? d335;
 
-  
   String? d336;
 
-  
   String? d337;
 
-  
   String? d338;
 
-  
   String? d339;
 
-  
   String? d34;
 
-  
   String? d340;
 
-  
   String? d341;
 
-  
   String? d342;
 
-  
   String? d343;
 
-  
   String? d344;
 
-  
   String? d345;
 
-  
   String? d346;
 
-  
   String? d347;
 
-  
   String? d348;
 
-  
   String? d349;
 
-  
   String? d35;
 
-  
   String? d350;
 
-  
   String? d351;
 
-  
   String? d352;
 
-  
   String? d353;
 
-  
   String? d354;
 
-  
   String? d355;
 
-  
   String? d356;
 
-  
   String? d357;
 
-  
   String? d358;
 
-  
   String? d359;
 
-  
   String? d36;
 
-  
   String? d360;
 
-  
   String? d361;
 
-  
   String? d362;
 
-  
   String? d363;
 
-  
   String? d364;
 
-  
   String? d365;
 
-  
   String? d366;
 
-  
   String? d367;
 
-  
   String? d368;
 
-  
   String? d369;
 
-  
   String? d37;
 
-  
   String? d370;
 
-  
   String? d371;
 
-  
   String? d372;
 
-  
   String? d373;
 
-  
   String? d374;
 
-  
   String? d375;
 
-  
   String? d376;
 
-  
   String? d377;
 
-  
   String? d378;
 
-  
   String? d379;
 
-  
   String? d38;
 
-  
   String? d380;
 
-  
   String? d381;
 
-  
   String? d382;
 
-  
   String? d383;
 
-  
   String? d384;
 
-  
   String? d385;
 
-  
   String? d386;
 
-  
   String? d387;
 
-  
   String? d388;
 
-  
   String? d389;
 
-  
   String? d39;
 
-  
   String? d390;
 
-  
   String? d391;
 
-  
   String? d392;
 
-  
   String? d393;
 
-  
   String? d394;
 
-  
   String? d395;
 
-  
   String? d396;
 
-  
   String? d397;
 
-  
   String? d398;
 
-  
   String? d399;
 
-  
   String? d4;
 
-  
   String? d40;
 
-  
   String? d400;
 
-  
   String? d41;
 
-  
   String? d42;
 
-  
   String? d43;
 
-  
   String? d44;
 
-  
   String? d45;
 
-  
   String? d46;
 
-  
   String? d47;
 
-  
   String? d48;
 
-  
   String? d49;
 
-  
   String? d5;
 
-  
   String? d50;
 
-  
   String? d51;
 
-  
   String? d52;
 
-  
   String? d53;
 
-  
   String? d54;
 
-  
   String? d55;
 
-  
   String? d56;
 
-  
   String? d57;
 
-  
   String? d58;
 
-  
   String? d59;
 
-  
   String? d6;
 
-  
   String? d60;
 
-  
   String? d61;
 
-  
   String? d62;
 
-  
   String? d63;
 
-  
   String? d64;
 
-  
   String? d65;
 
-  
   String? d66;
 
-  
   String? d67;
 
-  
   String? d68;
 
-  
   String? d69;
 
-  
   String? d7;
 
-  
   String? d70;
 
-  
   String? d71;
 
-  
   String? d72;
 
-  
   String? d73;
 
-  
   String? d74;
 
-  
   String? d75;
 
-  
   String? d76;
 
-  
   String? d77;
 
-  
   String? d78;
 
-  
   String? d79;
 
-  
   String? d8;
 
-  
   String? d80;
 
-  
   String? d81;
 
-  
   String? d82;
 
-  
   String? d83;
 
-  
   String? d84;
 
-  
   String? d85;
 
-  
   String? d86;
 
-  
   String? d87;
 
-  
   String? d88;
 
-  
   String? d89;
 
-  
   String? d9;
 
-  
   String? d90;
 
-  
   String? d91;
 
-  
   String? d92;
 
-  
   String? d93;
 
-  
   String? d94;
 
-  
   String? d95;
 
-  
   String? d96;
 
-  
   String? d97;
 
-  
   String? d98;
 
-  
   String? d99;
 
-  
   String? docno;
 
-  
   String? gbn;
 
-  
   int? idx;
 
-  
   String? printSubmitDt;
 
-  
   String? regId;
 
-  
   int? reg_datetime;
 
-  
   int? simAuth;
 
-  
   String? status;
 
-  
   String? tableName;
 
   static jsonFromForm(Map<String, dynamic> json) => BioIo.fromJson(json);
 
   factory BioIo.fromJson(Map<String, dynamic> json) => _$BioIoFromJson(json);
-
 
   @override
   String toString() {
@@ -1679,6 +1270,4 @@ class BioIo implements SelectProc {
     this.status,
     this.tableName,
   });
-
-
 }

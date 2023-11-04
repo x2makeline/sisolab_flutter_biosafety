@@ -43,8 +43,7 @@ class Tab25 extends StatelessWidget {
                   label: "생물위해표지판(사용병원체, 안전관리자명) 게시",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file30', ),
+                    FclImageField(name: 'd230', initialValue: vm.iof.d230),
                     FclRadioField(
                         name: 'd34',
                         map: yesOrNoMap,
@@ -59,8 +58,7 @@ class Tab25 extends StatelessWidget {
                   label: "개인보호구 착,탈의 절차 게시",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file31', ),
+                    FclImageField(name: 'd231', initialValue: vm.iof.d231),
                     FclRadioField(
                         name: 'd35',
                         map: yesOrNoMap,
@@ -75,8 +73,7 @@ class Tab25 extends StatelessWidget {
                   label: "밀폐구역 내 각 실험실 입구 차압계 설치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file32', ),
+                    FclImageField(name: 'd232', initialValue: vm.iof.d232),
                     FclRadioField(
                         name: 'd36',
                         map: yesOrNoMap,
@@ -91,8 +88,7 @@ class Tab25 extends StatelessWidget {
                   label: "밀폐구역 내 비상시 연락체계도 게시",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file33', ),
+                    FclImageField(name: 'd233', initialValue: vm.iof.d233),
                     FclRadioField(
                         name: 'd37',
                         map: yesOrNoMap,
@@ -107,8 +103,7 @@ class Tab25 extends StatelessWidget {
                   label: "덕트나 배관의 이름 표시",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file34', ),
+                    FclImageField(name: 'd234', initialValue: vm.iof.d234),
                     FclRadioField(
                         name: 'd38',
                         map: yesOrNoMap,
@@ -123,8 +118,7 @@ class Tab25 extends StatelessWidget {
                   label: "비상시 가동 및 운영 정지 시의 절차 게시(밀폐시스템 이상 및 대량 스필 발생 포함)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file35', ),
+                    FclImageField(name: 'd235', initialValue: vm.iof.d235),
                     FclRadioField(
                         name: 'd67',
                         map: yesOrNoMap,
@@ -140,8 +134,7 @@ class Tab25 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: true,
                   fieldList: [
-                    FclImageField(
-                        name: 'file36', ),
+                    FclImageField(name: 'd236', initialValue: vm.iof.d236),
                     FclRadioField(
                         name: 'd39',
                         map: yesOrNoMap,

@@ -44,8 +44,7 @@ class Tab17 extends StatelessWidget {
                   label: "헤파필터 유닛, 배기덕트 압력 감소 시험",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file58', ),
+                    FclImageField(name: 'd258', initialValue: vm.iof.d258),
                     FclRadioField(
                         name: 'd62',
                         map: yesOrNoMap,
@@ -60,8 +59,7 @@ class Tab17 extends StatelessWidget {
                   label: "헤파필터 유닛 완전성 테스트(PAO 테스트)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file59', ),
+                    FclImageField(name: 'd259', initialValue: vm.iof.d259),
                     FclRadioField(
                         name: 'd63',
                         map: yesOrNoMap,

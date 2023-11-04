@@ -29,8 +29,6 @@ class SelectProc {
   @JsonKey(name: "print_submit_dt")
   String? printSubmitDt;
 
-
-
   SelectProc({
     this.comAddress,
     this.comCode,
@@ -45,7 +43,6 @@ class SelectProc {
     this.gbn,
     this.reg_datetime,
     this.printSubmitDt,
-
   });
 
   factory SelectProc.fromJson(Map<String, dynamic> json) =>

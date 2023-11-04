@@ -44,9 +44,7 @@ class Tab9 extends StatelessWidget {
                 label: "5.1) 유틸리티 가스공급장치 설비 관리가 적절한가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file27",
-                      ),
+                  FclImageField(name: "d227", initialValue: vm.iof.d227),
                   FclRadioField(
                       name: "d27",
                       map: {"2": "2", "1": "1", "0": "0"},

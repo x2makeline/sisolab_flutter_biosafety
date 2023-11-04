@@ -44,8 +44,7 @@ class Tab23 extends StatelessWidget {
                   label: "밀폐구역 내 접함 및 관통 부위의 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file14', ),
+                    FclImageField(name: 'd214', initialValue: vm.iof.d214),
                     FclRadioField(
                         name: 'd18',
                         map: yesOrNoMap,
@@ -60,8 +59,7 @@ class Tab23 extends StatelessWidget {
                   label: "밀폐구역 내 전열 콘센트 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file15', ),
+                    FclImageField(name: 'd215', initialValue: vm.iof.d215),
                     FclRadioField(
                         name: 'd19',
                         map: yesOrNoMap,
@@ -76,8 +74,7 @@ class Tab23 extends StatelessWidget {
                   label: "밀폐구역 내 조명기구 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file16', ),
+                    FclImageField(name: 'd216', initialValue: vm.iof.d216),
                     FclRadioField(
                         name: 'd20',
                         map: yesOrNoMap,
@@ -92,8 +89,7 @@ class Tab23 extends StatelessWidget {
                   label: "멸균기-벽체 이음새부위 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file17', ),
+                    FclImageField(name: 'd217', initialValue: vm.iof.d217),
                     FclRadioField(
                         name: 'd21',
                         map: yesOrNoMap,
@@ -108,8 +104,7 @@ class Tab23 extends StatelessWidget {
                   label: "기타 실험실 내부 벽체 연결부, 코너, 이음새 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file18', ),
+                    FclImageField(name: 'd218', initialValue: vm.iof.d218),
                     FclRadioField(
                         name: 'd22',
                         map: yesOrNoMap,
@@ -124,8 +119,7 @@ class Tab23 extends StatelessWidget {
                   label: "밀폐구역 내 싱크와 배수 위치 확인 및 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file19', ),
+                    FclImageField(name: 'd219', initialValue: vm.iof.d219),
                     FclRadioField(
                         name: 'd23',
                         map: yesOrNoMap,
@@ -140,8 +134,7 @@ class Tab23 extends StatelessWidget {
                   label: "실험실 내 온도, 습도 및 소음도",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file20', ),
+                    FclImageField(name: 'd220', initialValue: vm.iof.d220),
                     FclRadioField(
                         name: 'd24',
                         map: yesOrNoMap,
@@ -157,8 +150,7 @@ class Tab23 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: true,
                   fieldList: [
-                    FclImageField(
-                        name: 'file21', ),
+                    FclImageField(name: 'd221', initialValue: vm.iof.d221),
                     FclRadioField(
                         name: 'd25',
                         map: yesOrNoMap,

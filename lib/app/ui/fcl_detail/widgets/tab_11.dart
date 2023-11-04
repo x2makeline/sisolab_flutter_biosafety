@@ -48,9 +48,7 @@ class Tab11 extends StatelessWidget {
                 label: "7.1) IBC 구성 및 생물안전관리책임자 지정이 적절한가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file29",
-                      ),
+                  FclImageField(name: "d229", initialValue: vm.iof.d229),
                   FclRadioField(
                       name: "d29",
                       map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -68,9 +66,7 @@ class Tab11 extends StatelessWidget {
                 label: "7.2) IBC 주기적 개최 및 위해성 평가가 적절한가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file30",
-                      ),
+                  FclImageField(name: "d230", initialValue: vm.iof.d230),
                   FclRadioField(
                       name: "d30",
                       map: const {"2": "2", "1": "1", "0": "0"},

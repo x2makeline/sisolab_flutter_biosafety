@@ -43,8 +43,7 @@ class Tab21 extends StatelessWidget {
                   label: "급기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file54', ),
+                    FclImageField(name: 'd254', initialValue: vm.iof.d254),
                     FclRadioField(
                         name: 'd58',
                         map: yesOrNoMap,
@@ -59,8 +58,7 @@ class Tab21 extends StatelessWidget {
                   label: "급기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file55', ),
+                    FclImageField(name: 'd255', initialValue: vm.iof.d255),
                     FclRadioField(
                         name: 'd59',
                         map: yesOrNoMap,
@@ -75,8 +73,7 @@ class Tab21 extends StatelessWidget {
                   label: "배기팬 1 OFF의 경우, 실내 설정압력 유지 (상시음압)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file56', ),
+                    FclImageField(name: 'd256', initialValue: vm.iof.d256),
                     FclRadioField(
                         name: 'd60',
                         map: yesOrNoMap,
@@ -91,8 +88,7 @@ class Tab21 extends StatelessWidget {
                   label: "배기팬 2 OFF의 경우, 실내 설정압력 유지 (상시음압)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file57', ),
+                    FclImageField(name: 'd257', initialValue: vm.iof.d257),
                     FclRadioField(
                         name: 'd61',
                         map: yesOrNoMap,

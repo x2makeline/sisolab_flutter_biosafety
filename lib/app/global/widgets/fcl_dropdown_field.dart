@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sisolab_flutter_biosafety/app/global/styles/text_styles.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_field.dart';
 
@@ -35,12 +32,12 @@ class FclDropdownField extends FclField {
                   ),
                   ...itemMap.entries
                       .map((e) => DropdownMenuItem(
-                    value: e.key,
-                    child: Text(
-                      e.value,
-                      style: buttonTextStyle,
-                    ),
-                  ))
+                            value: e.key,
+                            child: Text(
+                              e.value,
+                              style: buttonTextStyle,
+                            ),
+                          ))
                       .toList()
                 ],
               );

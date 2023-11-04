@@ -12,7 +12,7 @@ class FclFormBuilderDateTimePicker extends StatelessWidget {
       required this.name,
       this.initialDate,
       this.firstDate,
-        this.enabled,
+      this.enabled,
       this.lastDate});
 
   static final _format = DateFormat("yyyy-MM-dd");

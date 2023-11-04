@@ -44,10 +44,7 @@ class Tab3 extends StatelessWidget {
                   lastDividerYn: false,
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'd201',
-                      initialValue: vm.iof.d201
-                    ),
+                    FclImageField(name: 'd201', initialValue: vm.iof.d201),
                     FclNoteField(
                         name: 'd179',
                         initialValue: vm.io.d179,
@@ -115,8 +112,7 @@ class Tab3 extends StatelessWidget {
                   lastDividerYn: false,
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file2', ),
+                    FclImageField(name: '202', initialValue: vm.iof.d202),
                     FclNoteField(
                         name: 'd89',
                         initialValue: vm.io.d89,
@@ -183,8 +179,7 @@ class Tab3 extends StatelessWidget {
                   label: "검증서, 시설도면(건축,기계,전기,소방 등) 보관",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file3', ),
+                    FclImageField(name: 'd203', initialValue: vm.iof.d203),
                     FclRadioField(
                         name: 'd7',
                         map: yesOrNoMap,
@@ -199,8 +194,7 @@ class Tab3 extends StatelessWidget {
                   label: "생물안전관리규정 수립",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file4', ),
+                    FclImageField(name: 'd204', initialValue: vm.iof.d204),
                     FclRadioField(
                         name: 'd8',
                         map: yesOrNoMap,
@@ -216,8 +210,7 @@ class Tab3 extends StatelessWidget {
                   label: "기관생물안전지침(시설운영사항 별도) 마련",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file5', ),
+                    FclImageField(name: 'd205', initialValue: vm.iof.d205),
                     FclRadioField(
                         name: 'd9',
                         map: yesOrNoMap,

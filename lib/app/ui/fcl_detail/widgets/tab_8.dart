@@ -48,8 +48,7 @@ class Tab8 extends StatelessWidget {
                     "- CCTV 모니터링 적정 각도 유지"
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file17', ),
+                    FclImageField(name: 'd217', initialValue: vm.iof.d217),
                     FclRadioField(
                         name: 'd17',
                         map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
@@ -69,8 +68,7 @@ class Tab8 extends StatelessWidget {
                     "- 경보알람 시 시각 및 청각알람 모두 작동(동물실의 경우 시각알람만 작동해야함)"
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file18', ),
+                    FclImageField(name: 'd218', initialValue: vm.iof.d218),
                     FclRadioField(
                         name: 'd18',
                         map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
@@ -90,8 +88,7 @@ class Tab8 extends StatelessWidget {
                     "- UPS 작동 시 통제실 경보알람 정상작동"
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file19', ),
+                    FclImageField(name: 'd219', initialValue: vm.iof.d219),
                     FclRadioField(
                         name: 'd19',
                         map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
@@ -111,8 +108,7 @@ class Tab8 extends StatelessWidget {
                     "- 구급상자 및 스필킷 구비"
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file20', ),
+                    FclImageField(name: 'd220', initialValue: vm.iof.d220),
                     FclRadioField(
                         name: 'd20',
                         map: const {"5": "5", "3": "3", "1": "1", "0": "0"},
@@ -127,8 +123,7 @@ class Tab8 extends StatelessWidget {
                   label: '동물) 동물탈출 시 연구자 행동 절차를 마련하고 게시하였는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file21', ),
+                    FclImageField(name: 'd221', initialValue: vm.iof.d221),
                     FclRadioField(
                         name: 'd21',
                         map: passOrNaMap,
@@ -144,8 +139,7 @@ class Tab8 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file22', ),
+                    FclImageField(name: 'd222', initialValue: vm.iof.d222),
                     FclRadioField(
                         name: 'd22',
                         map: passOrNaMap,

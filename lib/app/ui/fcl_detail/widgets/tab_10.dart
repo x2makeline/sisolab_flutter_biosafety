@@ -43,8 +43,7 @@ class Tab10 extends StatelessWidget {
                   label: "유효 교정장비 사용한 급, 배기 풍량 측정",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file53', ),
+                    FclImageField(name: 'd253', initialValue: vm.iof.d253),
                     FclRadioField(
                         name: 'd57',
                         map: yesOrNoMap,

@@ -26,14 +26,12 @@ class HiveProvider {
     final b = _box.get(localId);
 
     return b?.let((it) => (BioIo.fromJson(it.bioIo), it.bioIoFile));
-
   }
 
   static DateFormat get format => DateFormat('yyyy-MM-dd H:m');
 
   static List<BioIo> selectList(SelectProcListIn req) {
     return _box.values.map((e) => BioIo.fromJson(e.bioIo)).where((io) {
-
       return io.gbn == req.gbn.name &&
           (req.searchCompany == null ||
               (io.company != null &&
@@ -51,16 +49,19 @@ class HiveProvider {
     }).toList();
   }
 
-  static Future<void> update(String localId, BioIo bioIo, [BioIoFile? bioIoFile]) async {
+  static Future<void> update(String localId, BioIo bioIo,
+      [BioIoFile? bioIoFile]) async {
     log.i("update $localId");
-    return await _box.put(localId, BioHive(bioIo: bioIo.toJson(), bioIoFile:bioIoFile));
+    return await _box.put(
+        localId, BioHive(bioIo: bioIo.toJson(), bioIoFile: bioIoFile));
   }
 
   static Future<void> insert(BioIo bioIo, [BioIoFile? bioIoFile]) async {
     final localId = DateTime.now().millisecondsSinceEpoch.toString();
     bioIo.localId = localId;
     log.i("insert $localId");
-    return await _box.put(localId, BioHive(bioIo: bioIo.toJson(),bioIoFile:bioIoFile));
+    return await _box.put(
+        localId, BioHive(bioIo: bioIo.toJson(), bioIoFile: bioIoFile));
   }
 
   static Future<void> delete(String localId) async {

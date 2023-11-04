@@ -178,7 +178,8 @@ class _Tab36State extends State<Tab36> {
                           ],
                         )))),
             FieldWithLabel(
-                label: "고위험병원체 관리자, 취급자 등에게 사용시설 및 기관내 생물안전교육을 하고 있는가?\n※ 교육 증빙자료 비치",
+                label:
+                    "고위험병원체 관리자, 취급자 등에게 사용시설 및 기관내 생물안전교육을 하고 있는가?\n※ 교육 증빙자료 비치",
                 child: DefaultTextStyle(
                     style: TextStyle(fontSize: 28.sp, color: ColorGroup.black),
                     child: Obx(() => FormBuilderRadioGroup(

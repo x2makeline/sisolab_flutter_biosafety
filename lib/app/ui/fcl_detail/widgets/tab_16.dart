@@ -44,9 +44,7 @@ class Tab16 extends StatelessWidget {
                 label: "8) 출입통제 관리기록(출입대장 등) 유지되고 있는가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file31",
-                      ),
+                  FclImageField(name: "d231", initialValue: vm.iof.d231),
                   FclRadioField(
                       name: "d31",
                       map: const {"2": "2", "1": "1", "0": "0"},
@@ -68,9 +66,7 @@ class Tab16 extends StatelessWidget {
                 label: "9) 기관 생물안전교육이 적절히 수행되는가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file32",
-                      ),
+                  FclImageField(name: "d232", initialValue: vm.iof.d232),
                   FclRadioField(
                       name: "d32",
                       map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -88,9 +84,7 @@ class Tab16 extends StatelessWidget {
                 label: "10) 유지보수 인력의 생물안전교육이 적절히 실시되는가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file33",
-                      ),
+                  FclImageField(name: "d233", initialValue: vm.iof.d233),
                   FclRadioField(
                       name: "d33",
                       map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -108,9 +102,7 @@ class Tab16 extends StatelessWidget {
                 label: "11) 연구자 정기검진 및 정상혈청 확보가 적절한가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file34",
-                      ),
+                  FclImageField(name: "d234", initialValue: vm.iof.d234),
                   FclRadioField(
                       name: "d34",
                       map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -132,9 +124,7 @@ class Tab16 extends StatelessWidget {
                 label: "12) 전문위탁기관 관리 점검 보고서 및 전문위탁기관 인력 등에 대한 관리 적절성 여부",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file35",
-                      ),
+                  FclImageField(name: "d235", initialValue: vm.iof.d235),
                   FclRadioField(
                       name: "d35",
                       map: const {"2": "2", "1": "1", "0": "0"},
@@ -155,7 +145,6 @@ class Tab16 extends StatelessWidget {
                 label: "13) 설치류 해충방지 장치설치 또는 프로그램이 있는가?",
                 lastDividerYn: false,
                 fieldList: [
-
                   FclRadioField(
                       name: "d36",
                       map: const {"2": "2", "1": "1", "0": "0"},
@@ -172,9 +161,7 @@ class Tab16 extends StatelessWidget {
                 label: "동물) 실험동물 관련 법정 교육을 이수하였는가?",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file36",
-                      ),
+                  FclImageField(name: "d236", initialValue: vm.iof.d236),
                   FclRadioField(
                       name: "d37",
                       map: passOrNaMap,
@@ -191,9 +178,7 @@ class Tab16 extends StatelessWidget {
                 label: "14) 시설 설치·운영 특이사항에 대한 확인 검토",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file37",
-                      ),
+                  FclImageField(name: "d237", initialValue: vm.iof.d237),
                   FclRadioField(
                       name: "d38",
                       map: passOrNaMap,
@@ -210,9 +195,7 @@ class Tab16 extends StatelessWidget {
                 label: "15) 시설 정기 점검 결과 개선 사항 검토",
                 lastDividerYn: false,
                 fieldList: [
-                  FclImageField(
-                      name: "file38",
-                      ),
+                  FclImageField(name: "d238", initialValue: vm.iof.d238),
                   FclRadioField(
                       name: "d67",
                       map: passOrNaMap,

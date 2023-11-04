@@ -5,10 +5,7 @@ import 'package:sisolab_flutter_biosafety/app/data/models/bio_io.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/bio_search_in.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/gbn.dart';
 import 'package:sisolab_flutter_biosafety/app/data/models/select_proc_list_in.dart';
-import 'package:sisolab_flutter_biosafety/core/models/async_status.dart';
-import 'package:sisolab_flutter_biosafety/core/models/rx_net.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/hive_provider.dart';
-import 'package:sisolab_flutter_biosafety/core/providers/sqflite_provider.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 class FclListPageVm extends GetxController with PLoggerMixin {
@@ -24,7 +21,6 @@ class FclListPageVm extends GetxController with PLoggerMixin {
   /// ------------------------------------------------------
   Future<void> fetch(SelectProcListIn req) async {
     _list.value = HiveProvider.selectList(req);
-
   }
 
   Future<void> submit() async {

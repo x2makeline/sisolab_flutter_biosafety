@@ -43,8 +43,7 @@ class Tab18 extends StatelessWidget {
                   label: "비상장비(손전등, 구급상자) 비치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file37', ),
+                    FclImageField(name: 'd237', initialValue: vm.iof.d237),
                     FclRadioField(
                         name: 'd40',
                         map: yesOrNoMap,
@@ -59,8 +58,7 @@ class Tab18 extends StatelessWidget {
                   label: "양방향 통신 시스템(인터폰, 전화 등)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file38', ),
+                    FclImageField(name: 'd238', initialValue: vm.iof.d238),
                     FclRadioField(
                         name: 'd41',
                         map: yesOrNoMap,
@@ -75,8 +73,7 @@ class Tab18 extends StatelessWidget {
                   label: "CCTV 설치 위치 적절성 및 동작 확인",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file39', ),
+                    FclImageField(name: 'd239', initialValue: vm.iof.d239),
                     FclRadioField(
                         name: 'd42',
                         map: yesOrNoMap,
@@ -91,8 +88,7 @@ class Tab18 extends StatelessWidget {
                   label: "경보장치의 적정 위치 설치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file40', ),
+                    FclImageField(name: 'd240', initialValue: vm.iof.d240),
                     FclRadioField(
                         name: 'd43',
                         map: yesOrNoMap,
@@ -107,8 +103,7 @@ class Tab18 extends StatelessWidget {
                   label: "실간 차압역전 및 양압 형성 시 경보",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file41', ),
+                    FclImageField(name: 'd241', initialValue: vm.iof.d241),
                     FclRadioField(
                         name: 'd44',
                         map: yesOrNoMap,
@@ -123,8 +118,7 @@ class Tab18 extends StatelessWidget {
                   label: "비상조명, 피난 유도등",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file42', ),
+                    FclImageField(name: 'd242', initialValue: vm.iof.d242),
                     FclRadioField(
                         name: 'd45',
                         map: yesOrNoMap,
@@ -139,8 +133,7 @@ class Tab18 extends StatelessWidget {
                   label: "소화설비/장비 구비",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file43', ),
+                    FclImageField(name: 'd243', initialValue: vm.iof.d243),
                     FclRadioField(
                         name: 'd46',
                         map: yesOrNoMap,
@@ -156,8 +149,7 @@ class Tab18 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file44', ),
+                    FclImageField(name: 'd244', initialValue: vm.iof.d244),
                     FclRadioField(
                         name: 'd47',
                         map: yesOrNoMap,

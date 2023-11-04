@@ -93,7 +93,7 @@ class _Tab31State extends State<Tab31> {
                                   SizedBox(
                                       width: 200.w,
                                       child: Obx(() => FclTextField(
-                                            enabled:  d38.value,
+                                            enabled: d38.value,
                                             name: "d126",
                                             initialValue: vm.io.d126,
                                           ))),
@@ -135,7 +135,7 @@ class _Tab31State extends State<Tab31> {
                                   SizedBox(
                                       width: 200.w,
                                       child: Obx(() => FclTextField(
-                                            enabled:  d39.value,
+                                            enabled: d39.value,
                                             name: "d127",
                                             initialValue: vm.io.d127,
                                           ))),
@@ -243,7 +243,7 @@ class _Tab31State extends State<Tab31> {
                                   SizedBox(
                                       width: 200.w,
                                       child: Obx(() => FclTextField(
-                                            enabled:  d43.value,
+                                            enabled: d43.value,
                                             name: "d129",
                                             initialValue: vm.io.d129,
                                           ))),

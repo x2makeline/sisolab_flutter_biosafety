@@ -45,7 +45,7 @@ class Tab22 extends StatelessWidget {
                   label: '2.1) 손소독기가 적절히 운영되는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(name: 'file9', ),
+                    FclImageField(name: 'd209', initialValue: vm.iof.d209),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -70,7 +70,7 @@ class Tab22 extends StatelessWidget {
                   label: '2.2) 눈세척기가 적절히 운영되는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(name: 'file10', ),
+                    FclImageField(name: 'd210', initialValue: vm.iof.d210),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -91,7 +91,7 @@ class Tab22 extends StatelessWidget {
                   label: '2.3) 패스박스 작동상태가 적합한가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(name: 'file11', ),
+                    FclImageField(name: 'd211', initialValue: vm.iof.d211),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -113,7 +113,7 @@ class Tab22 extends StatelessWidget {
                   label: '2.4) 멸균기 작동(BI 테스트 포함)상태가 적합한가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(name: 'file12', ),
+                    FclImageField(name: 'd212', initialValue: vm.iof.d212),
                     FclRadioField(
                         orientation: OptionsOrientation.vertical,
                         labelWithKey: true,
@@ -136,7 +136,7 @@ class Tab22 extends StatelessWidget {
               desc: const ['※ 적정유입풍속 : 0.5 ± 0.025 m/s'],
               preYn: vm.pastYearYn,
               fieldList: [
-                FclImageField(name: 'file13', ),
+                FclImageField(name: 'd213', initialValue: vm.iof.d213),
                 FclRadioField(
                     orientation: OptionsOrientation.vertical,
                     labelWithKey: true,
@@ -158,7 +158,7 @@ class Tab22 extends StatelessWidget {
                   label: '동물) 동물실은 외부와의 최소음압 70 Pa을 유지하는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(name: 'file14', ),
+                    FclImageField(name: 'd214', initialValue: vm.iof.d214),
                     FclRadioField(
                         name: 'd14',
                         map: passOrNaMap,
@@ -173,7 +173,7 @@ class Tab22 extends StatelessWidget {
                   label: '대량) 멸균조작이 가능한 배양장치 설치 및 정기적으로 밀페도 검사를 실시하는가?',
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(name: 'file15', ),
+                    FclImageField(name: 'd215', initialValue: vm.iof.d215),
                     FclRadioField(
                         name: 'd15',
                         map: passOrNaMap,
@@ -190,7 +190,7 @@ class Tab22 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(name: 'file16', ),
+                    FclImageField(name: 'd216', initialValue: vm.iof.d216),
                     FclRadioField(
                         name: 'd16',
                         map: passOrNaMap,

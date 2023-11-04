@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'dart:typed_data';
-
 import 'package:dartlin/control_flow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -137,10 +134,12 @@ class FclFieldView extends StatelessWidget {
         enabled: field.enabled ?? true,
         name: field.name,
         decoration: when(field.suffixType, {
-              TextSuffixType.count: () =>  InputDecoration(
-                  suffixIcon: Padding(padding: EdgeInsets.all(20.sp),child: const Text('명'),),
-
-        )
+              TextSuffixType.count: () => InputDecoration(
+                    suffixIcon: Padding(
+                      padding: EdgeInsets.all(20.sp),
+                      child: const Text('명'),
+                    ),
+                  )
             }) ??
             const InputDecoration(),
       );

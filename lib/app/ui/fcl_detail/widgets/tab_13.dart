@@ -44,8 +44,7 @@ class Tab13 extends StatelessWidget {
                   label: "시설 자동제어시스템의 재부팅시, 운영 설정값 유지",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file60', ),
+                    FclImageField(name: 'd260', initialValue: vm.iof.d260),
                     FclRadioField(
                         name: 'd64',
                         map: yesOrNoMap,

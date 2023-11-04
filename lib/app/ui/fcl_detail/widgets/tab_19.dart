@@ -43,8 +43,7 @@ class Tab19 extends StatelessWidget {
                   label: "데이터 전송용 전자시스템",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file45', ),
+                    FclImageField(name: 'd245', initialValue: vm.iof.d245),
                     FclRadioField(
                         name: 'd48',
                         map: yesOrNoMap,
@@ -59,8 +58,7 @@ class Tab19 extends StatelessWidget {
                   label: "배관역류 방지장치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file46', ),
+                    FclImageField(name: 'd246', initialValue: vm.iof.d246),
                     FclRadioField(
                         name: 'd49',
                         map: yesOrNoMap,
@@ -75,8 +73,7 @@ class Tab19 extends StatelessWidget {
                   label: "내부 차압 측정 계기 및 경보장치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file47', ),
+                    FclImageField(name: 'd247', initialValue: vm.iof.d247),
                     FclRadioField(
                         name: 'd50',
                         map: yesOrNoMap,
@@ -91,8 +88,7 @@ class Tab19 extends StatelessWidget {
                   label: "비상전원공급(UPS 등) 연동 확인",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file48', ),
+                    FclImageField(name: 'd248', initialValue: vm.iof.d248),
                     FclRadioField(
                         name: 'd51',
                         map: yesOrNoMap,
@@ -108,8 +104,7 @@ class Tab19 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file49', ),
+                    FclImageField(name: 'd249', initialValue: vm.iof.d249),
                     FclRadioField(
                         name: 'd52',
                         map: yesOrNoMap,

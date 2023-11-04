@@ -49,8 +49,7 @@ class Tab14 extends StatelessWidget {
                     "- 비상연락체계도 게시 및 현행화"
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file23', ),
+                    FclImageField(name: 'd223', initialValue: vm.iof.d223),
                     FclRadioField(
                         name: 'd23',
                         map: const {"3": "3", "2": "2", "1": "1", "0": "0"},
@@ -70,8 +69,7 @@ class Tab14 extends StatelessWidget {
                     "- 탈의실 내 개인보호구 탈의 절차 게시",
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file24', ),
+                    FclImageField(name: 'd224', initialValue: vm.iof.d224),
                     FclRadioField(
                         name: 'd24',
                         map: const {"2": "2", "1": "1", "0": "0"},
@@ -91,8 +89,7 @@ class Tab14 extends StatelessWidget {
                     "- 배관에 유체종류 및 방향 표기"
                   ],
                   fieldList: [
-                    FclImageField(
-                        name: 'file25', ),
+                    FclImageField(name: 'd225', initialValue: vm.iof.d225),
                     FclRadioField(
                         name: 'd25',
                         map: const {"2": "2", "1": "1", "0": "0"},
@@ -108,8 +105,7 @@ class Tab14 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file26', ),
+                    FclImageField(name: 'd226', initialValue: vm.iof.d226),
                     FclRadioField(
                         name: 'd26',
                         map: passOrNaMap,

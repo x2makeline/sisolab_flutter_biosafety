@@ -43,8 +43,7 @@ class Tab24 extends StatelessWidget {
                   label: "손 소독기 및 눈 세척기 적정 위치 설치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file22', ),
+                    FclImageField(name: 'd222', initialValue: vm.iof.d222),
                     FclRadioField(
                         name: 'd26',
                         map: yesOrNoMap,
@@ -59,8 +58,7 @@ class Tab24 extends StatelessWidget {
                   label: "패스박스 도어 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file23', ),
+                    FclImageField(name: 'd223', initialValue: vm.iof.d223),
                     FclRadioField(
                         name: 'd27',
                         map: yesOrNoMap,
@@ -75,8 +73,7 @@ class Tab24 extends StatelessWidget {
                   label: "패스박스 도어 인터락 설정",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file24', ),
+                    FclImageField(name: 'd224', initialValue: vm.iof.d224),
                     FclRadioField(
                         name: 'd28',
                         map: yesOrNoMap,
@@ -91,8 +88,7 @@ class Tab24 extends StatelessWidget {
                   label: "멸균기 열침투 테스트(BI 멸균 테스트)",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file25', ),
+                    FclImageField(name: 'd225', initialValue: vm.iof.d225),
                     FclRadioField(
                         name: 'd29',
                         map: yesOrNoMap,
@@ -107,8 +103,7 @@ class Tab24 extends StatelessWidget {
                   label: "생물안전작업대 적정 기류흐름 및 작동",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file26', ),
+                    FclImageField(name: 'd226', initialValue: vm.iof.d226),
                     FclRadioField(
                         name: 'd30',
                         map: yesOrNoMap,
@@ -123,8 +118,7 @@ class Tab24 extends StatelessWidget {
                   label: "생물안전작업대 설치 위치",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file27', ),
+                    FclImageField(name: 'd227', initialValue: vm.iof.d227),
                     FclRadioField(
                         name: 'd31',
                         map: yesOrNoMap,
@@ -139,8 +133,7 @@ class Tab24 extends StatelessWidget {
                   label: "Isolator 기밀성",
                   preYn: vm.pastYearYn,
                   fieldList: [
-                    FclImageField(
-                        name: 'file28', ),
+                    FclImageField(name: 'd228', initialValue: vm.iof.d228),
                     FclRadioField(
                         name: 'd32',
                         map: yesOrNoMap,
@@ -156,8 +149,7 @@ class Tab24 extends StatelessWidget {
                   preYn: vm.pastYearYn,
                   lastDividerYn: false,
                   fieldList: [
-                    FclImageField(
-                        name: 'file29', ),
+                    FclImageField(name: 'd229', initialValue: vm.iof.d229),
                     FclRadioField(
                         name: 'd33',
                         map: yesOrNoMap,

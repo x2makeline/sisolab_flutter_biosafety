@@ -173,23 +173,21 @@ class ApiProvider with PLoggerMixin {
   }
 
   Future<List<String>> upload(List<File> files) async {
-
     return await Dio(BaseOptions(
       baseUrl: Env.host,
       contentType: "application/json",
     ))
         .post('/comm/uploadfile2.do',
-        data: FormData.fromMap({
-          "files[]": files
-              .map((file) => MultipartFile.fromFileSync(file.path))
-              .toList(),
-        }),
-        options: Options(
-          contentType: "multipart/form-data",
-        ))
+            data: FormData.fromMap({
+              "files[]": files
+                  .map((file) => MultipartFile.fromFileSync(file.path))
+                  .toList(),
+            }),
+            options: Options(
+              contentType: "multipart/form-data",
+            ))
         .then((value) {
-
-          return (value.data as List<dynamic>).map((e) => e as String).toList();
+      return (value.data as List<dynamic>).map((e) => e as String).toList();
     });
   }
 

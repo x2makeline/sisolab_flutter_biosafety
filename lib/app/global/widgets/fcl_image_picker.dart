@@ -14,10 +14,10 @@ import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_betwe
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 class FclImagePicker extends StatefulWidget {
-  const FclImagePicker({Key? key, this.onChange, this.initialValue})
+  const FclImagePicker({Key? key, required this.field, this.initialValue})
       : super(key: key);
-  final void Function(List<String> files)? onChange;
   final List<String>? initialValue;
+  final FormFieldState<List<String>> field;
 
   @override
   State<FclImagePicker> createState() => _FclImagePickerState();
@@ -29,7 +29,7 @@ class _FclImagePickerState extends State<FclImagePicker> with PLoggerMixin {
   @override
   void initState() {
     super.initState();
-    filePaths = widget.initialValue ?? filePaths;
+    filePaths = widget.field.value ?? widget.initialValue ?? filePaths;
   }
 
   final ImagePickerPlatform _picker = ImagePickerPlatform.instance;
@@ -82,7 +82,7 @@ class _FclImagePickerState extends State<FclImagePicker> with PLoggerMixin {
                               newPath?.let((it) {
                                 setState(() {
                                   filePaths = [...filePaths, it];
-                                  widget.onChange?.let((it) => it(filePaths));
+                                  widget.field.setValue(filePaths);
                                 });
                               });
                             },
@@ -101,7 +101,7 @@ class _FclImagePickerState extends State<FclImagePicker> with PLoggerMixin {
 
                                 setState(() {
                                   filePaths = [...filePaths, ...newPaths];
-                                  widget.onChange?.let((it) => it(filePaths));
+                                  widget.field.setValue(filePaths);
                                 });
                               }
                             },
@@ -196,8 +196,9 @@ class FormBuilderFclImagePicker
     required super.name,
     super.initialValue,
   }) : super(builder: (FormFieldState<List<String>> field) {
+          pLogger.i('field.value ${field.value}');
           return FclImagePicker(
-            onChange: field.setValue,
+            field: field,
             initialValue: initialValue,
           );
         });

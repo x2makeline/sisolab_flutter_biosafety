@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(1563, 2048),
       // minTextAdapt: true,
       builder: (_, __) => GetMaterialApp(
+            smartManagement: SmartManagement.onlyBuilder,
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [
               ...GlobalMaterialLocalizations.delegates,

@@ -11,12 +11,12 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/form_builder_between_date.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/layout.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/fcl_detail_page.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_list/vms/fcl_list_page_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/extensions/bio_list_ext.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_space_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/extensions/list_widget_between.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
-import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 
 class _Item extends StatelessWidget with PLoggerMixin {
   const _Item({required this.info, required this.gbn});
@@ -98,8 +98,9 @@ class _Item extends StatelessWidget with PLoggerMixin {
   Widget build(BuildContext context) {
     return InkWell(
         onTap: () {
-          Get.toNamed(AppRoutes.fclDetailForm.name,
+          Get.to(() => const FclDetailPage(),
               arguments: {'gbn': gbn, 'localId': info.localId});
+
           // Get.toNamed("/fcl/${gbn.name}/detail/${info.localId}");
         },
         child: _table);
@@ -172,7 +173,7 @@ class FclListPage extends StatelessWidget {
                                     MaterialStatePropertyAll<Color>(
                                         Colors.black)),
                             onPressed: () {
-                              Get.toNamed(AppRoutes.fclDetailForm.name,
+                              Get.to(() => const FclDetailPage(),
                                   arguments: {'gbn': vm.gbn});
                               // Get.toNamed(AppRoutes.fclDetailForm.name
                               //     .replaceFirst(RegExp(r'(:id)'), vm.gbn.name));

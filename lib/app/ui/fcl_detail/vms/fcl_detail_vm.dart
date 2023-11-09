@@ -27,24 +27,35 @@ import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class FclDetailVm extends GetxController with PLoggerMixin {
+  /// Static -------------------------------------------------------------------
   static FclDetailVm get to => Get.find();
 
+  /// Private Variable ---------------------------------------------------------
+  final _repository = SelectProcFieldRepository();
+  final _apiPro = ApiProvider();
+  final _pastYearYn = RxBool(false);
+  final _io = Rx<BioIo>(BioIo());
+  final _iof = Rx<BioIoFile>(BioIoFile());
+  final _preData = Rxn<BioIo>();
+
+  /// 활성화 탭 index
+  final _tabIndex = 0.obs;
+
+  /// Public Variable ----------------------------------------------------------
+  FclTab get activeTab => tabList.elementAt(tabIndex);
+  final ScrollController scrollController = ScrollController();
   final d184Controller = TextEditingController();
   final d280Controller = TextEditingController();
   final d157Controller = TextEditingController();
   final d281Controller = TextEditingController();
-  final _repository = SelectProcFieldRepository();
-  final _apiPro = ApiProvider();
-  final _pastYearYn = RxBool(false);
-  final ScrollController scrollController = ScrollController();
-  final _io = Rx<BioIo>(BioIo());
-  final _iof = Rx<BioIoFile>(BioIoFile());
-
-  final _preData = Rxn<BioIo>();
 
   bool get pastYearYn => _pastYearYn.value;
 
   BioIo? get preData => _preData.value;
+
+  /// Override Function --------------------------------------------------------
+  /// Private Function ---------------------------------------------------------
+  /// Public Function ----------------------------------------------------------
 
   @override
   void onInit() {
@@ -86,11 +97,12 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   @override
   void onClose() {
-    print("onClose");
+    pLog.e("onClose");
     d184Controller.dispose();
     d280Controller.dispose();
     d157Controller.dispose();
     d281Controller.dispose();
+    super.onClose();
   }
 
   Future<void> setPastYearYn(bool v) async {
@@ -112,9 +124,6 @@ class FclDetailVm extends GetxController with PLoggerMixin {
       _pastYearYn.value = v;
     }
   }
-
-  /// 활성화 탭 index
-  final _tabIndex = 0.obs;
 
   int get tabIndex => _tabIndex.value;
 

@@ -4,92 +4,165 @@ part 'bio_io_file.g.dart';
 
 @HiveType(typeId: 1)
 class BioIoFile {
-  @HiveField(0)
+  @HiveField(1)
   List<String>? d201;
+  @HiveField(2)
   List<String>? d202;
+  @HiveField(3)
   List<String>? d203;
+  @HiveField(4)
   List<String>? d204;
+  @HiveField(5)
   List<String>? d205;
+  @HiveField(6)
   List<String>? d206;
+  @HiveField(7)
   List<String>? d207;
+  @HiveField(8)
   List<String>? d208;
+  @HiveField(9)
   List<String>? d209;
 
+  @HiveField(10)
   List<String>? d210;
+  @HiveField(11)
   List<String>? d211;
+  @HiveField(12)
   List<String>? d212;
+  @HiveField(13)
   List<String>? d213;
+  @HiveField(14)
   List<String>? d214;
+  @HiveField(15)
   List<String>? d215;
+  @HiveField(16)
   List<String>? d216;
+  @HiveField(17)
   List<String>? d217;
+  @HiveField(18)
   List<String>? d218;
+  @HiveField(19)
   List<String>? d219;
-
+  @HiveField(20)
   List<String>? d220;
+  @HiveField(21)
   List<String>? d221;
+  @HiveField(22)
   List<String>? d222;
+  @HiveField(23)
   List<String>? d223;
+  @HiveField(24)
   List<String>? d224;
+  @HiveField(25)
   List<String>? d225;
+  @HiveField(26)
   List<String>? d226;
+  @HiveField(27)
   List<String>? d227;
+  @HiveField(28)
   List<String>? d228;
+  @HiveField(29)
   List<String>? d229;
-
+  @HiveField(30)
   List<String>? d230;
+  @HiveField(31)
   List<String>? d231;
+  @HiveField(32)
   List<String>? d232;
+  @HiveField(33)
   List<String>? d233;
+  @HiveField(34)
   List<String>? d234;
+  @HiveField(35)
   List<String>? d235;
+  @HiveField(36)
   List<String>? d236;
+  @HiveField(37)
   List<String>? d237;
+  @HiveField(38)
   List<String>? d238;
+  @HiveField(39)
   List<String>? d239;
 
+  @HiveField(40)
   List<String>? d240;
+  @HiveField(41)
   List<String>? d241;
+  @HiveField(42)
   List<String>? d242;
+  @HiveField(43)
   List<String>? d243;
+  @HiveField(44)
   List<String>? d244;
+  @HiveField(45)
   List<String>? d245;
+  @HiveField(46)
   List<String>? d246;
+  @HiveField(47)
   List<String>? d247;
+  @HiveField(48)
   List<String>? d248;
+  @HiveField(49)
   List<String>? d249;
-
+  @HiveField(50)
   List<String>? d250;
+  @HiveField(51)
   List<String>? d251;
+  @HiveField(52)
   List<String>? d252;
+  @HiveField(53)
   List<String>? d253;
+  @HiveField(54)
   List<String>? d254;
+  @HiveField(55)
   List<String>? d255;
+  @HiveField(56)
   List<String>? d256;
+  @HiveField(57)
   List<String>? d257;
+  @HiveField(58)
   List<String>? d258;
+  @HiveField(59)
   List<String>? d259;
-
+  @HiveField(60)
   List<String>? d260;
+  @HiveField(61)
   List<String>? d261;
+  @HiveField(62)
   List<String>? d262;
+  @HiveField(63)
   List<String>? d263;
+  @HiveField(64)
   List<String>? d264;
+  @HiveField(65)
   List<String>? d265;
+  @HiveField(66)
   List<String>? d266;
+  @HiveField(67)
   List<String>? d267;
+  @HiveField(68)
   List<String>? d268;
+  @HiveField(69)
   List<String>? d269;
-
+  @HiveField(70)
   List<String>? d270;
+  @HiveField(71)
   List<String>? d271;
+  @HiveField(72)
   List<String>? d272;
+  @HiveField(73)
   List<String>? d273;
+  @HiveField(74)
   List<String>? d274;
+  @HiveField(75)
   List<String>? d275;
+  @HiveField(76)
   List<String>? d276;
+  @HiveField(77)
   List<String>? d277;
+  @HiveField(78)
   List<String>? d278;
+  @HiveField(79)
   List<String>? d279;
 
   BioIoFile(
@@ -97,7 +170,7 @@ class BioIoFile {
       this.d202,
       this.d203,
       this.d204,
-      this.d205, 
+      this.d205,
       this.d206,
       this.d207,
       this.d208,

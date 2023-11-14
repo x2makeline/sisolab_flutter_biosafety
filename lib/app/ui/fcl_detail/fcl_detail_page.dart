@@ -133,6 +133,7 @@ class FclDetailPage extends StatelessWidget {
                               .asMap()
                               .entries
                               .map((e) => Obx(() => Visibility(
+                                    maintainState: true,
                                     visible: controller.tabIndex == e.key,
                                     child: e.value.body,
                                   )))

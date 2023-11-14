@@ -5,13 +5,16 @@ import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_divider.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/fcl_input.dart';
 import 'package:sisolab_flutter_biosafety/app/ui/fcl_detail/vms/fcl_detail_vm.dart';
 import 'package:sisolab_flutter_biosafety/core/constants/constant.dart';
+import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 
 /// 기본 자료 확인
 class Tab3 extends GetView<FclDetailVm> {
   const Tab3({super.key});
 
   @override
-  Widget build(BuildContext context) => Column(
+  Widget build(BuildContext context) {
+    pLogger.i("Tab3 build");
+    return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text("설치 ∙ 운영 적격성 평가",
@@ -230,4 +233,5 @@ class Tab3 extends GetView<FclDetailVm> {
                   ])),
         ],
       );
+  }
 }

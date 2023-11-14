@@ -166,6 +166,8 @@ class FclDetailVm extends GetxController with PLoggerMixin {
 
   _init(String localId) {
     final hiveObj = HiveProvider.select(localId);
+    
+    pLog.i("_init hiveObj?.\$2 : ${hiveObj?.$2}");
     _io.value = hiveObj?.$1 ?? BioIo();
     _iof.value = hiveObj?.$2 ?? BioIoFile();
   }
@@ -251,6 +253,8 @@ class FclDetailVm extends GetxController with PLoggerMixin {
   Future<void> submitLocal() async {
     final (io, iof) = submit();
 
+    pLog.i("submitLocal iof: $iof");
+
     io.localRegDateTime = io.localRegDateTime ?? DateTime.now().format2;
     io.localUpdDateTime = DateTime.now().format2;
     if (io.localId != null) {
@@ -267,6 +271,7 @@ class FclDetailVm extends GetxController with PLoggerMixin {
     formKey.currentState!.save();
 
     final currentValue = formKey.currentState!.value;
+
     final bioJson = {
       "gbn": gbn.name,
       ...io.toJson()

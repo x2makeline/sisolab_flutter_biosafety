@@ -114,7 +114,7 @@ class Tab3 extends GetView<FclDetailVm> {
                   preYn: controller.pastYearYn,
                   fieldList: [
                     FclImageField(
-                        name: '202', initialValue: controller.iof.d202),
+                        name: 'd202', initialValue: controller.iof.d202),
                     FclNoteField(
                         name: 'd89',
                         initialValue: controller.io.d89,

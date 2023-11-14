@@ -10,6 +10,7 @@ import 'package:sisolab_flutter_biosafety/app/global/models/token.dart';
 import 'package:sisolab_flutter_biosafety/app/global/vms/token_vm.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/field_with_label.dart';
 import 'package:sisolab_flutter_biosafety/app/global/widgets/home_page_layout.dart';
+import 'package:sisolab_flutter_biosafety/app/ui/select_type/select_type_page.dart';
 import 'package:sisolab_flutter_biosafety/core/providers/pref.dart';
 import 'package:sisolab_flutter_biosafety/core/utils/mc_logger.dart';
 import 'package:sisolab_flutter_biosafety/routes/app_routes.dart';
@@ -48,7 +49,7 @@ class _UnConnected extends StatelessWidget with PLoggerMixin {
     _formKey.currentState?.let((curr) => iff(curr.saveAndValidate(), () {
           Pref.userId.setValue(curr.value[_userIdName]).then((value) {
             iff(value, () {
-              Get.offAllNamed(AppRoutes.selectType.name);
+              Get.toNamed(AppRoutes.selectType.name);
             });
           });
         }));
